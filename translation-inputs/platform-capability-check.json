@@ -1,0 +1,5720 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-24T10:58:51+00:00",
+  "lastUpdatedBy": "source_coverage/cli.py",
+  "purpose": "Agent-maintained platform capability check. Update each entry after querying CangjieSkills/HarmonyOS/Cangjie API docs, HarmonyOS-Examples, or package index lookup for the detected capability. Use cjpm/project-management docs only to configure the chosen dependency in cjpm.toml. Direct API status requires Cangjie-callable evidence; ArkTS-only or native-only declarations should record the missing Cangjie binding as a blocker unless a target bridge/wrapper is implemented and verified.",
+  "allowedStatuses": [
+    "deferred",
+    "implemented-fallback",
+    "not-applicable",
+    "not-covered",
+    "planned",
+    "platform-replaced",
+    "unreviewed",
+    "verified-direct"
+  ],
+  "deferredRequiredFields": [
+    "targetCapabilitySearch",
+    "blocker",
+    "targetFallback",
+    "futureCompletionPath"
+  ],
+  "sourceRoot": "D:\\Kotlin2Cangjie\\Foodike",
+  "targetRoot": "D:\\workspace\\Foodike\\Foodike-Harmony",
+  "entries": [
+    {
+      "capabilityId": "media-library-access",
+      "capabilityName": "Media library and album discovery",
+      "importance": "critical",
+      "sourcePaths": [
+        "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+        "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/DeliverySection.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/AdCard.kt",
+        "README.md",
+        "app/src/main/java/com/example/foodike/presentation/home/components/TopSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/ThankYouSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/FavouriteCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/RecommendedCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+        "app/src/main/java/com/example/foodike/domain/model/Restaurant.kt",
+        "app/src/main/java/com/example/foodike/domain/model/Advertisement.kt",
+        "app/src/main/java/com/example/foodike/domain/model/FoodItem.kt"
+      ],
+      "sourceEvidence": [
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 719,
+          "riskTags": [
+            "file_ops",
+            "image_viewer",
+            "intent_uri",
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "file_ops",
+            "mediastore",
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 296,
+          "riskTags": [
+            "image_viewer",
+            "intent_uri",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "RestaurantDetail"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 261,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "HistorySection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 224,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "NavigationGraph",
+            "SetupNavigation",
+            "BottomBar"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 213,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "notification_widget",
+            "permissions",
+            "screen_lifecycle",
+            "settings",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "LoginScreen"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 193,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "Profile"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 187,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "MenuItemCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 169,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "getCustomerInfo"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 160,
+          "riskTags": [
+            "image_viewer",
+            "intent_uri",
+            "navigation_resource",
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "Home"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 155,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "RestaurantDetailCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 139,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "CartItemCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 132,
+          "riskTags": [
+            "image_viewer",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "ItemSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 111,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "Cart"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/components/DeliverySection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 87,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "DeliverySection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/AdCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 84,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "AdCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "README.md",
+          "importance": "critical",
+          "category": "other",
+          "nonblankLines": 78,
+          "riskTags": [
+            "file_ops",
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "platform_component",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "file_ops",
+            "mediastore",
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/TopSection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 78,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "TopSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 76,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "OnboardingPage"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/ThankYouSection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 73,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "ThankYouSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 67,
+          "riskTags": [
+            "image_viewer",
+            "permissions",
+            "settings",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "SearchBar"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/FavouriteCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 62,
+          "riskTags": [
+            "image_viewer",
+            "intent_uri",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "FavouriteCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/RecommendedCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 60,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "RecommendedCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 54,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [
+            "OnBoardingItem"
+          ],
+          "keyMethods": [
+            "get"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/model/Restaurant.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 37,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [
+            "Restaurant"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/model/Advertisement.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 33,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [
+            "Advertisement"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/model/FoodItem.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 30,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "gallery"
+          ],
+          "keyClasses": [
+            "FoodItem"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        }
+      ],
+      "sourceEvidenceSummary": "Detected 26 source artifact(s) with terms: file_ops, mediastore, gallery",
+      "requiredTargetCapabilitySearch": [
+        "HarmonyOS Cangjie media library album query",
+        "HarmonyOS media assets photo album Cangjie API",
+        "HarmonyOS Examples media library photo picker Cangjie"
+      ],
+      "targetStrategyHint": "Use a HarmonyOS media/photo library or picker capability when available; keep repository boundaries so mock data is not the final implementation.",
+      "minimumParity": "Discover albums/media, filter image/video/GIF, sort, expose metadata needed by viewer/list screens, and report permission or empty-library states.",
+      "requiredTests": [
+        "media repository fixture test",
+        "album list refresh test",
+        "filter/sort behavior test"
+      ],
+      "allowedDeferredReasons": [
+        "unavailable HarmonyOS media API in current SDK",
+        "device/media permission unavailable in test environment"
+      ],
+      "status": "planned",
+      "plannedPhase": "",
+      "targetCapabilitySearch": [],
+      "targetApiOrLibrary": "",
+      "targetStrategy": "",
+      "targetEndpoints": [],
+      "tests": [],
+      "sdkDeclarationEvidence": [],
+      "cangjieCallableEvidence": [],
+      "discoveryOnlyEvidence": [],
+      "compileProbeEvidence": [],
+      "preResolutionDecision": "",
+      "phaseCapabilityResolution": "",
+      "blocker": "",
+      "targetFallback": "",
+      "futureCompletionPath": "",
+      "notes": ""
+    },
+    {
+      "capabilityId": "file-access-and-saf",
+      "capabilityName": "File access, document permissions, and share URIs",
+      "importance": "critical",
+      "sourcePaths": [
+        "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+        "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
+        "app/build.gradle.kts",
+        "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/DeliverySection.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/HomeViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/AdCard.kt",
+        "README.md",
+        "app/src/main/java/com/example/foodike/presentation/home/components/TopSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/ThankYouSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt",
+        "app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt",
+        "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/HistoryViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/FavouriteCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/RecommendedCard.kt",
+        "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
+        "app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt",
+        "app/src/main/java/com/example/foodike/di/AppModule.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+        "app/src/main/AndroidManifest.xml",
+        "app/src/main/java/com/example/foodike/presentation/cart/CartViewModel.kt",
+        "app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt",
+        "app/src/main/java/com/example/foodike/domain/model/Restaurant.kt",
+        "app/src/main/java/com/example/foodike/domain/repository/UserDataRepository.kt",
+        "app/src/main/java/com/example/foodike/domain/repository/HomeRepository.kt",
+        "app/src/main/java/com/example/foodike/domain/model/Advertisement.kt",
+        "app/src/main/java/com/example/foodike/domain/repository/LoginRepository.kt",
+        "build.gradle.kts",
+        "app/src/main/java/com/example/foodike/FoodikeApp.kt",
+        "app/src/main/java/com/example/foodike/domain/model/FoodItem.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/ChipBar.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/CouponBar.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/components/Tabs.kt",
+        "app/src/main/res/values/strings.xml",
+        "app/src/main/java/com/example/foodike/presentation/history/History.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/FoodikeBottomNavigation.kt",
+        "gradle.properties",
+        "app/src/main/java/com/example/foodike/presentation/details/DetailScreenState.kt",
+        "app/src/main/res/values/themes.xml",
+        "app/src/main/java/com/example/foodike/domain/model/MenuItem.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/CartState.kt",
+        "app/src/main/java/com/example/foodike/domain/model/CartItem.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/BillSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/components/FavouritesSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/FavouriteScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/components/Indicators.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/components/ProfileCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/RecommendedSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/GreetingScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/components/BottomSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/AdSection.kt",
+        "app/src/main/java/com/example/foodike/ui/theme/Theme.kt",
+        "app/src/main/java/com/example/foodike/presentation/common/Extensions.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/MainSection.kt",
+        "app/src/main/java/com/example/foodike/ui/theme/Type.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/components/TabsContent.kt",
+        "app/src/main/java/com/example/foodike/presentation/util/Screen.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/util/Filters.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/HomeScreenState.kt",
+        "app/src/main/java/com/example/foodike/ui/theme/Shape.kt",
+        "app/src/main/java/com/example/foodike/data/repository/Result.kt",
+        "app/src/main/java/com/example/foodike/ui/theme/Color.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/DetailScreenEvent.kt"
+      ],
+      "sourceEvidence": [
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 719,
+          "riskTags": [
+            "file_ops",
+            "image_viewer",
+            "intent_uri",
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "file_ops",
+            "intent_uri",
+            "permissions",
+            "saf",
+            "storage"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 296,
+          "riskTags": [
+            "image_viewer",
+            "intent_uri",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "intent_uri",
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "RestaurantDetail"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 261,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "HistorySection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 224,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "NavigationGraph",
+            "SetupNavigation",
+            "BottomBar"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 213,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "notification_widget",
+            "permissions",
+            "screen_lifecycle",
+            "settings",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "LoginScreen"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 193,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "Profile"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 187,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "MenuItemCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 169,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "getCustomerInfo"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 160,
+          "riskTags": [
+            "image_viewer",
+            "intent_uri",
+            "navigation_resource",
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "intent_uri",
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "Home"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 155,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "RestaurantDetailCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 139,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "CartItemCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 132,
+          "riskTags": [
+            "image_viewer",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "ItemSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 111,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "Cart"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/build.gradle.kts",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 100,
+          "riskTags": [
+            "navigation_resource",
+            "permissions",
+            "platform_component",
+            "screen_lifecycle",
+            "settings"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 92,
+          "riskTags": [
+            "navigation_resource",
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "RestaurantDetailViewModel"
+          ],
+          "keyMethods": [
+            "onEvent"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/components/DeliverySection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 87,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "DeliverySection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/HomeViewModel.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 86,
+          "riskTags": [
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "HomeViewModel"
+          ],
+          "keyMethods": [
+            "onEvent"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 86,
+          "riskTags": [
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "LoginViewModel"
+          ],
+          "keyMethods": [
+            "onEvent"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/AdCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 84,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "AdCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "README.md",
+          "importance": "critical",
+          "category": "other",
+          "nonblankLines": 78,
+          "riskTags": [
+            "file_ops",
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "platform_component",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "file_ops",
+            "permissions",
+            "saf",
+            "storage"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/TopSection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 78,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "TopSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 76,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "OnboardingPage"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/ThankYouSection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 73,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "ThankYouSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 67,
+          "riskTags": [
+            "image_viewer",
+            "permissions",
+            "settings",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "SearchBar"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 62,
+          "riskTags": [
+            "intent_uri",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "intent_uri",
+            "permissions"
+          ],
+          "keyClasses": [
+            "UserDataRepositoryImpl"
+          ],
+          "keyMethods": [
+            "getSavedRestaurant",
+            "getMenuItems",
+            "getLikedRestaurants",
+            "getCartItems"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 62,
+          "riskTags": [
+            "intent_uri",
+            "navigation_resource",
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "intent_uri",
+            "permissions"
+          ],
+          "keyClasses": [
+            "MainActivity"
+          ],
+          "keyMethods": [
+            "onCreate"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/history/HistoryViewModel.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 62,
+          "riskTags": [
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "HistoryViewModel"
+          ],
+          "keyMethods": [
+            "onEvent"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/FavouriteCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 62,
+          "riskTags": [
+            "image_viewer",
+            "intent_uri",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "intent_uri",
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "FavouriteCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/RecommendedCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 60,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "RecommendedCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 56,
+          "riskTags": [
+            "permissions",
+            "settings",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "LoginRepositoryImpl",
+            "PrefsDataStore"
+          ],
+          "keyMethods": [
+            "toggleLoginState"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 56,
+          "riskTags": [
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "SplashViewModel"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/di/AppModule.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 54,
+          "riskTags": [
+            "permissions",
+            "platform_component"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "AppModule"
+          ],
+          "keyMethods": [
+            "provideLoginRepository"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 54,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "OnBoardingItem"
+          ],
+          "keyMethods": [
+            "get"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/AndroidManifest.xml",
+          "importance": "critical",
+          "category": "android-manifest",
+          "nonblankLines": 52,
+          "riskTags": [
+            "android_resource",
+            "intent_uri",
+            "permissions",
+            "platform_component",
+            "screen_lifecycle"
+          ],
+          "matchedTerms": [
+            "intent_uri",
+            "permissions"
+          ],
+          "keyClasses": [
+            "manifest",
+            "application",
+            "activity",
+            "action",
+            "category"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/CartViewModel.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 52,
+          "riskTags": [
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "CartViewModel"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 49,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "HomeRepositoryImpl"
+          ],
+          "keyMethods": [
+            "getRestaurants",
+            "getAds",
+            "getFoodItems",
+            "getRestaurantFromName"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 48,
+          "riskTags": [
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "ProfileViewModel"
+          ],
+          "keyMethods": [
+            "onEvent"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/model/Restaurant.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 37,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "Restaurant"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/repository/UserDataRepository.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 37,
+          "riskTags": [
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "UserDataRepository"
+          ],
+          "keyMethods": [
+            "getSavedRestaurant",
+            "getMenuItems",
+            "getLikedRestaurants",
+            "getCartItems"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/repository/HomeRepository.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 36,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "HomeRepository"
+          ],
+          "keyMethods": [
+            "getRestaurants",
+            "getAds",
+            "getFoodItems",
+            "getRestaurantFromName"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/model/Advertisement.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 33,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "Advertisement"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/repository/LoginRepository.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 32,
+          "riskTags": [
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "LoginRepository"
+          ],
+          "keyMethods": [
+            "readLoginState",
+            "toggleLoginState"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "build.gradle.kts",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 32,
+          "riskTags": [
+            "permissions",
+            "platform_component",
+            "settings"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/FoodikeApp.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 30,
+          "riskTags": [
+            "permissions",
+            "platform_component"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "FoodikeApp"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/model/FoodItem.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 30,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "FoodItem"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/ChipBar.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 114,
+          "riskTags": [
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "ChipBar",
+            "Chip",
+            "ChipGroup"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 99,
+          "riskTags": [
+            "navigation_resource",
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "OnBoarding"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/components/CouponBar.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 98,
+          "riskTags": [
+            "permissions",
+            "settings",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "CouponBar"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/history/components/Tabs.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 84,
+          "riskTags": [
+            "intent_uri",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "intent_uri",
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "Tabs"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/values/strings.xml",
+          "importance": "high",
+          "category": "android-values",
+          "nonblankLines": 82,
+          "riskTags": [
+            "android_resource",
+            "intent_uri",
+            "localization",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "intent_uri",
+            "permissions"
+          ],
+          "keyClasses": [
+            "resources",
+            "string"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/history/History.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 79,
+          "riskTags": [
+            "navigation_resource",
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "History"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 70,
+          "riskTags": [
+            "permissions",
+            "settings"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "FoodikeTextField"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/FoodikeBottomNavigation.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 67,
+          "riskTags": [
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "BottomNavigationDefaults"
+          ],
+          "keyMethods": [
+            "FoodikeBottomNavigation"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "gradle.properties",
+          "importance": "high",
+          "category": "config",
+          "nonblankLines": 45,
+          "riskTags": [
+            "background_work",
+            "intent_uri",
+            "settings"
+          ],
+          "matchedTerms": [
+            "intent_uri"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/DetailScreenState.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 37,
+          "riskTags": [
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "DetailScreenState"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/values/themes.xml",
+          "importance": "high",
+          "category": "android-values",
+          "nonblankLines": 36,
+          "riskTags": [
+            "android_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "resources",
+            "style",
+            "item"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/model/MenuItem.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 33,
+          "riskTags": [
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "MenuItem"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/CartState.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 32,
+          "riskTags": [
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "CartState"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/model/CartItem.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 30,
+          "riskTags": [
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "CartItem"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/components/BillSection.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 88,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "BillSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/history/components/FavouritesSection.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 78,
+          "riskTags": [
+            "intent_uri",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "intent_uri",
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "FavouritesSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/FavouriteScreen.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 71,
+          "riskTags": [
+            "intent_uri",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "intent_uri",
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "FavouriteSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/components/Indicators.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 71,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "Indicator"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/profile/components/ProfileCard.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 71,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "ProfileCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/RecommendedSection.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 65,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "RecommendedSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/GreetingScreen.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 64,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "GreetingSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/components/BottomSection.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 61,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "BottomSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/AdSection.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 58,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "AdSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/ui/theme/Theme.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 52,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "FoodikeTheme"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/common/Extensions.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 51,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/MainSection.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 51,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "MainSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/ui/theme/Type.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 51,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/history/components/TabsContent.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 45,
+          "riskTags": [
+            "intent_uri",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "intent_uri",
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "TabsContent"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/util/Screen.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 43,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "Screen",
+            "Onboarding",
+            "LoginScreen",
+            "Home",
+            "History",
+            "Cart",
+            "Profile",
+            "RestaurantDetails"
+          ],
+          "keyMethods": [
+            "withArgs"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/util/Filters.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 42,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "Filter"
+          ],
+          "keyMethods": [
+            "getAllTags",
+            "getTag"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/HomeScreenState.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 35,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "HomeScreenState"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/ui/theme/Shape.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 34,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/data/repository/Result.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 33,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "Results",
+            "Success",
+            "Error"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/ui/theme/Color.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 33,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/DetailScreenEvent.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 32,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions"
+          ],
+          "keyClasses": [
+            "DetailScreenEvent",
+            "ToggleRecommendedSectionExpandedState",
+            "ToggleNonVegSectionExpandedState",
+            "ToggleVegSectionExpandedState",
+            "ToggleLikedStatus"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        }
+      ],
+      "sourceEvidenceSummary": "Detected 88 source artifact(s) with terms: file_ops, intent_uri, permissions, saf, storage",
+      "requiredTargetCapabilitySearch": [
+        "HarmonyOS Cangjie file picker document access",
+        "HarmonyOS Cangjie file share URI permissions",
+        "HarmonyOS Examples file manager Cangjie"
+      ],
+      "targetStrategyHint": "Replace Android SAF/FileProvider with HarmonyOS file picker, sandbox, or sharing APIs behind a FileAccessService boundary.",
+      "minimumParity": "Copy, move, rename, delete, create folder, collision handling, permission-denied feedback, and stable paths for target UI.",
+      "requiredTests": [
+        "temporary-directory file operation test",
+        "rename collision test",
+        "permission/fallback behavior test"
+      ],
+      "allowedDeferredReasons": [
+        "target file picker API unavailable",
+        "cross-app document permission requires device integration"
+      ],
+      "status": "planned",
+      "plannedPhase": "",
+      "targetCapabilitySearch": [],
+      "targetApiOrLibrary": "",
+      "targetStrategy": "",
+      "targetEndpoints": [],
+      "tests": [],
+      "sdkDeclarationEvidence": [],
+      "cangjieCallableEvidence": [],
+      "discoveryOnlyEvidence": [],
+      "compileProbeEvidence": [],
+      "preResolutionDecision": "",
+      "phaseCapabilityResolution": "",
+      "blocker": "",
+      "targetFallback": "",
+      "futureCompletionPath": "",
+      "notes": ""
+    },
+    {
+      "capabilityId": "image-viewer-gestures",
+      "capabilityName": "Image viewer gestures and metadata",
+      "importance": "critical",
+      "sourcePaths": [
+        "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+        "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/DeliverySection.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/AdCard.kt",
+        "README.md",
+        "app/src/main/java/com/example/foodike/presentation/home/components/TopSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/ThankYouSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/FavouriteCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/RecommendedCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+        "app/src/main/java/com/example/foodike/domain/model/Restaurant.kt",
+        "app/src/main/java/com/example/foodike/domain/model/Advertisement.kt",
+        "app/src/main/java/com/example/foodike/domain/model/FoodItem.kt"
+      ],
+      "sourceEvidence": [
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 719,
+          "riskTags": [
+            "file_ops",
+            "image_viewer",
+            "intent_uri",
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 296,
+          "riskTags": [
+            "image_viewer",
+            "intent_uri",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "RestaurantDetail"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 261,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "HistorySection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 224,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "NavigationGraph",
+            "SetupNavigation",
+            "BottomBar"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 213,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "notification_widget",
+            "permissions",
+            "screen_lifecycle",
+            "settings",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "LoginScreen"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 193,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "Profile"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 187,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "MenuItemCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 169,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "getCustomerInfo"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 160,
+          "riskTags": [
+            "image_viewer",
+            "intent_uri",
+            "navigation_resource",
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "Home"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 155,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "RestaurantDetailCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 139,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "CartItemCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 132,
+          "riskTags": [
+            "image_viewer",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "ItemSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 111,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "Cart"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/components/DeliverySection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 87,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "DeliverySection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/AdCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 84,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "AdCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "README.md",
+          "importance": "critical",
+          "category": "other",
+          "nonblankLines": 78,
+          "riskTags": [
+            "file_ops",
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "platform_component",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/TopSection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 78,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "TopSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 76,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "OnboardingPage"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/ThankYouSection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 73,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "ThankYouSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 67,
+          "riskTags": [
+            "image_viewer",
+            "permissions",
+            "settings",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "SearchBar"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/FavouriteCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 62,
+          "riskTags": [
+            "image_viewer",
+            "intent_uri",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "FavouriteCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/RecommendedCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 60,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "RecommendedCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 54,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [
+            "OnBoardingItem"
+          ],
+          "keyMethods": [
+            "get"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/model/Restaurant.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 37,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [
+            "Restaurant"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/model/Advertisement.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 33,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [
+            "Advertisement"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/model/FoodItem.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 30,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "image_viewer",
+            "zoom",
+            "bitmap",
+            "exif"
+          ],
+          "keyClasses": [
+            "FoodItem"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        }
+      ],
+      "sourceEvidenceSummary": "Detected 26 source artifact(s) with terms: image_viewer, zoom, bitmap, exif",
+      "requiredTargetCapabilitySearch": [
+        "HarmonyOS Cangjie image component gestures zoom pan",
+        "HarmonyOS ArkUI pinch gesture Cangjie image",
+        "HarmonyOS image EXIF metadata Cangjie"
+      ],
+      "targetStrategyHint": "Do not port vendored Android PhotoView line-by-line; implement a target ZoomableImage/MediaViewer contract with gesture or fallback controls.",
+      "minimumParity": "Display current image, previous/next navigation, toolbar visibility, zoom/reset, pan or button fallback, and metadata/details access.",
+      "requiredTests": [
+        "viewer state machine test",
+        "zoom/reset interaction test",
+        "metadata display test"
+      ],
+      "allowedDeferredReasons": [
+        "target gesture API unavailable",
+        "EXIF API unavailable in current SDK"
+      ],
+      "status": "planned",
+      "plannedPhase": "",
+      "targetCapabilitySearch": [],
+      "targetApiOrLibrary": "",
+      "targetStrategy": "",
+      "targetEndpoints": [],
+      "tests": [],
+      "sdkDeclarationEvidence": [],
+      "cangjieCallableEvidence": [],
+      "discoveryOnlyEvidence": [],
+      "compileProbeEvidence": [],
+      "preResolutionDecision": "",
+      "phaseCapabilityResolution": "",
+      "blocker": "",
+      "targetFallback": "",
+      "futureCompletionPath": "",
+      "notes": ""
+    },
+    {
+      "capabilityId": "localization-resources",
+      "capabilityName": "Localized resources and formatted strings",
+      "importance": "high",
+      "sourcePaths": [
+        "app/src/main/AndroidManifest.xml",
+        "app/src/main/res/values/strings.xml",
+        "app/src/main/res/values/themes.xml",
+        "app/src/main/res/values/colors.xml",
+        "app/src/main/res/values/ic_launcher_background.xml",
+        "app/src/main/res/drawable/ic_launcher_background.xml",
+        "app/src/main/res/xml/data_extraction_rules.xml",
+        "app/src/main/res/drawable/ic_launcher_foreground.xml",
+        "app/src/main/res/drawable/ic_profile.xml",
+        "app/src/main/res/xml/backup_rules.xml",
+        "app/src/main/res/drawable/ic_baseline_assignment_24.xml",
+        "app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+        "app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+        "app/src/main/res/drawable/applepie.jpg",
+        "app/src/main/res/drawable/biryani.jpg",
+        "app/src/main/res/drawable/burger.jpg",
+        "app/src/main/res/drawable/chinese.jpg",
+        "app/src/main/res/drawable/chinese_bowl.png",
+        "app/src/main/res/drawable/clock.png",
+        "app/src/main/res/drawable/dosa.jpg",
+        "app/src/main/res/drawable/fb_icon.png",
+        "app/src/main/res/drawable/goog_icon.png",
+        "app/src/main/res/drawable/groceries.png",
+        "app/src/main/res/drawable/ic_non_veg.png",
+        "app/src/main/res/drawable/ic_veg.png",
+        "app/src/main/res/drawable/icon.png",
+        "app/src/main/res/drawable/outlet_card.png",
+        "app/src/main/res/drawable/paratha.jpg",
+        "app/src/main/res/drawable/pizza.jpg",
+        "app/src/main/res/drawable/rider.png",
+        "app/src/main/res/drawable/star.png",
+        "app/src/main/res/drawable/upi.png",
+        "app/src/main/res/mipmap-hdpi/ic_launcher.png",
+        "app/src/main/res/mipmap-hdpi/ic_launcher_round.png",
+        "app/src/main/res/mipmap-mdpi/ic_launcher.png",
+        "app/src/main/res/mipmap-mdpi/ic_launcher_round.png",
+        "app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+        "app/src/main/res/mipmap-xhdpi/ic_launcher_round.png",
+        "app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+        "app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png",
+        "app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+        "app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+      ],
+      "sourceEvidence": [
+        {
+          "sourcePath": "app/src/main/AndroidManifest.xml",
+          "importance": "critical",
+          "category": "android-manifest",
+          "nonblankLines": 52,
+          "riskTags": [
+            "android_resource",
+            "intent_uri",
+            "permissions",
+            "platform_component",
+            "screen_lifecycle"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [
+            "manifest",
+            "application",
+            "activity",
+            "action",
+            "category"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/values/strings.xml",
+          "importance": "high",
+          "category": "android-values",
+          "nonblankLines": 82,
+          "riskTags": [
+            "android_resource",
+            "intent_uri",
+            "localization",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "android_resource",
+            "localization",
+            "strings.xml",
+            "locale"
+          ],
+          "keyClasses": [
+            "resources",
+            "string"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/values/themes.xml",
+          "importance": "high",
+          "category": "android-values",
+          "nonblankLines": 36,
+          "riskTags": [
+            "android_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [
+            "resources",
+            "style",
+            "item"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/values/colors.xml",
+          "importance": "high",
+          "category": "android-values",
+          "nonblankLines": 12,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [
+            "resources",
+            "color"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/values/ic_launcher_background.xml",
+          "importance": "high",
+          "category": "android-values",
+          "nonblankLines": 4,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [
+            "resources",
+            "color"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/ic_launcher_background.xml",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 170,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [
+            "vector",
+            "path"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/xml/data_extraction_rules.xml",
+          "importance": "medium",
+          "category": "android-resource",
+          "nonblankLines": 19,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [
+            "include",
+            "exclude"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/ic_launcher_foreground.xml",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 17,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [
+            "vector",
+            "group",
+            "path"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/ic_profile.xml",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 15,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [
+            "vector",
+            "path"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/xml/backup_rules.xml",
+          "importance": "medium",
+          "category": "android-resource",
+          "nonblankLines": 13,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [
+            "include",
+            "exclude"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/ic_baseline_assignment_24.xml",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 5,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [
+            "vector",
+            "path"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+          "importance": "medium",
+          "category": "android-mipmap",
+          "nonblankLines": 5,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [
+            "background",
+            "foreground"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+          "importance": "medium",
+          "category": "android-mipmap",
+          "nonblankLines": 5,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [
+            "background",
+            "foreground"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/applepie.jpg",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/biryani.jpg",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/burger.jpg",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/chinese.jpg",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/chinese_bowl.png",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/clock.png",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/dosa.jpg",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/fb_icon.png",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/goog_icon.png",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/groceries.png",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/ic_non_veg.png",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/ic_veg.png",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/icon.png",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/outlet_card.png",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/paratha.jpg",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/pizza.jpg",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/rider.png",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/star.png",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/drawable/upi.png",
+          "importance": "medium",
+          "category": "android-drawable",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/mipmap-hdpi/ic_launcher.png",
+          "importance": "medium",
+          "category": "android-mipmap",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/mipmap-hdpi/ic_launcher_round.png",
+          "importance": "medium",
+          "category": "android-mipmap",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/mipmap-mdpi/ic_launcher.png",
+          "importance": "medium",
+          "category": "android-mipmap",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/mipmap-mdpi/ic_launcher_round.png",
+          "importance": "medium",
+          "category": "android-mipmap",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+          "importance": "medium",
+          "category": "android-mipmap",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/mipmap-xhdpi/ic_launcher_round.png",
+          "importance": "medium",
+          "category": "android-mipmap",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+          "importance": "medium",
+          "category": "android-mipmap",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png",
+          "importance": "medium",
+          "category": "android-mipmap",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+          "importance": "medium",
+          "category": "android-mipmap",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png",
+          "importance": "medium",
+          "category": "android-mipmap",
+          "nonblankLines": 0,
+          "riskTags": [
+            "android_resource"
+          ],
+          "matchedTerms": [
+            "android_resource"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        }
+      ],
+      "sourceEvidenceSummary": "Detected 42 source artifact(s) with terms: android_resource, localization, strings.xml, locale",
+      "requiredTargetCapabilitySearch": [
+        "HarmonyOS Cangjie string resource localization",
+        "HarmonyOS resource qualifiers locale string JSON Cangjie",
+        "HarmonyOS Examples localized resources"
+      ],
+      "targetStrategyHint": "Convert Android string resources and locale groups into HarmonyOS resources or a generated resource adapter; avoid hard-coded English for migrated labels.",
+      "minimumParity": "Preserve base strings, placeholders, plurals/arrays when user-visible, and source locale coverage or documented product-level locale reduction.",
+      "requiredTests": [
+        "string key coverage check",
+        "placeholder preservation check",
+        "locale selection smoke test"
+      ],
+      "allowedDeferredReasons": [
+        "product decision to ship fewer locales",
+        "target resource format lacks equivalent construct"
+      ],
+      "status": "planned",
+      "plannedPhase": "",
+      "targetCapabilitySearch": [],
+      "targetApiOrLibrary": "",
+      "targetStrategy": "",
+      "targetEndpoints": [],
+      "tests": [],
+      "sdkDeclarationEvidence": [],
+      "cangjieCallableEvidence": [],
+      "discoveryOnlyEvidence": [],
+      "compileProbeEvidence": [],
+      "preResolutionDecision": "",
+      "phaseCapabilityResolution": "",
+      "blocker": "",
+      "targetFallback": "",
+      "futureCompletionPath": "",
+      "notes": ""
+    },
+    {
+      "capabilityId": "runtime-permissions",
+      "capabilityName": "Runtime permissions and protected platform access",
+      "importance": "high",
+      "sourcePaths": [
+        "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+        "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
+        "app/build.gradle.kts",
+        "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/DeliverySection.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/HomeViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/AdCard.kt",
+        "README.md",
+        "app/src/main/java/com/example/foodike/presentation/home/components/TopSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/ThankYouSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt",
+        "app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt",
+        "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/HistoryViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/FavouriteCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/RecommendedCard.kt",
+        "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
+        "app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt",
+        "app/src/main/java/com/example/foodike/di/AppModule.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+        "app/src/main/AndroidManifest.xml",
+        "app/src/main/java/com/example/foodike/presentation/cart/CartViewModel.kt",
+        "app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt",
+        "app/src/main/java/com/example/foodike/domain/model/Restaurant.kt",
+        "app/src/main/java/com/example/foodike/domain/repository/UserDataRepository.kt",
+        "app/src/main/java/com/example/foodike/domain/repository/HomeRepository.kt",
+        "app/src/main/java/com/example/foodike/domain/model/Advertisement.kt",
+        "app/src/main/java/com/example/foodike/domain/repository/LoginRepository.kt",
+        "build.gradle.kts",
+        "app/src/main/java/com/example/foodike/FoodikeApp.kt",
+        "app/src/main/java/com/example/foodike/domain/model/FoodItem.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/ChipBar.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/CouponBar.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/components/Tabs.kt",
+        "app/src/main/res/values/strings.xml",
+        "app/src/main/java/com/example/foodike/presentation/history/History.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/FoodikeBottomNavigation.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/DetailScreenState.kt",
+        "app/src/main/res/values/themes.xml",
+        "app/src/main/java/com/example/foodike/domain/model/MenuItem.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/CartState.kt",
+        "app/src/main/java/com/example/foodike/domain/model/CartItem.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/BillSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/components/FavouritesSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/FavouriteScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/components/Indicators.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/components/ProfileCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/RecommendedSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/GreetingScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/components/BottomSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/AdSection.kt",
+        "app/src/main/java/com/example/foodike/ui/theme/Theme.kt",
+        "app/src/main/java/com/example/foodike/presentation/common/Extensions.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/MainSection.kt",
+        "app/src/main/java/com/example/foodike/ui/theme/Type.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/components/TabsContent.kt",
+        "app/src/main/java/com/example/foodike/presentation/util/Screen.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/util/Filters.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/HomeScreenState.kt",
+        "app/src/main/java/com/example/foodike/ui/theme/Shape.kt",
+        "app/src/main/java/com/example/foodike/data/repository/Result.kt",
+        "app/src/main/java/com/example/foodike/ui/theme/Color.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/DetailScreenEvent.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/HistoryEvent.kt"
+      ],
+      "sourceEvidence": [
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 719,
+          "riskTags": [
+            "file_ops",
+            "image_viewer",
+            "intent_uri",
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 296,
+          "riskTags": [
+            "image_viewer",
+            "intent_uri",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "RestaurantDetail"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 261,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "HistorySection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 224,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "NavigationGraph",
+            "SetupNavigation",
+            "BottomBar"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 213,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "notification_widget",
+            "permissions",
+            "screen_lifecycle",
+            "settings",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "LoginScreen"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 193,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "Profile"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 187,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "MenuItemCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 169,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "getCustomerInfo"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 160,
+          "riskTags": [
+            "image_viewer",
+            "intent_uri",
+            "navigation_resource",
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "Home"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 155,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "RestaurantDetailCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 139,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "CartItemCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 132,
+          "riskTags": [
+            "image_viewer",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "ItemSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 111,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "Cart"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/build.gradle.kts",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 100,
+          "riskTags": [
+            "navigation_resource",
+            "permissions",
+            "platform_component",
+            "screen_lifecycle",
+            "settings"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 92,
+          "riskTags": [
+            "navigation_resource",
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "RestaurantDetailViewModel"
+          ],
+          "keyMethods": [
+            "onEvent"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/components/DeliverySection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 87,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "DeliverySection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/HomeViewModel.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 86,
+          "riskTags": [
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "HomeViewModel"
+          ],
+          "keyMethods": [
+            "onEvent"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 86,
+          "riskTags": [
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "LoginViewModel"
+          ],
+          "keyMethods": [
+            "onEvent"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/AdCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 84,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "AdCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "README.md",
+          "importance": "critical",
+          "category": "other",
+          "nonblankLines": 78,
+          "riskTags": [
+            "file_ops",
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "platform_component",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/TopSection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 78,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "TopSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 76,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "OnboardingPage"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/ThankYouSection.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 73,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "ThankYouSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 67,
+          "riskTags": [
+            "image_viewer",
+            "permissions",
+            "settings",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "SearchBar"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 62,
+          "riskTags": [
+            "intent_uri",
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "UserDataRepositoryImpl"
+          ],
+          "keyMethods": [
+            "getSavedRestaurant",
+            "getMenuItems",
+            "getLikedRestaurants",
+            "getCartItems"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 62,
+          "riskTags": [
+            "intent_uri",
+            "navigation_resource",
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "MainActivity"
+          ],
+          "keyMethods": [
+            "onCreate"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/history/HistoryViewModel.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 62,
+          "riskTags": [
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "HistoryViewModel"
+          ],
+          "keyMethods": [
+            "onEvent"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/FavouriteCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 62,
+          "riskTags": [
+            "image_viewer",
+            "intent_uri",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "FavouriteCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/RecommendedCard.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 60,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "RecommendedCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 56,
+          "riskTags": [
+            "permissions",
+            "settings",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "LoginRepositoryImpl",
+            "PrefsDataStore"
+          ],
+          "keyMethods": [
+            "toggleLoginState"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 56,
+          "riskTags": [
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "SplashViewModel"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/di/AppModule.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 54,
+          "riskTags": [
+            "permissions",
+            "platform_component"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "AppModule"
+          ],
+          "keyMethods": [
+            "provideLoginRepository"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 54,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "OnBoardingItem"
+          ],
+          "keyMethods": [
+            "get"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/AndroidManifest.xml",
+          "importance": "critical",
+          "category": "android-manifest",
+          "nonblankLines": 52,
+          "riskTags": [
+            "android_resource",
+            "intent_uri",
+            "permissions",
+            "platform_component",
+            "screen_lifecycle"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "manifest",
+            "application",
+            "activity",
+            "action",
+            "category"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/CartViewModel.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 52,
+          "riskTags": [
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "CartViewModel"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 49,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "HomeRepositoryImpl"
+          ],
+          "keyMethods": [
+            "getRestaurants",
+            "getAds",
+            "getFoodItems",
+            "getRestaurantFromName"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 48,
+          "riskTags": [
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "ProfileViewModel"
+          ],
+          "keyMethods": [
+            "onEvent"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/model/Restaurant.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 37,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "Restaurant"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/repository/UserDataRepository.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 37,
+          "riskTags": [
+            "navigation_resource",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "UserDataRepository"
+          ],
+          "keyMethods": [
+            "getSavedRestaurant",
+            "getMenuItems",
+            "getLikedRestaurants",
+            "getCartItems"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/repository/HomeRepository.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 36,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "HomeRepository"
+          ],
+          "keyMethods": [
+            "getRestaurants",
+            "getAds",
+            "getFoodItems",
+            "getRestaurantFromName"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/model/Advertisement.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 33,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "Advertisement"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/repository/LoginRepository.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 32,
+          "riskTags": [
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "LoginRepository"
+          ],
+          "keyMethods": [
+            "readLoginState",
+            "toggleLoginState"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "build.gradle.kts",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 32,
+          "riskTags": [
+            "permissions",
+            "platform_component",
+            "settings"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/FoodikeApp.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 30,
+          "riskTags": [
+            "permissions",
+            "platform_component"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "FoodikeApp"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/model/FoodItem.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 30,
+          "riskTags": [
+            "image_viewer",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "FoodItem"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/ChipBar.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 114,
+          "riskTags": [
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "ChipBar",
+            "Chip",
+            "ChipGroup"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 99,
+          "riskTags": [
+            "navigation_resource",
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "OnBoarding"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/components/CouponBar.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 98,
+          "riskTags": [
+            "permissions",
+            "settings",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "CouponBar"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/history/components/Tabs.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 84,
+          "riskTags": [
+            "intent_uri",
+            "permissions",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "Tabs"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/values/strings.xml",
+          "importance": "high",
+          "category": "android-values",
+          "nonblankLines": 82,
+          "riskTags": [
+            "android_resource",
+            "intent_uri",
+            "localization",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "resources",
+            "string"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/history/History.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 79,
+          "riskTags": [
+            "navigation_resource",
+            "permissions",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "History"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 70,
+          "riskTags": [
+            "permissions",
+            "settings"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "FoodikeTextField"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/FoodikeBottomNavigation.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 67,
+          "riskTags": [
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "BottomNavigationDefaults"
+          ],
+          "keyMethods": [
+            "FoodikeBottomNavigation"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/DetailScreenState.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 37,
+          "riskTags": [
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "DetailScreenState"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/res/values/themes.xml",
+          "importance": "high",
+          "category": "android-values",
+          "nonblankLines": 36,
+          "riskTags": [
+            "android_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "resources",
+            "style",
+            "item"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/model/MenuItem.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 33,
+          "riskTags": [
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "MenuItem"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/CartState.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 32,
+          "riskTags": [
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "CartState"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/domain/model/CartItem.kt",
+          "importance": "high",
+          "category": "kotlin-source",
+          "nonblankLines": 30,
+          "riskTags": [
+            "navigation_resource",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "CartItem"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/components/BillSection.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 88,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "BillSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/history/components/FavouritesSection.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 78,
+          "riskTags": [
+            "intent_uri",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "FavouritesSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/FavouriteScreen.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 71,
+          "riskTags": [
+            "intent_uri",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "FavouriteSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/components/Indicators.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 71,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "Indicator"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/profile/components/ProfileCard.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 71,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "ProfileCard"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/RecommendedSection.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 65,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "RecommendedSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/GreetingScreen.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 64,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "GreetingSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/components/BottomSection.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 61,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "BottomSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/AdSection.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 58,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "AdSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/ui/theme/Theme.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 52,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "FoodikeTheme"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/common/Extensions.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 51,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/components/MainSection.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 51,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "MainSection"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/ui/theme/Type.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 51,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/history/components/TabsContent.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 45,
+          "riskTags": [
+            "intent_uri",
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "TabsContent"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/util/Screen.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 43,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "Screen",
+            "Onboarding",
+            "LoginScreen",
+            "Home",
+            "History",
+            "Cart",
+            "Profile",
+            "RestaurantDetails"
+          ],
+          "keyMethods": [
+            "withArgs"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/util/Filters.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 42,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "Filter"
+          ],
+          "keyMethods": [
+            "getAllTags",
+            "getTag"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/HomeScreenState.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 35,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "HomeScreenState"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/ui/theme/Shape.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 34,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/data/repository/Result.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 33,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "Results",
+            "Success",
+            "Error"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/ui/theme/Color.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 33,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/DetailScreenEvent.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 32,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "DetailScreenEvent",
+            "ToggleRecommendedSectionExpandedState",
+            "ToggleNonVegSectionExpandedState",
+            "ToggleVegSectionExpandedState",
+            "ToggleLikedStatus"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/history/HistoryEvent.kt",
+          "importance": "medium",
+          "category": "kotlin-source",
+          "nonblankLines": 31,
+          "riskTags": [
+            "permissions"
+          ],
+          "matchedTerms": [
+            "permissions",
+            "permission"
+          ],
+          "keyClasses": [
+            "HistoryEvent",
+            "SelectRestaurant"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        }
+      ],
+      "sourceEvidenceSummary": "Detected 87 source artifact(s) with terms: permissions, permission",
+      "requiredTargetCapabilitySearch": [
+        "HarmonyOS Cangjie request permission API",
+        "HarmonyOS permission authorization Cangjie",
+        "HarmonyOS Examples runtime permissions Cangjie"
+      ],
+      "targetStrategyHint": "Map Android runtime permission flows to HarmonyOS permission APIs, preserving denied/empty/retry states.",
+      "minimumParity": "Request required permission, handle grant/deny, show user-facing blocked state, and avoid accessing protected APIs before authorization.",
+      "requiredTests": [
+        "permission state transition test",
+        "denied permission fallback test"
+      ],
+      "allowedDeferredReasons": [
+        "permission API requires device integration",
+        "capability unavailable in simulator"
+      ],
+      "status": "planned",
+      "plannedPhase": "",
+      "targetCapabilitySearch": [],
+      "targetApiOrLibrary": "",
+      "targetStrategy": "",
+      "targetEndpoints": [],
+      "tests": [],
+      "sdkDeclarationEvidence": [],
+      "cangjieCallableEvidence": [],
+      "discoveryOnlyEvidence": [],
+      "compileProbeEvidence": [],
+      "preResolutionDecision": "",
+      "phaseCapabilityResolution": "",
+      "blocker": "",
+      "targetFallback": "",
+      "futureCompletionPath": "",
+      "notes": ""
+    },
+    {
+      "capabilityId": "background-and-platform-components",
+      "capabilityName": "Background work, services, receivers, widgets, and notifications",
+      "importance": "high",
+      "sourcePaths": [
+        "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "app/build.gradle.kts",
+        "README.md",
+        "app/src/main/java/com/example/foodike/di/AppModule.kt",
+        "app/src/main/AndroidManifest.xml",
+        "gradle/libs.versions.toml",
+        "build.gradle.kts",
+        "app/src/main/java/com/example/foodike/FoodikeApp.kt",
+        "gradle/wrapper/gradle-wrapper.properties",
+        "gradle.properties"
+      ],
+      "sourceEvidence": [
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 213,
+          "riskTags": [
+            "image_viewer",
+            "navigation_resource",
+            "notification_widget",
+            "permissions",
+            "screen_lifecycle",
+            "settings",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "notification_widget",
+            "notification",
+            "remoteviews"
+          ],
+          "keyClasses": [],
+          "keyMethods": [
+            "LoginScreen"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/build.gradle.kts",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 100,
+          "riskTags": [
+            "navigation_resource",
+            "permissions",
+            "platform_component",
+            "screen_lifecycle",
+            "settings"
+          ],
+          "matchedTerms": [
+            "platform_component",
+            "service",
+            "receiver"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "README.md",
+          "importance": "critical",
+          "category": "other",
+          "nonblankLines": 78,
+          "riskTags": [
+            "file_ops",
+            "image_viewer",
+            "navigation_resource",
+            "permissions",
+            "platform_component",
+            "screen_lifecycle",
+            "state_model"
+          ],
+          "matchedTerms": [
+            "platform_component",
+            "service",
+            "receiver"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/di/AppModule.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 54,
+          "riskTags": [
+            "permissions",
+            "platform_component"
+          ],
+          "matchedTerms": [
+            "platform_component",
+            "service",
+            "receiver"
+          ],
+          "keyClasses": [
+            "AppModule"
+          ],
+          "keyMethods": [
+            "provideLoginRepository"
+          ],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/AndroidManifest.xml",
+          "importance": "critical",
+          "category": "android-manifest",
+          "nonblankLines": 52,
+          "riskTags": [
+            "android_resource",
+            "intent_uri",
+            "permissions",
+            "platform_component",
+            "screen_lifecycle"
+          ],
+          "matchedTerms": [
+            "platform_component",
+            "service",
+            "receiver"
+          ],
+          "keyClasses": [
+            "manifest",
+            "application",
+            "activity",
+            "action",
+            "category"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "gradle/libs.versions.toml",
+          "importance": "critical",
+          "category": "config",
+          "nonblankLines": 49,
+          "riskTags": [
+            "navigation_resource",
+            "platform_component",
+            "screen_lifecycle",
+            "settings"
+          ],
+          "matchedTerms": [
+            "platform_component",
+            "service",
+            "receiver"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "build.gradle.kts",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 32,
+          "riskTags": [
+            "permissions",
+            "platform_component",
+            "settings"
+          ],
+          "matchedTerms": [
+            "platform_component",
+            "service",
+            "receiver"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "app/src/main/java/com/example/foodike/FoodikeApp.kt",
+          "importance": "critical",
+          "category": "kotlin-source",
+          "nonblankLines": 30,
+          "riskTags": [
+            "permissions",
+            "platform_component"
+          ],
+          "matchedTerms": [
+            "platform_component",
+            "service",
+            "receiver"
+          ],
+          "keyClasses": [
+            "FoodikeApp"
+          ],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "gradle/wrapper/gradle-wrapper.properties",
+          "importance": "critical",
+          "category": "config",
+          "nonblankLines": 6,
+          "riskTags": [
+            "platform_component"
+          ],
+          "matchedTerms": [
+            "platform_component",
+            "service",
+            "receiver"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        },
+        {
+          "sourcePath": "gradle.properties",
+          "importance": "high",
+          "category": "config",
+          "nonblankLines": 45,
+          "riskTags": [
+            "background_work",
+            "intent_uri",
+            "settings"
+          ],
+          "matchedTerms": [
+            "background_work",
+            "service"
+          ],
+          "keyClasses": [],
+          "keyMethods": [],
+          "dependencies": []
+        }
+      ],
+      "sourceEvidenceSummary": "Detected 10 source artifact(s) with terms: notification_widget, notification, remoteviews, platform_component, service, receiver, background_work",
+      "requiredTargetCapabilitySearch": [
+        "HarmonyOS Cangjie background task service",
+        "HarmonyOS notification Cangjie API",
+        "HarmonyOS widget Cangjie examples"
+      ],
+      "targetStrategyHint": "Replace Android platform components with HarmonyOS abilities, background tasks, notifications, or documented product-level omissions.",
+      "minimumParity": "Preserve user-visible background behavior, notification/widget state, scheduling semantics, and lifecycle entry points when in source scope.",
+      "requiredTests": [
+        "background state smoke test",
+        "notification/widget fallback test"
+      ],
+      "allowedDeferredReasons": [
+        "target background capability unavailable",
+        "requires signed device or service configuration"
+      ],
+      "status": "planned",
+      "plannedPhase": "",
+      "targetCapabilitySearch": [],
+      "targetApiOrLibrary": "",
+      "targetStrategy": "",
+      "targetEndpoints": [],
+      "tests": [],
+      "sdkDeclarationEvidence": [],
+      "cangjieCallableEvidence": [],
+      "discoveryOnlyEvidence": [],
+      "compileProbeEvidence": [],
+      "preResolutionDecision": "",
+      "phaseCapabilityResolution": "",
+      "blocker": "",
+      "targetFallback": "",
+      "futureCompletionPath": "",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,675 @@
+{
+    "xml": {
+        "mode": "xml_only",
+        "views_by_id": {},
+        "note": "Kotlin PSI bindings are added by KotlinAndroidSemanticExtractor."
+    },
+    "kotlin": {
+        "mode": "kotlin_psi",
+        "items": [],
+        "click_events": [
+            {
+                "kind": "click_handler",
+                "api": "IconButton",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\Cart.kt",
+                "line": 79,
+                "enclosing_class": "",
+                "enclosing_function": "Cart",
+                "code": "IconButton(onClick = { navController.navigateUp() }) { Icon(imageVector = Icons.Outlined.Close, contentDescription = stringResource(id = R.string.back)) }",
+                "has_on_click": true
+            },
+            {
+                "kind": "click_handler",
+                "api": "Button",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\BillSection.kt",
+                "line": 83,
+                "enclosing_class": "",
+                "enclosing_function": "BillSection",
+                "code": "Button(onClick = { /*TODO*/ }) { Text(text = \"Proceed to Pay\") }",
+                "has_on_click": true
+            },
+            {
+                "kind": "click_handler",
+                "api": "clickable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CartItemCard.kt",
+                "line": 127,
+                "enclosing_class": "",
+                "enclosing_function": "CartItemCard",
+                "code": "clickable { if (state != 0) { state-- } }",
+                "has_on_click": false
+            },
+            {
+                "kind": "click_handler",
+                "api": "clickable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CartItemCard.kt",
+                "line": 142,
+                "enclosing_class": "",
+                "enclosing_function": "CartItemCard",
+                "code": "clickable { state++ }",
+                "has_on_click": false
+            },
+            {
+                "kind": "click_handler",
+                "api": "clickable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CouponBar.kt",
+                "line": 99,
+                "enclosing_class": "",
+                "enclosing_function": "CouponBar",
+                "code": "clickable { }",
+                "has_on_click": false
+            },
+            {
+                "kind": "click_handler",
+                "api": "IconButton",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\DeliverySection.kt",
+                "line": 68,
+                "enclosing_class": "",
+                "enclosing_function": "DeliverySection",
+                "code": "IconButton(onClick = { }) { Icon( imageVector = Icons.Outlined.Edit, contentDescription = \"Back\", modifier = Modifier.alpha(0.5f), ) }",
+                "has_on_click": true
+            },
+            {
+                "kind": "click_handler",
+                "api": "IconButton",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+                "line": 101,
+                "enclosing_class": "",
+                "enclosing_function": "RestaurantDetail",
+                "code": "IconButton(onClick = { navController.navigateUp() }) { Icon( imageVector = Icons.Outlined.ArrowBack, contentDescription = stringResource(R.string.favourite) ) }",
+                "has_on_click": true
+            },
+            {
+                "kind": "click_handler",
+                "api": "IconButton",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+                "line": 128,
+                "enclosing_class": "",
+                "enclosing_function": "RestaurantDetail",
+                "code": "IconButton(onClick = { }) { Icon( imageVector = Icons.Outlined.Share, contentDescription = stringResource( R.string.share ) ) }",
+                "has_on_click": true
+            },
+            {
+                "kind": "click_handler",
+                "api": "IconButton",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+                "line": 174,
+                "enclosing_class": "",
+                "enclosing_function": "RestaurantDetail",
+                "code": "IconButton( modifier = Modifier .weight(1f) .alpha(ContentAlpha.medium) .rotate(rotationState), onClick = { viewModel.onEvent(DetailScreenEvent.ToggleRecommendedSectionExpandedState) }) { Icon( imageVector = Icons.Default.ArrowDropDown, contentDescription = stringResource(R.string.drop_down_arrow) ) }",
+                "has_on_click": true
+            },
+            {
+                "kind": "click_handler",
+                "api": "IconButton",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+                "line": 233,
+                "enclosing_class": "",
+                "enclosing_function": "RestaurantDetail",
+                "code": "IconButton( modifier = Modifier .weight(1f) .alpha(ContentAlpha.medium) .rotate(rotationStateNonVeg), onClick = { viewModel.onEvent(DetailScreenEvent.ToggleNonVegSectionExpandedState) }) { Icon( imageVector = Icons.Default.ArrowDropDown, contentDescription = stringResource(R.string.drop_down_arrow) ) }",
+                "has_on_click": true
+            },
+            {
+                "kind": "click_handler",
+                "api": "IconButton",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+                "line": 288,
+                "enclosing_class": "",
+                "enclosing_function": "RestaurantDetail",
+                "code": "IconButton( modifier = Modifier .weight(1f) .alpha(ContentAlpha.medium) .rotate(rotationStateVeg), onClick = { viewModel.onEvent(DetailScreenEvent.ToggleVegSectionExpandedState) }) { Icon( imageVector = Icons.Default.ArrowDropDown, contentDescription = stringResource(R.string.drop_down_arrow) ) }",
+                "has_on_click": true
+            },
+            {
+                "kind": "click_handler",
+                "api": "FloatingActionButton",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+                "line": 328,
+                "enclosing_class": "",
+                "enclosing_function": "RestaurantDetail",
+                "code": "FloatingActionButton( onClick = { navController.navigate(Screen.Cart.route) }, backgroundColor = MaterialTheme.colors.primary ) { Icon(Icons.Outlined.ShoppingCart, stringResource(R.string.cart)) }",
+                "has_on_click": true
+            },
+            {
+                "kind": "click_handler",
+                "api": "clickable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\components\\MenuItemCard.kt",
+                "line": 138,
+                "enclosing_class": "",
+                "enclosing_function": "MenuItemCard",
+                "code": "clickable { state++ }",
+                "has_on_click": false
+            },
+            {
+                "kind": "click_handler",
+                "api": "clickable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\components\\MenuItemCard.kt",
+                "line": 178,
+                "enclosing_class": "",
+                "enclosing_function": "MenuItemCard",
+                "code": "clickable { state-- }",
+                "has_on_click": false
+            },
+            {
+                "kind": "click_handler",
+                "api": "clickable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\components\\MenuItemCard.kt",
+                "line": 191,
+                "enclosing_class": "",
+                "enclosing_function": "MenuItemCard",
+                "code": "clickable { state++ }",
+                "has_on_click": false
+            },
+            {
+                "kind": "click_handler",
+                "api": "clickable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\FavouritesSection.kt",
+                "line": 66,
+                "enclosing_class": "",
+                "enclosing_function": "FavouritesSection",
+                "code": "clickable { onClick(list[it]) }",
+                "has_on_click": true
+            },
+            {
+                "kind": "click_handler",
+                "api": "Button",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\HistorySection.kt",
+                "line": 121,
+                "enclosing_class": "",
+                "enclosing_function": "HistorySection",
+                "code": "Button(onClick = { /*TODO*/ }) { Text(text = \"Reorder\") }",
+                "has_on_click": true
+            },
+            {
+                "kind": "click_handler",
+                "api": "Button",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\HistorySection.kt",
+                "line": 250,
+                "enclosing_class": "",
+                "enclosing_function": "HistorySection",
+                "code": "Button(onClick = { /*TODO*/ }) { Text(text = \"Reorder\") }",
+                "has_on_click": true
+            },
+            {
+                "kind": "click_handler",
+                "api": "clickable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\HistorySection.kt",
+                "line": 272,
+                "enclosing_class": "",
+                "enclosing_function": "HistorySection",
+                "code": "clickable { }",
+                "has_on_click": false
+            },
+            {
+                "kind": "click_handler",
+                "api": "clickable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreen.kt",
+                "line": 157,
+                "enclosing_class": "",
+                "enclosing_function": "Home",
+                "code": "clickable { viewModel.onEvent(HomeScreenEvent.SelectRestaurant(homeScreenState.restaurantList[it]) { navController.navigate(Screen.RestaurantDetails.route) }) }",
+                "has_on_click": false
+            },
+            {
+                "kind": "click_handler",
+                "api": "clickable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\FavouriteScreen.kt",
+                "line": 71,
+                "enclosing_class": "",
+                "enclosing_function": "FavouriteSection",
+                "code": "clickable { onClick(list[it]) }",
+                "has_on_click": true
+            },
+            {
+                "kind": "click_handler",
+                "api": "clickable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\TopSection.kt",
+                "line": 66,
+                "enclosing_class": "",
+                "enclosing_function": "TopSection",
+                "code": "clickable { navController.navigate(Screen.Profile.route) }",
+                "has_on_click": false
+            },
+            {
+                "kind": "click_handler",
+                "api": "clickable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\TopSection.kt",
+                "line": 74,
+                "enclosing_class": "",
+                "enclosing_function": "TopSection",
+                "code": "clickable { }",
+                "has_on_click": false
+            },
+            {
+                "kind": "click_handler",
+                "api": "clickable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginScreen.kt",
+                "line": 146,
+                "enclosing_class": "",
+                "enclosing_function": "LoginScreen",
+                "code": "clickable { Toast .makeText(context, R.string.coming_soon, Toast.LENGTH_SHORT) .show() }",
+                "has_on_click": false
+            },
+            {
+                "kind": "click_handler",
+                "api": "Button",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginScreen.kt",
+                "line": 155,
+                "enclosing_class": "",
+                "enclosing_function": "LoginScreen",
+                "code": "Button(modifier = Modifier.width(200.dp), onClick = { viewModel.onEvent(LoginEvent.PerformLogin { navController.navigate(Screen.Home.route) { popUpTo(navController.graph.findStartDestination().id) { inclusive = true } } }) }) { Text( text = stringResource(R.string.login), fontSize = 16.sp, ) }",
+                "has_on_click": true
+            },
+            {
+                "kind": "click_handler",
+                "api": "clickable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginScreen.kt",
+                "line": 209,
+                "enclosing_class": "",
+                "enclosing_function": "LoginScreen",
+                "code": "clickable { Toast .makeText(context, R.string.coming_soon, Toast.LENGTH_SHORT) .show() }",
+                "has_on_click": false
+            },
+            {
+                "kind": "click_handler",
+                "api": "clickable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginScreen.kt",
+                "line": 219,
+                "enclosing_class": "",
+                "enclosing_function": "LoginScreen",
+                "code": "clickable { Toast .makeText(context, R.string.coming_soon, Toast.LENGTH_SHORT) .show() }",
+                "has_on_click": false
+            },
+            {
+                "kind": "click_handler",
+                "api": "clickable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginScreen.kt",
+                "line": 230,
+                "enclosing_class": "",
+                "enclosing_function": "LoginScreen",
+                "code": "clickable { Toast .makeText(context, R.string.coming_soon, Toast.LENGTH_SHORT) .show() }",
+                "has_on_click": false
+            },
+            {
+                "kind": "click_handler",
+                "api": "FloatingActionButton",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\components\\BottomSection.kt",
+                "line": 57,
+                "enclosing_class": "",
+                "enclosing_function": "BottomSection",
+                "code": "FloatingActionButton( onClick = onNextClicked, modifier = Modifier.align(CenterEnd), contentColor = Color.White ) { Icon(Icons.Outlined.KeyboardArrowRight, null) }",
+                "has_on_click": true
+            },
+            {
+                "kind": "click_handler",
+                "api": "IconButton",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\Profile.kt",
+                "line": 80,
+                "enclosing_class": "",
+                "enclosing_function": "Profile",
+                "code": "IconButton(onClick = { navController.navigateUp() }) { Icon(imageVector = Icons.Outlined.ArrowBack, contentDescription = stringResource(R.string.back)) }",
+                "has_on_click": true
+            },
+            {
+                "kind": "click_handler",
+                "api": "clickable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\Profile.kt",
+                "line": 129,
+                "enclosing_class": "",
+                "enclosing_function": "Profile",
+                "code": "clickable { }",
+                "has_on_click": false
+            },
+            {
+                "kind": "click_handler",
+                "api": "Button",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\Profile.kt",
+                "line": 188,
+                "enclosing_class": "",
+                "enclosing_function": "Profile",
+                "code": "Button( modifier = Modifier.width(200.dp), onClick = { viewModel.onEvent(ProfileEvent.PerformLogout { navController.navigate(Screen.Onboarding.route) { popUpTo(navController.graph.findStartDestination().id) { inclusive = true } } }) } ) { Text( text = stringResource(R.string.log_out), fontSize = 16.sp, ) }",
+                "has_on_click": true
+            },
+            {
+                "kind": "click_handler",
+                "api": "clickable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\components\\ProfileCard.kt",
+                "line": 53,
+                "enclosing_class": "",
+                "enclosing_function": "ProfileCard",
+                "code": "clickable { onClick() }",
+                "has_on_click": true
+            },
+            {
+                "kind": "click_handler",
+                "api": "FloatingActionButton",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 153,
+                "enclosing_class": "",
+                "enclosing_function": "SetupNavigation",
+                "code": "FloatingActionButton( onClick = { navController.navigate(Screen.Cart.route) }, backgroundColor = MaterialTheme.colors.primary ) { Icon(Icons.Outlined.ShoppingCart, \"Cart\") }",
+                "has_on_click": true
+            }
+        ],
+        "state_events": [
+            {
+                "kind": "state_property",
+                "name": "_cartState",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\CartViewModel.kt",
+                "line": 43,
+                "code": "private val _cartState = mutableStateOf( CartState() )"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "mutableStateOf",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\CartViewModel.kt",
+                "line": 43,
+                "enclosing_class": "CartViewModel",
+                "enclosing_function": "",
+                "code": "mutableStateOf( CartState() )"
+            },
+            {
+                "kind": "state_property",
+                "name": "state",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CartItemCard.kt",
+                "line": 66,
+                "code": "var state by remember { mutableStateOf(cartItem.noOfItems) }"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "mutableStateOf",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CartItemCard.kt",
+                "line": 66,
+                "enclosing_class": "",
+                "enclosing_function": "CartItemCard",
+                "code": "mutableStateOf(cartItem.noOfItems)"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "remember",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CartItemCard.kt",
+                "line": 66,
+                "enclosing_class": "",
+                "enclosing_function": "CartItemCard",
+                "code": "remember { mutableStateOf(cartItem.noOfItems) }"
+            },
+            {
+                "kind": "state_property",
+                "name": "text",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CouponBar.kt",
+                "line": 59,
+                "code": "var text by remember { mutableStateOf(\"\") }"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "mutableStateOf",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CouponBar.kt",
+                "line": 59,
+                "enclosing_class": "",
+                "enclosing_function": "CouponBar",
+                "code": "mutableStateOf(\"\")"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "remember",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CouponBar.kt",
+                "line": 59,
+                "enclosing_class": "",
+                "enclosing_function": "CouponBar",
+                "code": "remember { mutableStateOf(\"\") }"
+            },
+            {
+                "kind": "state_property",
+                "name": "inputValue",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\ItemSection.kt",
+                "line": 101,
+                "code": "val inputValue = remember { mutableStateOf(\"\") }"
+            },
+            {
+                "kind": "state_property",
+                "name": "hintState",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\ItemSection.kt",
+                "line": 102,
+                "code": "val hintState = remember { mutableStateOf(true) }"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "mutableStateOf",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\ItemSection.kt",
+                "line": 101,
+                "enclosing_class": "",
+                "enclosing_function": "ItemSection",
+                "code": "mutableStateOf(\"\")"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "remember",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\ItemSection.kt",
+                "line": 101,
+                "enclosing_class": "",
+                "enclosing_function": "ItemSection",
+                "code": "remember { mutableStateOf(\"\") }"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "mutableStateOf",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\ItemSection.kt",
+                "line": 103,
+                "enclosing_class": "",
+                "enclosing_function": "ItemSection",
+                "code": "mutableStateOf(true)"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "remember",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\ItemSection.kt",
+                "line": 102,
+                "enclosing_class": "",
+                "enclosing_function": "ItemSection",
+                "code": "remember { mutableStateOf(true) }"
+            },
+            {
+                "kind": "state_property",
+                "name": "_isLoading",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\common\\SplashViewModel.kt",
+                "line": 45,
+                "code": "private val _isLoading: MutableStateFlow<Boolean> = MutableStateFlow(true)"
+            },
+            {
+                "kind": "state_property",
+                "name": "isLoading",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\common\\SplashViewModel.kt",
+                "line": 46,
+                "code": "val isLoading = _isLoading.asStateFlow()"
+            },
+            {
+                "kind": "state_property",
+                "name": "_startDestination",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\common\\SplashViewModel.kt",
+                "line": 48,
+                "code": "private val _startDestination: MutableState<String> = mutableStateOf(Screen.Onboarding.route)"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "mutableStateOf",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\common\\SplashViewModel.kt",
+                "line": 48,
+                "enclosing_class": "SplashViewModel",
+                "enclosing_function": "",
+                "code": "mutableStateOf(Screen.Onboarding.route)"
+            },
+            {
+                "kind": "state_property",
+                "name": "text",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\SearchBar.kt",
+                "line": 46,
+                "code": "var text by remember { mutableStateOf(\"\") }"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "mutableStateOf",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\SearchBar.kt",
+                "line": 46,
+                "enclosing_class": "",
+                "enclosing_function": "SearchBar",
+                "code": "mutableStateOf(\"\")"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "remember",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\SearchBar.kt",
+                "line": 46,
+                "enclosing_class": "",
+                "enclosing_function": "SearchBar",
+                "code": "remember { mutableStateOf(\"\") }"
+            },
+            {
+                "kind": "state_property",
+                "name": "_detailScreenState",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetailViewModel.kt",
+                "line": 44,
+                "code": "private val _detailScreenState = mutableStateOf(DetailScreenState())"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "mutableStateOf",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetailViewModel.kt",
+                "line": 44,
+                "enclosing_class": "RestaurantDetailViewModel",
+                "enclosing_function": "",
+                "code": "mutableStateOf(DetailScreenState())"
+            },
+            {
+                "kind": "state_property",
+                "name": "state",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\components\\MenuItemCard.kt",
+                "line": 73,
+                "code": "var state by remember { mutableStateOf(0) }"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "mutableStateOf",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\components\\MenuItemCard.kt",
+                "line": 73,
+                "enclosing_class": "",
+                "enclosing_function": "MenuItemCard",
+                "code": "mutableStateOf(0)"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "remember",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\components\\MenuItemCard.kt",
+                "line": 73,
+                "enclosing_class": "",
+                "enclosing_function": "MenuItemCard",
+                "code": "remember { mutableStateOf(0) }"
+            },
+            {
+                "kind": "state_property",
+                "name": "_likedRestaurants",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\HistoryViewModel.kt",
+                "line": 46,
+                "code": "private val _likedRestaurants = mutableStateOf(HistoryState())"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "mutableStateOf",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\HistoryViewModel.kt",
+                "line": 46,
+                "enclosing_class": "HistoryViewModel",
+                "enclosing_function": "",
+                "code": "mutableStateOf(HistoryState())"
+            },
+            {
+                "kind": "state_property",
+                "name": "_homeScreenState",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeViewModel.kt",
+                "line": 47,
+                "code": "private val _homeScreenState = mutableStateOf( HomeScreenState() )"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "mutableStateOf",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeViewModel.kt",
+                "line": 47,
+                "enclosing_class": "HomeViewModel",
+                "enclosing_function": "",
+                "code": "mutableStateOf( HomeScreenState() )"
+            },
+            {
+                "kind": "state_property",
+                "name": "selectedFilter",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ChipBar.kt",
+                "line": 52,
+                "code": "val selectedFilter: MutableState<Filter?> = remember { mutableStateOf(null) }"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "mutableStateOf",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ChipBar.kt",
+                "line": 52,
+                "enclosing_class": "",
+                "enclosing_function": "ChipBar",
+                "code": "mutableStateOf(null)"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "remember",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ChipBar.kt",
+                "line": 52,
+                "enclosing_class": "",
+                "enclosing_function": "ChipBar",
+                "code": "remember { mutableStateOf(null) }"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "LaunchedEffect",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginScreen.kt",
+                "line": 86,
+                "enclosing_class": "",
+                "enclosing_function": "LoginScreen",
+                "code": "LaunchedEffect(key1 = true) { viewModel.eventFlow.collectLatest { event -> when (event) { is UiEvent.ShowSnackbar -> { scaffoldState.snackbarHostState.showSnackbar( message = event.message, duration = SnackbarDuration.Short ) } } } }"
+            },
+            {
+                "kind": "state_property",
+                "name": "_email",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginViewModel.kt",
+                "line": 46,
+                "code": "private val _email = mutableStateOf( FoodikeTextFieldState( hint = \"Enter email or phone number\" ) )"
+            },
+            {
+                "kind": "state_property",
+                "name": "_password",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginViewModel.kt",
+                "line": 53,
+                "code": "private val _password = mutableStateOf( FoodikeTextFieldState( hint = \"Password\" ) )"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "mutableStateOf",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginViewModel.kt",
+                "line": 46,
+                "enclosing_class": "LoginViewModel",
+                "enclosing_function": "",
+                "code": "mutableStateOf( FoodikeTextFieldState( hint = \"Enter email or phone number\" ) )"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "mutableStateOf",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginViewModel.kt",
+                "line": 53,
+                "enclosing_class": "LoginViewModel",
+                "enclosing_function": "",
+                "code": "mutableStateOf( FoodikeTextFieldState( hint = \"Password\" ) )"
+            },
+            {
+                "kind": "state_or_effect",
+                "api": "remember",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 136,
+                "enclosing_class": "",
+                "enclosing_function": "SetupNavigation",
+                "code": "remember { derivedStateOf { scrollState.firstVisibleItemIndex == 0 } }"
+            }
+        ]
+    },
+    "mode": "xml_plus_kotlin_psi"
+}

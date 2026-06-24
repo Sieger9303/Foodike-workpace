@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-24T10:58:52+00:00",
+  "summary": {
+    "productionCodeFiles": 0,
+    "productionCodeNonblankLines": 0,
+    "largestProductionCodeFileNonblankLines": 0,
+    "largeProductionCodeFiles": 0,
+    "endpointBearingFeatureRows": 0,
+    "endpointTargetFiles": 0,
+    "largestEndpointFileShare": null,
+    "concentratedEndpointFiles": 0,
+    "broadShellEndpointFiles": 0,
+    "uiSurfaceFiles": 0,
+    "concentratedUiSurfaceFiles": 0,
+    "uiEndpointBearingFeatureRows": 0,
+    "uiEndpointTargetFiles": 0,
+    "concentratedUiEndpointFiles": 0,
+    "entryModuleStatus": "SKIPPED",
+    "entryRootPackage": ""
+  },
+  "thresholds": {
+    "largeFileNonblankLines": 900,
+    "fileShareOfProductionCode": 0.35,
+    "endpointFeatureRows": 25,
+    "endpointShareOfRows": 0.4,
+    "uiBuilderSymbols": 12,
+    "uiEndpointFeatureRows": 10,
+    "uiEndpointShareOfRows": 0.35
+  },
+  "findings": [],
+  "largeFiles": [],
+  "endpointConcentration": [],
+  "broadShellEndpointFiles": [],
+  "uiSurfaceFiles": [],
+  "uiEndpointConcentration": [],
+  "topEndpointFiles": [],
+  "entryModule": {
+    "expectedRootPackage": "ohos_app_cangjie_entry",
+    "status": "SKIPPED",
+    "packageName": "",
+    "combinedDynamicRoots": [],
+    "srcEntryRoots": [],
+    "sourcePackageRoots": [],
+    "mismatches": [],
+    "reason": "entry/cjpm.toml not found"
+  },
+  "recommendedRepairInstruction": "Use the source project structure as a guide to preserve responsibility boundaries, but adapt it to idiomatic Cangjie modules. Merge source fragments when that is clearer in Cangjie, yet keep single-file LOC and endpoint concentration under control. If many unrelated source clusters point to a broad shell file, prefer extracting or naming domain/service/state functions and update matrix evidence to those specific endpoints. For UI-heavy phases, keep routes/pages mutually rendered, preserve source-visible screen patterns, and avoid turning settings, viewer, folder picker, gallery, and support flows into one long debug dashboard."
+}

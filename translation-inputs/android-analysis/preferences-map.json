@@ -1,0 +1,41 @@
+[
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\LoginRepositoryImpl.kt",
+        "class_name": "LoginRepositoryImpl",
+        "method": "toggleLoginState",
+        "signature": "toggleLoginState()",
+        "line": 56,
+        "end_line": 61,
+        "operation": "put",
+        "value_type": "Preferences",
+        "key": "LOGIN_STATE_KEY",
+        "keys": [
+            "LOGIN_STATE_KEY"
+        ],
+        "storage_kind": "DataStore"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\LoginRepositoryImpl.kt",
+        "class_name": "PrefsDataStore",
+        "method": "<property>",
+        "line": 69,
+        "operation": "declare",
+        "value_type": "DataStore<Preferences>",
+        "key": "dataStore",
+        "preference_files": [],
+        "storage_kind": "DataStore",
+        "code": "private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(fileName)"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\LoginRepositoryImpl.kt",
+        "class_name": "PrefsDataStore",
+        "method": "<property>",
+        "line": 70,
+        "operation": "declare",
+        "value_type": "DataStore<Preferences>",
+        "key": "mDataStore",
+        "preference_files": [],
+        "storage_kind": "DataStore",
+        "code": "val mDataStore: DataStore<Preferences> = context.dataStore"
+    }
+]

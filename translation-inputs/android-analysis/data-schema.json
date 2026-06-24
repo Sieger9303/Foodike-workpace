@@ -1,0 +1,675 @@
+[
+    {
+        "class_name": "Success",
+        "qualified_name": "com.example.foodike.data.repository.Success",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\Result.kt",
+        "line": 29,
+        "used_as_data_model": false,
+        "fields": [
+            {
+                "name": "data",
+                "type": "T",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 29
+            }
+        ],
+        "constructors": [
+            "Success(data: T)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "Error",
+        "qualified_name": "com.example.foodike.data.repository.Error",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\Result.kt",
+        "line": 30,
+        "used_as_data_model": false,
+        "fields": [
+            {
+                "name": "exception",
+                "type": "Exception",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 30
+            }
+        ],
+        "constructors": [
+            "Error(exception: Exception)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "Advertisement",
+        "qualified_name": "com.example.foodike.domain.model.Advertisement",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\Advertisement.kt",
+        "line": 31,
+        "used_as_data_model": true,
+        "fields": [
+            {
+                "name": "title",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 32
+            },
+            {
+                "name": "subTitle",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 33
+            },
+            {
+                "name": "color",
+                "type": "Color",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 34
+            },
+            {
+                "name": "image",
+                "type": "Int",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 35
+            }
+        ],
+        "constructors": [
+            "Advertisement(title: String, subTitle: String, color: Color, image: Int)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "CartItem",
+        "qualified_name": "com.example.foodike.domain.model.CartItem",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\CartItem.kt",
+        "line": 29,
+        "used_as_data_model": true,
+        "fields": [
+            {
+                "name": "menuItem",
+                "type": "MenuItem",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 30
+            },
+            {
+                "name": "noOfItems",
+                "type": "Int",
+                "mutable": true,
+                "source": "primary_constructor_var",
+                "line": 31
+            }
+        ],
+        "constructors": [
+            "CartItem(menuItem: MenuItem, noOfItems: Int)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "FoodItem",
+        "qualified_name": "com.example.foodike.domain.model.FoodItem",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\FoodItem.kt",
+        "line": 29,
+        "used_as_data_model": true,
+        "fields": [
+            {
+                "name": "image",
+                "type": "Int",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 30
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 31
+            }
+        ],
+        "constructors": [
+            "FoodItem(image: Int, name: String)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "MenuItem",
+        "qualified_name": "com.example.foodike.domain.model.MenuItem",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\MenuItem.kt",
+        "line": 29,
+        "used_as_data_model": true,
+        "fields": [
+            {
+                "name": "dish",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 30
+            },
+            {
+                "name": "price",
+                "type": "Double",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 31
+            },
+            {
+                "name": "rating",
+                "type": "Double",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 32
+            },
+            {
+                "name": "noOfRatings",
+                "type": "Int",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 33
+            },
+            {
+                "name": "isVegetarian",
+                "type": "Boolean",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 34
+            }
+        ],
+        "constructors": [
+            "MenuItem(dish: String, price: Double, rating: Double, noOfRatings: Int, isVegetarian: Boolean)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "Restaurant",
+        "qualified_name": "com.example.foodike.domain.model.Restaurant",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\Restaurant.kt",
+        "line": 29,
+        "used_as_data_model": true,
+        "fields": [
+            {
+                "name": "name",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 30
+            },
+            {
+                "name": "rating",
+                "type": "Double",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 31
+            },
+            {
+                "name": "noOfRatings",
+                "type": "Int",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 32
+            },
+            {
+                "name": "timeInMillis",
+                "type": "Long",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 33
+            },
+            {
+                "name": "variety",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 34
+            },
+            {
+                "name": "place",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 35
+            },
+            {
+                "name": "averagePrice",
+                "type": "Double",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 36
+            },
+            {
+                "name": "image",
+                "type": "Int",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 37
+            },
+            {
+                "name": "menu",
+                "type": "List<MenuItem>",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 38
+            }
+        ],
+        "constructors": [
+            "Restaurant(name: String, rating: Double, noOfRatings: Int, timeInMillis: Long, variety: String, place: String, averagePrice: Double, image: Int, menu: List<MenuItem>)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "CartState",
+        "qualified_name": "com.example.foodike.presentation.cart.CartState",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\CartState.kt",
+        "line": 33,
+        "used_as_data_model": true,
+        "fields": [
+            {
+                "name": "list",
+                "type": "MutableList<CartItem>",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 34,
+                "default_value": "mutableListOf()"
+            }
+        ],
+        "constructors": [
+            "CartState(list: MutableList<CartItem>)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "DetailScreenState",
+        "qualified_name": "com.example.foodike.presentation.details.DetailScreenState",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\DetailScreenState.kt",
+        "line": 32,
+        "used_as_data_model": true,
+        "fields": [
+            {
+                "name": "restaurant",
+                "type": "Restaurant?",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 33,
+                "default_value": "null"
+            },
+            {
+                "name": "recommendedExpandedState",
+                "type": "Boolean",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 34,
+                "default_value": "true"
+            },
+            {
+                "name": "nonVegExpandedState",
+                "type": "Boolean",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 35,
+                "default_value": "true"
+            },
+            {
+                "name": "vegExpandedState",
+                "type": "Boolean",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 36,
+                "default_value": "true"
+            },
+            {
+                "name": "menuList",
+                "type": "List<CartItem>",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 37,
+                "default_value": "emptyList()"
+            },
+            {
+                "name": "recommendedList",
+                "type": "List<CartItem>",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 38,
+                "default_value": "emptyList()"
+            },
+            {
+                "name": "isLiked",
+                "type": "Boolean",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 39,
+                "default_value": "false"
+            }
+        ],
+        "constructors": [
+            "DetailScreenState(restaurant: Restaurant?, recommendedExpandedState: Boolean, nonVegExpandedState: Boolean, vegExpandedState: Boolean, menuList: List<CartItem>, recommendedList: List<CartItem>, isLiked: Boolean)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "SelectRestaurant",
+        "qualified_name": "com.example.foodike.presentation.history.SelectRestaurant",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\HistoryEvent.kt",
+        "line": 32,
+        "used_as_data_model": false,
+        "fields": [
+            {
+                "name": "restaurant",
+                "type": "Restaurant",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 32
+            },
+            {
+                "name": "onClick",
+                "type": "() -> Unit",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 32
+            }
+        ],
+        "constructors": [
+            "SelectRestaurant(restaurant: Restaurant, onClick: () -> Unit)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "HistoryState",
+        "qualified_name": "com.example.foodike.presentation.history.HistoryState",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\HistoryState.kt",
+        "line": 31,
+        "used_as_data_model": true,
+        "fields": [
+            {
+                "name": "likedRestaurantList",
+                "type": "List<Restaurant>",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 32,
+                "default_value": "emptyList()"
+            }
+        ],
+        "constructors": [
+            "HistoryState(likedRestaurantList: List<Restaurant>)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "SelectRestaurant",
+        "qualified_name": "com.example.foodike.presentation.home.SelectRestaurant",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreenEvent.kt",
+        "line": 32,
+        "used_as_data_model": false,
+        "fields": [
+            {
+                "name": "restaurant",
+                "type": "Restaurant",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 32
+            },
+            {
+                "name": "onClick",
+                "type": "() -> Unit",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 32
+            }
+        ],
+        "constructors": [
+            "SelectRestaurant(restaurant: Restaurant, onClick: () -> Unit)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "HomeScreenState",
+        "qualified_name": "com.example.foodike.presentation.home.HomeScreenState",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreenState.kt",
+        "line": 33,
+        "used_as_data_model": true,
+        "fields": [
+            {
+                "name": "adsList",
+                "type": "List<Advertisement>",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 34,
+                "default_value": "emptyList()"
+            },
+            {
+                "name": "foodList",
+                "type": "List<FoodItem>",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 35,
+                "default_value": "emptyList()"
+            },
+            {
+                "name": "likedRestaurantList",
+                "type": "List<Restaurant>",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 36,
+                "default_value": "emptyList()"
+            },
+            {
+                "name": "restaurantList",
+                "type": "List<Restaurant>",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 37,
+                "default_value": "emptyList()"
+            }
+        ],
+        "constructors": [
+            "HomeScreenState(adsList: List<Advertisement>, foodList: List<FoodItem>, likedRestaurantList: List<Restaurant>, restaurantList: List<Restaurant>)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "Filter",
+        "qualified_name": "com.example.foodike.presentation.home.util.Filter",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\util\\Filters.kt",
+        "line": 30,
+        "used_as_data_model": true,
+        "fields": [
+            {
+                "name": "value",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 30
+            }
+        ],
+        "constructors": [
+            "Filter(value: String)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "FoodikeTextFieldState",
+        "qualified_name": "com.example.foodike.presentation.login.FoodikeTextFieldState",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\FoodikeTextFieldState.kt",
+        "line": 29,
+        "used_as_data_model": true,
+        "fields": [
+            {
+                "name": "text",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 30,
+                "default_value": "\"\""
+            },
+            {
+                "name": "hint",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 31,
+                "default_value": "\"\""
+            }
+        ],
+        "constructors": [
+            "FoodikeTextFieldState(text: String, hint: String)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "EnteredEmail",
+        "qualified_name": "com.example.foodike.presentation.login.EnteredEmail",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginEvent.kt",
+        "line": 30,
+        "used_as_data_model": false,
+        "fields": [
+            {
+                "name": "value",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 30
+            }
+        ],
+        "constructors": [
+            "EnteredEmail(value: String)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "EnteredPassword",
+        "qualified_name": "com.example.foodike.presentation.login.EnteredPassword",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginEvent.kt",
+        "line": 31,
+        "used_as_data_model": false,
+        "fields": [
+            {
+                "name": "value",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 31
+            }
+        ],
+        "constructors": [
+            "EnteredPassword(value: String)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "PerformLogin",
+        "qualified_name": "com.example.foodike.presentation.login.PerformLogin",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginEvent.kt",
+        "line": 32,
+        "used_as_data_model": false,
+        "fields": [
+            {
+                "name": "onClick",
+                "type": "() -> Unit",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 32
+            }
+        ],
+        "constructors": [
+            "PerformLogin(onClick: () -> Unit)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "ShowSnackbar",
+        "qualified_name": "com.example.foodike.presentation.login.ShowSnackbar",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\UiEvent.kt",
+        "line": 30,
+        "used_as_data_model": false,
+        "fields": [
+            {
+                "name": "message",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 30
+            }
+        ],
+        "constructors": [
+            "ShowSnackbar(message: String)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "OnBoardingItem",
+        "qualified_name": "com.example.foodike.presentation.onboarding.util.OnBoardingItem",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\util\\OnBoardingItem.kt",
+        "line": 31,
+        "used_as_data_model": true,
+        "fields": [
+            {
+                "name": "title",
+                "type": "Int",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 32
+            },
+            {
+                "name": "text",
+                "type": "Int",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 33
+            },
+            {
+                "name": "image",
+                "type": "Int",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 34
+            }
+        ],
+        "constructors": [
+            "OnBoardingItem(title: Int, text: Int, image: Int)"
+        ],
+        "accessors": [],
+        "annotations": []
+    },
+    {
+        "class_name": "PerformLogout",
+        "qualified_name": "com.example.foodike.presentation.profile.PerformLogout",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\ProfileEvent.kt",
+        "line": 33,
+        "used_as_data_model": false,
+        "fields": [
+            {
+                "name": "onClick",
+                "type": "() -> Unit",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "line": 33
+            }
+        ],
+        "constructors": [
+            "PerformLogout(onClick: () -> Unit)"
+        ],
+        "accessors": [],
+        "annotations": []
+    }
+]

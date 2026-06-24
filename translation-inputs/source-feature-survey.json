@@ -1,0 +1,5618 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-24T10:58:52+00:00",
+  "sourceKind": "kotlin",
+  "purpose": "Reduce functional gaps and unexplained code-scale gaps during project translation. This file-level survey is a planning baseline, not a replacement for source inspection.",
+  "source": {
+    "root": "D:\\Kotlin2Cangjie\\Foodike",
+    "exists": true,
+    "role": "source",
+    "sourceKind": "kotlin",
+    "locProvider": {
+      "schemaVersion": 1,
+      "preferredOrder": [
+        "scc",
+        "tokei"
+      ],
+      "status": "PASS",
+      "selected": {
+        "name": "tokei",
+        "path": "C:\\Users\\Sieger\\.cargo\\bin\\tokei.EXE",
+        "version": "tokei 14.0.0 compiled with serialization support: json"
+      },
+      "tools": [
+        {
+          "name": "scc",
+          "available": false,
+          "path": "",
+          "version": "",
+          "status": "MISSING",
+          "notes": "command not found"
+        },
+        {
+          "name": "tokei",
+          "available": true,
+          "path": "C:\\Users\\Sieger\\.cargo\\bin\\tokei.EXE",
+          "version": "tokei 14.0.0 compiled with serialization support: json",
+          "status": "PASS",
+          "notes": "tokei 14.0.0 compiled with serialization support: json",
+          "result": {
+            "command": [
+              "C:\\Users\\Sieger\\.cargo\\bin\\tokei.EXE",
+              "--version"
+            ],
+            "actual_command": [
+              "C:\\Users\\Sieger\\.cargo\\bin\\tokei.EXE",
+              "--version"
+            ],
+            "returncode": 0,
+            "stdout": "tokei 14.0.0 compiled with serialization support: json",
+            "stderr": "",
+            "timed_out": false
+          }
+        }
+      ],
+      "notes": "Using tokei for code/comment/blank LOC metrics.",
+      "usageStatus": "PASS",
+      "usageMessage": "Collected per-file LOC metrics with tokei."
+    },
+    "locCollectionAttempts": [
+      {
+        "tool": "tokei",
+        "path": "C:\\Users\\Sieger\\.cargo\\bin\\tokei.EXE",
+        "status": "PASS",
+        "returncode": 0,
+        "timedOut": false,
+        "fileMetrics": 105,
+        "message": ""
+      }
+    ],
+    "totals": {
+      "files": 146,
+      "textFiles": 106,
+      "assetFiles": 40,
+      "physicalLines": 8490,
+      "nonblankLines": 7586,
+      "locCodeLines": 5211,
+      "locCommentLines": 2375,
+      "locBlankLines": 904,
+      "productionTextFiles": 104,
+      "productionPhysicalLines": 8449,
+      "productionNonblankLines": 7552,
+      "productionLocCodeLines": 5188,
+      "productionLocCommentLines": 2364,
+      "productionLocBlankLines": 897,
+      "codeFiles": 85,
+      "codePhysicalLines": 7688,
+      "codeNonblankLines": 6866,
+      "codeLocCodeLines": 4762,
+      "codeLocCommentLines": 2104,
+      "codeLocBlankLines": 822,
+      "productionCodeFiles": 83,
+      "productionCodePhysicalLines": 7647,
+      "productionCodeNonblankLines": 6832,
+      "productionCodeLocCodeLines": 4739,
+      "productionCodeLocCommentLines": 2093,
+      "productionCodeLocBlankLines": 815,
+      "testFiles": 2,
+      "testNonblankLines": 34,
+      "testCodeFiles": 2,
+      "testCodeNonblankLines": 34,
+      "testCodeLocCodeLines": 23,
+      "testCodeLocCommentLines": 11,
+      "testCodeLocBlankLines": 7
+    },
+    "byCategory": {
+      "android-drawable": 23,
+      "android-manifest": 1,
+      "android-mipmap": 12,
+      "android-resource": 2,
+      "android-values": 4,
+      "asset": 11,
+      "config": 5,
+      "kotlin-source": 83,
+      "other": 3,
+      "test": 2
+    },
+    "byExtension": {
+      ".gif": 1,
+      ".jpeg": 7,
+      ".jpg": 8,
+      ".kt": 82,
+      ".kts": 3,
+      ".md": 3,
+      ".png": 24,
+      ".pro": 1,
+      ".properties": 3,
+      ".toml": 1,
+      ".xml": 13
+    },
+    "byImportance": {
+      "critical": 47,
+      "high": 19,
+      "low": 14,
+      "medium": 66
+    },
+    "byRiskTag": {
+      "android_resource": 42,
+      "background_work": 1,
+      "file_ops": 2,
+      "image_viewer": 26,
+      "intent_uri": 13,
+      "localization": 1,
+      "navigation_resource": 26,
+      "notification_widget": 1,
+      "permissions": 87,
+      "platform_component": 8,
+      "screen_lifecycle": 17,
+      "settings": 11,
+      "source_test": 2,
+      "state_model": 29
+    },
+    "files": [
+      {
+        "path": "app/build.gradle.kts",
+        "extension": ".kts",
+        "category": "kotlin-source",
+        "physicalLines": 114,
+        "nonblankLines": 100,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 114,
+          "nonblankLines": 100,
+          "codeLines": 70,
+          "commentLines": 30,
+          "blankLines": 14
+        },
+        "importance": "critical",
+        "riskTags": [
+          "navigation_resource",
+          "permissions",
+          "platform_component",
+          "screen_lifecycle",
+          "settings"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Android platform component lifecycle such as service, receiver, provider, or application.",
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "Settings/preferences, option toggles, or configuration state behavior."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/proguard-rules.pro",
+        "extension": ".pro",
+        "category": "config",
+        "physicalLines": 21,
+        "nonblankLines": 18,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Prolog",
+          "physicalLines": 21,
+          "nonblankLines": 18,
+          "codeLines": 18,
+          "commentLines": 0,
+          "blankLines": 3
+        },
+        "importance": "high",
+        "riskTags": [
+          "settings"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Settings/preferences, option toggles, or configuration state behavior."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt",
+        "extension": ".kt",
+        "category": "test",
+        "physicalLines": 24,
+        "nonblankLines": 20,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 24,
+          "nonblankLines": 20,
+          "codeLines": 14,
+          "commentLines": 6,
+          "blankLines": 4
+        },
+        "importance": "low",
+        "riskTags": [
+          "source_test"
+        ],
+        "symbols": {
+          "classes": [
+            "ExampleInstrumentedTest"
+          ],
+          "methods": [
+            "useAppContext"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "useAppContext"
+        ],
+        "featurePoints": [
+          "Source-side tests or verification assets should be migrated or replaced."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/AndroidManifest.xml",
+        "extension": ".xml",
+        "category": "android-manifest",
+        "physicalLines": 58,
+        "nonblankLines": 52,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "XML",
+          "physicalLines": 58,
+          "nonblankLines": 52,
+          "codeLines": 25,
+          "commentLines": 27,
+          "blankLines": 6
+        },
+        "importance": "critical",
+        "riskTags": [
+          "android_resource",
+          "intent_uri",
+          "permissions",
+          "platform_component",
+          "screen_lifecycle"
+        ],
+        "symbols": {
+          "classes": [
+            "manifest",
+            "application",
+            "activity",
+            "action",
+            "category"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred.",
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Android platform component lifecycle such as service, receiver, provider, or application.",
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/ic_launcher-playstore.png",
+        "extension": ".png",
+        "category": "asset",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "low",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `app/src/main/ic_launcher-playstore.png` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 833,
+        "nonblankLines": 719,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 833,
+          "nonblankLines": 719,
+          "codeLines": 694,
+          "commentLines": 25,
+          "blankLines": 114
+        },
+        "importance": "critical",
+        "riskTags": [
+          "file_ops",
+          "image_viewer",
+          "intent_uri",
+          "navigation_resource",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File, document, storage, SAF, MediaStore, or import/export behavior.",
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 56,
+        "nonblankLines": 49,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 56,
+          "nonblankLines": 49,
+          "codeLines": 24,
+          "commentLines": 25,
+          "blankLines": 7
+        },
+        "importance": "critical",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "HomeRepositoryImpl"
+          ],
+          "methods": [
+            "getRestaurants",
+            "getAds",
+            "getFoodItems",
+            "getRestaurantFromName"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "getRestaurants",
+          "getAds",
+          "getFoodItems",
+          "getRestaurantFromName"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getRestaurants`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getAds`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getFoodItems`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getRestaurantFromName`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 71,
+        "nonblankLines": 56,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 71,
+          "nonblankLines": 56,
+          "codeLines": 31,
+          "commentLines": 25,
+          "blankLines": 15
+        },
+        "importance": "critical",
+        "riskTags": [
+          "permissions",
+          "settings",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [
+            "LoginRepositoryImpl",
+            "PrefsDataStore"
+          ],
+          "methods": [
+            "toggleLoginState"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "toggleLoginState"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Settings/preferences, option toggles, or configuration state behavior.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+          "Authentication, account, or session behavior. Evidence method: `toggleLoginState`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/data/repository/Result.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 35,
+        "nonblankLines": 33,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 35,
+          "nonblankLines": 33,
+          "codeLines": 8,
+          "commentLines": 25,
+          "blankLines": 2
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "Results",
+            "Success",
+            "Error"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 77,
+        "nonblankLines": 62,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 77,
+          "nonblankLines": 62,
+          "codeLines": 37,
+          "commentLines": 25,
+          "blankLines": 15
+        },
+        "importance": "critical",
+        "riskTags": [
+          "intent_uri",
+          "navigation_resource",
+          "permissions",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [
+            "UserDataRepositoryImpl"
+          ],
+          "methods": [
+            "setRestaurant",
+            "getSavedRestaurant",
+            "getMenuItems",
+            "getLikedRestaurants",
+            "isRestaurantLiked",
+            "getCartItems"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "getSavedRestaurant",
+          "getMenuItems",
+          "getLikedRestaurants",
+          "getCartItems"
+        ],
+        "featurePoints": [
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getSavedRestaurant`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getMenuItems`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getLikedRestaurants`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getCartItems`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/di/AppModule.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 65,
+        "nonblankLines": 54,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 65,
+          "nonblankLines": 54,
+          "codeLines": 29,
+          "commentLines": 25,
+          "blankLines": 11
+        },
+        "importance": "critical",
+        "riskTags": [
+          "permissions",
+          "platform_component"
+        ],
+        "symbols": {
+          "classes": [
+            "AppModule"
+          ],
+          "methods": [
+            "provideLoginRepository",
+            "providesHomeRepository",
+            "providesUserDataRepository"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "provideLoginRepository"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Android platform component lifecycle such as service, receiver, provider, or application.",
+          "Authentication, account, or session behavior. Evidence method: `provideLoginRepository`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/domain/model/Advertisement.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 36,
+        "nonblankLines": 33,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 36,
+          "nonblankLines": 33,
+          "codeLines": 8,
+          "commentLines": 25,
+          "blankLines": 3
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "Advertisement"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/domain/model/CartItem.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 32,
+        "nonblankLines": 30,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 32,
+          "nonblankLines": 30,
+          "codeLines": 5,
+          "commentLines": 25,
+          "blankLines": 2
+        },
+        "importance": "high",
+        "riskTags": [
+          "navigation_resource",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "CartItem"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/domain/model/FoodItem.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 32,
+        "nonblankLines": 30,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 32,
+          "nonblankLines": 30,
+          "codeLines": 5,
+          "commentLines": 25,
+          "blankLines": 2
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "FoodItem"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/domain/model/MenuItem.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 35,
+        "nonblankLines": 33,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 35,
+          "nonblankLines": 33,
+          "codeLines": 8,
+          "commentLines": 25,
+          "blankLines": 2
+        },
+        "importance": "high",
+        "riskTags": [
+          "navigation_resource",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "MenuItem"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/domain/model/Restaurant.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 39,
+        "nonblankLines": 37,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 39,
+          "nonblankLines": 37,
+          "codeLines": 12,
+          "commentLines": 25,
+          "blankLines": 2
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "navigation_resource",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "Restaurant"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/domain/repository/HomeRepository.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 41,
+        "nonblankLines": 36,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 41,
+          "nonblankLines": 36,
+          "codeLines": 11,
+          "commentLines": 25,
+          "blankLines": 5
+        },
+        "importance": "critical",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "HomeRepository"
+          ],
+          "methods": [
+            "getRestaurants",
+            "getAds",
+            "getFoodItems",
+            "getRestaurantFromName"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "getRestaurants",
+          "getAds",
+          "getFoodItems",
+          "getRestaurantFromName"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getRestaurants`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getAds`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getFoodItems`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getRestaurantFromName`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/domain/repository/LoginRepository.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 36,
+        "nonblankLines": 32,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 36,
+          "nonblankLines": 32,
+          "codeLines": 6,
+          "commentLines": 26,
+          "blankLines": 4
+        },
+        "importance": "critical",
+        "riskTags": [
+          "permissions",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [
+            "LoginRepository"
+          ],
+          "methods": [
+            "readLoginState",
+            "toggleLoginState"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "readLoginState",
+          "toggleLoginState"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `readLoginState`.",
+          "Authentication, account, or session behavior. Evidence method: `toggleLoginState`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/domain/repository/UserDataRepository.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 43,
+        "nonblankLines": 37,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 43,
+          "nonblankLines": 37,
+          "codeLines": 12,
+          "commentLines": 25,
+          "blankLines": 6
+        },
+        "importance": "critical",
+        "riskTags": [
+          "navigation_resource",
+          "permissions",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [
+            "UserDataRepository"
+          ],
+          "methods": [
+            "setRestaurant",
+            "getSavedRestaurant",
+            "getMenuItems",
+            "getLikedRestaurants",
+            "isRestaurantLiked",
+            "getCartItems"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "getSavedRestaurant",
+          "getMenuItems",
+          "getLikedRestaurants",
+          "getCartItems"
+        ],
+        "featurePoints": [
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getSavedRestaurant`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getMenuItems`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getLikedRestaurants`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getCartItems`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/FoodikeApp.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 36,
+        "nonblankLines": 30,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 36,
+          "nonblankLines": 30,
+          "codeLines": 5,
+          "commentLines": 25,
+          "blankLines": 6
+        },
+        "importance": "critical",
+        "riskTags": [
+          "permissions",
+          "platform_component"
+        ],
+        "symbols": {
+          "classes": [
+            "FoodikeApp"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Android platform component lifecycle such as service, receiver, provider, or application."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 128,
+        "nonblankLines": 111,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 128,
+          "nonblankLines": 111,
+          "codeLines": 86,
+          "commentLines": 25,
+          "blankLines": 17
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "navigation_resource",
+          "permissions",
+          "screen_lifecycle",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "Cart"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "Cart"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/cart/CartState.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 37,
+        "nonblankLines": 32,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 37,
+          "nonblankLines": 32,
+          "codeLines": 7,
+          "commentLines": 25,
+          "blankLines": 5
+        },
+        "importance": "high",
+        "riskTags": [
+          "navigation_resource",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "CartState"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/cart/CartViewModel.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 63,
+        "nonblankLines": 52,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 63,
+          "nonblankLines": 52,
+          "codeLines": 27,
+          "commentLines": 25,
+          "blankLines": 11
+        },
+        "importance": "critical",
+        "riskTags": [
+          "permissions",
+          "screen_lifecycle",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [
+            "CartViewModel"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/cart/components/BillSection.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 92,
+        "nonblankLines": 88,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 92,
+          "nonblankLines": 88,
+          "codeLines": 63,
+          "commentLines": 25,
+          "blankLines": 4
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "BillSection"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "BillSection"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 158,
+        "nonblankLines": 139,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 158,
+          "nonblankLines": 139,
+          "codeLines": 114,
+          "commentLines": 25,
+          "blankLines": 19
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "navigation_resource",
+          "permissions",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "CartItemCard"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "CartItemCard"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/cart/components/CouponBar.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 106,
+        "nonblankLines": 98,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 106,
+          "nonblankLines": 98,
+          "codeLines": 73,
+          "commentLines": 25,
+          "blankLines": 8
+        },
+        "importance": "high",
+        "riskTags": [
+          "permissions",
+          "settings",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "CouponBar"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "CouponBar"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Settings/preferences, option toggles, or configuration state behavior.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/cart/components/DeliverySection.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 96,
+        "nonblankLines": 87,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 96,
+          "nonblankLines": 87,
+          "codeLines": 62,
+          "commentLines": 25,
+          "blankLines": 9
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "DeliverySection"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "DeliverySection"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 143,
+        "nonblankLines": 132,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 143,
+          "nonblankLines": 132,
+          "codeLines": 107,
+          "commentLines": 25,
+          "blankLines": 11
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "permissions",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "ItemSection"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "ItemSection"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/common/Extensions.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 54,
+        "nonblankLines": 51,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 54,
+          "nonblankLines": 51,
+          "codeLines": 26,
+          "commentLines": 25,
+          "blankLines": 3
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 70,
+        "nonblankLines": 56,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 70,
+          "nonblankLines": 56,
+          "codeLines": 31,
+          "commentLines": 25,
+          "blankLines": 14
+        },
+        "importance": "critical",
+        "riskTags": [
+          "permissions",
+          "screen_lifecycle",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [
+            "SplashViewModel"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 182,
+        "nonblankLines": 169,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 182,
+          "nonblankLines": 169,
+          "codeLines": 144,
+          "commentLines": 25,
+          "blankLines": 13
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "RestaurantCard",
+            "getCustomerInfo"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "getCustomerInfo"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getCustomerInfo`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 73,
+        "nonblankLines": 67,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 73,
+          "nonblankLines": 67,
+          "codeLines": 42,
+          "commentLines": 25,
+          "blankLines": 6
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "permissions",
+          "settings",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "SearchBar"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "SearchBar"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Settings/preferences, option toggles, or configuration state behavior.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `SearchBar`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 203,
+        "nonblankLines": 187,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 203,
+          "nonblankLines": 187,
+          "codeLines": 162,
+          "commentLines": 25,
+          "blankLines": 16
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "navigation_resource",
+          "permissions",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "MenuItemCard"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "MenuItemCard"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 162,
+        "nonblankLines": 155,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 162,
+          "nonblankLines": 155,
+          "codeLines": 130,
+          "commentLines": 25,
+          "blankLines": 7
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "RestaurantDetailCard"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "RestaurantDetailCard"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/details/DetailScreenEvent.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 35,
+        "nonblankLines": 32,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 35,
+          "nonblankLines": 32,
+          "codeLines": 7,
+          "commentLines": 25,
+          "blankLines": 3
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "DetailScreenEvent",
+            "ToggleRecommendedSectionExpandedState",
+            "ToggleNonVegSectionExpandedState",
+            "ToggleVegSectionExpandedState",
+            "ToggleLikedStatus"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/details/DetailScreenState.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 43,
+        "nonblankLines": 37,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 43,
+          "nonblankLines": 37,
+          "codeLines": 12,
+          "commentLines": 25,
+          "blankLines": 6
+        },
+        "importance": "high",
+        "riskTags": [
+          "navigation_resource",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "DetailScreenState"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 343,
+        "nonblankLines": 296,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 343,
+          "nonblankLines": 296,
+          "codeLines": 271,
+          "commentLines": 25,
+          "blankLines": 47
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "intent_uri",
+          "navigation_resource",
+          "permissions",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "RestaurantDetail"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "RestaurantDetail"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 105,
+        "nonblankLines": 92,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 105,
+          "nonblankLines": 92,
+          "codeLines": 67,
+          "commentLines": 25,
+          "blankLines": 13
+        },
+        "importance": "critical",
+        "riskTags": [
+          "navigation_resource",
+          "permissions",
+          "screen_lifecycle",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [
+            "RestaurantDetailViewModel"
+          ],
+          "methods": [
+            "onEvent"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "onEvent"
+        ],
+        "featurePoints": [
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/history/components/FavouritesSection.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 85,
+        "nonblankLines": 78,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 85,
+          "nonblankLines": 78,
+          "codeLines": 53,
+          "commentLines": 25,
+          "blankLines": 7
+        },
+        "importance": "medium",
+        "riskTags": [
+          "intent_uri",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "FavouritesSection"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "FavouritesSection"
+        ],
+        "featurePoints": [
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 300,
+        "nonblankLines": 261,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 300,
+          "nonblankLines": 261,
+          "codeLines": 236,
+          "commentLines": 25,
+          "blankLines": 39
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "HistorySection"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "HistorySection"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/history/components/Tabs.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 91,
+        "nonblankLines": 84,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 91,
+          "nonblankLines": 84,
+          "codeLines": 59,
+          "commentLines": 25,
+          "blankLines": 7
+        },
+        "importance": "high",
+        "riskTags": [
+          "intent_uri",
+          "permissions",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "Tabs"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "Tabs"
+        ],
+        "featurePoints": [
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/history/components/TabsContent.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 50,
+        "nonblankLines": 45,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 50,
+          "nonblankLines": 45,
+          "codeLines": 20,
+          "commentLines": 25,
+          "blankLines": 5
+        },
+        "importance": "medium",
+        "riskTags": [
+          "intent_uri",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "TabsContent"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "TabsContent"
+        ],
+        "featurePoints": [
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/history/History.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 96,
+        "nonblankLines": 79,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 96,
+          "nonblankLines": 79,
+          "codeLines": 54,
+          "commentLines": 25,
+          "blankLines": 17
+        },
+        "importance": "high",
+        "riskTags": [
+          "navigation_resource",
+          "permissions",
+          "screen_lifecycle",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "History"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "History"
+        ],
+        "featurePoints": [
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/history/HistoryEvent.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 34,
+        "nonblankLines": 31,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 34,
+          "nonblankLines": 31,
+          "codeLines": 6,
+          "commentLines": 25,
+          "blankLines": 3
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "HistoryEvent",
+            "SelectRestaurant"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/history/HistoryState.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 33,
+        "nonblankLines": 30,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 33,
+          "nonblankLines": 30,
+          "codeLines": 5,
+          "commentLines": 25,
+          "blankLines": 3
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "HistoryState"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/history/HistoryViewModel.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 72,
+        "nonblankLines": 62,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 72,
+          "nonblankLines": 62,
+          "codeLines": 37,
+          "commentLines": 25,
+          "blankLines": 10
+        },
+        "importance": "critical",
+        "riskTags": [
+          "permissions",
+          "screen_lifecycle",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [
+            "HistoryViewModel"
+          ],
+          "methods": [
+            "onEvent"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "onEvent"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/home/components/AdCard.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 91,
+        "nonblankLines": 84,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 91,
+          "nonblankLines": 84,
+          "codeLines": 59,
+          "commentLines": 25,
+          "blankLines": 7
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "AdCard"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "AdCard"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/home/components/AdSection.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 63,
+        "nonblankLines": 58,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 63,
+          "nonblankLines": 58,
+          "codeLines": 33,
+          "commentLines": 25,
+          "blankLines": 5
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "AdSection"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "AdSection"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/home/components/ChipBar.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 125,
+        "nonblankLines": 114,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 125,
+          "nonblankLines": 114,
+          "codeLines": 89,
+          "commentLines": 25,
+          "blankLines": 11
+        },
+        "importance": "high",
+        "riskTags": [
+          "permissions",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "ChipBar",
+            "Chip",
+            "ChipGroup"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "ChipBar",
+          "Chip",
+          "ChipGroup"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/home/components/FavouriteCard.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 66,
+        "nonblankLines": 62,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 66,
+          "nonblankLines": 62,
+          "codeLines": 37,
+          "commentLines": 25,
+          "blankLines": 4
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "intent_uri",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "FavouriteCard"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "FavouriteCard"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/home/components/FavouriteScreen.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 78,
+        "nonblankLines": 71,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 78,
+          "nonblankLines": 71,
+          "codeLines": 46,
+          "commentLines": 25,
+          "blankLines": 7
+        },
+        "importance": "medium",
+        "riskTags": [
+          "intent_uri",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "FavouriteSection"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "FavouriteSection"
+        ],
+        "featurePoints": [
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/home/components/FoodikeBottomNavigation.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 72,
+        "nonblankLines": 67,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 72,
+          "nonblankLines": 67,
+          "codeLines": 41,
+          "commentLines": 26,
+          "blankLines": 5
+        },
+        "importance": "high",
+        "riskTags": [
+          "navigation_resource",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "BottomNavigationDefaults"
+          ],
+          "methods": [
+            "FoodikeBottomNavigation"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "FoodikeBottomNavigation"
+        ],
+        "featurePoints": [
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/home/components/GreetingScreen.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 68,
+        "nonblankLines": 64,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 68,
+          "nonblankLines": 64,
+          "codeLines": 39,
+          "commentLines": 25,
+          "blankLines": 4
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "GreetingSection"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "GreetingSection"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/home/components/MainSection.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 56,
+        "nonblankLines": 51,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 56,
+          "nonblankLines": 51,
+          "codeLines": 26,
+          "commentLines": 25,
+          "blankLines": 5
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "MainSection"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "MainSection"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/home/components/RecommendedCard.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 64,
+        "nonblankLines": 60,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 64,
+          "nonblankLines": 60,
+          "codeLines": 35,
+          "commentLines": 25,
+          "blankLines": 4
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "RecommendedCard"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "RecommendedCard"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/home/components/RecommendedSection.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 69,
+        "nonblankLines": 65,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 69,
+          "nonblankLines": 65,
+          "codeLines": 40,
+          "commentLines": 25,
+          "blankLines": 4
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "RecommendedSection"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "RecommendedSection"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/home/components/ThankYouSection.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 77,
+        "nonblankLines": 73,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 77,
+          "nonblankLines": 73,
+          "codeLines": 48,
+          "commentLines": 25,
+          "blankLines": 4
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "ThankYouSection"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "ThankYouSection"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/home/components/TopSection.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 90,
+        "nonblankLines": 78,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 90,
+          "nonblankLines": 78,
+          "codeLines": 53,
+          "commentLines": 25,
+          "blankLines": 12
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "navigation_resource",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "TopSection"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "TopSection"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 181,
+        "nonblankLines": 160,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 181,
+          "nonblankLines": 160,
+          "codeLines": 135,
+          "commentLines": 25,
+          "blankLines": 21
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "intent_uri",
+          "navigation_resource",
+          "permissions",
+          "screen_lifecycle",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "Home"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "Home"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/home/HomeScreenEvent.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 34,
+        "nonblankLines": 31,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 34,
+          "nonblankLines": 31,
+          "codeLines": 6,
+          "commentLines": 25,
+          "blankLines": 3
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "HomeScreenEvent",
+            "SelectRestaurant"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/home/HomeScreenState.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 38,
+        "nonblankLines": 35,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 38,
+          "nonblankLines": 35,
+          "codeLines": 10,
+          "commentLines": 25,
+          "blankLines": 3
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "HomeScreenState"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/home/HomeViewModel.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 104,
+        "nonblankLines": 86,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 104,
+          "nonblankLines": 86,
+          "codeLines": 61,
+          "commentLines": 25,
+          "blankLines": 18
+        },
+        "importance": "critical",
+        "riskTags": [
+          "permissions",
+          "screen_lifecycle",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [
+            "HomeViewModel"
+          ],
+          "methods": [
+            "onEvent"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "onEvent"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/home/util/Filters.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 49,
+        "nonblankLines": 42,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 49,
+          "nonblankLines": 42,
+          "codeLines": 17,
+          "commentLines": 25,
+          "blankLines": 7
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "Filter"
+          ],
+          "methods": [
+            "getAllTags",
+            "getTag"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "getAllTags",
+          "getTag"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getAllTags`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getTag`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 75,
+        "nonblankLines": 70,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 75,
+          "nonblankLines": 70,
+          "codeLines": 45,
+          "commentLines": 25,
+          "blankLines": 5
+        },
+        "importance": "high",
+        "riskTags": [
+          "permissions",
+          "settings"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "FoodikeTextField"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "FoodikeTextField"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Settings/preferences, option toggles, or configuration state behavior."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/login/FoodikeTextFieldState.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 32,
+        "nonblankLines": 30,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 32,
+          "nonblankLines": 30,
+          "codeLines": 5,
+          "commentLines": 25,
+          "blankLines": 2
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "FoodikeTextFieldState"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/login/LoginEvent.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 33,
+        "nonblankLines": 31,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 33,
+          "nonblankLines": 31,
+          "codeLines": 6,
+          "commentLines": 25,
+          "blankLines": 2
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "LoginEvent",
+            "EnteredEmail",
+            "EnteredPassword",
+            "PerformLogin"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 238,
+        "nonblankLines": 213,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 238,
+          "nonblankLines": 213,
+          "codeLines": 188,
+          "commentLines": 25,
+          "blankLines": 25
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "navigation_resource",
+          "notification_widget",
+          "permissions",
+          "screen_lifecycle",
+          "settings",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "LoginScreen"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "LoginScreen"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Notification, widget, RemoteViews, or home-screen integration behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "Settings/preferences, option toggles, or configuration state behavior.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+          "Authentication, account, or session behavior. Evidence method: `LoginScreen`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 96,
+        "nonblankLines": 86,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 96,
+          "nonblankLines": 86,
+          "codeLines": 61,
+          "commentLines": 25,
+          "blankLines": 10
+        },
+        "importance": "critical",
+        "riskTags": [
+          "permissions",
+          "screen_lifecycle",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [
+            "LoginViewModel"
+          ],
+          "methods": [
+            "onEvent"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "onEvent"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/login/UiEvent.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 31,
+        "nonblankLines": 29,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 31,
+          "nonblankLines": 29,
+          "codeLines": 4,
+          "commentLines": 25,
+          "blankLines": 2
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "UiEvent",
+            "ShowSnackbar"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 73,
+        "nonblankLines": 62,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 73,
+          "nonblankLines": 62,
+          "codeLines": 37,
+          "commentLines": 25,
+          "blankLines": 11
+        },
+        "importance": "critical",
+        "riskTags": [
+          "intent_uri",
+          "navigation_resource",
+          "permissions",
+          "screen_lifecycle",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [
+            "MainActivity"
+          ],
+          "methods": [
+            "onCreate"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "onCreate"
+        ],
+        "featurePoints": [
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+          "Lifecycle callback affecting screen initialization, refresh, or cleanup. Evidence method: `onCreate`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/onboarding/components/BottomSection.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 65,
+        "nonblankLines": 61,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 65,
+          "nonblankLines": 61,
+          "codeLines": 34,
+          "commentLines": 27,
+          "blankLines": 4
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "BottomSection"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "BottomSection"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/onboarding/components/Indicators.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 82,
+        "nonblankLines": 71,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 82,
+          "nonblankLines": 71,
+          "codeLines": 46,
+          "commentLines": 25,
+          "blankLines": 11
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "Indicator"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "Indicator"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 83,
+        "nonblankLines": 76,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 83,
+          "nonblankLines": 76,
+          "codeLines": 51,
+          "commentLines": 25,
+          "blankLines": 7
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "OnboardingPage"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "OnboardingPage"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 113,
+        "nonblankLines": 99,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 113,
+          "nonblankLines": 99,
+          "codeLines": 74,
+          "commentLines": 25,
+          "blankLines": 14
+        },
+        "importance": "high",
+        "riskTags": [
+          "navigation_resource",
+          "permissions",
+          "screen_lifecycle",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "OnBoarding"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "OnBoarding"
+        ],
+        "featurePoints": [
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 59,
+        "nonblankLines": 54,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 59,
+          "nonblankLines": 54,
+          "codeLines": 29,
+          "commentLines": 25,
+          "blankLines": 5
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "OnBoardingItem"
+          ],
+          "methods": [
+            "get"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "get"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `get`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/profile/components/ProfileCard.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 75,
+        "nonblankLines": 71,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 75,
+          "nonblankLines": 71,
+          "codeLines": 46,
+          "commentLines": 25,
+          "blankLines": 4
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "ProfileCard"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "ProfileCard"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 208,
+        "nonblankLines": 193,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 208,
+          "nonblankLines": 193,
+          "codeLines": 168,
+          "commentLines": 25,
+          "blankLines": 15
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "navigation_resource",
+          "permissions",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "Profile"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "Profile"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/profile/ProfileEvent.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 34,
+        "nonblankLines": 30,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 34,
+          "nonblankLines": 30,
+          "codeLines": 5,
+          "commentLines": 25,
+          "blankLines": 4
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "ProfileEvent",
+            "PerformLogout"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 53,
+        "nonblankLines": 48,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 53,
+          "nonblankLines": 48,
+          "codeLines": 23,
+          "commentLines": 25,
+          "blankLines": 5
+        },
+        "importance": "critical",
+        "riskTags": [
+          "permissions",
+          "screen_lifecycle",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [
+            "ProfileViewModel"
+          ],
+          "methods": [
+            "onEvent"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "onEvent"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 255,
+        "nonblankLines": 224,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 255,
+          "nonblankLines": 224,
+          "codeLines": 187,
+          "commentLines": 37,
+          "blankLines": 31
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "navigation_resource",
+          "permissions",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "NavigationGraph",
+            "SetupNavigation",
+            "BottomBar"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "NavigationGraph",
+          "SetupNavigation",
+          "BottomBar"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/presentation/util/Screen.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 46,
+        "nonblankLines": 43,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 46,
+          "nonblankLines": 43,
+          "codeLines": 18,
+          "commentLines": 25,
+          "blankLines": 3
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "Screen",
+            "Onboarding",
+            "LoginScreen",
+            "Home",
+            "History",
+            "Cart",
+            "Profile",
+            "RestaurantDetails"
+          ],
+          "methods": [
+            "withArgs"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "withArgs"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/ui/theme/Color.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 38,
+        "nonblankLines": 33,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 38,
+          "nonblankLines": 33,
+          "codeLines": 8,
+          "commentLines": 25,
+          "blankLines": 5
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/ui/theme/Shape.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 37,
+        "nonblankLines": 34,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 37,
+          "nonblankLines": 34,
+          "codeLines": 9,
+          "commentLines": 25,
+          "blankLines": 3
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/ui/theme/Theme.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 58,
+        "nonblankLines": 52,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 58,
+          "nonblankLines": 52,
+          "codeLines": 19,
+          "commentLines": 33,
+          "blankLines": 6
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "FoodikeTheme"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "FoodikeTheme"
+        ],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/java/com/example/foodike/ui/theme/Type.kt",
+        "extension": ".kt",
+        "category": "kotlin-source",
+        "physicalLines": 54,
+        "nonblankLines": 51,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 54,
+          "nonblankLines": 51,
+          "codeLines": 13,
+          "commentLines": 38,
+          "blankLines": 3
+        },
+        "importance": "medium",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/res/drawable/applepie.jpg",
+        "extension": ".jpg",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/drawable/biryani.jpg",
+        "extension": ".jpg",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/drawable/burger.jpg",
+        "extension": ".jpg",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/drawable/chinese.jpg",
+        "extension": ".jpg",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/drawable/chinese_bowl.png",
+        "extension": ".png",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/drawable/clock.png",
+        "extension": ".png",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/drawable/dosa.jpg",
+        "extension": ".jpg",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/drawable/fb_icon.png",
+        "extension": ".png",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/drawable/goog_icon.png",
+        "extension": ".png",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/drawable/groceries.png",
+        "extension": ".png",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/drawable/ic_baseline_assignment_24.xml",
+        "extension": ".xml",
+        "category": "android-drawable",
+        "physicalLines": 5,
+        "nonblankLines": 5,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "XML",
+          "physicalLines": 5,
+          "nonblankLines": 5,
+          "codeLines": 5,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [
+            "vector",
+            "path"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/res/drawable/ic_launcher_background.xml",
+        "extension": ".xml",
+        "category": "android-drawable",
+        "physicalLines": 170,
+        "nonblankLines": 170,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "XML",
+          "physicalLines": 170,
+          "nonblankLines": 170,
+          "codeLines": 170,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [
+            "vector",
+            "path"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/res/drawable/ic_launcher_foreground.xml",
+        "extension": ".xml",
+        "category": "android-drawable",
+        "physicalLines": 17,
+        "nonblankLines": 17,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "XML",
+          "physicalLines": 17,
+          "nonblankLines": 17,
+          "codeLines": 17,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [
+            "vector",
+            "group",
+            "path"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/res/drawable/ic_non_veg.png",
+        "extension": ".png",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/drawable/ic_profile.xml",
+        "extension": ".xml",
+        "category": "android-drawable",
+        "physicalLines": 15,
+        "nonblankLines": 15,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "XML",
+          "physicalLines": 15,
+          "nonblankLines": 15,
+          "codeLines": 15,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [
+            "vector",
+            "path"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/res/drawable/ic_veg.png",
+        "extension": ".png",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/drawable/icon.png",
+        "extension": ".png",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/drawable/outlet_card.png",
+        "extension": ".png",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/drawable/paratha.jpg",
+        "extension": ".jpg",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/drawable/pizza.jpg",
+        "extension": ".jpg",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/drawable/rider.png",
+        "extension": ".png",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/drawable/star.png",
+        "extension": ".png",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/drawable/upi.png",
+        "extension": ".png",
+        "category": "android-drawable",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+        "extension": ".xml",
+        "category": "android-mipmap",
+        "physicalLines": 5,
+        "nonblankLines": 5,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "XML",
+          "physicalLines": 5,
+          "nonblankLines": 5,
+          "codeLines": 5,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [
+            "background",
+            "foreground"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+        "extension": ".xml",
+        "category": "android-mipmap",
+        "physicalLines": 5,
+        "nonblankLines": 5,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "XML",
+          "physicalLines": 5,
+          "nonblankLines": 5,
+          "codeLines": 5,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [
+            "background",
+            "foreground"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/res/mipmap-hdpi/ic_launcher.png",
+        "extension": ".png",
+        "category": "android-mipmap",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/mipmap-hdpi/ic_launcher_round.png",
+        "extension": ".png",
+        "category": "android-mipmap",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/mipmap-mdpi/ic_launcher.png",
+        "extension": ".png",
+        "category": "android-mipmap",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/mipmap-mdpi/ic_launcher_round.png",
+        "extension": ".png",
+        "category": "android-mipmap",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+        "extension": ".png",
+        "category": "android-mipmap",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/mipmap-xhdpi/ic_launcher_round.png",
+        "extension": ".png",
+        "category": "android-mipmap",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+        "extension": ".png",
+        "category": "android-mipmap",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png",
+        "extension": ".png",
+        "category": "android-mipmap",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+        "extension": ".png",
+        "category": "android-mipmap",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png",
+        "extension": ".png",
+        "category": "android-mipmap",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "app/src/main/res/values/colors.xml",
+        "extension": ".xml",
+        "category": "android-values",
+        "physicalLines": 12,
+        "nonblankLines": 12,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "XML",
+          "physicalLines": 12,
+          "nonblankLines": 12,
+          "codeLines": 12,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "high",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [
+            "resources",
+            "color"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred.",
+          "Android `android-values` file should be mapped to target resources, components, or documented deferred scope."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/res/values/ic_launcher_background.xml",
+        "extension": ".xml",
+        "category": "android-values",
+        "physicalLines": 4,
+        "nonblankLines": 4,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "XML",
+          "physicalLines": 4,
+          "nonblankLines": 4,
+          "codeLines": 4,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "high",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [
+            "resources",
+            "color"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred.",
+          "Android `android-values` file should be mapped to target resources, components, or documented deferred scope."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/res/values/strings.xml",
+        "extension": ".xml",
+        "category": "android-values",
+        "physicalLines": 83,
+        "nonblankLines": 82,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "XML",
+          "physicalLines": 83,
+          "nonblankLines": 82,
+          "codeLines": 55,
+          "commentLines": 27,
+          "blankLines": 1
+        },
+        "importance": "high",
+        "riskTags": [
+          "android_resource",
+          "intent_uri",
+          "localization",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "resources",
+            "string"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred.",
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Localized strings or locale-specific resource behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Android `android-values` file should be mapped to target resources, components, or documented deferred scope."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/res/values/themes.xml",
+        "extension": ".xml",
+        "category": "android-values",
+        "physicalLines": 37,
+        "nonblankLines": 36,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "XML",
+          "physicalLines": 37,
+          "nonblankLines": 36,
+          "codeLines": 9,
+          "commentLines": 27,
+          "blankLines": 1
+        },
+        "importance": "high",
+        "riskTags": [
+          "android_resource",
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [
+            "resources",
+            "style",
+            "item"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Android `android-values` file should be mapped to target resources, components, or documented deferred scope."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/res/xml/backup_rules.xml",
+        "extension": ".xml",
+        "category": "android-resource",
+        "physicalLines": 13,
+        "nonblankLines": 13,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "XML",
+          "physicalLines": 13,
+          "nonblankLines": 13,
+          "codeLines": 3,
+          "commentLines": 10,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [
+            "include",
+            "exclude"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/main/res/xml/data_extraction_rules.xml",
+        "extension": ".xml",
+        "category": "android-resource",
+        "physicalLines": 19,
+        "nonblankLines": 19,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "XML",
+          "physicalLines": 19,
+          "nonblankLines": 19,
+          "codeLines": 5,
+          "commentLines": 14,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [
+          "android_resource"
+        ],
+        "symbols": {
+          "classes": [
+            "include",
+            "exclude"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android resource/configuration must be mapped or explicitly deferred."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "app/src/test/java/com/example/foodike/ExampleUnitTest.kt",
+        "extension": ".kt",
+        "category": "test",
+        "physicalLines": 17,
+        "nonblankLines": 14,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 17,
+          "nonblankLines": 14,
+          "codeLines": 9,
+          "commentLines": 5,
+          "blankLines": 3
+        },
+        "importance": "low",
+        "riskTags": [
+          "source_test"
+        ],
+        "symbols": {
+          "classes": [
+            "ExampleUnitTest"
+          ],
+          "methods": [
+            "addition_isCorrect"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "addition_isCorrect"
+        ],
+        "featurePoints": [
+          "Source-side tests or verification assets should be migrated or replaced.",
+          "CRUD mutation or persistent state update behavior. Evidence method: `addition_isCorrect`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "art/demo.gif",
+        "extension": ".gif",
+        "category": "asset",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "low",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `art/demo.gif` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "art/FoodikeIntrouctionMockUp.jpg",
+        "extension": ".jpg",
+        "category": "asset",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "low",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `art/FoodikeIntrouctionMockUp.jpg` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "art/mvvm.png",
+        "extension": ".png",
+        "category": "asset",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "low",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `art/mvvm.png` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "build.gradle.kts",
+        "extension": ".kts",
+        "category": "kotlin-source",
+        "physicalLines": 33,
+        "nonblankLines": 32,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 33,
+          "nonblankLines": 32,
+          "codeLines": 6,
+          "commentLines": 26,
+          "blankLines": 1
+        },
+        "importance": "critical",
+        "riskTags": [
+          "permissions",
+          "platform_component",
+          "settings"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Android platform component lifecycle such as service, receiver, provider, or application.",
+          "Settings/preferences, option toggles, or configuration state behavior."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "CONTRIBUTING.md",
+        "extension": ".md",
+        "category": "other",
+        "physicalLines": 100,
+        "nonblankLines": 71,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Markdown",
+          "physicalLines": 100,
+          "nonblankLines": 71,
+          "codeLines": 0,
+          "commentLines": 71,
+          "blankLines": 29
+        },
+        "importance": "high",
+        "riskTags": [
+          "navigation_resource",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "gradle/libs.versions.toml",
+        "extension": ".toml",
+        "category": "config",
+        "physicalLines": 51,
+        "nonblankLines": 49,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "TOML",
+          "physicalLines": 51,
+          "nonblankLines": 49,
+          "codeLines": 49,
+          "commentLines": 0,
+          "blankLines": 2
+        },
+        "importance": "critical",
+        "riskTags": [
+          "navigation_resource",
+          "platform_component",
+          "screen_lifecycle",
+          "settings"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Android platform component lifecycle such as service, receiver, provider, or application.",
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "Settings/preferences, option toggles, or configuration state behavior."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "gradle/wrapper/gradle-wrapper.properties",
+        "extension": ".properties",
+        "category": "config",
+        "physicalLines": 6,
+        "nonblankLines": 6,
+        "locMetrics": {
+          "source": "internal-fallback",
+          "tool": "",
+          "language": "",
+          "physicalLines": 6,
+          "nonblankLines": 6,
+          "codeLines": 6,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "critical",
+        "riskTags": [
+          "platform_component"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android platform component lifecycle such as service, receiver, provider, or application."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "gradle.properties",
+        "extension": ".properties",
+        "category": "config",
+        "physicalLines": 47,
+        "nonblankLines": 45,
+        "locMetrics": {
+          "source": "internal-fallback",
+          "tool": "",
+          "language": "",
+          "physicalLines": 47,
+          "nonblankLines": 45,
+          "codeLines": 45,
+          "commentLines": 0,
+          "blankLines": 2
+        },
+        "importance": "high",
+        "riskTags": [
+          "background_work",
+          "intent_uri",
+          "settings"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Background work, scheduled tasks, alarms, workers, or job services.",
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Settings/preferences, option toggles, or configuration state behavior."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "LICENSE.md",
+        "extension": ".md",
+        "category": "other",
+        "physicalLines": 21,
+        "nonblankLines": 17,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Markdown",
+          "physicalLines": 21,
+          "nonblankLines": 17,
+          "codeLines": 0,
+          "commentLines": 17,
+          "blankLines": 4
+        },
+        "importance": "low",
+        "riskTags": [
+          "permissions"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Runtime permission request, permission result handling, or protected API access."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "local.properties",
+        "extension": ".properties",
+        "category": "config",
+        "physicalLines": 1,
+        "nonblankLines": 1,
+        "locMetrics": {
+          "source": "internal-fallback",
+          "tool": "",
+          "language": "",
+          "physicalLines": 1,
+          "nonblankLines": 1,
+          "codeLines": 1,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `local.properties` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "README.md",
+        "extension": ".md",
+        "category": "other",
+        "physicalLines": 112,
+        "nonblankLines": 78,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Markdown",
+          "physicalLines": 112,
+          "nonblankLines": 78,
+          "codeLines": 0,
+          "commentLines": 78,
+          "blankLines": 34
+        },
+        "importance": "critical",
+        "riskTags": [
+          "file_ops",
+          "image_viewer",
+          "navigation_resource",
+          "permissions",
+          "platform_component",
+          "screen_lifecycle",
+          "state_model"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File, document, storage, SAF, MediaStore, or import/export behavior.",
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Android platform component lifecycle such as service, receiver, provider, or application.",
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "screenshots/cart.jpeg",
+        "extension": ".jpeg",
+        "category": "asset",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "low",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `screenshots/cart.jpeg` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "screenshots/details.jpeg",
+        "extension": ".jpeg",
+        "category": "asset",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "low",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `screenshots/details.jpeg` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "screenshots/history.jpeg",
+        "extension": ".jpeg",
+        "category": "asset",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "low",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `screenshots/history.jpeg` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "screenshots/home.jpeg",
+        "extension": ".jpeg",
+        "category": "asset",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "low",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `screenshots/home.jpeg` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "screenshots/login.jpeg",
+        "extension": ".jpeg",
+        "category": "asset",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "low",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `screenshots/login.jpeg` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "screenshots/onboarding.jpeg",
+        "extension": ".jpeg",
+        "category": "asset",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "low",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `screenshots/onboarding.jpeg` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "screenshots/profile.jpeg",
+        "extension": ".jpeg",
+        "category": "asset",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "low",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `screenshots/profile.jpeg` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "settings.gradle.kts",
+        "extension": ".kts",
+        "category": "kotlin-source",
+        "physicalLines": 16,
+        "nonblankLines": 16,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Kotlin",
+          "physicalLines": 16,
+          "nonblankLines": 16,
+          "codeLines": 16,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "high",
+        "riskTags": [
+          "settings"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Settings/preferences, option toggles, or configuration state behavior."
+        ],
+        "textScanned": true
+      }
+    ]
+  },
+  "target": {
+    "root": "D:\\workspace\\Foodike\\Foodike-Harmony",
+    "exists": true,
+    "role": "target",
+    "sourceKind": "kotlin",
+    "locProvider": {
+      "schemaVersion": 1,
+      "preferredOrder": [
+        "scc",
+        "tokei"
+      ],
+      "status": "PASS",
+      "selected": {
+        "name": "tokei",
+        "path": "C:\\Users\\Sieger\\.cargo\\bin\\tokei.EXE",
+        "version": "tokei 14.0.0 compiled with serialization support: json"
+      },
+      "tools": [
+        {
+          "name": "scc",
+          "available": false,
+          "path": "",
+          "version": "",
+          "status": "MISSING",
+          "notes": "command not found"
+        },
+        {
+          "name": "tokei",
+          "available": true,
+          "path": "C:\\Users\\Sieger\\.cargo\\bin\\tokei.EXE",
+          "version": "tokei 14.0.0 compiled with serialization support: json",
+          "status": "PASS",
+          "notes": "tokei 14.0.0 compiled with serialization support: json",
+          "result": {
+            "command": [
+              "C:\\Users\\Sieger\\.cargo\\bin\\tokei.EXE",
+              "--version"
+            ],
+            "actual_command": [
+              "C:\\Users\\Sieger\\.cargo\\bin\\tokei.EXE",
+              "--version"
+            ],
+            "returncode": 0,
+            "stdout": "tokei 14.0.0 compiled with serialization support: json",
+            "stderr": "",
+            "timed_out": false
+          }
+        }
+      ],
+      "notes": "Using tokei for code/comment/blank LOC metrics.",
+      "usageStatus": "FALLBACK",
+      "usageMessage": "No external LOC metrics could be collected; using internal nonblank-line fallback."
+    },
+    "locCollectionAttempts": [
+      {
+        "tool": "tokei",
+        "path": "C:\\Users\\Sieger\\.cargo\\bin\\tokei.EXE",
+        "status": "FAIL",
+        "returncode": 0,
+        "timedOut": false,
+        "fileMetrics": 0,
+        "message": "{\"Total\":{\"blanks\":0,\"code\":0,\"comments\":0,\"reports\":[],\"children\":{},\"inaccurate\":false}}"
+      }
+    ],
+    "totals": {
+      "files": 0,
+      "textFiles": 0,
+      "assetFiles": 0,
+      "physicalLines": 0,
+      "nonblankLines": 0,
+      "locCodeLines": 0,
+      "locCommentLines": 0,
+      "locBlankLines": 0,
+      "productionTextFiles": 0,
+      "productionPhysicalLines": 0,
+      "productionNonblankLines": 0,
+      "productionLocCodeLines": 0,
+      "productionLocCommentLines": 0,
+      "productionLocBlankLines": 0,
+      "codeFiles": 0,
+      "codePhysicalLines": 0,
+      "codeNonblankLines": 0,
+      "codeLocCodeLines": 0,
+      "codeLocCommentLines": 0,
+      "codeLocBlankLines": 0,
+      "productionCodeFiles": 0,
+      "productionCodePhysicalLines": 0,
+      "productionCodeNonblankLines": 0,
+      "productionCodeLocCodeLines": 0,
+      "productionCodeLocCommentLines": 0,
+      "productionCodeLocBlankLines": 0,
+      "testFiles": 0,
+      "testNonblankLines": 0,
+      "testCodeFiles": 0,
+      "testCodeNonblankLines": 0,
+      "testCodeLocCodeLines": 0,
+      "testCodeLocCommentLines": 0,
+      "testCodeLocBlankLines": 0
+    },
+    "byCategory": {},
+    "byExtension": {},
+    "byImportance": {},
+    "byRiskTag": {},
+    "files": []
+  }
+}

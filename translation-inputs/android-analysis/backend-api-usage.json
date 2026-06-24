@@ -1,0 +1,28 @@
+[
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\LoginRepositoryImpl.kt",
+        "class_name": "LoginRepositoryImpl",
+        "method": "toggleLoginState",
+        "line": 57,
+        "end_line": 60,
+        "api": "edit",
+        "kinds": [
+            "datastore_preferences"
+        ],
+        "data_paths": [],
+        "code": "edit { preferences -> val loginState = preferences[LOGIN_STATE_KEY] ?: false preferences[LOGIN_STATE_KEY] = !loginState }"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\LoginRepositoryImpl.kt",
+        "class_name": "PrefsDataStore",
+        "method": "",
+        "line": 69,
+        "end_line": 69,
+        "api": "preferencesDataStore",
+        "kinds": [
+            "datastore_preferences"
+        ],
+        "data_paths": [],
+        "code": "preferencesDataStore(fileName)"
+    }
+]

@@ -1,0 +1,218 @@
+{
+  "generated_at": "2026-06-24T10:58:50+00:00",
+  "workspace_root": "D:\\workspace\\Foodike",
+  "skills_dir": "D:\\workspace\\Foodike\\.agents\\skills",
+  "source_skills_root": "D:\\X2Cangjie\\X2Cangjie\\X2Cangjie\\src\\cangjie-skills",
+  "install_source": {
+    "status": "SKIP",
+    "selected_kind": "existing-installation",
+    "selected_source_root": "D:\\X2Cangjie\\X2Cangjie\\X2Cangjie\\src\\cangjie-skills",
+    "fallback_source_root": "D:\\X2Cangjie\\X2Cangjie\\X2Cangjie\\src\\cangjie-skills",
+    "download_root": "D:\\workspace\\Foodike\\.cache\\cangjie-translation\\CangjieSkills",
+    "repo_url": "https://gitcode.com/Cangjie-SIG/CangjieSkills",
+    "branch": "cangjie-harmonyos-cbgSR",
+    "attempts": [],
+    "notes": "install not requested"
+  },
+  "result": "PASS",
+  "checks": [
+    {
+      "name": "skills directory",
+      "status": "PASS",
+      "path": "D:\\workspace\\Foodike\\.agents\\skills",
+      "notes": "found",
+      "critical": true
+    },
+    {
+      "name": "doc-search skill",
+      "status": "PASS",
+      "path": "D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search",
+      "notes": "found",
+      "critical": true
+    },
+    {
+      "name": "doc-search index directory",
+      "status": "PASS",
+      "path": "D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\index",
+      "notes": "found",
+      "critical": true
+    },
+    {
+      "name": "required index files",
+      "status": "PASS",
+      "path": "D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\index",
+      "notes": "all required files present",
+      "critical": true
+    },
+    {
+      "name": "LFS pointer check",
+      "status": "PASS",
+      "path": "D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\index",
+      "notes": "no pointer files detected",
+      "critical": true
+    },
+    {
+      "name": ".abstract.md metadata",
+      "status": "PASS",
+      "path": "D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search",
+      "notes": "2606 files",
+      "critical": true
+    },
+    {
+      "name": ".overview.md metadata",
+      "status": "PASS",
+      "path": "D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search",
+      "notes": "2606 files",
+      "critical": true
+    },
+    {
+      "name": "search_v3.py script",
+      "status": "PASS",
+      "path": "D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\search_v3.py",
+      "notes": "found",
+      "critical": true
+    },
+    {
+      "name": "skill SKILL.md files",
+      "status": "PASS",
+      "path": "D:\\workspace\\Foodike\\.agents\\skills",
+      "notes": "all first-level skills include SKILL.md",
+      "critical": false
+    },
+    {
+      "name": "search_v3.py proof",
+      "status": "PASS",
+      "path": "D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\search_v3.py",
+      "notes": "non-empty search results",
+      "critical": true
+    }
+  ],
+  "failures": [],
+  "warnings": [],
+  "installation": null,
+  "source_integrity": null,
+  "skills": {
+    "count": 14,
+    "names": [
+      "cangjie-arkts-interop",
+      "cangjie-harmonyos-doc-search",
+      "cangjie-harmonyos-doc-search-maintenance",
+      "cangjie-lang-features",
+      "cangjie-original-docs",
+      "cangjie-std",
+      "cangjie-stdx",
+      "harmonyos-app-agent-development",
+      "harmonyos-app-diagnose",
+      "harmonyos-build",
+      "harmonyos-evolution",
+      "harmonyos-project-init",
+      "harmonyos-requirements",
+      "harmonyos-stdx"
+    ],
+    "missing_skill_md": []
+  },
+  "metadata": {
+    "abstract_count": 2606,
+    "overview_count": 2606,
+    "sample_abstract_files": [
+      "harmonyos-6.1-8k\\.abstract.md",
+      "harmonyos-6.1-8k\\API\\.abstract.md",
+      "harmonyos-6.1-8k\\API\\AbilityKit\\.abstract.md",
+      "harmonyos-6.1-8k\\API\\AbilityKit\\README_zh\\.abstract.md",
+      "harmonyos-6.1-8k\\API\\AbilityKit\\cj-apis-ability-ability_result\\.abstract.md",
+      "harmonyos-6.1-8k\\API\\AbilityKit\\cj-apis-ability_access_ctrl\\.abstract.md",
+      "harmonyos-6.1-8k\\API\\AbilityKit\\cj-apis-ability_access_ctrl\\ohosability_access_ctrl程序访问控制管理\\.abstract.md",
+      "harmonyos-6.1-8k\\API\\AbilityKit\\cj-apis-ability_access_ctrl\\ohosability_access_ctrl程序访问控制管理\\class_AtManager\\.abstract.md",
+      "harmonyos-6.1-8k\\API\\AbilityKit\\cj-apis-app-ability-ability_constant\\.abstract.md",
+      "harmonyos-6.1-8k\\API\\AbilityKit\\cj-apis-app-ability-ability_constant\\ohosappabilityability_constant\\.abstract.md"
+    ],
+    "sample_overview_files": [
+      "harmonyos-6.1-8k\\.overview.md",
+      "harmonyos-6.1-8k\\API\\.overview.md",
+      "harmonyos-6.1-8k\\API\\AbilityKit\\.overview.md",
+      "harmonyos-6.1-8k\\API\\AbilityKit\\README_zh\\.overview.md",
+      "harmonyos-6.1-8k\\API\\AbilityKit\\cj-apis-ability-ability_result\\.overview.md",
+      "harmonyos-6.1-8k\\API\\AbilityKit\\cj-apis-ability_access_ctrl\\.overview.md",
+      "harmonyos-6.1-8k\\API\\AbilityKit\\cj-apis-ability_access_ctrl\\ohosability_access_ctrl程序访问控制管理\\.overview.md",
+      "harmonyos-6.1-8k\\API\\AbilityKit\\cj-apis-ability_access_ctrl\\ohosability_access_ctrl程序访问控制管理\\class_AtManager\\.overview.md",
+      "harmonyos-6.1-8k\\API\\AbilityKit\\cj-apis-app-ability-ability_constant\\.overview.md",
+      "harmonyos-6.1-8k\\API\\AbilityKit\\cj-apis-app-ability-ability_constant\\ohosappabilityability_constant\\.overview.md"
+    ]
+  },
+  "index": {
+    "path": "D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\index",
+    "exists": true,
+    "required_files": [
+      {
+        "name": "search.db",
+        "path": "D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\index\\search.db",
+        "exists": true,
+        "size": 74240000,
+        "lfs_pointer": false
+      },
+      {
+        "name": "aliases.json",
+        "path": "D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\index\\aliases.json",
+        "exists": true,
+        "size": 413532,
+        "lfs_pointer": false
+      },
+      {
+        "name": "apis.jsonl",
+        "path": "D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\index\\apis.jsonl",
+        "exists": true,
+        "size": 4948400,
+        "lfs_pointer": false
+      },
+      {
+        "name": "examples.jsonl",
+        "path": "D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\index\\examples.jsonl",
+        "exists": true,
+        "size": 413306,
+        "lfs_pointer": false
+      },
+      {
+        "name": "docs.jsonl",
+        "path": "D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\index\\docs.jsonl",
+        "exists": true,
+        "size": 16167316,
+        "lfs_pointer": false
+      },
+      {
+        "name": "manifest.json",
+        "path": "D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\index\\manifest.json",
+        "exists": true,
+        "size": 2190,
+        "lfs_pointer": false
+      },
+      {
+        "name": "tasks.jsonl",
+        "path": "D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\index\\tasks.jsonl",
+        "exists": true,
+        "size": 77439,
+        "lfs_pointer": false
+      }
+    ],
+    "missing": [],
+    "lfs_pointers": []
+  },
+  "search_proof": {
+    "enabled": true,
+    "status": "PASS",
+    "command": [
+      "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\search_v3.py",
+      "Button onClick",
+      "--mode",
+      "auto",
+      "--limit",
+      "3",
+      "--json"
+    ],
+    "returncode": 0,
+    "result_count": 24,
+    "stdout_preview": "{\r\n  \"query\": \"Button onClick\",\r\n  \"mode\": \"task\",\r\n  \"understanding\": {\r\n    \"mode\": \"rule\",\r\n    \"raw_query\": \"Button onClick\",\r\n    \"normalized_query\": \"Button onClick\",\r\n    \"intent_type\": \"build_feature\",\r\n    \"primary_objects\": [\r\n      \"slider\",\r\n      \"click\"\r\n    ],\r\n    \"identifiers\": [\r\n      \"Button\",\r\n      \"onClick\"\r\n    ],\r\n    \"constraints\": [],\r\n    \"stage\": \"implementation\",\r\n    \"preferred_result\": \"task\",\r\n    \"search_strategy\": {\r\n      \"primary_mode\": \"task\",\r\n      \"followup_modes\": [\r\n        \"api\",\r\n        \"example\"\r\n      ],\r\n      \"should_expand_examples\": true\r\n    }\r\n  },\r\n  \"tasks\": [\r\n    {\r\n      \"task_id\": \"ui.interaction.click\",\r\n      \"title\": \"组件点击事件\",\r\n      \"score\": 102.473,\r\n      \"summary\": \"给组件绑定点击交互并响应用户触发动作。\",\r\n      \"paths\": [\r\n        \"harmonyos-6.1-8k/API/arkui-cj/cj-button-picker-slider/.overview.md\",\r\n        \"harmonyos-6.1-8k/API/arkui-cj/cj-button-picker-slider/Slider/.overview.md\",\r\n        \"harmonyos-6.1-8k/API/arkui-cj/cj-button-pic",
+    "stderr_preview": "",
+    "notes": "non-empty search results"
+  }
+}

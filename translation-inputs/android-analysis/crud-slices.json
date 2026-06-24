@@ -1,0 +1,712 @@
+[
+    {
+        "id": "HomeRepositoryImpl.getRestaurants",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+        "class_name": "HomeRepositoryImpl",
+        "method": "getRestaurants",
+        "signature": "getRestaurants(): Results<List<Restaurant>>",
+        "line": 39,
+        "end_line": 41,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [],
+        "validation_rules": [],
+        "visible_effects": [],
+        "api_calls": [],
+        "called_methods": [
+            "Success"
+        ]
+    },
+    {
+        "id": "HomeRepositoryImpl.getAds",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+        "class_name": "HomeRepositoryImpl",
+        "method": "getAds",
+        "signature": "getAds(): Results<List<Advertisement>>",
+        "line": 43,
+        "end_line": 45,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [],
+        "validation_rules": [],
+        "visible_effects": [],
+        "api_calls": [],
+        "called_methods": [
+            "Success"
+        ]
+    },
+    {
+        "id": "HomeRepositoryImpl.getFoodItems",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+        "class_name": "HomeRepositoryImpl",
+        "method": "getFoodItems",
+        "signature": "getFoodItems(): Results<List<FoodItem>>",
+        "line": 47,
+        "end_line": 49,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [],
+        "validation_rules": [],
+        "visible_effects": [],
+        "api_calls": [],
+        "called_methods": [
+            "Success"
+        ]
+    },
+    {
+        "id": "HomeRepositoryImpl.getRestaurantFromName",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+        "class_name": "HomeRepositoryImpl",
+        "method": "getRestaurantFromName",
+        "signature": "getRestaurantFromName(name: String): Restaurant?",
+        "line": 51,
+        "end_line": 55,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [],
+        "validation_rules": [],
+        "visible_effects": [],
+        "api_calls": [],
+        "called_methods": []
+    },
+    {
+        "id": "LoginRepositoryImpl.toggleLoginState",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\LoginRepositoryImpl.kt",
+        "class_name": "LoginRepositoryImpl",
+        "method": "toggleLoginState",
+        "signature": "toggleLoginState()",
+        "line": 56,
+        "end_line": 61,
+        "operation_types": [
+            "write_or_update",
+            "local_preferences"
+        ],
+        "backend_kinds": [
+            "DataStore"
+        ],
+        "data_paths": [],
+        "ui_inputs": [],
+        "validation_rules": [],
+        "visible_effects": [],
+        "api_calls": [],
+        "called_methods": []
+    },
+    {
+        "id": "UserDataRepositoryImpl.setRestaurant",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "setRestaurant",
+        "signature": "setRestaurant(restaurant: Restaurant)",
+        "line": 46,
+        "end_line": 51,
+        "operation_types": [
+            "write_or_update"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [],
+        "validation_rules": [],
+        "visible_effects": [],
+        "api_calls": [],
+        "called_methods": [
+            "add",
+            "CartItem"
+        ]
+    },
+    {
+        "id": "UserDataRepositoryImpl.getSavedRestaurant",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getSavedRestaurant",
+        "signature": "getSavedRestaurant(): Flow<Restaurant>",
+        "line": 53,
+        "end_line": 57,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [],
+        "validation_rules": [
+            {
+                "relative_line": 2,
+                "marker": "if (",
+                "code": "if (currentRestaurant != null) {"
+            }
+        ],
+        "visible_effects": [
+            {
+                "relative_line": 3,
+                "marker": "emit(",
+                "code": "emit(currentRestaurant!!)"
+            }
+        ],
+        "api_calls": [],
+        "called_methods": [
+            "emit"
+        ]
+    },
+    {
+        "id": "UserDataRepositoryImpl.getMenuItems",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getMenuItems",
+        "signature": "getMenuItems(): Flow<List<CartItem>>",
+        "line": 59,
+        "end_line": 61,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [],
+        "validation_rules": [],
+        "visible_effects": [
+            {
+                "relative_line": 2,
+                "marker": "emit(",
+                "code": "emit(menuList.toMutableList())"
+            }
+        ],
+        "api_calls": [],
+        "called_methods": [
+            "emit",
+            "toMutableList"
+        ]
+    },
+    {
+        "id": "UserDataRepositoryImpl.getLikedRestaurants",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getLikedRestaurants",
+        "signature": "getLikedRestaurants(): Flow<List<Restaurant>>",
+        "line": 66,
+        "end_line": 68,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [],
+        "validation_rules": [],
+        "visible_effects": [
+            {
+                "relative_line": 2,
+                "marker": "emit(",
+                "code": "emit(list)"
+            }
+        ],
+        "api_calls": [],
+        "called_methods": [
+            "emit"
+        ]
+    },
+    {
+        "id": "UserDataRepositoryImpl.getCartItems",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getCartItems",
+        "signature": "getCartItems(): Flow<List<CartItem>>",
+        "line": 74,
+        "end_line": 76,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [],
+        "validation_rules": [],
+        "visible_effects": [
+            {
+                "relative_line": 2,
+                "marker": "emit(",
+                "code": "emit(cartListItems)"
+            }
+        ],
+        "api_calls": [],
+        "called_methods": [
+            "emit"
+        ]
+    },
+    {
+        "id": "Cart",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\Cart.kt",
+        "class_name": "",
+        "method": "Cart",
+        "signature": "Cart(navController: NavHostController, viewModel: CartViewModel)",
+        "line": 56,
+        "end_line": 119,
+        "operation_types": [
+            "search_or_filter"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [],
+        "validation_rules": [],
+        "visible_effects": [],
+        "api_calls": [],
+        "called_methods": [
+            "toArgb",
+            "LazyColumn",
+            "fillMaxSize",
+            "background",
+            "Color",
+            "Row",
+            "fillMaxWidth",
+            "IconButton",
+            "navigateUp",
+            "Icon",
+            "stringResource",
+            "ItemSection",
+            "CouponBar",
+            "DeliverySection",
+            "Restaurant",
+            "BillSection"
+        ]
+    },
+    {
+        "id": "getTimeInMins",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\common\\Extensions.kt",
+        "class_name": "",
+        "method": "getTimeInMins",
+        "signature": "getTimeInMins(): String",
+        "line": 37,
+        "end_line": 54,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [],
+        "validation_rules": [
+            {
+                "relative_line": 3,
+                "marker": "require(",
+                "code": "require(millis >= 0) { \"Less than a minute\" }"
+            },
+            {
+                "relative_line": 11,
+                "marker": "if (",
+                "code": "if (hours > 0) {"
+            }
+        ],
+        "visible_effects": [],
+        "api_calls": [],
+        "called_methods": [
+            "require",
+            "toDays",
+            "toMillis",
+            "toHours",
+            "toMinutes",
+            "StringBuilder",
+            "append",
+            "toString"
+        ]
+    },
+    {
+        "id": "getCustomerInfo",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\RestaurantCard.kt",
+        "class_name": "",
+        "method": "getCustomerInfo",
+        "signature": "getCustomerInfo(noOfRatings: Int): String",
+        "line": 125,
+        "end_line": 179,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [],
+        "validation_rules": [],
+        "visible_effects": [],
+        "api_calls": [],
+        "called_methods": []
+    },
+    {
+        "id": "SearchBar",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\SearchBar.kt",
+        "class_name": "",
+        "method": "SearchBar",
+        "signature": "SearchBar()",
+        "line": 44,
+        "end_line": 73,
+        "operation_types": [
+            "search_or_filter"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [
+            {
+                "relative_line": 4,
+                "marker": "TextField",
+                "code": "TextField("
+            },
+            {
+                "relative_line": 5,
+                "marker": "value =",
+                "code": "value = text,"
+            },
+            {
+                "relative_line": 17,
+                "marker": "TextField",
+                "code": "colors = TextFieldDefaults.textFieldColors("
+            }
+        ],
+        "validation_rules": [],
+        "visible_effects": [
+            {
+                "relative_line": 2,
+                "marker": "mutableStateOf",
+                "code": "var text by remember { mutableStateOf(\"\") }"
+            }
+        ],
+        "api_calls": [],
+        "called_methods": [
+            "mutableStateOf",
+            "TextField",
+            "fillMaxWidth",
+            "Text",
+            "alpha",
+            "Icon",
+            "textFieldColors",
+            "Color",
+            "copy"
+        ]
+    },
+    {
+        "id": "RestaurantDetail",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+        "class_name": "",
+        "method": "RestaurantDetail",
+        "signature": "RestaurantDetail(navController: NavHostController, viewModel: RestaurantDetailViewModel)",
+        "line": 72,
+        "end_line": 340,
+        "operation_types": [
+            "search_or_filter"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [],
+        "validation_rules": [
+            {
+                "relative_line": 7,
+                "marker": "if (",
+                "code": "targetValue = if (detailScreenState.recommendedExpandedState) 180f else 0f"
+            },
+            {
+                "relative_line": 11,
+                "marker": "if (",
+                "code": "targetValue = if (detailScreenState.nonVegExpandedState) 180f else 0f"
+            },
+            {
+                "relative_line": 15,
+                "marker": "if (",
+                "code": "targetValue = if (detailScreenState.vegExpandedState) 180f else 0f"
+            },
+            {
+                "relative_line": 39,
+                "marker": "if (",
+                "code": "if (detailScreenState.isLiked) {"
+            },
+            {
+                "relative_line": 116,
+                "marker": "if (",
+                "code": "if (detailScreenState.recommendedExpandedState) {"
+            },
+            {
+                "relative_line": 124,
+                "marker": "if (",
+                "code": "if (it != (recommendedList.size - 1)) {"
+            },
+            {
+                "relative_line": 175,
+                "marker": "if (",
+                "code": "if (detailScreenState.nonVegExpandedState) {"
+            },
+            {
+                "relative_line": 181,
+                "marker": "if (",
+                "code": "if (it != (nonVegList.size - 1)) {"
+            },
+            {
+                "relative_line": 230,
+                "marker": "if (",
+                "code": "if (detailScreenState.vegExpandedState) {"
+            },
+            {
+                "relative_line": 236,
+                "marker": "if (",
+                "code": "if (it != (vegList.size - 1)) {"
+            },
+            {
+                "relative_line": 251,
+                "marker": "if (",
+                "code": "if (detailScreenState.menuList.sumOf { it.noOfItems } != 0) {"
+            }
+        ],
+        "visible_effects": [
+            {
+                "relative_line": 255,
+                "marker": "navigate(",
+                "code": "navController.navigate(Screen.Cart.route)"
+            }
+        ],
+        "api_calls": [
+            "navigate"
+        ],
+        "called_methods": [
+            "animateFloatAsState",
+            "Box",
+            "LazyColumn",
+            "fillMaxSize",
+            "Row",
+            "fillMaxWidth",
+            "IconButton",
+            "navigateUp",
+            "Icon",
+            "stringResource",
+            "IconToggleButton",
+            "onEvent",
+            "Column",
+            "padding",
+            "RestaurantDetailCard",
+            "Text",
+            "weight",
+            "alpha",
+            "rotate",
+            "items",
+            "MenuItemCard",
+            "Divider",
+            "FloatingActionButton",
+            "navigate"
+        ]
+    },
+    {
+        "id": "getAllTags",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\util\\Filters.kt",
+        "class_name": "",
+        "method": "getAllTags",
+        "signature": "getAllTags(): List<Filter>",
+        "line": 38,
+        "end_line": 43,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [],
+        "validation_rules": [],
+        "visible_effects": [],
+        "api_calls": [],
+        "called_methods": [
+            "listOf"
+        ]
+    },
+    {
+        "id": "getTag",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\util\\Filters.kt",
+        "class_name": "",
+        "method": "getTag",
+        "signature": "getTag(value: String): Filter?",
+        "line": 45,
+        "end_line": 48,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [],
+        "validation_rules": [],
+        "visible_effects": [],
+        "api_calls": [],
+        "called_methods": [
+            "values",
+            "associateBy"
+        ]
+    },
+    {
+        "id": "LoginScreen",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginScreen.kt",
+        "class_name": "",
+        "method": "LoginScreen",
+        "signature": "LoginScreen(viewModel: LoginViewModel, navController: NavHostController)",
+        "line": 74,
+        "end_line": 238,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [
+            {
+                "relative_line": 42,
+                "marker": "TextField",
+                "code": "FoodikeTextField("
+            },
+            {
+                "relative_line": 43,
+                "marker": "value =",
+                "code": "value = email.text,"
+            },
+            {
+                "relative_line": 51,
+                "marker": "TextField",
+                "code": "FoodikeTextField("
+            },
+            {
+                "relative_line": 52,
+                "marker": "value =",
+                "code": "value = password.text,"
+            }
+        ],
+        "validation_rules": [],
+        "visible_effects": [
+            {
+                "relative_line": 71,
+                "marker": ".show()",
+                "code": ".show()"
+            },
+            {
+                "relative_line": 79,
+                "marker": "navigate(",
+                "code": "navController.navigate(Screen.Home.route) {"
+            },
+            {
+                "relative_line": 134,
+                "marker": ".show()",
+                "code": ".show()"
+            },
+            {
+                "relative_line": 144,
+                "marker": ".show()",
+                "code": ".show()"
+            },
+            {
+                "relative_line": 155,
+                "marker": ".show()",
+                "code": ".show()"
+            }
+        ],
+        "api_calls": [
+            "makeText",
+            "show",
+            "navigate"
+        ],
+        "called_methods": [
+            "rememberScaffoldState",
+            "LaunchedEffect",
+            "showSnackbar",
+            "Scaffold",
+            "Column",
+            "fillMaxSize",
+            "toArgb",
+            "Text",
+            "stringResource",
+            "Spacer",
+            "height",
+            "FoodikeTextField",
+            "onEvent",
+            "EnteredEmail",
+            "EnteredPassword",
+            "PasswordVisualTransformation",
+            "copy",
+            "alpha",
+            "makeText",
+            "show",
+            "Button",
+            "width",
+            "navigate",
+            "popUpTo",
+            "findStartDestination",
+            "Row",
+            "fillMaxWidth",
+            "padding",
+            "Divider",
+            "weight",
+            "Image",
+            "painterResource"
+        ]
+    },
+    {
+        "id": "OnBoardingItem.get",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\util\\OnBoardingItem.kt",
+        "class_name": "OnBoardingItem",
+        "method": "get",
+        "signature": "get(): List<OnBoardingItem>",
+        "line": 37,
+        "end_line": 57,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [],
+        "validation_rules": [],
+        "visible_effects": [],
+        "api_calls": [],
+        "called_methods": [
+            "listOf",
+            "OnBoardingItem"
+        ]
+    },
+    {
+        "id": "SetupNavigation",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+        "class_name": "",
+        "method": "SetupNavigation",
+        "signature": "SetupNavigation(startDestination: String)",
+        "line": 124,
+        "end_line": 175,
+        "operation_types": [
+            "write_or_update"
+        ],
+        "backend_kinds": [],
+        "data_paths": [],
+        "ui_inputs": [],
+        "validation_rules": [
+            {
+                "relative_line": 16,
+                "marker": "if (",
+                "code": "if ((currentRoute == Screen.Home.route || currentRoute == Screen.History.route) && state) {"
+            }
+        ],
+        "visible_effects": [
+            {
+                "relative_line": 30,
+                "marker": "navigate(",
+                "code": "navController.navigate(Screen.Cart.route)"
+            }
+        ],
+        "api_calls": [
+            "navigate"
+        ],
+        "called_methods": [
+            "rememberNavController",
+            "currentBackStackEntryAsState",
+            "rememberLazyListState",
+            "Scaffold",
+            "Column",
+            "padding",
+            "Box",
+            "BottomBar",
+            "FloatingActionButton",
+            "navigate",
+            "Icon",
+            "Spacer",
+            "height",
+            "NavigationGraph"
+        ]
+    }
+]

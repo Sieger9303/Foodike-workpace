@@ -1,0 +1,909 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-24T10:58:52+00:00",
+  "sourceRoot": "D:\\Kotlin2Cangjie\\Foodike",
+  "targetRoot": "D:\\workspace\\Foodike\\Foodike-Harmony",
+  "locProviders": {
+    "source": {
+      "schemaVersion": 1,
+      "preferredOrder": [
+        "scc",
+        "tokei"
+      ],
+      "status": "PASS",
+      "selected": {
+        "name": "tokei",
+        "path": "C:\\Users\\Sieger\\.cargo\\bin\\tokei.EXE",
+        "version": "tokei 14.0.0 compiled with serialization support: json"
+      },
+      "tools": [
+        {
+          "name": "scc",
+          "available": false,
+          "path": "",
+          "version": "",
+          "status": "MISSING",
+          "notes": "command not found"
+        },
+        {
+          "name": "tokei",
+          "available": true,
+          "path": "C:\\Users\\Sieger\\.cargo\\bin\\tokei.EXE",
+          "version": "tokei 14.0.0 compiled with serialization support: json",
+          "status": "PASS",
+          "notes": "tokei 14.0.0 compiled with serialization support: json",
+          "result": {
+            "command": [
+              "C:\\Users\\Sieger\\.cargo\\bin\\tokei.EXE",
+              "--version"
+            ],
+            "actual_command": [
+              "C:\\Users\\Sieger\\.cargo\\bin\\tokei.EXE",
+              "--version"
+            ],
+            "returncode": 0,
+            "stdout": "tokei 14.0.0 compiled with serialization support: json",
+            "stderr": "",
+            "timed_out": false
+          }
+        }
+      ],
+      "notes": "Using tokei for code/comment/blank LOC metrics.",
+      "usageStatus": "PASS",
+      "usageMessage": "Collected per-file LOC metrics with tokei."
+    },
+    "target": {
+      "schemaVersion": 1,
+      "preferredOrder": [
+        "scc",
+        "tokei"
+      ],
+      "status": "PASS",
+      "selected": {
+        "name": "tokei",
+        "path": "C:\\Users\\Sieger\\.cargo\\bin\\tokei.EXE",
+        "version": "tokei 14.0.0 compiled with serialization support: json"
+      },
+      "tools": [
+        {
+          "name": "scc",
+          "available": false,
+          "path": "",
+          "version": "",
+          "status": "MISSING",
+          "notes": "command not found"
+        },
+        {
+          "name": "tokei",
+          "available": true,
+          "path": "C:\\Users\\Sieger\\.cargo\\bin\\tokei.EXE",
+          "version": "tokei 14.0.0 compiled with serialization support: json",
+          "status": "PASS",
+          "notes": "tokei 14.0.0 compiled with serialization support: json",
+          "result": {
+            "command": [
+              "C:\\Users\\Sieger\\.cargo\\bin\\tokei.EXE",
+              "--version"
+            ],
+            "actual_command": [
+              "C:\\Users\\Sieger\\.cargo\\bin\\tokei.EXE",
+              "--version"
+            ],
+            "returncode": 0,
+            "stdout": "tokei 14.0.0 compiled with serialization support: json",
+            "stderr": "",
+            "timed_out": false
+          }
+        }
+      ],
+      "notes": "Using tokei for code/comment/blank LOC metrics.",
+      "usageStatus": "FALLBACK",
+      "usageMessage": "No external LOC metrics could be collected; using internal nonblank-line fallback."
+    },
+    "primaryRatio": "targetToSourceProductionCodeLines",
+    "notes": "LOC gap findings use external tool code lines when available. Physical/nonblank/comment/blank ratios remain supporting evidence."
+  },
+  "ratios": {
+    "targetToSourceFiles": 0.0,
+    "targetToSourceTextFiles": 0.0,
+    "targetToSourceNonblankLines": 0.0,
+    "targetToSourceProductionTextFiles": 0.0,
+    "targetToSourceProductionNonblankLines": 0.0,
+    "targetToSourceCodeFiles": 0.0,
+    "targetToSourceCodeNonblankLines": 0.0,
+    "targetToSourceProductionCodeFiles": 0.0,
+    "targetToSourceProductionCodeNonblankLines": 0.0,
+    "targetToSourceProductionCodeLines": 0.0,
+    "targetToSourceTestFiles": 0.0
+  },
+  "findings": [
+    {
+      "severity": "high",
+      "kind": "large-loc-gap",
+      "message": "Target production code LoC is below 50% of source production code LoC. This may be valid only if the plan explains major platform/library replacements and deferred scope."
+    },
+    {
+      "severity": "medium",
+      "kind": "file-count-gap",
+      "message": "Target text file count is much smaller than source; check for omitted screens, adapters, resources, tests, or platform integrations."
+    },
+    {
+      "severity": "high",
+      "kind": "string-resource-coverage",
+      "message": "Target string resources cover only part of source base strings."
+    },
+    {
+      "severity": "high",
+      "kind": "coverage-matrix-uncovered-entry",
+      "message": "224 critical/high source feature(s) remain planned, unreviewed, or not covered."
+    },
+    {
+      "severity": "high",
+      "kind": "platform-capability-unresolved",
+      "message": "6 critical/high platform capability check(s) remain planned, unreviewed, or not covered."
+    }
+  ],
+  "coverageMatrix": {
+    "summary": {
+      "expectedEntries": 260,
+      "expectedCriticalHighEntries": 224,
+      "actualEntries": 260,
+      "staleEntries": 0,
+      "missingCriticalHighEntries": 0,
+      "uncoveredCriticalHighEntries": 224,
+      "deferredCriticalHighEntries": 0,
+      "deferredCriticalHighRatio": 0.0,
+      "simplifiedCriticalHighEntries": 0,
+      "simplifiedCriticalHighRatio": 0.0,
+      "simplifiedWithoutReasonCriticalHighEntries": 0,
+      "simplifiedWithoutEndpointOrTestCriticalHighEntries": 0,
+      "incompleteDeferredCriticalHighEntries": 0,
+      "weakDeferredJustificationCriticalHighEntries": 0,
+      "genericDeferredTextCriticalHighEntries": 0,
+      "repeatedDeferredJustificationGroups": 0,
+      "repeatedImplementedEvidenceGroups": 0,
+      "repeatedImplementedEndpointGroups": 0,
+      "broadImplementedEndpointCriticalHighEntries": 0,
+      "unverifiedTestEvidenceCriticalHighEntries": 0,
+      "testEvidenceVerifiedByLatestTestGateEntries": 0,
+      "weakEvidenceCriticalHighEntries": 0,
+      "missingSourceBehaviorCriticalHighEntries": 0,
+      "missingTargetBehaviorCriticalHighEntries": 0,
+      "missingVerificationEvidenceCriticalHighEntries": 0,
+      "parityMismatchCriticalHighEntries": 0,
+      "byStatus": {
+        "planned": 260
+      },
+      "allowedParityLevels": [
+        "",
+        "deferred",
+        "equivalent",
+        "not-applicable",
+        "platform-replaced",
+        "simplified",
+        "unverified"
+      ],
+      "deferredRequiredFields": [
+        "sourceEvidence",
+        "deferredReason",
+        "targetFallback",
+        "risk",
+        "futureCompletionPath"
+      ]
+    },
+    "report": "source-coverage-matrix-report.md",
+    "matrix": "source-coverage-matrix.json",
+    "template": "source-coverage-matrix-template.json"
+  },
+  "platformCapabilities": {
+    "summary": {
+      "expectedEntries": 6,
+      "expectedCriticalHighEntries": 6,
+      "actualEntries": 6,
+      "missingCriticalHighEntries": 0,
+      "unresolvedCriticalHighEntries": 6,
+      "missingDocSearchCriticalHighEntries": 0,
+      "implementedWeakTargetDecisionEntries": 0,
+      "implementedWeakTestEntries": 0,
+      "fallbackDespiteDirectEvidenceEntries": 0,
+      "localSimulationFallbackWithoutBlockerEntries": 0,
+      "replacementWithoutApiEvidenceEntries": 0,
+      "verifiedDirectMissingEndpointEntries": 0,
+      "implementedMissingEndpointEntries": 0,
+      "realCapabilityWithLocalFallbackEntries": 0,
+      "incompleteDeferredCriticalHighEntries": 0,
+      "genericDeferredCriticalHighEntries": 0,
+      "byStatus": {
+        "planned": 6
+      },
+      "allowedStatuses": [
+        "deferred",
+        "implemented-fallback",
+        "not-applicable",
+        "not-covered",
+        "planned",
+        "platform-replaced",
+        "unreviewed",
+        "verified-direct"
+      ],
+      "deferredRequiredFields": [
+        "targetCapabilitySearch",
+        "blocker",
+        "targetFallback",
+        "futureCompletionPath"
+      ]
+    },
+    "report": "platform-capability-check-report.md",
+    "check": "platform-capability-check.json",
+    "template": "platform-capability-template.json"
+  },
+  "targetStructure": {
+    "summary": {
+      "productionCodeFiles": 0,
+      "productionCodeNonblankLines": 0,
+      "largestProductionCodeFileNonblankLines": 0,
+      "largeProductionCodeFiles": 0,
+      "endpointBearingFeatureRows": 0,
+      "endpointTargetFiles": 0,
+      "largestEndpointFileShare": null,
+      "concentratedEndpointFiles": 0,
+      "broadShellEndpointFiles": 0,
+      "uiSurfaceFiles": 0,
+      "concentratedUiSurfaceFiles": 0,
+      "uiEndpointBearingFeatureRows": 0,
+      "uiEndpointTargetFiles": 0,
+      "concentratedUiEndpointFiles": 0,
+      "entryModuleStatus": "SKIPPED",
+      "entryRootPackage": ""
+    },
+    "report": "target-structure-report.md",
+    "check": "target-structure-report.json",
+    "findings": []
+  },
+  "targetWeakeningSignals": {
+    "counts": {},
+    "samples": {}
+  },
+  "mustReviewSourceFiles": [
+    {
+      "path": "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+      "importance": "critical",
+      "nonblankLines": 719,
+      "category": "kotlin-source",
+      "riskTags": [
+        "file_ops",
+        "image_viewer",
+        "intent_uri",
+        "navigation_resource",
+        "permissions"
+      ],
+      "classes": [],
+      "methods": []
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+      "importance": "critical",
+      "nonblankLines": 296,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "intent_uri",
+        "navigation_resource",
+        "permissions",
+        "state_model"
+      ],
+      "classes": [],
+      "methods": [
+        "RestaurantDetail"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+      "importance": "critical",
+      "nonblankLines": 261,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "permissions"
+      ],
+      "classes": [],
+      "methods": [
+        "HistorySection"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+      "importance": "critical",
+      "nonblankLines": 224,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "navigation_resource",
+        "permissions",
+        "state_model"
+      ],
+      "classes": [],
+      "methods": [
+        "NavigationGraph",
+        "SetupNavigation",
+        "BottomBar"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+      "importance": "critical",
+      "nonblankLines": 213,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "navigation_resource",
+        "notification_widget",
+        "permissions",
+        "screen_lifecycle",
+        "settings",
+        "state_model"
+      ],
+      "classes": [],
+      "methods": [
+        "LoginScreen"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+      "importance": "critical",
+      "nonblankLines": 193,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "navigation_resource",
+        "permissions",
+        "state_model"
+      ],
+      "classes": [],
+      "methods": [
+        "Profile"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt",
+      "importance": "critical",
+      "nonblankLines": 187,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "navigation_resource",
+        "permissions",
+        "state_model"
+      ],
+      "classes": [],
+      "methods": [
+        "MenuItemCard"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt",
+      "importance": "critical",
+      "nonblankLines": 169,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "permissions"
+      ],
+      "classes": [],
+      "methods": [
+        "RestaurantCard",
+        "getCustomerInfo"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
+      "importance": "critical",
+      "nonblankLines": 160,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "intent_uri",
+        "navigation_resource",
+        "permissions",
+        "screen_lifecycle",
+        "state_model"
+      ],
+      "classes": [],
+      "methods": [
+        "Home"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt",
+      "importance": "critical",
+      "nonblankLines": 155,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "permissions"
+      ],
+      "classes": [],
+      "methods": [
+        "RestaurantDetailCard"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt",
+      "importance": "critical",
+      "nonblankLines": 139,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "navigation_resource",
+        "permissions",
+        "state_model"
+      ],
+      "classes": [],
+      "methods": [
+        "CartItemCard"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt",
+      "importance": "critical",
+      "nonblankLines": 132,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "permissions",
+        "state_model"
+      ],
+      "classes": [],
+      "methods": [
+        "ItemSection"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/home/components/ChipBar.kt",
+      "importance": "high",
+      "nonblankLines": 114,
+      "category": "kotlin-source",
+      "riskTags": [
+        "permissions",
+        "state_model"
+      ],
+      "classes": [],
+      "methods": [
+        "ChipBar",
+        "Chip",
+        "ChipGroup"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
+      "importance": "critical",
+      "nonblankLines": 111,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "navigation_resource",
+        "permissions",
+        "screen_lifecycle",
+        "state_model"
+      ],
+      "classes": [],
+      "methods": [
+        "Cart"
+      ]
+    },
+    {
+      "path": "app/build.gradle.kts",
+      "importance": "critical",
+      "nonblankLines": 100,
+      "category": "kotlin-source",
+      "riskTags": [
+        "navigation_resource",
+        "permissions",
+        "platform_component",
+        "screen_lifecycle",
+        "settings"
+      ],
+      "classes": [],
+      "methods": []
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+      "importance": "high",
+      "nonblankLines": 99,
+      "category": "kotlin-source",
+      "riskTags": [
+        "navigation_resource",
+        "permissions",
+        "screen_lifecycle",
+        "state_model"
+      ],
+      "classes": [],
+      "methods": [
+        "OnBoarding"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/cart/components/CouponBar.kt",
+      "importance": "high",
+      "nonblankLines": 98,
+      "category": "kotlin-source",
+      "riskTags": [
+        "permissions",
+        "settings",
+        "state_model"
+      ],
+      "classes": [],
+      "methods": [
+        "CouponBar"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt",
+      "importance": "critical",
+      "nonblankLines": 92,
+      "category": "kotlin-source",
+      "riskTags": [
+        "navigation_resource",
+        "permissions",
+        "screen_lifecycle",
+        "state_model"
+      ],
+      "classes": [
+        "RestaurantDetailViewModel"
+      ],
+      "methods": [
+        "onEvent"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/cart/components/DeliverySection.kt",
+      "importance": "critical",
+      "nonblankLines": 87,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "permissions"
+      ],
+      "classes": [],
+      "methods": [
+        "DeliverySection"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/home/HomeViewModel.kt",
+      "importance": "critical",
+      "nonblankLines": 86,
+      "category": "kotlin-source",
+      "riskTags": [
+        "permissions",
+        "screen_lifecycle",
+        "state_model"
+      ],
+      "classes": [
+        "HomeViewModel"
+      ],
+      "methods": [
+        "onEvent"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+      "importance": "critical",
+      "nonblankLines": 86,
+      "category": "kotlin-source",
+      "riskTags": [
+        "permissions",
+        "screen_lifecycle",
+        "state_model"
+      ],
+      "classes": [
+        "LoginViewModel"
+      ],
+      "methods": [
+        "onEvent"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/history/components/Tabs.kt",
+      "importance": "high",
+      "nonblankLines": 84,
+      "category": "kotlin-source",
+      "riskTags": [
+        "intent_uri",
+        "permissions",
+        "state_model"
+      ],
+      "classes": [],
+      "methods": [
+        "Tabs"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/home/components/AdCard.kt",
+      "importance": "critical",
+      "nonblankLines": 84,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "permissions"
+      ],
+      "classes": [],
+      "methods": [
+        "AdCard"
+      ]
+    },
+    {
+      "path": "app/src/main/res/values/strings.xml",
+      "importance": "high",
+      "nonblankLines": 82,
+      "category": "android-values",
+      "riskTags": [
+        "android_resource",
+        "intent_uri",
+        "localization",
+        "permissions"
+      ],
+      "classes": [
+        "resources",
+        "string"
+      ],
+      "methods": []
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/history/History.kt",
+      "importance": "high",
+      "nonblankLines": 79,
+      "category": "kotlin-source",
+      "riskTags": [
+        "navigation_resource",
+        "permissions",
+        "screen_lifecycle",
+        "state_model"
+      ],
+      "classes": [],
+      "methods": [
+        "History"
+      ]
+    },
+    {
+      "path": "README.md",
+      "importance": "critical",
+      "nonblankLines": 78,
+      "category": "other",
+      "riskTags": [
+        "file_ops",
+        "image_viewer",
+        "navigation_resource",
+        "permissions",
+        "platform_component",
+        "screen_lifecycle",
+        "state_model"
+      ],
+      "classes": [],
+      "methods": []
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/home/components/TopSection.kt",
+      "importance": "critical",
+      "nonblankLines": 78,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "navigation_resource",
+        "permissions"
+      ],
+      "classes": [],
+      "methods": [
+        "TopSection"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+      "importance": "critical",
+      "nonblankLines": 76,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "permissions"
+      ],
+      "classes": [],
+      "methods": [
+        "OnboardingPage"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/home/components/ThankYouSection.kt",
+      "importance": "critical",
+      "nonblankLines": 73,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "permissions"
+      ],
+      "classes": [],
+      "methods": [
+        "ThankYouSection"
+      ]
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "importance": "high",
+      "nonblankLines": 71,
+      "category": "other",
+      "riskTags": [
+        "navigation_resource",
+        "state_model"
+      ],
+      "classes": [],
+      "methods": []
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt",
+      "importance": "high",
+      "nonblankLines": 70,
+      "category": "kotlin-source",
+      "riskTags": [
+        "permissions",
+        "settings"
+      ],
+      "classes": [],
+      "methods": [
+        "FoodikeTextField"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt",
+      "importance": "critical",
+      "nonblankLines": 67,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "permissions",
+        "settings",
+        "state_model"
+      ],
+      "classes": [],
+      "methods": [
+        "SearchBar"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/home/components/FoodikeBottomNavigation.kt",
+      "importance": "high",
+      "nonblankLines": 67,
+      "category": "kotlin-source",
+      "riskTags": [
+        "navigation_resource",
+        "permissions"
+      ],
+      "classes": [
+        "BottomNavigationDefaults"
+      ],
+      "methods": [
+        "FoodikeBottomNavigation"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt",
+      "importance": "critical",
+      "nonblankLines": 62,
+      "category": "kotlin-source",
+      "riskTags": [
+        "intent_uri",
+        "navigation_resource",
+        "permissions",
+        "state_model"
+      ],
+      "classes": [
+        "UserDataRepositoryImpl"
+      ],
+      "methods": [
+        "setRestaurant",
+        "getSavedRestaurant",
+        "getMenuItems",
+        "getLikedRestaurants",
+        "isRestaurantLiked",
+        "getCartItems"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
+      "importance": "critical",
+      "nonblankLines": 62,
+      "category": "kotlin-source",
+      "riskTags": [
+        "intent_uri",
+        "navigation_resource",
+        "permissions",
+        "screen_lifecycle",
+        "state_model"
+      ],
+      "classes": [
+        "MainActivity"
+      ],
+      "methods": [
+        "onCreate"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/history/HistoryViewModel.kt",
+      "importance": "critical",
+      "nonblankLines": 62,
+      "category": "kotlin-source",
+      "riskTags": [
+        "permissions",
+        "screen_lifecycle",
+        "state_model"
+      ],
+      "classes": [
+        "HistoryViewModel"
+      ],
+      "methods": [
+        "onEvent"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/home/components/FavouriteCard.kt",
+      "importance": "critical",
+      "nonblankLines": 62,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "intent_uri",
+        "permissions"
+      ],
+      "classes": [],
+      "methods": [
+        "FavouriteCard"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/home/components/RecommendedCard.kt",
+      "importance": "critical",
+      "nonblankLines": 60,
+      "category": "kotlin-source",
+      "riskTags": [
+        "image_viewer",
+        "permissions"
+      ],
+      "classes": [],
+      "methods": [
+        "RecommendedCard"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
+      "importance": "critical",
+      "nonblankLines": 56,
+      "category": "kotlin-source",
+      "riskTags": [
+        "permissions",
+        "settings",
+        "state_model"
+      ],
+      "classes": [
+        "LoginRepositoryImpl",
+        "PrefsDataStore"
+      ],
+      "methods": [
+        "toggleLoginState"
+      ]
+    },
+    {
+      "path": "app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt",
+      "importance": "critical",
+      "nonblankLines": 56,
+      "category": "kotlin-source",
+      "riskTags": [
+        "permissions",
+        "screen_lifecycle",
+        "state_model"
+      ],
+      "classes": [
+        "SplashViewModel"
+      ],
+      "methods": []
+    }
+  ],
+  "recommendedPlanningInstruction": "Use source-feature-survey.md, source-file-inventory.md, source-coverage-matrix.md, source-coverage-matrix-report.md, platform-capability-check.md, platform-capability-check-report.md, target-structure-report.md, resource-coverage-report.md, and coverage-gap-report.md as a coverage baseline. The agent should explicitly map every critical/high source feature to target implementation, test coverage, platform replacement, or a documented deferred item; a large LoC gap must be explained by concrete replacements rather than silent omission. Implemented matrix entries should use specific target endpoints and verified tests instead of bulk-reused shell evidence. Use the source project structure as a responsibility guide while adapting to Cangjie; avoid closing many unrelated features through overgrown shell files or broad endpoint evidence. For detected platform capabilities, query CangjieSkills/HarmonyOS/Cangjie API docs and HarmonyOS-Examples before choosing a direct API, platform replacement, fallback, or deferred status. When a third-party package or library may be needed, also query the Cangjie package index (`https://pkg.cangjie-lang.cn`) or cjpm package lookup; use cjpm/project-management docs only to configure the chosen dependency. A healthy production LoC ratio only removes one code-scale warning; generated tests cannot hide production implementation shrinkage and the ratio does not prove functional coverage."
+}

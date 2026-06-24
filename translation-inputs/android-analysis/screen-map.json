@@ -1,0 +1,1025 @@
+{
+    "xml": {
+        "mode": "xml_manifest_only",
+        "activities": [
+            {
+                "tag": "activity",
+                "name": ".presentation.MainActivity",
+                "qualified_name": "com.example.foodike.presentation.MainActivity",
+                "simple_name": "MainActivity",
+                "label": "@string/app_name",
+                "theme": "@style/Theme.SplashScreenTheme",
+                "exported": "true",
+                "actions": [
+                    "android.intent.action.MAIN"
+                ],
+                "categories": [
+                    "android.intent.category.LAUNCHER"
+                ],
+                "launcher": true
+            }
+        ],
+        "launcher_activity": {
+            "tag": "activity",
+            "name": ".presentation.MainActivity",
+            "qualified_name": "com.example.foodike.presentation.MainActivity",
+            "simple_name": "MainActivity",
+            "label": "@string/app_name",
+            "theme": "@style/Theme.SplashScreenTheme",
+            "exported": "true",
+            "actions": [
+                "android.intent.action.MAIN"
+            ],
+            "categories": [
+                "android.intent.category.LAUNCHER"
+            ],
+            "launcher": true
+        },
+        "layout_tools_context": [],
+        "note": "Kotlin navigation/composable evidence is added by KotlinAndroidSemanticExtractor."
+    },
+    "kotlin": {
+        "mode": "kotlin_psi",
+        "compose_screens": [
+            {
+                "kind": "composable_function",
+                "name": "Cart",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\Cart.kt",
+                "line": 56,
+                "parameters": [
+                    {
+                        "name": "navController",
+                        "type": "NavHostController"
+                    },
+                    {
+                        "name": "viewModel",
+                        "type": "CartViewModel"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "BillSection",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\BillSection.kt",
+                "line": 46,
+                "parameters": [
+                    {
+                        "name": "itemTotal",
+                        "type": "Double"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "CartItemCard",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CartItemCard.kt",
+                "line": 62,
+                "parameters": [
+                    {
+                        "name": "cartItem",
+                        "type": "CartItem"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "CouponBar",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CouponBar.kt",
+                "line": 57,
+                "parameters": []
+            },
+            {
+                "kind": "composable_function",
+                "name": "DeliverySection",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\DeliverySection.kt",
+                "line": 49,
+                "parameters": [
+                    {
+                        "name": "restaurant",
+                        "type": "Restaurant"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "ItemSection",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\ItemSection.kt",
+                "line": 54,
+                "parameters": [
+                    {
+                        "name": "list",
+                        "type": "List<CartItem>"
+                    },
+                    {
+                        "name": "onIncreaseClick",
+                        "type": "(cartItem: CartItem) -> Unit"
+                    },
+                    {
+                        "name": "onDecreaseClick",
+                        "type": "(cartItem: CartItem) -> Unit"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "RestaurantCard",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\RestaurantCard.kt",
+                "line": 52,
+                "parameters": [
+                    {
+                        "name": "restaurant",
+                        "type": "Restaurant"
+                    },
+                    {
+                        "name": "modifier",
+                        "type": "Modifier"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "SearchBar",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\SearchBar.kt",
+                "line": 44,
+                "parameters": []
+            },
+            {
+                "kind": "composable_function",
+                "name": "RestaurantDetail",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+                "line": 72,
+                "parameters": [
+                    {
+                        "name": "navController",
+                        "type": "NavHostController"
+                    },
+                    {
+                        "name": "viewModel",
+                        "type": "RestaurantDetailViewModel"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "MenuItemCard",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\components\\MenuItemCard.kt",
+                "line": 68,
+                "parameters": [
+                    {
+                        "name": "menuItem",
+                        "type": "MenuItem"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "RestaurantDetailCard",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\components\\RestaurantDetailCard.kt",
+                "line": 60,
+                "parameters": [
+                    {
+                        "name": "restaurant",
+                        "type": "Restaurant"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "History",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\History.kt",
+                "line": 51,
+                "parameters": [
+                    {
+                        "name": "viewModel",
+                        "type": "HistoryViewModel"
+                    },
+                    {
+                        "name": "navHostController",
+                        "type": "NavHostController"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "FavouritesSection",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\FavouritesSection.kt",
+                "line": 47,
+                "parameters": [
+                    {
+                        "name": "list",
+                        "type": "List<Restaurant>"
+                    },
+                    {
+                        "name": "onClick",
+                        "type": "(restaurant: Restaurant) -> Unit"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "HistorySection",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\HistorySection.kt",
+                "line": 61,
+                "parameters": []
+            },
+            {
+                "kind": "composable_function",
+                "name": "Tabs",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\Tabs.kt",
+                "line": 48,
+                "parameters": [
+                    {
+                        "name": "pagerState",
+                        "type": "PagerState"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "TabsContent",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\TabsContent.kt",
+                "line": 35,
+                "parameters": [
+                    {
+                        "name": "pagerState",
+                        "type": "PagerState"
+                    },
+                    {
+                        "name": "list",
+                        "type": "List<Restaurant>"
+                    },
+                    {
+                        "name": "onClick",
+                        "type": "(restaurant: Restaurant) -> Unit"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "Home",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreen.kt",
+                "line": 88,
+                "parameters": [
+                    {
+                        "name": "scrollState",
+                        "type": "LazyListState"
+                    },
+                    {
+                        "name": "navController",
+                        "type": "NavHostController"
+                    },
+                    {
+                        "name": "viewModel",
+                        "type": "HomeViewModel"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "AdCard",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\AdCard.kt",
+                "line": 50,
+                "parameters": [
+                    {
+                        "name": "ad",
+                        "type": "Advertisement"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "AdSection",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\AdSection.kt",
+                "line": 40,
+                "parameters": [
+                    {
+                        "name": "adsList",
+                        "type": "List<Advertisement>"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "ChipBar",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ChipBar.kt",
+                "line": 50,
+                "parameters": []
+            },
+            {
+                "kind": "composable_function",
+                "name": "Chip",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ChipBar.kt",
+                "line": 69,
+                "parameters": [
+                    {
+                        "name": "name",
+                        "type": "String"
+                    },
+                    {
+                        "name": "isSelected",
+                        "type": "Boolean"
+                    },
+                    {
+                        "name": "onSelectionChanged",
+                        "type": "(String) -> Unit"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "ChipGroup",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ChipBar.kt",
+                "line": 100,
+                "parameters": [
+                    {
+                        "name": "filters",
+                        "type": "List<Filter>"
+                    },
+                    {
+                        "name": "selectedFilter",
+                        "type": "Filter?"
+                    },
+                    {
+                        "name": "onSelectedChanged",
+                        "type": "(String) -> Unit"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "FavouriteCard",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\FavouriteCard.kt",
+                "line": 46,
+                "parameters": [
+                    {
+                        "name": "restaurant",
+                        "type": "Restaurant"
+                    },
+                    {
+                        "name": "modifier",
+                        "type": "Modifier"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "FavouriteSection",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\FavouriteScreen.kt",
+                "line": 47,
+                "parameters": [
+                    {
+                        "name": "list",
+                        "type": "List<Restaurant>"
+                    },
+                    {
+                        "name": "onClick",
+                        "type": "(restaurant: Restaurant) -> Unit"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "FoodikeBottomNavigation",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\FoodikeBottomNavigation.kt",
+                "line": 42,
+                "parameters": [
+                    {
+                        "name": "modifier",
+                        "type": "Modifier"
+                    },
+                    {
+                        "name": "backgroundColor",
+                        "type": "Color"
+                    },
+                    {
+                        "name": "contentColor",
+                        "type": "Color"
+                    },
+                    {
+                        "name": "elevation",
+                        "type": "Dp"
+                    },
+                    {
+                        "name": "content",
+                        "type": "@Composable RowScope.() -> Unit"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "GreetingSection",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\GreetingScreen.kt",
+                "line": 40,
+                "parameters": [
+                    {
+                        "name": "userName",
+                        "type": "String"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "MainSection",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\MainSection.kt",
+                "line": 43,
+                "parameters": []
+            },
+            {
+                "kind": "composable_function",
+                "name": "RecommendedCard",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\RecommendedCard.kt",
+                "line": 46,
+                "parameters": [
+                    {
+                        "name": "foodItem",
+                        "type": "FoodItem"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "RecommendedSection",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\RecommendedSection.kt",
+                "line": 47,
+                "parameters": [
+                    {
+                        "name": "list",
+                        "type": "List<FoodItem>"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "ThankYouSection",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ThankYouSection.kt",
+                "line": 49,
+                "parameters": []
+            },
+            {
+                "kind": "composable_function",
+                "name": "TopSection",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\TopSection.kt",
+                "line": 53,
+                "parameters": [
+                    {
+                        "name": "navController",
+                        "type": "NavHostController"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "LoginScreen",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginScreen.kt",
+                "line": 74,
+                "parameters": [
+                    {
+                        "name": "viewModel",
+                        "type": "LoginViewModel"
+                    },
+                    {
+                        "name": "navController",
+                        "type": "NavHostController"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "FoodikeTextField",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\components\\FoodikeTextField.kt",
+                "line": 44,
+                "parameters": [
+                    {
+                        "name": "value",
+                        "type": "String"
+                    },
+                    {
+                        "name": "onValueChange",
+                        "type": "(String) -> Unit"
+                    },
+                    {
+                        "name": "hint",
+                        "type": "String"
+                    },
+                    {
+                        "name": "keyboardOptions",
+                        "type": "KeyboardOptions"
+                    },
+                    {
+                        "name": "visualTransformation",
+                        "type": "VisualTransformation"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "OnBoarding",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\OnBoarding.kt",
+                "line": 53,
+                "parameters": [
+                    {
+                        "name": "navController",
+                        "type": "NavHostController"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "BottomSection",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\components\\BottomSection.kt",
+                "line": 42,
+                "parameters": [
+                    {
+                        "name": "size",
+                        "type": "Int"
+                    },
+                    {
+                        "name": "index",
+                        "type": "Int"
+                    },
+                    {
+                        "name": "onNextClicked",
+                        "type": "() -> Unit"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "Indicators",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\components\\Indicators.kt",
+                "line": 48,
+                "parameters": [
+                    {
+                        "name": "size",
+                        "type": "Int"
+                    },
+                    {
+                        "name": "index",
+                        "type": "Int"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "Indicator",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\components\\Indicators.kt",
+                "line": 63,
+                "parameters": [
+                    {
+                        "name": "isSelected",
+                        "type": "Boolean"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "OnboardingPage",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\components\\OnboardingPage.kt",
+                "line": 50,
+                "parameters": [
+                    {
+                        "name": "item",
+                        "type": "OnBoardingItem"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "Profile",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\Profile.kt",
+                "line": 68,
+                "parameters": [
+                    {
+                        "name": "viewModel",
+                        "type": "ProfileViewModel"
+                    },
+                    {
+                        "name": "navController",
+                        "type": "NavHostController"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "ProfileCard",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\components\\ProfileCard.kt",
+                "line": 43,
+                "parameters": [
+                    {
+                        "name": "title",
+                        "type": "String"
+                    },
+                    {
+                        "name": "subtext",
+                        "type": "String"
+                    },
+                    {
+                        "name": "onClick",
+                        "type": "() -> Unit"
+                    },
+                    {
+                        "name": "dividerVisibility",
+                        "type": "Boolean"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "NavigationGraph",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 64,
+                "parameters": [
+                    {
+                        "name": "navController",
+                        "type": "NavHostController"
+                    },
+                    {
+                        "name": "startDestination",
+                        "type": "String"
+                    },
+                    {
+                        "name": "scrollState",
+                        "type": "LazyListState"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "SetupNavigation",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 124,
+                "parameters": [
+                    {
+                        "name": "startDestination",
+                        "type": "String"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_function",
+                "name": "BottomBar",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 178,
+                "parameters": [
+                    {
+                        "name": "navController",
+                        "type": "NavHostController"
+                    }
+                ]
+            },
+            {
+                "kind": "composable_route",
+                "api": "composable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 76,
+                "enclosing_class": "",
+                "enclosing_function": "NavigationGraph",
+                "code": "composable( route = Screen.Onboarding.route, ) { OnBoarding(navController = navController) }",
+                "route": "Screen.Onboarding.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "composable_route",
+                "api": "composable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 81,
+                "enclosing_class": "",
+                "enclosing_function": "NavigationGraph",
+                "code": "composable( route = Screen.LoginScreen.route, ) { LoginScreen(navController = navController) }",
+                "route": "Screen.LoginScreen.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "composable_route",
+                "api": "composable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 87,
+                "enclosing_class": "",
+                "enclosing_function": "NavigationGraph",
+                "code": "composable( route = Screen.Home.route ) { Home(navController = navController, scrollState = scrollState) }",
+                "route": "Screen.Home.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "composable_route",
+                "api": "composable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 92,
+                "enclosing_class": "",
+                "enclosing_function": "NavigationGraph",
+                "code": "composable( route = Screen.History.route ) { History(navHostController = navController) }",
+                "route": "Screen.History.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "composable_route",
+                "api": "composable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 97,
+                "enclosing_class": "",
+                "enclosing_function": "NavigationGraph",
+                "code": "composable( route = Screen.Cart.route ) { Cart(navController = navController) }",
+                "route": "Screen.Cart.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "composable_route",
+                "api": "composable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 102,
+                "enclosing_class": "",
+                "enclosing_function": "NavigationGraph",
+                "code": "composable( route = Screen.Profile.route ) { Profile(navController = navController) }",
+                "route": "Screen.Profile.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "composable_route",
+                "api": "composable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 108,
+                "enclosing_class": "",
+                "enclosing_function": "NavigationGraph",
+                "code": "composable( route = Screen.Onboarding.route, ) { OnBoarding(navController = navController) }",
+                "route": "Screen.Onboarding.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "composable_route",
+                "api": "composable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 113,
+                "enclosing_class": "",
+                "enclosing_function": "NavigationGraph",
+                "code": "composable( route = Screen.RestaurantDetails.route, ) { RestaurantDetail( navController = navController ) }",
+                "route": "Screen.RestaurantDetails.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "composable_function",
+                "name": "FoodikeTheme",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\ui\\theme\\Theme.kt",
+                "line": 48,
+                "parameters": [
+                    {
+                        "name": "content",
+                        "type": "@Composable () -> Unit"
+                    }
+                ]
+            }
+        ],
+        "navigation_events": [
+            {
+                "kind": "set_content",
+                "api": "setContent",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\MainActivity.kt",
+                "line": 57,
+                "enclosing_class": "MainActivity",
+                "enclosing_function": "onCreate",
+                "code": "setContent { FoodikeTheme { val screen by splashViewModel.startDestination Surface( modifier = Modifier.fillMaxSize(), ) { SetupNavigation( startDestination = screen ) } } }"
+            },
+            {
+                "kind": "navigation",
+                "api": "navigate",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+                "line": 330,
+                "enclosing_class": "",
+                "enclosing_function": "RestaurantDetail",
+                "code": "navigate(Screen.Cart.route)",
+                "route": "Screen.Cart.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "navigate",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\History.kt",
+                "line": 85,
+                "enclosing_class": "",
+                "enclosing_function": "History",
+                "code": "navigate(Screen.RestaurantDetails.route)",
+                "route": "Screen.RestaurantDetails.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "navigate",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreen.kt",
+                "line": 139,
+                "enclosing_class": "",
+                "enclosing_function": "Home",
+                "code": "navigate(Screen.RestaurantDetails.route)",
+                "route": "Screen.RestaurantDetails.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "navigate",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreen.kt",
+                "line": 159,
+                "enclosing_class": "",
+                "enclosing_function": "Home",
+                "code": "navigate(Screen.RestaurantDetails.route)",
+                "route": "Screen.RestaurantDetails.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "navigate",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\TopSection.kt",
+                "line": 67,
+                "enclosing_class": "",
+                "enclosing_function": "TopSection",
+                "code": "navigate(Screen.Profile.route)",
+                "route": "Screen.Profile.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "navigate",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginScreen.kt",
+                "line": 157,
+                "enclosing_class": "",
+                "enclosing_function": "LoginScreen",
+                "code": "navigate(Screen.Home.route) { popUpTo(navController.graph.findStartDestination().id) { inclusive = true } }",
+                "route": "Screen.Home.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "navigate",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\OnBoarding.kt",
+                "line": 101,
+                "enclosing_class": "",
+                "enclosing_function": "OnBoarding",
+                "code": "navigate(Screen.LoginScreen.route)",
+                "route": "Screen.LoginScreen.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "navigate",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\Profile.kt",
+                "line": 192,
+                "enclosing_class": "",
+                "enclosing_function": "Profile",
+                "code": "navigate(Screen.Onboarding.route) { popUpTo(navController.graph.findStartDestination().id) { inclusive = true } }",
+                "route": "Screen.Onboarding.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "composable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 76,
+                "enclosing_class": "",
+                "enclosing_function": "NavigationGraph",
+                "code": "composable( route = Screen.Onboarding.route, ) { OnBoarding(navController = navController) }",
+                "route": "Screen.Onboarding.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "composable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 81,
+                "enclosing_class": "",
+                "enclosing_function": "NavigationGraph",
+                "code": "composable( route = Screen.LoginScreen.route, ) { LoginScreen(navController = navController) }",
+                "route": "Screen.LoginScreen.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "composable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 87,
+                "enclosing_class": "",
+                "enclosing_function": "NavigationGraph",
+                "code": "composable( route = Screen.Home.route ) { Home(navController = navController, scrollState = scrollState) }",
+                "route": "Screen.Home.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "composable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 92,
+                "enclosing_class": "",
+                "enclosing_function": "NavigationGraph",
+                "code": "composable( route = Screen.History.route ) { History(navHostController = navController) }",
+                "route": "Screen.History.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "composable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 97,
+                "enclosing_class": "",
+                "enclosing_function": "NavigationGraph",
+                "code": "composable( route = Screen.Cart.route ) { Cart(navController = navController) }",
+                "route": "Screen.Cart.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "composable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 102,
+                "enclosing_class": "",
+                "enclosing_function": "NavigationGraph",
+                "code": "composable( route = Screen.Profile.route ) { Profile(navController = navController) }",
+                "route": "Screen.Profile.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "composable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 108,
+                "enclosing_class": "",
+                "enclosing_function": "NavigationGraph",
+                "code": "composable( route = Screen.Onboarding.route, ) { OnBoarding(navController = navController) }",
+                "route": "Screen.Onboarding.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "composable",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 113,
+                "enclosing_class": "",
+                "enclosing_function": "NavigationGraph",
+                "code": "composable( route = Screen.RestaurantDetails.route, ) { RestaurantDetail( navController = navController ) }",
+                "route": "Screen.RestaurantDetails.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "NavHost",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 72,
+                "enclosing_class": "",
+                "enclosing_function": "NavigationGraph",
+                "code": "NavHost( navController = navController, startDestination = startDestination ) { composable( route = Screen.Onboarding.route, ) { OnBoarding(navController = navController) } composable( route = Screen.LoginScreen.route, ) { LoginScreen(navController = navController) } composable( route = Screen.Home.route ) { Home(navController = navController, scrollState = scrollState) } composable( route = Screen.History.route ) { History(navHostController = navController) } composable( route = Screen.Cart....",
+                "route": "navController",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "rememberNavController",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 128,
+                "enclosing_class": "",
+                "enclosing_function": "SetupNavigation",
+                "code": "rememberNavController()",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "navigate",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 155,
+                "enclosing_class": "",
+                "enclosing_function": "SetupNavigation",
+                "code": "navigate(Screen.Cart.route)",
+                "route": "Screen.Cart.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "navigate",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 202,
+                "enclosing_class": "",
+                "enclosing_function": "BottomBar",
+                "code": "navigate(Screen.Home.route) { // Pop up to the start destination of the graph to // avoid building up a large stack of destinations // on the back stack as users select items popUpTo(navController.graph.findStartDestination().id) { saveState = true } // Avoid multiple copies of the same destination when // reselecting the same item launchSingleTop = true // Restore state when reselecting a previously selected item restoreState = true }",
+                "route": "Screen.Home.route",
+                "all_string_literals": []
+            },
+            {
+                "kind": "navigation",
+                "api": "navigate",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+                "line": 237,
+                "enclosing_class": "",
+                "enclosing_function": "BottomBar",
+                "code": "navigate(Screen.History.route) { // Pop up to the start destination of the graph to // avoid building up a large stack of destinations // on the back stack as users select items popUpTo(navController.graph.findStartDestination().id) { saveState = true } // Avoid multiple copies of the same destination when // reselecting the same item launchSingleTop = true // Restore state when reselecting a previously selected item restoreState = true }",
+                "route": "Screen.History.route",
+                "all_string_literals": []
+            }
+        ],
+        "set_content_roots": [
+            {
+                "kind": "set_content",
+                "api": "setContent",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\MainActivity.kt",
+                "line": 57,
+                "enclosing_class": "MainActivity",
+                "enclosing_function": "onCreate",
+                "code": "setContent { FoodikeTheme { val screen by splashViewModel.startDestination Surface( modifier = Modifier.fillMaxSize(), ) { SetupNavigation( startDestination = screen ) } } }"
+            }
+        ]
+    },
+    "mode": "xml_plus_kotlin_psi"
+}

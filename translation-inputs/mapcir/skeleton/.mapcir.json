@@ -1,0 +1,2507 @@
+{
+  "documentType": "MAPCIR",
+  "irVersion": "0.1",
+  "translationContext": {
+    "sourceProject": {
+      "name": "Foodike",
+      "rootPath": ".",
+      "projectRole": "mobile-application",
+      "description": "A Java/Kotlin-based Android mobile application extracted for Cangjie target project configuration generation."
+    },
+    "sourceEnvironment": {
+      "programmingLanguages": [
+        {
+          "name": "java",
+          "role": "primary"
+        }
+      ],
+      "configurationLanguages": [
+        {
+          "name": "groovy-dsl",
+          "role": "build-configuration"
+        },
+        {
+          "name": "xml",
+          "role": "application-declaration"
+        },
+        {
+          "name": "xml",
+          "role": "resource-declaration"
+        },
+        {
+          "name": "properties",
+          "role": "properties"
+        }
+      ],
+      "buildSystems": [
+        {
+          "name": "gradle",
+          "role": "primary",
+          "version": "unknown",
+          "configurationStyle": "script-based",
+          "dynamicEvaluationRisk": "medium"
+        }
+      ]
+    },
+    "sourceConfiguration": {
+      "configFiles": [
+        {
+          "path": "settings.gradle",
+          "role": "workspace-configuration"
+        },
+        {
+          "path": "app/build.gradle",
+          "role": "unit-build-configuration"
+        },
+        {
+          "path": "app/src/main/AndroidManifest.xml",
+          "role": "application-declaration"
+        }
+      ],
+      "configurationCompleteness": "partial",
+      "hasDynamicConfiguration": true
+    },
+    "targetIntent": {
+      "targetLanguage": "cangjie",
+      "targetRuntime": "openharmony",
+      "targetProjectRole": "mobile-application",
+      "generationGoal": "generate-target-project-configuration"
+    },
+    "extractionInfo": {
+      "extractorName": "mapcir-java-gradle-extractor",
+      "extractorVersion": "0.1.0",
+      "extractionMode": "static-analysis",
+      "confidence": "medium"
+    },
+    "consumerGuidance": {
+      "intendedConsumer": "llm-target-project-generator",
+      "semanticPriority": [
+        "core",
+        "reference.mappings",
+        "reference.sourceFacts",
+        "diagnostics"
+      ],
+      "rules": [
+        {
+          "id": "rule:core-first",
+          "text": "Use core fields as the primary source of normalized mobile configuration semantics."
+        },
+        {
+          "id": "rule:reference-supporting",
+          "text": "Use reference fields as source evidence only. Do not copy source-specific field names into the target configuration unless the target generator explicitly supports them."
+        },
+        {
+          "id": "rule:diagnostics-visible",
+          "text": "Convert diagnostics into warnings, TODO items, or manual review notes in generated migration output."
+        }
+      ]
+    }
+  },
+  "core": {
+    "application": {
+      "id": "app:main",
+      "entityType": "application",
+      "identifier": "com.example.foodike",
+      "displayName": "Foodike",
+      "version": {
+        "name": "1.0.0",
+        "build": "1"
+      },
+      "iconRefs": [
+        "resource:app-icon"
+      ],
+      "evidenceRefs": [
+        "source-app-identifier"
+      ]
+    },
+    "units": [
+      {
+        "id": "unit:main",
+        "entityType": "unit",
+        "name": "app",
+        "role": "application-entry",
+        "description": "Main application unit.",
+        "evidenceRefs": [
+          "source-unit:app"
+        ]
+      }
+    ],
+    "sourceGroups": [
+      {
+        "id": "source:main",
+        "entityType": "source-group",
+        "name": "main",
+        "role": "main",
+        "languages": [
+          "java"
+        ],
+        "paths": [
+          {
+            "path": "app/src/main/java",
+            "pathType": "directory"
+          }
+        ],
+        "evidenceRefs": [
+          "source-group:main"
+        ]
+      }
+    ],
+    "components": [
+      {
+        "id": "component:mainactivity",
+        "entityType": "component",
+        "name": "MainActivity",
+        "role": "user-interface-entry",
+        "entry": true,
+        "visibility": "external",
+        "evidenceRefs": [
+          "source-component:mainactivity"
+        ]
+      }
+    ],
+    "capabilities": [
+      {
+        "id": "capability:network-client",
+        "entityType": "capability",
+        "capabilityType": "network.client",
+        "required": true,
+        "access": {
+          "requiresUserAuthorization": false
+        },
+        "evidenceRefs": [
+          "source-permission:android-permission-internet"
+        ]
+      }
+    ],
+    "resources": [
+      {
+        "id": "resource:app_name",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "app_name",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Foodike"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:app_name"
+        ]
+      },
+      {
+        "id": "resource:onboardingHeading1",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "onboardingHeading1",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Choose your favourite food"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:onboardingHeading1"
+        ]
+      },
+      {
+        "id": "resource:onboardingHeading2",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "onboardingHeading2",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Vaccinated delivery partners"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:onboardingHeading2"
+        ]
+      },
+      {
+        "id": "resource:onboardingHeading3",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "onboardingHeading3",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Expect Delivery in 20 minutes"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:onboardingHeading3"
+        ]
+      },
+      {
+        "id": "resource:onboardingText1",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "onboardingText1",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Choose from a range of restaurants and hotels near you"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:onboardingText1"
+        ]
+      },
+      {
+        "id": "resource:onboardingText2",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "onboardingText2",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Vaccinated delivery partners ensure the health and security of the customer"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:onboardingText2"
+        ]
+      },
+      {
+        "id": "resource:onboardingText3",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "onboardingText3",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Fast and easy to track delivery to ease the experience of the customer"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:onboardingText3"
+        ]
+      },
+      {
+        "id": "resource:welcome_back",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "welcome_back",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Welcome back!"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:welcome_back"
+        ]
+      },
+      {
+        "id": "resource:forgot_password",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "forgot_password",
+        "values": [
+          {
+            "locale": "default",
+            "value": "forgot password?"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:forgot_password"
+        ]
+      },
+      {
+        "id": "resource:coming_soon",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "coming_soon",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Coming soon!"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:coming_soon"
+        ]
+      },
+      {
+        "id": "resource:login",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "login",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Login"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:login"
+        ]
+      },
+      {
+        "id": "resource:or_sign_in_with",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "or_sign_in_with",
+        "values": [
+          {
+            "locale": "default",
+            "value": "or sign in with"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:or_sign_in_with"
+        ]
+      },
+      {
+        "id": "resource:login_with_google",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "login_with_google",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Login with Google"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:login_with_google"
+        ]
+      },
+      {
+        "id": "resource:login_with_facebook",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "login_with_facebook",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Login with Facebook"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:login_with_facebook"
+        ]
+      },
+      {
+        "id": "resource:new_to_foodike",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "new_to_foodike",
+        "values": [
+          {
+            "locale": "default",
+            "value": "New to Foodike? Sign up"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:new_to_foodike"
+        ]
+      },
+      {
+        "id": "resource:display_picture",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "display_picture",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Display picture"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:display_picture"
+        ]
+      },
+      {
+        "id": "resource:log_out",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "log_out",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Log Out"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:log_out"
+        ]
+      },
+      {
+        "id": "resource:saved_addresses",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "saved_addresses",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Saved Addresses"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:saved_addresses"
+        ]
+      },
+      {
+        "id": "resource:add_edit_and_delete_saved_addresses",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "add_edit_and_delete_saved_addresses",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Add, edit and delete saved addresses"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:add_edit_and_delete_saved_addresses"
+        ]
+      },
+      {
+        "id": "resource:payments_and_refunds",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "payments_and_refunds",
+        "values": [
+          {
+            "locale": "default",
+            "value": "\r\n<![CDATA[ Payments & Refunds ]]>"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:payments_and_refunds"
+        ]
+      },
+      {
+        "id": "resource:information_about_refunds_and_payments",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "information_about_refunds_and_payments",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Information about refunds and payments"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:information_about_refunds_and_payments"
+        ]
+      },
+      {
+        "id": "resource:online_ordering_help",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "online_ordering_help",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Online Ordering Help"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:online_ordering_help"
+        ]
+      },
+      {
+        "id": "resource:information_about_ordering_food",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "information_about_ordering_food",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Information about ordering food"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:information_about_ordering_food"
+        ]
+      },
+      {
+        "id": "resource:about",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "about",
+        "values": [
+          {
+            "locale": "default",
+            "value": "About"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:about"
+        ]
+      },
+      {
+        "id": "resource:about_the_app",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "about_the_app",
+        "values": [
+          {
+            "locale": "default",
+            "value": "About the app"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:about_the_app"
+        ]
+      },
+      {
+        "id": "resource:with",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "with",
+        "values": [
+          {
+            "locale": "default",
+            "value": "\\With \\"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:with"
+        ]
+      },
+      {
+        "id": "resource:love",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "love",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Love"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:love"
+        ]
+      },
+      {
+        "id": "resource:from_creator",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "from_creator",
+        "values": [
+          {
+            "locale": "default",
+            "value": "\\ from Gautam Hazarika\\"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:from_creator"
+        ]
+      },
+      {
+        "id": "resource:location",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "location",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Location"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:location"
+        ]
+      },
+      {
+        "id": "resource:back",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "back",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Back"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:back"
+        ]
+      },
+      {
+        "id": "resource:edit",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "edit",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Edit"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:edit"
+        ]
+      },
+      {
+        "id": "resource:home",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "home",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Home"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:home"
+        ]
+      },
+      {
+        "id": "resource:history",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "history",
+        "values": [
+          {
+            "locale": "default",
+            "value": "History"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:history"
+        ]
+      },
+      {
+        "id": "resource:empty",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "empty",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Empty"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:empty"
+        ]
+      },
+      {
+        "id": "resource:favourite",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "favourite",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Favourite"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:favourite"
+        ]
+      },
+      {
+        "id": "resource:share",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "share",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Share"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:share"
+        ]
+      },
+      {
+        "id": "resource:drop_down_arrow",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "drop_down_arrow",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Drop-Down Arrow"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:drop_down_arrow"
+        ]
+      },
+      {
+        "id": "resource:rating",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "rating",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Rating"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:rating"
+        ]
+      },
+      {
+        "id": "resource:outlet",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "outlet",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Outlet"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:outlet"
+        ]
+      },
+      {
+        "id": "resource:outlet_2",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "outlet_2",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Outlet:"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:outlet_2"
+        ]
+      },
+      {
+        "id": "resource:your_location",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "your_location",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Your Location"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:your_location"
+        ]
+      },
+      {
+        "id": "resource:add",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "add",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Add"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:add"
+        ]
+      },
+      {
+        "id": "resource:subtract",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "subtract",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Subtract"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:subtract"
+        ]
+      },
+      {
+        "id": "resource:vegetarian",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "vegetarian",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Vegetarian"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:vegetarian"
+        ]
+      },
+      {
+        "id": "resource:non_vegetarian",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "non_vegetarian",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Non-Vegetarian"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:non_vegetarian"
+        ]
+      },
+      {
+        "id": "resource:cart",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "cart",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Cart"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:cart"
+        ]
+      },
+      {
+        "id": "resource:recommended",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "recommended",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Recommended"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:recommended"
+        ]
+      },
+      {
+        "id": "resource:all_around_you",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "all_around_you",
+        "values": [
+          {
+            "locale": "default",
+            "value": "All around you.."
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:all_around_you"
+        ]
+      },
+      {
+        "id": "resource:order_from_favourites",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "order_from_favourites",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Order from favourites.."
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:order_from_favourites"
+        ]
+      },
+      {
+        "id": "resource:restaurant",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "restaurant",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Restaurant"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:restaurant"
+        ]
+      },
+      {
+        "id": "resource:recommended_for_you",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "recommended_for_you",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Recommended for you..."
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:recommended_for_you"
+        ]
+      },
+      {
+        "id": "resource:ad",
+        "entityType": "resource",
+        "resourceType": "text.localized",
+        "name": "ad",
+        "values": [
+          {
+            "locale": "default",
+            "value": "Ad"
+          }
+        ],
+        "evidenceRefs": [
+          "source-resource:ad"
+        ]
+      },
+      {
+        "id": "resource:purple_200",
+        "entityType": "resource",
+        "resourceType": "color",
+        "name": "purple_200",
+        "values": [
+          {
+            "locale": "default",
+            "value": "#FFBB86FC"
+          }
+        ]
+      },
+      {
+        "id": "resource:purple_500",
+        "entityType": "resource",
+        "resourceType": "color",
+        "name": "purple_500",
+        "values": [
+          {
+            "locale": "default",
+            "value": "#FF6200EE"
+          }
+        ]
+      },
+      {
+        "id": "resource:purple_700",
+        "entityType": "resource",
+        "resourceType": "color",
+        "name": "purple_700",
+        "values": [
+          {
+            "locale": "default",
+            "value": "#FF3700B3"
+          }
+        ]
+      },
+      {
+        "id": "resource:teal_200",
+        "entityType": "resource",
+        "resourceType": "color",
+        "name": "teal_200",
+        "values": [
+          {
+            "locale": "default",
+            "value": "#FF03DAC5"
+          }
+        ]
+      },
+      {
+        "id": "resource:teal_700",
+        "entityType": "resource",
+        "resourceType": "color",
+        "name": "teal_700",
+        "values": [
+          {
+            "locale": "default",
+            "value": "#FF018786"
+          }
+        ]
+      },
+      {
+        "id": "resource:black",
+        "entityType": "resource",
+        "resourceType": "color",
+        "name": "black",
+        "values": [
+          {
+            "locale": "default",
+            "value": "#FF000000"
+          }
+        ]
+      },
+      {
+        "id": "resource:white",
+        "entityType": "resource",
+        "resourceType": "color",
+        "name": "white",
+        "values": [
+          {
+            "locale": "default",
+            "value": "#FFFFFFFF"
+          }
+        ]
+      },
+      {
+        "id": "resource:LightGreen",
+        "entityType": "resource",
+        "resourceType": "color",
+        "name": "LightGreen",
+        "values": [
+          {
+            "locale": "default",
+            "value": "#FF59D173"
+          }
+        ]
+      },
+      {
+        "id": "resource:DarkGreen",
+        "entityType": "resource",
+        "resourceType": "color",
+        "name": "DarkGreen",
+        "values": [
+          {
+            "locale": "default",
+            "value": "#FF228D39"
+          }
+        ]
+      },
+      {
+        "id": "resource:app-icon",
+        "entityType": "resource",
+        "resourceType": "image.app-icon",
+        "name": "app_icon",
+        "evidenceRefs": [
+          "source-resource:app-icon"
+        ]
+      }
+    ],
+    "dependencyRequirements": [
+      {
+        "id": "dep-req:network-client",
+        "entityType": "dependency-requirement",
+        "requirementType": "capability",
+        "capabilityType": "network.client",
+        "features": [
+          "http",
+          "https"
+        ],
+        "required": true,
+        "evidenceRefs": [
+          "source-dep:network-client-default"
+        ]
+      }
+    ],
+    "variantModel": {
+      "dimensions": [
+        {
+          "id": "dimension:build-mode",
+          "name": "build-mode",
+          "values": [
+            "debug",
+            "release"
+          ]
+        }
+      ]
+    },
+    "variants": [
+      {
+        "id": "variant:debug",
+        "entityType": "variant",
+        "values": {
+          "build-mode": "debug"
+        },
+        "properties": {
+          "debuggable": true,
+          "optimization": "none"
+        },
+        "evidenceRefs": [
+          "source-build:debug"
+        ]
+      },
+      {
+        "id": "variant:release",
+        "entityType": "variant",
+        "values": {
+          "build-mode": "release"
+        },
+        "properties": {
+          "debuggable": false,
+          "optimization": "size-or-speed"
+        },
+        "evidenceRefs": [
+          "source-build:release"
+        ]
+      }
+    ],
+    "buildProfiles": [
+      {
+        "id": "build-profile:debug",
+        "entityType": "build-profile",
+        "variant": "variant:debug",
+        "entryUnit": "unit:main",
+        "properties": {
+          "debuggable": true,
+          "symbolGeneration": "full"
+        }
+      },
+      {
+        "id": "build-profile:release",
+        "entityType": "build-profile",
+        "variant": "variant:release",
+        "entryUnit": "unit:main",
+        "properties": {
+          "debuggable": false,
+          "symbolGeneration": "limited"
+        }
+      }
+    ],
+    "configurationValues": [],
+    "artifacts": [
+      {
+        "id": "artifact:debug-installable",
+        "entityType": "artifact",
+        "artifactType": "installable-application",
+        "variant": "variant:debug"
+      },
+      {
+        "id": "artifact:release-installable",
+        "entityType": "artifact",
+        "artifactType": "installable-application",
+        "variant": "variant:release"
+      }
+    ],
+    "credentialRequirements": [
+      {
+        "id": "credential:release-signing",
+        "entityType": "credential-requirement",
+        "credentialType": "application-signing",
+        "usage": [
+          "release-distribution"
+        ],
+        "required": true,
+        "secretPolicy": "external-reference-only"
+      }
+    ],
+    "relations": [
+      {
+        "from": "app:main",
+        "to": "unit:main",
+        "type": "contains"
+      },
+      {
+        "from": "unit:main",
+        "to": "component:mainactivity",
+        "type": "declares"
+      },
+      {
+        "from": "unit:main",
+        "to": "source:main",
+        "type": "contains"
+      },
+      {
+        "from": "build-profile:debug",
+        "to": "source:main",
+        "type": "activates"
+      },
+      {
+        "from": "build-profile:release",
+        "to": "source:main",
+        "type": "activates"
+      },
+      {
+        "from": "build-profile:debug",
+        "to": "artifact:debug-installable",
+        "type": "produces"
+      },
+      {
+        "from": "build-profile:release",
+        "to": "artifact:release-installable",
+        "type": "produces"
+      }
+    ]
+  },
+  "reference": {
+    "sourceFacts": [
+      {
+        "id": "source-app-identifier",
+        "sourceFactType": "source-configuration-field",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "defaultConfig.applicationId",
+          "rawText": "applicationId 'com.example.foodike'"
+        },
+        "original": {
+          "value": "com.example.foodike"
+        }
+      },
+      {
+        "id": "source-build:debug",
+        "sourceFactType": "source-build-configuration",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "buildTypes.debug",
+          "rawText": "debug { debuggable true }"
+        },
+        "original": {
+          "debuggable": true,
+          "name": "debug"
+        }
+      },
+      {
+        "id": "source-build:release",
+        "sourceFactType": "source-build-configuration",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "buildTypes.release",
+          "rawText": "release { debuggable false }"
+        },
+        "original": {
+          "debuggable": false,
+          "name": "release"
+        }
+      },
+      {
+        "id": "source-unit:app",
+        "sourceFactType": "source-project-configuration",
+        "source": {
+          "file": "settings.gradle",
+          "format": "groovy-dsl",
+          "field": "include",
+          "rawText": "include ':app'"
+        },
+        "original": {
+          "name": "app"
+        }
+      },
+      {
+        "id": "source-component:mainactivity",
+        "sourceFactType": "source-component-declaration",
+        "source": {
+          "file": "app/src/main/AndroidManifest.xml",
+          "format": "xml",
+          "field": "application.activity",
+          "rawText": "<activity android:name='.MainActivity' android:exported='true'>...</activity>"
+        },
+        "original": {
+          "exported": "true",
+          "name": ".MainActivity"
+        }
+      },
+      {
+        "id": "source-dep:",
+        "sourceFactType": "source-dependency-declaration",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "dependencies.implementation",
+          "rawText": "implementation 'implementation(libs.core.ktx)'"
+        },
+        "original": {
+          "identifier": "implementation(libs.core.ktx)",
+          "name": "",
+          "usageLabel": "implementation",
+          "version": ""
+        }
+      },
+      {
+        "id": "source-dep:",
+        "sourceFactType": "source-dependency-declaration",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "dependencies.implementation",
+          "rawText": "implementation 'implementation(libs.lifecycle.runtime.ktx)'"
+        },
+        "original": {
+          "identifier": "implementation(libs.lifecycle.runtime.ktx)",
+          "name": "",
+          "usageLabel": "implementation",
+          "version": ""
+        }
+      },
+      {
+        "id": "source-dep:",
+        "sourceFactType": "source-dependency-declaration",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "dependencies.implementation",
+          "rawText": "implementation 'implementation(libs.activity.compose)'"
+        },
+        "original": {
+          "identifier": "implementation(libs.activity.compose)",
+          "name": "",
+          "usageLabel": "implementation",
+          "version": ""
+        }
+      },
+      {
+        "id": "source-dep:",
+        "sourceFactType": "source-dependency-declaration",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "dependencies.implementation",
+          "rawText": "implementation 'implementation(libs.compose.ui)'"
+        },
+        "original": {
+          "identifier": "implementation(libs.compose.ui)",
+          "name": "",
+          "usageLabel": "implementation",
+          "version": ""
+        }
+      },
+      {
+        "id": "source-dep:",
+        "sourceFactType": "source-dependency-declaration",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "dependencies.implementation",
+          "rawText": "implementation 'implementation(libs.compose.ui.tooling.preview)'"
+        },
+        "original": {
+          "identifier": "implementation(libs.compose.ui.tooling.preview)",
+          "name": "",
+          "usageLabel": "implementation",
+          "version": ""
+        }
+      },
+      {
+        "id": "source-dep:",
+        "sourceFactType": "source-dependency-declaration",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "dependencies.implementation",
+          "rawText": "implementation 'implementation(libs.compose.material)'"
+        },
+        "original": {
+          "identifier": "implementation(libs.compose.material)",
+          "name": "",
+          "usageLabel": "implementation",
+          "version": ""
+        }
+      },
+      {
+        "id": "source-dep:",
+        "sourceFactType": "source-dependency-declaration",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "dependencies.implementation",
+          "rawText": "implementation 'implementation(libs.compose.material.icons.extended)'"
+        },
+        "original": {
+          "identifier": "implementation(libs.compose.material.icons.extended)",
+          "name": "",
+          "usageLabel": "implementation",
+          "version": ""
+        }
+      },
+      {
+        "id": "source-dep:",
+        "sourceFactType": "source-dependency-declaration",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "dependencies.implementation",
+          "rawText": "implementation 'implementation(libs.hilt.android)'"
+        },
+        "original": {
+          "identifier": "implementation(libs.hilt.android)",
+          "name": "",
+          "usageLabel": "implementation",
+          "version": ""
+        }
+      },
+      {
+        "id": "source-dep:",
+        "sourceFactType": "source-dependency-declaration",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "dependencies.implementation",
+          "rawText": "implementation 'implementation(libs.hilt.navigation.compose)'"
+        },
+        "original": {
+          "identifier": "implementation(libs.hilt.navigation.compose)",
+          "name": "",
+          "usageLabel": "implementation",
+          "version": ""
+        }
+      },
+      {
+        "id": "source-dep:",
+        "sourceFactType": "source-dependency-declaration",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "dependencies.implementation",
+          "rawText": "implementation 'implementation(libs.splashscreen)'"
+        },
+        "original": {
+          "identifier": "implementation(libs.splashscreen)",
+          "name": "",
+          "usageLabel": "implementation",
+          "version": ""
+        }
+      },
+      {
+        "id": "source-dep:",
+        "sourceFactType": "source-dependency-declaration",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "dependencies.implementation",
+          "rawText": "implementation 'implementation(libs.navigation.compose)'"
+        },
+        "original": {
+          "identifier": "implementation(libs.navigation.compose)",
+          "name": "",
+          "usageLabel": "implementation",
+          "version": ""
+        }
+      },
+      {
+        "id": "source-dep:",
+        "sourceFactType": "source-dependency-declaration",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "dependencies.implementation",
+          "rawText": "implementation 'implementation(libs.accompanist.pager)'"
+        },
+        "original": {
+          "identifier": "implementation(libs.accompanist.pager)",
+          "name": "",
+          "usageLabel": "implementation",
+          "version": ""
+        }
+      },
+      {
+        "id": "source-dep:",
+        "sourceFactType": "source-dependency-declaration",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "dependencies.implementation",
+          "rawText": "implementation 'implementation(libs.accompanist.pager.indicators)'"
+        },
+        "original": {
+          "identifier": "implementation(libs.accompanist.pager.indicators)",
+          "name": "",
+          "usageLabel": "implementation",
+          "version": ""
+        }
+      },
+      {
+        "id": "source-dep:",
+        "sourceFactType": "source-dependency-declaration",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "dependencies.implementation",
+          "rawText": "implementation 'implementation(libs.datastore.preferences)'"
+        },
+        "original": {
+          "identifier": "implementation(libs.datastore.preferences)",
+          "name": "",
+          "usageLabel": "implementation",
+          "version": ""
+        }
+      },
+      {
+        "id": "source-dep:",
+        "sourceFactType": "source-dependency-declaration",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "dependencies.implementation",
+          "rawText": "implementation 'implementation(libs.accompanist.flowlayout)'"
+        },
+        "original": {
+          "identifier": "implementation(libs.accompanist.flowlayout)",
+          "name": "",
+          "usageLabel": "implementation",
+          "version": ""
+        }
+      },
+      {
+        "id": "source-dep:network-client-default",
+        "sourceFactType": "source-dependency-declaration",
+        "source": {
+          "file": "app/build.gradle",
+          "format": "groovy-dsl",
+          "field": "dependencies",
+          "rawText": "dependencies { implementation ... }"
+        },
+        "original": {
+          "name": "network-client",
+          "usageLabel": "implementation"
+        }
+      },
+      {
+        "id": "source-resource:app_name",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=app_name]",
+          "rawText": "<string name=\"app_name\">Foodike</string>"
+        },
+        "original": {
+          "name": "app_name",
+          "value": "Foodike"
+        }
+      },
+      {
+        "id": "source-resource:onboardingHeading1",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=onboardingHeading1]",
+          "rawText": "<string name=\"onboardingHeading1\">Choose your favourite food</string>"
+        },
+        "original": {
+          "name": "onboardingHeading1",
+          "value": "Choose your favourite food"
+        }
+      },
+      {
+        "id": "source-resource:onboardingHeading2",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=onboardingHeading2]",
+          "rawText": "<string name=\"onboardingHeading2\">Vaccinated delivery partners</string>"
+        },
+        "original": {
+          "name": "onboardingHeading2",
+          "value": "Vaccinated delivery partners"
+        }
+      },
+      {
+        "id": "source-resource:onboardingHeading3",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=onboardingHeading3]",
+          "rawText": "<string name=\"onboardingHeading3\">Expect Delivery in 20 minutes</string>"
+        },
+        "original": {
+          "name": "onboardingHeading3",
+          "value": "Expect Delivery in 20 minutes"
+        }
+      },
+      {
+        "id": "source-resource:onboardingText1",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=onboardingText1]",
+          "rawText": "<string name=\"onboardingText1\">Choose from a range of restaurants and hotels near you</string>"
+        },
+        "original": {
+          "name": "onboardingText1",
+          "value": "Choose from a range of restaurants and hotels near you"
+        }
+      },
+      {
+        "id": "source-resource:onboardingText2",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=onboardingText2]",
+          "rawText": "<string name=\"onboardingText2\">Vaccinated delivery partners ensure the health and security of the customer</string>"
+        },
+        "original": {
+          "name": "onboardingText2",
+          "value": "Vaccinated delivery partners ensure the health and security of the customer"
+        }
+      },
+      {
+        "id": "source-resource:onboardingText3",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=onboardingText3]",
+          "rawText": "<string name=\"onboardingText3\">Fast and easy to track delivery to ease the experience of the customer</string>"
+        },
+        "original": {
+          "name": "onboardingText3",
+          "value": "Fast and easy to track delivery to ease the experience of the customer"
+        }
+      },
+      {
+        "id": "source-resource:welcome_back",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=welcome_back]",
+          "rawText": "<string name=\"welcome_back\">Welcome back!</string>"
+        },
+        "original": {
+          "name": "welcome_back",
+          "value": "Welcome back!"
+        }
+      },
+      {
+        "id": "source-resource:forgot_password",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=forgot_password]",
+          "rawText": "<string name=\"forgot_password\">forgot password?</string>"
+        },
+        "original": {
+          "name": "forgot_password",
+          "value": "forgot password?"
+        }
+      },
+      {
+        "id": "source-resource:coming_soon",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=coming_soon]",
+          "rawText": "<string name=\"coming_soon\">Coming soon!</string>"
+        },
+        "original": {
+          "name": "coming_soon",
+          "value": "Coming soon!"
+        }
+      },
+      {
+        "id": "source-resource:login",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=login]",
+          "rawText": "<string name=\"login\">Login</string>"
+        },
+        "original": {
+          "name": "login",
+          "value": "Login"
+        }
+      },
+      {
+        "id": "source-resource:or_sign_in_with",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=or_sign_in_with]",
+          "rawText": "<string name=\"or_sign_in_with\">or sign in with</string>"
+        },
+        "original": {
+          "name": "or_sign_in_with",
+          "value": "or sign in with"
+        }
+      },
+      {
+        "id": "source-resource:login_with_google",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=login_with_google]",
+          "rawText": "<string name=\"login_with_google\">Login with Google</string>"
+        },
+        "original": {
+          "name": "login_with_google",
+          "value": "Login with Google"
+        }
+      },
+      {
+        "id": "source-resource:login_with_facebook",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=login_with_facebook]",
+          "rawText": "<string name=\"login_with_facebook\">Login with Facebook</string>"
+        },
+        "original": {
+          "name": "login_with_facebook",
+          "value": "Login with Facebook"
+        }
+      },
+      {
+        "id": "source-resource:new_to_foodike",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=new_to_foodike]",
+          "rawText": "<string name=\"new_to_foodike\">New to Foodike? Sign up</string>"
+        },
+        "original": {
+          "name": "new_to_foodike",
+          "value": "New to Foodike? Sign up"
+        }
+      },
+      {
+        "id": "source-resource:display_picture",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=display_picture]",
+          "rawText": "<string name=\"display_picture\">Display picture</string>"
+        },
+        "original": {
+          "name": "display_picture",
+          "value": "Display picture"
+        }
+      },
+      {
+        "id": "source-resource:log_out",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=log_out]",
+          "rawText": "<string name=\"log_out\">Log Out</string>"
+        },
+        "original": {
+          "name": "log_out",
+          "value": "Log Out"
+        }
+      },
+      {
+        "id": "source-resource:saved_addresses",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=saved_addresses]",
+          "rawText": "<string name=\"saved_addresses\">Saved Addresses</string>"
+        },
+        "original": {
+          "name": "saved_addresses",
+          "value": "Saved Addresses"
+        }
+      },
+      {
+        "id": "source-resource:add_edit_and_delete_saved_addresses",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=add_edit_and_delete_saved_addresses]",
+          "rawText": "<string name=\"add_edit_and_delete_saved_addresses\">Add, edit and delete saved addresses</string>"
+        },
+        "original": {
+          "name": "add_edit_and_delete_saved_addresses",
+          "value": "Add, edit and delete saved addresses"
+        }
+      },
+      {
+        "id": "source-resource:payments_and_refunds",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=payments_and_refunds]",
+          "rawText": "<string name=\"payments_and_refunds\">\r\n<![CDATA[ Payments & Refunds ]]></string>"
+        },
+        "original": {
+          "name": "payments_and_refunds",
+          "value": "\r\n<![CDATA[ Payments & Refunds ]]>"
+        }
+      },
+      {
+        "id": "source-resource:information_about_refunds_and_payments",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=information_about_refunds_and_payments]",
+          "rawText": "<string name=\"information_about_refunds_and_payments\">Information about refunds and payments</string>"
+        },
+        "original": {
+          "name": "information_about_refunds_and_payments",
+          "value": "Information about refunds and payments"
+        }
+      },
+      {
+        "id": "source-resource:online_ordering_help",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=online_ordering_help]",
+          "rawText": "<string name=\"online_ordering_help\">Online Ordering Help</string>"
+        },
+        "original": {
+          "name": "online_ordering_help",
+          "value": "Online Ordering Help"
+        }
+      },
+      {
+        "id": "source-resource:information_about_ordering_food",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=information_about_ordering_food]",
+          "rawText": "<string name=\"information_about_ordering_food\">Information about ordering food</string>"
+        },
+        "original": {
+          "name": "information_about_ordering_food",
+          "value": "Information about ordering food"
+        }
+      },
+      {
+        "id": "source-resource:about",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=about]",
+          "rawText": "<string name=\"about\">About</string>"
+        },
+        "original": {
+          "name": "about",
+          "value": "About"
+        }
+      },
+      {
+        "id": "source-resource:about_the_app",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=about_the_app]",
+          "rawText": "<string name=\"about_the_app\">About the app</string>"
+        },
+        "original": {
+          "name": "about_the_app",
+          "value": "About the app"
+        }
+      },
+      {
+        "id": "source-resource:with",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=with]",
+          "rawText": "<string name=\"with\">\\With \\</string>"
+        },
+        "original": {
+          "name": "with",
+          "value": "\\With \\"
+        }
+      },
+      {
+        "id": "source-resource:love",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=love]",
+          "rawText": "<string name=\"love\">Love</string>"
+        },
+        "original": {
+          "name": "love",
+          "value": "Love"
+        }
+      },
+      {
+        "id": "source-resource:from_creator",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=from_creator]",
+          "rawText": "<string name=\"from_creator\">\\ from Gautam Hazarika\\</string>"
+        },
+        "original": {
+          "name": "from_creator",
+          "value": "\\ from Gautam Hazarika\\"
+        }
+      },
+      {
+        "id": "source-resource:location",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=location]",
+          "rawText": "<string name=\"location\">Location</string>"
+        },
+        "original": {
+          "name": "location",
+          "value": "Location"
+        }
+      },
+      {
+        "id": "source-resource:back",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=back]",
+          "rawText": "<string name=\"back\">Back</string>"
+        },
+        "original": {
+          "name": "back",
+          "value": "Back"
+        }
+      },
+      {
+        "id": "source-resource:edit",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=edit]",
+          "rawText": "<string name=\"edit\">Edit</string>"
+        },
+        "original": {
+          "name": "edit",
+          "value": "Edit"
+        }
+      },
+      {
+        "id": "source-resource:home",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=home]",
+          "rawText": "<string name=\"home\">Home</string>"
+        },
+        "original": {
+          "name": "home",
+          "value": "Home"
+        }
+      },
+      {
+        "id": "source-resource:history",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=history]",
+          "rawText": "<string name=\"history\">History</string>"
+        },
+        "original": {
+          "name": "history",
+          "value": "History"
+        }
+      },
+      {
+        "id": "source-resource:empty",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=empty]",
+          "rawText": "<string name=\"empty\">Empty</string>"
+        },
+        "original": {
+          "name": "empty",
+          "value": "Empty"
+        }
+      },
+      {
+        "id": "source-resource:favourite",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=favourite]",
+          "rawText": "<string name=\"favourite\">Favourite</string>"
+        },
+        "original": {
+          "name": "favourite",
+          "value": "Favourite"
+        }
+      },
+      {
+        "id": "source-resource:share",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=share]",
+          "rawText": "<string name=\"share\">Share</string>"
+        },
+        "original": {
+          "name": "share",
+          "value": "Share"
+        }
+      },
+      {
+        "id": "source-resource:drop_down_arrow",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=drop_down_arrow]",
+          "rawText": "<string name=\"drop_down_arrow\">Drop-Down Arrow</string>"
+        },
+        "original": {
+          "name": "drop_down_arrow",
+          "value": "Drop-Down Arrow"
+        }
+      },
+      {
+        "id": "source-resource:rating",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=rating]",
+          "rawText": "<string name=\"rating\">Rating</string>"
+        },
+        "original": {
+          "name": "rating",
+          "value": "Rating"
+        }
+      },
+      {
+        "id": "source-resource:outlet",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=outlet]",
+          "rawText": "<string name=\"outlet\">Outlet</string>"
+        },
+        "original": {
+          "name": "outlet",
+          "value": "Outlet"
+        }
+      },
+      {
+        "id": "source-resource:outlet_2",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=outlet_2]",
+          "rawText": "<string name=\"outlet_2\">Outlet:</string>"
+        },
+        "original": {
+          "name": "outlet_2",
+          "value": "Outlet:"
+        }
+      },
+      {
+        "id": "source-resource:your_location",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=your_location]",
+          "rawText": "<string name=\"your_location\">Your Location</string>"
+        },
+        "original": {
+          "name": "your_location",
+          "value": "Your Location"
+        }
+      },
+      {
+        "id": "source-resource:add",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=add]",
+          "rawText": "<string name=\"add\">Add</string>"
+        },
+        "original": {
+          "name": "add",
+          "value": "Add"
+        }
+      },
+      {
+        "id": "source-resource:subtract",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=subtract]",
+          "rawText": "<string name=\"subtract\">Subtract</string>"
+        },
+        "original": {
+          "name": "subtract",
+          "value": "Subtract"
+        }
+      },
+      {
+        "id": "source-resource:vegetarian",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=vegetarian]",
+          "rawText": "<string name=\"vegetarian\">Vegetarian</string>"
+        },
+        "original": {
+          "name": "vegetarian",
+          "value": "Vegetarian"
+        }
+      },
+      {
+        "id": "source-resource:non_vegetarian",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=non_vegetarian]",
+          "rawText": "<string name=\"non_vegetarian\">Non-Vegetarian</string>"
+        },
+        "original": {
+          "name": "non_vegetarian",
+          "value": "Non-Vegetarian"
+        }
+      },
+      {
+        "id": "source-resource:cart",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=cart]",
+          "rawText": "<string name=\"cart\">Cart</string>"
+        },
+        "original": {
+          "name": "cart",
+          "value": "Cart"
+        }
+      },
+      {
+        "id": "source-resource:recommended",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=recommended]",
+          "rawText": "<string name=\"recommended\">Recommended</string>"
+        },
+        "original": {
+          "name": "recommended",
+          "value": "Recommended"
+        }
+      },
+      {
+        "id": "source-resource:all_around_you",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=all_around_you]",
+          "rawText": "<string name=\"all_around_you\">All around you..</string>"
+        },
+        "original": {
+          "name": "all_around_you",
+          "value": "All around you.."
+        }
+      },
+      {
+        "id": "source-resource:order_from_favourites",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=order_from_favourites]",
+          "rawText": "<string name=\"order_from_favourites\">Order from favourites..</string>"
+        },
+        "original": {
+          "name": "order_from_favourites",
+          "value": "Order from favourites.."
+        }
+      },
+      {
+        "id": "source-resource:restaurant",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=restaurant]",
+          "rawText": "<string name=\"restaurant\">Restaurant</string>"
+        },
+        "original": {
+          "name": "restaurant",
+          "value": "Restaurant"
+        }
+      },
+      {
+        "id": "source-resource:recommended_for_you",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=recommended_for_you]",
+          "rawText": "<string name=\"recommended_for_you\">Recommended for you...</string>"
+        },
+        "original": {
+          "name": "recommended_for_you",
+          "value": "Recommended for you..."
+        }
+      },
+      {
+        "id": "source-resource:ad",
+        "sourceFactType": "source-resource-declaration",
+        "source": {
+          "file": "app/src/main/res/values/strings.xml",
+          "format": "xml",
+          "field": "string[name=ad]",
+          "rawText": "<string name=\"ad\">Ad</string>"
+        },
+        "original": {
+          "name": "ad",
+          "value": "Ad"
+        }
+      }
+    ],
+    "mappings": [
+      {
+        "id": "map:app-id-to-application-identifier",
+        "from": {
+          "sourceFact": "source-app-identifier"
+        },
+        "to": {
+          "entity": "app:main",
+          "property": "identifier"
+        },
+        "mappingType": "renamed",
+        "confidence": "high",
+        "reason": "The source application identifier is normalized as the platform-neutral application identifier."
+      },
+      {
+        "id": "map:debug-build-to-variant",
+        "from": {
+          "sourceFact": "source-build:debug"
+        },
+        "to": {
+          "entity": "variant:debug",
+          "property": "values.build-mode"
+        },
+        "mappingType": "renamed",
+        "confidence": "high",
+        "reason": "The source debug configuration represents the debug build mode."
+      },
+      {
+        "id": "map:release-build-to-variant",
+        "from": {
+          "sourceFact": "source-build:release"
+        },
+        "to": {
+          "entity": "variant:release",
+          "property": "values.build-mode"
+        },
+        "mappingType": "renamed",
+        "confidence": "high",
+        "reason": "The source release configuration represents the release build mode."
+      },
+      {
+        "id": "map:mainactivity-to-ui-entry",
+        "from": {
+          "sourceFact": "source-component:mainactivity"
+        },
+        "to": {
+          "entity": "component:mainactivity",
+          "property": "role"
+        },
+        "mappingType": "transformed",
+        "confidence": "high",
+        "reason": "The source launcher component is normalized as a user-interface-entry component."
+      },
+      {
+        "id": "map:fallback-to-network-client",
+        "from": {
+          "sourceFact": "source-dep:network-client-default"
+        },
+        "to": {
+          "entity": "dep-req:network-client",
+          "property": "capabilityType"
+        },
+        "mappingType": "inferred",
+        "confidence": "medium",
+        "reason": "No specific HTTP library detected; network client capability assumed as default."
+      }
+    ],
+    "provenance": [
+      {
+        "id": "prov:network-client",
+        "target": {
+          "entity": "dep-req:network-client",
+          "property": "capabilityType"
+        },
+        "sources": [
+          "source-permission:android-permission-internet"
+        ],
+        "mappingRefs": [
+          "map:fallback-to-network-client"
+        ],
+        "summary": "The network client requirement is supported by a source library declaration and a network permission declaration."
+      }
+    ]
+  },
+  "diagnostics": [
+    {
+      "id": "diag:dynamic-gradle-risk",
+      "severity": "warning",
+      "diagnosticType": "dynamic-configuration",
+      "message": "The source build system uses script-based configuration. Some values may depend on build-time evaluation.",
+      "recommendedAction": "Review conditional and dynamic configuration values before generating final target project configuration."
+    },
+    {
+      "id": "diag:release-secret-redacted",
+      "severity": "warning",
+      "diagnosticType": "secret-redacted",
+      "message": "A release signing secret-like value was redacted from source reference information.",
+      "relatedSourceFacts": [
+        "source-signing:release"
+      ],
+      "relatedCoreEntities": [
+        "credential:release-signing"
+      ],
+      "recommendedAction": "Require target-side signing credentials to be provided externally."
+    }
+  ],
+  "attachment": [
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/applepie.jpg",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\applepie.jpg",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/biryani.jpg",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\biryani.jpg",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/burger.jpg",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\burger.jpg",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/chinese.jpg",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\chinese.jpg",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/chinese_bowl.png",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\chinese_bowl.png",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/clock.png",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\clock.png",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/dosa.jpg",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\dosa.jpg",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/fb_icon.png",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\fb_icon.png",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/goog_icon.png",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\goog_icon.png",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/groceries.png",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\groceries.png",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/icon.png",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\icon.png",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/ic_non_veg.png",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\ic_non_veg.png",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/ic_veg.png",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\ic_veg.png",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/outlet_card.png",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\outlet_card.png",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/paratha.jpg",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\paratha.jpg",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/pizza.jpg",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\pizza.jpg",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/rider.png",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\rider.png",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/star.png",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\star.png",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/upi.png",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\drawable\\upi.png",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/ic_launcher.png",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\mipmap-hdpi\\ic_launcher.png",
+      "operation": "copy"
+    },
+    {
+      "mode": "external",
+      "name": "entry/src/main/resources/base/media/ic_launcher_round.png",
+      "source": "D:\\Kotlin2Cangjie\\Foodike\\app/src/main/res\\mipmap-hdpi\\ic_launcher_round.png",
+      "operation": "copy"
+    }
+  ]
+}

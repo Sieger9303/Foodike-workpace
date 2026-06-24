@@ -1,0 +1,2362 @@
+[
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+        "class_name": "HomeRepositoryImpl",
+        "method": "getRestaurants",
+        "signature": "getRestaurants(): Results<List<Restaurant>>",
+        "line": 39,
+        "end_line": 41,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "called_methods": [
+            "Success"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+        "class_name": "HomeRepositoryImpl",
+        "method": "getAds",
+        "signature": "getAds(): Results<List<Advertisement>>",
+        "line": 43,
+        "end_line": 45,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "called_methods": [
+            "Success"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+        "class_name": "HomeRepositoryImpl",
+        "method": "getFoodItems",
+        "signature": "getFoodItems(): Results<List<FoodItem>>",
+        "line": 47,
+        "end_line": 49,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "called_methods": [
+            "Success"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+        "class_name": "HomeRepositoryImpl",
+        "method": "getRestaurantFromName",
+        "signature": "getRestaurantFromName(name: String): Restaurant?",
+        "line": 51,
+        "end_line": 55,
+        "operation_types": [
+            "read_or_listen"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\LoginRepositoryImpl.kt",
+        "class_name": "LoginRepositoryImpl",
+        "method": "toggleLoginState",
+        "signature": "toggleLoginState()",
+        "line": 56,
+        "end_line": 61,
+        "operation_types": [
+            "write_or_update",
+            "local_preferences"
+        ],
+        "backend_kinds": [
+            "DataStore"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "setRestaurant",
+        "signature": "setRestaurant(restaurant: Restaurant)",
+        "line": 46,
+        "end_line": 51,
+        "operation_types": [
+            "write_or_update"
+        ],
+        "called_methods": [
+            "add",
+            "CartItem"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getSavedRestaurant",
+        "signature": "getSavedRestaurant(): Flow<Restaurant>",
+        "line": 53,
+        "end_line": 57,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "called_methods": [
+            "emit"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getMenuItems",
+        "signature": "getMenuItems(): Flow<List<CartItem>>",
+        "line": 59,
+        "end_line": 61,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "called_methods": [
+            "emit",
+            "toMutableList"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getLikedRestaurants",
+        "signature": "getLikedRestaurants(): Flow<List<Restaurant>>",
+        "line": 66,
+        "end_line": 68,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "called_methods": [
+            "emit"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getCartItems",
+        "signature": "getCartItems(): Flow<List<CartItem>>",
+        "line": 74,
+        "end_line": 76,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "called_methods": [
+            "emit"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\Cart.kt",
+        "class_name": "",
+        "method": "Cart",
+        "signature": "Cart(navController: NavHostController, viewModel: CartViewModel)",
+        "line": 56,
+        "end_line": 119,
+        "operation_types": [
+            "search_or_filter"
+        ],
+        "called_methods": [
+            "toArgb",
+            "LazyColumn",
+            "fillMaxSize",
+            "background",
+            "Color",
+            "Row",
+            "fillMaxWidth",
+            "IconButton",
+            "navigateUp",
+            "Icon",
+            "stringResource",
+            "ItemSection",
+            "CouponBar",
+            "DeliverySection",
+            "Restaurant",
+            "BillSection"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\common\\Extensions.kt",
+        "class_name": "",
+        "method": "getTimeInMins",
+        "signature": "getTimeInMins(): String",
+        "line": 37,
+        "end_line": 54,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "called_methods": [
+            "require",
+            "toDays",
+            "toMillis",
+            "toHours",
+            "toMinutes",
+            "StringBuilder",
+            "append",
+            "toString"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\RestaurantCard.kt",
+        "class_name": "",
+        "method": "getCustomerInfo",
+        "signature": "getCustomerInfo(noOfRatings: Int): String",
+        "line": 125,
+        "end_line": 179,
+        "operation_types": [
+            "read_or_listen"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\SearchBar.kt",
+        "class_name": "",
+        "method": "SearchBar",
+        "signature": "SearchBar()",
+        "line": 44,
+        "end_line": 73,
+        "operation_types": [
+            "search_or_filter"
+        ],
+        "called_methods": [
+            "mutableStateOf",
+            "TextField",
+            "fillMaxWidth",
+            "Text",
+            "alpha",
+            "Icon",
+            "textFieldColors",
+            "Color",
+            "copy"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+        "class_name": "",
+        "method": "RestaurantDetail",
+        "signature": "RestaurantDetail(navController: NavHostController, viewModel: RestaurantDetailViewModel)",
+        "line": 72,
+        "end_line": 340,
+        "operation_types": [
+            "search_or_filter"
+        ],
+        "api_calls": [
+            "navigate"
+        ],
+        "called_methods": [
+            "animateFloatAsState",
+            "Box",
+            "LazyColumn",
+            "fillMaxSize",
+            "Row",
+            "fillMaxWidth",
+            "IconButton",
+            "navigateUp",
+            "Icon",
+            "stringResource",
+            "IconToggleButton",
+            "onEvent",
+            "Column",
+            "padding",
+            "RestaurantDetailCard",
+            "Text",
+            "weight",
+            "alpha",
+            "rotate",
+            "items",
+            "MenuItemCard",
+            "Divider",
+            "FloatingActionButton",
+            "navigate"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\History.kt",
+        "class_name": "",
+        "method": "History",
+        "signature": "History(viewModel: HistoryViewModel, navHostController: NavHostController)",
+        "line": 51,
+        "end_line": 91,
+        "api_calls": [
+            "navigate"
+        ],
+        "called_methods": [
+            "rememberPagerState",
+            "toArgb",
+            "Column",
+            "fillMaxSize",
+            "padding",
+            "SearchBar",
+            "Spacer",
+            "height",
+            "Tabs",
+            "TabsContent",
+            "onEvent",
+            "SelectRestaurant",
+            "navigate"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreen.kt",
+        "class_name": "",
+        "method": "Home",
+        "signature": "Home(scrollState: LazyListState, navController: NavHostController, viewModel: HomeViewModel)",
+        "line": 88,
+        "end_line": 170,
+        "api_calls": [
+            "navigate"
+        ],
+        "called_methods": [
+            "toArgb",
+            "LazyColumn",
+            "fillMaxWidth",
+            "Spacer",
+            "height",
+            "TopSection",
+            "GreetingSection",
+            "Column",
+            "padding",
+            "SearchBar",
+            "AdSection",
+            "RecommendedSection",
+            "isNotEmpty",
+            "FavouriteSection",
+            "onEvent",
+            "SelectRestaurant",
+            "navigate",
+            "ChipBar",
+            "MainSection",
+            "items",
+            "RestaurantCard",
+            "clip",
+            "RoundedCornerShape",
+            "ThankYouSection"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\TopSection.kt",
+        "class_name": "",
+        "method": "TopSection",
+        "signature": "TopSection(navController: NavHostController)",
+        "line": 53,
+        "end_line": 87,
+        "api_calls": [
+            "navigate"
+        ],
+        "called_methods": [
+            "Row",
+            "fillMaxWidth",
+            "padding",
+            "Image",
+            "size",
+            "clip",
+            "navigate",
+            "painterResource",
+            "stringResource",
+            "Icon",
+            "Text"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\util\\Filters.kt",
+        "class_name": "",
+        "method": "getAllTags",
+        "signature": "getAllTags(): List<Filter>",
+        "line": 38,
+        "end_line": 43,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "called_methods": [
+            "listOf"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\util\\Filters.kt",
+        "class_name": "",
+        "method": "getTag",
+        "signature": "getTag(value: String): Filter?",
+        "line": 45,
+        "end_line": 48,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "called_methods": [
+            "values",
+            "associateBy"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginScreen.kt",
+        "class_name": "",
+        "method": "LoginScreen",
+        "signature": "LoginScreen(viewModel: LoginViewModel, navController: NavHostController)",
+        "line": 74,
+        "end_line": 238,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "api_calls": [
+            "makeText",
+            "show",
+            "navigate"
+        ],
+        "called_methods": [
+            "rememberScaffoldState",
+            "LaunchedEffect",
+            "showSnackbar",
+            "Scaffold",
+            "Column",
+            "fillMaxSize",
+            "toArgb",
+            "Text",
+            "stringResource",
+            "Spacer",
+            "height",
+            "FoodikeTextField",
+            "onEvent",
+            "EnteredEmail",
+            "EnteredPassword",
+            "PasswordVisualTransformation",
+            "copy",
+            "alpha",
+            "makeText",
+            "show",
+            "Button",
+            "width",
+            "navigate",
+            "popUpTo",
+            "findStartDestination",
+            "Row",
+            "fillMaxWidth",
+            "padding",
+            "Divider",
+            "weight",
+            "Image",
+            "painterResource"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginViewModel.kt",
+        "class_name": "LoginViewModel",
+        "method": "onEvent",
+        "signature": "onEvent(event: LoginEvent)",
+        "line": 64,
+        "end_line": 95,
+        "api_calls": [
+            "emit"
+        ],
+        "called_methods": [
+            "copy",
+            "toggleLoginState",
+            "onClick",
+            "emit",
+            "ShowSnackbar"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\OnBoarding.kt",
+        "class_name": "",
+        "method": "OnBoarding",
+        "signature": "OnBoarding(navController: NavHostController)",
+        "line": 53,
+        "end_line": 109,
+        "api_calls": [
+            "navigate"
+        ],
+        "called_methods": [
+            "Surface",
+            "fillMaxSize",
+            "Column",
+            "toArgb",
+            "rememberCoroutineScope",
+            "get",
+            "rememberPagerState",
+            "HorizontalPager",
+            "weight",
+            "OnboardingPage",
+            "padding",
+            "BottomSection",
+            "scrollToPage",
+            "navigate"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\util\\OnBoardingItem.kt",
+        "class_name": "OnBoardingItem",
+        "method": "get",
+        "signature": "get(): List<OnBoardingItem>",
+        "line": 37,
+        "end_line": 57,
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "called_methods": [
+            "listOf",
+            "OnBoardingItem"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\Profile.kt",
+        "class_name": "",
+        "method": "Profile",
+        "signature": "Profile(viewModel: ProfileViewModel, navController: NavHostController)",
+        "line": 68,
+        "end_line": 207,
+        "api_calls": [
+            "navigate"
+        ],
+        "called_methods": [
+            "Column",
+            "Row",
+            "fillMaxWidth",
+            "IconButton",
+            "navigateUp",
+            "Icon",
+            "stringResource",
+            "padding",
+            "weight",
+            "Text",
+            "alpha",
+            "Image",
+            "size",
+            "clip",
+            "painterResource",
+            "Spacer",
+            "height",
+            "Divider",
+            "ProfileCard",
+            "fillMaxSize",
+            "Button",
+            "width",
+            "onEvent",
+            "navigate",
+            "popUpTo",
+            "findStartDestination"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+        "class_name": "",
+        "method": "SetupNavigation",
+        "signature": "SetupNavigation(startDestination: String)",
+        "line": 124,
+        "end_line": 175,
+        "operation_types": [
+            "write_or_update"
+        ],
+        "api_calls": [
+            "navigate"
+        ],
+        "called_methods": [
+            "rememberNavController",
+            "currentBackStackEntryAsState",
+            "rememberLazyListState",
+            "Scaffold",
+            "Column",
+            "padding",
+            "Box",
+            "BottomBar",
+            "FloatingActionButton",
+            "navigate",
+            "Icon",
+            "Spacer",
+            "height",
+            "NavigationGraph"
+        ]
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+        "class_name": "",
+        "method": "BottomBar",
+        "signature": "BottomBar(navController: NavHostController)",
+        "line": 178,
+        "end_line": 255,
+        "api_calls": [
+            "navigate"
+        ],
+        "called_methods": [
+            "currentBackStackEntryAsState",
+            "FoodikeBottomNavigation",
+            "Color",
+            "BottomNavigationItem",
+            "Icon",
+            "stringResource",
+            "navigate",
+            "popUpTo",
+            "findStartDestination",
+            "Row",
+            "Spacer",
+            "width",
+            "painterResource"
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+        "class_name": "HomeRepositoryImpl",
+        "method": "getRestaurants",
+        "line": 39,
+        "markers": [],
+        "return_type": "Results<List<Restaurant>>",
+        "parameters": []
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+        "class_name": "HomeRepositoryImpl",
+        "method": "getAds",
+        "line": 43,
+        "markers": [],
+        "return_type": "Results<List<Advertisement>>",
+        "parameters": []
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+        "class_name": "HomeRepositoryImpl",
+        "method": "getFoodItems",
+        "line": 47,
+        "markers": [],
+        "return_type": "Results<List<FoodItem>>",
+        "parameters": []
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+        "class_name": "HomeRepositoryImpl",
+        "method": "getRestaurantFromName",
+        "line": 51,
+        "markers": [],
+        "return_type": "Restaurant?",
+        "parameters": [
+            {
+                "name": "name",
+                "type": "String"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\LoginRepositoryImpl.kt",
+        "class_name": "LoginRepositoryImpl",
+        "method": "toggleLoginState",
+        "line": 56,
+        "markers": [
+            "DataStore"
+        ],
+        "return_type": "",
+        "parameters": []
+    },
+    {
+        "kind": "data_model",
+        "class_name": "Success",
+        "qualified_name": "com.example.foodike.data.repository.Success",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\Result.kt",
+        "line": 29,
+        "fields": [
+            {
+                "name": "data",
+                "type": "T",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 29
+            }
+        ]
+    },
+    {
+        "kind": "data_model",
+        "class_name": "Error",
+        "qualified_name": "com.example.foodike.data.repository.Error",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\Result.kt",
+        "line": 30,
+        "fields": [
+            {
+                "name": "exception",
+                "type": "Exception",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 30
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\Result.kt",
+        "class_name": "",
+        "method": "successOr",
+        "line": 33,
+        "markers": [],
+        "return_type": "T",
+        "parameters": [
+            {
+                "name": "fallback",
+                "type": "T"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "setRestaurant",
+        "line": 46,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "restaurant",
+                "type": "Restaurant"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getSavedRestaurant",
+        "line": 53,
+        "markers": [],
+        "return_type": "Flow<Restaurant>",
+        "parameters": []
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getMenuItems",
+        "line": 59,
+        "markers": [],
+        "return_type": "Flow<List<CartItem>>",
+        "parameters": []
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getLikedRestaurants",
+        "line": 66,
+        "markers": [],
+        "return_type": "Flow<List<Restaurant>>",
+        "parameters": []
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "isRestaurantLiked",
+        "line": 70,
+        "markers": [],
+        "return_type": "Flow<Boolean>",
+        "parameters": [
+            {
+                "name": "restaurant",
+                "type": "Restaurant"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getCartItems",
+        "line": 74,
+        "markers": [],
+        "return_type": "Flow<List<CartItem>>",
+        "parameters": []
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\di\\AppModule.kt",
+        "class_name": "",
+        "method": "provideLoginRepository",
+        "line": 48,
+        "markers": [],
+        "return_type": "LoginRepository",
+        "parameters": [
+            {
+                "name": "context",
+                "type": "Context"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\di\\AppModule.kt",
+        "class_name": "",
+        "method": "providesHomeRepository",
+        "line": 54,
+        "markers": [],
+        "return_type": "HomeRepository",
+        "parameters": []
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\di\\AppModule.kt",
+        "class_name": "",
+        "method": "providesUserDataRepository",
+        "line": 58,
+        "markers": [],
+        "return_type": "UserDataRepository",
+        "parameters": []
+    },
+    {
+        "kind": "data_model",
+        "class_name": "Advertisement",
+        "qualified_name": "com.example.foodike.domain.model.Advertisement",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\Advertisement.kt",
+        "line": 31,
+        "fields": [
+            {
+                "name": "title",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 32
+            },
+            {
+                "name": "subTitle",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 33
+            },
+            {
+                "name": "color",
+                "type": "Color",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 34
+            },
+            {
+                "name": "image",
+                "type": "Int",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 35
+            }
+        ]
+    },
+    {
+        "kind": "data_model",
+        "class_name": "CartItem",
+        "qualified_name": "com.example.foodike.domain.model.CartItem",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\CartItem.kt",
+        "line": 29,
+        "fields": [
+            {
+                "name": "menuItem",
+                "type": "MenuItem",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 30
+            },
+            {
+                "name": "noOfItems",
+                "type": "Int",
+                "mutable": true,
+                "source": "primary_constructor_var",
+                "annotations": [],
+                "line": 31
+            }
+        ]
+    },
+    {
+        "kind": "data_model",
+        "class_name": "FoodItem",
+        "qualified_name": "com.example.foodike.domain.model.FoodItem",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\FoodItem.kt",
+        "line": 29,
+        "fields": [
+            {
+                "name": "image",
+                "type": "Int",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 30
+            },
+            {
+                "name": "name",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 31
+            }
+        ]
+    },
+    {
+        "kind": "data_model",
+        "class_name": "MenuItem",
+        "qualified_name": "com.example.foodike.domain.model.MenuItem",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\MenuItem.kt",
+        "line": 29,
+        "fields": [
+            {
+                "name": "dish",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 30
+            },
+            {
+                "name": "price",
+                "type": "Double",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 31
+            },
+            {
+                "name": "rating",
+                "type": "Double",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 32
+            },
+            {
+                "name": "noOfRatings",
+                "type": "Int",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 33
+            },
+            {
+                "name": "isVegetarian",
+                "type": "Boolean",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 34
+            }
+        ]
+    },
+    {
+        "kind": "data_model",
+        "class_name": "Restaurant",
+        "qualified_name": "com.example.foodike.domain.model.Restaurant",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\Restaurant.kt",
+        "line": 29,
+        "fields": [
+            {
+                "name": "name",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 30
+            },
+            {
+                "name": "rating",
+                "type": "Double",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 31
+            },
+            {
+                "name": "noOfRatings",
+                "type": "Int",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 32
+            },
+            {
+                "name": "timeInMillis",
+                "type": "Long",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 33
+            },
+            {
+                "name": "variety",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 34
+            },
+            {
+                "name": "place",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 35
+            },
+            {
+                "name": "averagePrice",
+                "type": "Double",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 36
+            },
+            {
+                "name": "image",
+                "type": "Int",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 37
+            },
+            {
+                "name": "menu",
+                "type": "List<MenuItem>",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 38
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\MainActivity.kt",
+        "class_name": "MainActivity",
+        "method": "onCreate",
+        "line": 50,
+        "markers": [
+            "setContent"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "savedInstanceState",
+                "type": "Bundle?"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\Cart.kt",
+        "class_name": "",
+        "method": "Cart",
+        "line": 56,
+        "markers": [
+            "navigate",
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "navController",
+                "type": "NavHostController"
+            },
+            {
+                "name": "viewModel",
+                "type": "CartViewModel"
+            }
+        ]
+    },
+    {
+        "kind": "data_model",
+        "class_name": "CartState",
+        "qualified_name": "com.example.foodike.presentation.cart.CartState",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\CartState.kt",
+        "line": 33,
+        "fields": [
+            {
+                "name": "list",
+                "type": "MutableList<CartItem>",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 34,
+                "default_value": "mutableListOf()"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\BillSection.kt",
+        "class_name": "",
+        "method": "BillSection",
+        "line": 46,
+        "markers": [
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "itemTotal",
+                "type": "Double"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CartItemCard.kt",
+        "class_name": "",
+        "method": "CartItemCard",
+        "line": 62,
+        "markers": [
+            "clickable",
+            "mutableStateOf"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "cartItem",
+                "type": "CartItem"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CouponBar.kt",
+        "class_name": "",
+        "method": "CouponBar",
+        "line": 57,
+        "markers": [
+            "clickable",
+            "mutableStateOf"
+        ],
+        "return_type": "",
+        "parameters": []
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\DeliverySection.kt",
+        "class_name": "",
+        "method": "DeliverySection",
+        "line": 49,
+        "markers": [
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "restaurant",
+                "type": "Restaurant"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\ItemSection.kt",
+        "class_name": "",
+        "method": "ItemSection",
+        "line": 54,
+        "markers": [
+            "mutableStateOf"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "list",
+                "type": "List<CartItem>"
+            },
+            {
+                "name": "onIncreaseClick",
+                "type": "(cartItem: CartItem) -> Unit"
+            },
+            {
+                "name": "onDecreaseClick",
+                "type": "(cartItem: CartItem) -> Unit"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\common\\Extensions.kt",
+        "class_name": "",
+        "method": "round",
+        "line": 31,
+        "markers": [],
+        "return_type": "Double",
+        "parameters": [
+            {
+                "name": "decimals",
+                "type": "Int"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\common\\Extensions.kt",
+        "class_name": "",
+        "method": "getTimeInMins",
+        "line": 37,
+        "markers": [],
+        "return_type": "String",
+        "parameters": []
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\RestaurantCard.kt",
+        "class_name": "",
+        "method": "RestaurantCard",
+        "line": 52,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "restaurant",
+                "type": "Restaurant"
+            },
+            {
+                "name": "modifier",
+                "type": "Modifier"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\RestaurantCard.kt",
+        "class_name": "",
+        "method": "getCustomerInfo",
+        "line": 125,
+        "markers": [],
+        "return_type": "String",
+        "parameters": [
+            {
+                "name": "noOfRatings",
+                "type": "Int"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\SearchBar.kt",
+        "class_name": "",
+        "method": "SearchBar",
+        "line": 44,
+        "markers": [
+            "mutableStateOf"
+        ],
+        "return_type": "",
+        "parameters": []
+    },
+    {
+        "kind": "data_model",
+        "class_name": "DetailScreenState",
+        "qualified_name": "com.example.foodike.presentation.details.DetailScreenState",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\DetailScreenState.kt",
+        "line": 32,
+        "fields": [
+            {
+                "name": "restaurant",
+                "type": "Restaurant?",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 33,
+                "default_value": "null"
+            },
+            {
+                "name": "recommendedExpandedState",
+                "type": "Boolean",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 34,
+                "default_value": "true"
+            },
+            {
+                "name": "nonVegExpandedState",
+                "type": "Boolean",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 35,
+                "default_value": "true"
+            },
+            {
+                "name": "vegExpandedState",
+                "type": "Boolean",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 36,
+                "default_value": "true"
+            },
+            {
+                "name": "menuList",
+                "type": "List<CartItem>",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 37,
+                "default_value": "emptyList()"
+            },
+            {
+                "name": "recommendedList",
+                "type": "List<CartItem>",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 38,
+                "default_value": "emptyList()"
+            },
+            {
+                "name": "isLiked",
+                "type": "Boolean",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 39,
+                "default_value": "false"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+        "class_name": "",
+        "method": "RestaurantDetail",
+        "line": 72,
+        "markers": [
+            "navigate",
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "navController",
+                "type": "NavHostController"
+            },
+            {
+                "name": "viewModel",
+                "type": "RestaurantDetailViewModel"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetailViewModel.kt",
+        "class_name": "RestaurantDetailViewModel",
+        "method": "onEvent",
+        "line": 72,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "event",
+                "type": "DetailScreenEvent"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\components\\MenuItemCard.kt",
+        "class_name": "",
+        "method": "MenuItemCard",
+        "line": 68,
+        "markers": [
+            "clickable",
+            "mutableStateOf"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "menuItem",
+                "type": "MenuItem"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\components\\RestaurantDetailCard.kt",
+        "class_name": "",
+        "method": "RestaurantDetailCard",
+        "line": 60,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "restaurant",
+                "type": "Restaurant"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\History.kt",
+        "class_name": "",
+        "method": "History",
+        "line": 51,
+        "markers": [
+            "navigate",
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "viewModel",
+                "type": "HistoryViewModel"
+            },
+            {
+                "name": "navHostController",
+                "type": "NavHostController"
+            }
+        ]
+    },
+    {
+        "kind": "data_model",
+        "class_name": "SelectRestaurant",
+        "qualified_name": "com.example.foodike.presentation.history.SelectRestaurant",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\HistoryEvent.kt",
+        "line": 32,
+        "fields": [
+            {
+                "name": "restaurant",
+                "type": "Restaurant",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 32
+            },
+            {
+                "name": "onClick",
+                "type": "() -> Unit",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 32
+            }
+        ]
+    },
+    {
+        "kind": "data_model",
+        "class_name": "HistoryState",
+        "qualified_name": "com.example.foodike.presentation.history.HistoryState",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\HistoryState.kt",
+        "line": 31,
+        "fields": [
+            {
+                "name": "likedRestaurantList",
+                "type": "List<Restaurant>",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 32,
+                "default_value": "emptyList()"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\HistoryViewModel.kt",
+        "class_name": "HistoryViewModel",
+        "method": "onEvent",
+        "line": 61,
+        "markers": [
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "event",
+                "type": "HistoryEvent"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\FavouritesSection.kt",
+        "class_name": "",
+        "method": "FavouritesSection",
+        "line": 47,
+        "markers": [
+            "clickable",
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "list",
+                "type": "List<Restaurant>"
+            },
+            {
+                "name": "onClick",
+                "type": "(restaurant: Restaurant) -> Unit"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\HistorySection.kt",
+        "class_name": "",
+        "method": "HistorySection",
+        "line": 61,
+        "markers": [
+            "clickable",
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": []
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\Tabs.kt",
+        "class_name": "",
+        "method": "Tabs",
+        "line": 48,
+        "markers": [
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "pagerState",
+                "type": "PagerState"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\TabsContent.kt",
+        "class_name": "",
+        "method": "TabsContent",
+        "line": 35,
+        "markers": [
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "pagerState",
+                "type": "PagerState"
+            },
+            {
+                "name": "list",
+                "type": "List<Restaurant>"
+            },
+            {
+                "name": "onClick",
+                "type": "(restaurant: Restaurant) -> Unit"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreen.kt",
+        "class_name": "",
+        "method": "Home",
+        "line": 88,
+        "markers": [
+            "navigate",
+            "clickable"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "scrollState",
+                "type": "LazyListState"
+            },
+            {
+                "name": "navController",
+                "type": "NavHostController"
+            },
+            {
+                "name": "viewModel",
+                "type": "HomeViewModel"
+            }
+        ]
+    },
+    {
+        "kind": "data_model",
+        "class_name": "SelectRestaurant",
+        "qualified_name": "com.example.foodike.presentation.home.SelectRestaurant",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreenEvent.kt",
+        "line": 32,
+        "fields": [
+            {
+                "name": "restaurant",
+                "type": "Restaurant",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 32
+            },
+            {
+                "name": "onClick",
+                "type": "() -> Unit",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 32
+            }
+        ]
+    },
+    {
+        "kind": "data_model",
+        "class_name": "HomeScreenState",
+        "qualified_name": "com.example.foodike.presentation.home.HomeScreenState",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreenState.kt",
+        "line": 33,
+        "fields": [
+            {
+                "name": "adsList",
+                "type": "List<Advertisement>",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 34,
+                "default_value": "emptyList()"
+            },
+            {
+                "name": "foodList",
+                "type": "List<FoodItem>",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 35,
+                "default_value": "emptyList()"
+            },
+            {
+                "name": "likedRestaurantList",
+                "type": "List<Restaurant>",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 36,
+                "default_value": "emptyList()"
+            },
+            {
+                "name": "restaurantList",
+                "type": "List<Restaurant>",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 37,
+                "default_value": "emptyList()"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeViewModel.kt",
+        "class_name": "HomeViewModel",
+        "method": "onEvent",
+        "line": 92,
+        "markers": [
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "event",
+                "type": "HomeScreenEvent"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\AdCard.kt",
+        "class_name": "",
+        "method": "AdCard",
+        "line": 50,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "ad",
+                "type": "Advertisement"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\AdSection.kt",
+        "class_name": "",
+        "method": "AdSection",
+        "line": 40,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "adsList",
+                "type": "List<Advertisement>"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ChipBar.kt",
+        "class_name": "",
+        "method": "ChipBar",
+        "line": 50,
+        "markers": [
+            "mutableStateOf"
+        ],
+        "return_type": "",
+        "parameters": []
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ChipBar.kt",
+        "class_name": "",
+        "method": "Chip",
+        "line": 69,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "name",
+                "type": "String"
+            },
+            {
+                "name": "isSelected",
+                "type": "Boolean"
+            },
+            {
+                "name": "onSelectionChanged",
+                "type": "(String) -> Unit"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ChipBar.kt",
+        "class_name": "",
+        "method": "ChipGroup",
+        "line": 100,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "filters",
+                "type": "List<Filter>"
+            },
+            {
+                "name": "selectedFilter",
+                "type": "Filter?"
+            },
+            {
+                "name": "onSelectedChanged",
+                "type": "(String) -> Unit"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\FavouriteCard.kt",
+        "class_name": "",
+        "method": "FavouriteCard",
+        "line": 46,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "restaurant",
+                "type": "Restaurant"
+            },
+            {
+                "name": "modifier",
+                "type": "Modifier"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\FavouriteScreen.kt",
+        "class_name": "",
+        "method": "FavouriteSection",
+        "line": 47,
+        "markers": [
+            "clickable",
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "list",
+                "type": "List<Restaurant>"
+            },
+            {
+                "name": "onClick",
+                "type": "(restaurant: Restaurant) -> Unit"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\FoodikeBottomNavigation.kt",
+        "class_name": "",
+        "method": "FoodikeBottomNavigation",
+        "line": 42,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "modifier",
+                "type": "Modifier"
+            },
+            {
+                "name": "backgroundColor",
+                "type": "Color"
+            },
+            {
+                "name": "contentColor",
+                "type": "Color"
+            },
+            {
+                "name": "elevation",
+                "type": "Dp"
+            },
+            {
+                "name": "content",
+                "type": "@Composable RowScope.() -> Unit"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\GreetingScreen.kt",
+        "class_name": "",
+        "method": "GreetingSection",
+        "line": 40,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "userName",
+                "type": "String"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\MainSection.kt",
+        "class_name": "",
+        "method": "MainSection",
+        "line": 43,
+        "markers": [],
+        "return_type": "",
+        "parameters": []
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\RecommendedCard.kt",
+        "class_name": "",
+        "method": "RecommendedCard",
+        "line": 46,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "foodItem",
+                "type": "FoodItem"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\RecommendedSection.kt",
+        "class_name": "",
+        "method": "RecommendedSection",
+        "line": 47,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "list",
+                "type": "List<FoodItem>"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ThankYouSection.kt",
+        "class_name": "",
+        "method": "ThankYouSection",
+        "line": 49,
+        "markers": [],
+        "return_type": "",
+        "parameters": []
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\TopSection.kt",
+        "class_name": "",
+        "method": "TopSection",
+        "line": 53,
+        "markers": [
+            "navigate",
+            "clickable"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "navController",
+                "type": "NavHostController"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\util\\Filters.kt",
+        "class_name": "",
+        "method": "getAllTags",
+        "line": 38,
+        "markers": [],
+        "return_type": "List<Filter>",
+        "parameters": []
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\util\\Filters.kt",
+        "class_name": "",
+        "method": "getTag",
+        "line": 45,
+        "markers": [],
+        "return_type": "Filter?",
+        "parameters": [
+            {
+                "name": "value",
+                "type": "String"
+            }
+        ]
+    },
+    {
+        "kind": "data_model",
+        "class_name": "FoodikeTextFieldState",
+        "qualified_name": "com.example.foodike.presentation.login.FoodikeTextFieldState",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\FoodikeTextFieldState.kt",
+        "line": 29,
+        "fields": [
+            {
+                "name": "text",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 30,
+                "default_value": "\"\""
+            },
+            {
+                "name": "hint",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 31,
+                "default_value": "\"\""
+            }
+        ]
+    },
+    {
+        "kind": "data_model",
+        "class_name": "EnteredEmail",
+        "qualified_name": "com.example.foodike.presentation.login.EnteredEmail",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginEvent.kt",
+        "line": 30,
+        "fields": [
+            {
+                "name": "value",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 30
+            }
+        ]
+    },
+    {
+        "kind": "data_model",
+        "class_name": "EnteredPassword",
+        "qualified_name": "com.example.foodike.presentation.login.EnteredPassword",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginEvent.kt",
+        "line": 31,
+        "fields": [
+            {
+                "name": "value",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 31
+            }
+        ]
+    },
+    {
+        "kind": "data_model",
+        "class_name": "PerformLogin",
+        "qualified_name": "com.example.foodike.presentation.login.PerformLogin",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginEvent.kt",
+        "line": 32,
+        "fields": [
+            {
+                "name": "onClick",
+                "type": "() -> Unit",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 32
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginScreen.kt",
+        "class_name": "",
+        "method": "LoginScreen",
+        "line": 74,
+        "markers": [
+            "navigate",
+            "clickable",
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "viewModel",
+                "type": "LoginViewModel"
+            },
+            {
+                "name": "navController",
+                "type": "NavHostController"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginViewModel.kt",
+        "class_name": "LoginViewModel",
+        "method": "onEvent",
+        "line": 64,
+        "markers": [
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "event",
+                "type": "LoginEvent"
+            }
+        ]
+    },
+    {
+        "kind": "data_model",
+        "class_name": "ShowSnackbar",
+        "qualified_name": "com.example.foodike.presentation.login.ShowSnackbar",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\UiEvent.kt",
+        "line": 30,
+        "fields": [
+            {
+                "name": "message",
+                "type": "String",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 30
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\components\\FoodikeTextField.kt",
+        "class_name": "",
+        "method": "FoodikeTextField",
+        "line": 44,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "value",
+                "type": "String"
+            },
+            {
+                "name": "onValueChange",
+                "type": "(String) -> Unit"
+            },
+            {
+                "name": "hint",
+                "type": "String"
+            },
+            {
+                "name": "keyboardOptions",
+                "type": "KeyboardOptions"
+            },
+            {
+                "name": "visualTransformation",
+                "type": "VisualTransformation"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\OnBoarding.kt",
+        "class_name": "",
+        "method": "OnBoarding",
+        "line": 53,
+        "markers": [
+            "navigate"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "navController",
+                "type": "NavHostController"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\components\\BottomSection.kt",
+        "class_name": "",
+        "method": "BottomSection",
+        "line": 42,
+        "markers": [
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "size",
+                "type": "Int"
+            },
+            {
+                "name": "index",
+                "type": "Int"
+            },
+            {
+                "name": "onNextClicked",
+                "type": "() -> Unit"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\components\\Indicators.kt",
+        "class_name": "",
+        "method": "Indicators",
+        "line": 48,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "size",
+                "type": "Int"
+            },
+            {
+                "name": "index",
+                "type": "Int"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\components\\Indicators.kt",
+        "class_name": "",
+        "method": "Indicator",
+        "line": 63,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "isSelected",
+                "type": "Boolean"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\components\\OnboardingPage.kt",
+        "class_name": "",
+        "method": "OnboardingPage",
+        "line": 50,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "item",
+                "type": "OnBoardingItem"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\util\\OnBoardingItem.kt",
+        "class_name": "OnBoardingItem",
+        "method": "get",
+        "line": 37,
+        "markers": [],
+        "return_type": "List<OnBoardingItem>",
+        "parameters": []
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\Profile.kt",
+        "class_name": "",
+        "method": "Profile",
+        "line": 68,
+        "markers": [
+            "navigate",
+            "clickable",
+            "onClick",
+            "delete"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "viewModel",
+                "type": "ProfileViewModel"
+            },
+            {
+                "name": "navController",
+                "type": "NavHostController"
+            }
+        ]
+    },
+    {
+        "kind": "data_model",
+        "class_name": "PerformLogout",
+        "qualified_name": "com.example.foodike.presentation.profile.PerformLogout",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\ProfileEvent.kt",
+        "line": 33,
+        "fields": [
+            {
+                "name": "onClick",
+                "type": "() -> Unit",
+                "mutable": false,
+                "source": "primary_constructor_val",
+                "annotations": [],
+                "line": 33
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\ProfileViewModel.kt",
+        "class_name": "ProfileViewModel",
+        "method": "onEvent",
+        "line": 43,
+        "markers": [
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "event",
+                "type": "ProfileEvent"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\components\\ProfileCard.kt",
+        "class_name": "",
+        "method": "ProfileCard",
+        "line": 43,
+        "markers": [
+            "clickable",
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "title",
+                "type": "String"
+            },
+            {
+                "name": "subtext",
+                "type": "String"
+            },
+            {
+                "name": "onClick",
+                "type": "() -> Unit"
+            },
+            {
+                "name": "dividerVisibility",
+                "type": "Boolean"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+        "class_name": "",
+        "method": "NavigationGraph",
+        "line": 64,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "navController",
+                "type": "NavHostController"
+            },
+            {
+                "name": "startDestination",
+                "type": "String"
+            },
+            {
+                "name": "scrollState",
+                "type": "LazyListState"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+        "class_name": "",
+        "method": "SetupNavigation",
+        "line": 124,
+        "markers": [
+            "navigate",
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "startDestination",
+                "type": "String"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+        "class_name": "",
+        "method": "BottomBar",
+        "line": 178,
+        "markers": [
+            "navigate",
+            "onClick"
+        ],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "navController",
+                "type": "NavHostController"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Screen.kt",
+        "class_name": "Screen",
+        "method": "withArgs",
+        "line": 38,
+        "markers": [],
+        "return_type": "String",
+        "parameters": [
+            {
+                "name": "args",
+                "type": "String"
+            }
+        ]
+    },
+    {
+        "kind": "method_summary",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\ui\\theme\\Theme.kt",
+        "class_name": "",
+        "method": "FoodikeTheme",
+        "line": 48,
+        "markers": [],
+        "return_type": "",
+        "parameters": [
+            {
+                "name": "content",
+                "type": "@Composable () -> Unit"
+            }
+        ]
+    }
+]

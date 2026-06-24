@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-24T10:58:47+00:00",
+  "sourceKind": "kotlin",
+  "arktsAnalysisBackend": "",
+  "commands": [
+    {
+      "kind": "preflight",
+      "command": [
+        "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\environment\\preflight.py",
+        "--workspace-root",
+        "D:\\workspace\\Foodike",
+        "--source-project",
+        "D:\\Kotlin2Cangjie\\Foodike",
+        "--target-project",
+        "D:\\workspace\\Foodike\\Foodike-Harmony",
+        "--output-dir",
+        "D:\\workspace\\Foodike\\translation-inputs"
+      ],
+      "returncode": 0,
+      "dryRun": false,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\preflight.log",
+      "optional": false
+    },
+    {
+      "kind": "skills-check",
+      "command": [
+        "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\environment\\check_skills.py",
+        "--workspace-root",
+        "D:\\workspace\\Foodike",
+        "--output-dir",
+        "D:\\workspace\\Foodike\\translation-inputs"
+      ],
+      "returncode": 0,
+      "dryRun": false,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\skills-check.log",
+      "optional": false
+    },
+    {
+      "kind": "source-coverage",
+      "command": [
+        "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py",
+        "--workspace-root",
+        "D:\\workspace\\Foodike",
+        "--source-project",
+        "D:\\Kotlin2Cangjie\\Foodike",
+        "--target-project",
+        "D:\\workspace\\Foodike\\Foodike-Harmony",
+        "--output-dir",
+        "D:\\workspace\\Foodike\\translation-inputs",
+        "--source-kind",
+        "kotlin"
+      ],
+      "returncode": 0,
+      "dryRun": false,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\source-coverage.log",
+      "optional": false
+    },
+    {
+      "kind": "gradle-model",
+      "command": [
+        "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "D:\\X2Cangjie\\X2Cangjie\\scripts\\kotlin\\export_gradle_model.py",
+        "--workspace-root",
+        "D:\\workspace\\Foodike",
+        "--source-project",
+        "D:\\Kotlin2Cangjie\\Foodike",
+        "--target-project",
+        "D:\\workspace\\Foodike\\Foodike-Harmony",
+        "--output-dir",
+        "D:\\workspace\\Foodike\\translation-inputs"
+      ],
+      "returncode": 0,
+      "dryRun": false,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\gradle-model.log",
+      "optional": false
+    },
+    {
+      "kind": "kotlin-analysis",
+      "command": [
+        "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "D:\\X2Cangjie\\X2Cangjie\\scripts\\kotlin\\run_kotlin_analysis.py",
+        "--workspace-root",
+        "D:\\workspace\\Foodike",
+        "--source-project",
+        "D:\\Kotlin2Cangjie\\Foodike",
+        "--target-project",
+        "D:\\workspace\\Foodike\\Foodike-Harmony",
+        "--output-dir",
+        "D:\\workspace\\Foodike\\translation-inputs",
+        "--gradle-model",
+        "D:\\workspace\\Foodike\\translation-inputs\\kotlin-analysis\\gradle-model.json"
+      ],
+      "returncode": 0,
+      "dryRun": false,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\kotlin-analysis.log",
+      "optional": false
+    }
+  ],
+  "mapcirReturnCode": 0,
+  "entryModuleNormalization": {
+    "schemaVersion": 1,
+    "targetProject": "D:\\workspace\\Foodike\\Foodike-Harmony",
+    "expectedEntryRootPackage": "ohos_app_cangjie_entry",
+    "applied": false,
+    "changedFiles": [],
+    "checks": [
+      {
+        "name": "entryCjpm",
+        "result": "SKIPPED",
+        "message": "entry/cjpm.toml does not exist."
+      }
+    ]
+  },
+  "result": "PASS"
+}

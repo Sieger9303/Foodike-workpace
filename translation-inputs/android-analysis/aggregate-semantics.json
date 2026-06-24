@@ -1,0 +1,64 @@
+[
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\Cart.kt",
+        "class_name": "",
+        "method": "Cart",
+        "signature": "Cart(navController: NavHostController, viewModel: CartViewModel)",
+        "line": 56,
+        "end_line": 119,
+        "markers": [
+            "rating"
+        ],
+        "inputs": [
+            {
+                "relative_line": 28,
+                "marker": ".filter",
+                "code": "list = list.list.filter {"
+            }
+        ],
+        "calculations": [
+            {
+                "relative_line": 43,
+                "marker": "aggregate",
+                "code": "rating = 3.9,"
+            }
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+        "class_name": "",
+        "method": "RestaurantDetail",
+        "signature": "RestaurantDetail(navController: NavHostController, viewModel: RestaurantDetailViewModel)",
+        "line": 72,
+        "end_line": 340,
+        "markers": [
+            "sum"
+        ],
+        "inputs": [
+            {
+                "relative_line": 136,
+                "marker": ".filter",
+                "code": "val nonVegList = detailScreenState.menuList.filter {"
+            },
+            {
+                "relative_line": 191,
+                "marker": ".filter",
+                "code": "val vegList = detailScreenState.menuList.filter {"
+            },
+            {
+                "relative_line": 251,
+                "marker": ".sum",
+                "code": "if (detailScreenState.menuList.sumOf { it.noOfItems } != 0) {"
+            }
+        ],
+        "calculations": [
+            {
+                "relative_line": 251,
+                "marker": "aggregate",
+                "code": "if (detailScreenState.menuList.sumOf { it.noOfItems } != 0) {"
+            }
+        ],
+        "confidence": "medium"
+    }
+]

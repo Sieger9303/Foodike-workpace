@@ -1,0 +1,689 @@
+[
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getSavedRestaurant",
+        "signature": "getSavedRestaurant(): Flow<Restaurant>",
+        "line": 53,
+        "end_line": 57,
+        "ui_refreshes": [
+            {
+                "relative_line": 3,
+                "marker": "emit(",
+                "code": "emit(currentRestaurant!!)"
+            }
+        ],
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getMenuItems",
+        "signature": "getMenuItems(): Flow<List<CartItem>>",
+        "line": 59,
+        "end_line": 61,
+        "ui_refreshes": [
+            {
+                "relative_line": 2,
+                "marker": "emit(",
+                "code": "emit(menuList.toMutableList())"
+            }
+        ],
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getLikedRestaurants",
+        "signature": "getLikedRestaurants(): Flow<List<Restaurant>>",
+        "line": 66,
+        "end_line": 68,
+        "ui_refreshes": [
+            {
+                "relative_line": 2,
+                "marker": "emit(",
+                "code": "emit(list)"
+            }
+        ],
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "isRestaurantLiked",
+        "signature": "isRestaurantLiked(restaurant: Restaurant): Flow<Boolean>",
+        "line": 70,
+        "end_line": 72,
+        "ui_refreshes": [
+            {
+                "relative_line": 2,
+                "marker": "emit(",
+                "code": "emit(list.contains(restaurant))"
+            }
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getCartItems",
+        "signature": "getCartItems(): Flow<List<CartItem>>",
+        "line": 74,
+        "end_line": 76,
+        "ui_refreshes": [
+            {
+                "relative_line": 2,
+                "marker": "emit(",
+                "code": "emit(cartListItems)"
+            }
+        ],
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CartItemCard.kt",
+        "class_name": "",
+        "method": "CartItemCard",
+        "signature": "CartItemCard(cartItem: CartItem)",
+        "line": 62,
+        "end_line": 158,
+        "ui_refreshes": [
+            {
+                "relative_line": 2,
+                "marker": "mutableStateOf",
+                "code": "var state by remember { mutableStateOf(cartItem.noOfItems) }"
+            }
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CouponBar.kt",
+        "class_name": "",
+        "method": "CouponBar",
+        "signature": "CouponBar()",
+        "line": 57,
+        "end_line": 106,
+        "ui_refreshes": [
+            {
+                "relative_line": 2,
+                "marker": "mutableStateOf",
+                "code": "var text by remember { mutableStateOf(\"\") }"
+            }
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\ItemSection.kt",
+        "class_name": "",
+        "method": "ItemSection",
+        "signature": "ItemSection(list: List<CartItem>, onIncreaseClick: (cartItem: CartItem) -> Unit, onDecreaseClick: (cartItem: CartItem) -> Unit)",
+        "line": 54,
+        "end_line": 143,
+        "ui_refreshes": [
+            {
+                "relative_line": 42,
+                "marker": "mutableStateOf",
+                "code": "val inputValue = remember { mutableStateOf(\"\") }"
+            },
+            {
+                "relative_line": 44,
+                "marker": "mutableStateOf",
+                "code": "mutableStateOf(true)"
+            },
+            {
+                "relative_line": 50,
+                "marker": ".value =",
+                "code": "onValueChange = { inputValue.value = it },"
+            },
+            {
+                "relative_line": 55,
+                "marker": ".value =",
+                "code": "if (inputValue.value == \"\") {"
+            },
+            {
+                "relative_line": 56,
+                "marker": ".value =",
+                "code": "hintState.value = !it.isFocused"
+            }
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\SearchBar.kt",
+        "class_name": "",
+        "method": "SearchBar",
+        "signature": "SearchBar()",
+        "line": 44,
+        "end_line": 73,
+        "ui_refreshes": [
+            {
+                "relative_line": 2,
+                "marker": "mutableStateOf",
+                "code": "var text by remember { mutableStateOf(\"\") }"
+            }
+        ],
+        "operation_types": [
+            "search_or_filter"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+        "class_name": "",
+        "method": "RestaurantDetail",
+        "signature": "RestaurantDetail(navController: NavHostController, viewModel: RestaurantDetailViewModel)",
+        "line": 72,
+        "end_line": 340,
+        "ui_refreshes": [
+            {
+                "relative_line": 255,
+                "marker": "navigate(",
+                "code": "navController.navigate(Screen.Cart.route)"
+            }
+        ],
+        "operation_types": [
+            "search_or_filter"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetailViewModel.kt",
+        "class_name": "RestaurantDetailViewModel",
+        "method": "onEvent",
+        "signature": "onEvent(event: DetailScreenEvent)",
+        "line": 72,
+        "end_line": 102,
+        "ui_refreshes": [
+            {
+                "relative_line": 4,
+                "marker": ".value =",
+                "code": "_detailScreenState.value = detailScreenState.value.copy("
+            },
+            {
+                "relative_line": 9,
+                "marker": ".value =",
+                "code": "_detailScreenState.value = detailScreenState.value.copy("
+            },
+            {
+                "relative_line": 14,
+                "marker": ".value =",
+                "code": "_detailScreenState.value = detailScreenState.value.copy("
+            },
+            {
+                "relative_line": 20,
+                "marker": ".value =",
+                "code": "_detailScreenState.value = detailScreenState.value.copy("
+            },
+            {
+                "relative_line": 24,
+                "marker": ".value =",
+                "code": "_detailScreenState.value = detailScreenState.value.copy("
+            }
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\components\\MenuItemCard.kt",
+        "class_name": "",
+        "method": "MenuItemCard",
+        "signature": "MenuItemCard(menuItem: MenuItem)",
+        "line": 68,
+        "end_line": 203,
+        "ui_refreshes": [
+            {
+                "relative_line": 2,
+                "marker": "mutableStateOf",
+                "code": "var state by remember { mutableStateOf(0) }"
+            }
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\History.kt",
+        "class_name": "",
+        "method": "History",
+        "signature": "History(viewModel: HistoryViewModel, navHostController: NavHostController)",
+        "line": 51,
+        "end_line": 91,
+        "ui_refreshes": [
+            {
+                "relative_line": 30,
+                "marker": "navigate(",
+                "code": "navHostController.navigate(Screen.RestaurantDetails.route)"
+            }
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\HistoryViewModel.kt",
+        "class_name": "HistoryViewModel",
+        "method": "onEvent",
+        "signature": "onEvent(event: HistoryEvent)",
+        "line": 61,
+        "end_line": 70,
+        "async_sources": [
+            {
+                "relative_line": 4,
+                "marker": "viewModelScope.launch",
+                "code": "viewModelScope.launch {"
+            }
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreen.kt",
+        "class_name": "",
+        "method": "Home",
+        "signature": "Home(scrollState: LazyListState, navController: NavHostController, viewModel: HomeViewModel)",
+        "line": 88,
+        "end_line": 170,
+        "ui_refreshes": [
+            {
+                "relative_line": 47,
+                "marker": "navigate(",
+                "code": "navController.navigate(Screen.RestaurantDetails.route)"
+            },
+            {
+                "relative_line": 67,
+                "marker": "navigate(",
+                "code": "navController.navigate(Screen.RestaurantDetails.route)"
+            }
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeViewModel.kt",
+        "class_name": "HomeViewModel",
+        "method": "onEvent",
+        "signature": "onEvent(event: HomeScreenEvent)",
+        "line": 92,
+        "end_line": 101,
+        "async_sources": [
+            {
+                "relative_line": 4,
+                "marker": "viewModelScope.launch",
+                "code": "viewModelScope.launch {"
+            }
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ChipBar.kt",
+        "class_name": "",
+        "method": "ChipBar",
+        "signature": "ChipBar()",
+        "line": 50,
+        "end_line": 66,
+        "ui_refreshes": [
+            {
+                "relative_line": 2,
+                "marker": "mutableStateOf",
+                "code": "val selectedFilter: MutableState<Filter?> = remember { mutableStateOf(null) }"
+            },
+            {
+                "relative_line": 8,
+                "marker": ".value =",
+                "code": "if (selectedFilter.value == getTag(it)) {"
+            },
+            {
+                "relative_line": 9,
+                "marker": ".value =",
+                "code": "selectedFilter.value = null"
+            },
+            {
+                "relative_line": 11,
+                "marker": ".value =",
+                "code": "selectedFilter.value = getTag(it)"
+            }
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\TopSection.kt",
+        "class_name": "",
+        "method": "TopSection",
+        "signature": "TopSection(navController: NavHostController)",
+        "line": 53,
+        "end_line": 87,
+        "ui_refreshes": [
+            {
+                "relative_line": 14,
+                "marker": "navigate(",
+                "code": "navController.navigate(Screen.Profile.route)"
+            }
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginScreen.kt",
+        "class_name": "",
+        "method": "LoginScreen",
+        "signature": "LoginScreen(viewModel: LoginViewModel, navController: NavHostController)",
+        "line": 74,
+        "end_line": 238,
+        "async_sources": [
+            {
+                "relative_line": 8,
+                "marker": "LaunchedEffect",
+                "code": "LaunchedEffect(key1 = true) {"
+            },
+            {
+                "relative_line": 9,
+                "marker": "collect",
+                "code": "viewModel.eventFlow.collectLatest { event ->"
+            }
+        ],
+        "ui_refreshes": [
+            {
+                "relative_line": 79,
+                "marker": "navigate(",
+                "code": "navController.navigate(Screen.Home.route) {"
+            }
+        ],
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "confidence": "high"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginViewModel.kt",
+        "class_name": "LoginViewModel",
+        "method": "onEvent",
+        "signature": "onEvent(event: LoginEvent)",
+        "line": 64,
+        "end_line": 95,
+        "async_sources": [
+            {
+                "relative_line": 16,
+                "marker": "viewModelScope.launch",
+                "code": "viewModelScope.launch {"
+            },
+            {
+                "relative_line": 22,
+                "marker": "viewModelScope.launch",
+                "code": "viewModelScope.launch{"
+            }
+        ],
+        "ui_refreshes": [
+            {
+                "relative_line": 4,
+                "marker": ".value =",
+                "code": "_email.value = email.value.copy("
+            },
+            {
+                "relative_line": 10,
+                "marker": ".value =",
+                "code": "_password.value = password.value.copy("
+            },
+            {
+                "relative_line": 23,
+                "marker": "emit(",
+                "code": "_eventFlow.emit("
+            }
+        ],
+        "confidence": "high"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\OnBoarding.kt",
+        "class_name": "",
+        "method": "OnBoarding",
+        "signature": "OnBoarding(navController: NavHostController)",
+        "line": 53,
+        "end_line": 109,
+        "ui_refreshes": [
+            {
+                "relative_line": 45,
+                "marker": "navigate(",
+                "code": "navController.navigate(Screen.LoginScreen.route)"
+            }
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\Profile.kt",
+        "class_name": "",
+        "method": "Profile",
+        "signature": "Profile(viewModel: ProfileViewModel, navController: NavHostController)",
+        "line": 68,
+        "end_line": 207,
+        "ui_refreshes": [
+            {
+                "relative_line": 121,
+                "marker": "navigate(",
+                "code": "navController.navigate(Screen.Onboarding.route) {"
+            }
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\ProfileViewModel.kt",
+        "class_name": "ProfileViewModel",
+        "method": "onEvent",
+        "signature": "onEvent(event: ProfileEvent)",
+        "line": 43,
+        "end_line": 52,
+        "async_sources": [
+            {
+                "relative_line": 4,
+                "marker": "viewModelScope.launch",
+                "code": "viewModelScope.launch() {"
+            }
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+        "class_name": "",
+        "method": "SetupNavigation",
+        "signature": "SetupNavigation(startDestination: String)",
+        "line": 124,
+        "end_line": 175,
+        "ui_refreshes": [
+            {
+                "relative_line": 30,
+                "marker": "navigate(",
+                "code": "navController.navigate(Screen.Cart.route)"
+            }
+        ],
+        "operation_types": [
+            "write_or_update"
+        ],
+        "confidence": "medium"
+    },
+    {
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+        "class_name": "",
+        "method": "BottomBar",
+        "signature": "BottomBar(navController: NavHostController)",
+        "line": 178,
+        "end_line": 255,
+        "ui_refreshes": [
+            {
+                "relative_line": 24,
+                "marker": "navigate(",
+                "code": "navController.navigate(Screen.Home.route) {"
+            },
+            {
+                "relative_line": 59,
+                "marker": "navigate(",
+                "code": "navController.navigate(Screen.History.route) {"
+            }
+        ],
+        "confidence": "medium"
+    },
+    {
+        "id": "UserDataRepositoryImpl.getSavedRestaurant",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getSavedRestaurant",
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "data_paths": [],
+        "ui_refreshes": [
+            {
+                "relative_line": 3,
+                "marker": "emit(",
+                "code": "emit(currentRestaurant!!)"
+            }
+        ],
+        "confidence": "slice-evidence"
+    },
+    {
+        "id": "UserDataRepositoryImpl.getMenuItems",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getMenuItems",
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "data_paths": [],
+        "ui_refreshes": [
+            {
+                "relative_line": 2,
+                "marker": "emit(",
+                "code": "emit(menuList.toMutableList())"
+            }
+        ],
+        "confidence": "slice-evidence"
+    },
+    {
+        "id": "UserDataRepositoryImpl.getLikedRestaurants",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getLikedRestaurants",
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "data_paths": [],
+        "ui_refreshes": [
+            {
+                "relative_line": 2,
+                "marker": "emit(",
+                "code": "emit(list)"
+            }
+        ],
+        "confidence": "slice-evidence"
+    },
+    {
+        "id": "UserDataRepositoryImpl.getCartItems",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+        "class_name": "UserDataRepositoryImpl",
+        "method": "getCartItems",
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "data_paths": [],
+        "ui_refreshes": [
+            {
+                "relative_line": 2,
+                "marker": "emit(",
+                "code": "emit(cartListItems)"
+            }
+        ],
+        "confidence": "slice-evidence"
+    },
+    {
+        "id": "SearchBar",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\SearchBar.kt",
+        "class_name": "",
+        "method": "SearchBar",
+        "operation_types": [
+            "search_or_filter"
+        ],
+        "data_paths": [],
+        "ui_refreshes": [
+            {
+                "relative_line": 2,
+                "marker": "mutableStateOf",
+                "code": "var text by remember { mutableStateOf(\"\") }"
+            }
+        ],
+        "confidence": "slice-evidence"
+    },
+    {
+        "id": "RestaurantDetail",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+        "class_name": "",
+        "method": "RestaurantDetail",
+        "operation_types": [
+            "search_or_filter"
+        ],
+        "data_paths": [],
+        "ui_refreshes": [
+            {
+                "relative_line": 255,
+                "marker": "navigate(",
+                "code": "navController.navigate(Screen.Cart.route)"
+            }
+        ],
+        "confidence": "slice-evidence"
+    },
+    {
+        "id": "LoginScreen",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginScreen.kt",
+        "class_name": "",
+        "method": "LoginScreen",
+        "operation_types": [
+            "read_or_listen"
+        ],
+        "data_paths": [],
+        "ui_refreshes": [
+            {
+                "relative_line": 71,
+                "marker": ".show()",
+                "code": ".show()"
+            },
+            {
+                "relative_line": 79,
+                "marker": "navigate(",
+                "code": "navController.navigate(Screen.Home.route) {"
+            },
+            {
+                "relative_line": 134,
+                "marker": ".show()",
+                "code": ".show()"
+            },
+            {
+                "relative_line": 144,
+                "marker": ".show()",
+                "code": ".show()"
+            },
+            {
+                "relative_line": 155,
+                "marker": ".show()",
+                "code": ".show()"
+            }
+        ],
+        "confidence": "slice-evidence"
+    },
+    {
+        "id": "SetupNavigation",
+        "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+        "class_name": "",
+        "method": "SetupNavigation",
+        "operation_types": [
+            "write_or_update"
+        ],
+        "data_paths": [],
+        "ui_refreshes": [
+            {
+                "relative_line": 30,
+                "marker": "navigate(",
+                "code": "navController.navigate(Screen.Cart.route)"
+            }
+        ],
+        "confidence": "slice-evidence"
+    }
+]

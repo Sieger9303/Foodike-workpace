@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-24T10:58:52+00:00",
+  "targetExists": true,
+  "summary": {
+    "expectedEntries": 6,
+    "expectedCriticalHighEntries": 6,
+    "actualEntries": 6,
+    "missingCriticalHighEntries": 0,
+    "unresolvedCriticalHighEntries": 6,
+    "missingDocSearchCriticalHighEntries": 0,
+    "implementedWeakTargetDecisionEntries": 0,
+    "implementedWeakTestEntries": 0,
+    "fallbackDespiteDirectEvidenceEntries": 0,
+    "localSimulationFallbackWithoutBlockerEntries": 0,
+    "replacementWithoutApiEvidenceEntries": 0,
+    "verifiedDirectMissingEndpointEntries": 0,
+    "implementedMissingEndpointEntries": 0,
+    "realCapabilityWithLocalFallbackEntries": 0,
+    "incompleteDeferredCriticalHighEntries": 0,
+    "genericDeferredCriticalHighEntries": 0,
+    "byStatus": {
+      "planned": 6
+    },
+    "allowedStatuses": [
+      "deferred",
+      "implemented-fallback",
+      "not-applicable",
+      "not-covered",
+      "planned",
+      "platform-replaced",
+      "unreviewed",
+      "verified-direct"
+    ],
+    "deferredRequiredFields": [
+      "targetCapabilitySearch",
+      "blocker",
+      "targetFallback",
+      "futureCompletionPath"
+    ]
+  },
+  "findings": [
+    {
+      "severity": "high",
+      "kind": "platform-capability-unresolved",
+      "message": "6 critical/high platform capability check(s) remain planned, unreviewed, or not covered."
+    }
+  ],
+  "samples": {
+    "missingEntries": [],
+    "invalidStatusEntries": [],
+    "unresolvedEntries": [
+      {
+        "capabilityId": "media-library-access",
+        "capabilityName": "Media library and album discovery",
+        "importance": "critical",
+        "status": "planned",
+        "sourcePaths": [
+          "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+          "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+          "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+          "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt"
+        ]
+      },
+      {
+        "capabilityId": "file-access-and-saf",
+        "capabilityName": "File access, document permissions, and share URIs",
+        "importance": "critical",
+        "status": "planned",
+        "sourcePaths": [
+          "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+          "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+          "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+          "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt"
+        ]
+      },
+      {
+        "capabilityId": "image-viewer-gestures",
+        "capabilityName": "Image viewer gestures and metadata",
+        "importance": "critical",
+        "status": "planned",
+        "sourcePaths": [
+          "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+          "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+          "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+          "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt"
+        ]
+      },
+      {
+        "capabilityId": "localization-resources",
+        "capabilityName": "Localized resources and formatted strings",
+        "importance": "high",
+        "status": "planned",
+        "sourcePaths": [
+          "app/src/main/AndroidManifest.xml",
+          "app/src/main/res/values/strings.xml",
+          "app/src/main/res/values/themes.xml",
+          "app/src/main/res/values/colors.xml",
+          "app/src/main/res/values/ic_launcher_background.xml"
+        ]
+      },
+      {
+        "capabilityId": "runtime-permissions",
+        "capabilityName": "Runtime permissions and protected platform access",
+        "importance": "high",
+        "status": "planned",
+        "sourcePaths": [
+          "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+          "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+          "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+          "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt"
+        ]
+      },
+      {
+        "capabilityId": "background-and-platform-components",
+        "capabilityName": "Background work, services, receivers, widgets, and notifications",
+        "importance": "high",
+        "status": "planned",
+        "sourcePaths": [
+          "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+          "app/build.gradle.kts",
+          "README.md",
+          "app/src/main/java/com/example/foodike/di/AppModule.kt",
+          "app/src/main/AndroidManifest.xml"
+        ]
+      }
+    ],
+    "missingSearchEntries": [],
+    "missingApiEntries": [],
+    "missingTestEntries": [],
+    "incompleteDeferredEntries": [],
+    "genericDeferredEntries": [],
+    "fallbackDespiteDirectEntries": [],
+    "localSimulationFallbackEntries": [],
+    "replacementWithoutApiEntries": [],
+    "directMissingEndpointEntries": [],
+    "implementedMissingEndpointEntries": [],
+    "realCapabilityWithLocalFallbackEntries": []
+  },
+  "templateProblems": [],
+  "checkProblems": []
+}

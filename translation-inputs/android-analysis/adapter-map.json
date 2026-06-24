@@ -1,0 +1,84 @@
+{
+    "xml": {
+        "mode": "xml_only",
+        "items": []
+    },
+    "kotlin": {
+        "mode": "kotlin_psi",
+        "items": [
+            {
+                "kind": "list_or_adapter",
+                "api": "LazyColumn",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\Cart.kt",
+                "line": 69,
+                "enclosing_class": "",
+                "enclosing_function": "Cart",
+                "code": "LazyColumn( modifier = Modifier .fillMaxSize() .background(color = Color(0xFFE8E7E7)), horizontalAlignment = Alignment.CenterHorizontally ) { item { Row( modifier = Modifier.fillMaxWidth(), ) { IconButton(onClick = { navController.navigateUp() }) { Icon(imageVector = Icons.Outlined.Close, contentDescription = stringResource(id = R.string.back)) } } } item { ItemSection( list = list.list.filter { it.noOfItems > 0 }, onDecreaseClick = { }, onIncreaseClick = { }, ) } item { CouponBar() } item { ..."
+            },
+            {
+                "kind": "list_or_adapter",
+                "api": "LazyColumn",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+                "line": 95,
+                "enclosing_class": "",
+                "enclosing_function": "RestaurantDetail",
+                "code": "LazyColumn(modifier = Modifier.fillMaxSize()) { item { Row( modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween ) { IconButton(onClick = { navController.navigateUp() }) { Icon( imageVector = Icons.Outlined.ArrowBack, contentDescription = stringResource(R.string.favourite) ) } Row { IconToggleButton( checked = detailScreenState.isLiked, onCheckedChange = { viewModel.onEvent(DetailScreenEvent.ToggleLikedStatus) }, ) { if (detailScreenState.isLiked) { Icon( image..."
+            },
+            {
+                "kind": "list_or_adapter",
+                "api": "LazyColumn",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\FavouritesSection.kt",
+                "line": 59,
+                "enclosing_class": "",
+                "enclosing_function": "FavouritesSection",
+                "code": "LazyColumn { items(list.size) { RestaurantCard( restaurant = list[it], modifier = Modifier .clip(RoundedCornerShape(8.dp)) .clickable { onClick(list[it]) } ) } }"
+            },
+            {
+                "kind": "list_or_adapter",
+                "api": "LazyColumn",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreen.kt",
+                "line": 102,
+                "enclosing_class": "",
+                "enclosing_function": "Home",
+                "code": "LazyColumn( modifier = Modifier .fillMaxWidth(), state = scrollState, verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.Start ) { item { Spacer(modifier = Modifier.height(8.dp)) TopSection(navController = navController) Spacer(modifier = Modifier.height(8.dp)) } item { GreetingSection() Spacer(modifier = Modifier.height(24.dp)) } item { Column( modifier = Modifier.padding(8.dp, 0.dp) ) { SearchBar() } Spacer(modifier = Modifier.height(16.dp)) } item { AdSection(homeScr..."
+            },
+            {
+                "kind": "list_or_adapter",
+                "api": "LazyRow",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\AdSection.kt",
+                "line": 49,
+                "enclosing_class": "",
+                "enclosing_function": "AdSection",
+                "code": "LazyRow( contentPadding = PaddingValues( start = 8.dp, end = 8.dp ), horizontalArrangement = Arrangement.spacedBy(16.dp) ) { items(adsList.size) { AdCard( adsList[it] ) } }"
+            },
+            {
+                "kind": "list_or_adapter",
+                "api": "LazyRow",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ChipBar.kt",
+                "line": 106,
+                "enclosing_class": "",
+                "enclosing_function": "ChipGroup",
+                "code": "LazyRow( contentPadding = PaddingValues( start = 8.dp, end = 8.dp ), horizontalArrangement = Arrangement.spacedBy(8.dp) ) { items(filters) { Chip( name = it.value, isSelected = selectedFilter == it, onSelectionChanged = { onSelectedChanged(it) }, ) } }"
+            },
+            {
+                "kind": "list_or_adapter",
+                "api": "LazyRow",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\FavouriteScreen.kt",
+                "line": 63,
+                "enclosing_class": "",
+                "enclosing_function": "FavouriteSection",
+                "code": "LazyRow( contentPadding = PaddingValues( start = 8.dp, end = 8.dp ), horizontalArrangement = Arrangement.spacedBy(16.dp) ) { items(list.size) { FavouriteCard(restaurant = list[it], modifier = Modifier.clickable { onClick(list[it]) }) } }"
+            },
+            {
+                "kind": "list_or_adapter",
+                "api": "LazyRow",
+                "file": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\RecommendedSection.kt",
+                "line": 58,
+                "enclosing_class": "",
+                "enclosing_function": "RecommendedSection",
+                "code": "LazyRow( contentPadding = PaddingValues( start = 8.dp, end = 8.dp ), horizontalArrangement = Arrangement.spacedBy(16.dp) ) { items(list.size) { RecommendedCard(foodItem = list[it]) } }"
+            }
+        ]
+    },
+    "mode": "xml_plus_kotlin_psi"
+}
