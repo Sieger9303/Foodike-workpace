@@ -7,15 +7,21 @@ This generated seed is compact planning evidence. It is not a complete source of
 | item | count |
 | --- | --- |
 | sourceUnits | 146 |
-| callableContracts | 0 |
+| callableContracts | 170 |
 | uiContracts | 0 |
-| dataContracts | 0 |
+| dataContracts | 49 |
 | resourceContracts | 5 |
 | platformCapabilityContracts | 6 |
 | testContracts | 0 |
 | phaseGroupCandidates | 45 |
 | structureRisks | 80 |
-| analysisGaps | 3 |
+| analysisGaps | 0 |
+
+## Callable Contracts By Kind
+
+| kind | count |
+| --- | --- |
+| kotlin | 170 |
 
 ## Phase Group Candidates
 
@@ -66,7 +72,50 @@ _Additional 5 item(s) omitted; see plan-seed.json._
 
 ## Callable Contracts
 
-_None._
+| sourceKind | sourcePath | symbol | operationTypes |
+| --- | --- | --- | --- |
+| kotlin | app\src\main\java\com\example\foodike\data\repository\HomeRepositoryImpl.kt | com.example.foodike.data.repository.HomeRepositoryImpl.<init>() | [] |
+| kotlin | app\src\main\java\com\example\foodike\data\repository\HomeRepositoryImpl.kt | getAds | [] |
+| kotlin | app\src\main\java\com\example\foodike\data\repository\HomeRepositoryImpl.kt | getAds(): Results<List<Advertisement>> | ['read_or_listen'] |
+| kotlin | app\src\main\java\com\example\foodike\data\repository\HomeRepositoryImpl.kt | getFoodItems | [] |
+| kotlin | app\src\main\java\com\example\foodike\data\repository\HomeRepositoryImpl.kt | getRestaurantFromName | [] |
+| kotlin | app\src\main\java\com\example\foodike\data\repository\LoginRepositoryImpl.kt | com.example.foodike.data.repository.LoginRepositoryImpl.<init>(android.content.Context) | [] |
+| kotlin | app\src\main\java\com\example\foodike\data\repository\LoginRepositoryImpl.kt | toggleLoginState | [] |
+| kotlin | app\src\main\java\com\example\foodike\data\repository\Result.kt | Error | [] |
+| kotlin | app\src\main\java\com\example\foodike\data\repository\Result.kt | Success | [] |
+| kotlin | app\src\main\java\com\example\foodike\data\repository\Result.kt | com.example.foodike.data.repository.Results.Error.<init>(java.lang.Exception) | [] |
+| kotlin | app\src\main\java\com\example\foodike\data\repository\Result.kt | successOr | [] |
+| kotlin | app\src\main\java\com\example\foodike\data\repository\UserDataRepositoryImpl.kt | com.example.foodike.data.repository.UserDataRepositoryImpl.getCartItems() | [] |
+| kotlin | app\src\main\java\com\example\foodike\data\repository\UserDataRepositoryImpl.kt | getCartItems | [] |
+| kotlin | app\src\main\java\com\example\foodike\data\repository\UserDataRepositoryImpl.kt | getLikedRestaurants | [] |
+| kotlin | app\src\main\java\com\example\foodike\data\repository\UserDataRepositoryImpl.kt | getMenuItems | [] |
+| kotlin | app\src\main\java\com\example\foodike\data\repository\UserDataRepositoryImpl.kt | getSavedRestaurant | [] |
+| kotlin | app\src\main\java\com\example\foodike\data\repository\UserDataRepositoryImpl.kt | isRestaurantLiked | [] |
+| kotlin | app\src\main\java\com\example\foodike\data\repository\UserDataRepositoryImpl.kt | setRestaurant | [] |
+| kotlin | app\src\main\java\com\example\foodike\di\AppModule.kt | com.example.foodike.di.AppModule.provideLoginRepository(android.content.Context) | [] |
+| kotlin | app\src\main\java\com\example\foodike\di\AppModule.kt | provideLoginRepository | [] |
+| kotlin | app\src\main\java\com\example\foodike\di\AppModule.kt | providesHomeRepository | [] |
+| kotlin | app\src\main\java\com\example\foodike\di\AppModule.kt | providesUserDataRepository | [] |
+| kotlin | app\src\main\java\com\example\foodike\domain\model\Advertisement.kt | Advertisement | [] |
+| kotlin | app\src\main\java\com\example\foodike\domain\model\Advertisement.kt | com.example.foodike.domain.model.Advertisement.<init>(kotlin.String,kotlin.String,androidx.compose.ui.graphics.Color,kotlin.Int) | [] |
+| kotlin | app\src\main\java\com\example\foodike\domain\model\CartItem.kt | CartItem | [] |
+| kotlin | app\src\main\java\com\example\foodike\domain\model\CartItem.kt | com.example.foodike.domain.model.CartItem.<init>(com.example.foodike.domain.model.MenuItem,kotlin.Int) | [] |
+| kotlin | app\src\main\java\com\example\foodike\domain\model\FoodItem.kt | FoodItem | [] |
+| kotlin | app\src\main\java\com\example\foodike\domain\model\FoodItem.kt | com.example.foodike.domain.model.FoodItem.<init>(kotlin.Int,kotlin.String) | [] |
+| kotlin | app\src\main\java\com\example\foodike\domain\model\MenuItem.kt | MenuItem | [] |
+| kotlin | app\src\main\java\com\example\foodike\domain\model\MenuItem.kt | com.example.foodike.domain.model.MenuItem.<init>(kotlin.String,kotlin.Double,kotlin.Double,kotlin.Int,kotlin.Boolean) | [] |
+| kotlin | app\src\main\java\com\example\foodike\domain\model\Restaurant.kt | Restaurant | [] |
+| kotlin | app\src\main\java\com\example\foodike\domain\model\Restaurant.kt | com.example.foodike.domain.model.Restaurant.<init>(kotlin.String,kotlin.Double,kotlin.Int,kotlin.Long,kotlin.String,kotlin.String,kotlin.Double,kotlin.Int,kotlin.collections.List<com.example.foodike.domain.model.MenuItem>) | [] |
+| kotlin | app\src\main\java\com\example\foodike\domain\repository\HomeRepository.kt | com.example.foodike.domain.repository.HomeRepository.getAds() | [] |
+| kotlin | app\src\main\java\com\example\foodike\domain\repository\LoginRepository.kt | com.example.foodike.domain.repository.LoginRepository.toggleLoginState() | [] |
+| kotlin | app\src\main\java\com\example\foodike\domain\repository\UserDataRepository.kt | com.example.foodike.domain.repository.UserDataRepository.getCartItems() | [] |
+| kotlin | app\src\main\java\com\example\foodike\presentation\MainActivity.kt | com.example.foodike.presentation.MainActivity.onCreate(android.os.Bundle?) | [] |
+| kotlin | app\src\main\java\com\example\foodike\presentation\MainActivity.kt | onCreate | [] |
+| kotlin | app\src\main\java\com\example\foodike\presentation\cart\Cart.kt | Cart | [] |
+| kotlin | app\src\main\java\com\example\foodike\presentation\cart\Cart.kt | Cart(navController: NavHostController, viewModel: CartViewModel) | ['search_or_filter'] |
+| kotlin | app\src\main\java\com\example\foodike\presentation\cart\Cart.kt | com.example.foodike.presentation.cart.Cart(androidx.navigation.NavHostController,com.example.foodike.presentation.cart.CartViewModel) | [] |
+
+_Additional 130 item(s) omitted; see plan-seed.json._
 
 ## UI Contracts
 
@@ -74,7 +123,50 @@ _None._
 
 ## Data Contracts
 
-_None._
+| sourcePath | dataKind | title | operations |
+| --- | --- | --- | --- |
+| app\src\main\java\com\example\foodike\data\repository\HomeRepositoryImpl.kt | crud | HomeRepositoryImpl.getRestaurants | ['read_or_listen'] |
+| app\src\main\java\com\example\foodike\data\repository\HomeRepositoryImpl.kt | crud | HomeRepositoryImpl.getAds | ['read_or_listen'] |
+| app\src\main\java\com\example\foodike\data\repository\HomeRepositoryImpl.kt | crud | HomeRepositoryImpl.getFoodItems | ['read_or_listen'] |
+| app\src\main\java\com\example\foodike\data\repository\HomeRepositoryImpl.kt | crud | HomeRepositoryImpl.getRestaurantFromName | ['read_or_listen'] |
+| app\src\main\java\com\example\foodike\data\repository\LoginRepositoryImpl.kt | crud | LoginRepositoryImpl.toggleLoginState | ['write_or_update', 'local_preferences'] |
+| app\src\main\java\com\example\foodike\data\repository\UserDataRepositoryImpl.kt | crud | UserDataRepositoryImpl.setRestaurant | ['write_or_update'] |
+| app\src\main\java\com\example\foodike\data\repository\UserDataRepositoryImpl.kt | crud | UserDataRepositoryImpl.getSavedRestaurant | ['read_or_listen'] |
+| app\src\main\java\com\example\foodike\data\repository\UserDataRepositoryImpl.kt | crud | UserDataRepositoryImpl.getMenuItems | ['read_or_listen'] |
+| app\src\main\java\com\example\foodike\data\repository\UserDataRepositoryImpl.kt | crud | UserDataRepositoryImpl.getLikedRestaurants | ['read_or_listen'] |
+| app\src\main\java\com\example\foodike\data\repository\UserDataRepositoryImpl.kt | crud | UserDataRepositoryImpl.getCartItems | ['read_or_listen'] |
+| app\src\main\java\com\example\foodike\presentation\cart\Cart.kt | crud | Cart | ['search_or_filter'] |
+| app\src\main\java\com\example\foodike\presentation\common\Extensions.kt | crud | getTimeInMins | ['read_or_listen'] |
+| app\src\main\java\com\example\foodike\presentation\components\RestaurantCard.kt | crud | getCustomerInfo | ['read_or_listen'] |
+| app\src\main\java\com\example\foodike\presentation\components\SearchBar.kt | crud | SearchBar | ['search_or_filter'] |
+| app\src\main\java\com\example\foodike\presentation\details\RestaurantDetail.kt | crud | RestaurantDetail | ['search_or_filter'] |
+| app\src\main\java\com\example\foodike\presentation\home\util\Filters.kt | crud | getAllTags | ['read_or_listen'] |
+| app\src\main\java\com\example\foodike\presentation\home\util\Filters.kt | crud | getTag | ['read_or_listen'] |
+| app\src\main\java\com\example\foodike\presentation\login\LoginScreen.kt | crud | LoginScreen | ['read_or_listen'] |
+| app\src\main\java\com\example\foodike\presentation\onboarding\util\OnBoardingItem.kt | crud | OnBoardingItem.get | ['read_or_listen'] |
+| app\src\main\java\com\example\foodike\presentation\util\Navigation.kt | crud | SetupNavigation | ['write_or_update'] |
+| app\src\main\java\com\example\foodike\data\repository\LoginRepositoryImpl.kt | backend-api | toggleLoginState | [] |
+| app\src\main\java\com\example\foodike\data\repository\LoginRepositoryImpl.kt | backend-api | PrefsDataStore | [] |
+| app\src\main\java\com\example\foodike\data\repository\LoginRepositoryImpl.kt | preferences | toggleLoginState | [] |
+| app\src\main\java\com\example\foodike\data\repository\LoginRepositoryImpl.kt | preferences | <property> | [] |
+| app\src\main\java\com\example\foodike\data\repository\UserDataRepositoryImpl.kt | refresh-chain | getSavedRestaurant | ['read_or_listen'] |
+| app\src\main\java\com\example\foodike\data\repository\UserDataRepositoryImpl.kt | refresh-chain | getMenuItems | ['read_or_listen'] |
+| app\src\main\java\com\example\foodike\data\repository\UserDataRepositoryImpl.kt | refresh-chain | getLikedRestaurants | ['read_or_listen'] |
+| app\src\main\java\com\example\foodike\data\repository\UserDataRepositoryImpl.kt | refresh-chain | isRestaurantLiked | [] |
+| app\src\main\java\com\example\foodike\data\repository\UserDataRepositoryImpl.kt | refresh-chain | getCartItems | ['read_or_listen'] |
+| app\src\main\java\com\example\foodike\presentation\cart\components\CartItemCard.kt | refresh-chain | CartItemCard | [] |
+| app\src\main\java\com\example\foodike\presentation\cart\components\CouponBar.kt | refresh-chain | CouponBar | [] |
+| app\src\main\java\com\example\foodike\presentation\cart\components\ItemSection.kt | refresh-chain | ItemSection | [] |
+| app\src\main\java\com\example\foodike\presentation\components\SearchBar.kt | refresh-chain | SearchBar | ['search_or_filter'] |
+| app\src\main\java\com\example\foodike\presentation\details\RestaurantDetail.kt | refresh-chain | RestaurantDetail | ['search_or_filter'] |
+| app\src\main\java\com\example\foodike\presentation\details\RestaurantDetailViewModel.kt | refresh-chain | onEvent | [] |
+| app\src\main\java\com\example\foodike\presentation\details\components\MenuItemCard.kt | refresh-chain | MenuItemCard | [] |
+| app\src\main\java\com\example\foodike\presentation\history\History.kt | refresh-chain | History | [] |
+| app\src\main\java\com\example\foodike\presentation\home\HomeScreen.kt | refresh-chain | Home | [] |
+| app\src\main\java\com\example\foodike\presentation\home\components\ChipBar.kt | refresh-chain | ChipBar | [] |
+| app\src\main\java\com\example\foodike\presentation\home\components\TopSection.kt | refresh-chain | TopSection | [] |
+
+_Additional 9 item(s) omitted; see plan-seed.json._
 
 ## Resource Contracts
 
@@ -84,7 +176,7 @@ _None._
 | mipmaps | mipmaps (12) | [] | ['resource semantics should map to target UI/resources or replacement'] |
 | otherResources | otherResources (2) | [] | ['resource semantics should map to target UI/resources or replacement'] |
 | valuesFiles | valuesFiles (4) | [] | ['resource semantics should map to target UI/resources or replacement'] |
-| strings | source strings (52) | ['about', 'about_the_app', 'ad', 'add', 'add_edit_and_delete_saved_addresses', 'all_around_you', 'app_name', 'back', 'cart', 'coming_soon', 'display_picture', 'drop_down_arrow', 'edit', 'empty', 'favourite', 'forgot_password', 'from_creator', 'history', 'home', 'information_about_ordering_food', 'information_about_refunds_and_payments', 'location', 'log_out', 'login', 'login_with_facebook', 'login_with_google', 'love', 'new_to_foodike', 'non_vegetarian', 'onboardingHeading1', 'onboardingHeading2', 'onboardingHeading3', 'onboardingText1', 'onboardingText2', 'onboardingText3', 'online_ordering_help', 'or_sign_in_with', 'order_from_favourites', 'outlet', 'outlet_2'] | ['user-visible strings should be preserved, localized, or explicitly replaced'] |
+| strings | source strings (52) | ['ad', 'add', 'all_around_you', 'cart', 'coming_soon', 'display_picture', 'drop_down_arrow', 'empty', 'favourite', 'from_creator', 'history', 'home', 'location', 'login_with_facebook', 'login_with_google', 'love', 'non_vegetarian', 'onboardingHeading1', 'onboardingHeading2', 'onboardingHeading3', 'onboardingText1', 'onboardingText2', 'onboardingText3', 'order_from_favourites', 'outlet', 'outlet_2', 'rating', 'recommended', 'recommended_for_you', 'restaurant', 'share', 'subtract', 'vegetarian', 'with', 'your_location'] | ['user-visible strings should be preserved, localized, or explicitly replaced'] |
 
 ## Platform Capability Contracts
 
@@ -146,11 +238,7 @@ _Additional 40 item(s) omitted; see plan-seed.json._
 
 ## Analysis Gaps
 
-| severity | kind | path | message |
-| --- | --- | --- | --- |
-| warning | missing-analysis-input | kotlin-analysis/analysis.json | Expected analysis input is missing: kotlin-analysis/analysis.json |
-| warning | missing-analysis-input | kotlin-analysis/locations.json | Expected analysis input is missing: kotlin-analysis/locations.json |
-| warning | missing-analysis-input | android-analysis/behavior-spec.md | Expected analysis input is missing: android-analysis/behavior-spec.md |
+_None._
 
 ## Planning Instructions
 

@@ -1,6 +1,6 @@
 # Source Feature Survey
 
-- Generated at: `2026-06-24T10:58:52+00:00`
+- Generated at: `2026-06-25T06:25:26+00:00`
 - Source root: `D:\Kotlin2Cangjie\Foodike`
 - Target root: `D:\workspace\Foodike\Foodike-Harmony`
 
@@ -16,7 +16,7 @@ This report is a deterministic coverage baseline. Its goal is to reduce function
 | side | files | text files | nonblank LoC | tool code | tool comments | tool blanks | code files | test files |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | source | 146 | 106 | 7586 | 5211 | 2375 | 904 | 85 | 2 |
-| target | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+| target | 42 | 34 | 1223 | 1222 | 1 | 150 | 21 | 2 |
 
 ## Source Category Counts
 

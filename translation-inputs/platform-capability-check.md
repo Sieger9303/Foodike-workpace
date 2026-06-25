@@ -16,9 +16,11 @@ This is the agent-maintained platform capability check. Before marking a critica
 
 | capability id | status | phase | importance | decision | probe | capability | target API/library | strategy |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| media-library-access | planned |  | critical | needs-target-search |  | Media library and album discovery |  |  |
-| file-access-and-saf | planned |  | critical | needs-target-search |  | File access, document permissions, and share URIs |  |  |
-| image-viewer-gestures | planned |  | critical | needs-target-search |  | Image viewer gestures and metadata |  |  |
-| localization-resources | planned |  | high | needs-target-search |  | Localized resources and formatted strings |  |  |
-| runtime-permissions | planned |  | high | needs-target-search |  | Runtime permissions and protected platform access |  |  |
-| background-and-platform-components | planned |  | high | needs-target-search |  | Background work, services, receivers, widgets, and notifications |  |  |
+| media-library-access | not-applicable |  | critical | not-applicable | yes | Media library and album discovery |  |  |
+| file-access-and-saf | not-applicable |  | critical | not-applicable | yes | File access, document permissions, and share URIs |  |  |
+| image-viewer-gestures | not-applicable |  | critical | not-applicable |  | Image viewer gestures and metadata |  |  |
+| localization-resources | verified-direct | phase-01-project-skeleton-resources | high | direct-api |  | Localized resources and formatted strings | HarmonyOS resource bundles (AppScope/resources and entry/resources) | Map Android manifest/theme/color/string resource contracts into HarmonyOS string/color/media/profile resources and module metadata. |
+| runtime-permissions | not-applicable |  | high | not-applicable | yes | Runtime permissions and protected platform access |  |  |
+| background-and-platform-components | not-applicable |  | high | not-applicable |  | Background work, services, receivers, widgets, and notifications |  |  |
+| preferences-key-value-persistence | verified-direct | phase-01-project-skeleton-resources | critical | direct-api |  | Lightweight key-value session persistence | kit.ArkData.Preferences | Use HarmonyOS Cangjie Preferences as the direct replacement for Android DataStore boolean session persistence. |
+| startup-route-and-window-lifecycle | platform-replaced | phase-01-project-skeleton-resources | critical | platform-replaced |  | Startup route gating and main window lifecycle | kit.AbilityKit.UIAbility + kit.ArkUI.WindowStage | Use HarmonyOS UIAbility lifecycle and WindowStage.loadContent as the startup shell replacement for Android Activity + SplashScreen lifecycle wiring. |

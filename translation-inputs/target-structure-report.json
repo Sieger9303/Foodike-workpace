@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-24T10:58:52+00:00",
+  "generatedAt": "2026-06-25T06:25:26+00:00",
   "summary": {
-    "productionCodeFiles": 0,
-    "productionCodeNonblankLines": 0,
-    "largestProductionCodeFileNonblankLines": 0,
-    "largeProductionCodeFiles": 0,
-    "endpointBearingFeatureRows": 0,
-    "endpointTargetFiles": 0,
-    "largestEndpointFileShare": null,
+    "productionCodeFiles": 19,
+    "productionCodeNonblankLines": 754,
+    "largestProductionCodeFileNonblankLines": 405,
+    "largeProductionCodeFiles": 1,
+    "endpointBearingFeatureRows": 22,
+    "endpointTargetFiles": 16,
+    "largestEndpointFileShare": 0.3636,
     "concentratedEndpointFiles": 0,
-    "broadShellEndpointFiles": 0,
-    "uiSurfaceFiles": 0,
-    "concentratedUiSurfaceFiles": 0,
-    "uiEndpointBearingFeatureRows": 0,
-    "uiEndpointTargetFiles": 0,
-    "concentratedUiEndpointFiles": 0,
-    "entryModuleStatus": "SKIPPED",
-    "entryRootPackage": ""
+    "broadShellEndpointFiles": 2,
+    "uiSurfaceFiles": 6,
+    "concentratedUiSurfaceFiles": 1,
+    "uiEndpointBearingFeatureRows": 22,
+    "uiEndpointTargetFiles": 16,
+    "concentratedUiEndpointFiles": 3,
+    "entryModuleStatus": "PASS",
+    "entryRootPackage": "ohos_app_cangjie_entry"
   },
   "thresholds": {
     "largeFileNonblankLines": 900,
@@ -28,22 +28,819 @@
     "uiEndpointFeatureRows": 10,
     "uiEndpointShareOfRows": 0.35
   },
-  "findings": [],
-  "largeFiles": [],
+  "findings": [
+    {
+      "severity": "medium",
+      "kind": "target-structure-large-file",
+      "message": "1 production target code file(s) are large or dominate target production code. Use the source project structure as a responsibility reference and split overgrown files into coherent Cangjie domain/service/state modules when it improves later repairability."
+    },
+    {
+      "severity": "medium",
+      "kind": "target-structure-broad-shell-endpoints",
+      "message": "2 broad shell-like target file(s) carry many coverage endpoints. Prefer targetEndpoints that name specific business functions or extracted modules."
+    },
+    {
+      "severity": "medium",
+      "kind": "target-structure-ui-surface-concentration",
+      "message": "1 target UI surface file(s) contain many page/view/dialog/list symbols. Split obvious settings/viewer/folder/about/player/gallery surfaces when they are becoming one long root shell."
+    },
+    {
+      "severity": "medium",
+      "kind": "target-structure-ui-endpoint-concentration",
+      "message": "3 target file(s) concentrate UI-related matrix endpoints. Check that routes are mutually rendered, back behavior is explicit, and UI evidence points at screen/page-specific builders rather than one debug-style shell."
+    }
+  ],
+  "largeFiles": [
+    {
+      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
+      "nonblankLines": 405,
+      "shareOfProductionCode": 0.5371,
+      "symbols": {
+        "classes": [
+          "FoodikeBootstrap"
+        ],
+        "methods": [
+          "applyShellState",
+          "shellState",
+          "applyShellCommand",
+          "navigateTo",
+          "showBottomShell",
+          "routeTitle",
+          "showToast",
+          "performLogin",
+          "performLogout",
+          "routeSummary",
+          "buildTopBar",
+          "buildOnboardingCard",
+          "buildOnboardingRoute",
+          "buildLoginRoute",
+          "buildProfileRoute"
+        ]
+      }
+    }
+  ],
   "endpointConcentration": [],
-  "broadShellEndpointFiles": [],
-  "uiSurfaceFiles": [],
-  "uiEndpointConcentration": [],
-  "topEndpointFiles": [],
+  "broadShellEndpointFiles": [
+    {
+      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
+      "featureRows": 8,
+      "endpointRefs": 17,
+      "shareOfEndpointRows": 0.3636,
+      "isBroadShellPath": true,
+      "byStatus": {
+        "implemented": 6,
+        "platform-replaced": 2
+      },
+      "byImportance": {
+        "critical": 8
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
+          "count": 3
+        },
+        {
+          "value": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "count": 2
+        },
+        {
+          "value": "app/build.gradle.kts",
+          "count": 2
+        },
+        {
+          "value": "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "permission",
+          "count": 6
+        },
+        {
+          "value": "image",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj",
+      "featureRows": 6,
+      "endpointRefs": 12,
+      "shareOfEndpointRows": 0.2727,
+      "isBroadShellPath": true,
+      "byStatus": {
+        "implemented": 6
+      },
+      "byImportance": {
+        "critical": 6
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "count": 2
+        },
+        {
+          "value": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
+          "count": 2
+        },
+        {
+          "value": "app/build.gradle.kts",
+          "count": 1
+        },
+        {
+          "value": "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "permission",
+          "count": 4
+        },
+        {
+          "value": "image",
+          "count": 2
+        }
+      ]
+    }
+  ],
+  "uiSurfaceFiles": [
+    {
+      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
+      "nonblankLines": 405,
+      "shareOfProductionCode": 0.5371,
+      "isBroadShellPath": true,
+      "uiSymbolCount": 7,
+      "uiSymbols": [
+        "buildLoginRoute",
+        "buildOnboardingCard",
+        "buildOnboardingRoute",
+        "buildPlaceholderRoute",
+        "buildProfileRoute",
+        "routeSummary",
+        "routeTitle"
+      ]
+    }
+  ],
+  "uiEndpointConcentration": [
+    {
+      "path": "entry/src/main/module.js",
+      "featureRows": 8,
+      "endpointRefs": 18,
+      "shareOfUiEndpointRows": 0.3636,
+      "isBroadShellPath": false,
+      "suggestedDomainHints": [
+        {
+          "value": "permission",
+          "count": 4
+        },
+        {
+          "value": "config",
+          "count": 3
+        },
+        {
+          "value": "file",
+          "count": 1
+        }
+      ],
+      "topSourcePaths": [
+        {
+          "value": "app/build.gradle.kts",
+          "count": 2
+        },
+        {
+          "value": "app/src/main/AndroidManifest.xml",
+          "count": 2
+        },
+        {
+          "value": "app/src/main/res/values/themes.xml",
+          "count": 2
+        },
+        {
+          "value": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
+          "count": 1
+        },
+        {
+          "value": "app/src/main/res/values/colors.xml",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
+      "featureRows": 8,
+      "endpointRefs": 17,
+      "shareOfUiEndpointRows": 0.3636,
+      "isBroadShellPath": true,
+      "suggestedDomainHints": [
+        {
+          "value": "permission",
+          "count": 6
+        },
+        {
+          "value": "image",
+          "count": 2
+        }
+      ],
+      "topSourcePaths": [
+        {
+          "value": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
+          "count": 3
+        },
+        {
+          "value": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "count": 2
+        },
+        {
+          "value": "app/build.gradle.kts",
+          "count": 2
+        },
+        {
+          "value": "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "entry/src/main/cangjie/app_ability.cj",
+      "featureRows": 8,
+      "endpointRefs": 15,
+      "shareOfUiEndpointRows": 0.3636,
+      "isBroadShellPath": false,
+      "suggestedDomainHints": [
+        {
+          "value": "permission",
+          "count": 8
+        }
+      ],
+      "topSourcePaths": [
+        {
+          "value": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
+          "count": 4
+        },
+        {
+          "value": "app/src/main/AndroidManifest.xml",
+          "count": 2
+        },
+        {
+          "value": "app/build.gradle.kts",
+          "count": 1
+        },
+        {
+          "value": "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "topEndpointFiles": [
+    {
+      "path": "entry/src/main/module.js",
+      "featureRows": 8,
+      "endpointRefs": 18,
+      "shareOfEndpointRows": 0.3636,
+      "isBroadShellPath": false,
+      "byStatus": {
+        "implemented": 3,
+        "platform-replaced": 5
+      },
+      "byImportance": {
+        "critical": 5,
+        "high": 3
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/build.gradle.kts",
+          "count": 2
+        },
+        {
+          "value": "app/src/main/AndroidManifest.xml",
+          "count": 2
+        },
+        {
+          "value": "app/src/main/res/values/themes.xml",
+          "count": 2
+        },
+        {
+          "value": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
+          "count": 1
+        },
+        {
+          "value": "app/src/main/res/values/colors.xml",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "permission",
+          "count": 4
+        },
+        {
+          "value": "config",
+          "count": 3
+        },
+        {
+          "value": "file",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
+      "featureRows": 8,
+      "endpointRefs": 17,
+      "shareOfEndpointRows": 0.3636,
+      "isBroadShellPath": true,
+      "byStatus": {
+        "implemented": 6,
+        "platform-replaced": 2
+      },
+      "byImportance": {
+        "critical": 8
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
+          "count": 3
+        },
+        {
+          "value": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "count": 2
+        },
+        {
+          "value": "app/build.gradle.kts",
+          "count": 2
+        },
+        {
+          "value": "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "permission",
+          "count": 6
+        },
+        {
+          "value": "image",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "path": "entry/src/main/cangjie/app_ability.cj",
+      "featureRows": 8,
+      "endpointRefs": 15,
+      "shareOfEndpointRows": 0.3636,
+      "isBroadShellPath": false,
+      "byStatus": {
+        "implemented": 3,
+        "platform-replaced": 5
+      },
+      "byImportance": {
+        "critical": 8
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
+          "count": 4
+        },
+        {
+          "value": "app/src/main/AndroidManifest.xml",
+          "count": 2
+        },
+        {
+          "value": "app/build.gradle.kts",
+          "count": 1
+        },
+        {
+          "value": "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "permission",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj",
+      "featureRows": 6,
+      "endpointRefs": 12,
+      "shareOfEndpointRows": 0.2727,
+      "isBroadShellPath": true,
+      "byStatus": {
+        "implemented": 6
+      },
+      "byImportance": {
+        "critical": 6
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "count": 2
+        },
+        {
+          "value": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
+          "count": 2
+        },
+        {
+          "value": "app/build.gradle.kts",
+          "count": 1
+        },
+        {
+          "value": "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "permission",
+          "count": 4
+        },
+        {
+          "value": "image",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "path": "entry/src/main/resources/base/element/color.js",
+      "featureRows": 5,
+      "endpointRefs": 12,
+      "shareOfEndpointRows": 0.2273,
+      "isBroadShellPath": false,
+      "byStatus": {
+        "implemented": 3,
+        "platform-replaced": 2
+      },
+      "byImportance": {
+        "critical": 1,
+        "high": 4
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/src/main/res/values/themes.xml",
+          "count": 2
+        },
+        {
+          "value": "app/src/main/res/values/colors.xml",
+          "count": 2
+        },
+        {
+          "value": "app/src/main/AndroidManifest.xml",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "config",
+          "count": 3
+        },
+        {
+          "value": "file",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj",
+      "featureRows": 4,
+      "endpointRefs": 12,
+      "shareOfEndpointRows": 0.1818,
+      "isBroadShellPath": false,
+      "byStatus": {
+        "implemented": 4
+      },
+      "byImportance": {
+        "critical": 4
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
+          "count": 3
+        },
+        {
+          "value": "app/build.gradle.kts",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "config",
+          "count": 2
+        },
+        {
+          "value": "permission",
+          "count": 1
+        },
+        {
+          "value": "auth",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "entry/src/main/resources/base/profile/main_pages.js",
+      "featureRows": 4,
+      "endpointRefs": 4,
+      "shareOfEndpointRows": 0.1818,
+      "isBroadShellPath": false,
+      "byStatus": {
+        "implemented": 1,
+        "platform-replaced": 3
+      },
+      "byImportance": {
+        "critical": 3,
+        "high": 1
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/src/main/AndroidManifest.xml",
+          "count": 2
+        },
+        {
+          "value": "app/build.gradle.kts",
+          "count": 1
+        },
+        {
+          "value": "app/src/main/res/values/themes.xml",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "permission",
+          "count": 3
+        },
+        {
+          "value": "file",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "AppScope/resources/base/element/color.js",
+      "featureRows": 2,
+      "endpointRefs": 9,
+      "shareOfEndpointRows": 0.0909,
+      "isBroadShellPath": false,
+      "byStatus": {
+        "implemented": 2
+      },
+      "byImportance": {
+        "high": 2
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/src/main/res/values/colors.xml",
+          "count": 2
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "config",
+          "count": 1
+        },
+        {
+          "value": "file",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "AppScope/app.js",
+      "featureRows": 2,
+      "endpointRefs": 4,
+      "shareOfEndpointRows": 0.0909,
+      "isBroadShellPath": true,
+      "byStatus": {
+        "implemented": 1,
+        "platform-replaced": 1
+      },
+      "byImportance": {
+        "critical": 2
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/build.gradle.kts",
+          "count": 1
+        },
+        {
+          "value": "app/src/main/AndroidManifest.xml",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "permission",
+          "count": 1
+        },
+        {
+          "value": "config",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "entry/cjpm.toml",
+      "featureRows": 2,
+      "endpointRefs": 4,
+      "shareOfEndpointRows": 0.0909,
+      "isBroadShellPath": false,
+      "byStatus": {
+        "platform-replaced": 2
+      },
+      "byImportance": {
+        "critical": 2
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/build.gradle.kts",
+          "count": 1
+        },
+        {
+          "value": "build.gradle.kts",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "permission",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj",
+      "featureRows": 2,
+      "endpointRefs": 2,
+      "shareOfEndpointRows": 0.0909,
+      "isBroadShellPath": false,
+      "byStatus": {
+        "implemented": 2
+      },
+      "byImportance": {
+        "critical": 2
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
+          "count": 1
+        },
+        {
+          "value": "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "permission",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "path": "build-profile.js",
+      "featureRows": 1,
+      "endpointRefs": 2,
+      "shareOfEndpointRows": 0.0455,
+      "isBroadShellPath": false,
+      "byStatus": {
+        "platform-replaced": 1
+      },
+      "byImportance": {
+        "critical": 1
+      },
+      "topSourcePaths": [
+        {
+          "value": "build.gradle.kts",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "permission",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "hvigorfile.ts",
+      "featureRows": 1,
+      "endpointRefs": 1,
+      "shareOfEndpointRows": 0.0455,
+      "isBroadShellPath": false,
+      "byStatus": {
+        "platform-replaced": 1
+      },
+      "byImportance": {
+        "critical": 1
+      },
+      "topSourcePaths": [
+        {
+          "value": "build.gradle.kts",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "permission",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "entry/src/main/cangjie/ability_stage.cj",
+      "featureRows": 1,
+      "endpointRefs": 1,
+      "shareOfEndpointRows": 0.0455,
+      "isBroadShellPath": false,
+      "byStatus": {
+        "platform-replaced": 1
+      },
+      "byImportance": {
+        "critical": 1
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/src/main/AndroidManifest.xml",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "permission",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "AppScope/resources/base/media/icon.png",
+      "featureRows": 1,
+      "endpointRefs": 1,
+      "shareOfEndpointRows": 0.0455,
+      "isBroadShellPath": false,
+      "byStatus": {
+        "platform-replaced": 1
+      },
+      "byImportance": {
+        "high": 1
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/src/main/res/values/themes.xml",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "config",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "entry/src/main/resources/base/media/icon.png",
+      "featureRows": 1,
+      "endpointRefs": 1,
+      "shareOfEndpointRows": 0.0455,
+      "isBroadShellPath": false,
+      "byStatus": {
+        "platform-replaced": 1
+      },
+      "byImportance": {
+        "high": 1
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/src/main/res/values/themes.xml",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "config",
+          "count": 1
+        }
+      ]
+    }
+  ],
   "entryModule": {
     "expectedRootPackage": "ohos_app_cangjie_entry",
-    "status": "SKIPPED",
-    "packageName": "",
+    "status": "PASS",
+    "packageName": "ohos_app_cangjie_entry",
     "combinedDynamicRoots": [],
-    "srcEntryRoots": [],
-    "sourcePackageRoots": [],
-    "mismatches": [],
-    "reason": "entry/cjpm.toml not found"
+    "srcEntryRoots": [
+      "ohos_app_cangjie_entry"
+    ],
+    "sourcePackageRoots": [
+      "ohos_app_cangjie_entry"
+    ],
+    "mismatches": []
   },
   "recommendedRepairInstruction": "Use the source project structure as a guide to preserve responsibility boundaries, but adapt it to idiomatic Cangjie modules. Merge source fragments when that is clearer in Cangjie, yet keep single-file LOC and endpoint concentration under control. If many unrelated source clusters point to a broad shell file, prefer extracting or naming domain/service/state functions and update matrix evidence to those specific endpoints. For UI-heavy phases, keep routes/pages mutually rendered, preserve source-visible screen patterns, and avoid turning settings, viewer, folder picker, gallery, and support flows into one long debug dashboard."
 }

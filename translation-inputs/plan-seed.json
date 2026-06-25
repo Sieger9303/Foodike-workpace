@@ -1,20 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-24T10:58:52+00:00",
+  "generatedAt": "2026-06-25T06:25:26+00:00",
   "sourceKind": "kotlin",
   "purpose": "Cross-language planning seed compiled from static analysis and source coverage reports. Use it as planning evidence, not as a complete source of truth; inspect source files when behavior is unclear.",
   "summary": {
     "sourceUnits": 146,
-    "callableContracts": 0,
+    "callableContracts": 170,
     "uiContracts": 0,
-    "dataContracts": 0,
+    "dataContracts": 49,
     "resourceContracts": 5,
     "platformCapabilityContracts": 6,
     "testContracts": 0,
     "phaseGroupCandidates": 45,
     "structureRisks": 80,
-    "analysisGaps": 3,
-    "callableByKind": {}
+    "analysisGaps": 0,
+    "callableByKind": {
+      "kotlin": 170
+    }
   },
   "sourceUnits": [
     {
@@ -3040,9 +3042,4950 @@
       ]
     }
   ],
-  "callableContracts": [],
+  "callableContracts": [
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-data-repository-homerepositoryimpl-kt-com-example-f",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+      "symbol": "com.example.foodike.data.repository.HomeRepositoryImpl.<init>()",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-data-repository-homerepositoryimpl-kt-getads",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+      "symbol": "getAds",
+      "line": 43,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-data-repository-homerepositoryimpl-kt-getads-result",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+      "symbol": "getAds(): Results<List<Advertisement>>",
+      "line": 43,
+      "operationTypes": [
+        "read_or_listen"
+      ],
+      "calls": [
+        "Success"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "cross-method dependency"
+      ],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-data-repository-homerepositoryimpl-kt-getfooditems",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+      "symbol": "getFoodItems",
+      "line": 47,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-data-repository-homerepositoryimpl-kt-getrestaurant",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+      "symbol": "getRestaurantFromName",
+      "line": 51,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-data-repository-loginrepositoryimpl-kt-com-example",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\LoginRepositoryImpl.kt",
+      "symbol": "com.example.foodike.data.repository.LoginRepositoryImpl.<init>(android.content.Context)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-data-repository-loginrepositoryimpl-kt-togglelogins",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\LoginRepositoryImpl.kt",
+      "symbol": "toggleLoginState",
+      "line": 56,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-data-repository-result-kt-error",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\Result.kt",
+      "symbol": "Error",
+      "line": 30,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-data-repository-result-kt-success",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\Result.kt",
+      "symbol": "Success",
+      "line": 29,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-data-repository-result-kt-com-example-foodike-data",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\Result.kt",
+      "symbol": "com.example.foodike.data.repository.Results.Error.<init>(java.lang.Exception)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-data-repository-result-kt-successor",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\Result.kt",
+      "symbol": "successOr",
+      "line": 33,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-data-repository-userdatarepositoryimpl-kt-com-examp",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "symbol": "com.example.foodike.data.repository.UserDataRepositoryImpl.getCartItems()",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "kotlinx.coroutines.flow.flow",
+        "kotlinx.coroutines.flow.FlowCollector.emit"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-data-repository-userdatarepositoryimpl-kt-getcartit",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "symbol": "getCartItems",
+      "line": 74,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-data-repository-userdatarepositoryimpl-kt-getlikedr",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "symbol": "getLikedRestaurants",
+      "line": 66,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-data-repository-userdatarepositoryimpl-kt-getmenuit",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "symbol": "getMenuItems",
+      "line": 59,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-data-repository-userdatarepositoryimpl-kt-getsavedr",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "symbol": "getSavedRestaurant",
+      "line": 53,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-data-repository-userdatarepositoryimpl-kt-isrestaur",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "symbol": "isRestaurantLiked",
+      "line": 70,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-data-repository-userdatarepositoryimpl-kt-setrestau",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "symbol": "setRestaurant",
+      "line": 46,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-di-appmodule-kt-com-example-foodike-di-appmodule-pr",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\di\\AppModule.kt",
+      "symbol": "com.example.foodike.di.AppModule.provideLoginRepository(android.content.Context)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "com.example.foodike.data.repository.LoginRepositoryImpl.<init>(android.content.Context)"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-di-appmodule-kt-provideloginrepository",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\di\\AppModule.kt",
+      "symbol": "provideLoginRepository",
+      "line": 48,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-di-appmodule-kt-provideshomerepository",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\di\\AppModule.kt",
+      "symbol": "providesHomeRepository",
+      "line": 54,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-di-appmodule-kt-providesuserdatarepository",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\di\\AppModule.kt",
+      "symbol": "providesUserDataRepository",
+      "line": 58,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-domain-model-advertisement-kt-advertisement",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\Advertisement.kt",
+      "symbol": "Advertisement",
+      "line": 31,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-domain-model-advertisement-kt-com-example-foodike-d",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\Advertisement.kt",
+      "symbol": "com.example.foodike.domain.model.Advertisement.<init>(kotlin.String,kotlin.String,androidx.compose.ui.graphics.Color,kotlin.Int)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-domain-model-cartitem-kt-cartitem",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\CartItem.kt",
+      "symbol": "CartItem",
+      "line": 29,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-domain-model-cartitem-kt-com-example-foodike-domain",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\CartItem.kt",
+      "symbol": "com.example.foodike.domain.model.CartItem.<init>(com.example.foodike.domain.model.MenuItem,kotlin.Int)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-domain-model-fooditem-kt-fooditem",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\FoodItem.kt",
+      "symbol": "FoodItem",
+      "line": 29,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-domain-model-fooditem-kt-com-example-foodike-domain",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\FoodItem.kt",
+      "symbol": "com.example.foodike.domain.model.FoodItem.<init>(kotlin.Int,kotlin.String)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-domain-model-menuitem-kt-menuitem",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\MenuItem.kt",
+      "symbol": "MenuItem",
+      "line": 29,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-domain-model-menuitem-kt-com-example-foodike-domain",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\MenuItem.kt",
+      "symbol": "com.example.foodike.domain.model.MenuItem.<init>(kotlin.String,kotlin.Double,kotlin.Double,kotlin.Int,kotlin.Boolean)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-domain-model-restaurant-kt-restaurant",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\Restaurant.kt",
+      "symbol": "Restaurant",
+      "line": 29,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-domain-model-restaurant-kt-com-example-foodike-doma",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\domain\\model\\Restaurant.kt",
+      "symbol": "com.example.foodike.domain.model.Restaurant.<init>(kotlin.String,kotlin.Double,kotlin.Int,kotlin.Long,kotlin.String,kotlin.String,kotlin.Double,kotlin.Int,kotlin.collections.List<com.example.foodike.domain.model.MenuItem>)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-domain-repository-homerepository-kt-com-example-foo",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\domain\\repository\\HomeRepository.kt",
+      "symbol": "com.example.foodike.domain.repository.HomeRepository.getAds()",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-domain-repository-loginrepository-kt-com-example-fo",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\domain\\repository\\LoginRepository.kt",
+      "symbol": "com.example.foodike.domain.repository.LoginRepository.toggleLoginState()",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-domain-repository-userdatarepository-kt-com-example",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\domain\\repository\\UserDataRepository.kt",
+      "symbol": "com.example.foodike.domain.repository.UserDataRepository.getCartItems()",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-mainactivity-kt-com-example-foodike-pr",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\MainActivity.kt",
+      "symbol": "com.example.foodike.presentation.MainActivity.onCreate(android.os.Bundle?)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.activity.ComponentActivity.onCreate",
+        "androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen",
+        "androidx.core.splashscreen.SplashScreen.setKeepOnScreenCondition",
+        "androidx.activity.compose.setContent",
+        "com.example.foodike.ui.theme.FoodikeTheme(kotlin.Function0<kotlin.Unit>)",
+        "androidx.compose.material.Surface",
+        "androidx.compose.foundation.layout.fillMaxSize",
+        "com.example.foodike.presentation.util.SetupNavigation(kotlin.String)"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-mainactivity-kt-oncreate",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\MainActivity.kt",
+      "symbol": "onCreate",
+      "line": 50,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-cart-cart-kt-cart",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\Cart.kt",
+      "symbol": "Cart",
+      "line": 56,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-cart-cart-kt-cart-navcontroller-navhos",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\Cart.kt",
+      "symbol": "Cart(navController: NavHostController, viewModel: CartViewModel)",
+      "line": 56,
+      "operationTypes": [
+        "search_or_filter"
+      ],
+      "calls": [
+        "toArgb",
+        "LazyColumn",
+        "fillMaxSize",
+        "background",
+        "Color",
+        "Row",
+        "fillMaxWidth",
+        "IconButton",
+        "navigateUp",
+        "Icon",
+        "stringResource",
+        "ItemSection",
+        "CouponBar",
+        "DeliverySection",
+        "Restaurant",
+        "BillSection"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "cross-method dependency"
+      ],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-cart-cart-kt-com-example-foodike-prese",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\Cart.kt",
+      "symbol": "com.example.foodike.presentation.cart.Cart(androidx.navigation.NavHostController,com.example.foodike.presentation.cart.CartViewModel)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.ui.graphics.toArgb",
+        "androidx.compose.foundation.lazy.LazyColumn",
+        "androidx.compose.foundation.layout.fillMaxSize",
+        "androidx.compose.foundation.background",
+        "androidx.compose.ui.graphics.Color",
+        "androidx.compose.foundation.lazy.LazyListScope.item",
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.foundation.layout.fillMaxWidth",
+        "androidx.compose.material.IconButton",
+        "androidx.navigation.NavHostController.navigateUp",
+        "androidx.compose.material.Icon",
+        "androidx.compose.ui.res.stringResource",
+        "com.example.foodike.presentation.cart.components.ItemSection(kotlin.collections.List<com.example.foodike.domain.model.CartItem>,kotlin.Function1<com.example.foodike.domain.model.CartItem, kotlin.Unit>,kotlin.Function1<com.example.foodike.domain.model.CartItem, kotlin.Unit>)",
+        "kotlin.collections.filter",
+        "com.example.foodike.presentation.cart.components.CouponBar()",
+        "com.example.foodike.presentation.cart.components.DeliverySection(com.example.foodike.domain.model.Restaurant)",
+        "com.example.foodike.domain.model.Restaurant.<init>(kotlin.String,kotlin.Double,kotlin.Int,kotlin.Long,kotlin.String,kotlin.String,kotlin.Double,kotlin.Int,kotlin.collections.List<com.example.foodike.domain.model.MenuItem>)",
+        "com.example.foodike.presentation.cart.components.BillSection(kotlin.Double)",
+        "androidx.hilt.navigation.compose.hiltViewModel"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-cart-cartstate-kt-cartstate",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\CartState.kt",
+      "symbol": "CartState",
+      "line": 33,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-cart-cartstate-kt-com-example-foodike",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\CartState.kt",
+      "symbol": "com.example.foodike.presentation.cart.CartState.<init>(kotlin.collections.MutableList<com.example.foodike.domain.model.CartItem>)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "kotlin.collections.mutableListOf"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-cart-cartviewmodel-kt-com-example-food",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\CartViewModel.kt",
+      "symbol": "com.example.foodike.presentation.cart.CartViewModel.<init>(com.example.foodike.domain.repository.UserDataRepository)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.runtime.mutableStateOf",
+        "com.example.foodike.presentation.cart.CartState.<init>(kotlin.collections.MutableList<com.example.foodike.domain.model.CartItem>)",
+        "kotlinx.coroutines.launch",
+        "com.example.foodike.domain.repository.UserDataRepository.getCartItems()",
+        "kotlinx.coroutines.flow.Flow.collect",
+        "com.example.foodike.presentation.cart.CartState.copy",
+        "kotlin.collections.toMutableList"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-cart-components-billsection-kt-billsec",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\BillSection.kt",
+      "symbol": "BillSection",
+      "line": 46,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-cart-components-billsection-kt-com-exa",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\BillSection.kt",
+      "symbol": "com.example.foodike.presentation.cart.components.BillSection(kotlin.Double)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.material.Card",
+        "androidx.compose.foundation.shape.RoundedCornerShape",
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.foundation.layout.fillMaxWidth",
+        "androidx.compose.material.Text",
+        "androidx.compose.foundation.layout.Spacer",
+        "androidx.compose.foundation.layout.height",
+        "com.example.foodike.presentation.common.round(kotlin.Int)",
+        "androidx.compose.material.Button"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-cart-components-cartitemcard-kt-cartit",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CartItemCard.kt",
+      "symbol": "CartItemCard",
+      "line": 62,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-cart-components-cartitemcard-kt-com-ex",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CartItemCard.kt",
+      "symbol": "com.example.foodike.presentation.cart.components.CartItemCard(com.example.foodike.domain.model.CartItem)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.runtime.remember",
+        "androidx.compose.runtime.mutableStateOf",
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.foundation.layout.fillMaxSize",
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.foundation.layout.Arrangement.spacedBy",
+        "androidx.compose.foundation.Image",
+        "androidx.compose.foundation.layout.size",
+        "androidx.compose.ui.res.painterResource",
+        "androidx.compose.foundation.layout.Spacer",
+        "androidx.compose.foundation.layout.width",
+        "androidx.compose.material.Text",
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.material.Surface",
+        "androidx.compose.foundation.border",
+        "androidx.compose.foundation.BorderStroke",
+        "androidx.compose.ui.graphics.Color.copy",
+        "androidx.compose.material.Icon",
+        "androidx.compose.ui.res.stringResource",
+        "androidx.compose.foundation.clickable",
+        "kotlin.Int.toString"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-cart-components-couponbar-kt-couponbar",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CouponBar.kt",
+      "symbol": "CouponBar",
+      "line": 57,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-cart-components-couponbar-kt-com-examp",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CouponBar.kt",
+      "symbol": "com.example.foodike.presentation.cart.components.CouponBar()",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.runtime.remember",
+        "androidx.compose.runtime.mutableStateOf",
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.foundation.layout.Box",
+        "androidx.compose.material.TextField",
+        "androidx.compose.material.Text",
+        "androidx.compose.ui.draw.alpha",
+        "androidx.compose.foundation.layout.fillMaxWidth",
+        "androidx.compose.ui.draw.shadow",
+        "androidx.compose.material.TextFieldDefaults.textFieldColors",
+        "androidx.compose.foundation.text.KeyboardOptions.copy",
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.foundation.clickable",
+        "androidx.compose.foundation.layout.Spacer",
+        "androidx.compose.foundation.layout.width"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-cart-components-deliverysection-kt-del",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\DeliverySection.kt",
+      "symbol": "DeliverySection",
+      "line": 49,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-cart-components-deliverysection-kt-com",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\DeliverySection.kt",
+      "symbol": "com.example.foodike.presentation.cart.components.DeliverySection(com.example.foodike.domain.model.Restaurant)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.material.Card",
+        "androidx.compose.foundation.shape.RoundedCornerShape",
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.foundation.layout.fillMaxWidth",
+        "androidx.compose.material.Text",
+        "androidx.compose.material.IconButton",
+        "androidx.compose.material.Icon",
+        "androidx.compose.ui.draw.alpha",
+        "com.example.foodike.presentation.common.getTimeInMins()"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-cart-components-itemsection-kt-itemsec",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\ItemSection.kt",
+      "symbol": "ItemSection",
+      "line": 54,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-cart-components-itemsection-kt-com-exa",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\ItemSection.kt",
+      "symbol": "com.example.foodike.presentation.cart.components.ItemSection(kotlin.collections.List<com.example.foodike.domain.model.CartItem>,kotlin.Function1<com.example.foodike.domain.model.CartItem, kotlin.Unit>,kotlin.Function1<com.example.foodike.domain.model.CartItem, kotlin.Unit>)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.foundation.layout.fillMaxWidth",
+        "androidx.compose.material.Card",
+        "androidx.compose.foundation.shape.RoundedCornerShape",
+        "kotlin.collections.isNotEmpty",
+        "com.google.accompanist.flowlayout.FlowColumn",
+        "kotlin.collections.forEach",
+        "com.example.foodike.presentation.cart.components.CartItemCard(com.example.foodike.domain.model.CartItem)",
+        "androidx.compose.foundation.layout.height",
+        "androidx.compose.material.Text",
+        "androidx.compose.material.Divider",
+        "androidx.compose.runtime.remember",
+        "androidx.compose.runtime.mutableStateOf",
+        "androidx.compose.foundation.layout.Box",
+        "androidx.compose.foundation.text.BasicTextField",
+        "androidx.compose.ui.focus.onFocusChanged",
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.ui.draw.alpha",
+        "androidx.compose.material.Icon"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-common-extensions-kt-com-example-foodi",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\common\\Extensions.kt",
+      "symbol": "com.example.foodike.presentation.common.getTimeInMins()",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "kotlin.require",
+        "java.util.concurrent.TimeUnit.toDays",
+        "java.util.concurrent.TimeUnit.toMillis",
+        "java.util.concurrent.TimeUnit.toHours",
+        "java.util.concurrent.TimeUnit.toMinutes",
+        "java.lang.StringBuilder.<init>",
+        "java.lang.StringBuilder.append",
+        "java.lang.StringBuilder.toString"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-common-extensions-kt-gettimeinmins",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\common\\Extensions.kt",
+      "symbol": "getTimeInMins",
+      "line": 37,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-common-extensions-kt-gettimeinmins-str",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\common\\Extensions.kt",
+      "symbol": "getTimeInMins(): String",
+      "line": 37,
+      "operationTypes": [
+        "read_or_listen"
+      ],
+      "calls": [
+        "require",
+        "toDays",
+        "toMillis",
+        "toHours",
+        "toMinutes",
+        "StringBuilder",
+        "append",
+        "toString"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "cross-method dependency"
+      ],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-common-extensions-kt-round",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\common\\Extensions.kt",
+      "symbol": "round",
+      "line": 31,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-common-splashviewmodel-kt-com-example",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\common\\SplashViewModel.kt",
+      "symbol": "com.example.foodike.presentation.common.SplashViewModel.<init>(com.example.foodike.domain.repository.LoginRepository)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "kotlinx.coroutines.flow.MutableStateFlow",
+        "kotlinx.coroutines.flow.asStateFlow",
+        "androidx.compose.runtime.mutableStateOf",
+        "kotlinx.coroutines.runBlocking",
+        "kotlinx.coroutines.flow.first"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-components-restaurantcard-kt-restauran",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\RestaurantCard.kt",
+      "symbol": "RestaurantCard",
+      "line": 52,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-components-restaurantcard-kt-com-examp",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\RestaurantCard.kt",
+      "symbol": "com.example.foodike.presentation.components.RestaurantCard(com.example.foodike.domain.model.Restaurant,androidx.compose.ui.Modifier)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.fillMaxWidth",
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.foundation.Image",
+        "androidx.compose.ui.res.painterResource",
+        "androidx.compose.foundation.layout.size",
+        "androidx.compose.ui.draw.shadow",
+        "androidx.compose.foundation.shape.RoundedCornerShape",
+        "androidx.compose.material.Text",
+        "androidx.compose.foundation.layout.Spacer",
+        "androidx.compose.foundation.layout.width",
+        "com.example.foodike.presentation.components.getCustomerInfo(kotlin.Int)",
+        "com.example.foodike.presentation.common.getTimeInMins()",
+        "androidx.compose.ui.draw.alpha",
+        "androidx.compose.foundation.layout.height"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-components-restaurantcard-kt-getcustom",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\RestaurantCard.kt",
+      "symbol": "getCustomerInfo",
+      "line": 125,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-components-searchbar-kt-searchbar",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\SearchBar.kt",
+      "symbol": "SearchBar",
+      "line": 44,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-components-searchbar-kt-com-example-fo",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\SearchBar.kt",
+      "symbol": "com.example.foodike.presentation.components.SearchBar()",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.runtime.remember",
+        "androidx.compose.runtime.mutableStateOf",
+        "androidx.compose.material.TextField",
+        "androidx.compose.foundation.layout.fillMaxWidth",
+        "androidx.compose.material.Text",
+        "androidx.compose.ui.draw.alpha",
+        "androidx.compose.material.Icon",
+        "androidx.compose.material.TextFieldDefaults.textFieldColors",
+        "androidx.compose.ui.graphics.Color",
+        "androidx.compose.foundation.text.KeyboardOptions.copy"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-details-detailscreenstate-kt-detailscr",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\DetailScreenState.kt",
+      "symbol": "DetailScreenState",
+      "line": 32,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-details-detailscreenstate-kt-com-examp",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\DetailScreenState.kt",
+      "symbol": "com.example.foodike.presentation.details.DetailScreenState.<init>(com.example.foodike.domain.model.Restaurant?,kotlin.Boolean,kotlin.Boolean,kotlin.Boolean,kotlin.collections.List<com.example.foodike.domain.model.CartItem>,kotlin.collections.List<com.example.foodike.domain.model.CartItem>,kotlin.Boolean)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "kotlin.collections.emptyList"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-details-restaurantdetail-kt-restaurant",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+      "symbol": "RestaurantDetail",
+      "line": 72,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-details-restaurantdetail-kt-com-exampl",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+      "symbol": "com.example.foodike.presentation.details.RestaurantDetail(androidx.navigation.NavHostController,com.example.foodike.presentation.details.RestaurantDetailViewModel)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.animation.core.animateFloatAsState",
+        "androidx.compose.foundation.layout.Box",
+        "androidx.compose.foundation.lazy.LazyColumn",
+        "androidx.compose.foundation.layout.fillMaxSize",
+        "androidx.compose.foundation.lazy.LazyListScope.item",
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.foundation.layout.fillMaxWidth",
+        "androidx.compose.material.IconButton",
+        "androidx.navigation.NavHostController.navigateUp",
+        "androidx.compose.material.Icon",
+        "androidx.compose.ui.res.stringResource",
+        "androidx.compose.material.IconToggleButton",
+        "com.example.foodike.presentation.details.RestaurantDetailViewModel.onEvent(com.example.foodike.presentation.details.DetailScreenEvent)",
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.padding",
+        "com.example.foodike.presentation.details.components.RestaurantDetailCard(com.example.foodike.domain.model.Restaurant)",
+        "androidx.compose.material.Text",
+        "androidx.compose.foundation.layout.RowScope.weight",
+        "androidx.compose.ui.draw.alpha",
+        "androidx.compose.ui.draw.rotate",
+        "androidx.compose.foundation.lazy.LazyListScope.items",
+        "com.example.foodike.presentation.details.components.MenuItemCard(com.example.foodike.domain.model.MenuItem)",
+        "androidx.compose.material.Divider",
+        "kotlin.collections.filter",
+        "kotlin.collections.sumOf",
+        "androidx.compose.material.FloatingActionButton",
+        "androidx.navigation.NavHostController.navigate",
+        "androidx.hilt.navigation.compose.hiltViewModel"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-details-restaurantdetailviewmodel-kt-c",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetailViewModel.kt",
+      "symbol": "com.example.foodike.presentation.details.RestaurantDetailViewModel.<init>(com.example.foodike.domain.repository.UserDataRepository)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.runtime.mutableStateOf",
+        "com.example.foodike.presentation.details.DetailScreenState.<init>(com.example.foodike.domain.model.Restaurant?,kotlin.Boolean,kotlin.Boolean,kotlin.Boolean,kotlin.collections.List<com.example.foodike.domain.model.CartItem>,kotlin.collections.List<com.example.foodike.domain.model.CartItem>,kotlin.Boolean)",
+        "kotlinx.coroutines.launch",
+        "com.example.foodike.domain.repository.UserDataRepository.getMenuItems()",
+        "kotlinx.coroutines.flow.Flow.collect",
+        "com.example.foodike.presentation.details.DetailScreenState.copy",
+        "kotlin.collections.shuffled",
+        "kotlin.collections.dropLast",
+        "com.example.foodike.domain.repository.UserDataRepository.getSavedRestaurant()",
+        "com.example.foodike.domain.repository.UserDataRepository.isRestaurantLiked(com.example.foodike.domain.model.Restaurant)"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-details-restaurantdetailviewmodel-kt-o",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetailViewModel.kt",
+      "symbol": "onEvent",
+      "line": 72,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-details-components-menuitemcard-kt-men",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\components\\MenuItemCard.kt",
+      "symbol": "MenuItemCard",
+      "line": 68,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-details-components-menuitemcard-kt-com",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\components\\MenuItemCard.kt",
+      "symbol": "com.example.foodike.presentation.details.components.MenuItemCard(com.example.foodike.domain.model.MenuItem)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.runtime.remember",
+        "androidx.compose.runtime.mutableStateOf",
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.foundation.layout.height",
+        "androidx.compose.foundation.layout.fillMaxWidth",
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.Image",
+        "androidx.compose.foundation.layout.size",
+        "androidx.compose.ui.res.painterResource",
+        "androidx.compose.ui.res.stringResource",
+        "androidx.compose.foundation.layout.Spacer",
+        "androidx.compose.foundation.layout.width",
+        "androidx.compose.material.Text",
+        "androidx.compose.material.Icon",
+        "androidx.compose.ui.graphics.Color",
+        "kotlin.Double.toString",
+        "androidx.compose.foundation.layout.fillMaxHeight",
+        "androidx.compose.foundation.clickable",
+        "androidx.compose.material.Surface",
+        "androidx.compose.foundation.border",
+        "androidx.compose.foundation.BorderStroke",
+        "androidx.compose.ui.graphics.Color.copy",
+        "kotlin.Int.toString"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-details-components-restaurantdetailcar",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\components\\RestaurantDetailCard.kt",
+      "symbol": "RestaurantDetailCard",
+      "line": 60,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-history-history-kt-history",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\History.kt",
+      "symbol": "History",
+      "line": 51,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-history-history-kt-history-viewmodel-h",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\History.kt",
+      "symbol": "History(viewModel: HistoryViewModel, navHostController: NavHostController)",
+      "line": 51,
+      "operationTypes": [],
+      "calls": [
+        "rememberPagerState",
+        "toArgb",
+        "Column",
+        "fillMaxSize",
+        "padding",
+        "SearchBar",
+        "Spacer",
+        "height",
+        "Tabs",
+        "TabsContent",
+        "onEvent",
+        "SelectRestaurant",
+        "navigate"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [
+        "navigate"
+      ],
+      "requiredBehavior": "",
+      "riskHints": [
+        "cross-method dependency",
+        "platform/API capability"
+      ],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-history-history-kt-com-example-foodike",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\History.kt",
+      "symbol": "com.example.foodike.presentation.history.History(com.example.foodike.presentation.history.HistoryViewModel,androidx.navigation.NavHostController)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "com.google.accompanist.pager.rememberPagerState",
+        "androidx.compose.ui.graphics.toArgb",
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.fillMaxSize",
+        "androidx.compose.foundation.layout.padding",
+        "com.example.foodike.presentation.components.SearchBar()",
+        "androidx.compose.foundation.layout.Spacer",
+        "androidx.compose.foundation.layout.height",
+        "com.example.foodike.presentation.history.components.Tabs(com.google.accompanist.pager.PagerState)",
+        "com.example.foodike.presentation.history.components.TabsContent(com.google.accompanist.pager.PagerState,kotlin.collections.List<com.example.foodike.domain.model.Restaurant>,kotlin.Function1<com.example.foodike.domain.model.Restaurant, kotlin.Unit>)",
+        "com.example.foodike.presentation.history.HistoryViewModel.onEvent(com.example.foodike.presentation.history.HistoryEvent)",
+        "com.example.foodike.presentation.history.HistoryEvent.SelectRestaurant.<init>(com.example.foodike.domain.model.Restaurant,kotlin.Function0<kotlin.Unit>)",
+        "androidx.navigation.NavHostController.navigate",
+        "androidx.hilt.navigation.compose.hiltViewModel"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-history-historyevent-kt-selectrestaura",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\HistoryEvent.kt",
+      "symbol": "SelectRestaurant",
+      "line": 32,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-history-historyevent-kt-com-example-fo",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\HistoryEvent.kt",
+      "symbol": "com.example.foodike.presentation.history.HistoryEvent.SelectRestaurant.<init>(com.example.foodike.domain.model.Restaurant,kotlin.Function0<kotlin.Unit>)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-history-historystate-kt-historystate",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\HistoryState.kt",
+      "symbol": "HistoryState",
+      "line": 31,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-history-historystate-kt-com-example-fo",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\HistoryState.kt",
+      "symbol": "com.example.foodike.presentation.history.HistoryState.<init>(kotlin.collections.List<com.example.foodike.domain.model.Restaurant>)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "kotlin.collections.emptyList"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-history-historyviewmodel-kt-com-exampl",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\HistoryViewModel.kt",
+      "symbol": "com.example.foodike.presentation.history.HistoryViewModel.<init>(com.example.foodike.domain.repository.UserDataRepository)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.runtime.mutableStateOf",
+        "com.example.foodike.presentation.history.HistoryState.<init>(kotlin.collections.List<com.example.foodike.domain.model.Restaurant>)",
+        "kotlinx.coroutines.launch",
+        "com.example.foodike.domain.repository.UserDataRepository.getLikedRestaurants()",
+        "kotlinx.coroutines.flow.Flow.collect",
+        "com.example.foodike.presentation.history.HistoryState.copy"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-history-historyviewmodel-kt-onevent",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\HistoryViewModel.kt",
+      "symbol": "onEvent",
+      "line": 61,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-history-components-favouritessection-k",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\FavouritesSection.kt",
+      "symbol": "FavouritesSection",
+      "line": 47,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-history-components-historysection-kt-h",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\HistorySection.kt",
+      "symbol": "HistorySection",
+      "line": 61,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-history-components-historysection-kt-c",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\HistorySection.kt",
+      "symbol": "com.example.foodike.presentation.history.components.HistorySection()",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.fillMaxSize",
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.material.Card",
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.foundation.layout.fillMaxWidth",
+        "androidx.compose.material.Text",
+        "androidx.compose.ui.draw.alpha",
+        "androidx.compose.material.Divider",
+        "androidx.compose.foundation.Image",
+        "androidx.compose.foundation.layout.size",
+        "androidx.compose.ui.res.painterResource",
+        "androidx.compose.foundation.layout.Spacer",
+        "androidx.compose.foundation.layout.width",
+        "androidx.compose.material.Button",
+        "androidx.compose.foundation.layout.height",
+        "androidx.compose.material.Icon",
+        "androidx.compose.ui.graphics.Color",
+        "androidx.compose.foundation.clickable"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-history-components-tabs-kt-tabs",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\Tabs.kt",
+      "symbol": "Tabs",
+      "line": 48,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-history-components-tabs-kt-com-example",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\Tabs.kt",
+      "symbol": "com.example.foodike.presentation.history.components.Tabs(com.google.accompanist.pager.PagerState)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "kotlin.collections.listOf",
+        "androidx.compose.runtime.rememberCoroutineScope",
+        "androidx.compose.material.TabRow",
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.material.TabRowDefaults.Indicator",
+        "com.google.accompanist.pager.pagerTabIndicatorOffset",
+        "kotlin.collections.forEachIndexed",
+        "androidx.compose.material.Tab",
+        "androidx.compose.material.Text",
+        "androidx.compose.foundation.layout.fillMaxWidth",
+        "kotlinx.coroutines.launch",
+        "com.google.accompanist.pager.PagerState.animateScrollToPage"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-history-components-tabscontent-kt-tabs",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\TabsContent.kt",
+      "symbol": "TabsContent",
+      "line": 35,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-history-components-tabscontent-kt-com",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\components\\TabsContent.kt",
+      "symbol": "com.example.foodike.presentation.history.components.TabsContent(com.google.accompanist.pager.PagerState,kotlin.collections.List<com.example.foodike.domain.model.Restaurant>,kotlin.Function1<com.example.foodike.domain.model.Restaurant, kotlin.Unit>)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "com.google.accompanist.pager.HorizontalPager",
+        "com.example.foodike.presentation.history.components.HistorySection()",
+        "com.example.foodike.presentation.history.components.FavouritesSection(kotlin.collections.List<com.example.foodike.domain.model.Restaurant>,kotlin.Function1<com.example.foodike.domain.model.Restaurant, kotlin.Unit>)"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-homescreen-kt-home",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreen.kt",
+      "symbol": "Home",
+      "line": 88,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-homescreen-kt-home-scrollstate-la",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreen.kt",
+      "symbol": "Home(scrollState: LazyListState, navController: NavHostController, viewModel: HomeViewModel)",
+      "line": 88,
+      "operationTypes": [],
+      "calls": [
+        "toArgb",
+        "LazyColumn",
+        "fillMaxWidth",
+        "Spacer",
+        "height",
+        "TopSection",
+        "GreetingSection",
+        "Column",
+        "padding",
+        "SearchBar",
+        "AdSection",
+        "RecommendedSection",
+        "isNotEmpty",
+        "FavouriteSection",
+        "onEvent",
+        "SelectRestaurant",
+        "navigate",
+        "ChipBar",
+        "MainSection",
+        "items",
+        "RestaurantCard",
+        "clip",
+        "RoundedCornerShape",
+        "ThankYouSection"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [
+        "navigate"
+      ],
+      "requiredBehavior": "",
+      "riskHints": [
+        "cross-method dependency",
+        "platform/API capability"
+      ],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-homescreen-kt-com-example-foodike",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreen.kt",
+      "symbol": "com.example.foodike.presentation.home.Home(androidx.compose.foundation.lazy.LazyListState,androidx.navigation.NavHostController,com.example.foodike.presentation.home.HomeViewModel)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.ui.graphics.toArgb",
+        "androidx.compose.foundation.lazy.LazyColumn",
+        "androidx.compose.foundation.layout.fillMaxWidth",
+        "androidx.compose.foundation.lazy.LazyListScope.item",
+        "androidx.compose.foundation.layout.Spacer",
+        "androidx.compose.foundation.layout.height",
+        "com.example.foodike.presentation.home.components.TopSection(androidx.navigation.NavHostController)",
+        "com.example.foodike.presentation.home.components.GreetingSection(kotlin.String)",
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.padding",
+        "com.example.foodike.presentation.components.SearchBar()",
+        "com.example.foodike.presentation.home.components.AdSection(kotlin.collections.List<com.example.foodike.domain.model.Advertisement>)",
+        "com.example.foodike.presentation.home.components.RecommendedSection(kotlin.collections.List<com.example.foodike.domain.model.FoodItem>)",
+        "kotlin.collections.isNotEmpty",
+        "com.example.foodike.presentation.home.components.FavouriteSection(kotlin.collections.List<com.example.foodike.domain.model.Restaurant>,kotlin.Function1<com.example.foodike.domain.model.Restaurant, kotlin.Unit>)",
+        "com.example.foodike.presentation.home.HomeViewModel.onEvent(com.example.foodike.presentation.home.HomeScreenEvent)",
+        "com.example.foodike.presentation.home.HomeScreenEvent.SelectRestaurant.<init>(com.example.foodike.domain.model.Restaurant,kotlin.Function0<kotlin.Unit>)",
+        "androidx.navigation.NavHostController.navigate",
+        "com.example.foodike.presentation.home.components.ChipBar()",
+        "com.example.foodike.presentation.home.components.MainSection()",
+        "androidx.compose.foundation.lazy.LazyListScope.items",
+        "com.example.foodike.presentation.components.RestaurantCard(com.example.foodike.domain.model.Restaurant,androidx.compose.ui.Modifier)",
+        "androidx.compose.ui.draw.clip",
+        "androidx.compose.foundation.shape.RoundedCornerShape",
+        "androidx.compose.foundation.clickable",
+        "com.example.foodike.presentation.home.components.ThankYouSection()",
+        "androidx.hilt.navigation.compose.hiltViewModel"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-homescreenevent-kt-selectrestaura",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreenEvent.kt",
+      "symbol": "SelectRestaurant",
+      "line": 32,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-homescreenevent-kt-com-example-fo",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreenEvent.kt",
+      "symbol": "com.example.foodike.presentation.home.HomeScreenEvent.SelectRestaurant.<init>(com.example.foodike.domain.model.Restaurant,kotlin.Function0<kotlin.Unit>)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-homescreenstate-kt-homescreenstat",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreenState.kt",
+      "symbol": "HomeScreenState",
+      "line": 33,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-homescreenstate-kt-com-example-fo",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreenState.kt",
+      "symbol": "com.example.foodike.presentation.home.HomeScreenState.<init>(kotlin.collections.List<com.example.foodike.domain.model.Advertisement>,kotlin.collections.List<com.example.foodike.domain.model.FoodItem>,kotlin.collections.List<com.example.foodike.domain.model.Restaurant>,kotlin.collections.List<com.example.foodike.domain.model.Restaurant>)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "kotlin.collections.emptyList"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-homeviewmodel-kt-com-example-food",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeViewModel.kt",
+      "symbol": "com.example.foodike.presentation.home.HomeViewModel.<init>(com.example.foodike.domain.repository.HomeRepository,com.example.foodike.domain.repository.UserDataRepository)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.runtime.mutableStateOf",
+        "com.example.foodike.presentation.home.HomeScreenState.<init>(kotlin.collections.List<com.example.foodike.domain.model.Advertisement>,kotlin.collections.List<com.example.foodike.domain.model.FoodItem>,kotlin.collections.List<com.example.foodike.domain.model.Restaurant>,kotlin.collections.List<com.example.foodike.domain.model.Restaurant>)",
+        "kotlinx.coroutines.launch",
+        "com.example.foodike.domain.repository.HomeRepository.getAds()",
+        "com.example.foodike.presentation.home.HomeScreenState.copy",
+        "com.example.foodike.domain.repository.HomeRepository.getFoodItems()",
+        "com.example.foodike.domain.repository.HomeRepository.getRestaurants()",
+        "com.example.foodike.domain.repository.UserDataRepository.getLikedRestaurants()",
+        "kotlinx.coroutines.flow.Flow.collect"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-homeviewmodel-kt-onevent",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeViewModel.kt",
+      "symbol": "onEvent",
+      "line": 92,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-adcard-kt-adcard",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\AdCard.kt",
+      "symbol": "AdCard",
+      "line": 50,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-adcard-kt-com-example",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\AdCard.kt",
+      "symbol": "com.example.foodike.presentation.home.components.AdCard(com.example.foodike.domain.model.Advertisement)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.material.Card",
+        "androidx.compose.foundation.shape.RoundedCornerShape",
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.foundation.layout.size",
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.RowScope.weight",
+        "androidx.compose.material.Text",
+        "androidx.compose.foundation.layout.Spacer",
+        "androidx.compose.foundation.layout.height",
+        "androidx.compose.foundation.Image",
+        "androidx.compose.ui.res.painterResource",
+        "androidx.compose.ui.res.stringResource"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-adsection-kt-adsection",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\AdSection.kt",
+      "symbol": "AdSection",
+      "line": 40,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-adsection-kt-com-examp",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\AdSection.kt",
+      "symbol": "com.example.foodike.presentation.home.components.AdSection(kotlin.collections.List<com.example.foodike.domain.model.Advertisement>)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.Spacer",
+        "androidx.compose.foundation.layout.height",
+        "androidx.compose.foundation.lazy.LazyRow",
+        "androidx.compose.foundation.layout.PaddingValues",
+        "androidx.compose.foundation.layout.Arrangement.spacedBy",
+        "androidx.compose.foundation.lazy.LazyListScope.items",
+        "com.example.foodike.presentation.home.components.AdCard(com.example.foodike.domain.model.Advertisement)"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-chipbar-kt-chip",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ChipBar.kt",
+      "symbol": "Chip",
+      "line": 69,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-chipbar-kt-chipbar",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ChipBar.kt",
+      "symbol": "ChipBar",
+      "line": 50,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-chipbar-kt-chipgroup",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ChipBar.kt",
+      "symbol": "ChipGroup",
+      "line": 100,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-chipbar-kt-com-example",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ChipBar.kt",
+      "symbol": "com.example.foodike.presentation.home.components.Chip(kotlin.String,kotlin.Boolean,kotlin.Function1<kotlin.String, kotlin.Unit>)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.material.Surface",
+        "androidx.compose.foundation.border",
+        "androidx.compose.foundation.BorderStroke",
+        "androidx.compose.ui.graphics.Color.copy",
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.foundation.selection.toggleable",
+        "kotlin.Function1.invoke",
+        "androidx.compose.material.Text",
+        "androidx.compose.foundation.layout.padding"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-favouritecard-kt-favou",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\FavouriteCard.kt",
+      "symbol": "FavouriteCard",
+      "line": 46,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-favouritecard-kt-com-e",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\FavouriteCard.kt",
+      "symbol": "com.example.foodike.presentation.home.components.FavouriteCard(com.example.foodike.domain.model.Restaurant,androidx.compose.ui.Modifier)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.Image",
+        "androidx.compose.ui.res.painterResource",
+        "androidx.compose.ui.res.stringResource",
+        "androidx.compose.foundation.layout.size",
+        "androidx.compose.ui.draw.shadow",
+        "androidx.compose.foundation.shape.RoundedCornerShape",
+        "androidx.compose.material.Text"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-favouritescreen-kt-fav",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\FavouriteScreen.kt",
+      "symbol": "FavouriteSection",
+      "line": 47,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-favouritescreen-kt-com",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\FavouriteScreen.kt",
+      "symbol": "com.example.foodike.presentation.home.components.FavouriteSection(kotlin.collections.List<com.example.foodike.domain.model.Restaurant>,kotlin.Function1<com.example.foodike.domain.model.Restaurant, kotlin.Unit>)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.material.Text",
+        "androidx.compose.ui.res.stringResource",
+        "androidx.compose.foundation.layout.Spacer",
+        "androidx.compose.foundation.layout.height",
+        "androidx.compose.foundation.lazy.LazyRow",
+        "androidx.compose.foundation.layout.PaddingValues",
+        "androidx.compose.foundation.layout.Arrangement.spacedBy",
+        "androidx.compose.foundation.lazy.LazyListScope.items",
+        "com.example.foodike.presentation.home.components.FavouriteCard(com.example.foodike.domain.model.Restaurant,androidx.compose.ui.Modifier)",
+        "androidx.compose.foundation.clickable",
+        "kotlin.Function1.invoke"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-foodikebottomnavigatio",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\FoodikeBottomNavigation.kt",
+      "symbol": "FoodikeBottomNavigation",
+      "line": 42,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-greetingscreen-kt-gree",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\GreetingScreen.kt",
+      "symbol": "GreetingSection",
+      "line": 40,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-greetingscreen-kt-com",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\GreetingScreen.kt",
+      "symbol": "com.example.foodike.presentation.home.components.GreetingSection(kotlin.String)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "java.util.Calendar.getInstance",
+        "java.util.Calendar.get",
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.material.Text"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-mainsection-kt-mainsec",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\MainSection.kt",
+      "symbol": "MainSection",
+      "line": 43,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-mainsection-kt-com-exa",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\MainSection.kt",
+      "symbol": "com.example.foodike.presentation.home.components.MainSection()",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.foundation.layout.Spacer",
+        "androidx.compose.foundation.layout.height",
+        "androidx.compose.material.Text",
+        "androidx.compose.ui.res.stringResource"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-recommendedcard-kt-rec",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\RecommendedCard.kt",
+      "symbol": "RecommendedCard",
+      "line": 46,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-recommendedcard-kt-com",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\RecommendedCard.kt",
+      "symbol": "com.example.foodike.presentation.home.components.RecommendedCard(com.example.foodike.domain.model.FoodItem)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.Image",
+        "androidx.compose.ui.res.painterResource",
+        "androidx.compose.ui.res.stringResource",
+        "androidx.compose.foundation.layout.size",
+        "androidx.compose.ui.draw.shadow",
+        "androidx.compose.material.Text"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-recommendedsection-kt",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\RecommendedSection.kt",
+      "symbol": "RecommendedSection",
+      "line": 47,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-thankyousection-kt-tha",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ThankYouSection.kt",
+      "symbol": "ThankYouSection",
+      "line": 49,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-thankyousection-kt-com",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ThankYouSection.kt",
+      "symbol": "com.example.foodike.presentation.home.components.ThankYouSection()",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.foundation.layout.fillMaxWidth",
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.material.Text",
+        "androidx.compose.ui.res.stringResource",
+        "androidx.compose.ui.draw.alpha",
+        "androidx.compose.material.Icon",
+        "androidx.compose.foundation.layout.size"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-topsection-kt-topsecti",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\TopSection.kt",
+      "symbol": "TopSection",
+      "line": 53,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-components-topsection-kt-com-exam",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\TopSection.kt",
+      "symbol": "com.example.foodike.presentation.home.components.TopSection(androidx.navigation.NavHostController)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.foundation.layout.fillMaxWidth",
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.foundation.Image",
+        "androidx.compose.foundation.layout.size",
+        "androidx.compose.ui.draw.clip",
+        "androidx.compose.foundation.clickable",
+        "androidx.navigation.NavHostController.navigate",
+        "androidx.compose.ui.res.painterResource",
+        "androidx.compose.ui.res.stringResource",
+        "androidx.compose.material.Icon",
+        "androidx.compose.material.Text"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-util-filters-kt-com-example-foodi",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\util\\Filters.kt",
+      "symbol": "com.example.foodike.presentation.home.util.Filter.<init>(kotlin.String)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-util-filters-kt-getalltags",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\util\\Filters.kt",
+      "symbol": "getAllTags",
+      "line": 38,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-util-filters-kt-getalltags-list-f",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\util\\Filters.kt",
+      "symbol": "getAllTags(): List<Filter>",
+      "line": 38,
+      "operationTypes": [
+        "read_or_listen"
+      ],
+      "calls": [
+        "listOf"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "cross-method dependency"
+      ],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-util-filters-kt-gettag",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\util\\Filters.kt",
+      "symbol": "getTag",
+      "line": 45,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-home-util-filters-kt-gettag-value-stri",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\util\\Filters.kt",
+      "symbol": "getTag(value: String): Filter?",
+      "line": 45,
+      "operationTypes": [
+        "read_or_listen"
+      ],
+      "calls": [
+        "values",
+        "associateBy"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "cross-method dependency"
+      ],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-login-foodiketextfieldstate-kt-foodike",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\FoodikeTextFieldState.kt",
+      "symbol": "FoodikeTextFieldState",
+      "line": 29,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-login-foodiketextfieldstate-kt-com-exa",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\FoodikeTextFieldState.kt",
+      "symbol": "com.example.foodike.presentation.login.FoodikeTextFieldState.<init>(kotlin.String,kotlin.String)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-login-loginevent-kt-enteredemail",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginEvent.kt",
+      "symbol": "EnteredEmail",
+      "line": 30,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-login-loginevent-kt-enteredpassword",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginEvent.kt",
+      "symbol": "EnteredPassword",
+      "line": 31,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-login-loginevent-kt-performlogin",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginEvent.kt",
+      "symbol": "PerformLogin",
+      "line": 32,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-login-loginevent-kt-com-example-foodik",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginEvent.kt",
+      "symbol": "com.example.foodike.presentation.login.LoginEvent.EnteredEmail.<init>(kotlin.String)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-login-loginscreen-kt-loginscreen",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginScreen.kt",
+      "symbol": "LoginScreen",
+      "line": 74,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-login-loginscreen-kt-loginscreen-viewm",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginScreen.kt",
+      "symbol": "LoginScreen(viewModel: LoginViewModel, navController: NavHostController)",
+      "line": 74,
+      "operationTypes": [
+        "read_or_listen"
+      ],
+      "calls": [
+        "rememberScaffoldState",
+        "LaunchedEffect",
+        "showSnackbar",
+        "Scaffold",
+        "Column",
+        "fillMaxSize",
+        "toArgb",
+        "Text",
+        "stringResource",
+        "Spacer",
+        "height",
+        "FoodikeTextField",
+        "onEvent",
+        "EnteredEmail",
+        "EnteredPassword",
+        "PasswordVisualTransformation",
+        "copy",
+        "alpha",
+        "makeText",
+        "show",
+        "Button",
+        "width",
+        "navigate",
+        "popUpTo",
+        "findStartDestination",
+        "Row",
+        "fillMaxWidth",
+        "padding",
+        "Divider",
+        "weight",
+        "Image",
+        "painterResource"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [
+        "makeText",
+        "show",
+        "navigate"
+      ],
+      "requiredBehavior": "",
+      "riskHints": [
+        "cross-method dependency",
+        "platform/API capability"
+      ],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-login-loginscreen-kt-com-example-foodi",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginScreen.kt",
+      "symbol": "com.example.foodike.presentation.login.LoginScreen(com.example.foodike.presentation.login.LoginViewModel,androidx.navigation.NavHostController)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.material.rememberScaffoldState",
+        "androidx.compose.runtime.LaunchedEffect",
+        "kotlinx.coroutines.flow.collectLatest",
+        "androidx.compose.material.SnackbarHostState.showSnackbar",
+        "androidx.compose.material.Scaffold",
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.fillMaxSize",
+        "androidx.compose.ui.graphics.toArgb",
+        "androidx.compose.material.Text",
+        "androidx.compose.ui.res.stringResource",
+        "androidx.compose.foundation.layout.Spacer",
+        "androidx.compose.foundation.layout.height",
+        "com.example.foodike.presentation.login.components.FoodikeTextField(kotlin.String,kotlin.Function1<kotlin.String, kotlin.Unit>,kotlin.String,androidx.compose.foundation.text.KeyboardOptions,androidx.compose.ui.text.input.VisualTransformation)",
+        "com.example.foodike.presentation.login.LoginViewModel.onEvent(com.example.foodike.presentation.login.LoginEvent)",
+        "com.example.foodike.presentation.login.LoginEvent.EnteredEmail.<init>(kotlin.String)",
+        "com.example.foodike.presentation.login.LoginEvent.EnteredPassword.<init>(kotlin.String)",
+        "androidx.compose.ui.text.input.PasswordVisualTransformation.<init>",
+        "androidx.compose.foundation.text.KeyboardOptions.copy",
+        "androidx.compose.ui.draw.alpha",
+        "androidx.compose.foundation.clickable",
+        "androidx.compose.material.Button",
+        "androidx.compose.foundation.layout.width",
+        "com.example.foodike.presentation.login.LoginEvent.PerformLogin.<init>(kotlin.Function0<kotlin.Unit>)",
+        "androidx.navigation.NavHostController.navigate",
+        "androidx.navigation.NavOptionsBuilder.popUpTo",
+        "androidx.navigation.NavGraph.Companion.findStartDestination",
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.foundation.layout.fillMaxWidth",
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.material.Divider",
+        "androidx.compose.foundation.layout.RowScope.weight",
+        "androidx.compose.foundation.Image",
+        "androidx.compose.ui.res.painterResource",
+        "androidx.hilt.navigation.compose.hiltViewModel"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-login-loginviewmodel-kt-com-example-fo",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginViewModel.kt",
+      "symbol": "com.example.foodike.presentation.login.LoginViewModel.<init>(com.example.foodike.domain.repository.LoginRepository)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.runtime.mutableStateOf",
+        "com.example.foodike.presentation.login.FoodikeTextFieldState.<init>(kotlin.String,kotlin.String)",
+        "kotlinx.coroutines.flow.MutableSharedFlow",
+        "kotlinx.coroutines.flow.asSharedFlow"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-login-loginviewmodel-kt-onevent",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginViewModel.kt",
+      "symbol": "onEvent",
+      "line": 64,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-login-loginviewmodel-kt-onevent-event",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginViewModel.kt",
+      "symbol": "onEvent(event: LoginEvent)",
+      "line": 64,
+      "operationTypes": [],
+      "calls": [
+        "copy",
+        "toggleLoginState",
+        "onClick",
+        "emit",
+        "ShowSnackbar"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [
+        "emit"
+      ],
+      "requiredBehavior": "",
+      "riskHints": [
+        "cross-method dependency",
+        "platform/API capability"
+      ],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-login-uievent-kt-showsnackbar",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\UiEvent.kt",
+      "symbol": "ShowSnackbar",
+      "line": 30,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-login-uievent-kt-com-example-foodike-p",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\UiEvent.kt",
+      "symbol": "com.example.foodike.presentation.login.UiEvent.ShowSnackbar.<init>(kotlin.String)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-login-components-foodiketextfield-kt-f",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\components\\FoodikeTextField.kt",
+      "symbol": "FoodikeTextField",
+      "line": 44,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-login-components-foodiketextfield-kt-c",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\components\\FoodikeTextField.kt",
+      "symbol": "com.example.foodike.presentation.login.components.FoodikeTextField(kotlin.String,kotlin.Function1<kotlin.String, kotlin.Unit>,kotlin.String,androidx.compose.foundation.text.KeyboardOptions,androidx.compose.ui.text.input.VisualTransformation)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.material.TextField",
+        "androidx.compose.foundation.layout.width",
+        "androidx.compose.material.Text",
+        "androidx.compose.ui.draw.alpha",
+        "androidx.compose.foundation.shape.RoundedCornerShape",
+        "androidx.compose.material.TextFieldDefaults.textFieldColors",
+        "androidx.compose.foundation.text.KeyboardOptions.copy"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-onboarding-onboarding-kt-onboarding",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\OnBoarding.kt",
+      "symbol": "OnBoarding",
+      "line": 53,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-onboarding-onboarding-kt-onboarding-na",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\OnBoarding.kt",
+      "symbol": "OnBoarding(navController: NavHostController)",
+      "line": 53,
+      "operationTypes": [],
+      "calls": [
+        "Surface",
+        "fillMaxSize",
+        "Column",
+        "toArgb",
+        "rememberCoroutineScope",
+        "get",
+        "rememberPagerState",
+        "HorizontalPager",
+        "weight",
+        "OnboardingPage",
+        "padding",
+        "BottomSection",
+        "scrollToPage",
+        "navigate"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [
+        "navigate"
+      ],
+      "requiredBehavior": "",
+      "riskHints": [
+        "cross-method dependency",
+        "platform/API capability"
+      ],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-onboarding-onboarding-kt-com-example-f",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\OnBoarding.kt",
+      "symbol": "com.example.foodike.presentation.onboarding.OnBoarding(androidx.navigation.NavHostController)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.material.Surface",
+        "androidx.compose.foundation.layout.fillMaxSize",
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.ui.graphics.toArgb",
+        "androidx.compose.runtime.rememberCoroutineScope",
+        "com.example.foodike.presentation.onboarding.util.OnBoardingItem.Companion.get()",
+        "com.google.accompanist.pager.rememberPagerState",
+        "com.google.accompanist.pager.HorizontalPager",
+        "androidx.compose.foundation.layout.ColumnScope.weight",
+        "com.example.foodike.presentation.onboarding.components.OnboardingPage(com.example.foodike.presentation.onboarding.util.OnBoardingItem)",
+        "androidx.compose.foundation.layout.padding",
+        "com.example.foodike.presentation.onboarding.components.BottomSection(kotlin.Int,kotlin.Int,kotlin.Function0<kotlin.Unit>)",
+        "kotlinx.coroutines.launch",
+        "com.google.accompanist.pager.PagerState.scrollToPage",
+        "androidx.navigation.NavHostController.navigate"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-onboarding-components-bottomsection-kt",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\components\\BottomSection.kt",
+      "symbol": "BottomSection",
+      "line": 42,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-onboarding-components-indicators-kt-in",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\components\\Indicators.kt",
+      "symbol": "Indicator",
+      "line": 63,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-onboarding-components-indicators-kt-co",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\components\\Indicators.kt",
+      "symbol": "com.example.foodike.presentation.onboarding.components.Indicator(kotlin.Boolean)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.animation.core.animateDpAsState",
+        "androidx.compose.animation.core.spring",
+        "androidx.compose.foundation.layout.Box",
+        "androidx.compose.foundation.layout.height",
+        "androidx.compose.foundation.layout.width",
+        "androidx.compose.ui.draw.clip",
+        "androidx.compose.foundation.background"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-onboarding-components-onboardingpage-k",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\components\\OnboardingPage.kt",
+      "symbol": "OnboardingPage",
+      "line": 50,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-onboarding-util-onboardingitem-kt-com",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\util\\OnBoardingItem.kt",
+      "symbol": "com.example.foodike.presentation.onboarding.util.OnBoardingItem.<init>(kotlin.Int,kotlin.Int,kotlin.Int)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-onboarding-util-onboardingitem-kt-get",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\util\\OnBoardingItem.kt",
+      "symbol": "get",
+      "line": 37,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-profile-profile-kt-profile",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\Profile.kt",
+      "symbol": "Profile",
+      "line": 68,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-profile-profile-kt-profile-viewmodel-p",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\Profile.kt",
+      "symbol": "Profile(viewModel: ProfileViewModel, navController: NavHostController)",
+      "line": 68,
+      "operationTypes": [],
+      "calls": [
+        "Column",
+        "Row",
+        "fillMaxWidth",
+        "IconButton",
+        "navigateUp",
+        "Icon",
+        "stringResource",
+        "padding",
+        "weight",
+        "Text",
+        "alpha",
+        "Image",
+        "size",
+        "clip",
+        "painterResource",
+        "Spacer",
+        "height",
+        "Divider",
+        "ProfileCard",
+        "fillMaxSize",
+        "Button",
+        "width",
+        "onEvent",
+        "navigate",
+        "popUpTo",
+        "findStartDestination"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [
+        "navigate"
+      ],
+      "requiredBehavior": "",
+      "riskHints": [
+        "cross-method dependency",
+        "platform/API capability"
+      ],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-profile-profile-kt-com-example-foodike",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\Profile.kt",
+      "symbol": "com.example.foodike.presentation.profile.Profile(com.example.foodike.presentation.profile.ProfileViewModel,androidx.navigation.NavHostController)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.foundation.layout.fillMaxWidth",
+        "androidx.compose.material.IconButton",
+        "androidx.navigation.NavHostController.navigateUp",
+        "androidx.compose.material.Icon",
+        "androidx.compose.ui.res.stringResource",
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.foundation.layout.RowScope.weight",
+        "androidx.compose.material.Text",
+        "androidx.compose.ui.draw.alpha",
+        "androidx.compose.foundation.Image",
+        "androidx.compose.foundation.layout.size",
+        "androidx.compose.ui.draw.clip",
+        "androidx.compose.ui.res.painterResource",
+        "androidx.compose.foundation.layout.Spacer",
+        "androidx.compose.foundation.layout.height",
+        "androidx.compose.foundation.clickable",
+        "androidx.compose.material.Divider",
+        "com.example.foodike.presentation.profile.components.ProfileCard(kotlin.String,kotlin.String,kotlin.Function0<kotlin.Unit>,kotlin.Boolean)",
+        "androidx.compose.foundation.layout.fillMaxSize",
+        "androidx.compose.material.Button",
+        "androidx.compose.foundation.layout.width",
+        "com.example.foodike.presentation.profile.ProfileViewModel.onEvent(com.example.foodike.presentation.profile.ProfileEvent)",
+        "com.example.foodike.presentation.profile.ProfileEvent.PerformLogout.<init>(kotlin.Function0<kotlin.Unit>)",
+        "androidx.navigation.NavHostController.navigate",
+        "androidx.navigation.NavOptionsBuilder.popUpTo",
+        "androidx.navigation.NavGraph.Companion.findStartDestination",
+        "androidx.hilt.navigation.compose.hiltViewModel"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-profile-profileevent-kt-performlogout",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\ProfileEvent.kt",
+      "symbol": "PerformLogout",
+      "line": 33,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-profile-profileevent-kt-com-example-fo",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\ProfileEvent.kt",
+      "symbol": "com.example.foodike.presentation.profile.ProfileEvent.PerformLogout.<init>(kotlin.Function0<kotlin.Unit>)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-profile-profileviewmodel-kt-com-exampl",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\ProfileViewModel.kt",
+      "symbol": "com.example.foodike.presentation.profile.ProfileViewModel.<init>(com.example.foodike.domain.repository.LoginRepository)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-profile-profileviewmodel-kt-onevent",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\ProfileViewModel.kt",
+      "symbol": "onEvent",
+      "line": 43,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-profile-components-profilecard-kt-prof",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\components\\ProfileCard.kt",
+      "symbol": "ProfileCard",
+      "line": 43,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-profile-components-profilecard-kt-com",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\components\\ProfileCard.kt",
+      "symbol": "com.example.foodike.presentation.profile.components.ProfileCard(kotlin.String,kotlin.String,kotlin.Function0<kotlin.Unit>,kotlin.Boolean)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.foundation.layout.Column",
+        "androidx.compose.foundation.layout.padding",
+        "androidx.compose.foundation.clickable",
+        "kotlin.Function0.invoke",
+        "androidx.compose.material.Text",
+        "androidx.compose.ui.draw.alpha",
+        "androidx.compose.material.Divider",
+        "androidx.compose.foundation.layout.fillMaxWidth",
+        "androidx.compose.foundation.layout.Spacer",
+        "androidx.compose.foundation.layout.height"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-util-navigation-kt-bottombar",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+      "symbol": "BottomBar",
+      "line": 178,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-util-navigation-kt-bottombar-navcontro",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+      "symbol": "BottomBar(navController: NavHostController)",
+      "line": 178,
+      "operationTypes": [],
+      "calls": [
+        "currentBackStackEntryAsState",
+        "FoodikeBottomNavigation",
+        "Color",
+        "BottomNavigationItem",
+        "Icon",
+        "stringResource",
+        "navigate",
+        "popUpTo",
+        "findStartDestination",
+        "Row",
+        "Spacer",
+        "width",
+        "painterResource"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [
+        "navigate"
+      ],
+      "requiredBehavior": "",
+      "riskHints": [
+        "cross-method dependency",
+        "platform/API capability"
+      ],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-util-navigation-kt-navigationgraph",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+      "symbol": "NavigationGraph",
+      "line": 64,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-util-navigation-kt-setupnavigation",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+      "symbol": "SetupNavigation",
+      "line": 124,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-util-navigation-kt-setupnavigation-sta",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+      "symbol": "SetupNavigation(startDestination: String)",
+      "line": 124,
+      "operationTypes": [
+        "write_or_update"
+      ],
+      "calls": [
+        "rememberNavController",
+        "currentBackStackEntryAsState",
+        "rememberLazyListState",
+        "Scaffold",
+        "Column",
+        "padding",
+        "Box",
+        "BottomBar",
+        "FloatingActionButton",
+        "navigate",
+        "Icon",
+        "Spacer",
+        "height",
+        "NavigationGraph"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [
+        "navigate"
+      ],
+      "requiredBehavior": "",
+      "riskHints": [
+        "cross-method dependency",
+        "platform/API capability"
+      ],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-util-navigation-kt-com-example-foodike",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+      "symbol": "com.example.foodike.presentation.util.BottomBar(androidx.navigation.NavHostController)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.navigation.compose.currentBackStackEntryAsState",
+        "com.example.foodike.presentation.home.components.FoodikeBottomNavigation(androidx.compose.ui.Modifier,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,androidx.compose.ui.unit.Dp,kotlin.Function1<androidx.compose.foundation.layout.RowScope, kotlin.Unit>)",
+        "androidx.compose.ui.graphics.Color",
+        "androidx.compose.material.BottomNavigationItem",
+        "androidx.compose.material.Icon",
+        "androidx.compose.ui.res.stringResource",
+        "androidx.navigation.NavHostController.navigate",
+        "androidx.navigation.NavOptionsBuilder.popUpTo",
+        "androidx.navigation.NavGraph.Companion.findStartDestination",
+        "androidx.compose.foundation.layout.Row",
+        "androidx.compose.foundation.layout.Spacer",
+        "androidx.compose.foundation.layout.width",
+        "androidx.compose.ui.res.painterResource"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-util-screen-kt-com-example-foodike-pre",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Screen.kt",
+      "symbol": "com.example.foodike.presentation.util.Screen.<init>(kotlin.String)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-presentation-util-screen-kt-withargs",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Screen.kt",
+      "symbol": "withArgs",
+      "line": 38,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-ui-theme-theme-kt-foodiketheme",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\ui\\theme\\Theme.kt",
+      "symbol": "FoodikeTheme",
+      "line": 48,
+      "operationTypes": [],
+      "calls": [],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [],
+      "analysisSources": [
+        "android-analysis.method-summaries"
+      ],
+      "sourceReviewRequired": true
+    },
+    {
+      "id": "callable-kotlin-app-src-main-java-com-example-foodike-ui-theme-theme-kt-com-example-foodike-ui-theme-food",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\ui\\theme\\Theme.kt",
+      "symbol": "com.example.foodike.ui.theme.FoodikeTheme(kotlin.Function0<kotlin.Unit>)",
+      "line": 0,
+      "operationTypes": [],
+      "calls": [
+        "androidx.compose.material.MaterialTheme"
+      ],
+      "dataPaths": [],
+      "resourceRefs": [],
+      "uiEffects": [],
+      "platformCapabilities": [],
+      "requiredBehavior": "",
+      "riskHints": [
+        "call graph dependency"
+      ],
+      "analysisSources": [
+        "kotlin-analysis.call_graph"
+      ],
+      "sourceReviewRequired": true
+    }
+  ],
   "uiContracts": [],
-  "dataContracts": [],
+  "dataContracts": [
+    {
+      "id": "data-android-analysis-crud-slices-json-homerepositoryimpl-getrestaurants",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+      "title": "HomeRepositoryImpl.getRestaurants",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-homerepositoryimpl-getads",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+      "title": "HomeRepositoryImpl.getAds",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-homerepositoryimpl-getfooditems",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+      "title": "HomeRepositoryImpl.getFoodItems",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-homerepositoryimpl-getrestaurantfromname",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\HomeRepositoryImpl.kt",
+      "title": "HomeRepositoryImpl.getRestaurantFromName",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-loginrepositoryimpl-toggleloginstate",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\LoginRepositoryImpl.kt",
+      "title": "LoginRepositoryImpl.toggleLoginState",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "write_or_update",
+        "local_preferences"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-userdatarepositoryimpl-setrestaurant",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "title": "UserDataRepositoryImpl.setRestaurant",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "write_or_update"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-userdatarepositoryimpl-getsavedrestaurant",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "title": "UserDataRepositoryImpl.getSavedRestaurant",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-userdatarepositoryimpl-getmenuitems",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "title": "UserDataRepositoryImpl.getMenuItems",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-userdatarepositoryimpl-getlikedrestaurants",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "title": "UserDataRepositoryImpl.getLikedRestaurants",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-userdatarepositoryimpl-getcartitems",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "title": "UserDataRepositoryImpl.getCartItems",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-cart",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\Cart.kt",
+      "title": "Cart",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "search_or_filter"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-gettimeinmins",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\common\\Extensions.kt",
+      "title": "getTimeInMins",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-getcustomerinfo",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\RestaurantCard.kt",
+      "title": "getCustomerInfo",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-searchbar",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\SearchBar.kt",
+      "title": "SearchBar",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "search_or_filter"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-restaurantdetail",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+      "title": "RestaurantDetail",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "search_or_filter"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-getalltags",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\util\\Filters.kt",
+      "title": "getAllTags",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-gettag",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\util\\Filters.kt",
+      "title": "getTag",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-loginscreen",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginScreen.kt",
+      "title": "LoginScreen",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-onboardingitem-get",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\util\\OnBoardingItem.kt",
+      "title": "OnBoardingItem.get",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-crud-slices-json-setupnavigation",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+      "title": "SetupNavigation",
+      "dataKind": "crud",
+      "dataPaths": [],
+      "operations": [
+        "write_or_update"
+      ],
+      "riskHints": [
+        "crud behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.crud-slices.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-backend-api-usage-json-toggleloginstate",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\LoginRepositoryImpl.kt",
+      "title": "toggleLoginState",
+      "dataKind": "backend-api",
+      "dataPaths": [],
+      "operations": [],
+      "riskHints": [
+        "backend-api behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.backend-api-usage.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-backend-api-usage-json-prefsdatastore",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\LoginRepositoryImpl.kt",
+      "title": "PrefsDataStore",
+      "dataKind": "backend-api",
+      "dataPaths": [],
+      "operations": [],
+      "riskHints": [
+        "backend-api behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.backend-api-usage.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-preferences-map-json-toggleloginstate",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\LoginRepositoryImpl.kt",
+      "title": "toggleLoginState",
+      "dataKind": "preferences",
+      "dataPaths": [],
+      "operations": [],
+      "riskHints": [
+        "preferences behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.preferences-map.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-preferences-map-json-property",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\LoginRepositoryImpl.kt",
+      "title": "<property>",
+      "dataKind": "preferences",
+      "dataPaths": [],
+      "operations": [],
+      "riskHints": [
+        "preferences behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.preferences-map.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-getsavedrestaurant",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "title": "getSavedRestaurant",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-getmenuitems",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "title": "getMenuItems",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-getlikedrestaurants",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "title": "getLikedRestaurants",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-isrestaurantliked",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "title": "isRestaurantLiked",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-getcartitems",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "title": "getCartItems",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-cartitemcard",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CartItemCard.kt",
+      "title": "CartItemCard",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-couponbar",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\CouponBar.kt",
+      "title": "CouponBar",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-itemsection",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\cart\\components\\ItemSection.kt",
+      "title": "ItemSection",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-searchbar",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\components\\SearchBar.kt",
+      "title": "SearchBar",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [
+        "search_or_filter"
+      ],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-restaurantdetail",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetail.kt",
+      "title": "RestaurantDetail",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [
+        "search_or_filter"
+      ],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-onevent",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\RestaurantDetailViewModel.kt",
+      "title": "onEvent",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-menuitemcard",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\details\\components\\MenuItemCard.kt",
+      "title": "MenuItemCard",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-history",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\history\\History.kt",
+      "title": "History",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-home",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\HomeScreen.kt",
+      "title": "Home",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-chipbar",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\ChipBar.kt",
+      "title": "ChipBar",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-topsection",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\home\\components\\TopSection.kt",
+      "title": "TopSection",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-loginscreen",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\login\\LoginScreen.kt",
+      "title": "LoginScreen",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-onboarding",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\onboarding\\OnBoarding.kt",
+      "title": "OnBoarding",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-profile",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\profile\\Profile.kt",
+      "title": "Profile",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-setupnavigation",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+      "title": "SetupNavigation",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [
+        "write_or_update"
+      ],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-bottombar",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\presentation\\util\\Navigation.kt",
+      "title": "BottomBar",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-userdatarepositoryimpl-getsavedrestaurant",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "title": "UserDataRepositoryImpl.getSavedRestaurant",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-userdatarepositoryimpl-getmenuitems",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "title": "UserDataRepositoryImpl.getMenuItems",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-userdatarepositoryimpl-getlikedrestaurants",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "title": "UserDataRepositoryImpl.getLikedRestaurants",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    },
+    {
+      "id": "data-android-analysis-refresh-chains-json-userdatarepositoryimpl-getcartitems",
+      "sourceKind": "kotlin",
+      "sourcePath": "app\\src\\main\\java\\com\\example\\foodike\\data\\repository\\UserDataRepositoryImpl.kt",
+      "title": "UserDataRepositoryImpl.getCartItems",
+      "dataKind": "refresh-chain",
+      "dataPaths": [],
+      "operations": [
+        "read_or_listen"
+      ],
+      "riskHints": [
+        "refresh-chain behavior should preserve data/state side effects"
+      ],
+      "analysisSources": [
+        "android-analysis.refresh-chains.json"
+      ]
+    }
+  ],
   "resourceContracts": [
     {
       "id": "resource-drawables",
@@ -3102,34 +8045,22 @@
       "resourceKind": "strings",
       "title": "source strings (52)",
       "resourceInputs": [
-        "about",
-        "about_the_app",
         "ad",
         "add",
-        "add_edit_and_delete_saved_addresses",
         "all_around_you",
-        "app_name",
-        "back",
         "cart",
         "coming_soon",
         "display_picture",
         "drop_down_arrow",
-        "edit",
         "empty",
         "favourite",
-        "forgot_password",
         "from_creator",
         "history",
         "home",
-        "information_about_ordering_food",
-        "information_about_refunds_and_payments",
         "location",
-        "log_out",
-        "login",
         "login_with_facebook",
         "login_with_google",
         "love",
-        "new_to_foodike",
         "non_vegetarian",
         "onboardingHeading1",
         "onboardingHeading2",
@@ -3137,11 +8068,18 @@
         "onboardingText1",
         "onboardingText2",
         "onboardingText3",
-        "online_ordering_help",
-        "or_sign_in_with",
         "order_from_favourites",
         "outlet",
-        "outlet_2"
+        "outlet_2",
+        "rating",
+        "recommended",
+        "recommended_for_you",
+        "restaurant",
+        "share",
+        "subtract",
+        "vegetarian",
+        "with",
+        "your_location"
       ],
       "riskHints": [
         "user-visible strings should be preserved, localized, or explicitly replaced"
@@ -6216,29 +11154,7 @@
       ]
     }
   ],
-  "analysisGaps": [
-    {
-      "id": "missing-kotlin-analysis-analysis-json",
-      "kind": "missing-analysis-input",
-      "path": "kotlin-analysis/analysis.json",
-      "severity": "warning",
-      "message": "Expected analysis input is missing: kotlin-analysis/analysis.json"
-    },
-    {
-      "id": "missing-kotlin-analysis-locations-json",
-      "kind": "missing-analysis-input",
-      "path": "kotlin-analysis/locations.json",
-      "severity": "warning",
-      "message": "Expected analysis input is missing: kotlin-analysis/locations.json"
-    },
-    {
-      "id": "missing-android-analysis-behavior-spec-md",
-      "kind": "missing-analysis-input",
-      "path": "android-analysis/behavior-spec.md",
-      "severity": "warning",
-      "message": "Expected analysis input is missing: android-analysis/behavior-spec.md"
-    }
-  ],
+  "analysisGaps": [],
   "instructions": [
     "Treat this seed as a compact index for planning, not as authority over source behavior.",
     "Use source code to confirm or override static-analysis hints before closing critical/high behavior.",

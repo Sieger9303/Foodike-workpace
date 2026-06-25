@@ -1,0 +1,1467 @@
+warning[0m: unused function:'navigateTo'
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:32:5:
+   | 
+32 |     private func navigateTo(route: String): Unit {
+   |     ^ unused function
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+note[0m: the code after the macro is expanded as follows
+    | 
+    |   /* 8.1 */class FoodikeBootstrap <: CustomView {
+    |  _^
+    | | /* 8.2 */    private var stateVarDecl_currentRoute_: ObservedProperty < String >= ObservedProperty < String >("stateVarDecl_currentRoute_", bootstrapStartRoute)
+    | | /* 8.3 */    private mut prop currentRoute: String {
+    | | /* 8.4 */        get() {
+    | | /* 8.5 */            return this.stateVarDecl_currentRoute_.get()
+    | | /* 8.6 */        }
+    | | /* 8.7 */        set(v) {
+    | | /* 8.8 */            this.stateVarDecl_currentRoute_.set(v)
+    | | /* 8.9 */        }
+    | | /* 8.10 */    }
+    | | /* 8.11 */    private var stateVarDecl_isShellAtTop_: ObservedProperty < Bool >= ObservedProperty < Bool >("stateVarDecl_isShellAtTop_", true)
+    | | /* 8.12 */    private mut prop isShellAtTop: Bool {
+    | | /* 8.13 */        get() {
+    | | /* 8.14 */            return this.stateVarDecl_isShellAtTop_.get()
+    | | /* 8.15 */        }
+    | | /* 8.16 */        set(v) {
+    | | /* 8.17 */            this.stateVarDecl_isShellAtTop_.set(v)
+    | | /* 8.18 */        }
+    | | /* 8.19 */    }
+    | | /* 8.20 */    private func applyShellState(shellState: ShellRouteState): Unit {
+    | | /* 8.21 */        this.currentRoute = shellState.currentRoute
+    | | /* 8.22 */        this.isShellAtTop = shellState.isAtTop
+    | | /* 8.23 */    }
+    | | /* 8.24 */    private func shellState(): ShellRouteState {
+    | | /* 8.25 */        ShellRouteState(this.currentRoute, this.isShellAtTop)
+    | | /* 8.26 */    }
+    | | /* 8.27 */    private func applyShellCommand(command: ShellCommand): Unit {
+    | | /* 8.28 */        let shellState = this.shellState()
+    | | /* 8.29 */        shellState.applyCommand(command)
+    | | /* 8.30 */        this.applyShellState(shellState)
+    | | /* 8.31 */    }
+    | | /* 8.32 */    private func navigateTo(route: String): Unit {
+    | | /* 8.33 */        let shellState = this.shellState()
+    | | /* 8.34 */        shellState.currentRoute = route
+    | | /* 8.35 */        this.applyShellState(shellState)
+    | | /* 8.36 */    }
+    | | /* 8.37 */    private func showBottomShell(route: String): Bool {
+    | | /* 8.38 */        let shellState = this.shellState()
+    | | /* 8.39 */        shellState.currentRoute = route
+    | | /* 8.40 */        shellState.showBottomShell()
+    | | /* 8.41 */    }
+    | | /* 8.42 */    private func routeTitle(route: String): String {
+    | | /* 8.43 */        match(route) {
+    | | /* 8.44 */            case "onboarding" => "Onboarding"
+    | | /* 8.45 */            case "login_screen" => "Login"
+    | | /* 8.46 */            case "home_screen" => "Home"
+    | | /* 8.47 */            case "history" => "History"
+    | | /* 8.48 */            case "cart" => "Cart"
+    | | /* 8.49 */            case "profile" => "Profile"
+    | | /* 8.50 */            case "restaurant_details" => "Restaurant Detail"
+    | | /* 8.51 */            case _ => "Unknown Route"
+    | | /* 8.52 */        }
+    | | /* 8.53 */    }
+    | | /* 8.54 */    private func routeSummary(route: String): String {
+    | | /* 8.55 */        match(route) {
+    | | /* 8.56 */            case "onboarding" => "Logged-out startup resolves here first, and the primary action advances to login."
+    | | /* 8.57 */            case "login_screen" => "Login stays in the route host and hands off to home once the session flow succeeds."
+    | | /* 8.58 */            case "home_screen" => "Home owns the shared shell chrome, including the conditional bottom bar and cart command."
+    | | /* 8.59 */            case "history" => "History shares the same shell-owned bottom bar and floating cart command as home."
+    | | /* 8.60 */            case "cart" => "Cart is reached from the shell-owned cart action without replacing the startup route contract."
+    | | /* 8.61 */            case "profile" => "Profile remains in the phase-02 route host so logout can later hand control back to onboarding."
+    | | /* 8.62 */            case "restaurant_details" => "Restaurant detail remains part of the route host even before full content arrives in later phases."
+    | | /* 8.63 */            case _ => "No summary available."
+    | | /* 8.64 */        }
+    | | /* 8.65 */    }
+    | | /* 8.66 */    private func primaryActionLabel(route: String): String {
+    | | /* 8.67 */        match(route) {
+    | | /* 8.68 */            case "onboarding" => "Continue to Login"
+    | | /* 8.69 */            case "login_screen" => "Enter Home"
+    | | /* 8.70 */            case "home_screen" => "Open Restaurant Detail"
+    | | /* 8.71 */            case "history" => "Open Profile"
+    | | /* 8.72 */            case "cart" => "Return Home"
+    | | /* 8.73 */            case "profile" => "Log Out to Onboarding"
+    | | /* 8.74 */            case "restaurant_details" => "Back to Home"
+    | | /* 8.75 */            case _ => "Go Home"
+    | | /* 8.76 */        }
+    | | /* 8.77 */    }
+    | | /* 8.78 */    private func runPrimaryAction(): Unit {
+    | | /* 8.79 */        this.applyShellCommand(ShellCommand.PrimaryAction)
+    | | /* 8.80 */    }
+    | | /* 8.81 */    public func build() {
+    | | /* 8.82 */        this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.83 */            Row { this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.84 */                Column { this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.85 */                    Text("Foodike").fontSize(42)
+    | | /* 8.86 */                })
+    | | /* 8.87 */                this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.88 */                    Text("Startup route host").fontSize(18)
+    | | /* 8.89 */                })
+    | | /* 8.90 */                this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.91 */                    Text(this.routeTitle(this.currentRoute)).fontSize(26).margin(top: 18)
+    | | /* 8.92 */                })
+    | | /* 8.93 */                this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.94 */                    Text(this.routeSummary(this.currentRoute)).fontSize(16).margin(top: 8)
+    | | /* 8.95 */                })
+    | | /* 8.96 */                this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.97 */                    Text("Current route: ${this.currentRoute}").fontSize(14).margin(top: 12)
+    | | /* 8.98 */                })
+    | | /* 8.99 */                this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.100 */                    If { if(this.currentRoute == routePath(RouteId.Onboarding)) {
+    | | /* 8.101 */                        this.ifElseBranchUpdateFunction(0, { =>
+    | | /* 8.102 */                            this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.103 */                                Text("The source activity composes navigation only after startup picks a first destination. This route represents the logged-out path.").fontSize(14).margin(top: 18)
+    | | /* 8.104 */                            })
+    | | /* 8.105 */                        })
+    | | /* 8.106 */                    }
+    | | /* 8.107 */                    else {
+    | | /* 8.108 */                        If.branchId(1)
+    | | /* 8.109 */                    }
+    | | /* 8.110 */                }
+    | | /* 8.111 */            })
+    | | /* 8.112 */            this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.113 */                If { if(this.currentRoute == routePath(RouteId.Login)) {
+    | | /* 8.114 */                    this.ifElseBranchUpdateFunction(0, { =>
+    | | /* 8.115 */                        this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.116 */                            Text("Login remains a dedicated destination inside the shared route host, just as `SetupNavigation` keeps it in the source destination graph.").fontSize(14).margin(top: 18)
+    | | /* 8.117 */                        })
+    | | /* 8.118 */                    })
+    | | /* 8.119 */                }
+    | | /* 8.120 */                else {
+    | | /* 8.121 */                    If.branchId(1)
+    | | /* 8.122 */                }
+    | | /* 8.123 */            }
+    | | /* 8.124 */        })
+    | | /* 8.125 */        this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.126 */            If { if(this.currentRoute == routePath(RouteId.Home) || this.currentRoute == routePath(RouteId.History)) {
+    | | /* 8.127 */                this.ifElseBranchUpdateFunction(0, { =>
+    | | /* 8.128 */                    this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.129 */                        Text("The shared shell reacts to both the active route and the top-of-list state before showing bottom-bar commands.").fontSize(14).margin(top: 18)
+    | | /* 8.130 */                    })
+    | | /* 8.131 */                    this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.132 */                        Button(if(this.isShellAtTop) {
+    | | /* 8.133 */                            "Simulate Scrolled Content"
+    | | /* 8.134 */                        }
+    | | /* 8.135 */                        else {
+    | | /* 8.136 */                            "Return To Top"
+    | | /* 8.137 */                        }
+    | | /* 8.138 */                        ).onClick({ evt =>
+    | | /* 8.139 */                            let shellState = this.shellState()
+    | | /* 8.140 */                            shellState.setTopState(! shellState.isAtTop)
+    | | /* 8.141 */                            this.applyShellState(shellState)
+    | | /* 8.142 */                        }).margin(top: 12)
+    | | /* 8.143 */                    })
+    | | /* 8.144 */                    this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.145 */                        Text(if(this.isShellAtTop) {
+    | | /* 8.146 */                            "Shell chrome is visible because the shared top-level list is at the first item."
+    | | /* 8.147 */                        }
+    | | /* 8.148 */                        else {
+    | | /* 8.149 */                            "Shell chrome is hidden because the shared top-level list has moved away from the first item."
+    | | /* 8.150 */                        }
+    | | /* 8.151 */                        ).fontSize(14).margin(top: 8)
+    | | /* 8.152 */                    })
+    | | /* 8.153 */                })
+    | | /* 8.154 */            }
+    | | /* 8.155 */            else {
+    | | /* 8.156 */                If.branchId(1)
+    | | /* 8.157 */            }
+    | | /* 8.158 */        }
+    | | /* 8.159 */    })
+    | | /* 8.160 */    this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.161 */        If { if(this.currentRoute == routePath(RouteId.Cart)) {
+    | | /* 8.162 */            this.ifElseBranchUpdateFunction(0, { =>
+    | | /* 8.163 */                this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.164 */                    Text("Cart is not a bottom-bar destination in the source graph. It is opened from the shell-owned cart action.").fontSize(14).margin(top: 18)
+    | | /* 8.165 */                })
+    | | /* 8.166 */            })
+    | | /* 8.167 */        }
+    | | /* 8.168 */        else {
+    | | /* 8.169 */            If.branchId(1)
+    | | /* 8.170 */        }
+    | | /* 8.171 */    }
+    | | /* 8.172 */})
+    | | /* 8.173 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.174 */    If { if(this.currentRoute == routePath(RouteId.Profile)) {
+    | | /* 8.175 */        this.ifElseBranchUpdateFunction(0, { =>
+    | | /* 8.176 */            this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.177 */                Text("Profile remains a first-class route so later logout work can clear back to onboarding through the same host.").fontSize(14).margin(top: 18)
+    | | /* 8.178 */            })
+    | | /* 8.179 */        })
+    | | /* 8.180 */    }
+    | | /* 8.181 */    else {
+    | | /* 8.182 */        If.branchId(1)
+    | | /* 8.183 */    }
+    | | /* 8.184 */}
+    | | /* 8.185 */})
+    | | /* 8.186 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.187 */If { if(this.currentRoute == routePath(RouteId.RestaurantDetails)) {
+    | | /* 8.188 */    this.ifElseBranchUpdateFunction(0, { =>
+    | | /* 8.189 */        this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.190 */            Text("Restaurant detail already participates in the route host, preserving the source destination contract before feature content lands in phase 05.").fontSize(14).margin(top: 18)
+    | | /* 8.191 */        })
+    | | /* 8.192 */    })
+    | | /* 8.193 */}
+    | | /* 8.194 */else {
+    | | /* 8.195 */    If.branchId(1)
+    | | /* 8.196 */}
+    | | /* 8.197 */}
+    | | /* 8.198 */})
+    | | /* 8.199 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.200 */Button(this.primaryActionLabel(this.currentRoute)).onClick({ evt =>
+    | | /* 8.201 */this.runPrimaryAction()
+    | | /* 8.202 */}).margin(top: 20)
+    | | /* 8.203 */})
+    | | /* 8.204 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.205 */If { if(this.showBottomShell(this.currentRoute)) {
+    | | /* 8.206 */this.ifElseBranchUpdateFunction(0, { =>
+    | | /* 8.207 */    this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.208 */        Text("Bottom shell commands").fontSize(18).margin(top: 28)
+    | | /* 8.209 */    })
+    | | /* 8.210 */    this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.211 */        Row { this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.212 */            Button("Home Tab").onClick({ evt =>
+    | | /* 8.213 */                this.applyShellCommand(ShellCommand.HomeTab)
+    | | /* 8.214 */            })
+    | | /* 8.215 */        })
+    | | /* 8.216 */        this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.217 */            Button("Cart").onClick({ evt =>
+    | | /* 8.218 */                this.applyShellCommand(ShellCommand.CartAction)
+    | | /* 8.219 */            }).margin(left: 12)
+    | | /* 8.220 */        })
+    | | /* 8.221 */        this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.222 */            Button("History Tab").onClick({ evt =>
+    | | /* 8.223 */                this.applyShellCommand(ShellCommand.HistoryTab)
+    | | /* 8.224 */            }).margin(left: 12)
+    | | /* 8.225 */        })
+    | | /* 8.226 */    }.margin(top: 12)
+    | | /* 8.227 */})
+    | | /* 8.228 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.229 */    Text("The shell-owned bottom bar and cart action appear only on home and history routes while the shared top-level list remains at the first item, matching the source route contract for this phase.").fontSize(14).margin(top: 8)
+    | | /* 8.230 */})
+    | | /* 8.231 */})
+    | | /* 8.232 */}
+    | | /* 8.233 */else {
+    | | /* 8.234 */this.ifElseBranchUpdateFunction(1, { =>
+    | | /* 8.235 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 8.236 */    Text("Bottom shell chrome is inactive for this route, matching the source scaffold contract.").fontSize(14).margin(top: 24)
+    | | /* 8.237 */})
+    | | /* 8.238 */})
+    | | /* 8.239 */}
+    | | /* 8.240 */}
+    | | /* 8.241 */})
+    | | /* 8.242 */}.width(100.percent)
+    | | /* 8.243 */})
+    | | /* 8.244 */}.height(100.percent)
+    | | /* 8.245 */})
+    | | /* 8.246 */()
+    | | /* 8.247 */}
+    | | /* 8.248 */public init(__gen_parent: Option < CustomView >, currentRoute!: Option < ObservedProperty < String >>= None, isShellAtTop!: Option < ObservedProperty < Bool >>= None, __gen_local_storage!: Option < LocalStorage >= None) {
+    | | /* 8.249 */super(__gen_parent, __gen_local_storage)
+    | | /* 8.250 */match(currentRoute) {
+    | | /* 8.251 */case Some(v) => this.stateVarDecl_currentRoute_ = ObservedProperty < String >("stateVarDecl_currentRoute_", v.get())
+    | | /* 8.252 */case _ =>()
+    | | /* 8.253 */}
+    | | /* 8.254 */match(isShellAtTop) {
+    | | /* 8.255 */case Some(v) => this.stateVarDecl_isShellAtTop_ = ObservedProperty < Bool >("stateVarDecl_isShellAtTop_", v.get())
+    | | /* 8.256 */case _ =>()
+    | | /* 8.257 */}
+    | | /* 8.258 */this.stateVarDecl_currentRoute_.subscribeEx(this)
+    | | /* 8.259 */this.stateVarDecl_isShellAtTop_.subscribeEx(this)
+    | | /* 8.260 */SubscriberManager.getInstance().add(this)
+    | | /* 8.261 */registerSelf()
+    | | /* 8.262 */__gen_parent?.addChildById(id(), this)
+    | | /* 8.263 */}
+    | | /* 8.264 */public override func aboutToBeDeleted() {
+    | | /* 8.265 */this.stateVarDecl_currentRoute_.unsubscribeEx(this)
+    | | /* 8.266 */this.stateVarDecl_isShellAtTop_.unsubscribeEx(this)
+    | | /* 8.267 */SubscriberManager.getInstance().delete(this)
+    | | /* 8.268 */this.aboutToBeDeletedInternal()
+    | | /* 8.269 */}
+    | | /* 8.270 */func updateWithValueParams(currentRoute!: Option < String >= Option < String >.None, isShellAtTop!: Option < Bool >= Option < Bool >.None): Unit {
+    | | /* 8.271 */match(currentRoute) {
+    | | /* 8.272 */case Some(v) => this.currentRoute = v
+    | | /* 8.273 */case _ =>()
+    | | /* 8.274 */}
+    | | /* 8.275 */match(isShellAtTop) {
+    | | /* 8.276 */case Some(v) => this.isShellAtTop = v
+    | | /* 8.277 */case _ =>()
+    | | /* 8.278 */}
+    | | /* 8.279 */}
+    | | /* 8.280 */public func rerender() {
+    | | /* 8.281 */this.updateDirtyElements()
+    | | /* 8.282 */}
+    | | /* 8.283 */public func purgeVariableDependenciesOnElmtId(rmElmtId: Int64) {
+    | | /* 8.284 */this.stateVarDecl_currentRoute_.purgeDependencyOnElmtId(rmElmtId)
+    | | /* 8.285 */this.stateVarDecl_isShellAtTop_.purgeDependencyOnElmtId(rmElmtId)
+    | | /* 8.286 */}
+    | | /* 8.287 */public func forceRerender(deep!: Bool = false) {
+    | | /* 8.288 */this.forceCompleteRerender(deep)
+    | | /* 8.289 */}
+    | | /* 8.290 */}
+    | | /* 8.291 */
+    | | /* 8.292 */public func appEntry0(): Bool {
+    | | /* 8.293 */let view = FoodikeBootstrap(Option < CustomView >.None)
+    | | /* 8.294 */loadNativeView(view)
+    | | /* 8.295 */}
+    | | /* 8.296 */
+    | | /* 8.297 */let A_P_1 = CJEntry.getInstance().registerEntry("FoodikeBootstrap", appEntry0)
+    | | /* 8.298 */
+    | |___________^
+    | 
+note[0m: which is expanded as follows
+   | 
+   |   /* 8.32 */    private func navigateTo(route: String): Unit {
+   |  _______________^
+   | | /* 8.33 */        let shellState = this.shellState()
+   | | /* 8.34 */        shellState.currentRoute = route
+   | | /* 8.35 */        this.applyShellState(shellState)
+   | | /* 8.36 */    }
+   | |_______________^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 8.82 */        this.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                   ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 8.82 */        this.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                           ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 8.83 */            Row { this.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                             ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 8.83 */            Row { this.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                     ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 8.84 */                Column { this.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                    ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 8.84 */                Column { this.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                            ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 8.87 */                this.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                           ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 8.87 */                this.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                   ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 8.90 */                this.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                           ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 8.90 */                this.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                   ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.93 */                this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                           ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.93 */                this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                   ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.96 */                this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                           ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.96 */                this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                   ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.99 */                this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                           ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.99 */                this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                   ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.102 */                            this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                        ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.102 */                            this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.112 */            this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                        ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.112 */            this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'evt'
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:122:36:
+    | 
+122 |                         .onClick({ evt =>
+    |                                    ^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+note[0m: which is expanded as follows
+    | 
+    | /* 8.138 */                        ).onClick({ evt =>
+    |                                                ^^^ 
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.115 */                        this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                    ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.115 */                        this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                            ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.125 */        this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                    ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.125 */        this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                            ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.128 */                    this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.128 */                    this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                        ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.131 */                    this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.131 */                    this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                        ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.144 */                    this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.144 */                    this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                        ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'evt'
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:152:32:
+    | 
+152 |                     .onClick({ evt =>
+    |                                ^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+note[0m: which is expanded as follows
+    | 
+    | /* 8.200 */Button(this.primaryActionLabel(this.currentRoute)).onClick({ evt =>
+    |                                                                         ^^^ 
+    | 
+
+warning[0m: unused variable:'evt'
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:163:40:
+    | 
+163 |                             .onClick({ evt => this.applyShellCommand(ShellCommand.HomeTab) })
+    |                                        ^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+note[0m: which is expanded as follows
+    | 
+    | /* 8.212 */            Button("Home Tab").onClick({ evt =>
+    |                                                     ^^^ 
+    | 
+
+warning[0m: unused variable:'evt'
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:165:40:
+    | 
+165 |                             .onClick({ evt => this.applyShellCommand(ShellCommand.CartAction) })
+    |                                        ^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+note[0m: which is expanded as follows
+    | 
+    | /* 8.217 */            Button("Cart").onClick({ evt =>
+    |                                                 ^^^ 
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.160 */    this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.160 */    this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                        ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'evt'
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:168:40:
+    | 
+168 |                             .onClick({ evt => this.applyShellCommand(ShellCommand.HistoryTab) })
+    |                                        ^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+note[0m: which is expanded as follows
+    | 
+    | /* 8.222 */            Button("History Tab").onClick({ evt =>
+    |                                                        ^^^ 
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.163 */                this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                            ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.163 */                this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                    ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.173 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                            ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.173 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                    ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.176 */            this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                        ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.176 */            this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.186 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                            ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.186 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                    ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.189 */        this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                    ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.189 */        this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                            ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.199 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                            ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.199 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                    ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.204 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                            ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.204 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                    ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.207 */    this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.207 */    this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                        ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.210 */    this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.210 */    this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                        ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.211 */        Row { this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                          ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.211 */        Row { this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                  ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.216 */        this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                    ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.216 */        this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                            ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.221 */        this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                    ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.221 */        this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                            ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.228 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                            ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.228 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                    ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 8.235 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                            ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 8.235 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                    ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+    | 
+8   |   @Entry
+    |  _^
+9   | | @Component
+    | | ...
+182 | | }
+    | |_^
+    | 
+
+66 warnings generated, 66 warnings printed.

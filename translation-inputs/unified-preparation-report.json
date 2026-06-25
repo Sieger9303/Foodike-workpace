@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-24T10:58:47+00:00",
+  "generatedAt": "2026-06-25T03:21:49+00:00",
   "sourceKind": "kotlin",
   "arktsAnalysisBackend": "",
   "commands": [
@@ -109,11 +109,12 @@
     "changedFiles": [],
     "checks": [
       {
-        "name": "entryCjpm",
-        "result": "SKIPPED",
-        "message": "entry/cjpm.toml does not exist."
+        "name": "entryRootPackage",
+        "result": "PASS",
+        "message": "Entry module root package already uses ohos_app_cangjie_entry."
       }
-    ]
+    ],
+    "detectedEntryRootPackage": "ohos_app_cangjie_entry"
   },
   "result": "PASS"
 }

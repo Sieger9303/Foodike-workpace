@@ -47,84 +47,922 @@
   "phaseCoverageHardGate": true,
   "incrementalReports": true,
   "gateHashSkip": true,
-  "currentPhase": 0,
-  "planningDone": false,
+  "currentPhase": 3,
+  "planningDone": true,
   "taskPlanningMd": "D:\\workspace\\Foodike\\task-planning.md",
   "planMd": "D:\\workspace\\Foodike\\plan.md",
   "planJson": "D:\\workspace\\Foodike\\plan.json",
   "legacyPlanJson5": "D:\\workspace\\Foodike\\plan.json5",
-  "lastBuildReport": "",
-  "lastBuildJson": "",
-  "lastBuildResult": "",
-  "lastRuntimeUiSmokeReport": "",
-  "lastRuntimeUiSmokeJson": "",
-  "lastRuntimeUiSmokeResult": "",
-  "runtimeUiSmokeReports": {},
-  "lastOpencodeLog": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260624T111729118726Z-planning.log",
-  "completedPhases": [],
-  "failedPhases": [],
-  "phaseStates": {},
-  "deferredIssues": [],
-  "retryCounts": {},
-  "pipelineStatus": "planning-failed",
-  "promptHistory": [
-    {
-      "at": "2026-06-24T10:59:26+00:00",
+  "lastBuildReport": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-03-onboarding-login-profile\\build-report.md",
+  "lastBuildJson": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-03-onboarding-login-profile\\build-report.json",
+  "lastBuildResult": "PASS",
+  "lastRuntimeUiSmokeReport": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\phase-02-startup-navigation-session\\runtime-ui-report.md",
+  "lastRuntimeUiSmokeJson": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\phase-02-startup-navigation-session\\runtime-ui-report.json",
+  "lastRuntimeUiSmokeResult": "BLOCKED",
+  "runtimeUiSmokeReports": {
+    "phase-01-project-skeleton-resources": {
+      "json": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\phase-01-project-skeleton-resources\\runtime-ui-report.json",
+      "markdown": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\phase-01-project-skeleton-resources\\runtime-ui-report.md",
+      "result": "BLOCKED",
+      "firstBlocker": "hdc executable was not found.",
+      "generatedAt": "2026-06-25T05:02:31+00:00"
+    },
+    "phase-02-startup-navigation-session": {
+      "json": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\phase-02-startup-navigation-session\\runtime-ui-report.json",
+      "markdown": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\phase-02-startup-navigation-session\\runtime-ui-report.md",
+      "result": "BLOCKED",
+      "firstBlocker": "hdc executable was not found.",
+      "generatedAt": "2026-06-25T05:40:18+00:00"
+    }
+  },
+  "lastOpencodeLog": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T061700256157Z-fix-build.log",
+  "sessionStates": {
+    "source-walkthrough": {
+      "status": "passed",
+      "startedAt": "2026-06-25T02:01:51+00:00",
+      "finishedAt": "2026-06-25T02:23:36+00:00",
+      "returnCode": 0,
       "kind": "source-walkthrough",
       "variant": "xhigh",
-      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260624T105926672021Z-source-walkthrough.prompt.txt",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T020151919684Z-source-walkthrough.prompt.txt",
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T020151919684Z-source-walkthrough.log",
+      "resumedSessionId": "",
+      "sessionId": "ses_1037cdc73ffepuj7BMO8RquXkG"
+    },
+    "planning": {
+      "status": "passed",
+      "startedAt": "2026-06-25T02:23:36+00:00",
+      "finishedAt": "2026-06-25T02:42:34+00:00",
+      "returnCode": 0,
+      "kind": "planning",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T022336782583Z-planning.prompt.txt",
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T022336783583Z-planning.log",
+      "resumedSessionId": "",
+      "sessionId": "ses_10368f325ffe1ty4VC2S3ocudF"
+    },
+    "planning-phase-backfill": {
+      "status": "passed",
+      "startedAt": "2026-06-25T02:42:34+00:00",
+      "finishedAt": "2026-06-25T02:45:23+00:00",
+      "returnCode": 0,
+      "kind": "planning-phase-backfill",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T024234802564Z-planning-phase-backfill.prompt.txt",
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T024234802564Z-planning-phase-backfill.log",
+      "resumedSessionId": "",
+      "sessionId": "ses_1035795b9ffe7GZCyTzJteIT5T"
+    },
+    "fix-build": {
+      "status": "passed",
+      "startedAt": "2026-06-25T06:17:00+00:00",
+      "finishedAt": "2026-06-25T06:25:15+00:00",
+      "returnCode": 0,
+      "previousSessionId": "ses_1033fe89fffebPmiMtGBe5glbs",
+      "kind": "fix-build",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T061700255157Z-phase-03-onboarding-login-profile-fix-build.prompt.txt",
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T061700256157Z-fix-build.log",
+      "resumedSessionId": "",
+      "sessionId": "ses_10293461bffeeWYRBGoTh3K6fq"
+    }
+  },
+  "sourceWalkthroughStatus": {
+    "status": "ready",
+    "updatedAt": "2026-06-25T02:23:36+00:00",
+    "errors": [],
+    "recoveryAttempted": false
+  },
+  "planningPhaseBackfillStatus": {
+    "status": "ready",
+    "returnCode": 0,
+    "updatedAt": "2026-06-25T02:45:23+00:00",
+    "authorities": [
+      "D:\\workspace\\Foodike\\translation-inputs\\platform-capability-check.json",
+      "D:\\workspace\\Foodike\\translation-inputs\\source-coverage-matrix.json"
+    ],
+    "errors": []
+  },
+  "planningFailureDiagnostic": {},
+  "completedPhases": [
+    "phase-01-project-skeleton-resources",
+    "phase-02-startup-navigation-session",
+    "phase-03-onboarding-login-profile"
+  ],
+  "failedPhases": [],
+  "phaseStates": {
+    "phase-01-project-skeleton-resources": {
+      "steps": {
+        "phase-opencode": {
+          "status": "passed",
+          "startedAt": "2026-06-25T04:40:05+00:00",
+          "finishedAt": "2026-06-25T04:47:40+00:00",
+          "returnCode": 0,
+          "previousSessionId": "ses_103332dd2ffet3NYGOlyTJaRoF",
+          "kind": "phase",
+          "variant": "xhigh",
+          "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T044005678237Z-phase-01-project-skeleton-resources-phase-batch-02.prompt.txt",
+          "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T044005678237Z-phase.log",
+          "resumedSessionId": "",
+          "sessionId": "ses_102ebfe8affe4GSHMvbO5MZBl3",
+          "implementationGroupIds": [
+            "phase-01-project-skeleton-resources-verification-phase-tests-and-evidence"
+          ],
+          "batchIndex": 2,
+          "batchTotal": 2
+        },
+        "phase-group-repair-opencode": {
+          "status": "passed",
+          "startedAt": "2026-06-25T04:51:54+00:00",
+          "finishedAt": "2026-06-25T05:02:21+00:00",
+          "returnCode": 0,
+          "previousSessionId": "ses_102e4b379ffemg20qTMGqq4dM7",
+          "kind": "coverage-repair",
+          "variant": "xhigh",
+          "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T045154244989Z-phase-01-project-skeleton-resources-phase-group-repair-phase-01-project-skeleton-resources-source-behav-1.prompt.txt",
+          "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T045154257499Z-coverage-repair.log",
+          "resumedSessionId": "",
+          "sessionId": "ses_102e12f2cffejoPH9Frr5RB4Jr",
+          "implementationGroupIds": [
+            "phase-01-project-skeleton-resources-source-behavior-app"
+          ],
+          "groupRepairAttempt": 1,
+          "groupRepairMaxRounds": 2,
+          "groupVerdict": "partial"
+        }
+      },
+      "status": "running",
+      "currentStep": "phase-group-repair-opencode"
+    },
+    "phase-02-startup-navigation-session": {
+      "steps": {
+        "phase-opencode": {
+          "status": "passed",
+          "startedAt": "2026-06-25T05:02:36+00:00",
+          "finishedAt": "2026-06-25T05:15:42+00:00",
+          "returnCode": 0,
+          "kind": "phase",
+          "variant": "xhigh",
+          "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T050236726666Z-phase-02-startup-navigation-session-phase-batch-01.prompt.txt",
+          "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T050236727665Z-phase.log",
+          "resumedSessionId": "",
+          "sessionId": "ses_102d761b3ffemoAhTGa77K1yUE",
+          "implementationGroupIds": [
+            "phase-02-startup-navigation-session-source-behavior-data-repository",
+            "phase-02-startup-navigation-session-source-behavior-presentation",
+            "phase-02-startup-navigation-session-source-behavior-presentation-util",
+            "phase-02-startup-navigation-session-verification-phase-tests-and-evidence"
+          ],
+          "batchIndex": 1,
+          "batchTotal": 1
+        },
+        "phase-group-repair-opencode": {
+          "status": "passed",
+          "startedAt": "2026-06-25T05:34:50+00:00",
+          "finishedAt": "2026-06-25T05:39:54+00:00",
+          "returnCode": 0,
+          "previousSessionId": "ses_102be2c3dffeRyA4IsDHFUpioX",
+          "kind": "coverage-repair",
+          "variant": "xhigh",
+          "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T053450814142Z-phase-02-startup-navigation-session-phase-group-repair-phase-02-startup-navigation-session-source-behav-1.prompt.txt",
+          "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T053450834826Z-coverage-repair.log",
+          "resumedSessionId": "",
+          "sessionId": "ses_102b9de8dffe6FNc2AwM60MJ5O",
+          "implementationGroupIds": [
+            "phase-02-startup-navigation-session-source-behavior-presentation-util"
+          ],
+          "groupRepairAttempt": 1,
+          "groupRepairMaxRounds": 2,
+          "groupVerdict": "partial"
+        }
+      },
+      "status": "running",
+      "currentStep": "phase-group-repair-opencode"
+    },
+    "phase-03-onboarding-login-profile": {
+      "steps": {
+        "phase-opencode": {
+          "status": "passed",
+          "startedAt": "2026-06-25T05:40:30+00:00",
+          "finishedAt": "2026-06-25T06:16:53+00:00",
+          "returnCode": 0,
+          "kind": "phase",
+          "variant": "xhigh",
+          "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T054030281897Z-phase-03-onboarding-login-profile-phase-batch-01.prompt.txt",
+          "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T054030281897Z-phase.log",
+          "resumedSessionId": "",
+          "sessionId": "ses_102b4b020ffezHsYsEmnxMB0zX",
+          "implementationGroupIds": [
+            "phase-03-onboarding-login-profile-source-behavior-presentation-login",
+            "phase-03-onboarding-login-profile-source-behavior-presentation-onboarding",
+            "phase-03-onboarding-login-profile-source-behavior-presentation-profile",
+            "phase-03-onboarding-login-profile-verification-phase-tests-and-evidence"
+          ],
+          "batchIndex": 1,
+          "batchTotal": 1
+        }
+      },
+      "status": "running",
+      "currentStep": "phase-opencode"
+    }
+  },
+  "deferredIssues": [],
+  "retryCounts": {
+    "phase-01-project-skeleton-resources:> hvigor ERROR: 00303040 Configuration Error": 1,
+    "phase-03-onboarding-login-profile:> hvigor ERROR: Failed :entry:default@CompileCangjie...": 1
+  },
+  "pipelineStatus": "blocked",
+  "promptHistory": [
+    {
+      "at": "2026-06-25T02:00:28+00:00",
+      "kind": "planning",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T020028619083Z-planning.prompt.txt",
       "phase": "",
       "resumedSessionId": ""
     },
     {
-      "at": "2026-06-24T11:17:29+00:00",
+      "at": "2026-06-25T02:01:51+00:00",
+      "kind": "source-walkthrough",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T020151919684Z-source-walkthrough.prompt.txt",
+      "phase": "",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T02:23:36+00:00",
       "kind": "planning",
       "variant": "xhigh",
-      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260624T111729117727Z-planning.prompt.txt",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T022336782583Z-planning.prompt.txt",
+      "phase": "",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T02:42:34+00:00",
+      "kind": "planning-phase-backfill",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T024234802564Z-planning-phase-backfill.prompt.txt",
+      "phase": "",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T02:45:26+00:00",
+      "kind": "phase",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T024526320555Z-phase-01-project-skeleton-resources-phase-batch-01.prompt.txt",
+      "phase": "phase-01-project-skeleton-resources",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T03:08:26+00:00",
+      "kind": "fix-build",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T030826512775Z-phase-01-project-skeleton-resources-fix-build.prompt.txt",
+      "phase": "",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T03:22:20+00:00",
+      "kind": "phase",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T032220725423Z-phase-01-project-skeleton-resources-phase-batch-01.prompt.txt",
+      "phase": "phase-01-project-skeleton-resources",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T04:40:05+00:00",
+      "kind": "phase",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T044005678237Z-phase-01-project-skeleton-resources-phase-batch-02.prompt.txt",
+      "phase": "phase-01-project-skeleton-resources",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T04:48:03+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T044803816300Z-phase-01-project-skeleton-resources-phase-group-repair-phase-01-project-skeleton-resources-architecture-1.prompt.txt",
+      "phase": "phase-01-project-skeleton-resources",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T04:51:54+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T045154244989Z-phase-01-project-skeleton-resources-phase-group-repair-phase-01-project-skeleton-resources-source-behav-1.prompt.txt",
+      "phase": "phase-01-project-skeleton-resources",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T05:02:36+00:00",
+      "kind": "phase",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T050236726666Z-phase-02-startup-navigation-session-phase-batch-01.prompt.txt",
+      "phase": "phase-02-startup-navigation-session",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T05:15:48+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T051548442977Z-phase-02-startup-navigation-session-phase-group-repair-phase-02-startup-navigation-session-source-behav-1.prompt.txt",
+      "phase": "phase-02-startup-navigation-session",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T05:30:08+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T053008766916Z-phase-02-startup-navigation-session-phase-group-repair-phase-02-startup-navigation-session-source-behav-1.prompt.txt",
+      "phase": "phase-02-startup-navigation-session",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T05:34:50+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T053450814142Z-phase-02-startup-navigation-session-phase-group-repair-phase-02-startup-navigation-session-source-behav-1.prompt.txt",
+      "phase": "phase-02-startup-navigation-session",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T05:40:30+00:00",
+      "kind": "phase",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T054030281897Z-phase-03-onboarding-login-profile-phase-batch-01.prompt.txt",
+      "phase": "phase-03-onboarding-login-profile",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T06:17:00+00:00",
+      "kind": "fix-build",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T061700255157Z-phase-03-onboarding-login-profile-fix-build.prompt.txt",
       "phase": "",
       "resumedSessionId": ""
     }
   ],
   "commandHistory": [
     {
-      "at": "2026-06-24T10:59:26+00:00",
-      "kind": "source-walkthrough-opencode",
+      "at": "2026-06-25T05:34:32+00:00",
+      "kind": "build-checkpoint",
       "dryRun": false,
-      "command": "opencode-cj run --dir D:\\workspace\\Foodike -m xty/gpt-5.4 --variant xhigh --format json --dangerously-skip-permissions \"<prompt from D:\\workspace\\Foodike\\translation-records\\prompts\\20260624T105926672021Z-source-walkthrough.prompt.txt>\"",
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-02-startup-navigation-session --skip-unchanged-target"
+    },
+    {
+      "at": "2026-06-25T05:34:45+00:00",
+      "kind": "build-checkpoint-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T053432405547Z-build-checkpoint.log"
+    },
+    {
+      "at": "2026-06-25T05:34:45+00:00",
+      "kind": "source-coverage-after-phase-group-repair",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental"
+    },
+    {
+      "at": "2026-06-25T05:34:48+00:00",
+      "kind": "source-coverage-after-phase-group-repair-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T053445504206Z-source-coverage-after-phase-group-repair.log"
+    },
+    {
+      "at": "2026-06-25T05:34:48+00:00",
+      "kind": "phase-task-checklist",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --phase-task-checklist-phase phase-02-startup-navigation-session"
+    },
+    {
+      "at": "2026-06-25T05:34:50+00:00",
+      "kind": "phase-task-checklist-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T053448139191Z-phase-task-checklist.log"
+    },
+    {
+      "at": "2026-06-25T05:34:50+00:00",
+      "kind": "agent-input-coverage-repair",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\opencode\\agent_input_compiler.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-02-startup-navigation-session --session-kind coverage-repair --implementation-group-id phase-02-startup-navigation-session-source-behavior-presentation-util"
+    },
+    {
+      "at": "2026-06-25T05:34:50+00:00",
+      "kind": "agent-input-coverage-repair-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T053450696142Z-agent-input-coverage-repair.log"
+    },
+    {
+      "at": "2026-06-25T05:34:50+00:00",
+      "kind": "coverage-repair-opencode",
+      "dryRun": false,
+      "command": "D:\\X2Cangjie\\workspace\\tools\\opencode\\opencode-cj.exe run --dir D:\\workspace\\Foodike -m xty/gpt-5.4 --variant xhigh --format json --dangerously-skip-permissions \"<prompt from D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T053450814142Z-phase-02-startup-navigation-session-phase-group-repair-phase-02-startup-navigation-session-source-behav-1.prompt.txt>\"",
       "env": [
         "XTY_API_KEY(set)",
         "XTY_BASE_URL=https://api.xty.app/v1",
         "OPENCODE_CONFIG_CONTENT(provider=xty)",
+        "OPENCODE_CONFIG_CONTENT(model=xty/gpt-5.4)",
+        "OPENCODE_CONFIG_CONTENT(context=1000000)",
+        "OPENCODE_CONFIG_CONTENT(output=131072)",
         "OPENCODE_CONFIG_CONTENT(lsp=false)"
       ]
     },
     {
-      "at": "2026-06-24T11:17:29+00:00",
-      "kind": "source-walkthrough-opencode-result",
+      "at": "2026-06-25T05:39:54+00:00",
+      "kind": "coverage-repair-opencode-result",
       "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260624T105926672021Z-source-walkthrough.log"
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T053450834826Z-coverage-repair.log"
     },
     {
-      "at": "2026-06-24T11:17:29+00:00",
-      "kind": "planning-opencode",
+      "at": "2026-06-25T05:39:54+00:00",
+      "kind": "build-checkpoint",
       "dryRun": false,
-      "command": "opencode-cj run --dir D:\\workspace\\Foodike -m xty/gpt-5.4 --variant xhigh --format json --dangerously-skip-permissions \"<prompt from D:\\workspace\\Foodike\\translation-records\\prompts\\20260624T111729117727Z-planning.prompt.txt>\"",
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-02-startup-navigation-session --skip-unchanged-target"
+    },
+    {
+      "at": "2026-06-25T05:40:07+00:00",
+      "kind": "build-checkpoint-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T053954595973Z-build-checkpoint.log"
+    },
+    {
+      "at": "2026-06-25T05:40:07+00:00",
+      "kind": "source-coverage-after-phase-group-repair",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental"
+    },
+    {
+      "at": "2026-06-25T05:40:10+00:00",
+      "kind": "source-coverage-after-phase-group-repair-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054007826291Z-source-coverage-after-phase-group-repair.log"
+    },
+    {
+      "at": "2026-06-25T05:40:10+00:00",
+      "kind": "phase-task-checklist",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --phase-task-checklist-phase phase-02-startup-navigation-session"
+    },
+    {
+      "at": "2026-06-25T05:40:13+00:00",
+      "kind": "phase-task-checklist-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054010377241Z-phase-task-checklist.log"
+    },
+    {
+      "at": "2026-06-25T05:40:13+00:00",
+      "kind": "source-coverage",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental"
+    },
+    {
+      "at": "2026-06-25T05:40:14+00:00",
+      "kind": "source-coverage-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054013073035Z-source-coverage.log"
+    },
+    {
+      "at": "2026-06-25T05:40:14+00:00",
+      "kind": "phase-coverage-gate",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --phase-gate-phase phase-02-startup-navigation-session --fail-on-phase-gate"
+    },
+    {
+      "at": "2026-06-25T05:40:16+00:00",
+      "kind": "phase-coverage-gate-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054014022463Z-phase-coverage-gate.log"
+    },
+    {
+      "at": "2026-06-25T05:40:16+00:00",
+      "kind": "build-gate",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-02-startup-navigation-session --skip-unchanged-target"
+    },
+    {
+      "at": "2026-06-25T05:40:16+00:00",
+      "kind": "build-gate-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054016547200Z-build-gate.log"
+    },
+    {
+      "at": "2026-06-25T05:40:16+00:00",
+      "kind": "source-coverage-post-build",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental"
+    },
+    {
+      "at": "2026-06-25T05:40:17+00:00",
+      "kind": "source-coverage-post-build-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054016641202Z-source-coverage-post-build.log"
+    },
+    {
+      "at": "2026-06-25T05:40:17+00:00",
+      "kind": "post-build-phase-coverage-gate",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --phase-gate-phase phase-02-startup-navigation-session --fail-on-phase-gate"
+    },
+    {
+      "at": "2026-06-25T05:40:18+00:00",
+      "kind": "post-build-phase-coverage-gate-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054017446048Z-post-build-phase-coverage-gate.log"
+    },
+    {
+      "at": "2026-06-25T05:40:18+00:00",
+      "kind": "runtime-ui-smoke",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\runtime_ui_smoke.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-02-startup-navigation-session --max-device-probe-seconds 3 --timeout 60 --hap-path D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap --skip-unchanged-hap"
+    },
+    {
+      "at": "2026-06-25T05:40:18+00:00",
+      "kind": "runtime-ui-smoke-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054018323537Z-runtime-ui-smoke.log"
+    },
+    {
+      "at": "2026-06-25T05:40:18+00:00",
+      "kind": "test-gate",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\test_build_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-02-startup-navigation-session --skip-unchanged-target"
+    },
+    {
+      "at": "2026-06-25T05:40:25+00:00",
+      "kind": "test-gate-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054018392537Z-test-gate.log"
+    },
+    {
+      "at": "2026-06-25T05:40:25+00:00",
+      "kind": "log-summary",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\summarize_opencode_logs.py --workspace-root D:\\workspace\\Foodike --output-dir D:\\workspace\\Foodike\\translation-inputs --workflow-log-dir D:\\workspace\\Foodike\\translation-records\\opencode-logs --semantic-max-log-files 80"
+    },
+    {
+      "at": "2026-06-25T05:40:27+00:00",
+      "kind": "log-summary-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054025826893Z-log-summary.log"
+    },
+    {
+      "at": "2026-06-25T05:40:27+00:00",
+      "kind": "phase-task-checklist",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --phase-task-checklist-phase phase-03-onboarding-login-profile"
+    },
+    {
+      "at": "2026-06-25T05:40:30+00:00",
+      "kind": "phase-task-checklist-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054027564417Z-phase-task-checklist.log"
+    },
+    {
+      "at": "2026-06-25T05:40:30+00:00",
+      "kind": "agent-input-phase",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\opencode\\agent_input_compiler.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-03-onboarding-login-profile --session-kind phase --implementation-group-id phase-03-onboarding-login-profile-source-behavior-presentation-login --implementation-group-id phase-03-onboarding-login-profile-source-behavior-presentation-onboarding --implementation-group-id phase-03-onboarding-login-profile-source-behavior-presentation-profile --implementation-group-id phase-03-onboarding-login-profile-verification-phase-tests-and-evidence"
+    },
+    {
+      "at": "2026-06-25T05:40:30+00:00",
+      "kind": "agent-input-phase-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054030185051Z-agent-input-phase.log"
+    },
+    {
+      "at": "2026-06-25T05:40:30+00:00",
+      "kind": "phase-opencode",
+      "dryRun": false,
+      "command": "D:\\X2Cangjie\\workspace\\tools\\opencode\\opencode-cj.exe run --dir D:\\workspace\\Foodike -m xty/gpt-5.4 --variant xhigh --format json --dangerously-skip-permissions \"<prompt from D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T054030281897Z-phase-03-onboarding-login-profile-phase-batch-01.prompt.txt>\"",
       "env": [
         "XTY_API_KEY(set)",
         "XTY_BASE_URL=https://api.xty.app/v1",
         "OPENCODE_CONFIG_CONTENT(provider=xty)",
-        "OPENCODE_CONFIG_CONTENT(lsp=false)"
+        "OPENCODE_CONFIG_CONTENT(model=xty/gpt-5.4)",
+        "OPENCODE_CONFIG_CONTENT(context=1000000)",
+        "OPENCODE_CONFIG_CONTENT(output=131072)"
       ]
     },
     {
-      "at": "2026-06-24T11:24:35+00:00",
-      "kind": "planning-opencode-result",
+      "at": "2026-06-25T06:16:53+00:00",
+      "kind": "phase-opencode-result",
       "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260624T111729118726Z-planning.log"
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T054030281897Z-phase.log"
+    },
+    {
+      "at": "2026-06-25T06:16:53+00:00",
+      "kind": "build-checkpoint",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-03-onboarding-login-profile --skip-unchanged-target"
+    },
+    {
+      "at": "2026-06-25T06:17:00+00:00",
+      "kind": "build-checkpoint-result",
+      "returncode": 1,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T061653042281Z-build-checkpoint.log"
+    },
+    {
+      "at": "2026-06-25T06:17:00+00:00",
+      "kind": "fix-build-opencode",
+      "dryRun": false,
+      "command": "D:\\X2Cangjie\\workspace\\tools\\opencode\\opencode-cj.exe run --dir D:\\workspace\\Foodike -m xty/gpt-5.4 --variant xhigh --format json --dangerously-skip-permissions \"<prompt from D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T061700255157Z-phase-03-onboarding-login-profile-fix-build.prompt.txt>\"",
+      "env": [
+        "XTY_API_KEY(set)",
+        "XTY_BASE_URL=https://api.xty.app/v1",
+        "OPENCODE_CONFIG_CONTENT(provider=xty)",
+        "OPENCODE_CONFIG_CONTENT(model=xty/gpt-5.4)",
+        "OPENCODE_CONFIG_CONTENT(context=1000000)",
+        "OPENCODE_CONFIG_CONTENT(output=131072)"
+      ]
+    },
+    {
+      "at": "2026-06-25T06:25:15+00:00",
+      "kind": "fix-build-opencode-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T061700256157Z-fix-build.log"
+    },
+    {
+      "at": "2026-06-25T06:25:15+00:00",
+      "kind": "source-coverage",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental"
+    },
+    {
+      "at": "2026-06-25T06:25:17+00:00",
+      "kind": "source-coverage-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T062515302758Z-source-coverage.log"
+    },
+    {
+      "at": "2026-06-25T06:25:17+00:00",
+      "kind": "build-gate",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-03-onboarding-login-profile --resolved-blocker \"> hvigor ERROR: Failed :entry:default@CompileCangjie...\" --skip-unchanged-target"
+    },
+    {
+      "at": "2026-06-25T06:25:24+00:00",
+      "kind": "build-gate-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T062517911017Z-build-gate.log"
+    },
+    {
+      "at": "2026-06-25T06:25:24+00:00",
+      "kind": "source-coverage-post-build",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental"
+    },
+    {
+      "at": "2026-06-25T06:25:24+00:00",
+      "kind": "source-coverage-post-build-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T062524070501Z-source-coverage-post-build.log"
+    },
+    {
+      "at": "2026-06-25T06:25:24+00:00",
+      "kind": "post-build-phase-coverage-gate",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --phase-gate-phase phase-03-onboarding-login-profile --fail-on-phase-gate"
+    },
+    {
+      "at": "2026-06-25T06:25:27+00:00",
+      "kind": "post-build-phase-coverage-gate-result",
+      "returncode": 3,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T062524936428Z-post-build-phase-coverage-gate.log"
     }
   ],
-  "createdAt": "2026-06-24T10:59:26+00:00",
-  "updatedAt": "2026-06-24T11:24:35+00:00",
+  "createdAt": "2026-06-25T02:00:28+00:00",
+  "updatedAt": "2026-06-25T06:25:27+00:00",
   "runnerSourceKind": "kotlin",
-  "gradleModelScript": "D:\\X2Cangjie\\X2Cangjie\\scripts\\kotlin\\export_gradle_model.py"
+  "gradleModelScript": "D:\\X2Cangjie\\X2Cangjie\\scripts\\kotlin\\export_gradle_model.py",
+  "phaseGroupVerdicts": {
+    "phase-01-project-skeleton-resources": {
+      "updatedAt": "2026-06-25T05:02:26+00:00",
+      "summary": {
+        "implementationGroups": 9,
+        "repairCandidates": 0,
+        "byVerdict": {
+          "complete": 9
+        },
+        "byPriority": {
+          "critical": 8,
+          "high": 1
+        }
+      },
+      "groups": {
+        "phase-01-project-skeleton-resources-architecture-risk-broad-target-endpoints": {
+          "verdict": "complete",
+          "repairRecommended": false,
+          "priority": "critical",
+          "featureIds": [
+            "app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat",
+            "app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat",
+            "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m"
+          ],
+          "platformCapabilityIds": [],
+          "updatedAt": "2026-06-25T05:02:26+00:00"
+        },
+        "phase-01-project-skeleton-resources-platform-capability-preferences-key-value-persistence": {
+          "verdict": "complete",
+          "repairRecommended": false,
+          "priority": "critical",
+          "featureIds": [],
+          "platformCapabilityIds": [
+            "preferences-key-value-persistence"
+          ],
+          "updatedAt": "2026-06-25T05:02:26+00:00"
+        },
+        "phase-01-project-skeleton-resources-platform-capability-startup-route-and-window-lifecycle": {
+          "verdict": "complete",
+          "repairRecommended": false,
+          "priority": "critical",
+          "featureIds": [],
+          "platformCapabilityIds": [
+            "startup-route-and-window-lifecycle"
+          ],
+          "updatedAt": "2026-06-25T05:02:26+00:00"
+        },
+        "phase-01-project-skeleton-resources-resource-migration-manifest": {
+          "verdict": "complete",
+          "repairRecommended": false,
+          "priority": "critical",
+          "featureIds": [
+            "app-src-main-androidmanifest-xml-c7c6907eb1-004-android-platform-component-lifecycle-suc",
+            "app-src-main-androidmanifest-xml-e5fadea668-001-android-resource-configuration-must-be-m",
+            "app-src-main-androidmanifest-xml-525ca85433-002-intent-uri-bundle-deeplink-or-cross-scre",
+            "app-src-main-androidmanifest-xml-dcc4612e71-003-runtime-permission-request-permission-re",
+            "app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat"
+          ],
+          "platformCapabilityIds": [
+            "localization-resources",
+            "startup-route-and-window-lifecycle"
+          ],
+          "updatedAt": "2026-06-25T05:02:26+00:00"
+        },
+        "phase-01-project-skeleton-resources-resource-migration-res-values": {
+          "verdict": "complete",
+          "repairRecommended": false,
+          "priority": "critical",
+          "featureIds": [
+            "app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma",
+            "app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m",
+            "app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma",
+            "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m",
+            "app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re"
+          ],
+          "platformCapabilityIds": [
+            "localization-resources",
+            "startup-route-and-window-lifecycle"
+          ],
+          "updatedAt": "2026-06-25T05:02:26+00:00"
+        },
+        "phase-01-project-skeleton-resources-source-behavior-app": {
+          "verdict": "complete",
+          "repairRecommended": false,
+          "priority": "critical",
+          "featureIds": [
+            "app-build-gradle-kts-52a26dc1e9-003-android-platform-component-lifecycle-suc",
+            "app-build-gradle-kts-ab52d0a44d-001-navigation-surface-menu-drawer-toolbar-o",
+            "app-build-gradle-kts-329cf39b55-002-runtime-permission-request-permission-re",
+            "app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat",
+            "app-build-gradle-kts-aa010bdd3d-005-settings-preferences-option-toggles-or-c"
+          ],
+          "platformCapabilityIds": [],
+          "updatedAt": "2026-06-25T05:02:26+00:00"
+        },
+        "phase-01-project-skeleton-resources-source-behavior-kotlin-source": {
+          "verdict": "complete",
+          "repairRecommended": false,
+          "priority": "critical",
+          "featureIds": [
+            "build-gradle-kts-6cd8a326ab-002-android-platform-component-lifecycle-suc",
+            "build-gradle-kts-e6afb1cfd2-001-runtime-permission-request-permission-re",
+            "build-gradle-kts-2f9b07ef27-003-settings-preferences-option-toggles-or-c"
+          ],
+          "platformCapabilityIds": [],
+          "updatedAt": "2026-06-25T05:02:26+00:00"
+        },
+        "phase-01-project-skeleton-resources-verification-phase-tests-and-evidence": {
+          "verdict": "complete",
+          "repairRecommended": false,
+          "priority": "critical",
+          "featureIds": [
+            "app-build-gradle-kts-ab52d0a44d-001-navigation-surface-menu-drawer-toolbar-o",
+            "app-build-gradle-kts-329cf39b55-002-runtime-permission-request-permission-re",
+            "app-build-gradle-kts-52a26dc1e9-003-android-platform-component-lifecycle-suc",
+            "app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat",
+            "app-build-gradle-kts-aa010bdd3d-005-settings-preferences-option-toggles-or-c",
+            "build-gradle-kts-e6afb1cfd2-001-runtime-permission-request-permission-re",
+            "build-gradle-kts-6cd8a326ab-002-android-platform-component-lifecycle-suc",
+            "build-gradle-kts-2f9b07ef27-003-settings-preferences-option-toggles-or-c",
+            "app-src-main-androidmanifest-xml-e5fadea668-001-android-resource-configuration-must-be-m",
+            "app-src-main-androidmanifest-xml-525ca85433-002-intent-uri-bundle-deeplink-or-cross-scre",
+            "app-src-main-androidmanifest-xml-dcc4612e71-003-runtime-permission-request-permission-re",
+            "app-src-main-androidmanifest-xml-c7c6907eb1-004-android-platform-component-lifecycle-suc",
+            "app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat",
+            "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m",
+            "app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re",
+            "app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma",
+            "app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m",
+            "app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma"
+          ],
+          "platformCapabilityIds": [
+            "localization-resources",
+            "preferences-key-value-persistence",
+            "startup-route-and-window-lifecycle"
+          ],
+          "updatedAt": "2026-06-25T05:02:26+00:00"
+        },
+        "phase-01-project-skeleton-resources-platform-capability-localization-resources": {
+          "verdict": "complete",
+          "repairRecommended": false,
+          "priority": "high",
+          "featureIds": [],
+          "platformCapabilityIds": [
+            "localization-resources"
+          ],
+          "updatedAt": "2026-06-25T05:02:26+00:00"
+        }
+      }
+    },
+    "phase-02-startup-navigation-session": {
+      "updatedAt": "2026-06-25T05:40:13+00:00",
+      "summary": {
+        "implementationGroups": 4,
+        "repairCandidates": 0,
+        "byVerdict": {
+          "complete": 4
+        },
+        "byPriority": {
+          "critical": 4
+        }
+      },
+      "groups": {
+        "phase-02-startup-navigation-session-source-behavior-data-repository": {
+          "verdict": "complete",
+          "repairRecommended": false,
+          "priority": "critical",
+          "featureIds": [
+            "app-src-main-java-com-example-foodike-data-repository-lo-02b022d9dd-004-authentication-account-or-session-behavi",
+            "app-src-main-java-com-example-foodike-data-repository-lo-7dc1a245fb-003-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-data-repository-lo-7e56a71166-001-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-data-repository-lo-6ca6819f0d-002-settings-preferences-option-toggles-or-c"
+          ],
+          "platformCapabilityIds": [],
+          "updatedAt": "2026-06-25T05:40:13+00:00"
+        },
+        "phase-02-startup-navigation-session-source-behavior-presentation": {
+          "verdict": "complete",
+          "repairRecommended": false,
+          "priority": "critical",
+          "featureIds": [
+            "app-src-main-java-com-example-foodike-presentation-maina-f373ac820e-001-intent-uri-bundle-deeplink-or-cross-scre",
+            "app-src-main-java-com-example-foodike-presentation-maina-b4402531cf-006-lifecycle-callback-affecting-screen-init",
+            "app-src-main-java-com-example-foodike-presentation-maina-90afaa2416-002-navigation-surface-menu-drawer-toolbar-o",
+            "app-src-main-java-com-example-foodike-presentation-maina-7ad2de0a80-005-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-maina-7fe4304034-003-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-maina-da76a1d7cc-004-screen-lifecycle-entry-point-initializat"
+          ],
+          "platformCapabilityIds": [],
+          "updatedAt": "2026-06-25T05:40:13+00:00"
+        },
+        "phase-02-startup-navigation-session-source-behavior-presentation-util": {
+          "verdict": "complete",
+          "repairRecommended": false,
+          "priority": "critical",
+          "featureIds": [
+            "app-src-main-java-com-example-foodike-presentation-util-db8f73d266-001-image-viewing-bitmap-exif-handling-zoom",
+            "app-src-main-java-com-example-foodike-presentation-util-417c58decd-002-navigation-surface-menu-drawer-toolbar-o",
+            "app-src-main-java-com-example-foodike-presentation-util-cb2f6fdad2-004-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-util-dc524a2ddb-003-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-util-e655d230ac-001-runtime-permission-request-permission-re"
+          ],
+          "platformCapabilityIds": [],
+          "updatedAt": "2026-06-25T05:40:13+00:00"
+        },
+        "phase-02-startup-navigation-session-verification-phase-tests-and-evidence": {
+          "verdict": "complete",
+          "repairRecommended": false,
+          "priority": "critical",
+          "featureIds": [
+            "app-src-main-java-com-example-foodike-presentation-util-db8f73d266-001-image-viewing-bitmap-exif-handling-zoom",
+            "app-src-main-java-com-example-foodike-presentation-util-417c58decd-002-navigation-surface-menu-drawer-toolbar-o",
+            "app-src-main-java-com-example-foodike-presentation-util-dc524a2ddb-003-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-util-cb2f6fdad2-004-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-maina-f373ac820e-001-intent-uri-bundle-deeplink-or-cross-scre",
+            "app-src-main-java-com-example-foodike-presentation-maina-90afaa2416-002-navigation-surface-menu-drawer-toolbar-o",
+            "app-src-main-java-com-example-foodike-presentation-maina-7fe4304034-003-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-maina-da76a1d7cc-004-screen-lifecycle-entry-point-initializat",
+            "app-src-main-java-com-example-foodike-presentation-maina-7ad2de0a80-005-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-maina-b4402531cf-006-lifecycle-callback-affecting-screen-init",
+            "app-src-main-java-com-example-foodike-data-repository-lo-7e56a71166-001-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-data-repository-lo-6ca6819f0d-002-settings-preferences-option-toggles-or-c",
+            "app-src-main-java-com-example-foodike-data-repository-lo-7dc1a245fb-003-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-data-repository-lo-02b022d9dd-004-authentication-account-or-session-behavi",
+            "app-src-main-java-com-example-foodike-presentation-util-e655d230ac-001-runtime-permission-request-permission-re"
+          ],
+          "platformCapabilityIds": [],
+          "updatedAt": "2026-06-25T05:40:13+00:00"
+        }
+      }
+    }
+  }
 }

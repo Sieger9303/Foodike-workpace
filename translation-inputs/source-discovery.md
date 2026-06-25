@@ -1,7 +1,7 @@
 # Source Discovery
 
 - Source project: `D:\Kotlin2Cangjie\Foodike`
-- Requested source language: `auto`
+- Requested source language: `kotlin`
 - Detected source language: `kotlin`
 - Android project evidence: `True`
 - ArkTS/HarmonyOS evidence: `False`

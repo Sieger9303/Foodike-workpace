@@ -8,9 +8,25 @@ Structured verification evidence collected from build/test/manual reports. Build
 
 | metric | value |
 | --- | --- |
-| totalResults | 0 |
-| passedBuildPhases | [] |
+| totalResults | 3 |
+| passedBuildPhases | ['phase-01-project-skeleton-resources', 'phase-02-startup-navigation-session', 'phase-03-onboarding-login-profile'] |
+
+## Result Types
+
+| type | count |
+| --- | --- |
+| build | 3 |
+
+## Result Status
+
+| result | count |
+| --- | --- |
+| passed | 3 |
 
 ## Results
 
-_No verification results recorded yet._
+| id | type | phase | result | evidence path | notes |
+| --- | --- | --- | --- | --- | --- |
+| build:phase-01-project-skeleton-resources | build | phase-01-project-skeleton-resources | passed | D:\workspace\Foodike\translation-inputs\build-reports\phase-01-project-skeleton-resources\build-report.json | Build gate result for phase phase-01-project-skeleton-resources. |
+| build:phase-02-startup-navigation-session | build | phase-02-startup-navigation-session | passed | D:\workspace\Foodike\translation-inputs\build-reports\phase-02-startup-navigation-session\build-report.json | Build gate result for phase phase-02-startup-navigation-session. |
+| build:phase-03-onboarding-login-profile | build | phase-03-onboarding-login-profile | passed | D:\workspace\Foodike\translation-inputs\build-reports\phase-03-onboarding-login-profile\build-report.json | Build gate result for phase phase-03-onboarding-login-profile. |

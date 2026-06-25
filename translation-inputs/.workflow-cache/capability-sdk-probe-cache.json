@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-24T10:58:52+00:00",
+  "generatedAt": "2026-06-25T04:48:00+00:00",
   "cacheVersion": "capability-sdk-probe-v1",
-  "inputHash": "7e8fb967fb394160405ada727f0b3349e169bbc3f532e531f78e5960e0cdb5aa",
+  "inputHash": "7b34ea90abafecee1d24008b185a6139949fc8a112c9fd9b33bf3cc8b44ae040",
   "report": {
     "schemaVersion": 1,
-    "generatedAt": "2026-06-24T10:58:52+00:00",
+    "generatedAt": "2026-06-25T04:48:00+00:00",
     "cacheVersion": "capability-sdk-probe-v1",
     "cacheHit": false,
-    "inputHash": "7e8fb967fb394160405ada727f0b3349e169bbc3f532e531f78e5960e0cdb5aa",
+    "inputHash": "7b34ea90abafecee1d24008b185a6139949fc8a112c9fd9b33bf3cc8b44ae040",
     "sdkRoot": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie",
     "sdkAvailable": true,
     "summary": {
-      "capabilityEntries": 6,
+      "capabilityEntries": 8,
       "sdkFilesIndexed": 1050,
-      "withPureCangjieDeclarationCandidates": 6,
-      "withCangjieLibraryCandidates": 6,
+      "withPureCangjieDeclarationCandidates": 8,
+      "withCangjieLibraryCandidates": 8,
       "withoutCandidates": 0
     },
     "entries": [
@@ -790,7 +790,7 @@
         "capabilityId": "localization-resources",
         "capabilityName": "Localized resources and formatted strings",
         "importance": "high",
-        "plannedPhase": "",
+        "plannedPhase": "phase-01-project-skeleton-resources",
         "terms": [
           "localization",
           "resources",
@@ -798,13 +798,16 @@
           "and",
           "formatted",
           "strings",
+          "resource",
+          "bundles",
+          "appscope",
+          "entry",
           "convert",
           "string",
           "locale",
           "groups",
           "into",
           "generated",
-          "resource",
           "adapter",
           "avoid",
           "hard",
@@ -812,10 +815,7 @@
           "english",
           "for",
           "migrated",
-          "labels",
-          "detected",
-          "source",
-          "artifact"
+          "labels"
         ],
         "pureCangjieDeclarationCandidates": [
           {
@@ -976,16 +976,14 @@
             "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.resource.so",
             "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.resource.so",
             "matchedTerms": [
-              "resource",
-              "source"
+              "resource"
             ]
           },
           {
             "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.resource_manager.so",
             "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.resource_manager.so",
             "matchedTerms": [
-              "resource",
-              "source"
+              "resource"
             ]
           },
           {
@@ -1036,7 +1034,9 @@
           "terms",
           "request",
           "authorization",
-          "examples"
+          "examples",
+          "workspace",
+          "foodike"
         ],
         "pureCangjieDeclarationCandidates": [
           {
@@ -1490,10 +1490,461 @@
           "cangjieLibraries": 12
         },
         "probeInterpretation": "declaration-candidate"
+      },
+      {
+        "capabilityId": "preferences-key-value-persistence",
+        "capabilityName": "Lightweight key-value session persistence",
+        "importance": "critical",
+        "plannedPhase": "phase-01-project-skeleton-resources",
+        "terms": [
+          "preferences",
+          "key",
+          "value",
+          "persistence",
+          "lightweight",
+          "session",
+          "arkdata",
+          "use",
+          "storage",
+          "for",
+          "persisted",
+          "login",
+          "state",
+          "and",
+          "preserve",
+          "startup",
+          "route",
+          "selection",
+          "semantics",
+          "loginrepositoryimpl",
+          "persists",
+          "datastore",
+          "splashviewmodel",
+          "reads"
+        ],
+        "pureCangjieDeclarationCandidates": [
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.AbilityKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.AbilityKit.cj.d",
+            "matchedTerms": [
+              "use",
+              "for",
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkData.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkData.cj.d",
+            "matchedTerms": [
+              "preferences",
+              "value",
+              "arkdata",
+              "use",
+              "for",
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkGraphics2D.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkGraphics2D.cj.d",
+            "matchedTerms": [
+              "use",
+              "for",
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkUI.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkUI.cj.d",
+            "matchedTerms": [
+              "use",
+              "for",
+              "state",
+              "and",
+              "route"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkWeb.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkWeb.cj.d",
+            "matchedTerms": [
+              "use",
+              "for",
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.BasicServicesKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.BasicServicesKit.cj.d",
+            "matchedTerms": [
+              "use",
+              "for",
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CameraKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CameraKit.cj.d",
+            "matchedTerms": [
+              "use",
+              "for",
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CangjieKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CangjieKit.cj.d",
+            "matchedTerms": [
+              "use",
+              "for",
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ConnectivityKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ConnectivityKit.cj.d",
+            "matchedTerms": [
+              "use",
+              "for",
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CoreFileKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CoreFileKit.cj.d",
+            "matchedTerms": [
+              "use",
+              "for",
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CryptoArchitectureKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CryptoArchitectureKit.cj.d",
+            "matchedTerms": [
+              "use",
+              "for",
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ImageKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ImageKit.cj.d",
+            "matchedTerms": [
+              "use",
+              "for",
+              "and"
+            ]
+          }
+        ],
+        "cangjieLibraryCandidates": [
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkData.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/kit.ArkData.cjo",
+            "matchedTerms": [
+              "arkdata"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\kit.PerformanceAnalysisKit.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/kit.PerformanceAnalysisKit.cjo",
+            "matchedTerms": [
+              "for"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\kit.UniversalKeystoreKit.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/kit.UniversalKeystoreKit.cjo",
+            "matchedTerms": [
+              "key"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\libkit.ArkData.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/libkit.ArkData.so",
+            "matchedTerms": [
+              "arkdata"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\libkit.PerformanceAnalysisKit.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/libkit.PerformanceAnalysisKit.so",
+            "matchedTerms": [
+              "for"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\libkit.UniversalKeystoreKit.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/libkit.UniversalKeystoreKit.so",
+            "matchedTerms": [
+              "key"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.app.ability.completion_handler.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.app.ability.completion_handler.so",
+            "matchedTerms": [
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.for_each.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.for_each.so",
+            "matchedTerms": [
+              "for"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.lazy_for_each.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.lazy_for_each.so",
+            "matchedTerms": [
+              "for"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.state_management.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.state_management.so",
+            "matchedTerms": [
+              "state"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.data.preferences.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.data.preferences.so",
+            "matchedTerms": [
+              "preferences"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.data.values_bucket.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.data.values_bucket.so",
+            "matchedTerms": [
+              "value"
+            ]
+          }
+        ],
+        "candidateCounts": {
+          "pureCangjieDeclarations": 12,
+          "cangjieLibraries": 12
+        },
+        "probeInterpretation": "declaration-candidate"
+      },
+      {
+        "capabilityId": "startup-route-and-window-lifecycle",
+        "capabilityName": "Startup route gating and main window lifecycle",
+        "importance": "critical",
+        "plannedPhase": "phase-01-project-skeleton-resources",
+        "terms": [
+          "startup",
+          "route",
+          "and",
+          "window",
+          "lifecycle",
+          "gating",
+          "main",
+          "abilitykit",
+          "uiability",
+          "arkui",
+          "windowstage",
+          "map",
+          "splash",
+          "behavior",
+          "flow",
+          "while",
+          "preserving",
+          "delayed",
+          "initial",
+          "selection",
+          "shell",
+          "setup",
+          "gated",
+          "loading"
+        ],
+        "pureCangjieDeclarationCandidates": [
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.AbilityKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.AbilityKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "abilitykit"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkData.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkData.cj.d",
+            "matchedTerms": [
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkGraphics2D.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkGraphics2D.cj.d",
+            "matchedTerms": [
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkUI.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkUI.cj.d",
+            "matchedTerms": [
+              "route",
+              "and",
+              "window",
+              "arkui"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkWeb.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkWeb.cj.d",
+            "matchedTerms": [
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.BasicServicesKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.BasicServicesKit.cj.d",
+            "matchedTerms": [
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CameraKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CameraKit.cj.d",
+            "matchedTerms": [
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CangjieKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CangjieKit.cj.d",
+            "matchedTerms": [
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ConnectivityKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ConnectivityKit.cj.d",
+            "matchedTerms": [
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CoreFileKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CoreFileKit.cj.d",
+            "matchedTerms": [
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CryptoArchitectureKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CryptoArchitectureKit.cj.d",
+            "matchedTerms": [
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ImageKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ImageKit.cj.d",
+            "matchedTerms": [
+              "and"
+            ]
+          }
+        ],
+        "cangjieLibraryCandidates": [
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\kit.AbilityKit.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/kit.AbilityKit.cjo",
+            "matchedTerms": [
+              "abilitykit"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkUI.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/kit.ArkUI.cjo",
+            "matchedTerms": [
+              "arkui"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\libkit.AbilityKit.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/libkit.AbilityKit.so",
+            "matchedTerms": [
+              "abilitykit"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\libkit.ArkUI.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/libkit.ArkUI.so",
+            "matchedTerms": [
+              "arkui"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.app.ability.completion_handler.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.app.ability.completion_handler.so",
+            "matchedTerms": [
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.action_sheet.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.action_sheet.so",
+            "matchedTerms": [
+              "arkui"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.alert_dialog.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.alert_dialog.so",
+            "matchedTerms": [
+              "arkui"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.alphabet_indexer.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.alphabet_indexer.so",
+            "matchedTerms": [
+              "arkui"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.badge.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.badge.so",
+            "matchedTerms": [
+              "arkui"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.blank.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.blank.so",
+            "matchedTerms": [
+              "arkui"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.button.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.button.so",
+            "matchedTerms": [
+              "arkui"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.canvas.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.canvas.so",
+            "matchedTerms": [
+              "arkui"
+            ]
+          }
+        ],
+        "candidateCounts": {
+          "pureCangjieDeclarations": 12,
+          "cangjieLibraries": 12
+        },
+        "probeInterpretation": "declaration-candidate"
       }
     ],
     "inputFingerprint": {
-      "sha256": "7e8fb967fb394160405ada727f0b3349e169bbc3f532e531f78e5960e0cdb5aa",
+      "sha256": "7b34ea90abafecee1d24008b185a6139949fc8a112c9fd9b33bf3cc8b44ae040",
       "parts": {
         "version": "capability-sdk-probe-v1",
         "sdk": {
@@ -6769,10 +7220,10 @@
         "platformCheck": {
           "path": "D:\\workspace\\Foodike\\translation-inputs\\platform-capability-check.json",
           "exists": true,
-          "sizeBytes": 181881,
-          "sha256": "a9c45672c503fc41e8b57ef04bc39e777762a901f4a0673f74a954fe07644346"
+          "sizeBytes": 194405,
+          "sha256": "23335db02fbd90e75903c77093655b265b9536066cdde1e9d00bcf4bfdc76b4a"
         },
-        "capabilityTermsHash": "8996d5decdb8d894ed606f6eaa0bc66b087c962f139feb0dd5d0c3880695ccd1"
+        "capabilityTermsHash": "469fd3d075708cda44dc2315c3b8dfbec783a5ba3b66f1a987dc9b018b06d495"
       }
     }
   }

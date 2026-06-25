@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-24T10:58:52+00:00",
+  "generatedAt": "2026-06-25T06:25:26+00:00",
   "sourceRoot": "D:\\Kotlin2Cangjie\\Foodike",
   "targetRoot": "D:\\workspace\\Foodike\\Foodike-Harmony",
   "locProviders": {
@@ -97,24 +97,24 @@
         }
       ],
       "notes": "Using tokei for code/comment/blank LOC metrics.",
-      "usageStatus": "FALLBACK",
-      "usageMessage": "No external LOC metrics could be collected; using internal nonblank-line fallback."
+      "usageStatus": "PASS",
+      "usageMessage": "Collected per-file LOC metrics with tokei."
     },
     "primaryRatio": "targetToSourceProductionCodeLines",
     "notes": "LOC gap findings use external tool code lines when available. Physical/nonblank/comment/blank ratios remain supporting evidence."
   },
   "ratios": {
-    "targetToSourceFiles": 0.0,
-    "targetToSourceTextFiles": 0.0,
-    "targetToSourceNonblankLines": 0.0,
-    "targetToSourceProductionTextFiles": 0.0,
-    "targetToSourceProductionNonblankLines": 0.0,
-    "targetToSourceCodeFiles": 0.0,
-    "targetToSourceCodeNonblankLines": 0.0,
-    "targetToSourceProductionCodeFiles": 0.0,
-    "targetToSourceProductionCodeNonblankLines": 0.0,
-    "targetToSourceProductionCodeLines": 0.0,
-    "targetToSourceTestFiles": 0.0
+    "targetToSourceFiles": 0.2877,
+    "targetToSourceTextFiles": 0.3208,
+    "targetToSourceNonblankLines": 0.1612,
+    "targetToSourceProductionTextFiles": 0.3077,
+    "targetToSourceProductionNonblankLines": 0.1476,
+    "targetToSourceCodeFiles": 0.2471,
+    "targetToSourceCodeNonblankLines": 0.1255,
+    "targetToSourceProductionCodeFiles": 0.2289,
+    "targetToSourceProductionCodeNonblankLines": 0.1104,
+    "targetToSourceProductionCodeLines": 0.1589,
+    "targetToSourceTestFiles": 1.0
   },
   "findings": [
     {
@@ -135,12 +135,27 @@
     {
       "severity": "high",
       "kind": "coverage-matrix-uncovered-entry",
-      "message": "224 critical/high source feature(s) remain planned, unreviewed, or not covered."
+      "message": "192 critical/high source feature(s) remain planned, unreviewed, or not covered."
     },
     {
-      "severity": "high",
-      "kind": "platform-capability-unresolved",
-      "message": "6 critical/high platform capability check(s) remain planned, unreviewed, or not covered."
+      "severity": "medium",
+      "kind": "target-structure-large-file",
+      "message": "1 production target code file(s) are large or dominate target production code. Use the source project structure as a responsibility reference and split overgrown files into coherent Cangjie domain/service/state modules when it improves later repairability."
+    },
+    {
+      "severity": "medium",
+      "kind": "target-structure-broad-shell-endpoints",
+      "message": "2 broad shell-like target file(s) carry many coverage endpoints. Prefer targetEndpoints that name specific business functions or extracted modules."
+    },
+    {
+      "severity": "medium",
+      "kind": "target-structure-ui-surface-concentration",
+      "message": "1 target UI surface file(s) contain many page/view/dialog/list symbols. Split obvious settings/viewer/folder/about/player/gallery surfaces when they are becoming one long root shell."
+    },
+    {
+      "severity": "medium",
+      "kind": "target-structure-ui-endpoint-concentration",
+      "message": "3 target file(s) concentrate UI-related matrix endpoints. Check that routes are mutually rendered, back behavior is explicit, and UI evidence points at screen/page-specific builders rather than one debug-style shell."
     }
   ],
   "coverageMatrix": {
@@ -150,7 +165,7 @@
       "actualEntries": 260,
       "staleEntries": 0,
       "missingCriticalHighEntries": 0,
-      "uncoveredCriticalHighEntries": 224,
+      "uncoveredCriticalHighEntries": 192,
       "deferredCriticalHighEntries": 0,
       "deferredCriticalHighRatio": 0.0,
       "simplifiedCriticalHighEntries": 0,
@@ -165,14 +180,17 @@
       "repeatedImplementedEndpointGroups": 0,
       "broadImplementedEndpointCriticalHighEntries": 0,
       "unverifiedTestEvidenceCriticalHighEntries": 0,
-      "testEvidenceVerifiedByLatestTestGateEntries": 0,
+      "testEvidenceVerifiedByLatestTestGateEntries": 9,
       "weakEvidenceCriticalHighEntries": 0,
       "missingSourceBehaviorCriticalHighEntries": 0,
       "missingTargetBehaviorCriticalHighEntries": 0,
       "missingVerificationEvidenceCriticalHighEntries": 0,
       "parityMismatchCriticalHighEntries": 0,
       "byStatus": {
-        "planned": 260
+        "implemented": 13,
+        "not-applicable": 11,
+        "planned": 227,
+        "platform-replaced": 9
       },
       "allowedParityLevels": [
         "",
@@ -199,9 +217,9 @@
     "summary": {
       "expectedEntries": 6,
       "expectedCriticalHighEntries": 6,
-      "actualEntries": 6,
+      "actualEntries": 8,
       "missingCriticalHighEntries": 0,
-      "unresolvedCriticalHighEntries": 6,
+      "unresolvedCriticalHighEntries": 0,
       "missingDocSearchCriticalHighEntries": 0,
       "implementedWeakTargetDecisionEntries": 0,
       "implementedWeakTestEntries": 0,
@@ -214,7 +232,9 @@
       "incompleteDeferredCriticalHighEntries": 0,
       "genericDeferredCriticalHighEntries": 0,
       "byStatus": {
-        "planned": 6
+        "not-applicable": 5,
+        "platform-replaced": 1,
+        "verified-direct": 2
       },
       "allowedStatuses": [
         "deferred",
@@ -239,26 +259,47 @@
   },
   "targetStructure": {
     "summary": {
-      "productionCodeFiles": 0,
-      "productionCodeNonblankLines": 0,
-      "largestProductionCodeFileNonblankLines": 0,
-      "largeProductionCodeFiles": 0,
-      "endpointBearingFeatureRows": 0,
-      "endpointTargetFiles": 0,
-      "largestEndpointFileShare": null,
+      "productionCodeFiles": 19,
+      "productionCodeNonblankLines": 754,
+      "largestProductionCodeFileNonblankLines": 405,
+      "largeProductionCodeFiles": 1,
+      "endpointBearingFeatureRows": 22,
+      "endpointTargetFiles": 16,
+      "largestEndpointFileShare": 0.3636,
       "concentratedEndpointFiles": 0,
-      "broadShellEndpointFiles": 0,
-      "uiSurfaceFiles": 0,
-      "concentratedUiSurfaceFiles": 0,
-      "uiEndpointBearingFeatureRows": 0,
-      "uiEndpointTargetFiles": 0,
-      "concentratedUiEndpointFiles": 0,
-      "entryModuleStatus": "SKIPPED",
-      "entryRootPackage": ""
+      "broadShellEndpointFiles": 2,
+      "uiSurfaceFiles": 6,
+      "concentratedUiSurfaceFiles": 1,
+      "uiEndpointBearingFeatureRows": 22,
+      "uiEndpointTargetFiles": 16,
+      "concentratedUiEndpointFiles": 3,
+      "entryModuleStatus": "PASS",
+      "entryRootPackage": "ohos_app_cangjie_entry"
     },
     "report": "target-structure-report.md",
     "check": "target-structure-report.json",
-    "findings": []
+    "findings": [
+      {
+        "severity": "medium",
+        "kind": "target-structure-large-file",
+        "message": "1 production target code file(s) are large or dominate target production code. Use the source project structure as a responsibility reference and split overgrown files into coherent Cangjie domain/service/state modules when it improves later repairability."
+      },
+      {
+        "severity": "medium",
+        "kind": "target-structure-broad-shell-endpoints",
+        "message": "2 broad shell-like target file(s) carry many coverage endpoints. Prefer targetEndpoints that name specific business functions or extracted modules."
+      },
+      {
+        "severity": "medium",
+        "kind": "target-structure-ui-surface-concentration",
+        "message": "1 target UI surface file(s) contain many page/view/dialog/list symbols. Split obvious settings/viewer/folder/about/player/gallery surfaces when they are becoming one long root shell."
+      },
+      {
+        "severity": "medium",
+        "kind": "target-structure-ui-endpoint-concentration",
+        "message": "3 target file(s) concentrate UI-related matrix endpoints. Check that routes are mutually rendered, back behavior is explicit, and UI evidence points at screen/page-specific builders rather than one debug-style shell."
+      }
+    ]
   },
   "targetWeakeningSignals": {
     "counts": {},

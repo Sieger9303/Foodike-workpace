@@ -1,0 +1,132 @@
+Orchestrator note: this is phase implementation batch 1/2 for phase-01-project-skeleton-resources.
+Start with `translation-inputs/agent-inputs/current-agent-input.md`; its Working Set is narrowed to this batch.
+
+Focus implementationGroups:
+- `phase-01-project-skeleton-resources-resource-migration-manifest` Resource migration: manifest
+- `phase-01-project-skeleton-resources-source-behavior-app` Source behavior: app
+- `phase-01-project-skeleton-resources-source-behavior-kotlin-source` Source behavior: kotlin-source
+- `phase-01-project-skeleton-resources-resource-migration-res-values` Resource migration: res/values
+
+For this batched phase session, interpret the normal "implement every grouped item" instruction as
+"complete the groups listed above first." Implement shared target foundations only when needed by
+this batch and keep them compatible with later batches. Update matrix/capability evidence for the
+completed batch groups with concrete target endpoints, tests, fallbacks, or blockers. Do not
+bulk-close unrelated groups just because they belong to the same phase.
+
+Orchestrator note: this phase prompt was generated from a template for traceability only. Do not run workflow scripts from this note unless the user explicitly asks you to. Template file: D:\workspace\Foodike\translation-records\prompt-templates\phase-session-template.md
+Read and follow the agent protocol: D:\X2Cangjie\X2Cangjie\Kotlin2Cangjie\docs\android-kotlin-to-cangjie-agent-protocol.md
+Read task-planning.md: D:\workspace\Foodike\task-planning.md
+Read plan.md: D:\workspace\Foodike\plan.md
+Read plan.json: D:\workspace\Foodike\plan.json
+Read the HarmonyOS Cangjie checklist: D:\X2Cangjie\X2Cangjie\docs\harmonyos-cangjie-translation-checklist.md
+Read the narrow agent input brief first: {agent_input_md}
+Read the current phase task checklist when present: D:\workspace\Foodike\translation-inputs\phase-task-checklist.md
+Read the current phase platform capability pre-resolution checklist when present: D:\workspace\Foodike\translation-inputs\phase-capability-checklist.md
+
+Start only phase phase-01-project-skeleton-resources.
+
+Use `{agent_input_md}` as the primary narrow context for this phase. It is a prompt view, not authority: if it conflicts with source-coverage-matrix.json or platform-capability-check.json, the JSON authority wins. Open the full reports only when the brief points to them or when you need to resolve a contradiction. Do not skip reading plan.md and plan.json when making decisions. Modify only target project files under D:\workspace\Foodike\Foodike-Harmony that are needed for this phase, plus source-coverage-matrix.json/md and platform-capability-check.json/md when recording phase coverage status. Do not modify the source project, translation-records, workflow scripts, or generated reports other than the agent-maintained source coverage matrix and platform capability check.
+
+Use `D:\workspace\Foodike\translation-inputs\phase-task-checklist.md` as the current phase implementation contract. Start from `implementationGroups`: implement every grouped source behavior, resource migration, platform capability, verification, or architecture-risk item that belongs to this phase, then use `mustComplete` source features and platform capabilities as exact row-level checks. Keep merged target modules discoverable through precise endpoints and avoid closing unrelated features only through root/shell/whole-file endpoints. If an implementation group contains `uiContract`, treat it as static-analysis planning evidence and the minimum known UI/route/action/state contract, not a complete UI specification; re-read source files, layouts, menus, preferences, adapters, navigation/back-stack code, and resources before implementing or closing UI-related matrix rows, and preserve source-visible UI behavior even when static analysis missed it. If the checklist is empty but plan.md/plan.json assigns real work to phase phase-01-project-skeleton-resources, first update `plannedPhase` values in source-coverage-matrix.json/md and platform-capability-check.json/md, then continue the phase from that corrected scope.
+
+Use the `behaviorAudit` section inside `D:\workspace\Foodike\translation-inputs\phase-task-checklist.md` as the current phase behavior audit. Close current-phase critical/high features only after target code actually delivers the recorded source behavior. Update `sourceBehavior`, `targetBehavior`, `parityLevel`, `verificationEvidence`, `targetEndpoints`, and `tests` in source-coverage-matrix.json/md when implementation or verification changes. Do not close entries by changing status alone.
+
+Use `D:\workspace\Foodike\translation-inputs\phase-capability-checklist.md` as the current phase platform capability decision record. If it says a capability is `resolved-real-api` or `resolved-platform-replacement`, implement that real API/Kit/package/replacement path in this phase or split the real integration explicitly in the plan; do not close it with local mock data, in-memory data, sample data, synthetic shell data, or generic fallback. If the checklist is unresolved, discovery-only, or marks `compileProbeRecommended`, stop and update platform-capability-check.json/md with Cangjie-callable evidence, compile-probe evidence, or a concrete SDK/tooling blocker before implementing.
+
+When updating coverage authority records, prefer the fixed authority patch tool
+over manual block patches or ad hoc shell JSON rewrites:
+
+```sh
+C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe D:\X2Cangjie\X2Cangjie\scripts\shared\source_coverage\patch_authority.py --kind matrix --authority D:\workspace\Foodike\translation-inputs/source-coverage-matrix.json --patch <patch.json> --markdown D:\workspace\Foodike\translation-inputs/source-coverage-matrix.md --plan-json D:\workspace\Foodike\plan.json --target-project D:\workspace\Foodike\Foodike-Harmony
+C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe D:\X2Cangjie\X2Cangjie\scripts\shared\source_coverage\patch_authority.py --kind platform --authority D:\workspace\Foodike\translation-inputs/platform-capability-check.json --patch <patch.json> --markdown D:\workspace\Foodike\translation-inputs/platform-capability-check.md --plan-json D:\workspace\Foodike\plan.json --target-project D:\workspace\Foodike\Foodike-Harmony
+```
+
+Patch payloads should locate rows by exact `featureId` or `capabilityId` and use
+`set` / `append` / `remove` operations, for example:
+
+```json
+{"updates":[{"featureId":"...","set":{"status":"implemented","parityLevel":"equivalent","targetBehavior":"..."},"append":{"verificationEvidence":["..."],"targetEndpoints":["..."]}}]}
+```
+
+Do not delegate matrix grouping or matrix writes to helper/subagents. Validate
+strict JSON, field writability, status/parity compatibility, required
+evidence, plan phase ids, and target endpoint existence through the patch tool
+before syncing the Markdown view. Do not run
+generic coverage regeneration commands merely to sync Markdown if they refresh
+unrelated generated reports; the patch tool is the preferred direct
+JSON-to-Markdown mirror for matrix/capability authority updates.
+
+## Target Architecture Organization
+
+Use the source project structure as a responsibility guide, then adapt it to
+idiomatic HarmonyOS Cangjie modules. Do not mechanically mirror Android
+Activity, Fragment, Adapter, BroadcastReceiver, ContentProvider, or XML layout
+boundaries, but also do not collapse unrelated domain behavior into broad files
+such as `index.cj`, `app_state.cj`, or one all-purpose state module. If
+phase work finds source behavior scattered only because of Android framework
+glue, lifecycle, binding, or layout boundaries, merge it into clearer Cangjie
+modules when that improves readability and repairability. Keep single-file LOC
+and responsibility scope controlled. When phase work adds, repairs, or
+reorganizes production code, prefer source-domain modules such as domain models,
+repositories, data/storage services, commands/mutations, preferences/security or
+configuration services, state stores, and page composition. Thin UIAbility/page
+shell files may compose these modules, but they should not own repository,
+persistence, security, or mutation logic. For critical/high coverage entries,
+prefer targetEndpoints that identify precise modules or functions instead of
+only root views, whole files, or grouped state surfaces.
+
+## Static Analysis Limits
+
+Generated static analysis inputs are aids, not complete truth. They may miss dynamic dispatch, reflection, generated code, callback wiring, resource indirection, build-variant behavior, or platform-specific side effects. Do not rely only on static analysis when source behavior is unclear or when coverage reports indicate possible omissions. Inspect the minimal relevant source files and resources before deciding to simplify, replace, or defer behavior. For Kotlin projects, pay particular attention to Compose state, remembered state, ViewModel/repository flow, coroutine side effects, navigation arguments, and resource bindings that may be missing or only partially summarized.
+
+## Coverage And Capability Review
+
+Use `source-coverage-matrix.json/md` as the feature coverage record and `platform-capability-check.json/md` as the platform capability record. During planning and phase work, update them when target behavior is planned, implemented, tested, replaced, or explicitly deferred. For every closed critical/high source feature, record sourceBehavior, targetBehavior, parityLevel, targetEndpoints, and verificationEvidence; use `verification-results.json/md` as supporting evidence, but do not treat a build pass alone as per-feature behavior verification. Avoid marking large groups of behavior deferred or implemented-simplified without concrete source evidence, preserved-behavior explanation, blocker reason, fallback behavior, risk, and future completion path. For critical/high platform capabilities, query CangjieSkills/HarmonyOS/Cangjie API docs and HarmonyOS-Examples before choosing a direct API, platform replacement, fallback, or deferred status. When a third-party package may be needed, also query the Cangjie package index (`https://pkg.cangjie-lang.cn`) or cjpm package lookup. When checking current SDK availability, prefer pure Cangjie `.cj.d`/`.cjo` declarations under `$HOME/.cangjie-sdk/**/cangjie/api/modules` and `$HOME/.cangjie-sdk/**/cangjie/api/lib` before DevEco ETS/JS/native declarations. If a suitable HarmonyOS/Cangjie API, Kit, example, or package exists, implement it or mark it platform-replaced with evidence; do not close the capability with local mock data, in-memory simulation, sample data, or another fallback. Direct target API evidence must be callable from the HarmonyOS Cangjie target. Treat ArkTS `.d.ts` declarations, JS APIs, native C headers/libraries, and generic HarmonyOS capability docs as discovery evidence only. A Cangjie wrapper, FFI, or bridge counts as direct evidence only when it is already part of the target architecture or explicitly planned, and is verified with target endpoints plus build evidence. Do not introduce the first ArkTS/JS/native bridge merely to close coverage or capability rows during repair; if no Cangjie-callable binding is available, record the blocker, fallback behavior, risk, and future completion path. When older docs or examples show a Cangjie API but the current SDK/package index is uncertain, perform at most one bounded compile/import probe in the same target build/package context when available before deciding whether the API is usable; a bare compiler probe that lacks HarmonyOS kit import paths is not conclusive by itself. If the active-context probe fails, keep the capability fallback/deferred instead of switching to a cross-language bridge. Do not cite target test files as strong feature evidence unless `verificationEvidence` or notes record a successful target test compile/run command such as `cjpm test` or a compile-only test pass. If the target test harness is blocked, record the exact blocker and rely on direct Cangjie code endpoints for implemented rows rather than leaving unverified test files as the only evidence.
+
+
+
+
+
+## Strict Phase Coverage
+
+Before marking this phase complete, verify current-phase source features, resources, tests, state/data refresh behavior, and platform capabilities against the coverage matrix and platform capability check. Repair unexplained omissions inside the current phase. If the target platform has a suitable API, Kit, example, or package for a current-phase platform capability, use it instead of a local/mock/in-memory fallback.
+
+
+## Target Test Harness Limits
+
+Use the workflow test gate report as the default test entrypoint. Prefer the
+generated `test-build-report.md` / `test-build-report.json` and the workflow
+`test_build_report.py` command over running a bare `cjpm test`. If the report
+contains a failing command, SDK section, environment table, or handoff prompt,
+use those as the reproduction recipe. A manual `cjpm test` reproduction is
+allowed only when it reuses the reported package root, target triple, SDK, and
+env overlay, or when the report clearly shows the script failed before invoking
+`cjpm` and you are doing one bounded confirmation pass.
+
+When a target test or build harness blocks verification, time-box the investigation
+inside this session. Try only a small, well-evidenced configuration fix that is
+local to the target test/build package. If docs, examples, or one reproduction
+pass do not identify a safe fix, stop
+investigating the harness, record the exact command, failure, blocker, and risk
+in the affected coverage rows, and continue the current implementation or JSON
+matrix repair. Do not loop over unrelated examples, broad toolchain debugging,
+historical build artifacts, SDK layouts, or speculative dependency changes
+merely to turn blocked tests into passing evidence.
+
+Hard limit harness work to one focused test/build reproduction plus one focused
+environment or configuration lookup. If that still leaves missing SDK
+variables, unresolved platform kit imports, package wiring, generated build
+artifacts, or target triples, treat the harness as blocked. Do not keep editing
+`cjpm.toml`, SDK paths, target triples, or test package metadata unless the safe
+fix was identified within this budget.
+
+
+At the end of the phase:
+- review contradictions between the current target project and plan.md / plan.json;
+- remove or defer files and code introduced in this phase that are not required;
+- record unresolved state-machine, data-flow, resource, backend, or runtime issues as deferred;
+- update source-coverage-matrix.json/md for current-phase source features with status, target endpoints, tests, fallback/replacement notes, or complete deferred evidence;
+- for each closed current-phase critical/high source feature, update source-coverage-matrix.json/md with sourceBehavior, targetBehavior, parityLevel, and verificationEvidence;
+- update platform-capability-check.json/md for current-phase platform capabilities with CangjieSkills/HarmonyOS-Examples/docs/package-index search evidence, target API/library, strategy, tests, fallback, or complete deferred blocker evidence;
+- report migrated tests, generated tests, supplemental tests, test commands run, and deferred test coverage;
+- report changed files, commands run, build status if known, plan changes, deferred issues, and next recommended action.

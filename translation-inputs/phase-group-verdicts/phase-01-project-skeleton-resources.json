@@ -1,0 +1,1683 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-25T05:02:26+00:00",
+  "phase": "phase-01-project-skeleton-resources",
+  "purpose": "Phase implementation-group verdicts generated after grouped implementation batches. Use this as a bounded group-repair queue before the normal phase coverage gate.",
+  "summary": {
+    "implementationGroups": 9,
+    "repairCandidates": 0,
+    "byVerdict": {
+      "complete": 9
+    },
+    "byPriority": {
+      "critical": 8,
+      "high": 1
+    }
+  },
+  "repairPolicy": {
+    "repairableVerdicts": [
+      "incomplete",
+      "partial"
+    ],
+    "repairablePriorities": [
+      "critical",
+      "high"
+    ],
+    "blockedMeans": "explicit blocker/fallback decision exists; do not loop on this group before phase gate",
+    "completeMeans": "linked source/platform authority rows have enough behavior, parity, endpoint, and evidence data"
+  },
+  "groups": [
+    {
+      "groupId": "phase-01-project-skeleton-resources-architecture-risk-broad-target-endpoints",
+      "title": "Architecture risk: broad target endpoints",
+      "groupType": "architecture-risk",
+      "priority": "critical",
+      "verdict": "complete",
+      "repairRecommended": false,
+      "reasons": [
+        "app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m: implemented with behavior, parity, endpoint, and verification evidence"
+      ],
+      "contractDebt": [],
+      "sourcePaths": [
+        "app/build.gradle.kts",
+        "app/src/main/AndroidManifest.xml",
+        "app/src/main/res/values/themes.xml"
+      ],
+      "featureIds": [
+        "app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat",
+        "app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat",
+        "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m"
+      ],
+      "resourceInputs": [],
+      "platformCapabilityIds": [],
+      "expectedTargetDomains": [
+        "app_ability.cj",
+        "ohos_app_cangjie_entry/app/bootstrap_page.cj",
+        "entry/src/main/module.json5",
+        "base/profile/main_pages.json",
+        "base/element/color.json",
+        "base/media/icon.png"
+      ],
+      "requiredBehaviors": [
+        "HarmonyOS replaces the Android splash-screen keep-on-screen lifecycle with EntryAbility startup plus module start-window metadata: EntryAbility resolves the persisted login flag before loading content, then opens the bootstrap page whose initial route state...",
+        "EntryAbility.onCreate and onWindowStageCreate replace the launcher-activity entry point, while main_pages.json binds startup to the FoodikeBootstrap page in the HarmonyOS shell.",
+        "HarmonyOS module metadata replaces the Android splash theme by referencing the start-window background color and icon media directly from module.json5 and copied icon resources."
+      ],
+      "acceptanceEvidence": [
+        "Replace broad endpoints with precise target functions, types, resources, or tests before closing the group."
+      ],
+      "riskHints": [
+        "current evidence uses broad shell/root/whole-file endpoints"
+      ],
+      "matrixRows": [
+        {
+          "kind": "source-feature",
+          "featureId": "app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat",
+          "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "sourcePath": "app/build.gradle.kts",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "parityLevel": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onWindowStageCreate",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.currentRoute",
+            "entry/src/main/module.json5::startWindowBackground",
+            "entry/src/main/module.json5::startWindowIcon",
+            "entry/src/main/resources/base/profile/main_pages.json"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat",
+          "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "sourcePath": "app/src/main/AndroidManifest.xml",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "parityLevel": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onWindowStageCreate",
+            "entry/src/main/resources/base/profile/main_pages.json"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m",
+          "featureName": "Android resource/configuration must be mapped or explicitly deferred.",
+          "sourcePath": "app/src/main/res/values/themes.xml",
+          "importance": "high",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "parityLevel": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/module.json5::startWindowBackground",
+            "entry/src/main/module.json5::startWindowIcon",
+            "entry/src/main/resources/base/element/color.json::start_window_background",
+            "entry/src/main/resources/base/media/icon.png",
+            "AppScope/resources/base/media/icon.png"
+          ],
+          "tests": []
+        }
+      ],
+      "platformRows": [],
+      "statusCounts": {
+        "sourceFeatures": {
+          "platform-replaced": 3
+        },
+        "platformCapabilities": {}
+      }
+    },
+    {
+      "groupId": "phase-01-project-skeleton-resources-platform-capability-preferences-key-value-persistence",
+      "title": "Platform capability: Lightweight key-value session persistence",
+      "groupType": "platform-capability",
+      "priority": "critical",
+      "verdict": "complete",
+      "repairRecommended": false,
+      "reasons": [
+        "preferences-key-value-persistence: platform capability has concrete target evidence"
+      ],
+      "contractDebt": [],
+      "sourcePaths": [
+        "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
+        "app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt"
+      ],
+      "featureIds": [],
+      "resourceInputs": [],
+      "platformCapabilityIds": [
+        "preferences-key-value-persistence"
+      ],
+      "expectedTargetDomains": [
+        "ohos_app_cangjie_entry/data/session/login_preferences_service.cj",
+        "app_ability.cj"
+      ],
+      "requiredBehaviors": [
+        "LoginRepositoryImpl persists login state in Android DataStore preferences and SplashViewModel reads it to select onboarding versus home at startup.",
+        "Use HarmonyOS Preferences key-value storage for persisted login/session state and preserve startup route selection semantics.",
+        "Persist a boolean login flag across launches and resolve the initial route from that stored state before rendering the main shell."
+      ],
+      "acceptanceEvidence": [
+        "Record targetCapabilitySearch, targetApiOrLibrary, targetStrategy, targetEndpoints, and tests or validation notes.",
+        "Direct platform status requires Cangjie-callable API, package, wrapper, FFI, or bridge evidence.",
+        "Fallback or deferred status requires a concrete blocker plus fallback/risk/future path.",
+        "Referenced tests need a latest PASS, focused manual/emulator evidence, or recorded harness blocker."
+      ],
+      "riskHints": [],
+      "matrixRows": [],
+      "platformRows": [
+        {
+          "kind": "platform-capability",
+          "capabilityId": "preferences-key-value-persistence",
+          "capabilityName": "Lightweight key-value session persistence",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "verified-direct",
+          "verdict": "complete",
+          "reasons": [
+            "platform capability has concrete target evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::readLoginState",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::toggleLoginState",
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate"
+          ],
+          "tests": [
+            "build_hap_report.py --phase phase-01-project-skeleton-resources"
+          ]
+        }
+      ],
+      "statusCounts": {
+        "sourceFeatures": {},
+        "platformCapabilities": {
+          "verified-direct": 1
+        }
+      }
+    },
+    {
+      "groupId": "phase-01-project-skeleton-resources-platform-capability-startup-route-and-window-lifecycle",
+      "title": "Platform capability: Startup route gating and main window lifecycle",
+      "groupType": "platform-capability",
+      "priority": "critical",
+      "verdict": "complete",
+      "repairRecommended": false,
+      "reasons": [
+        "startup-route-and-window-lifecycle: platform capability has concrete target evidence"
+      ],
+      "contractDebt": [],
+      "sourcePaths": [
+        "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
+        "app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+        "app/src/main/AndroidManifest.xml",
+        "app/src/main/res/values/themes.xml",
+        "app/src/main/java/com/example/foodike/FoodikeApp.kt"
+      ],
+      "featureIds": [],
+      "resourceInputs": [],
+      "platformCapabilityIds": [
+        "startup-route-and-window-lifecycle"
+      ],
+      "expectedTargetDomains": [
+        "app_ability.cj",
+        "ability_stage.cj",
+        "entry/src/main/module.json5"
+      ],
+      "requiredBehaviors": [
+        "App startup is gated by splash/loading state and chooses onboarding or home before normal navigation shell rendering; activity/application/theme wiring participates in this behavior.",
+        "Map Android splash/startup behavior to HarmonyOS UIAbility and WindowStage startup flow while preserving delayed initial route selection and shell setup.",
+        "Do not show the main routed experience until persisted session state is resolved; then open onboarding or home with equivalent main-window content loading behavior."
+      ],
+      "acceptanceEvidence": [
+        "Record targetCapabilitySearch, targetApiOrLibrary, targetStrategy, targetEndpoints, and tests or validation notes.",
+        "Direct platform status requires Cangjie-callable API, package, wrapper, FFI, or bridge evidence.",
+        "Fallback or deferred status requires a concrete blocker plus fallback/risk/future path.",
+        "Referenced tests need a latest PASS, focused manual/emulator evidence, or recorded harness blocker."
+      ],
+      "riskHints": [],
+      "matrixRows": [],
+      "platformRows": [
+        {
+          "kind": "platform-capability",
+          "capabilityId": "startup-route-and-window-lifecycle",
+          "capabilityName": "Startup route gating and main window lifecycle",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "platform capability has concrete target evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onWindowStageCreate",
+            "entry/src/main/cangjie/ability_stage.cj::FoodikeAbilityStage.onCreate",
+            "entry/src/main/module.json5"
+          ],
+          "tests": [
+            "build_hap_report.py --phase phase-01-project-skeleton-resources"
+          ]
+        }
+      ],
+      "statusCounts": {
+        "sourceFeatures": {},
+        "platformCapabilities": {
+          "platform-replaced": 1
+        }
+      }
+    },
+    {
+      "groupId": "phase-01-project-skeleton-resources-resource-migration-manifest",
+      "title": "Resource migration: manifest",
+      "groupType": "resource-migration",
+      "priority": "critical",
+      "verdict": "complete",
+      "repairRecommended": false,
+      "reasons": [
+        "app-src-main-androidmanifest-xml-c7c6907eb1-004-android-platform-component-lifecycle-suc: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-src-main-androidmanifest-xml-e5fadea668-001-android-resource-configuration-must-be-m: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-src-main-androidmanifest-xml-525ca85433-002-intent-uri-bundle-deeplink-or-cross-scre: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-src-main-androidmanifest-xml-dcc4612e71-003-runtime-permission-request-permission-re: not-applicable has source/notes explanation",
+        "app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat: implemented with behavior, parity, endpoint, and verification evidence",
+        "localization-resources: platform capability has concrete target evidence",
+        "startup-route-and-window-lifecycle: platform capability has concrete target evidence"
+      ],
+      "contractDebt": [],
+      "sourcePaths": [
+        "app/src/main/AndroidManifest.xml"
+      ],
+      "featureIds": [
+        "app-src-main-androidmanifest-xml-c7c6907eb1-004-android-platform-component-lifecycle-suc",
+        "app-src-main-androidmanifest-xml-e5fadea668-001-android-resource-configuration-must-be-m",
+        "app-src-main-androidmanifest-xml-525ca85433-002-intent-uri-bundle-deeplink-or-cross-scre",
+        "app-src-main-androidmanifest-xml-dcc4612e71-003-runtime-permission-request-permission-re",
+        "app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat"
+      ],
+      "resourceInputs": [
+        "{'sourcePath': 'app/src/main/AndroidManifest.xml', 'category': 'android-manifest', 'featureId': 'app-src-main-androidmanifest-xml-c7c6907eb1-004-android-platform-component-lifecycle-suc', 'migrationMode': 'platform-configuration-or-documented-replacement', 'semantics': 'AndroidManifest.xml declares the Application class and MainActivity lifecycle entry surfaces for the Android app.'}",
+        "{'sourcePath': 'app/src/main/AndroidManifest.xml', 'category': 'android-manifest', 'featureId': 'app-src-main-androidmanifest-xml-e5fadea668-001-android-resource-configuration-must-be-m', 'migrationMode': 'platform-configuration-or-documented-replacement', 'semantics': 'AndroidManifest.xml binds application icon, app label, bundle identity, startup theme, and launcher activity resources.'}",
+        "{'sourcePath': 'app/src/main/AndroidManifest.xml', 'category': 'android-manifest', 'featureId': 'app-src-main-androidmanifest-xml-525ca85433-002-intent-uri-bundle-deeplink-or-cross-scre', 'migrationMode': 'platform-configuration-or-documented-replacement', 'semantics': 'AndroidManifest.xml declares MainActivity as the exported launcher activity through the MAIN/LAUNCHER intent filter.'}",
+        "{'sourcePath': 'app/src/main/AndroidManifest.xml', 'category': 'android-manifest', 'featureId': 'app-src-main-androidmanifest-xml-dcc4612e71-003-runtime-permission-request-permission-re', 'migrationMode': 'platform-configuration-or-documented-replacement', 'semantics': 'AndroidManifest.xml contains no uses-permission declarations or permission-specific activity/result wiring.'}",
+        "{'sourcePath': 'app/src/main/AndroidManifest.xml', 'category': 'android-manifest', 'featureId': 'app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat', 'migrationMode': 'platform-configuration-or-documented-replacement', 'semantics': 'The manifest-launcher MainActivity serves as the app entry point and hosts splash-driven startup initialization.'}"
+      ],
+      "platformCapabilityIds": [
+        "localization-resources",
+        "startup-route-and-window-lifecycle"
+      ],
+      "expectedTargetDomains": [
+        "ability_stage.cj",
+        "app_ability.cj",
+        "AppScope/app.json5",
+        "entry/src/main/module.json5",
+        "base/element/color.json",
+        "base/profile/main_pages.json",
+        "base/element/string.json"
+      ],
+      "requiredBehaviors": [
+        "AndroidManifest.xml declares the Application class and MainActivity lifecycle entry surfaces for the Android app.",
+        "AndroidManifest.xml binds application icon, app label, bundle identity, startup theme, and launcher activity resources.",
+        "AndroidManifest.xml declares MainActivity as the exported launcher activity through the MAIN/LAUNCHER intent filter.",
+        "AndroidManifest.xml contains no uses-permission declarations or permission-specific activity/result wiring.",
+        "The manifest-launcher MainActivity serves as the app entry point and hosts splash-driven startup initialization."
+      ],
+      "acceptanceEvidence": [
+        "Closed critical/high features must record sourceBehavior, targetBehavior, parityLevel, targetEndpoints, and verificationEvidence.",
+        "Build pass alone is not per-feature verification.",
+        "Resource inputs must be implemented, mapped to equivalent target behavior, or closed with a specific deferred/replaced reason.",
+        "Related platform capabilities must cite targetCapabilitySearch and a Cangjie-callable API, verified replacement, fallback blocker, or deferred blocker.",
+        "Replace root/shell/whole-file endpoints with precise target functions, types, resource files, or tests before closure."
+      ],
+      "riskHints": [
+        "critical/high behavior cannot close on build pass alone",
+        "resource semantics must be mapped to target resources, UI/components, or a specific replacement",
+        "broad shell endpoint risk",
+        "related platform capability must be resolved with Cangjie-callable API, replacement, fallback blocker, or deferred evidence"
+      ],
+      "matrixRows": [
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-androidmanifest-xml-c7c6907eb1-004-android-platform-component-lifecycle-suc",
+          "featureName": "Android platform component lifecycle such as service, receiver, provider, or application.",
+          "sourcePath": "app/src/main/AndroidManifest.xml",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "parityLevel": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/cangjie/ability_stage.cj::FoodikeAbilityStage.onCreate",
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onWindowStageCreate"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-androidmanifest-xml-e5fadea668-001-android-resource-configuration-must-be-m",
+          "featureName": "Android resource/configuration must be mapped or explicitly deferred.",
+          "sourcePath": "app/src/main/AndroidManifest.xml",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "implemented",
+          "parityLevel": "equivalent",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "AppScope/app.json5::bundleName",
+            "AppScope/app.json5::icon",
+            "AppScope/app.json5::label",
+            "entry/src/main/module.json5::icon",
+            "entry/src/main/module.json5::label",
+            "entry/src/main/module.json5::startWindowBackground",
+            "entry/src/main/module.json5::startWindowIcon",
+            "entry/src/main/resources/base/element/color.json::start_window_background"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-androidmanifest-xml-525ca85433-002-intent-uri-bundle-deeplink-or-cross-scre",
+          "featureName": "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "sourcePath": "app/src/main/AndroidManifest.xml",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "implemented",
+          "parityLevel": "equivalent",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/module.json5::exported",
+            "entry/src/main/module.json5::skills",
+            "entry/src/main/module.json5::mainElement",
+            "entry/src/main/resources/base/profile/main_pages.json::pages/FoodikeBootstrap"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-androidmanifest-xml-dcc4612e71-003-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "sourcePath": "app/src/main/AndroidManifest.xml",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "not-applicable",
+          "parityLevel": "not-applicable",
+          "verdict": "complete",
+          "reasons": [
+            "not-applicable has source/notes explanation"
+          ],
+          "targetEndpoints": [],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat",
+          "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "sourcePath": "app/src/main/AndroidManifest.xml",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "parityLevel": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onWindowStageCreate",
+            "entry/src/main/resources/base/profile/main_pages.json"
+          ],
+          "tests": []
+        }
+      ],
+      "platformRows": [
+        {
+          "kind": "platform-capability",
+          "capabilityId": "localization-resources",
+          "capabilityName": "Localized resources and formatted strings",
+          "importance": "high",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "verified-direct",
+          "verdict": "complete",
+          "reasons": [
+            "platform capability has concrete target evidence"
+          ],
+          "targetEndpoints": [
+            "AppScope/app.json5",
+            "AppScope/resources/base/element/string.json",
+            "AppScope/resources/base/element/color.json",
+            "entry/src/main/module.json5",
+            "entry/src/main/resources/base/element/string.json",
+            "entry/src/main/resources/base/element/color.json",
+            "entry/src/main/resources/base/profile/main_pages.json"
+          ],
+          "tests": [
+            "build_hap_report.py --phase phase-01-project-skeleton-resources"
+          ]
+        },
+        {
+          "kind": "platform-capability",
+          "capabilityId": "startup-route-and-window-lifecycle",
+          "capabilityName": "Startup route gating and main window lifecycle",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "platform capability has concrete target evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onWindowStageCreate",
+            "entry/src/main/cangjie/ability_stage.cj::FoodikeAbilityStage.onCreate",
+            "entry/src/main/module.json5"
+          ],
+          "tests": [
+            "build_hap_report.py --phase phase-01-project-skeleton-resources"
+          ]
+        }
+      ],
+      "statusCounts": {
+        "sourceFeatures": {
+          "implemented": 2,
+          "not-applicable": 1,
+          "platform-replaced": 2
+        },
+        "platformCapabilities": {
+          "platform-replaced": 1,
+          "verified-direct": 1
+        }
+      }
+    },
+    {
+      "groupId": "phase-01-project-skeleton-resources-resource-migration-res-values",
+      "title": "Resource migration: res/values",
+      "groupType": "resource-migration",
+      "priority": "critical",
+      "verdict": "complete",
+      "repairRecommended": false,
+      "reasons": [
+        "app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re: not-applicable has source/notes explanation",
+        "localization-resources: platform capability has concrete target evidence",
+        "startup-route-and-window-lifecycle: platform capability has concrete target evidence"
+      ],
+      "contractDebt": [],
+      "sourcePaths": [
+        "app/src/main/res/values/colors.xml",
+        "app/src/main/res/values/themes.xml"
+      ],
+      "featureIds": [
+        "app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma",
+        "app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m",
+        "app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma",
+        "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m",
+        "app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re"
+      ],
+      "resourceInputs": [
+        "{'sourcePath': 'app/src/main/res/values/colors.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma', 'migrationMode': 'user-visible-resource', 'semantics': 'colors.xml acts as a shared Android values file for reusable color constants.'}",
+        "{'sourcePath': 'app/src/main/res/values/colors.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m', 'migrationMode': 'user-visible-resource', 'semantics': 'colors.xml defines the white, black, and green color resources used by the splash and core app chrome.'}",
+        "{'sourcePath': 'app/src/main/res/values/themes.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma', 'migrationMode': 'user-visible-resource', 'semantics': 'themes.xml centralizes app-wide Android theme values for splash/background/app chrome.'}",
+        "{'sourcePath': 'app/src/main/res/values/themes.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m', 'migrationMode': 'user-visible-resource', 'semantics': 'themes.xml defines Theme.SplashScreenTheme with a white splash background, splash icon, and a post-splash theme handoff.'}",
+        "{'sourcePath': 'app/src/main/res/values/themes.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re', 'migrationMode': 'user-visible-resource', 'semantics': 'themes.xml contains only theme resource values and no runtime-permission behavior.'}"
+      ],
+      "platformCapabilityIds": [
+        "localization-resources",
+        "startup-route-and-window-lifecycle"
+      ],
+      "expectedTargetDomains": [
+        "base/element/color.json",
+        "entry/src/main/module.json5",
+        "base/profile/main_pages.json",
+        "base/media/icon.png",
+        "AppScope/app.json5",
+        "base/element/string.json",
+        "app_ability.cj",
+        "ability_stage.cj"
+      ],
+      "requiredBehaviors": [
+        "colors.xml acts as a shared Android values file for reusable color constants.",
+        "colors.xml defines the white, black, and green color resources used by the splash and core app chrome.",
+        "themes.xml centralizes app-wide Android theme values for splash/background/app chrome.",
+        "themes.xml defines Theme.SplashScreenTheme with a white splash background, splash icon, and a post-splash theme handoff.",
+        "themes.xml contains only theme resource values and no runtime-permission behavior."
+      ],
+      "acceptanceEvidence": [
+        "Closed critical/high features must record sourceBehavior, targetBehavior, parityLevel, targetEndpoints, and verificationEvidence.",
+        "Build pass alone is not per-feature verification.",
+        "Resource inputs must be implemented, mapped to equivalent target behavior, or closed with a specific deferred/replaced reason.",
+        "Related platform capabilities must cite targetCapabilitySearch and a Cangjie-callable API, verified replacement, fallback blocker, or deferred blocker.",
+        "Replace root/shell/whole-file endpoints with precise target functions, types, resource files, or tests before closure."
+      ],
+      "riskHints": [
+        "critical/high behavior cannot close on build pass alone",
+        "resource semantics must be mapped to target resources, UI/components, or a specific replacement",
+        "broad shell endpoint risk",
+        "related platform capability must be resolved with Cangjie-callable API, replacement, fallback blocker, or deferred evidence"
+      ],
+      "matrixRows": [
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma",
+          "featureName": "Android android-values file should be mapped to target resources, components, or documented deferred scope.",
+          "sourcePath": "app/src/main/res/values/colors.xml",
+          "importance": "high",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "implemented",
+          "parityLevel": "equivalent",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/resources/base/element/color.json::white",
+            "entry/src/main/resources/base/element/color.json::black",
+            "entry/src/main/resources/base/element/color.json::LightGreen",
+            "entry/src/main/resources/base/element/color.json::DarkGreen",
+            "entry/src/main/resources/base/element/color.json::start_window_background",
+            "AppScope/resources/base/element/color.json::white",
+            "AppScope/resources/base/element/color.json::black",
+            "AppScope/resources/base/element/color.json::LightGreen",
+            "AppScope/resources/base/element/color.json::DarkGreen",
+            "AppScope/resources/base/element/color.json::start_window_background"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m",
+          "featureName": "Android resource/configuration must be mapped or explicitly deferred.",
+          "sourcePath": "app/src/main/res/values/colors.xml",
+          "importance": "high",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "implemented",
+          "parityLevel": "equivalent",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/resources/base/element/color.json::white",
+            "entry/src/main/resources/base/element/color.json::black",
+            "entry/src/main/resources/base/element/color.json::LightGreen",
+            "entry/src/main/resources/base/element/color.json::DarkGreen",
+            "AppScope/resources/base/element/color.json::white",
+            "AppScope/resources/base/element/color.json::black",
+            "AppScope/resources/base/element/color.json::LightGreen",
+            "AppScope/resources/base/element/color.json::DarkGreen",
+            "entry/src/main/module.json5::startWindowBackground"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma",
+          "featureName": "Android android-values file should be mapped to target resources, components, or documented deferred scope.",
+          "sourcePath": "app/src/main/res/values/themes.xml",
+          "importance": "high",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "parityLevel": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/module.json5::startWindowBackground",
+            "entry/src/main/module.json5::pages",
+            "entry/src/main/resources/base/element/color.json::start_window_background",
+            "entry/src/main/resources/base/profile/main_pages.json::pages/FoodikeBootstrap"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m",
+          "featureName": "Android resource/configuration must be mapped or explicitly deferred.",
+          "sourcePath": "app/src/main/res/values/themes.xml",
+          "importance": "high",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "parityLevel": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/module.json5::startWindowBackground",
+            "entry/src/main/module.json5::startWindowIcon",
+            "entry/src/main/resources/base/element/color.json::start_window_background",
+            "entry/src/main/resources/base/media/icon.png",
+            "AppScope/resources/base/media/icon.png"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "sourcePath": "app/src/main/res/values/themes.xml",
+          "importance": "high",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "not-applicable",
+          "parityLevel": "not-applicable",
+          "verdict": "complete",
+          "reasons": [
+            "not-applicable has source/notes explanation"
+          ],
+          "targetEndpoints": [],
+          "tests": []
+        }
+      ],
+      "platformRows": [
+        {
+          "kind": "platform-capability",
+          "capabilityId": "localization-resources",
+          "capabilityName": "Localized resources and formatted strings",
+          "importance": "high",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "verified-direct",
+          "verdict": "complete",
+          "reasons": [
+            "platform capability has concrete target evidence"
+          ],
+          "targetEndpoints": [
+            "AppScope/app.json5",
+            "AppScope/resources/base/element/string.json",
+            "AppScope/resources/base/element/color.json",
+            "entry/src/main/module.json5",
+            "entry/src/main/resources/base/element/string.json",
+            "entry/src/main/resources/base/element/color.json",
+            "entry/src/main/resources/base/profile/main_pages.json"
+          ],
+          "tests": [
+            "build_hap_report.py --phase phase-01-project-skeleton-resources"
+          ]
+        },
+        {
+          "kind": "platform-capability",
+          "capabilityId": "startup-route-and-window-lifecycle",
+          "capabilityName": "Startup route gating and main window lifecycle",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "platform capability has concrete target evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onWindowStageCreate",
+            "entry/src/main/cangjie/ability_stage.cj::FoodikeAbilityStage.onCreate",
+            "entry/src/main/module.json5"
+          ],
+          "tests": [
+            "build_hap_report.py --phase phase-01-project-skeleton-resources"
+          ]
+        }
+      ],
+      "statusCounts": {
+        "sourceFeatures": {
+          "implemented": 2,
+          "not-applicable": 1,
+          "platform-replaced": 2
+        },
+        "platformCapabilities": {
+          "platform-replaced": 1,
+          "verified-direct": 1
+        }
+      }
+    },
+    {
+      "groupId": "phase-01-project-skeleton-resources-source-behavior-app",
+      "title": "Source behavior: app",
+      "groupType": "source-behavior",
+      "priority": "critical",
+      "verdict": "complete",
+      "repairRecommended": false,
+      "reasons": [
+        "app-build-gradle-kts-52a26dc1e9-003-android-platform-component-lifecycle-suc: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-build-gradle-kts-ab52d0a44d-001-navigation-surface-menu-drawer-toolbar-o: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-build-gradle-kts-329cf39b55-002-runtime-permission-request-permission-re: not-applicable has source/notes explanation",
+        "app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-build-gradle-kts-aa010bdd3d-005-settings-preferences-option-toggles-or-c: implemented with behavior, parity, endpoint, and verification evidence"
+      ],
+      "contractDebt": [],
+      "sourcePaths": [
+        "app/build.gradle.kts"
+      ],
+      "featureIds": [
+        "app-build-gradle-kts-52a26dc1e9-003-android-platform-component-lifecycle-suc",
+        "app-build-gradle-kts-ab52d0a44d-001-navigation-surface-menu-drawer-toolbar-o",
+        "app-build-gradle-kts-329cf39b55-002-runtime-permission-request-permission-re",
+        "app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat",
+        "app-build-gradle-kts-aa010bdd3d-005-settings-preferences-option-toggles-or-c"
+      ],
+      "resourceInputs": [],
+      "platformCapabilityIds": [],
+      "expectedTargetDomains": [
+        "entry/cjpm.toml",
+        "AppScope/app.json5",
+        "entry/src/main/module.json5",
+        "ohos_app_cangjie_entry/app/app_router.cj",
+        "ohos_app_cangjie_entry/app/bootstrap_page.cj",
+        "app_ability.cj",
+        "base/profile/main_pages.json",
+        "ohos_app_cangjie_entry/data/session/login_preferences_service.cj"
+      ],
+      "requiredBehaviors": [
+        "Source app/build.gradle.kts configures an Android application/activity app with Compose, Hilt, and splash dependencies that feed the Android lifecycle entry path.",
+        "Source Gradle config enables Compose, Navigation Compose, and accompanist dependencies that support the app route shell with onboarding, login, home, history, cart, profile, and restaurant-detail destinations plus bottom-bar/cart commands.",
+        "Source app/build.gradle.kts contains no dependency or plugin wiring for a real runtime-permission flow beyond standard Android application setup.",
+        "MainActivity installs the Android splash screen, keeps it visible while SplashViewModel resolves the persisted login flag, then composes navigation with the resolved start destination.",
+        "Source DataStore preferences wiring backs a persisted boolean login flag that startup/login/profile flows read and toggle."
+      ],
+      "acceptanceEvidence": [
+        "Closed critical/high features must record sourceBehavior, targetBehavior, parityLevel, targetEndpoints, and verificationEvidence.",
+        "Build pass alone is not per-feature verification.",
+        "Replace root/shell/whole-file endpoints with precise target functions, types, resource files, or tests before closure."
+      ],
+      "riskHints": [
+        "critical/high behavior cannot close on build pass alone",
+        "broad shell endpoint risk"
+      ],
+      "matrixRows": [
+        {
+          "kind": "source-feature",
+          "featureId": "app-build-gradle-kts-52a26dc1e9-003-android-platform-component-lifecycle-suc",
+          "featureName": "Android platform component lifecycle such as service, receiver, provider, or application.",
+          "sourcePath": "app/build.gradle.kts",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "parityLevel": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/cjpm.toml::name",
+            "entry/cjpm.toml::profile.build.combined.ohos_app_cangjie_entry",
+            "AppScope/app.json5::bundleName",
+            "entry/src/main/module.json5::srcEntry",
+            "entry/src/main/module.json5::mainElement"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-build-gradle-kts-ab52d0a44d-001-navigation-surface-menu-drawer-toolbar-o",
+          "featureName": "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "sourcePath": "app/build.gradle.kts",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "implemented",
+          "parityLevel": "equivalent",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::RouteId",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::routePath",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.currentRoute",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.navigateTo",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.showBottomShell",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.runPrimaryAction"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-build-gradle-kts-329cf39b55-002-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "sourcePath": "app/build.gradle.kts",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "not-applicable",
+          "parityLevel": "not-applicable",
+          "verdict": "complete",
+          "reasons": [
+            "not-applicable has source/notes explanation"
+          ],
+          "targetEndpoints": [],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat",
+          "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "sourcePath": "app/build.gradle.kts",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "parityLevel": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onWindowStageCreate",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.currentRoute",
+            "entry/src/main/module.json5::startWindowBackground",
+            "entry/src/main/module.json5::startWindowIcon",
+            "entry/src/main/resources/base/profile/main_pages.json"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-build-gradle-kts-aa010bdd3d-005-settings-preferences-option-toggles-or-c",
+          "featureName": "Settings/preferences, option toggles, or configuration state behavior.",
+          "sourcePath": "app/build.gradle.kts",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "implemented",
+          "parityLevel": "equivalent",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::LoginPreferencesService.preferenceFileName",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::LoginPreferencesService.preferenceKey",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::LoginPreferencesService.readLoginState",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::LoginPreferencesService.toggleLoginState"
+          ],
+          "tests": []
+        }
+      ],
+      "platformRows": [],
+      "statusCounts": {
+        "sourceFeatures": {
+          "implemented": 2,
+          "not-applicable": 1,
+          "platform-replaced": 2
+        },
+        "platformCapabilities": {}
+      }
+    },
+    {
+      "groupId": "phase-01-project-skeleton-resources-source-behavior-kotlin-source",
+      "title": "Source behavior: kotlin-source",
+      "groupType": "source-behavior",
+      "priority": "critical",
+      "verdict": "complete",
+      "repairRecommended": false,
+      "reasons": [
+        "build-gradle-kts-6cd8a326ab-002-android-platform-component-lifecycle-suc: implemented with behavior, parity, endpoint, and verification evidence",
+        "build-gradle-kts-e6afb1cfd2-001-runtime-permission-request-permission-re: not-applicable has source/notes explanation",
+        "build-gradle-kts-2f9b07ef27-003-settings-preferences-option-toggles-or-c: not-applicable has source/notes explanation"
+      ],
+      "contractDebt": [],
+      "sourcePaths": [
+        "build.gradle.kts"
+      ],
+      "featureIds": [
+        "build-gradle-kts-6cd8a326ab-002-android-platform-component-lifecycle-suc",
+        "build-gradle-kts-e6afb1cfd2-001-runtime-permission-request-permission-re",
+        "build-gradle-kts-2f9b07ef27-003-settings-preferences-option-toggles-or-c"
+      ],
+      "resourceInputs": [],
+      "platformCapabilityIds": [],
+      "expectedTargetDomains": [
+        "build-profile.json5",
+        "hvigorfile.ts",
+        "entry/cjpm.toml"
+      ],
+      "requiredBehaviors": [
+        "The top-level Gradle build config supplies shared Android plugin wiring for the application lifecycle build pipeline.",
+        "The top-level build.gradle.kts only manages shared plugins and does not define a runtime-permission behavior path.",
+        "The top-level build.gradle.kts does not own settings/preferences behavior; it only shares plugin configuration."
+      ],
+      "acceptanceEvidence": [
+        "Closed critical/high features must record sourceBehavior, targetBehavior, parityLevel, targetEndpoints, and verificationEvidence.",
+        "Build pass alone is not per-feature verification."
+      ],
+      "riskHints": [
+        "critical/high behavior cannot close on build pass alone"
+      ],
+      "matrixRows": [
+        {
+          "kind": "source-feature",
+          "featureId": "build-gradle-kts-6cd8a326ab-002-android-platform-component-lifecycle-suc",
+          "featureName": "Android platform component lifecycle such as service, receiver, provider, or application.",
+          "sourcePath": "build.gradle.kts",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "parityLevel": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "build-profile.json5::modules",
+            "build-profile.json5::products",
+            "hvigorfile.ts::appTasks",
+            "entry/cjpm.toml::name",
+            "entry/cjpm.toml::profile.build.combined.ohos_app_cangjie_entry"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "build-gradle-kts-e6afb1cfd2-001-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "sourcePath": "build.gradle.kts",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "not-applicable",
+          "parityLevel": "not-applicable",
+          "verdict": "complete",
+          "reasons": [
+            "not-applicable has source/notes explanation"
+          ],
+          "targetEndpoints": [],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "build-gradle-kts-2f9b07ef27-003-settings-preferences-option-toggles-or-c",
+          "featureName": "Settings/preferences, option toggles, or configuration state behavior.",
+          "sourcePath": "build.gradle.kts",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "not-applicable",
+          "parityLevel": "not-applicable",
+          "verdict": "complete",
+          "reasons": [
+            "not-applicable has source/notes explanation"
+          ],
+          "targetEndpoints": [],
+          "tests": []
+        }
+      ],
+      "platformRows": [],
+      "statusCounts": {
+        "sourceFeatures": {
+          "not-applicable": 2,
+          "platform-replaced": 1
+        },
+        "platformCapabilities": {}
+      }
+    },
+    {
+      "groupId": "phase-01-project-skeleton-resources-verification-phase-tests-and-evidence",
+      "title": "Verification and evidence policy",
+      "groupType": "verification",
+      "priority": "critical",
+      "verdict": "complete",
+      "repairRecommended": false,
+      "reasons": [
+        "app-build-gradle-kts-ab52d0a44d-001-navigation-surface-menu-drawer-toolbar-o: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-build-gradle-kts-329cf39b55-002-runtime-permission-request-permission-re: not-applicable has source/notes explanation",
+        "app-build-gradle-kts-52a26dc1e9-003-android-platform-component-lifecycle-suc: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-build-gradle-kts-aa010bdd3d-005-settings-preferences-option-toggles-or-c: implemented with behavior, parity, endpoint, and verification evidence",
+        "build-gradle-kts-e6afb1cfd2-001-runtime-permission-request-permission-re: not-applicable has source/notes explanation",
+        "build-gradle-kts-6cd8a326ab-002-android-platform-component-lifecycle-suc: implemented with behavior, parity, endpoint, and verification evidence",
+        "build-gradle-kts-2f9b07ef27-003-settings-preferences-option-toggles-or-c: not-applicable has source/notes explanation",
+        "app-src-main-androidmanifest-xml-e5fadea668-001-android-resource-configuration-must-be-m: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-src-main-androidmanifest-xml-525ca85433-002-intent-uri-bundle-deeplink-or-cross-scre: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-src-main-androidmanifest-xml-dcc4612e71-003-runtime-permission-request-permission-re: not-applicable has source/notes explanation",
+        "app-src-main-androidmanifest-xml-c7c6907eb1-004-android-platform-component-lifecycle-suc: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re: not-applicable has source/notes explanation",
+        "app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m: implemented with behavior, parity, endpoint, and verification evidence",
+        "app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma: implemented with behavior, parity, endpoint, and verification evidence",
+        "localization-resources: platform capability has concrete target evidence",
+        "preferences-key-value-persistence: platform capability has concrete target evidence",
+        "startup-route-and-window-lifecycle: platform capability has concrete target evidence"
+      ],
+      "contractDebt": [],
+      "sourcePaths": [
+        "app/build.gradle.kts",
+        "build.gradle.kts",
+        "app/src/main/AndroidManifest.xml",
+        "app/src/main/res/values/themes.xml",
+        "app/src/main/res/values/colors.xml"
+      ],
+      "featureIds": [
+        "app-build-gradle-kts-ab52d0a44d-001-navigation-surface-menu-drawer-toolbar-o",
+        "app-build-gradle-kts-329cf39b55-002-runtime-permission-request-permission-re",
+        "app-build-gradle-kts-52a26dc1e9-003-android-platform-component-lifecycle-suc",
+        "app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat",
+        "app-build-gradle-kts-aa010bdd3d-005-settings-preferences-option-toggles-or-c",
+        "build-gradle-kts-e6afb1cfd2-001-runtime-permission-request-permission-re",
+        "build-gradle-kts-6cd8a326ab-002-android-platform-component-lifecycle-suc",
+        "build-gradle-kts-2f9b07ef27-003-settings-preferences-option-toggles-or-c",
+        "app-src-main-androidmanifest-xml-e5fadea668-001-android-resource-configuration-must-be-m",
+        "app-src-main-androidmanifest-xml-525ca85433-002-intent-uri-bundle-deeplink-or-cross-scre",
+        "app-src-main-androidmanifest-xml-dcc4612e71-003-runtime-permission-request-permission-re",
+        "app-src-main-androidmanifest-xml-c7c6907eb1-004-android-platform-component-lifecycle-suc",
+        "app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat",
+        "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m",
+        "app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re",
+        "app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma",
+        "app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m",
+        "app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma"
+      ],
+      "resourceInputs": [],
+      "platformCapabilityIds": [
+        "localization-resources",
+        "preferences-key-value-persistence",
+        "startup-route-and-window-lifecycle"
+      ],
+      "expectedTargetDomains": [],
+      "requiredBehaviors": [
+        "Verify the phase's implemented behavior with focused tests, manual/emulator evidence, or explicit verificationEvidence."
+      ],
+      "acceptanceEvidence": [
+        "Update source-coverage-matrix.json after implementation with targetEndpoints, tests, parityLevel, and verificationEvidence.",
+        "If tests cannot run, record the concrete harness blocker instead of claiming test PASS."
+      ],
+      "riskHints": [
+        "target tests only count as strong evidence when backed by latest test gate PASS or explicit harness blocker",
+        "build pass alone does not close per-feature behavior",
+        "manual review evidence must point to concrete target endpoints"
+      ],
+      "matrixRows": [
+        {
+          "kind": "source-feature",
+          "featureId": "app-build-gradle-kts-ab52d0a44d-001-navigation-surface-menu-drawer-toolbar-o",
+          "featureName": "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "sourcePath": "app/build.gradle.kts",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "implemented",
+          "parityLevel": "equivalent",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::RouteId",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::routePath",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.currentRoute",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.navigateTo",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.showBottomShell",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.runPrimaryAction"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-build-gradle-kts-329cf39b55-002-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "sourcePath": "app/build.gradle.kts",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "not-applicable",
+          "parityLevel": "not-applicable",
+          "verdict": "complete",
+          "reasons": [
+            "not-applicable has source/notes explanation"
+          ],
+          "targetEndpoints": [],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-build-gradle-kts-52a26dc1e9-003-android-platform-component-lifecycle-suc",
+          "featureName": "Android platform component lifecycle such as service, receiver, provider, or application.",
+          "sourcePath": "app/build.gradle.kts",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "parityLevel": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/cjpm.toml::name",
+            "entry/cjpm.toml::profile.build.combined.ohos_app_cangjie_entry",
+            "AppScope/app.json5::bundleName",
+            "entry/src/main/module.json5::srcEntry",
+            "entry/src/main/module.json5::mainElement"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat",
+          "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "sourcePath": "app/build.gradle.kts",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "parityLevel": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onWindowStageCreate",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.currentRoute",
+            "entry/src/main/module.json5::startWindowBackground",
+            "entry/src/main/module.json5::startWindowIcon",
+            "entry/src/main/resources/base/profile/main_pages.json"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-build-gradle-kts-aa010bdd3d-005-settings-preferences-option-toggles-or-c",
+          "featureName": "Settings/preferences, option toggles, or configuration state behavior.",
+          "sourcePath": "app/build.gradle.kts",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "implemented",
+          "parityLevel": "equivalent",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::LoginPreferencesService.preferenceFileName",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::LoginPreferencesService.preferenceKey",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::LoginPreferencesService.readLoginState",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::LoginPreferencesService.toggleLoginState"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "build-gradle-kts-e6afb1cfd2-001-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "sourcePath": "build.gradle.kts",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "not-applicable",
+          "parityLevel": "not-applicable",
+          "verdict": "complete",
+          "reasons": [
+            "not-applicable has source/notes explanation"
+          ],
+          "targetEndpoints": [],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "build-gradle-kts-6cd8a326ab-002-android-platform-component-lifecycle-suc",
+          "featureName": "Android platform component lifecycle such as service, receiver, provider, or application.",
+          "sourcePath": "build.gradle.kts",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "parityLevel": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "build-profile.json5::modules",
+            "build-profile.json5::products",
+            "hvigorfile.ts::appTasks",
+            "entry/cjpm.toml::name",
+            "entry/cjpm.toml::profile.build.combined.ohos_app_cangjie_entry"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "build-gradle-kts-2f9b07ef27-003-settings-preferences-option-toggles-or-c",
+          "featureName": "Settings/preferences, option toggles, or configuration state behavior.",
+          "sourcePath": "build.gradle.kts",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "not-applicable",
+          "parityLevel": "not-applicable",
+          "verdict": "complete",
+          "reasons": [
+            "not-applicable has source/notes explanation"
+          ],
+          "targetEndpoints": [],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-androidmanifest-xml-e5fadea668-001-android-resource-configuration-must-be-m",
+          "featureName": "Android resource/configuration must be mapped or explicitly deferred.",
+          "sourcePath": "app/src/main/AndroidManifest.xml",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "implemented",
+          "parityLevel": "equivalent",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "AppScope/app.json5::bundleName",
+            "AppScope/app.json5::icon",
+            "AppScope/app.json5::label",
+            "entry/src/main/module.json5::icon",
+            "entry/src/main/module.json5::label",
+            "entry/src/main/module.json5::startWindowBackground",
+            "entry/src/main/module.json5::startWindowIcon",
+            "entry/src/main/resources/base/element/color.json::start_window_background"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-androidmanifest-xml-525ca85433-002-intent-uri-bundle-deeplink-or-cross-scre",
+          "featureName": "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "sourcePath": "app/src/main/AndroidManifest.xml",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "implemented",
+          "parityLevel": "equivalent",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/module.json5::exported",
+            "entry/src/main/module.json5::skills",
+            "entry/src/main/module.json5::mainElement",
+            "entry/src/main/resources/base/profile/main_pages.json::pages/FoodikeBootstrap"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-androidmanifest-xml-dcc4612e71-003-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "sourcePath": "app/src/main/AndroidManifest.xml",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "not-applicable",
+          "parityLevel": "not-applicable",
+          "verdict": "complete",
+          "reasons": [
+            "not-applicable has source/notes explanation"
+          ],
+          "targetEndpoints": [],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-androidmanifest-xml-c7c6907eb1-004-android-platform-component-lifecycle-suc",
+          "featureName": "Android platform component lifecycle such as service, receiver, provider, or application.",
+          "sourcePath": "app/src/main/AndroidManifest.xml",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "parityLevel": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/cangjie/ability_stage.cj::FoodikeAbilityStage.onCreate",
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onWindowStageCreate"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat",
+          "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "sourcePath": "app/src/main/AndroidManifest.xml",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "parityLevel": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onWindowStageCreate",
+            "entry/src/main/resources/base/profile/main_pages.json"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m",
+          "featureName": "Android resource/configuration must be mapped or explicitly deferred.",
+          "sourcePath": "app/src/main/res/values/themes.xml",
+          "importance": "high",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "parityLevel": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/module.json5::startWindowBackground",
+            "entry/src/main/module.json5::startWindowIcon",
+            "entry/src/main/resources/base/element/color.json::start_window_background",
+            "entry/src/main/resources/base/media/icon.png",
+            "AppScope/resources/base/media/icon.png"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "sourcePath": "app/src/main/res/values/themes.xml",
+          "importance": "high",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "not-applicable",
+          "parityLevel": "not-applicable",
+          "verdict": "complete",
+          "reasons": [
+            "not-applicable has source/notes explanation"
+          ],
+          "targetEndpoints": [],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma",
+          "featureName": "Android android-values file should be mapped to target resources, components, or documented deferred scope.",
+          "sourcePath": "app/src/main/res/values/themes.xml",
+          "importance": "high",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "parityLevel": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/module.json5::startWindowBackground",
+            "entry/src/main/module.json5::pages",
+            "entry/src/main/resources/base/element/color.json::start_window_background",
+            "entry/src/main/resources/base/profile/main_pages.json::pages/FoodikeBootstrap"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m",
+          "featureName": "Android resource/configuration must be mapped or explicitly deferred.",
+          "sourcePath": "app/src/main/res/values/colors.xml",
+          "importance": "high",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "implemented",
+          "parityLevel": "equivalent",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/resources/base/element/color.json::white",
+            "entry/src/main/resources/base/element/color.json::black",
+            "entry/src/main/resources/base/element/color.json::LightGreen",
+            "entry/src/main/resources/base/element/color.json::DarkGreen",
+            "AppScope/resources/base/element/color.json::white",
+            "AppScope/resources/base/element/color.json::black",
+            "AppScope/resources/base/element/color.json::LightGreen",
+            "AppScope/resources/base/element/color.json::DarkGreen",
+            "entry/src/main/module.json5::startWindowBackground"
+          ],
+          "tests": []
+        },
+        {
+          "kind": "source-feature",
+          "featureId": "app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma",
+          "featureName": "Android android-values file should be mapped to target resources, components, or documented deferred scope.",
+          "sourcePath": "app/src/main/res/values/colors.xml",
+          "importance": "high",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "implemented",
+          "parityLevel": "equivalent",
+          "verdict": "complete",
+          "reasons": [
+            "implemented with behavior, parity, endpoint, and verification evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/resources/base/element/color.json::white",
+            "entry/src/main/resources/base/element/color.json::black",
+            "entry/src/main/resources/base/element/color.json::LightGreen",
+            "entry/src/main/resources/base/element/color.json::DarkGreen",
+            "entry/src/main/resources/base/element/color.json::start_window_background",
+            "AppScope/resources/base/element/color.json::white",
+            "AppScope/resources/base/element/color.json::black",
+            "AppScope/resources/base/element/color.json::LightGreen",
+            "AppScope/resources/base/element/color.json::DarkGreen",
+            "AppScope/resources/base/element/color.json::start_window_background"
+          ],
+          "tests": []
+        }
+      ],
+      "platformRows": [
+        {
+          "kind": "platform-capability",
+          "capabilityId": "localization-resources",
+          "capabilityName": "Localized resources and formatted strings",
+          "importance": "high",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "verified-direct",
+          "verdict": "complete",
+          "reasons": [
+            "platform capability has concrete target evidence"
+          ],
+          "targetEndpoints": [
+            "AppScope/app.json5",
+            "AppScope/resources/base/element/string.json",
+            "AppScope/resources/base/element/color.json",
+            "entry/src/main/module.json5",
+            "entry/src/main/resources/base/element/string.json",
+            "entry/src/main/resources/base/element/color.json",
+            "entry/src/main/resources/base/profile/main_pages.json"
+          ],
+          "tests": [
+            "build_hap_report.py --phase phase-01-project-skeleton-resources"
+          ]
+        },
+        {
+          "kind": "platform-capability",
+          "capabilityId": "preferences-key-value-persistence",
+          "capabilityName": "Lightweight key-value session persistence",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "verified-direct",
+          "verdict": "complete",
+          "reasons": [
+            "platform capability has concrete target evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::readLoginState",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::toggleLoginState",
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate"
+          ],
+          "tests": [
+            "build_hap_report.py --phase phase-01-project-skeleton-resources"
+          ]
+        },
+        {
+          "kind": "platform-capability",
+          "capabilityId": "startup-route-and-window-lifecycle",
+          "capabilityName": "Startup route gating and main window lifecycle",
+          "importance": "critical",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "platform-replaced",
+          "verdict": "complete",
+          "reasons": [
+            "platform capability has concrete target evidence"
+          ],
+          "targetEndpoints": [
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onWindowStageCreate",
+            "entry/src/main/cangjie/ability_stage.cj::FoodikeAbilityStage.onCreate",
+            "entry/src/main/module.json5"
+          ],
+          "tests": [
+            "build_hap_report.py --phase phase-01-project-skeleton-resources"
+          ]
+        }
+      ],
+      "statusCounts": {
+        "sourceFeatures": {
+          "implemented": 6,
+          "not-applicable": 5,
+          "platform-replaced": 7
+        },
+        "platformCapabilities": {
+          "platform-replaced": 1,
+          "verified-direct": 2
+        }
+      }
+    },
+    {
+      "groupId": "phase-01-project-skeleton-resources-platform-capability-localization-resources",
+      "title": "Platform capability: Localized resources and formatted strings",
+      "groupType": "platform-capability",
+      "priority": "high",
+      "verdict": "complete",
+      "repairRecommended": false,
+      "reasons": [
+        "localization-resources: platform capability has concrete target evidence"
+      ],
+      "contractDebt": [],
+      "sourcePaths": [
+        "app/src/main/AndroidManifest.xml",
+        "app/src/main/res/values/strings.xml",
+        "app/src/main/res/values/themes.xml",
+        "app/src/main/res/values/colors.xml",
+        "app/src/main/res/values/ic_launcher_background.xml",
+        "app/src/main/res/drawable/ic_launcher_background.xml",
+        "app/src/main/res/xml/data_extraction_rules.xml",
+        "app/src/main/res/drawable/ic_launcher_foreground.xml",
+        "app/src/main/res/drawable/ic_profile.xml",
+        "app/src/main/res/xml/backup_rules.xml",
+        "app/src/main/res/drawable/ic_baseline_assignment_24.xml",
+        "app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+        "app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml",
+        "app/src/main/res/drawable/applepie.jpg",
+        "app/src/main/res/drawable/biryani.jpg",
+        "app/src/main/res/drawable/burger.jpg",
+        "app/src/main/res/drawable/chinese.jpg",
+        "app/src/main/res/drawable/chinese_bowl.png",
+        "app/src/main/res/drawable/clock.png",
+        "app/src/main/res/drawable/dosa.jpg",
+        "app/src/main/res/drawable/fb_icon.png",
+        "app/src/main/res/drawable/goog_icon.png",
+        "app/src/main/res/drawable/groceries.png",
+        "app/src/main/res/drawable/ic_non_veg.png",
+        "app/src/main/res/drawable/ic_veg.png",
+        "app/src/main/res/drawable/icon.png",
+        "app/src/main/res/drawable/outlet_card.png",
+        "app/src/main/res/drawable/paratha.jpg",
+        "app/src/main/res/drawable/pizza.jpg",
+        "app/src/main/res/drawable/rider.png",
+        "app/src/main/res/drawable/star.png",
+        "app/src/main/res/drawable/upi.png",
+        "app/src/main/res/mipmap-hdpi/ic_launcher.png",
+        "app/src/main/res/mipmap-hdpi/ic_launcher_round.png",
+        "app/src/main/res/mipmap-mdpi/ic_launcher.png",
+        "app/src/main/res/mipmap-mdpi/ic_launcher_round.png",
+        "app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+        "app/src/main/res/mipmap-xhdpi/ic_launcher_round.png",
+        "app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+        "app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png",
+        "app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+        "app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+      ],
+      "featureIds": [],
+      "resourceInputs": [],
+      "platformCapabilityIds": [
+        "localization-resources"
+      ],
+      "expectedTargetDomains": [
+        "AppScope/app.json5",
+        "base/element/string.json",
+        "base/element/color.json",
+        "entry/src/main/module.json5",
+        "base/profile/main_pages.json"
+      ],
+      "requiredBehaviors": [
+        "Detected 42 source artifact(s) with terms: android_resource, localization, strings.xml, locale",
+        "Convert Android string resources and locale groups into HarmonyOS resources or a generated resource adapter; avoid hard-coded English for migrated labels.",
+        "Preserve base strings, placeholders, plurals/arrays when user-visible, and source locale coverage or documented product-level locale reduction."
+      ],
+      "acceptanceEvidence": [
+        "Record targetCapabilitySearch, targetApiOrLibrary, targetStrategy, targetEndpoints, and tests or validation notes.",
+        "Direct platform status requires Cangjie-callable API, package, wrapper, FFI, or bridge evidence.",
+        "Fallback or deferred status requires a concrete blocker plus fallback/risk/future path.",
+        "Referenced tests need a latest PASS, focused manual/emulator evidence, or recorded harness blocker."
+      ],
+      "riskHints": [],
+      "matrixRows": [],
+      "platformRows": [
+        {
+          "kind": "platform-capability",
+          "capabilityId": "localization-resources",
+          "capabilityName": "Localized resources and formatted strings",
+          "importance": "high",
+          "plannedPhase": "phase-01-project-skeleton-resources",
+          "status": "verified-direct",
+          "verdict": "complete",
+          "reasons": [
+            "platform capability has concrete target evidence"
+          ],
+          "targetEndpoints": [
+            "AppScope/app.json5",
+            "AppScope/resources/base/element/string.json",
+            "AppScope/resources/base/element/color.json",
+            "entry/src/main/module.json5",
+            "entry/src/main/resources/base/element/string.json",
+            "entry/src/main/resources/base/element/color.json",
+            "entry/src/main/resources/base/profile/main_pages.json"
+          ],
+          "tests": [
+            "build_hap_report.py --phase phase-01-project-skeleton-resources"
+          ]
+        }
+      ],
+      "statusCounts": {
+        "sourceFeatures": {},
+        "platformCapabilities": {
+          "verified-direct": 1
+        }
+      }
+    }
+  ],
+  "repairCandidates": [],
+  "structuralFindings": []
+}

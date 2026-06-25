@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-24T10:58:52+00:00",
+  "generatedAt": "2026-06-25T06:25:26+00:00",
   "targetExists": true,
   "summary": {
     "expectedEntries": 260,
@@ -8,7 +8,7 @@
     "actualEntries": 260,
     "staleEntries": 0,
     "missingCriticalHighEntries": 0,
-    "uncoveredCriticalHighEntries": 224,
+    "uncoveredCriticalHighEntries": 192,
     "deferredCriticalHighEntries": 0,
     "deferredCriticalHighRatio": 0.0,
     "simplifiedCriticalHighEntries": 0,
@@ -23,14 +23,17 @@
     "repeatedImplementedEndpointGroups": 0,
     "broadImplementedEndpointCriticalHighEntries": 0,
     "unverifiedTestEvidenceCriticalHighEntries": 0,
-    "testEvidenceVerifiedByLatestTestGateEntries": 0,
+    "testEvidenceVerifiedByLatestTestGateEntries": 9,
     "weakEvidenceCriticalHighEntries": 0,
     "missingSourceBehaviorCriticalHighEntries": 0,
     "missingTargetBehaviorCriticalHighEntries": 0,
     "missingVerificationEvidenceCriticalHighEntries": 0,
     "parityMismatchCriticalHighEntries": 0,
     "byStatus": {
-      "planned": 260
+      "implemented": 13,
+      "not-applicable": 11,
+      "planned": 227,
+      "platform-replaced": 9
     },
     "allowedParityLevels": [
       "",
@@ -53,12 +56,32 @@
     {
       "severity": "high",
       "kind": "coverage-matrix-uncovered-entry",
-      "message": "224 critical/high source feature(s) remain planned, unreviewed, or not covered."
+      "message": "192 critical/high source feature(s) remain planned, unreviewed, or not covered."
     }
   ],
   "testBuildEvidence": {
-    "available": false,
-    "acceptedPass": false
+    "available": true,
+    "acceptedPass": true,
+    "latest": {
+      "jsonPath": "D:\\workspace\\Foodike\\translation-inputs\\test-build-reports\\phase-02-startup-navigation-session\\test-build-report.json",
+      "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\test-build-reports\\phase-02-startup-navigation-session\\test-build-report.md",
+      "logPath": "D:\\workspace\\Foodike\\translation-inputs\\test-build-reports\\phase-02-startup-navigation-session\\test-build.log",
+      "phase": "phase-02-startup-navigation-session",
+      "result": "PASS",
+      "recommendedOwner": "none",
+      "generatedAt": "2026-06-25T05:40:25+00:00",
+      "firstBlocker": ""
+    },
+    "accepted": {
+      "jsonPath": "D:\\workspace\\Foodike\\translation-inputs\\test-build-reports\\phase-02-startup-navigation-session\\test-build-report.json",
+      "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\test-build-reports\\phase-02-startup-navigation-session\\test-build-report.md",
+      "logPath": "D:\\workspace\\Foodike\\translation-inputs\\test-build-reports\\phase-02-startup-navigation-session\\test-build.log",
+      "phase": "phase-02-startup-navigation-session",
+      "result": "PASS",
+      "recommendedOwner": "none",
+      "generatedAt": "2026-06-25T05:40:25+00:00",
+      "firstBlocker": ""
+    }
   },
   "samples": {
     "missingEntries": [],
@@ -145,34 +168,6 @@
         "featureId": "app-src-main-java-com-example-foodike-presentation-histo-78c1f5d90b-002-runtime-permission-request-permission-re",
         "sourcePath": "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
         "featureName": "Runtime permission request, permission result handling, or protected API access.",
-        "importance": "critical",
-        "status": "planned"
-      },
-      {
-        "featureId": "app-src-main-java-com-example-foodike-presentation-util-db8f73d266-001-image-viewing-bitmap-exif-handling-zoom",
-        "sourcePath": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
-        "featureName": "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
-        "importance": "critical",
-        "status": "planned"
-      },
-      {
-        "featureId": "app-src-main-java-com-example-foodike-presentation-util-417c58decd-002-navigation-surface-menu-drawer-toolbar-o",
-        "sourcePath": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
-        "featureName": "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
-        "importance": "critical",
-        "status": "planned"
-      },
-      {
-        "featureId": "app-src-main-java-com-example-foodike-presentation-util-dc524a2ddb-003-runtime-permission-request-permission-re",
-        "sourcePath": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
-        "featureName": "Runtime permission request, permission result handling, or protected API access.",
-        "importance": "critical",
-        "status": "planned"
-      },
-      {
-        "featureId": "app-src-main-java-com-example-foodike-presentation-util-cb2f6fdad2-004-observable-state-viewmodel-flow-livedata",
-        "sourcePath": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
-        "featureName": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
         "importance": "critical",
         "status": "planned"
       },
@@ -343,6 +338,34 @@
         "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
         "importance": "critical",
         "status": "planned"
+      },
+      {
+        "featureId": "app-src-main-java-com-example-foodike-presentation-home-5415bc8d6b-006-observable-state-viewmodel-flow-livedata",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
+        "featureName": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+        "importance": "critical",
+        "status": "planned"
+      },
+      {
+        "featureId": "app-src-main-java-com-example-foodike-presentation-detai-5078228915-001-image-viewing-bitmap-exif-handling-zoom",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt",
+        "featureName": "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+        "importance": "critical",
+        "status": "planned"
+      },
+      {
+        "featureId": "app-src-main-java-com-example-foodike-presentation-detai-715234c0ab-002-runtime-permission-request-permission-re",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt",
+        "featureName": "Runtime permission request, permission result handling, or protected API access.",
+        "importance": "critical",
+        "status": "planned"
+      },
+      {
+        "featureId": "app-src-main-java-com-example-foodike-presentation-cart-1fe9838c96-001-image-viewing-bitmap-exif-handling-zoom",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt",
+        "featureName": "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+        "importance": "critical",
+        "status": "planned"
       }
     ],
     "deferredEntries": [],
@@ -371,7 +394,7 @@
   "templateSync": {
     "schemaVersion": 1,
     "featureIdVersion": 2,
-    "syncedAt": "2026-06-24T10:58:51+00:00",
+    "syncedAt": "2026-06-25T02:01:25+00:00",
     "applied": true,
     "templateEntries": 260,
     "activeEntriesBefore": 260,

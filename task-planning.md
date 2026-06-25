@@ -141,11 +141,11 @@ The downstream workflow may also print this runner-specific inventory:
 - `source-feature-survey.json`: present (`D:\workspace\Foodike\translation-inputs\source-feature-survey.json`)
 - `source-file-inventory.md`: present (`D:\workspace\Foodike\translation-inputs\source-file-inventory.md`)
 - `source-file-inventory.json`: present (`D:\workspace\Foodike\translation-inputs\source-file-inventory.json`)
-- `agent-source-walkthrough.md`: missing (`D:\workspace\Foodike\translation-inputs\agent-source-walkthrough.md`)
+- `agent-source-walkthrough.md`: present (`D:\workspace\Foodike\translation-inputs\agent-source-walkthrough.md`)
 - `plan-seed.md`: present (`D:\workspace\Foodike\translation-inputs\plan-seed.md`)
 - `plan-seed.json`: present (`D:\workspace\Foodike\translation-inputs\plan-seed.json`)
-- `plan-validation-report.md`: missing (`D:\workspace\Foodike\translation-inputs\plan-validation-report.md`)
-- `plan-validation-report.json`: missing (`D:\workspace\Foodike\translation-inputs\plan-validation-report.json`)
+- `plan-validation-report.md`: present (`D:\workspace\Foodike\translation-inputs\plan-validation-report.md`)
+- `plan-validation-report.json`: present (`D:\workspace\Foodike\translation-inputs\plan-validation-report.json`)
 - `source-coverage-matrix-template.md`: present (`D:\workspace\Foodike\translation-inputs\source-coverage-matrix-template.md`)
 - `source-coverage-matrix-template.json`: present (`D:\workspace\Foodike\translation-inputs\source-coverage-matrix-template.json`)
 - `source-coverage-matrix.md`: present (`D:\workspace\Foodike\translation-inputs\source-coverage-matrix.md`)
@@ -154,10 +154,10 @@ The downstream workflow may also print this runner-specific inventory:
 - `source-coverage-matrix-report.json`: present (`D:\workspace\Foodike\translation-inputs\source-coverage-matrix-report.json`)
 - `verification-results.md`: present (`D:\workspace\Foodike\translation-inputs\verification-results.md`)
 - `verification-results.json`: present (`D:\workspace\Foodike\translation-inputs\verification-results.json`)
-- `phase-task-checklist.md`: missing (`D:\workspace\Foodike\translation-inputs\phase-task-checklist.md`)
-- `phase-task-checklist.json`: missing (`D:\workspace\Foodike\translation-inputs\phase-task-checklist.json`)
-- `phase-capability-checklist.md`: missing (`D:\workspace\Foodike\translation-inputs\phase-capability-checklist.md`)
-- `phase-capability-checklist.json`: missing (`D:\workspace\Foodike\translation-inputs\phase-capability-checklist.json`)
+- `phase-task-checklist.md`: present (`D:\workspace\Foodike\translation-inputs\phase-task-checklist.md`)
+- `phase-task-checklist.json`: present (`D:\workspace\Foodike\translation-inputs\phase-task-checklist.json`)
+- `phase-capability-checklist.md`: present (`D:\workspace\Foodike\translation-inputs\phase-capability-checklist.md`)
+- `phase-capability-checklist.json`: present (`D:\workspace\Foodike\translation-inputs\phase-capability-checklist.json`)
 - `platform-capability-template.md`: present (`D:\workspace\Foodike\translation-inputs\platform-capability-template.md`)
 - `platform-capability-template.json`: present (`D:\workspace\Foodike\translation-inputs\platform-capability-template.json`)
 - `platform-capability-check.md`: present (`D:\workspace\Foodike\translation-inputs\platform-capability-check.md`)
@@ -212,7 +212,7 @@ If an input is missing, do not invent its contents. Fall back to source inspecti
 
 Treat Kotlin source, Gradle metadata, Compose state, ViewModel/repository flow, resources, navigation, and user-visible refresh behavior as behavior evidence. Do not translate only UI skeletons; preserve search, filtering, CRUD, persistence, selection, dialogs, bottom bars, and immediate UI update semantics.
 
-Coverage reports are a baseline for reducing functional gaps and unexplained code-scale gaps. Do not mechanically match source LoC. Instead, map current-scope critical/high source features, resources, tests, and platform integrations to target implementation, supplemental tests, platform replacement, or explicit deferred items. `source-coverage-matrix.json` is the feature status record and `platform-capability-check.json` is the target platform capability status record: update both during planning and phases. Use language-specific static analysis outputs to refine the matrix when present. If static analysis reveals a source feature missing from the matrix template, add a matrix entry with source evidence. Critical/high `implemented` entries need specific evidence: do not bulk-promote many rows with the same notes/tests/endpoints, do not rely only on root views, shell views, state classes, whole files, or grouped endpoint lists, and do not cite target tests as strong evidence unless the notes record a successful target test compile/run command. For every closed critical/high feature, record `sourceBehavior`, `targetBehavior`, `parityLevel`, and `verificationEvidence` in `source-coverage-matrix.json`; `implemented` should use `parityLevel: equivalent`, `implemented-simplified` should use `parityLevel: simplified`, and `platform-replaced` should use `parityLevel: platform-replaced`. `verification-results.json/md` is generated evidence from build/test/manual reports, but a build pass alone is not per-feature behavior verification. Critical/high `implemented-simplified` is exceptional: record what was simplified, why user-visible behavior remains acceptable, target endpoints or tests, and source/platform evidence. Critical/high deferred features must include `sourceEvidence`, `deferredReason`, `targetFallback`, `risk`, and `futureCompletionPath`. For critical/high platform capabilities, query CangjieSkills/HarmonyOS/Cangjie API docs and HarmonyOS-Examples before choosing a direct API, platform replacement, fallback, or deferred status. When a third-party package or library may be needed, also query the Cangjie package index (`https://pkg.cangjie-lang.cn`) or cjpm package lookup; use cjpm/project-management docs only to configure the chosen dependency. Record this in `platform-capability-check.json/md`. If the target platform has a suitable HarmonyOS/Cangjie API, Kit, example, or package, implement it or mark it `platform-replaced` with evidence; do not close it with local mock data, in-memory simulation, sample data, or other fallback. A healthy target/source production LoC ratio only removes one code-scale warning; generated tests or notes cannot hide production implementation shrinkage, and the ratio does not prove functional coverage, so still verify the source coverage matrix, phase task checklist behavior audit, platform capability check, resources, weak signals, and tests.
+Coverage reports are a baseline for reducing functional gaps and unexplained code-scale gaps. Do not mechanically match source LoC. Instead, map current-scope critical/high source features, resources, tests, and platform integrations to target implementation, supplemental tests, platform replacement, or explicit deferred items. `source-coverage-matrix.json` is the feature status record and `platform-capability-check.json` is the target platform capability status record: use both during planning and update them during phase/repair work. The main planning session should prioritize valid `plan.md` and `plan.json`; row-level `plannedPhase` backfill may be applied by a separate post-planning records-only session after the plan contract passes. Use language-specific static analysis outputs to refine the matrix when present. If static analysis reveals a source feature missing from the matrix template, add a matrix entry with source evidence. Critical/high `implemented` entries need specific evidence: do not bulk-promote many rows with the same notes/tests/endpoints, do not rely only on root views, shell views, state classes, whole files, or grouped endpoint lists, and do not cite target tests as strong evidence unless the notes record a successful target test compile/run command. For every closed critical/high feature, record `sourceBehavior`, `targetBehavior`, `parityLevel`, and `verificationEvidence` in `source-coverage-matrix.json`; `implemented` should use `parityLevel: equivalent`, `implemented-simplified` should use `parityLevel: simplified`, and `platform-replaced` should use `parityLevel: platform-replaced`. `verification-results.json/md` is generated evidence from build/test/manual reports, but a build pass alone is not per-feature behavior verification. Critical/high `implemented-simplified` is exceptional: record what was simplified, why user-visible behavior remains acceptable, target endpoints or tests, and source/platform evidence. Critical/high deferred features must include `sourceEvidence`, `deferredReason`, `targetFallback`, `risk`, and `futureCompletionPath`. For critical/high platform capabilities, query CangjieSkills/HarmonyOS/Cangjie API docs and HarmonyOS-Examples before choosing a direct API, platform replacement, fallback, or deferred status. When a third-party package or library may be needed, also query the Cangjie package index (`https://pkg.cangjie-lang.cn`) or cjpm package lookup; use cjpm/project-management docs only to configure the chosen dependency. Record this in `platform-capability-check.json/md`. If the target platform has a suitable HarmonyOS/Cangjie API, Kit, example, or package, implement it or mark it `platform-replaced` with evidence; do not close it with local mock data, in-memory simulation, sample data, or other fallback. A healthy target/source production LoC ratio only removes one code-scale warning; generated tests or notes cannot hide production implementation shrinkage, and the ratio does not prove functional coverage, so still verify the source coverage matrix, phase task checklist behavior audit, platform capability check, resources, weak signals, and tests.
 
 For this workflow, direct target API evidence means the capability is callable
 from the HarmonyOS Cangjie target. ArkTS `.d.ts` declarations, JS APIs, native C
@@ -299,6 +299,97 @@ Generate detailed translation plans:
 Use `D:\workspace\Foodike\translation-inputs/plan-seed.md` / `.json` as the compact cross-language planning index when present. It summarizes source units, callable method/function/composable/event-handler contracts, UI route/action/state contracts, data/resource/platform capability contracts, phase/group candidates, structure risks, and analysis gaps from Java, Kotlin, mixed Android, or ArkTS inputs. Treat it as planning evidence, not a complete source of truth: inspect source files when behavior is unclear or when source code contradicts static analysis.
 
 The plan must include `files`, `assets`, `dependencies`, `tests`, `phases`, and `deferred`. For each phase, include canonical phase id, target scope, source evidence, gate command, expected tests, state/data behavior to preserve, and deferred risks. Each phase should also include implementation-group ownership data, either under `implementationGroups` inside the phase or in an equivalent top-level group map. Each group should include stable `groupId`, `title`, `groupType`, `priority`, `sourcePaths`, `sourceMethods` or callable contract references when available, `featureIds`, `resourceInputs`, `platformCapabilityIds`, `uiContracts` or UI route/action/state hints, `dataContracts`, `expectedTargetDomains`, `requiredBehaviors`, `riskHints`, and `acceptanceEvidence`. If static analysis misses or misstates behavior, record an `analysisGaps` or `sourceOverrides` note instead of silently dropping the behavior.
+
+## Plan JSON Contract
+
+`plan.json` must be strict JSON and must include these required top-level keys:
+
+- `files`
+- `assets`
+- `dependencies`
+- `tests`
+- `phases`
+- `deferred`
+
+Extra top-level keys are allowed, but they do not replace the required keys. For
+example, `testStrategy` may provide detail, but `tests` must still exist.
+Likewise, `platformCapabilityDecisions` may provide detail, but
+`dependencies`, `assets`, and `deferred` must still exist when relevant.
+
+Minimum valid skeleton:
+
+```json
+{
+  "files": [],
+  "assets": [],
+  "dependencies": [],
+  "tests": [],
+  "phases": [
+    {
+      "id": "phase-01-project-skeleton-resources",
+      "title": "Project skeleton and resources",
+      "priority": "critical",
+      "targetScope": [],
+      "sourceEvidence": [],
+      "requiredInputs": [],
+      "expectedFiles": [],
+      "gateCommand": "",
+      "expectedTests": [],
+      "stateDataBehavior": [],
+      "deferredRisks": [],
+      "implementationGroups": [
+        {
+          "groupId": "phase-01-bootstrap",
+          "title": "Bootstrap target project",
+          "groupType": "source-behavior",
+          "priority": "critical",
+          "sourcePaths": [],
+          "sourceMethods": [],
+          "featureIds": [],
+          "resourceInputs": [],
+          "platformCapabilityIds": [],
+          "uiContracts": [],
+          "dataContracts": [],
+          "expectedTargetDomains": [],
+          "requiredBehaviors": [],
+          "riskHints": [],
+          "acceptanceEvidence": []
+        }
+      ]
+    }
+  ],
+  "deferred": []
+}
+```
+
+Use canonical phase identifiers such as `phase-01-project-skeleton-resources`.
+Each implementation group needs a stable `groupId`, `title`, `groupType`, and
+`priority`; bind it to source behavior, resources, capabilities, UI/data
+contracts, tests, or acceptance evidence whenever available. If the plan is
+large, write this complete valid skeleton first, then expand it in batches while
+keeping the file valid strict JSON after every write.
+
+
+Before ending the planning session, validate the planning artifacts with the
+platform-appropriate command below:
+
+POSIX shell:
+
+```sh
+test -s 'D:\workspace\Foodike\plan.md' && \
+  test -s 'D:\workspace\Foodike\plan.json' && \
+  'C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe' -m json.tool 'D:\workspace\Foodike\plan.json' >/dev/null
+```
+
+Windows PowerShell:
+
+```powershell
+if (!(Test-Path -LiteralPath 'D:\workspace\Foodike\plan.md' -PathType Leaf)) { exit 1 }
+if ((Get-Item -LiteralPath 'D:\workspace\Foodike\plan.md').Length -eq 0) { exit 1 }
+if (!(Test-Path -LiteralPath 'D:\workspace\Foodike\plan.json' -PathType Leaf)) { exit 1 }
+if ((Get-Item -LiteralPath 'D:\workspace\Foodike\plan.json').Length -eq 0) { exit 1 }
+& 'C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe' '-m' 'json.tool' 'D:\workspace\Foodike\plan.json' | Out-Null
+```
 
 ## Translation Requirements
 

@@ -1,0 +1,40 @@
+{
+  "module": {
+    "abilities": [
+      {
+        "description": "$string:EntryAbility_desc",
+        "exported": true,
+        "icon": "$media:icon",
+        "label": "$string:app_name",
+        "name": "EntryAbility",
+        "skills": [
+          {
+            "actions": [
+              "action.system.home"
+            ],
+            "entities": [
+              "entity.system.home"
+            ]
+          }
+        ],
+        "srcEntry": "ohos_app_cangjie_entry.EntryAbility",
+        "startWindowBackground": "$color:start_window_background",
+        "startWindowIcon": "$media:icon"
+      }
+    ],
+    "deliveryWithInstall": true,
+    "description": "$string:module_desc",
+    "deviceTypes": [
+      "phone"
+    ],
+    "extensionAbilities": [],
+    "installationFree": false,
+    "mainElement": "EntryAbility",
+    "metadata": [],
+    "name": "entry",
+    "pages": "$profile:main_pages",
+    "requestPermissions": [],
+    "srcEntry": "ohos_app_cangjie_entry.FoodikeAbilityStage",
+    "type": "entry"
+  }
+}

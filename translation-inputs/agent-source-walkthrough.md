@@ -2,199 +2,375 @@
 
 ## Scope
 
-- Source root: `D:\Kotlin2Cangjie\Foodike`
-- Target root: `D:\workspace\Foodike\Foodike-Harmony`
+- Source project: `D:\Kotlin2Cangjie\Foodike`
 - Session type: source walkthrough only, no target translation
-- Static analysis inputs read: `kotlin-analysis/planning-note.md`, `kotlin-analysis/analysis-report.md`, `android-analysis/behavior-spec.md`, `source-file-inventory.md`, `source-feature-survey.md`, `plan-seed.md`
+- Evidence sources used first: generated reports under `translation-inputs/`, then Kotlin/Android source files where analyzer output looked noisy or ambiguous
 
-## Executive Summary
+## Initial Findings
 
-- The source app is a single-module Android Jetpack Compose app that presents a food-delivery style demo across onboarding, login, home, detail, history, cart, and profile screens.
-- Architecture is nominally MVVM with Hilt, Compose Navigation, and DataStore, but only one persistent behavior is real: a boolean login/session flag stored in DataStore.
-- Most domain data is local in-memory demo data from `FakeData.kt`; repositories return static lists or transient process memory flows.
-- There is no backend integration, no Room, no Retrofit, no Firebase, no runtime permission flow, no file/media picker, no share implementation, and no real checkout/update pipeline.
-- Several user-visible interactions are UI-only:
-- `SearchBar` stores local text and does not filter anything.
-- `ChipBar` toggles local selection and does not filter restaurant data.
-- `MenuItemCard` add/remove state is local to the card and does not update cart repository state.
-- `RestaurantDetailViewModel` like toggling is local screen state and does not persist back to `UserDataRepositoryImpl`.
-- `LoginScreen` uses hard-coded credentials: `abcxyz@gmail.com` and `abcdef`.
-- `Profile` uses hard-coded user profile content.
+- The source app is a single-module Android app built with Jetpack Compose, Navigation Compose, Hilt, Accompanist pager/flow layout, splash screen API, and DataStore preferences.
+- Most user data is backed by static in-memory fake data in `FakeData.kt` and repository wrappers around that data.
+- The only real persisted state is the login flag stored in DataStore preferences.
+- Navigation is entirely Compose-based. The app starts at onboarding or home depending on the persisted login state.
+- There is no backend API, Room database, Retrofit client, Firebase integration, or true file/media access in the actual source code inspected so far.
+- Generated capability templates appear to over-report file/media/permission capabilities based on heuristics. Source inspection is required before accepting those rows as real platform obligations.
 
-## Analysis Corrections
+## Architecture Overview
 
-- Generated risk tagging over-reported media library, SAF/file access, permissions, widget, and notification capabilities. Source inspection shows those are not implemented in this app.
-- `FakeData.kt` is a pure in-process demo data file, not file/media/URI behavior.
-- `RestaurantDetail` renders a share icon, but its click handler is empty.
-- `History` screen is not order history persistence. It is a two-tab screen where one page is static placeholder content and the other shows a fixed favorites list from the repository.
-- `Cart` is not connected to menu add/remove controls. Detail-screen item count changes do not mutate repository cart contents.
+### Entry and app shell
 
-## Source Architecture Clusters
+- `app/src/main/java/com/example/foodike/presentation/MainActivity.kt`
+  - Installs Android splash screen.
+  - Injects `SplashViewModel`.
+  - Uses `FoodikeTheme` and `SetupNavigation(startDestination = screen)`.
+- `app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt`
+  - Reads `LoginRepository.loginState.first()` synchronously inside `runBlocking` during init.
+  - Chooses `Screen.Home.route` when logged in, otherwise `Screen.Onboarding.route`.
+  - Exposes `isLoading` and `startDestination` for splash gating.
 
-- App/bootstrap: `FoodikeApp.kt`, `MainActivity.kt`, manifest, splash theme.
-- Dependency injection: `di/AppModule.kt` provisions all repositories as Hilt singletons.
-- Domain models: `Advertisement`, `FoodItem`, `MenuItem`, `Restaurant`, `CartItem`.
-- Data layer:
-- `HomeRepositoryImpl` returns static home data from `FakeData.kt`.
-- `UserDataRepositoryImpl` stores selected restaurant, menu list, favorites, and cart in process memory and exposes them as `Flow`.
-- `LoginRepositoryImpl` persists boolean login state with DataStore preferences.
-- Presentation state/viewmodels: splash, login, home, history, detail, cart, profile.
-- Navigation: Compose `NavHost` plus custom bottom bar/FAB in `presentation/util/Navigation.kt`.
-- Shared UI/utilities: `SearchBar`, `RestaurantCard`, `FoodikeTextField`, time/round helpers, filter chip utilities.
+### Navigation cluster
 
-## Actual Critical/High Features
+- `app/src/main/java/com/example/foodike/presentation/util/Screen.kt`
+  - Defines routes for onboarding, login, home, history, cart, profile, restaurant details.
+  - Includes `withArgs`, though route args are not yet used by the inspected navigation graph.
+- `app/src/main/java/com/example/foodike/presentation/util/Navigation.kt`
+  - `NavigationGraph` wires Compose destinations.
+  - `SetupNavigation` owns `NavController`, shared `LazyListState`, and scaffold with bottom bar.
+  - Bottom bar is shown only on `home` and `history` when the shared list is scrolled to the top.
+  - Floating action button navigates to cart.
 
-| Feature | Source evidence | Actual behavior | Migration note |
-| --- | --- | --- | --- |
-| Splash-gated startup routing | `MainActivity.kt`, `SplashViewModel.kt`, `themes.xml`, `AndroidManifest.xml` | App keeps Android 12 splash visible until login state is read, then starts at onboarding or home | Preserve startup route decision and splash/entry sequencing, but map to HarmonyOS ability startup idioms |
-| Onboarding pager flow | `presentation/onboarding/*`, `OnBoardingItem.kt`, onboarding strings and images | Three-page swiper with next/finish bottom section; finish navigates to login | Translate as pager/swiper plus indicator/footer, keep resource-driven content |
-| Hard-coded login flow with persisted session flag | `LoginScreen.kt`, `LoginViewModel.kt`, `LoginRepositoryImpl.kt` | Validates against one fixed email/password pair, toggles stored login boolean, shows snackbar on failure | Preserve current source behavior first; later planning can decide whether product wants to improve auth |
-| Home feed composition | `HomeScreen.kt`, `HomeViewModel.kt`, `HomeRepositoryImpl.kt`, `FakeData.kt` | Loads ads, recommended food, restaurants, favorites flow; composes static sections and restaurant cards | Keep repository/data flow boundaries even if source data remains local initially |
-| Restaurant selection and transient detail state | `HomeViewModel.kt`, `HistoryViewModel.kt`, `UserDataRepositoryImpl.kt`, `RestaurantDetailViewModel.kt` | Selecting a restaurant writes current restaurant and derived menu list into repository for later detail screen consumption | Preserve cross-screen state transfer without relying on global broad state files |
-| Detail page menu expansion and local like toggle | `RestaurantDetail.kt`, `RestaurantDetailViewModel.kt`, `DetailScreenState.kt`, `MenuItemCard.kt` | Shows selected restaurant, recommended/non-veg/veg sections, expandable headers, local liked flag, local per-card quantity state | Source add/like behavior is not persisted; record this faithfully during migration |
-| History/favorites tabbed view | `History.kt`, `Tabs.kt`, `TabsContent.kt`, `FavouritesSection.kt`, `HistorySection.kt` | Two-tab pager: static History page plus favorites list page that can navigate to detail | Map to ArkUI `Tabs`/`TabContent` or equivalent; only favorites tab is data-backed |
-| Cart review page | `Cart.kt`, `CartViewModel.kt`, `ItemSection.kt`, `BillSection.kt`, `CouponBar.kt`, `DeliverySection.kt` | Reads repository cart flow, shows only items with count > 0, instruction text field, coupon row, static delivery restaurant, static total | Cart is largely presentation-only in source; preserve visible behavior and current disconnects |
-| Profile/logout page | `Profile.kt`, `ProfileViewModel.kt` | Shows static user profile information and options cards; logout toggles same login-state boolean and navigates to onboarding | Preserve source logout semantics and static content |
-| Strings/theme/splash resources | `strings.xml`, `themes.xml`, `colors.xml`, drawables | User-visible copy, splash icon/theme, onboarding imagery, status/navigation bar color choices | Preserve resource coverage and avoid hard-coded English for migrated strings |
+### Data and state clusters
 
-## Platform Capability Evidence
+- `data/data_source/FakeData.kt`
+  - Large static fixture file defining menus, ads, restaurants, favourites, and cart seed items.
+  - Serves as the content source for home, history, detail, and cart flows.
+- `data/repository/HomeRepositoryImpl.kt`
+  - Returns fake restaurants, ads, and recommended items.
+  - Resolves restaurant details by exact name match.
+- `data/repository/UserDataRepositoryImpl.kt`
+  - Keeps mutable in-memory app session state:
+  - `currentRestaurant`
+  - menu item cart counts for selected restaurant
+  - favourites list clone
+  - cart item list clone
+  - Exposes these through `Flow` builders that emit current snapshots.
+- `data/repository/LoginRepositoryImpl.kt`
+  - Persists a boolean login flag with DataStore preferences.
+  - `toggleLoginState()` flips the stored value.
 
-| Capability | Source usage | HarmonyOS/Cangjie evidence | Walkthrough decision |
-| --- | --- | --- | --- |
-| Startup ability + splash/entry loading | `MainActivity.kt`, manifest, `themes.xml`, `SplashViewModel.kt` | HarmonyOS docs show `UIAbility.onCreate`, `onWindowStageCreate`, and `windowStage.loadContent(...)` patterns in Cangjie examples, including preferences example bootstrap code in `Guide/database/cj-data-persistence-by-preferences/.../开发步骤_1.md` lines 22-49 | Real capability exists; keep as planned direct replacement |
-| Preferences persistence | `LoginRepositoryImpl.kt` | `Guide/database/cj-data-persistence-by-preferences/.../通过用户首选项实现数据持久化_5more_adada06c.md` and `API/ArkData/cj-apis-preferences/.../ohosdatapreferenc_5more_588a4e57.md` document `Preferences.getPreferences`, `put`, `get`, `flush`, limits, and syscap | Real capability exists; map DataStore boolean to Preferences-backed storage |
-| Pager/swiper onboarding | `OnBoarding.kt` | `Guide/arkui-cj/cj-layout-development-create-looping/创建轮播Swiper/创建轮播Swiper_5more_ff270d97.md` documents `Swiper`, `loop`, `autoPlay`, indicators | Real capability exists; use direct ArkUI-style swiper/pager replacement |
-| Tabbed navigation/content switching | `History.kt`, `Tabs.kt`, `TabsContent.kt` | `Guide/arkui-cj/cj-layout-development-tabs/选项卡Tabs/选项卡Tabs_5more_58404afb.md` documents `Tabs`, `TabContent`, `barPosition`, bottom/top/side layouts | Real capability exists; use direct tab replacement |
-| Strings/theme/color resources | `strings.xml`, `themes.xml`, `colors.xml` | HarmonyOS local doc index includes resource/localization and ArkUI resource mapping material; the source only needs standard string/color/theme migration rather than special platform fallback | Real capability exists; keep planned direct resource migration |
+### UI domains
 
-## Migration Risks And Notes
+- Onboarding: introductory pager and CTA to login.
+- Login: email/password entry, snackbar messaging, login action toggling persisted session state.
+- Home: top location/search/actions, ad carousel, filters, recommended categories, favourite restaurants, restaurant list.
+- Restaurant detail: selected restaurant summary, liked state, expandable menu sections, item add/subtract interactions.
+- History: tabbed history/favourites presentation.
+- Cart: selected items, coupon entry, bill, delivery section.
+- Profile: profile card and logout action.
 
-- `RestaurantDetail` assumes `detailScreenState.restaurant!!` is non-null. The source relies on prior repository setup before navigation; direct deep-link entry is not safe.
-- `MenuItemCard` quantity state is local composable state. `Cart` repository data will not change when the user increments on detail cards.
-- `RestaurantDetailViewModel` like toggle only changes screen state and does not mutate `UserDataRepositoryImpl.list`.
-- `SearchBar`, `ChipBar`, social login icons, forgot password, sign-up link, profile edit, profile cards, and share action are placeholders or partial UI.
-- `RestaurantCard.getCustomerInfo` has threshold ordering that makes branches above `50` unreachable for larger values because `> 50` is checked first.
-- `LoginRepositoryImpl.toggleLoginState()` is used for both login and logout. Behavior is correct only because flow assumes alternating authenticated state transitions.
+## File-By-File Walkthrough
 
-## File-By-File Source Code Walkthrough
+This section starts with confirmed files. Remaining files will be appended as inspection continues.
 
-Each entry records: path; role; key types; key methods; user-facing features; data/state behavior; side effects; resource/id evidence; dependency evidence; migration notes.
+### `app/src/main/java/com/example/foodike/presentation/MainActivity.kt`
 
-- `app/src/main/java/com/example/foodike/FoodikeApp.kt`; role: app application class; key types: `FoodikeApp`; key methods: none; user-facing: none directly; data/state: app-level DI bootstrap only; side effects: registers Hilt Android app; resource/id evidence: manifest `android:name`; dependency evidence: Hilt; migration notes: map to target app/ability bootstrap, not a page module.
-- `app/src/main/java/com/example/foodike/data/data_source/FakeData.kt`; role: demo catalog seed data; key types: top-level lists for ads, restaurants, favorites, cart, menus; key methods: none; user-facing: all restaurant/menu/ad content and image-backed recommendations come from here; data/state: immutable top-level data structures used by repositories; side effects: none; resource/id evidence: many `R.drawable.*` image refs and `Color(...)` ad colors; dependency evidence: Compose `Color`; migration notes: split into target fixture/domain seed modules rather than one huge file.
-- `app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt`; role: home read repository; key types: `HomeRepositoryImpl`; key methods: `getRestaurants`, `getAds`, `getFoodItems`, `getRestaurantFromName`; user-facing: feeds home lists and restaurant lookup; data/state: returns `Results.Success` around fake data; side effects: none; resource/id evidence: indirect via `FakeData.kt`; dependency evidence: domain repository interface, local `Results`; migration notes: direct local repository translation is straightforward.
-- `app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt`; role: session persistence repository; key types: `LoginRepositoryImpl`, `PrefsDataStore`; key methods: `loginState`, `toggleLoginState`; user-facing: keeps login/logout session across launches; data/state: boolean `Flow<Boolean>` backed by DataStore preferences; side effects: reads/writes app preferences file; resource/id evidence: preference file name `user_login_state_pref`, key `user_login_state`; dependency evidence: AndroidX DataStore; migration notes: replace with HarmonyOS Preferences storage.
-- `app/src/main/java/com/example/foodike/data/repository/Result.kt`; role: small result wrapper; key types: `Results`, `Success`, `Error`; key methods: none; user-facing: none directly; data/state: wraps repository success/error values; side effects: none; resource/id evidence: none; dependency evidence: Kotlin sealed classes/generics; migration notes: keep as small domain result type.
-- `app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt`; role: transient shared user/app state repository; key types: `UserDataRepositoryImpl`; key methods: `setRestaurant`, `getSavedRestaurant`, `getMenuItems`, `getLikedRestaurants`, `isRestaurantLiked`, `getCartItems`; user-facing: selected restaurant detail data, favorites data, cart data; data/state: stores mutable current restaurant, menu list, favorites list, cart list in process memory; side effects: none outside process memory; resource/id evidence: indirect fake favorites/cart source; dependency evidence: Kotlin Flow; migration notes: preserve repository boundary and current transient semantics.
-- `app/src/main/java/com/example/foodike/di/AppModule.kt`; role: dependency provider module; key types: `AppModule`; key methods: `provideLoginRepository`, `providesHomeRepository`, `providesUserDataRepository`; user-facing: none directly; data/state: singleton provisioning; side effects: wires application context into login repository; resource/id evidence: none; dependency evidence: Hilt DI; migration notes: translate as target-side module/service assembly.
-- `app/src/main/java/com/example/foodike/domain/model/Advertisement.kt`; role: ad domain model; key types: `Advertisement`; key methods: none; user-facing: home ad cards; data/state: simple value carrier including `Color`; side effects: none; resource/id evidence: image ids/colors from data source; dependency evidence: Compose `Color`; migration notes: map to plain target model plus resource references.
-- `app/src/main/java/com/example/foodike/domain/model/CartItem.kt`; role: cart line model; key types: `CartItem`; key methods: none; user-facing: cart/detail quantities; data/state: menu item plus count; side effects: none; resource/id evidence: indirect via `MenuItem`; dependency evidence: none; migration notes: keep as core model.
-- `app/src/main/java/com/example/foodike/domain/model/FoodItem.kt`; role: recommended item model; key types: `FoodItem`; key methods: none; user-facing: recommended section on home; data/state: image/name pair; side effects: none; resource/id evidence: drawable ids; dependency evidence: none; migration notes: keep lightweight model.
-- `app/src/main/java/com/example/foodike/domain/model/MenuItem.kt`; role: restaurant menu model; key types: `MenuItem`; key methods: none; user-facing: detail menu rows and veg/non-veg sections; data/state: dish metadata and vegetarian flag; side effects: none; resource/id evidence: none directly; dependency evidence: none; migration notes: keep as domain model.
-- `app/src/main/java/com/example/foodike/domain/model/Restaurant.kt`; role: restaurant model; key types: `Restaurant`; key methods: none; user-facing: home cards, detail header, favorites/history, delivery section; data/state: restaurant metadata plus menu list; side effects: none; resource/id evidence: drawable ids; dependency evidence: none; migration notes: central model for selection-driven navigation.
-- `app/src/main/java/com/example/foodike/domain/repository/HomeRepository.kt`; role: home repository contract; key types: `HomeRepository`; key methods: `getRestaurants`, `getAds`, `getFoodItems`, `getRestaurantFromName`; user-facing: none directly; data/state: read contract only; side effects: none; resource/id evidence: none; dependency evidence: result wrapper; migration notes: preserve interface for target repository implementation.
-- `app/src/main/java/com/example/foodike/domain/repository/LoginRepository.kt`; role: login/session contract; key types: `LoginRepository`; key methods: `loginState`, `toggleLoginState`; user-facing: persisted auth state; data/state: boolean flow contract; side effects: none in interface; resource/id evidence: none; dependency evidence: Flow; migration notes: direct target storage abstraction.
-- `app/src/main/java/com/example/foodike/domain/repository/UserDataRepository.kt`; role: transient shared app-state contract; key types: `UserDataRepository`; key methods: `setRestaurant`, `getSavedRestaurant`, `getMenuItems`, `getLikedRestaurants`, `isRestaurantLiked`, `getCartItems`; user-facing: detail/history/cart shared data; data/state: flow-driven memory state contract; side effects: none in interface; resource/id evidence: none; dependency evidence: Flow; migration notes: keep contract separation.
-- `app/src/main/java/com/example/foodike/presentation/MainActivity.kt`; role: single Android entry activity; key types: `MainActivity`; key methods: `onCreate`; user-facing: splash-controlled app startup; data/state: reads `SplashViewModel.startDestination`; side effects: installs splash screen and mounts Compose UI; resource/id evidence: theme from manifest/theme resources; dependency evidence: `ComponentActivity`, splashscreen API, Hilt injection; migration notes: map to single HarmonyOS entry ability/page host.
-- `app/src/main/java/com/example/foodike/presentation/cart/Cart.kt`; role: cart page; key types: none; key methods: `Cart`; user-facing: closes back, lists non-zero cart items, instruction field, coupon bar, delivery section, bill section; data/state: reads `CartViewModel.cartState`, but add/remove callbacks are no-ops; side effects: sets status/navigation bar colors; resource/id evidence: `R.string.back`, hard-coded restaurant uses `R.drawable.pizza`; dependency evidence: Hilt ViewModel, Compose; migration notes: preserve current static/demonstration semantics.
-- `app/src/main/java/com/example/foodike/presentation/cart/CartState.kt`; role: cart screen state holder; key types: `CartState`; key methods: none; user-facing: none directly; data/state: mutable list wrapper for cart items; side effects: none; resource/id evidence: none; dependency evidence: none; migration notes: convert to target page state model.
-- `app/src/main/java/com/example/foodike/presentation/cart/CartViewModel.kt`; role: cart page state bridge; key types: `CartViewModel`; key methods: init only; user-facing: cart item population; data/state: collects repository cart flow into Compose state; side effects: none; resource/id evidence: none; dependency evidence: Hilt, Flow; migration notes: small direct translation.
-- `app/src/main/java/com/example/foodike/presentation/cart/components/BillSection.kt`; role: bill summary card; key types: none; key methods: `BillSection`; user-facing: totals/fee summary display; data/state: displays passed `itemTotal`; side effects: none; resource/id evidence: strings embedded or sourced by implementation; dependency evidence: Compose; migration notes: keep presentational component.
-- `app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt`; role: cart row component; key types: none; key methods: `CartItemCard`; user-facing: renders selected cart item summary; data/state: uses incoming `CartItem`; side effects: none; resource/id evidence: food/menu strings/icons; dependency evidence: Compose; migration notes: preserve as pure component.
-- `app/src/main/java/com/example/foodike/presentation/cart/components/CouponBar.kt`; role: coupon entry/promo prompt; key types: none; key methods: `CouponBar`; user-facing: coupon input row; data/state: local component state only; side effects: none; resource/id evidence: text resources and icons if used; dependency evidence: Compose; migration notes: UI helper only.
-- `app/src/main/java/com/example/foodike/presentation/cart/components/DeliverySection.kt`; role: delivery info component; key types: none; key methods: `DeliverySection`; user-facing: restaurant/location/delivery metadata; data/state: reads passed `Restaurant`; side effects: none; resource/id evidence: restaurant image and strings; dependency evidence: Compose; migration notes: presentational component.
-- `app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt`; role: cart list and note entry section; key types: none; key methods: `ItemSection`; user-facing: shows empty state or cart rows plus free-form instruction field; data/state: local text/hint state only; side effects: none; resource/id evidence: embedded placeholder text and edit icon; dependency evidence: Compose, Accompanist `FlowColumn`; migration notes: if target lacks same layout helper, replace with wrapped column/list implementation.
-- `app/src/main/java/com/example/foodike/presentation/common/Extensions.kt`; role: formatting helpers; key types: none; key methods: `Double.round`, `Long.getTimeInMins`; user-facing: restaurant time strings and possible numeric formatting; data/state: pure helpers; side effects: none; resource/id evidence: output strings use `Hr`/`Min`; dependency evidence: Java `TimeUnit`; migration notes: preserve helper semantics, including exact formatting.
-- `app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt`; role: startup routing state; key types: `SplashViewModel`; key methods: init only; user-facing: decides onboarding vs home start destination; data/state: run-blocks first login-state read, exposes loading and destination state; side effects: blocks until first preference value resolved; resource/id evidence: `Screen.Onboarding`, `Screen.Home`; dependency evidence: ViewModel, Flow, Hilt; migration notes: preserve deterministic startup decision without introducing race conditions.
-- `app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt`; role: restaurant list card; key types: none; key methods: `RestaurantCard`, `getCustomerInfo`; user-facing: main restaurant browse rows; data/state: pure render from `Restaurant`; side effects: none; resource/id evidence: `R.drawable.star`, restaurant image; dependency evidence: Compose; migration notes: note source threshold bug in `getCustomerInfo` ordering.
-- `app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt`; role: reusable search field; key types: none; key methods: `SearchBar`; user-facing: search input on home/history; data/state: local text only, no filtering hookup; side effects: none; resource/id evidence: hard-coded placeholder/content description `Search`; dependency evidence: Compose Material `TextField`; migration notes: preserve local-only behavior unless product decides otherwise later.
-- `app/src/main/java/com/example/foodike/presentation/details/DetailScreenEvent.kt`; role: detail page event set; key types: `DetailScreenEvent` and four toggle variants; key methods: none; user-facing: controls expansion and like interactions; data/state: sealed event definitions only; side effects: none; resource/id evidence: none; dependency evidence: Kotlin sealed classes; migration notes: keep as local page event enum/sealed type.
-- `app/src/main/java/com/example/foodike/presentation/details/DetailScreenState.kt`; role: detail page state holder; key types: `DetailScreenState`; key methods: none; user-facing: controls selected restaurant, section expansion, menu/recommended lists, liked flag; data/state: immutable screen state; side effects: none; resource/id evidence: none; dependency evidence: domain models; migration notes: direct target state model.
-- `app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt`; role: detail page UI; key types: none; key methods: `RestaurantDetail`; user-facing: back button, heart toggle, empty share button, detail card, recommended/non-veg/veg expandable sections, cart FAB; data/state: binds `detailScreenState`, derives filtered menu lists; side effects: navigation up and cart navigation; resource/id evidence: many `R.string.*`; dependency evidence: Hilt ViewModel, Compose animation/material; migration notes: source relies on non-null selected restaurant from shared repository.
-- `app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt`; role: detail page state/viewmodel; key types: `RestaurantDetailViewModel`; key methods: `onEvent`; user-facing: recommended shuffling, section expansion, like toggle state; data/state: collects menu list, current restaurant, and liked status flow from repository; side effects: none beyond in-memory state updates; resource/id evidence: none; dependency evidence: Hilt, Flow; migration notes: like toggle does not persist to repository favorites.
-- `app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt`; role: detail menu row; key types: none; key methods: `MenuItemCard`; user-facing: menu item metadata and add/remove quantity control; data/state: local `state` counter only; side effects: none; resource/id evidence: `R.drawable.ic_veg`, `R.drawable.ic_non_veg`, strings `add`, `subtract`, `rating`; dependency evidence: Compose; migration notes: current quantity changes are intentionally local and disconnected from cart repository.
-- `app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt`; role: detail header card; key types: none; key methods: `RestaurantDetailCard`; user-facing: restaurant hero/details; data/state: pure render from `Restaurant`; side effects: none; resource/id evidence: restaurant image and strings; dependency evidence: Compose; migration notes: presentational component.
-- `app/src/main/java/com/example/foodike/presentation/history/History.kt`; role: history/favorites page; key types: none; key methods: `History`; user-facing: search bar, tabs, two-page horizontal content; data/state: binds `HistoryViewModel.likedRestaurants`; side effects: sets status/navigation bar colors; resource/id evidence: `Tabs` labels and search UI; dependency evidence: Hilt ViewModel, Accompanist Pager; migration notes: only favorites tab is data-backed.
-- `app/src/main/java/com/example/foodike/presentation/history/HistoryEvent.kt`; role: history page event set; key types: `HistoryEvent`, `SelectRestaurant`; key methods: none; user-facing: restaurant selection from favorites; data/state: event definitions only; side effects: none; resource/id evidence: none; dependency evidence: sealed classes/function callback; migration notes: small page-local event model.
-- `app/src/main/java/com/example/foodike/presentation/history/HistoryState.kt`; role: history page state; key types: `HistoryState`; key methods: none; user-facing: favorites list backing; data/state: list of liked restaurants; side effects: none; resource/id evidence: none; dependency evidence: domain model; migration notes: direct state holder.
-- `app/src/main/java/com/example/foodike/presentation/history/HistoryViewModel.kt`; role: history page viewmodel; key types: `HistoryViewModel`; key methods: `onEvent`; user-facing: fills favorites tab and supports restaurant navigation; data/state: collects liked restaurants flow; side effects: writes selected restaurant to shared repository on click; resource/id evidence: `Screen.RestaurantDetails` via event callback path; dependency evidence: Hilt, Flow; migration notes: preserve repository-mediated selection.
-- `app/src/main/java/com/example/foodike/presentation/history/components/FavouritesSection.kt`; role: favorites tab content; key types: none; key methods: `FavouritesSection`; user-facing: favorite restaurant list; data/state: renders passed list; side effects: invokes click callback; resource/id evidence: restaurant assets; dependency evidence: Compose; migration notes: pure component.
-- `app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt`; role: static history placeholder tab; key types: none; key methods: `HistorySection`; user-facing: placeholder history visuals/content; data/state: no live state; side effects: none; resource/id evidence: likely placeholder strings/images; dependency evidence: Compose; migration notes: treat as static content, not persisted order history.
-- `app/src/main/java/com/example/foodike/presentation/history/components/Tabs.kt`; role: history tab header; key types: none; key methods: `Tabs`; user-facing: `History`/`Favourites` tab strip; data/state: pager index sync; side effects: animates pager page change; resource/id evidence: hard-coded tab labels; dependency evidence: Accompanist Pager; migration notes: map to target `Tabs` with linked content switching.
-- `app/src/main/java/com/example/foodike/presentation/history/components/TabsContent.kt`; role: history tab pager body; key types: none; key methods: `TabsContent`; user-facing: horizontal switch between static history and favorites; data/state: chooses content by page index; side effects: none; resource/id evidence: none direct; dependency evidence: Accompanist `HorizontalPager`; migration notes: map to `Tabs`/`TabContent` or swiper-style body.
-- `app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt`; role: home page UI; key types: none; key methods: `Home`; user-facing: top location/profile section, greeting, search, ad carousel section, recommended foods, conditional favorites, filter chips, main restaurant list, thank-you footer; data/state: binds `homeScreenState`; side effects: sets bar colors and navigates to detail after repository selection write; resource/id evidence: many drawables/strings via child components; dependency evidence: Hilt ViewModel, Compose; migration notes: preserve section composition order and conditional favorites block.
-- `app/src/main/java/com/example/foodike/presentation/home/HomeScreenEvent.kt`; role: home page event set; key types: `HomeScreenEvent`, `SelectRestaurant`; key methods: none; user-facing: restaurant selection; data/state: event definitions only; side effects: none; resource/id evidence: none; dependency evidence: sealed classes/function callback; migration notes: page-local event model.
-- `app/src/main/java/com/example/foodike/presentation/home/HomeScreenState.kt`; role: home page state; key types: `HomeScreenState`; key methods: none; user-facing: all home sections consume this; data/state: ads, food items, liked restaurants, restaurants; side effects: none; resource/id evidence: none; dependency evidence: domain models; migration notes: direct target state holder.
-- `app/src/main/java/com/example/foodike/presentation/home/HomeViewModel.kt`; role: home page viewmodel; key types: `HomeViewModel`; key methods: `onEvent`; user-facing: populates home lists and favorites; data/state: sequentially loads ads/food/restaurants and collects liked restaurants flow; side effects: writes selected restaurant into shared repository; resource/id evidence: none; dependency evidence: Hilt, repository contracts, Flow; migration notes: keep fetch order and repository selection behavior.
-- `app/src/main/java/com/example/foodike/presentation/home/components/AdCard.kt`; role: home ad card; key types: none; key methods: `AdCard`; user-facing: promotional ad tile; data/state: pure from `Advertisement`; side effects: none; resource/id evidence: drawable/image/color/title/subtitle; dependency evidence: Compose; migration notes: presentational component.
-- `app/src/main/java/com/example/foodike/presentation/home/components/AdSection.kt`; role: ad section container; key types: none; key methods: `AdSection`; user-facing: horizontally arranged or swipable ad list; data/state: renders ad list; side effects: none; resource/id evidence: ad images/colors; dependency evidence: Compose; migration notes: keep as section wrapper.
-- `app/src/main/java/com/example/foodike/presentation/home/components/ChipBar.kt`; role: filter chip strip; key types: none; key methods: `ChipBar`, `Chip`, `ChipGroup`; user-facing: selectable tags like fast delivery/discount/non-veg; data/state: local selected filter only; side effects: none; resource/id evidence: hard-coded enum values from `Filters.kt`; dependency evidence: Compose; migration notes: source has no filtering hookup, preserve as local-only initially.
-- `app/src/main/java/com/example/foodike/presentation/home/components/FavouriteCard.kt`; role: favorite restaurant card; key types: none; key methods: `FavouriteCard`; user-facing: favorite restaurant item in favorites section; data/state: pure render/click; side effects: invokes callback; resource/id evidence: restaurant image and strings; dependency evidence: Compose; migration notes: presentational component.
-- `app/src/main/java/com/example/foodike/presentation/home/components/FavouriteScreen.kt`; role: favorites section container; key types: none; key methods: `FavouriteSection`; user-facing: displays liked restaurants on home; data/state: list-driven render; side effects: callback on card click; resource/id evidence: restaurant assets; dependency evidence: Compose; migration notes: despite file name, function is section content within home.
-- `app/src/main/java/com/example/foodike/presentation/home/components/FoodikeBottomNavigation.kt`; role: styled bottom navigation shell; key types: `BottomNavigationDefaults`; key methods: `FoodikeBottomNavigation`; user-facing: custom bottom navigation container; data/state: none; side effects: none; resource/id evidence: child icons/labels supplied externally; dependency evidence: Compose Material; migration notes: style wrapper around bottom nav.
-- `app/src/main/java/com/example/foodike/presentation/home/components/GreetingScreen.kt`; role: greeting section; key types: none; key methods: `GreetingSection`; user-facing: welcome/location copy near top of home; data/state: static UI only; side effects: none; resource/id evidence: strings; dependency evidence: Compose; migration notes: static component.
-- `app/src/main/java/com/example/foodike/presentation/home/components/MainSection.kt`; role: restaurant list heading section; key types: none; key methods: `MainSection`; user-facing: section title before restaurant cards; data/state: static UI only; side effects: none; resource/id evidence: strings; dependency evidence: Compose; migration notes: static component.
-- `app/src/main/java/com/example/foodike/presentation/home/components/RecommendedCard.kt`; role: recommended food card; key types: none; key methods: `RecommendedCard`; user-facing: recommended dish tile; data/state: pure from `FoodItem`; side effects: none; resource/id evidence: food image/name; dependency evidence: Compose; migration notes: presentational component.
-- `app/src/main/java/com/example/foodike/presentation/home/components/RecommendedSection.kt`; role: recommended section wrapper; key types: none; key methods: `RecommendedSection`; user-facing: horizontal recommended foods list; data/state: list-driven render; side effects: none; resource/id evidence: food assets and strings; dependency evidence: Compose; migration notes: section component.
-- `app/src/main/java/com/example/foodike/presentation/home/components/ThankYouSection.kt`; role: footer branding section; key types: none; key methods: `ThankYouSection`; user-facing: closing thank-you/creator branding content; data/state: static UI; side effects: none; resource/id evidence: strings `with`, `love`, `from_creator`; dependency evidence: Compose; migration notes: static footer.
-- `app/src/main/java/com/example/foodike/presentation/home/components/TopSection.kt`; role: home top row; key types: none; key methods: `TopSection`; user-facing: profile access and location affordances; data/state: static UI plus navigation callbacks; side effects: may navigate to profile; resource/id evidence: icons/string resources; dependency evidence: Compose, nav controller; migration notes: preserve top app-section behavior.
-- `app/src/main/java/com/example/foodike/presentation/home/util/Filters.kt`; role: filter enum helpers; key types: `Filter`; key methods: `getAllTags`, `getTag`; user-facing: labels on chip bar; data/state: static enum list and lookup; side effects: none; resource/id evidence: hard-coded English values; dependency evidence: none; migration notes: consider moving strings to resources in target if improving localization.
-- `app/src/main/java/com/example/foodike/presentation/login/FoodikeTextFieldState.kt`; role: login field state holder; key types: `FoodikeTextFieldState`; key methods: none; user-facing: email/password hints and text; data/state: immutable field state; side effects: none; resource/id evidence: hints are hard-coded in viewmodel, not string resources; dependency evidence: none; migration notes: simple target state type.
-- `app/src/main/java/com/example/foodike/presentation/login/LoginEvent.kt`; role: login event set; key types: `LoginEvent`, `EnteredEmail`, `EnteredPassword`, `PerformLogin`; key methods: none; user-facing: login form input and submit actions; data/state: event definitions only; side effects: none; resource/id evidence: none; dependency evidence: sealed classes/function callback; migration notes: page-local event model.
-- `app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt`; role: login page UI; key types: none; key methods: `LoginScreen`; user-facing: email/password form, forgot-password toast, login button, social login placeholder icons, sign-up placeholder text; data/state: binds `LoginViewModel` email/password state and snackbar event flow; side effects: sets bar colors, shows toasts/snackbar, navigates on success; resource/id evidence: `goog_icon`, `fb_icon`, many strings; dependency evidence: Hilt ViewModel, Compose; migration notes: keep hard-coded auth behavior visible in planning.
-- `app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt`; role: login page viewmodel; key types: `LoginViewModel`; key methods: `onEvent`; user-facing: validation outcome and login success; data/state: holds field state, emits snackbar event, toggles repository login state on correct credentials; side effects: preference write via repository; resource/id evidence: hard-coded credentials/hints/error text; dependency evidence: Hilt, Flow/shared flow; migration notes: preserve source semantics before any product change.
-- `app/src/main/java/com/example/foodike/presentation/login/UiEvent.kt`; role: login UI event wrapper; key types: `UiEvent`, `ShowSnackbar`; key methods: none; user-facing: snackbar error event; data/state: event definitions only; side effects: none; resource/id evidence: message strings come from viewmodel; dependency evidence: sealed classes; migration notes: trivial helper type.
-- `app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt`; role: styled text field wrapper; key types: none; key methods: `FoodikeTextField`; user-facing: reused login text field visuals; data/state: controlled input component; side effects: none; resource/id evidence: hint text passed in; dependency evidence: Compose Material input APIs; migration notes: keep as reusable target component.
-- `app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt`; role: onboarding page host; key types: none; key methods: `OnBoarding`; user-facing: full-screen pager with next/finish footer; data/state: local pager state and coroutine scope; side effects: sets status/navigation bar colors and navigates to login on finish; resource/id evidence: items from `OnBoardingItem.get()`; dependency evidence: Accompanist Pager; migration notes: direct swiper/pager translation candidate.
-- `app/src/main/java/com/example/foodike/presentation/onboarding/components/BottomSection.kt`; role: onboarding footer; key types: none; key methods: `BottomSection`; user-facing: indicator/button area; data/state: receives page count/index/callback; side effects: none; resource/id evidence: indicator visuals and text; dependency evidence: Compose; migration notes: UI helper.
-- `app/src/main/java/com/example/foodike/presentation/onboarding/components/Indicators.kt`; role: onboarding page indicator dots; key types: none; key methods: `Indicator`; user-facing: pager progress dots; data/state: simple selected/unselected state; side effects: none; resource/id evidence: color/theme usage; dependency evidence: Compose; migration notes: simple presentational helper.
-- `app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt`; role: onboarding page item renderer; key types: none; key methods: `OnboardingPage`; user-facing: title/text/image per page; data/state: pure render from `OnBoardingItem`; side effects: none; resource/id evidence: string and drawable ids; dependency evidence: Compose; migration notes: presentational component.
-- `app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt`; role: onboarding content factory; key types: `OnBoardingItem`; key methods: `get`; user-facing: three onboarding messages and images; data/state: static list builder; side effects: none; resource/id evidence: `R.string.onboardingHeading*`, `R.string.onboardingText*`, `R.drawable.chinese_bowl`, `rider`, `clock`; dependency evidence: none; migration notes: keep content resource-driven.
-- `app/src/main/java/com/example/foodike/presentation/profile/Profile.kt`; role: profile page UI; key types: none; key methods: `Profile`; user-facing: static user info, profile image, option cards, logout button; data/state: mostly static content; side effects: navigates back and logout navigation after state toggle; resource/id evidence: `R.drawable.ic_profile`, many profile strings; dependency evidence: Hilt ViewModel, Compose; migration notes: hard-coded account data is source truth.
-- `app/src/main/java/com/example/foodike/presentation/profile/ProfileEvent.kt`; role: profile event set; key types: `ProfileEvent`, `PerformLogout`; key methods: none; user-facing: logout action; data/state: event definition only; side effects: none; resource/id evidence: none; dependency evidence: sealed classes/function callback; migration notes: trivial page event model.
-- `app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt`; role: profile page viewmodel; key types: `ProfileViewModel`; key methods: `onEvent`; user-facing: logout behavior; data/state: toggles login repository state; side effects: writes preferences through repository; resource/id evidence: none; dependency evidence: Hilt, ViewModel; migration notes: same toggle semantics as login.
-- `app/src/main/java/com/example/foodike/presentation/profile/components/ProfileCard.kt`; role: profile option row component; key types: none; key methods: `ProfileCard`; user-facing: displays saved-addresses/payments/help/about rows; data/state: pure render and click callback; side effects: none; resource/id evidence: string resources; dependency evidence: Compose; migration notes: presentational component.
-- `app/src/main/java/com/example/foodike/presentation/util/Navigation.kt`; role: compose navigation graph and scaffold shell; key types: none; key methods: `NavigationGraph`, `SetupNavigation`, `BottomBar`; user-facing: routes between all app pages, conditional bottom bar on home/history top-of-list state, central cart FAB, bottom tabs home/history; data/state: reads current route and `LazyListState.firstVisibleItemIndex`; side effects: navigation stack mutations; resource/id evidence: `R.string.home`, `R.string.history`, `R.drawable.ic_baseline_assignment_24`; dependency evidence: Compose Navigation, Accompanist pager opt-in indirectly, Material; migration notes: preserve route structure and shell responsibilities without collapsing into one target file.
-- `app/src/main/java/com/example/foodike/presentation/util/Screen.kt`; role: route constants; key types: `Screen` sealed class with `Onboarding`, `LoginScreen`, `Home`, `History`, `Cart`, `Profile`, `RestaurantDetails`; key methods: `withArgs`; user-facing: navigation routes only; data/state: route string definitions; side effects: none; resource/id evidence: none; dependency evidence: sealed classes; migration notes: direct target routing constants.
-- `app/src/main/java/com/example/foodike/ui/theme/Color.kt`; role: theme color palette; key types: top-level colors; key methods: none; user-facing: app palette; data/state: constants only; side effects: none; resource/id evidence: green palette values align with `colors.xml`; dependency evidence: Compose `Color`; migration notes: map to target design resources.
-- `app/src/main/java/com/example/foodike/ui/theme/Shape.kt`; role: theme shape set; key types: none; key methods: none; user-facing: corner radii defaults; data/state: constants only; side effects: none; resource/id evidence: none; dependency evidence: Compose theme shapes; migration notes: target style resource/component constants.
-- `app/src/main/java/com/example/foodike/ui/theme/Theme.kt`; role: app theme wrapper; key types: none; key methods: `FoodikeTheme`; user-facing: global typography/color scheme; data/state: wraps MaterialTheme; side effects: none; resource/id evidence: theme colors; dependency evidence: Compose MaterialTheme; migration notes: map global theme tokens to HarmonyOS resources/styles.
-- `app/src/main/java/com/example/foodike/ui/theme/Type.kt`; role: typography setup; key types: none; key methods: none; user-facing: font sizes/weights across app; data/state: constants only; side effects: none; resource/id evidence: none; dependency evidence: Compose typography APIs; migration notes: carry typography intent into target style system.
-- `app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt`; role: placeholder instrumented test; key types: `ExampleInstrumentedTest`; key methods: `useAppContext`; user-facing: none; data/state: trivial package-name assertion; side effects: Android instrumentation dependency; resource/id evidence: package id assertion; dependency evidence: AndroidX test; migration notes: not a strong behavior test, but note source has almost no meaningful automated coverage.
-- `app/src/test/java/com/example/foodike/ExampleUnitTest.kt`; role: placeholder unit test; key types: `ExampleUnitTest`; key methods: `addition_isCorrect`; user-facing: none; data/state: trivial arithmetic assertion; side effects: none; resource/id evidence: none; dependency evidence: JUnit4; migration notes: source test coverage is effectively absent, so target-side focused tests will be needed later.
+- Role: Android entry activity and Compose host.
+- Key classes/types: `MainActivity`
+- Key methods/functions: `onCreate`
+- User-facing features:
+  - Splash screen remains visible while startup state resolves.
+  - App opens into onboarding or home depending on stored login state.
+- Data/state behavior:
+  - Reads reactive state from `SplashViewModel.startDestination` and `isLoading`.
+- Side effects:
+  - Calls Android splash screen API and Compose `setContent`.
+- Resource/id evidence:
+  - Uses app theme through `FoodikeTheme`.
+- Dependency evidence:
+  - `androidx.core.splashscreen`, Compose activity, Hilt injection.
+- Migration notes:
+  - Target should keep a startup gate that resolves persisted session state before initial route selection.
 
-## Behavior-Carrying Config And Resource Files
+### `app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt`
 
-- `app/src/main/AndroidManifest.xml`; role: declares `FoodikeApp`, `MainActivity`, launcher entry, splash theme, backup/data-extraction xml links; dependencies: Android application/activity model; migration notes: map to HarmonyOS app/entry configuration.
-- `app/build.gradle.kts`; role: app module plugin/config/dependency definition; behavior: Compose enabled, min/target SDK, Hilt, splashscreen, navigation compose, accompanist pager/flowlayout, DataStore; migration notes: source dependency inventory for target replacement.
-- `build.gradle.kts`; role: root plugin version wiring; behavior: top-level plugin aliases; migration notes: mostly planning evidence for toolchain expectations.
-- `gradle/libs.versions.toml`; role: version catalog; behavior: authoritative source dependency versions and library ids; migration notes: useful for identifying source platform/library contracts.
-- `settings.gradle.kts`; role: includes `:app` and plugin repositories; behavior: single-module structure evidence; migration notes: confirms simple source module graph.
-- `gradle.properties`; role: Gradle/build flags; behavior: build environment knobs only; migration notes: low direct behavioral impact, but keep as build evidence.
-- `app/src/main/res/values/strings.xml`; role: all user-facing copy; behavior: onboarding, login, profile, home, detail, cart labels; migration notes: preserve full string coverage.
-- `app/src/main/res/values/themes.xml`; role: app and splash theme; behavior: splash background/icon/post-splash theme; migration notes: important for startup parity.
-- `app/src/main/res/values/colors.xml`; role: color resources; behavior: splash white and green palette; migration notes: map into target resource system.
-- `app/src/main/res/xml/backup_rules.xml`; role: Android backup config; behavior: backup policy placeholder; migration notes: likely not directly applicable unless target supports equivalent backup metadata.
-- `app/src/main/res/xml/data_extraction_rules.xml`; role: Android data extraction config; behavior: backup/data extraction policy placeholder; migration notes: likely not directly applicable.
-- Key referenced UI assets: onboarding images `drawable/chinese_bowl.png`, `rider.png`, `clock.png`; login social icons `goog_icon.png`, `fb_icon.png`; profile image `ic_profile.xml`; restaurant/food assets such as `pizza.jpg`, `paratha.jpg`, `dosa.jpg`, `burger.jpg`, `biryani.jpg`, `applepie.jpg`; state icons `ic_veg.png`, `ic_non_veg.png`, `star.png`, `icon.png`; migration notes: retain coverage of all referenced drawables because they carry visible branding/content.
+- Role: startup route resolver.
+- Key classes/types: `SplashViewModel`
+- Key methods/functions: initializer logic only.
+- User-facing features:
+  - Logged-in users skip onboarding/login and land on home.
+  - Logged-out users land on onboarding.
+- Data/state behavior:
+  - `MutableStateFlow<Boolean>` for loading.
+  - `MutableState<String>` for start destination.
+  - Reads first login-state emission synchronously.
+- Side effects:
+  - Blocking read of login state in `init`.
+- Resource/id evidence: none.
+- Dependency evidence:
+  - `LoginRepository`, coroutines flow, Compose mutable state.
+- Migration notes:
+  - Preserve the behavior, but Harmony target should avoid blocking init if there is a non-blocking startup pattern.
 
-## Source Tests And Verification Assets
+### `app/src/main/java/com/example/foodike/presentation/util/Screen.kt`
 
-- Source tests are placeholders only and do not verify app behavior.
-- Visual evidence exists in `screenshots/*.jpeg` and `art/demo.gif`; these should be used later as UX parity reference during target verification.
+- Role: route registry.
+- Key classes/types: `Screen` sealed class with `Onboarding`, `LoginScreen`, `Home`, `History`, `Cart`, `Profile`, `RestaurantDetails`.
+- Key methods/functions: `withArgs`
+- User-facing features:
+  - Defines available navigation destinations.
+- Data/state behavior:
+  - Static route constants.
+- Side effects: none.
+- Resource/id evidence: route strings are hardcoded.
+- Dependency evidence: navigation layer references this file.
+- Migration notes:
+  - Keep route/domain separation in target navigation model.
 
-## Recommended Planning Inputs From This Walkthrough
+### `app/src/main/java/com/example/foodike/presentation/util/Navigation.kt`
 
-- Plan repository/data modules separately from pages:
-- catalog demo data module
-- session/preferences module
-- transient selection/cart/favorites state module
-- page state/viewmodel modules per major screen
-- shared navigation shell module
-- shared components/theme/resource modules
-- Treat the following as explicit source quirks to preserve or consciously improve later:
-- hard-coded login credentials
-- local-only detail quantity and like state
-- static/non-wired search and filter UI
-- static profile data
-- static history placeholder page
+- Role: navigation graph, scaffold shell, bottom navigation behavior.
+- Key classes/types: none.
+- Key methods/functions: `NavigationGraph`, `SetupNavigation`, `BottomBar`
+- User-facing features:
+  - Hosts onboarding, login, home, history, cart, profile, and restaurant-detail screens.
+  - Shows bottom navigation only on home/history and only when the shared list is at top.
+  - Shows floating cart button centered above bottom bar.
+  - Bottom bar items navigate to home/history with state restoration semantics.
+- Data/state behavior:
+  - Owns `NavController`.
+  - Owns shared `LazyListState` and derives whether first visible item index is zero.
+  - Reads current back stack route for conditional shell rendering.
+- Side effects:
+  - Navigation commands mutate back stack.
+- Resource/id evidence:
+  - `R.string.home`, `R.string.history`, `R.drawable.ic_baseline_assignment_24`.
+- Dependency evidence:
+  - Navigation Compose, Accompanist pager opt-in, Compose Scaffold and material icons.
+- Migration notes:
+  - Shell visibility depends on both route and scroll position, not route alone.
+  - There is a duplicated onboarding destination block in the graph; likely harmless but should be noted during planning.
+
+### `app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt`
+
+- Role: persisted login/session-state repository.
+- Key classes/types: `LoginRepositoryImpl`, `PrefsDataStore`
+- Key methods/functions: `loginState`, `toggleLoginState`
+- User-facing features:
+  - Login/logout state survives app restarts.
+- Data/state behavior:
+  - DataStore preference file `user_login_state_pref`.
+  - Boolean key `user_login_state` defaults to `false`.
+  - `toggleLoginState` inverts current value.
+- Side effects:
+  - Writes to Android DataStore preferences.
+- Resource/id evidence: preference file and key names hardcoded.
+- Dependency evidence:
+  - AndroidX DataStore preferences.
+- Migration notes:
+  - This is one of the few true platform capabilities and should map to HarmonyOS persistent preferences storage.
+
+### `app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt`
+
+- Role: static content repository for home-related lists.
+- Key classes/types: `HomeRepositoryImpl`
+- Key methods/functions: `getRestaurants`, `getAds`, `getFoodItems`, `getRestaurantFromName`
+- User-facing features:
+  - Home screen gets restaurant list, advertisements, and recommended food categories.
+  - Restaurant detail lookup resolves by tapped restaurant name.
+- Data/state behavior:
+  - Wraps top-level fake lists from `FakeData.kt`.
+- Side effects: none.
+- Resource/id evidence:
+  - Downstream data references drawable resources through models.
+- Dependency evidence:
+  - `Results`, fake data lists.
+- Migration notes:
+  - Preserve repository boundary even if fake data remains temporary in target early phases.
+
+### `app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt`
+
+- Role: in-memory session repository for selected restaurant, favourites, menu counters, and cart items.
+- Key classes/types: `UserDataRepositoryImpl`
+- Key methods/functions: `setRestaurant`, `getSavedRestaurant`, `getMenuItems`, `getLikedRestaurants`, `isRestaurantLiked`, `getCartItems`
+- User-facing features:
+  - Selecting a restaurant establishes the detail screen context.
+  - Detail screen can read menu items with mutable counts.
+  - History/favourites reflects mutable favourites list.
+  - Cart reads initial mutable cart list snapshot.
+- Data/state behavior:
+  - `menuList` is a mutable set of `CartItem` built from current restaurant menu with zero counts.
+  - `currentRestaurant` holds active detail context.
+  - `list` holds mutable favourites list copy.
+  - `cartListItems` holds mutable cart list copy.
+  - Each getter emits a one-shot flow snapshot.
+- Side effects:
+  - Mutates in-memory process state only.
+- Resource/id evidence: indirect through model images.
+- Dependency evidence:
+  - Kotlin flows, fake-data favourite/cart lists.
+- Migration notes:
+  - Source behavior is session-scoped and not persisted except login state.
+  - Later planning should decide whether target keeps this as app-memory state or adds persistence for better resilience; either choice should preserve visible behavior first.
+
+### `app/src/main/java/com/example/foodike/data/data_source/FakeData.kt`
+
+- Role: static fixture and seed content authority.
+- Key classes/types: top-level lists of `MenuItem`, `Restaurant`, `Advertisement`, `FoodItem`, `CartItem`.
+- Key methods/functions: none.
+- User-facing features:
+  - Restaurant cards, detail pages, ads, recommended categories, favourites, and cart contents all originate here.
+  - Vegetarian/non-vegetarian sections, prices, ratings, counts, estimated delivery times, and imagery are all encoded here.
+- Data/state behavior:
+  - Pure immutable seed data.
+- Side effects: none.
+- Resource/id evidence:
+  - Strong use of `R.drawable.*` for restaurant, food, ad, profile, and icon visuals.
+- Dependency evidence:
+  - Domain model layer and Android drawable resources.
+- Migration notes:
+  - This file is business-content-heavy, not platform-capability-heavy.
+  - Generated reports that infer file/media/permissions from this file are false positives so far.
+
+### `app/src/main/AndroidManifest.xml`
+
+- Role: Android app declaration.
+- Key classes/types: `application`, `activity`, launcher intent filter.
+- Key methods/functions: none.
+- User-facing features:
+  - Declares launcher activity and app icon/label.
+  - Enables backup/data-extraction rules.
+  - Applies splash theme to app and activity.
+- Data/state behavior: none directly.
+- Side effects:
+  - Registers Android entrypoints.
+- Resource/id evidence:
+  - `@xml/data_extraction_rules`, `@xml/backup_rules`, `@mipmap/ic_launcher`, `@string/app_name`, `@style/Theme.SplashScreenTheme`.
+- Dependency evidence:
+  - `FoodikeApp`, `MainActivity`.
+- Migration notes:
+  - No dangerous permissions declared.
+  - No deep links, services, receivers, or providers.
+
+### `app/build.gradle.kts`
+
+- Role: Android app module build configuration.
+- Key classes/types: none.
+- Key methods/functions: none.
+- User-facing features:
+  - Enables Compose and splash/navigation/data store dependencies used by runtime behavior.
+- Data/state behavior:
+  - Enables DataStore dependency that backs login persistence.
+- Side effects: build-time only.
+- Resource/id evidence: none.
+- Dependency evidence:
+  - Compose, Hilt, splashscreen, navigation-compose, accompanist pager/flowlayout, DataStore.
+- Migration notes:
+  - Dependency list is strong evidence for target capability planning: navigation shell, pager onboarding, persistent preferences, DI/state composition.
+
+### `build.gradle.kts`
+
+- Role: top-level plugin declaration.
+- Key classes/types: none.
+- Key methods/functions: none.
+- User-facing features: none directly.
+- Data/state behavior: none.
+- Side effects: build-time only.
+- Resource/id evidence: none.
+- Dependency evidence:
+  - Android application/library, Kotlin Android, Hilt plugins.
+- Migration notes:
+  - Low translation importance beyond confirming build stack.
+
+### `gradle/libs.versions.toml`
+
+- Role: dependency/version catalog.
+- Key classes/types: none.
+- Key methods/functions: none.
+- User-facing features:
+  - Confirms real library surface used by source behavior.
+- Data/state behavior: none.
+- Side effects: build-time only.
+- Resource/id evidence: none.
+- Dependency evidence:
+  - Compose material/ui, Hilt, splashscreen, navigation-compose, accompanist pager, DataStore.
+- Migration notes:
+  - Useful as planning evidence for platform capability replacement, not for direct code translation.
+
+## Resource and Config Files Carrying Behavior
+
+- `app/src/main/res/values/strings.xml`
+  - User-facing labels for onboarding, login, tabs, profile, cart/detail actions, and accessibility descriptions.
+- `app/src/main/res/values/themes.xml`
+  - Defines splash theme and application theme behavior.
+- `app/src/main/res/values/colors.xml`
+  - Shared color tokens reflected in UI identity.
+- `app/src/main/res/xml/data_extraction_rules.xml`
+  - Backup/data extraction policy evidence.
+- `app/src/main/res/xml/backup_rules.xml`
+  - Backup inclusion/exclusion evidence.
+- `app/src/main/res/drawable/*` and `mipmap/*`
+  - Core visual assets referenced by fake data and UI chrome.
+
+## Confirmed Behavior vs Analyzer Noise
+
+- Confirmed from source:
+  - Compose navigation and shell behavior.
+  - Splash-driven startup routing.
+  - Persisted login flag using DataStore preferences.
+  - In-memory repositories for restaurant, favourite, menu, and cart state.
+  - No remote backend.
+  - No database.
+  - No runtime permission requests in inspected files.
+- Analyzer/template items requiring downgrading or careful notes:
+  - Media library access.
+  - SAF/file access.
+  - Broad permission capabilities.
+  - Notification/widget integration.
+  - These appear heuristic, not source-backed, unless later files show otherwise.
+
+## Remaining Source Paths To Deepen
+
+- Login flow and validation/UI events:
+  - `presentation/login/LoginScreen.kt`
+  - `presentation/login/LoginViewModel.kt`
+  - `presentation/login/LoginEvent.kt`
+  - `presentation/login/UiEvent.kt`
+- Onboarding flow:
+  - `presentation/onboarding/OnBoarding.kt`
+  - `presentation/onboarding/components/*`
+- Home flow:
+  - `presentation/home/HomeScreen.kt`
+  - `presentation/home/HomeViewModel.kt`
+  - `presentation/home/components/*`
+  - `presentation/components/SearchBar.kt`
+  - `presentation/components/RestaurantCard.kt`
+- Detail flow:
+  - `presentation/details/RestaurantDetail.kt`
+  - `presentation/details/RestaurantDetailViewModel.kt`
+  - `presentation/details/components/*`
+  - `presentation/details/DetailScreenState.kt`
+  - `presentation/details/DetailScreenEvent.kt`
+- History/cart/profile flows:
+  - `presentation/history/*`
+  - `presentation/cart/*`
+  - `presentation/profile/*`
+- Domain models and interfaces:
+  - `domain/model/*`
+  - `domain/repository/*`
+- DI and application setup:
+  - `FoodikeApp.kt`
+  - `di/AppModule.kt`
+
+## Early Planning Implications
+
+- Target module boundaries should likely follow these domains:
+  - startup/session persistence
+  - navigation shell
+  - content repositories and fake-content seed mapping
+  - onboarding/login
+  - home discovery
+  - restaurant detail/menu/cart mutation
+  - history/favourites
+  - profile/logout
+- Avoid collapsing all in-memory state into one global file; source separates repositories, viewmodels, and screen states clearly enough to preserve those responsibilities.
+- The main verified platform capability so far is persistent preference storage for login state, plus general page routing/navigation and splash/startup gating.

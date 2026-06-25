@@ -1,12 +1,65 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-24T10:58:52+00:00",
+  "generatedAt": "2026-06-25T06:25:26+00:00",
   "purpose": "Structured verification evidence collected from build/test/manual reports. Build results are discovered automatically; test or manual validation results may be added as non build-report-scan entries and will be preserved across refreshes.",
   "summary": {
-    "totalResults": 0,
-    "byType": {},
-    "byResult": {},
-    "passedBuildPhases": []
+    "totalResults": 3,
+    "byType": {
+      "build": 3
+    },
+    "byResult": {
+      "passed": 3
+    },
+    "passedBuildPhases": [
+      "phase-01-project-skeleton-resources",
+      "phase-02-startup-navigation-session",
+      "phase-03-onboarding-login-profile"
+    ]
   },
-  "results": []
+  "results": [
+    {
+      "id": "build:phase-01-project-skeleton-resources",
+      "source": "build-report-scan",
+      "type": "build",
+      "phase": "phase-01-project-skeleton-resources",
+      "result": "passed",
+      "command": [],
+      "returncode": 0,
+      "evidencePath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-01-project-skeleton-resources\\build-report.json",
+      "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-01-project-skeleton-resources\\build-report.md",
+      "generatedAt": "2026-06-25T05:02:30+00:00",
+      "notes": "Build gate result for phase phase-01-project-skeleton-resources."
+    },
+    {
+      "id": "build:phase-02-startup-navigation-session",
+      "source": "build-report-scan",
+      "type": "build",
+      "phase": "phase-02-startup-navigation-session",
+      "result": "passed",
+      "command": [],
+      "returncode": 0,
+      "evidencePath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-02-startup-navigation-session\\build-report.json",
+      "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-02-startup-navigation-session\\build-report.md",
+      "generatedAt": "2026-06-25T05:40:16+00:00",
+      "notes": "Build gate result for phase phase-02-startup-navigation-session."
+    },
+    {
+      "id": "build:phase-03-onboarding-login-profile",
+      "source": "build-report-scan",
+      "type": "build",
+      "phase": "phase-03-onboarding-login-profile",
+      "result": "passed",
+      "command": [
+        "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "D:\\workspace\\Foodike\\.agents\\skills\\harmonyos-build\\build.py",
+        "--project-root",
+        "D:\\workspace\\Foodike\\Foodike-Harmony"
+      ],
+      "returncode": 0,
+      "evidencePath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-03-onboarding-login-profile\\build-report.json",
+      "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-03-onboarding-login-profile\\build-report.md",
+      "generatedAt": "2026-06-25T06:25:24+00:00",
+      "notes": "Build gate result for phase phase-03-onboarding-login-profile."
+    }
+  ]
 }

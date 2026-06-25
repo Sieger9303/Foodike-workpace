@@ -1,0 +1,349 @@
+{
+  "updates": [
+    {
+      "featureId": "app-src-main-androidmanifest-xml-e5fadea668-001-android-resource-configuration-must-be-m",
+      "set": {
+        "status": "implemented",
+        "parityLevel": "equivalent",
+        "sourceBehavior": "The manifest binds the Foodike application label, launcher icon, splash theme, backup/xml resource references, and launcher activity metadata to Android startup resources.",
+        "targetBehavior": "`AppScope/app.json5`, `entry/src/main/module.json5`, and the target color/media/string resources preserve the app identity, launcher metadata, start-window background/icon, and page profile wiring for the HarmonyOS entry module.",
+        "notes": "Mapped manifest resource/configuration wiring into HarmonyOS app and module metadata instead of Android manifest attributes."
+      },
+      "append": {
+        "targetEndpoints": [
+          "AppScope/app.json5",
+          "entry/src/main/module.json5",
+          "entry/src/main/resources/base/element/color.json",
+          "entry/src/main/resources/base/profile/main_pages.json"
+        ],
+        "verificationEvidence": [
+          "Source inspection: app/src/main/AndroidManifest.xml uses @string/app_name, @mipmap/ic_launcher, and @style/Theme.SplashScreenTheme on the application and launcher activity.",
+          "Build gate PASS: translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md (Generated 2026-06-25T04:33:21+00:00)."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-androidmanifest-xml-525ca85433-002-intent-uri-bundle-deeplink-or-cross-scre",
+      "set": {
+        "status": "implemented",
+        "parityLevel": "equivalent",
+        "sourceBehavior": "The manifest defines a single launcher entry point through MAIN/LAUNCHER intent-filter for `MainActivity`; no deeplink, URI pattern, or extra bundle contract is declared here.",
+        "targetBehavior": "`entry/src/main/module.json5` exposes the single HarmonyOS home entry ability with `action.system.home` and `entity.system.home`, preserving the source app's single-launch entry contract without adding deeplink behavior.",
+        "notes": "Closed narrowly to launcher-entry semantics only; source manifest does not declare custom deeplinks."
+      },
+      "append": {
+        "targetEndpoints": [
+          "entry/src/main/module.json5"
+        ],
+        "verificationEvidence": [
+          "Source inspection: app/src/main/AndroidManifest.xml contains only android.intent.action.MAIN and android.intent.category.LAUNCHER for MainActivity.",
+          "Target inspection: entry/src/main/module.json5 exposes EntryAbility with home skill actions/entities."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-androidmanifest-xml-dcc4612e71-003-runtime-permission-request-permission-re",
+      "set": {
+        "status": "not-applicable",
+        "parityLevel": "not-applicable",
+        "sourceBehavior": "The analyzer flagged runtime permissions from manifest context, but the inspected manifest declares no dangerous permissions and no protected API access contract.",
+        "targetBehavior": "No HarmonyOS permission wiring was added because the source manifest contains no permission declarations or permission result flow to preserve.",
+        "notes": "Closed from direct source inspection as a manifest-level false positive."
+      },
+      "append": {
+        "verificationEvidence": [
+          "Source inspection: app/src/main/AndroidManifest.xml contains no <uses-permission> entries and no permission-related activity/provider/service declarations."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-androidmanifest-xml-c7c6907eb1-004-android-platform-component-lifecycle-suc",
+      "set": {
+        "status": "platform-replaced",
+        "parityLevel": "platform-replaced",
+        "sourceBehavior": "The manifest declares an `Application` subclass plus a single launcher `Activity`, establishing the app-level component lifecycle and entry shell for startup.",
+        "targetBehavior": "HarmonyOS replaces the Android application/activity pair with `FoodikeAbilityStage` and `EntryAbility`, keeping a thin lifecycle shell that owns startup logging, preference-backed bootstrap inspection, and window content loading.",
+        "notes": "Platform replacement from Android Application/Activity lifecycle to HarmonyOS AbilityStage/UIAbility lifecycle."
+      },
+      "append": {
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ability_stage.cj::FoodikeAbilityStage.onCreate",
+          "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+          "entry/src/main/cangjie/app_ability.cj::EntryAbility.onWindowStageCreate"
+        ],
+        "verificationEvidence": [
+          "Source inspection: app/src/main/AndroidManifest.xml declares application .FoodikeApp and launcher activity .presentation.MainActivity.",
+          "Build gate PASS: translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md (CompileCangjie and PackageHap finished)."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat",
+      "set": {
+        "status": "platform-replaced",
+        "parityLevel": "platform-replaced",
+        "sourceBehavior": "The launcher activity starts under `Theme.SplashScreenTheme`, then hands control to the main Compose shell during activity creation.",
+        "targetBehavior": "`EntryAbility.onCreate` and `EntryAbility.onWindowStageCreate` perform the HarmonyOS startup handoff: inspect persisted login preference state during ability creation and load the bootstrap page into the main `WindowStage`.",
+        "notes": "This is startup shell parity only; full routed startup gating remains planned for phase 2."
+      },
+      "append": {
+        "targetEndpoints": [
+          "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+          "entry/src/main/cangjie/app_ability.cj::EntryAbility.onWindowStageCreate",
+          "entry/src/main/resources/base/profile/main_pages.json"
+        ],
+        "verificationEvidence": [
+          "Source inspection: MainActivity installs splash screen and sets content in onCreate; manifest/theme wire startup resources.",
+          "Target inspection: app_ability.cj reads persisted login flag from HarmonyOS Preferences and windowStage.loadContent(\"FoodikeBootstrap\")."
+        ]
+      }
+    },
+    {
+      "featureId": "app-build-gradle-kts-52a26dc1e9-003-android-platform-component-lifecycle-suc",
+      "set": {
+        "status": "platform-replaced",
+        "parityLevel": "platform-replaced",
+        "sourceBehavior": "`app/build.gradle.kts` configures the Android application module and app-level runtime dependencies that support the launcher activity, Hilt application shell, and splash/navigation entry flow.",
+        "targetBehavior": "`entry/cjpm.toml`, `AppScope/app.json5`, and `entry/src/main/module.json5` replace Android module wiring with a HarmonyOS entry module, ability metadata, and Cangjie package root under `ohos_app_cangjie_entry`.",
+        "notes": "Closed as build/module bootstrap parity rather than Android Gradle syntax parity."
+      },
+      "append": {
+        "targetEndpoints": [
+          "entry/cjpm.toml",
+          "AppScope/app.json5",
+          "entry/src/main/module.json5"
+        ],
+        "verificationEvidence": [
+          "Source inspection: app/build.gradle.kts applies android application, kotlin android, kapt, and hilt plugins for the app module.",
+          "Build gate PASS: translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md."
+        ]
+      }
+    },
+    {
+      "featureId": "app-build-gradle-kts-ab52d0a44d-001-navigation-surface-menu-drawer-toolbar-o",
+      "set": {
+        "status": "implemented-simplified",
+        "parityLevel": "simplified",
+        "sourceBehavior": "`app/build.gradle.kts` brings in Navigation Compose and bottom-navigation related UI dependencies that back the source route set and tab shell.",
+        "targetBehavior": "`app_router.cj` defines the full source route identifiers and stable route-path mapping as the HarmonyOS navigation foundation, but phase 1 stops short of rendering the full shell UI until later phases.",
+        "notes": "Simplified to route contract foundation in phase 1; visible navigation shell remains phase-02 work."
+      },
+      "append": {
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::RouteId",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::routePath"
+        ],
+        "verificationEvidence": [
+          "Source inspection: app/build.gradle.kts declares Navigation Compose dependency and MainActivity delegates to SetupNavigation(startDestination).",
+          "Target inspection: app_router.cj now covers onboarding, login_screen, home_screen, history, cart, profile, and restaurant_details route ids."
+        ]
+      }
+    },
+    {
+      "featureId": "app-build-gradle-kts-329cf39b55-002-runtime-permission-request-permission-re",
+      "set": {
+        "status": "not-applicable",
+        "parityLevel": "not-applicable",
+        "sourceBehavior": "The app module build file was heuristically tagged for runtime permissions, but the inspected dependency list contains no permission library or protected API flow requirement.",
+        "targetBehavior": "No permission-specific HarmonyOS dependency or flow was added because the source app module does not implement runtime permission behavior.",
+        "notes": "Direct source inspection disproved the analyzer heuristic for this Gradle file."
+      },
+      "append": {
+        "verificationEvidence": [
+          "Source inspection: app/build.gradle.kts lists Compose, Hilt, SplashScreen, Navigation, Accompanist, and DataStore dependencies only; no runtime-permission behavior is configured."
+        ]
+      }
+    },
+    {
+      "featureId": "app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat",
+      "set": {
+        "status": "implemented-simplified",
+        "parityLevel": "simplified",
+        "sourceBehavior": "The app module build config enables Compose and the Android splash dependency used by `MainActivity` to hold startup until the initial route is resolved.",
+        "targetBehavior": "Phase 1 preserves the startup foundation with `EntryAbility` lifecycle hooks, main-window loading, and direct inspection of the persisted login flag, but does not yet render the final onboarding/home route split before page composition.",
+        "notes": "Simplified startup lifecycle parity; full user-visible route gating is deferred to phase 2 per plan."
+      },
+      "append": {
+        "targetEndpoints": [
+          "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+          "entry/src/main/cangjie/app_ability.cj::EntryAbility.onWindowStageCreate",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj::resolveStartRoute"
+        ],
+        "verificationEvidence": [
+          "Source inspection: app/build.gradle.kts enables compose=true and adds androidx.core.splashscreen.",
+          "Target inspection: app_ability.cj reads persisted login state during onCreate and bootstrap page loading still compiles in the phase build gate."
+        ]
+      }
+    },
+    {
+      "featureId": "app-build-gradle-kts-aa010bdd3d-005-settings-preferences-option-toggles-or-c",
+      "set": {
+        "status": "implemented",
+        "parityLevel": "equivalent",
+        "sourceBehavior": "`app/build.gradle.kts` includes DataStore Preferences as the app's lightweight persisted configuration/session dependency.",
+        "targetBehavior": "`login_preferences_service.cj` preserves that lightweight persisted session boundary with HarmonyOS `Preferences` file/key constants and read/toggle methods for the login flag.",
+        "notes": "Phase 1 closes the persisted preference service boundary even though later phases will wire more UI mutations to it."
+      },
+      "append": {
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::preferenceFileName",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::preferenceKey",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::readLoginState",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::toggleLoginState"
+        ],
+        "verificationEvidence": [
+          "Source inspection: app/build.gradle.kts declares datastore.preferences dependency and LoginRepositoryImpl uses user_login_state_pref/user_login_state.",
+          "Target inspection: login_preferences_service.cj uses the same file/key names and HarmonyOS Preferences bool read/write methods."
+        ]
+      }
+    },
+    {
+      "featureId": "build-gradle-kts-6cd8a326ab-002-android-platform-component-lifecycle-suc",
+      "set": {
+        "status": "platform-replaced",
+        "parityLevel": "platform-replaced",
+        "sourceBehavior": "The top-level Gradle build config establishes the shared Android plugin catalog that enables the application module lifecycle shell and Hilt plugin usage.",
+        "targetBehavior": "The HarmonyOS workspace replaces that top-level Android plugin wiring with target-side `build-profile.json5`, `hvigorfile.ts`, and `entry/cjpm.toml` configuration that compiles the Cangjie entry module and lifecycle shell.",
+        "notes": "Closed as workspace/module bootstrap replacement rather than 1:1 Gradle semantics."
+      },
+      "append": {
+        "targetEndpoints": [
+          "build-profile.json5",
+          "hvigorfile.ts",
+          "entry/cjpm.toml"
+        ],
+        "verificationEvidence": [
+          "Source inspection: build.gradle.kts only declares shared plugin aliases for Android app/library, Kotlin, and Hilt.",
+          "Build gate PASS: target workspace compiles through CompileCangjie/PackageHap using the HarmonyOS build profile."
+        ]
+      }
+    },
+    {
+      "featureId": "build-gradle-kts-e6afb1cfd2-001-runtime-permission-request-permission-re",
+      "set": {
+        "status": "not-applicable",
+        "parityLevel": "not-applicable",
+        "sourceBehavior": "The top-level Gradle file was heuristically tagged for runtime permissions, but it only contains shared plugin alias declarations and no permission behavior.",
+        "targetBehavior": "No HarmonyOS permission replacement was required for the top-level build file because there is no source permission flow here.",
+        "notes": "Analyzer false positive for build.gradle.kts."
+      },
+      "append": {
+        "verificationEvidence": [
+          "Source inspection: build.gradle.kts contains only plugin aliases with apply false and no permission declarations, APIs, or libraries."
+        ]
+      }
+    },
+    {
+      "featureId": "build-gradle-kts-2f9b07ef27-003-settings-preferences-option-toggles-or-c",
+      "set": {
+        "status": "not-applicable",
+        "parityLevel": "not-applicable",
+        "sourceBehavior": "The top-level Gradle file was heuristically tagged for settings/preferences behavior, but it contains no persisted configuration logic beyond plugin aliases.",
+        "targetBehavior": "No target preference/config state behavior was mapped from the top-level build file because it does not own any source preference semantics.",
+        "notes": "The real settings persistence boundary lives in app/build.gradle.kts and LoginRepositoryImpl, not this top-level file."
+      },
+      "append": {
+        "verificationEvidence": [
+          "Source inspection: build.gradle.kts contains only shared plugin alias declarations; no DataStore or config-state contract is defined there."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma",
+      "set": {
+        "status": "implemented",
+        "parityLevel": "equivalent",
+        "sourceBehavior": "`colors.xml` defines the base Foodike color tokens used by the Android app, including white, black, and the LightGreen/DarkGreen brand colors.",
+        "targetBehavior": "Both `entry` and `AppScope` color catalogs reproduce the source color values and add a `start_window_background` token for the HarmonyOS start window while keeping the base Foodike palette intact.",
+        "notes": "Phase 1 resource parity for the source values file itself is complete."
+      },
+      "append": {
+        "targetEndpoints": [
+          "entry/src/main/resources/base/element/color.json",
+          "AppScope/resources/base/element/color.json"
+        ],
+        "verificationEvidence": [
+          "Source inspection: app/src/main/res/values/colors.xml contains 9 color entries including LightGreen and DarkGreen.",
+          "Target inspection: entry/AppScope color.json carry matching hex values and compile in the phase build gate."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m",
+      "set": {
+        "status": "implemented",
+        "parityLevel": "equivalent",
+        "sourceBehavior": "The source color resources provide the app's neutral and brand color configuration for splash and page theming.",
+        "targetBehavior": "HarmonyOS color resources map those same neutral and brand values into `entry` and `AppScope` resource bundles, with `white` also driving `start_window_background` for startup theming.",
+        "notes": "Mapped color configuration into target resource bundles rather than inline code literals."
+      },
+      "append": {
+        "targetEndpoints": [
+          "entry/src/main/resources/base/element/color.json",
+          "AppScope/resources/base/element/color.json",
+          "entry/src/main/module.json5"
+        ],
+        "verificationEvidence": [
+          "Source inspection: Theme.SplashScreenTheme references @color/white from colors.xml.",
+          "Target inspection: module.json5 references $color:start_window_background and color.json defines it as #FFFFFFFF."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma",
+      "set": {
+        "status": "platform-replaced",
+        "parityLevel": "platform-replaced",
+        "sourceBehavior": "`themes.xml` defines `Theme.Foodike` and `Theme.SplashScreenTheme`, including splash background, animated icon, and post-splash theme handoff.",
+        "targetBehavior": "HarmonyOS replaces the Android theme XML with start-window metadata in `module.json5`, shared color/media resources, and the bootstrap page profile loaded by `EntryAbility`.",
+        "notes": "Theme file semantics are preserved through HarmonyOS module/window configuration rather than Android style inheritance."
+      },
+      "append": {
+        "targetEndpoints": [
+          "entry/src/main/module.json5",
+          "entry/src/main/resources/base/element/color.json",
+          "entry/src/main/resources/base/profile/main_pages.json"
+        ],
+        "verificationEvidence": [
+          "Source inspection: themes.xml declares windowSplashScreenBackground, windowSplashScreenAnimatedIcon, and postSplashScreenTheme.",
+          "Target inspection: module.json5 startWindowBackground/startWindowIcon and EntryAbility windowStage.loadContent preserve the startup handoff surface."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m",
+      "set": {
+        "status": "platform-replaced",
+        "parityLevel": "platform-replaced",
+        "sourceBehavior": "The source theme resources configure the app's startup background/icon and post-splash visual configuration.",
+        "targetBehavior": "The HarmonyOS entry module maps that configuration into `startWindowBackground`, `startWindowIcon`, and bootstrap page loading while retaining the source `icon.png` and white start window background.",
+        "notes": "Resource configuration preserved through target module metadata."
+      },
+      "append": {
+        "targetEndpoints": [
+          "entry/src/main/module.json5",
+          "entry/src/main/resources/base/media/icon.png",
+          "AppScope/resources/base/media/icon.png"
+        ],
+        "verificationEvidence": [
+          "Target inspection: module.json5 points to $media:icon and $color:start_window_background; matching media/color resources exist in the target tree."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re",
+      "set": {
+        "status": "not-applicable",
+        "parityLevel": "not-applicable",
+        "sourceBehavior": "The theme values file was heuristically tagged for permissions, but the inspected theme items only describe splash background/icon and post-splash theme handoff.",
+        "targetBehavior": "No permission-related HarmonyOS behavior was added because `themes.xml` contains no permission contract.",
+        "notes": "False positive caused by analyzer heuristics on the values file."
+      },
+      "append": {
+        "verificationEvidence": [
+          "Source inspection: app/src/main/res/values/themes.xml contains only Theme.Foodike and Theme.SplashScreenTheme items; no permission-related declarations."
+        ]
+      }
+    }
+  ]
+}
