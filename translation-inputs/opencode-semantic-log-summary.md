@@ -1,122 +1,125 @@
 # opencode-cj Semantic Log Summary
 
-- Generated: `2026-06-25T05:40:27+00:00`
+- Generated: `2026-06-26T03:59:02+00:00`
 - Workflow log directory: `D:\workspace\Foodike\translation-records\opencode-logs`
 - Recursive scan: `False`
-- Log files scanned: `13` of `13`
+- Log files scanned: `51` of `51`
 - Max log files: `80`
-- Sessions observed: `13`
+- Sessions observed: `50`
 
 ## Totals
 
 | Metric | Count |
 | --- | ---: |
-| `events` | 1722 |
-| `textEvents` | 213 |
-| `toolUses` | 883 |
-| `failedToolUses` | 32 |
+| `events` | 6416 |
+| `textEvents` | 777 |
+| `toolUses` | 3294 |
+| `failedToolUses` | 110 |
 | `jsonLineErrors` | 8 |
 
 ## Semantic Signals
 
 | Name | Count |
 | --- | ---: |
-| `platform_capability` | 452 |
-| `verification_or_build` | 293 |
-| `coverage_or_evidence` | 208 |
-| `implementation_or_repair` | 136 |
-| `context_review` | 106 |
-| `structure_quality` | 103 |
-| `blocker_or_deferred` | 76 |
-| `risk_or_weakening` | 43 |
+| `platform_capability` | 1760 |
+| `verification_or_build` | 1089 |
+| `coverage_or_evidence` | 858 |
+| `implementation_or_repair` | 508 |
+| `context_review` | 410 |
+| `blocker_or_deferred` | 344 |
+| `structure_quality` | 249 |
+| `risk_or_weakening` | 101 |
 
 ## Tool Counts
 
 | Name | Count |
 | --- | ---: |
-| `read` | 593 |
-| `grep` | 89 |
-| `bash` | 84 |
-| `apply_patch` | 46 |
-| `glob` | 31 |
-| `todowrite` | 26 |
-| `skill` | 14 |
+| `read` | 2143 |
+| `grep` | 507 |
+| `bash` | 206 |
+| `glob` | 151 |
+| `apply_patch` | 124 |
+| `todowrite` | 104 |
+| `skill` | 59 |
 
 ## Tool Status Counts
 
 | Name | Count |
 | --- | ---: |
-| `completed` | 876 |
-| `error` | 7 |
+| `completed` | 3249 |
+| `error` | 45 |
 
 ## Command Classes
 
 | Name | Count |
 | --- | ---: |
-| `test` | 27 |
-| `build` | 18 |
-| `coverage` | 17 |
-| `python` | 11 |
-| `shell` | 11 |
+| `test` | 72 |
+| `python` | 46 |
+| `coverage` | 32 |
+| `build` | 29 |
+| `shell` | 25 |
+| `inspect` | 1 |
+| `search` | 1 |
 
 ## Event Counts
 
 | Name | Count |
 | --- | ---: |
-| `tool_use` | 883 |
-| `step_finish` | 313 |
-| `step_start` | 313 |
-| `text` | 213 |
+| `tool_use` | 3294 |
+| `step_start` | 1172 |
+| `step_finish` | 1171 |
+| `text` | 777 |
+| `error` | 2 |
 
 ## Top Report References
 
 | Reference | Count |
 | --- | ---: |
-| `/.workflow-cache/source-coverage/kotlin--gate-none--checklist-none.json` | 9 |
-| `translation-inputs/.workflow-cache/source-coverage/kotlin--gate-none--checklist-none.json` | 9 |
-| `/source-coverage-matrix.json` | 9 |
-| `/source-coverage-matrix.md` | 9 |
-| `translation-inputs/source-coverage-matrix.json` | 9 |
-| `translation-inputs/source-coverage-matrix.md` | 9 |
+| `/source-coverage-matrix.json` | 21 |
+| `/source-coverage-matrix.md` | 21 |
+| `translation-inputs/source-coverage-matrix.json` | 21 |
+| `translation-inputs/source-coverage-matrix.md` | 21 |
+| `/shared/source_coverage/patch_authority.py` | 12 |
+| `scripts/shared/source_coverage/patch_authority.py` | 12 |
+| `/.workflow-cache/source-coverage/kotlin--gate-none--checklist-none.json` | 10 |
+| `translation-inputs/.workflow-cache/source-coverage/kotlin--gate-none--checklist-none.json` | 10 |
 | `/matrix-batch1-patch.json` | 5 |
 | `translation-inputs/matrix-batch1-patch.json` | 5 |
+| `/test-build-reports/phase-03-onboarding-login-profile/test-build-report.md` | 5 |
+| `translation-inputs/test-build-reports/phase-03-onboarding-login-profile/test-build-report.md` | 5 |
 | `/build-reports/phase-01-project-skeleton-resources/build-report.md` | 3 |
 | `translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md` | 3 |
+| `/build-reports/phase-03-onboarding-login-profile/build-report.md` | 3 |
+| `translation-inputs/build-reports/phase-03-onboarding-login-profile/build-report.md` | 3 |
 | `/test-build-reports/` | 2 |
 | `translation-inputs/test-build-reports/` | 2 |
 | `/build-reports/phase-01-project-skeleton-resources/build-report.json` | 2 |
 | `translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.json` | 2 |
-| `/phase01_app_group_matrix_patch.json` | 2 |
-| `/test-build-reports/phase-02-startup-navigation-session/test-build-report.md` | 2 |
-| `translation-inputs/test-build-reports/phase-02-startup-navigation-session/test-build-report.md` | 2 |
-| `/phase-task-checklist.md` | 1 |
-| `/phase-task-checklist.json` | 1 |
-| `translation-inputs/phase-task-checklist.md` | 1 |
 
 ## Top File References
 
 | Reference | Count |
 | --- | ---: |
-| `/path` | 586 |
-| `/type` | 586 |
-| `entry/src/main/cangjie/app_ability.cj` | 17 |
-| `/cjpm.toml` | 16 |
-| `/entry/src/main/cangjie/app_ability.cj` | 16 |
-| `/session` | 15 |
-| `entry/cjpm.toml` | 15 |
-| `entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj` | 15 |
-| `/content` | 14 |
-| `/entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj` | 14 |
-| `/build.gradle.kts` | 13 |
-| `app/build.gradle.kts` | 13 |
-| `/mapcir/skeleton/entry/cjpm.toml` | 11 |
-| `translation-inputs/mapcir/skeleton/entry/cjpm.toml` | 11 |
-| `/agent-source-walkthrough.md` | 10 |
-| `translation-inputs/agent-source-walkthrough.md` | 10 |
-| `/entries` | 9 |
-| `/.workflow-cache/capability-sdk-probe-cache.json` | 9 |
-| `/.workflow-cache/source-coverage/kotlin--gate-none--checklist-none.json` | 9 |
-| `/capabil` | 9 |
+| `/path` | 2102 |
+| `/type` | 2102 |
+| `entry/cjpm.toml` | 60 |
+| `/cjpm.toml` | 58 |
+| `/build.gradle.kts` | 49 |
+| `app/build.gradle.kts` | 49 |
+| `/mapcir/skeleton/entry/cjpm.toml` | 47 |
+| `translation-inputs/mapcir/skeleton/entry/cjpm.toml` | 47 |
+| `/HarmonyOS` | 38 |
+| `entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj` | 33 |
+| `/cart` | 32 |
+| `/entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj` | 30 |
+| `/test/manual` | 27 |
+| `/content` | 26 |
+| `/history` | 24 |
+| `/test` | 23 |
+| `/usr/bin/env` | 22 |
+| `/session` | 22 |
+| `/source-coverage-matrix.json` | 21 |
+| `/source-coverage-matrix.md` | 21 |
 
 ## Semantic Timeline
 
@@ -310,3 +313,41 @@
 - `D:\workspace\Foodike\translation-records\opencode-logs\20260625T051548457976Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=10, signals=[context_review=10, implementation_or_repair=27, coverage_or_evidence=18, platform_capability=54, verification_or_build=34, risk_or_weakening=4, blocker_or_deferred=9, structure_quality=6], tools=[todowrite=4, read=31, grep=13, skill=2, apply_patch=11, bash=12, glob=1]
 - `D:\workspace\Foodike\translation-records\opencode-logs\20260625T053008789762Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=0, signals=[platform_capability=22, implementation_or_repair=7, coverage_or_evidence=16, verification_or_build=10, context_review=7, structure_quality=8, risk_or_weakening=4, blocker_or_deferred=1], tools=[skill=1, read=26, grep=6, glob=1, bash=4, apply_patch=2]
 - `D:\workspace\Foodike\translation-records\opencode-logs\20260625T053450834826Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=2, signals=[context_review=7, implementation_or_repair=11, coverage_or_evidence=17, platform_capability=28, verification_or_build=15, structure_quality=11, risk_or_weakening=4, blocker_or_deferred=2], tools=[todowrite=3, read=30, skill=1, grep=7, glob=1, apply_patch=4, bash=5]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T054030281897Z-phase.log`: kind=phase, failedToolUses=4, signals=[platform_capability=100, context_review=11, implementation_or_repair=21, verification_or_build=26, blocker_or_deferred=11, structure_quality=7, risk_or_weakening=14, coverage_or_evidence=15], tools=[skill=2, read=67, todowrite=1, glob=6, grep=31, bash=8, apply_patch=3]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T061700256157Z-fix-build.log`: kind=fix-build, failedToolUses=8, signals=[context_review=17, verification_or_build=56, blocker_or_deferred=12, platform_capability=77, structure_quality=11, implementation_or_repair=9, coverage_or_evidence=1, risk_or_weakening=1], tools=[todowrite=4, read=32, skill=2, glob=12, grep=30, apply_patch=6, bash=10]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T065349690217Z-phase.log`: kind=phase, failedToolUses=9, signals=[context_review=16, platform_capability=95, implementation_or_repair=9, verification_or_build=55, blocker_or_deferred=10, structure_quality=28, coverage_or_evidence=6, risk_or_weakening=4], tools=[todowrite=2, read=91, skill=2, glob=12, grep=27, bash=8]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T073947966808Z-phase.log`: kind=phase, failedToolUses=5, signals=[context_review=9, platform_capability=58, implementation_or_repair=13, verification_or_build=47, structure_quality=7, blocker_or_deferred=13, risk_or_weakening=2, coverage_or_evidence=6], tools=[todowrite=3, read=56, skill=2, glob=13, grep=10, bash=8, apply_patch=5]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T091359467617Z-fix-build.log`: kind=fix-build, failedToolUses=0, signals=[], tools=[]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T092415282659Z-fix-build.log`: kind=fix-build, failedToolUses=0, signals=[], tools=[]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T093445004588Z-phase.log`: kind=phase, failedToolUses=2, signals=[context_review=8, implementation_or_repair=6, platform_capability=55, verification_or_build=27, coverage_or_evidence=16, risk_or_weakening=4, blocker_or_deferred=10, structure_quality=15], tools=[todowrite=3, read=59, skill=2, glob=2, grep=13, bash=5, apply_patch=3]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T113237290561Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=1, signals=[context_review=11, implementation_or_repair=13, coverage_or_evidence=21, platform_capability=25, verification_or_build=18, risk_or_weakening=2, structure_quality=2, blocker_or_deferred=3], tools=[todowrite=3, read=33, skill=1, glob=3, grep=8, apply_patch=4, bash=4]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T113833951930Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=6, signals=[context_review=7, coverage_or_evidence=24, implementation_or_repair=7, platform_capability=19, verification_or_build=14, structure_quality=1, risk_or_weakening=5, blocker_or_deferred=3], tools=[todowrite=2, read=35, skill=1, grep=6, apply_patch=3, bash=9, glob=3]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T114424938556Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=0, signals=[context_review=7, implementation_or_repair=17, blocker_or_deferred=12, coverage_or_evidence=17, platform_capability=46, verification_or_build=47, risk_or_weakening=1, structure_quality=2], tools=[todowrite=3, read=39, skill=1, glob=6, grep=11, bash=6, apply_patch=4]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T115139410411Z-fix-build.log`: kind=fix-build, failedToolUses=5, signals=[platform_capability=54, context_review=8, verification_or_build=57, blocker_or_deferred=19, implementation_or_repair=9, structure_quality=6, coverage_or_evidence=1], tools=[read=25, todowrite=3, grep=15, glob=2, apply_patch=6, bash=7]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T115617212490Z-phase.log`: kind=phase, failedToolUses=6, signals=[context_review=12, implementation_or_repair=13, coverage_or_evidence=34, platform_capability=40, verification_or_build=38, blocker_or_deferred=11, structure_quality=5], tools=[todowrite=4, skill=2, read=40, glob=7, grep=7, apply_patch=4, bash=8]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T120412726942Z-phase.log`: kind=phase, failedToolUses=8, signals=[context_review=9, structure_quality=8, coverage_or_evidence=6, implementation_or_repair=9, platform_capability=59, verification_or_build=24, blocker_or_deferred=8, risk_or_weakening=4], tools=[todowrite=3, read=76, skill=2, glob=8, grep=10, bash=4, apply_patch=2]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T134602281751Z-fix-build.log`: kind=fix-build, failedToolUses=1, signals=[context_review=6, verification_or_build=13, blocker_or_deferred=10, platform_capability=26, implementation_or_repair=4], tools=[todowrite=3, read=14, skill=1, grep=6, glob=1, apply_patch=1, bash=1]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T152014801718Z-phase.log`: kind=phase, failedToolUses=1, signals=[platform_capability=40, context_review=9, implementation_or_repair=8, verification_or_build=19, blocker_or_deferred=7, coverage_or_evidence=43, risk_or_weakening=2, structure_quality=1], tools=[skill=2, read=59, glob=4, grep=20, apply_patch=2, bash=4]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T154456817307Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=1, signals=[platform_capability=24, context_review=8, implementation_or_repair=8, coverage_or_evidence=31, verification_or_build=10, blocker_or_deferred=1, structure_quality=3], tools=[skill=1, read=44, grep=14, glob=2, bash=1]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T155006989804Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=0, signals=[platform_capability=20, context_review=10, implementation_or_repair=11, coverage_or_evidence=32, verification_or_build=8, blocker_or_deferred=3, structure_quality=5, risk_or_weakening=1], tools=[skill=1, read=45, todowrite=1, grep=18, glob=2]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T155844680221Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=1, signals=[context_review=8, implementation_or_repair=12, coverage_or_evidence=28, platform_capability=28, verification_or_build=20, blocker_or_deferred=12, structure_quality=4, risk_or_weakening=1], tools=[todowrite=2, read=51, skill=1, grep=12, glob=1, bash=3, apply_patch=2]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T161445647809Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=0, signals=[context_review=9, implementation_or_repair=9, coverage_or_evidence=19, platform_capability=16, verification_or_build=7, blocker_or_deferred=4, risk_or_weakening=1, structure_quality=2], tools=[todowrite=4, read=27, grep=6, skill=1, apply_patch=1, bash=2]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T161844781684Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=0, signals=[context_review=6, implementation_or_repair=9, verification_or_build=9, blocker_or_deferred=4, coverage_or_evidence=21, platform_capability=18], tools=[todowrite=2, read=39, skill=1, grep=7, glob=1]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T162542303172Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=1, signals=[platform_capability=13, implementation_or_repair=5, coverage_or_evidence=21, context_review=5, verification_or_build=11, blocker_or_deferred=7, risk_or_weakening=1], tools=[skill=1, todowrite=2, read=32, grep=6, bash=1]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T163005621659Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=1, signals=[context_review=7, implementation_or_repair=10, platform_capability=26, verification_or_build=11, coverage_or_evidence=30, structure_quality=3, blocker_or_deferred=5], tools=[todowrite=2, read=52, skill=1, glob=1, grep=7, apply_patch=2, bash=3]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T164534164716Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=1, signals=[context_review=4, implementation_or_repair=8, platform_capability=18, coverage_or_evidence=16, verification_or_build=7, structure_quality=3, blocker_or_deferred=3, risk_or_weakening=1], tools=[skill=1, read=37, grep=6]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T164839487932Z-phase.log`: kind=phase, failedToolUses=0, signals=[context_review=5, blocker_or_deferred=4, platform_capability=51, implementation_or_repair=6, verification_or_build=12, coverage_or_evidence=2, structure_quality=5, risk_or_weakening=1], tools=[todowrite=2, read=53, skill=4, glob=2, grep=19, bash=2]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T191804473322Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=3, signals=[implementation_or_repair=17, coverage_or_evidence=29, platform_capability=53, verification_or_build=23, context_review=9, blocker_or_deferred=6, structure_quality=4, risk_or_weakening=1], tools=[read=63, skill=1, glob=6, grep=15, todowrite=3, apply_patch=9, bash=1]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260625T195713619609Z-fix-build.log`: kind=fix-build, failedToolUses=0, signals=[platform_capability=16, context_review=6, verification_or_build=14, blocker_or_deferred=6, implementation_or_repair=4, coverage_or_evidence=1], tools=[read=15, glob=2, grep=2, todowrite=2, apply_patch=1, bash=3]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260626T021729261869Z-phase.log`: kind=phase, failedToolUses=4, signals=[platform_capability=39, implementation_or_repair=9, verification_or_build=18, context_review=10, blocker_or_deferred=8, coverage_or_evidence=4, risk_or_weakening=2, structure_quality=1], tools=[skill=1, read=59, todowrite=1, glob=6, grep=6]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260626T022939651438Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=4, signals=[context_review=8, implementation_or_repair=14, coverage_or_evidence=24, platform_capability=44, verification_or_build=23, blocker_or_deferred=7, structure_quality=2], tools=[todowrite=1, read=46, skill=2, glob=3, grep=24, apply_patch=4, bash=3]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260626T023824849272Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=3, signals=[context_review=7, implementation_or_repair=12, coverage_or_evidence=15, platform_capability=43, verification_or_build=13, blocker_or_deferred=5, structure_quality=2, risk_or_weakening=4], tools=[todowrite=3, read=42, glob=3, grep=15, apply_patch=8, bash=3]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260626T025407067220Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=0, signals=[context_review=9, implementation_or_repair=13, coverage_or_evidence=28, platform_capability=24, verification_or_build=13, blocker_or_deferred=8, structure_quality=3, risk_or_weakening=1], tools=[todowrite=2, read=47, glob=3, grep=15, apply_patch=1]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260626T030714537915Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=1, signals=[platform_capability=29, implementation_or_repair=11, coverage_or_evidence=28, verification_or_build=19, context_review=5, blocker_or_deferred=7], tools=[skill=2, read=42, glob=2, grep=9, apply_patch=3, bash=5]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260626T031526359714Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=0, signals=[context_review=6, implementation_or_repair=9, coverage_or_evidence=15, platform_capability=17, verification_or_build=8, structure_quality=4, blocker_or_deferred=1], tools=[todowrite=2, read=27, skill=1, grep=7, glob=2, bash=1]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260626T032010078980Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=0, signals=[context_review=7, implementation_or_repair=7, coverage_or_evidence=16, platform_capability=13, verification_or_build=10, blocker_or_deferred=2, structure_quality=1], tools=[todowrite=3, read=31, grep=4]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260626T032423520046Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=0, signals=[context_review=10, implementation_or_repair=13, coverage_or_evidence=26, platform_capability=15, verification_or_build=9, blocker_or_deferred=7, structure_quality=2], tools=[todowrite=1, read=35, skill=1, glob=1, grep=8]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260626T033017425162Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=2, signals=[context_review=12, implementation_or_repair=14, coverage_or_evidence=36, platform_capability=31, verification_or_build=20, blocker_or_deferred=13, structure_quality=5, risk_or_weakening=2], tools=[todowrite=2, read=50, glob=1, grep=11, skill=1, apply_patch=2, bash=3]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260626T034846272186Z-phase.log`: kind=phase, failedToolUses=0, signals=[platform_capability=29, implementation_or_repair=12, verification_or_build=31, context_review=11, risk_or_weakening=2, coverage_or_evidence=13, blocker_or_deferred=10], tools=[read=33, todowrite=3, glob=2, grep=5, skill=2, bash=3]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260626T035305479075Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=0, signals=[implementation_or_repair=12, coverage_or_evidence=18, platform_capability=25, verification_or_build=36, context_review=7, blocker_or_deferred=12, structure_quality=3], tools=[skill=1, read=28, todowrite=3, grep=6, glob=1, bash=5, apply_patch=2]
+- `D:\workspace\Foodike\translation-records\opencode-logs\20260626T035723873796Z-coverage-repair.log`: kind=coverage-repair, failedToolUses=0, signals=[context_review=5, implementation_or_repair=9, verification_or_build=23, blocker_or_deferred=4, platform_capability=22, coverage_or_evidence=7, risk_or_weakening=1, structure_quality=1], tools=[todowrite=3, read=26, skill=1, grep=2, bash=1]

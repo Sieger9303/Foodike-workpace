@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-25T06:25:24+00:00",
+  "generated_at": "2026-06-25T12:04:05+00:00",
   "phase": "phase-03-onboarding-login-profile",
   "workspace_root": "D:\\workspace\\Foodike",
   "target_project": "D:\\workspace\\Foodike\\Foodike-Harmony",
@@ -9,17 +9,12 @@
   "json_path": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-03-onboarding-login-profile\\build-report.json",
   "log_path": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-03-onboarding-login-profile\\build.log",
   "build_script": "D:\\workspace\\Foodike\\.agents\\skills\\harmonyos-build\\build.py",
-  "command": [
-    "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
-    "D:\\workspace\\Foodike\\.agents\\skills\\harmonyos-build\\build.py",
-    "--project-root",
-    "D:\\workspace\\Foodike\\Foodike-Harmony"
-  ],
-  "skipped": false,
+  "command": [],
+  "skipped": true,
   "result": "PASS",
   "returncode": 0,
   "timed_out": false,
-  "duration_seconds": 6.016,
+  "duration_seconds": 0.0,
   "failed_stage": null,
   "stages": [
     {
@@ -39,22 +34,22 @@
     {
       "stage": "CompileCangjie",
       "seen": true,
-      "first_line": 45,
-      "last_line": 50,
+      "first_line": 46,
+      "last_line": 51,
       "finished": true
     },
     {
       "stage": "PackageHap",
       "seen": true,
-      "first_line": 54,
-      "last_line": 54,
+      "first_line": 55,
+      "last_line": 55,
       "finished": true
     },
     {
       "stage": "SignHap",
       "seen": true,
-      "first_line": 58,
-      "last_line": 58,
+      "first_line": 59,
+      "last_line": 59,
       "finished": true
     }
   ],
@@ -72,48 +67,56 @@
       "message": "> hvigor WARN: Build analysis mode 'default' is deprecated, please use 'normal' instead."
     },
     {
-      "line": 56,
+      "line": 45,
+      "stage": "SyncCangjieResource",
+      "message": "> hvigor WARN: Warning: field 'profile.build.combined' in '.\\cjpm.toml' is experimental, it is unstable and has some limitations, please refer to related documentation for more details"
+    },
+    {
+      "line": 57,
       "stage": "PackageHap",
       "message": "> hvigor WARN: Will skip sign 'hos_hap'. No signingConfigs profile is configured in current project."
     }
   ],
-  "resolved_blockers": [
-    "> hvigor ERROR: Failed :entry:default@CompileCangjie..."
-  ],
+  "resolved_blockers": [],
   "hap_artifacts": [
     {
       "path": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap",
-      "size_bytes": 1126850,
-      "modified_epoch": 1782368683.62477
+      "size_bytes": 9159624,
+      "modified_epoch": 1782388966.76078
     }
   ],
   "handoff_prompt": "",
-  "reused_previous_pass": false,
-  "skip_reason": "",
+  "reused_previous_pass": true,
+  "skip_reason": "unchanged target/build-helper inputs",
   "input_fingerprint": {
-    "sha256": "3ce550c864e48b20ed9f33a5d4f939a9c93574e41fb5c0470e13f00b6a457a7b",
+    "sha256": "fe35484bf4c58010dca009b0fcf1fb02afd055f12024092f9b831366f4dadc93",
     "parts": {
       "version": "build-hap-report-v2",
       "targetProject": {
         "path": "D:\\workspace\\Foodike\\Foodike-Harmony",
         "exists": true,
-        "fileCount": 43,
-        "sha256": "9cabba1ab68817d7cbbb436048781cd68f6c6ace2c1e9aff8726eab3dc172c27",
+        "fileCount": 66,
+        "sha256": "c85abe390c57365311e2d9afe6f98ca1a9ce85017a38da71fb5ec578ccddc0f7",
         "files": [
           {
+            "path": ".mapcir.json",
+            "sizeBytes": 72868,
+            "sha256": "9ef92612270a89b001928dc9a1543909f11b7ba2fa3eb1d8b5c8bb57945957d6"
+          },
+          {
             "path": "AppScope/app.json5",
-            "sizeBytes": 193,
-            "sha256": "b51fa9db664d3f636a58fd0592ebeb59a9dda8f86e726660e809e5f1a24b1344"
+            "sizeBytes": 203,
+            "sha256": "8478665bb6559f2e1a545496830d9a2ed64335cfdbd79e6e91c308e8071e4ba3"
           },
           {
             "path": "AppScope/resources/base/element/color.json",
-            "sizeBytes": 698,
-            "sha256": "5ccef9077ff46fdbf8b8015151eb03a52b78e7cfab45b4c34b842ccb2388f6c5"
+            "sizeBytes": 742,
+            "sha256": "32e806d050683392433b2a6e3b5122d34170f38aecfecc7a96fd6728eaa2e618"
           },
           {
             "path": "AppScope/resources/base/element/string.json",
-            "sizeBytes": 85,
-            "sha256": "db83417c6fe8142611cacd2600609980ca7b05d40e1bfc5162d66366d295122f"
+            "sizeBytes": 93,
+            "sha256": "67de9ade79433bc74c247ddbea397416828cdd021916a3695a8f604de893c08d"
           },
           {
             "path": "AppScope/resources/base/media/icon.png",
@@ -122,33 +125,33 @@
           },
           {
             "path": "build-profile.json5",
-            "sizeBytes": 800,
-            "sha256": "c188e9b14d9da624fbb7811ce9a849834f99ee92de3c5b6b31df84f2c0a3f454"
+            "sizeBytes": 843,
+            "sha256": "f22e0ce317460eafa862448cc33d04dc47cd3617ddc72faeac46b5493843753f"
           },
           {
             "path": "entry/build-profile.json5",
-            "sizeBytes": 274,
-            "sha256": "b17ad1820d10bf1efdf305d966129fdb5f8a46375e9a91f8982155da1b899367"
+            "sizeBytes": 293,
+            "sha256": "62d278f092ff72848b71b9b68f25cdbd568d770e077bda778b9009a496087798"
           },
           {
             "path": "entry/cjpm.lock",
-            "sizeBytes": 24,
-            "sha256": "7b09643cc3e7107d2a0f09605871366c547525d40221945a60bee8a9a5e3f3b0"
+            "sizeBytes": 27,
+            "sha256": "0c5143e1df64599643d0c66ea4ad548eb4760d7161fd616c297d22aac52c7eb2"
           },
           {
             "path": "entry/cjpm.toml",
-            "sizeBytes": 1829,
-            "sha256": "f9e6dac0a5b5c17f8b1d510f27ab8d085f53b049c627ccb6025d569dfeb1c421"
+            "sizeBytes": 1929,
+            "sha256": "36b7bc50fba1d1a83c6795ed505972e7c99559e8a4d4026917c08ac18ac7e5d8"
           },
           {
             "path": "entry/hvigorfile.ts",
-            "sizeBytes": 104,
-            "sha256": "ac6e20686b93c3aedcb0a9d99c76f87f4552c3a6a94d9f0d7ffe5103dea89864"
+            "sizeBytes": 107,
+            "sha256": "03843c370f5ba500eed824aef818d38cac0c1f4b9f8f96f1391c938e33fcaf48"
           },
           {
             "path": "entry/oh-package.json5",
-            "sizeBytes": 164,
-            "sha256": "00c4249f3adc44920ad0a1ca00927ff908b1b53cbf19d10f389feb76ce798f92"
+            "sizeBytes": 173,
+            "sha256": "9d103a60bcaf0bee65fb8e8faf9f37a01d5fa32e4d091269a3799459615f6372"
           },
           {
             "path": "entry/src/main/cangjie/ability_mainability_entry.cj",
@@ -157,13 +160,18 @@
           },
           {
             "path": "entry/src/main/cangjie/ability_stage.cj",
-            "sizeBytes": 275,
-            "sha256": "6a7d0e0f92920edae6b8ee3dc1ae49c759a3cda75a7d0d3737efffb87b6f386b"
+            "sizeBytes": 285,
+            "sha256": "86e6461bae6fa0028143013613c96cc982d0f7bc33a2abbfa2ead23453185455"
           },
           {
             "path": "entry/src/main/cangjie/app_ability.cj",
-            "sizeBytes": 1707,
-            "sha256": "ba3e94a0b6a70fdf429dadacdd041f0ff4391c905db185dfbb66547fe93aeeb6"
+            "sizeBytes": 1750,
+            "sha256": "fa715604a030bc2dba9c1adeff18125c96cfab4f55d65c886b9be22787c4f3f3"
+          },
+          {
+            "path": "entry/src/main/cangjie/main_activity_ability.cj",
+            "sizeBytes": 892,
+            "sha256": "8b5aa1e40567b9a51899dfc7a31128d437a566e77dd7de196fb1952f33cb9e6d"
           },
           {
             "path": "entry/src/main/cangjie/module_entry_entry.cj",
@@ -172,108 +180,173 @@
           },
           {
             "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj",
-            "sizeBytes": 2675,
-            "sha256": "5d6ec3457aa6ff57c864b1659be53714f34406d82eb0c63d2cff9ae55cb4b7cc"
+            "sizeBytes": 2767,
+            "sha256": "ebe5209b6c8dc8a7c165863b33f5ce37b0849dc7704a558caa47168eed896087"
           },
           {
             "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
-            "sizeBytes": 16036,
-            "sha256": "73feb51caaf3e3094082ae68ea3d7dbec5b12ee7556e227cc3d345faaf9673e1"
+            "sizeBytes": 8175,
+            "sha256": "8b747d010873fca9f3f9864d0eb8b06fbc4f1c06f6a1abf0e2700793704406ce"
           },
           {
             "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_state.cj",
-            "sizeBytes": 113,
-            "sha256": "26a166e8877c323ca3aa7dfe9c5d1831919534eb3cf053e3975eea37a50ae146"
+            "sizeBytes": 116,
+            "sha256": "d62a0b6a5017f7415c3f15e5f8f448dd1c11760cf306f49209e6354b352673f9"
           },
           {
             "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj",
-            "sizeBytes": 1786,
-            "sha256": "b60b9f9ac4d292befd1917fc6648d5626471dd0483c0e658059a5e83b953fafc"
+            "sizeBytes": 1823,
+            "sha256": "c7f744b69dbe4d5dc1b72bd5d97f49d96b204c249ffbd7a0c172b3baf33423c9"
           },
           {
             "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/package_anchor.cj",
-            "sizeBytes": 105,
-            "sha256": "1bc2a86c3ce6697aa4caba6ba355c8bb12342c86facac492ea6a8cc18ddf3f18"
+            "sizeBytes": 108,
+            "sha256": "c197d77fd1f5d62ffd0c6c2fa7a16cd039326e99af6068658200c70d2f94a1f2"
           },
           {
             "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj",
-            "sizeBytes": 1595,
-            "sha256": "c4b3ece1f91e4af01cd33d8b55b116450247ce61118674b8319e878d0d06ba20"
+            "sizeBytes": 1644,
+            "sha256": "34507213b046a24f32eb7ade6678f14f3a1bdda0479450aeef94f7a950f93928"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj",
+            "sizeBytes": 3438,
+            "sha256": "a6a007b9beb7ae915741428868cb457da76d2bc0f9427c8c916c4af748a7745e"
           },
           {
             "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj",
-            "sizeBytes": 1212,
-            "sha256": "65be80e412046646d9f5082a0a6a0f6c7074cb12299832ac9ee820b56c82a05c"
+            "sizeBytes": 1240,
+            "sha256": "9e31573f4d18623ea2268372abd6c1b23074b890bebcce8f79eedf2d5adaf3a4"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj",
+            "sizeBytes": 2955,
+            "sha256": "490c7de04592af7d345ec899d9cdbee06815c83654dbbf76bca3203ef96eb032"
           },
           {
             "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj",
-            "sizeBytes": 1646,
-            "sha256": "eb192b2fa338abb5b62fd5e5b79675691812beaf25ed7da4d29e825deedf9574"
+            "sizeBytes": 1709,
+            "sha256": "2801feb4f6ee19183b43567547dd48822a1a43c66b9f3c757814e2aa710b915f"
           },
           {
             "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/package_anchor.cj",
-            "sizeBytes": 113,
-            "sha256": "a0a984a40836b4765f8064e73dd2153708298de1ff9ef17ecc667277d94eb798"
+            "sizeBytes": 116,
+            "sha256": "b7d89c9af50f4fa38a290cae9a0043f80a822905a336e34cba97d8e8634e5e98"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj",
+            "sizeBytes": 3079,
+            "sha256": "a930c25b1b69e4d263353fbe1c4fa1e20eb04e75ea536ce1288603c32150908e"
           },
           {
             "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj",
-            "sizeBytes": 833,
-            "sha256": "8ab4dcf2a0c6495d60a9d672e2288b7ee477ea63b29e6cf5b5454f56e82695e5"
+            "sizeBytes": 850,
+            "sha256": "a21d79f635c7043eef6fbbbd053f8603d572dfe9a753c435e5533dec37525149"
           },
           {
             "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj",
-            "sizeBytes": 494,
-            "sha256": "efdadcd24c846556d9466c582247d0c2a44f93b4be6f9eaa1f95d11e911d42ac"
+            "sizeBytes": 511,
+            "sha256": "16857e932692d86c8b957c35924260244a8eb7889e4da66d97e70e14c36342c3"
           },
           {
             "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/package_anchor.cj",
-            "sizeBytes": 174,
-            "sha256": "5514510ecc0d37e55ac1b5319e1f980f4700c28457cd6392c2113e392c84cae8"
+            "sizeBytes": 178,
+            "sha256": "5c882a132c8e5eebdca4349ce6fd1be3991ead44595cb601efcf81d540200a02"
           },
           {
             "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/runtime/app_runtime.cj",
-            "sizeBytes": 867,
-            "sha256": "6a82c10b434b6fcef8194165bf05312d498ef3fd68ed187f7671583fe21a49fe"
+            "sizeBytes": 896,
+            "sha256": "6b876910ed6cb5bef1fafc8f3c3cfa596cc47e7f2381638917618eb1e5343dc3"
           },
           {
             "path": "entry/src/main/module.json5",
-            "sizeBytes": 1016,
-            "sha256": "75809d8c51d841809fa101e2cd6aaa1aac6ed004aabfed89bc1c4e3e8a7f6758"
+            "sizeBytes": 1056,
+            "sha256": "758c8ab40d87721870eff1d78d4c7537cf31d503e65c64d4acf3f5d92b1c51e8"
           },
           {
             "path": "entry/src/main/resources/base/element/color.json",
-            "sizeBytes": 698,
-            "sha256": "5ccef9077ff46fdbf8b8015151eb03a52b78e7cfab45b4c34b842ccb2388f6c5"
+            "sizeBytes": 742,
+            "sha256": "32e806d050683392433b2a6e3b5122d34170f38aecfecc7a96fd6728eaa2e618"
           },
           {
             "path": "entry/src/main/resources/base/element/string.json",
-            "sizeBytes": 1705,
-            "sha256": "6c8e7c4af97ad684ca6faca992233c9c1c5087fb2a27aa24bbc57196ef3fcf7c"
+            "sizeBytes": 1793,
+            "sha256": "519b9e4b063fe68805e01c2144ed231aa0619b3aa0e86d33cbb00c3669cae42a"
           },
           {
-            "path": "entry/src/main/resources/base/media/chinese_bowl.svg",
-            "sizeBytes": 649,
-            "sha256": "78b7763cdbc8df1180bccdf47886db5d214ddb6a51b351d10a7d550f235642fe"
+            "path": "entry/src/main/resources/base/media/applepie.jpg",
+            "sizeBytes": 248315,
+            "sha256": "5e7f6dec7a195b2638c50c8765271f0ea71aecf678ea87e4f59edb5cf635bccb"
           },
           {
-            "path": "entry/src/main/resources/base/media/clock.svg",
-            "sizeBytes": 408,
-            "sha256": "937f5220c9cd47268adbb852811f60cbbc92062964fd18c8ed40c3e02a785aa9"
+            "path": "entry/src/main/resources/base/media/biryani.jpg",
+            "sizeBytes": 12362,
+            "sha256": "13a8a5e65ac5295d3ddec0dcd949119471082695be1883d93f5a57fc7567a74b"
           },
           {
-            "path": "entry/src/main/resources/base/media/fb_icon.svg",
-            "sizeBytes": 247,
-            "sha256": "d984014116538a89b12c1aaf081414515123a1b21b4c34c12b7b00607f6667a5"
+            "path": "entry/src/main/resources/base/media/burger.jpg",
+            "sizeBytes": 9146,
+            "sha256": "2730d27c2b6a5647802dca30a1af37fa6ab2a39c21b6a7f43cb84298c893cc8e"
           },
           {
-            "path": "entry/src/main/resources/base/media/goog_icon.svg",
-            "sizeBytes": 628,
-            "sha256": "754fb54258f313f5c8a4a3c079701d3925964065848dee548aca3fbf6c721c21"
+            "path": "entry/src/main/resources/base/media/chinese.jpg",
+            "sizeBytes": 15335,
+            "sha256": "c671a7b5245dd1fde171f91074d67363578bdbdcd569ba96524b3a4d08b4ee4e"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/chinese_bowl.png",
+            "sizeBytes": 195832,
+            "sha256": "f95ef60a4664803365d577a613bbb659b593fe4b3c400f2cc25d0c870e15b106"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/clock.png",
+            "sizeBytes": 27732,
+            "sha256": "579261b6914df9b4e2885a610e3118152035fc07a073a0e00b9dade6a51b6f6b"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/dosa.jpg",
+            "sizeBytes": 6996155,
+            "sha256": "a56d66689f15e6bc0e5c10041a3c675fe6681665300a0096cd83ec52317537bc"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/fb_icon.png",
+            "sizeBytes": 2580,
+            "sha256": "bded8d5d2f5b9b5b060b5b889bdec4e947180464dfc541f5541e4c41f76dacff"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/goog_icon.png",
+            "sizeBytes": 19867,
+            "sha256": "8edb2dab855419b307f2822fd2df3671ba5598dc2e7869e51b50c47749536b37"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/groceries.png",
+            "sizeBytes": 235132,
+            "sha256": "b2e6f7faac9c64960ff2396e4b63c87dc5fef24bbcb29d3195679665cc428125"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/ic_launcher.png",
+            "sizeBytes": 1741,
+            "sha256": "84456ebf38305bbdca641c486a647952b95fefbe4969beb475ff5bb47bad3e1d"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/ic_launcher_round.png",
+            "sizeBytes": 3728,
+            "sha256": "a2316090c2db73008ca68a989aa66ddc224acf289c0962137a6b8a1d20de7e1d"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/ic_non_veg.png",
+            "sizeBytes": 12227,
+            "sha256": "c0c3e06d5f5e46daa10b3e010a2a09e5d09bf769b1c96f98b05b9baf56d221f1"
           },
           {
             "path": "entry/src/main/resources/base/media/ic_profile.svg",
-            "sizeBytes": 237,
-            "sha256": "d6bee57d030e7a04f8c2b63fd301cee7935879ad7908451615588338a2fa5548"
+            "sizeBytes": 242,
+            "sha256": "b5a5b8715581bd485dc37512e03cc4e16e5644e94f5e4ee17fc0608e4865d2d6"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/ic_veg.png",
+            "sizeBytes": 16482,
+            "sha256": "f24812bbe46f451bf3d1dd3733af2fa9e8312a311bd49335e1cc746d81662ef0"
           },
           {
             "path": "entry/src/main/resources/base/media/icon.png",
@@ -281,39 +354,79 @@
             "sha256": "4b7260eed6fe84e185c141b5690ee8adf8ec267245d37d3f80e574728d8d71d7"
           },
           {
-            "path": "entry/src/main/resources/base/media/rider.svg",
-            "sizeBytes": 570,
-            "sha256": "d73364d411621f57baa09045f900f1f58ead7475b065861c7391700e8ff4ec84"
+            "path": "entry/src/main/resources/base/media/outlet_card.png",
+            "sizeBytes": 197,
+            "sha256": "1b7eaed531c60e1028265e6880437c3358d99011634dd1173f89e70c8b216dcd"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/paratha.jpg",
+            "sizeBytes": 8654,
+            "sha256": "7b5139f22dbdbc103633adeea2741920cc00806f41ba89033352b4379e8a4935"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/pizza.jpg",
+            "sizeBytes": 55516,
+            "sha256": "d9a6aeaa803da9e2b276b7c6c49b921291584226bdf2298b3cc6a1fe2716a1fa"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/rider.png",
+            "sizeBytes": 101444,
+            "sha256": "e7a090a463a64cbd6d416356b46696400579c1d6d0705e7accaee310f43811df"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/star.png",
+            "sizeBytes": 1436,
+            "sha256": "8e52e4352fdb0ca3956b612e861f7504bf8db922b0cb6477fbfa76fcfebc14a1"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/upi.png",
+            "sizeBytes": 44937,
+            "sha256": "88fe87c68804acce4cf95b2df00897ee3623b699931beb3d927b772bbd2291c0"
           },
           {
             "path": "entry/src/main/resources/base/profile/main_pages.json",
-            "sizeBytes": 48,
-            "sha256": "bbfe9d71115e693f46a949608919a88ec1a5d8ce41f2a8044e65fd3f2777a138"
+            "sizeBytes": 53,
+            "sha256": "9589e0abc2470290e27c66e47e260e98d500fd61af1aa3f580bf864affc79a89"
+          },
+          {
+            "path": "entry/src/ohosTest/cangjie/cjpm.toml",
+            "sizeBytes": 647,
+            "sha256": "e3ab6d70a7b2d3cc4f64b090dbf5fbd0f506d755910ed7b764fbb91cdb99d921"
+          },
+          {
+            "path": "entry/src/test/cangjie/cjpm.lock",
+            "sizeBytes": 24,
+            "sha256": "7b09643cc3e7107d2a0f09605871366c547525d40221945a60bee8a9a5e3f3b0"
+          },
+          {
+            "path": "entry/src/test/cangjie/cjpm.toml",
+            "sizeBytes": 661,
+            "sha256": "265de211ff05e5cd09010df0fe0d68f331202c9863ac20f52034aa74de610195"
           },
           {
             "path": "entry/src/test/cangjie/phase02_startup_navigation_test.cj",
-            "sizeBytes": 3527,
-            "sha256": "1a1d2ff36093631770e3c9b2a1c0c55b38ff8d6089302aa48e329a5ae1da68bf"
+            "sizeBytes": 3618,
+            "sha256": "3bf4c40bd59186d1accbc190a4b95b6cde1cfa560a5df726576c933398135e8a"
           },
           {
             "path": "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
-            "sizeBytes": 1664,
-            "sha256": "c3273499311a19f25224bce27a88acf44d645ace53e7502e9982a985c7f1a427"
+            "sizeBytes": 1708,
+            "sha256": "58f7a11756e0598dd36d9c9b184adce4a6ab6cab6bbb9b7b1824e517b28aecca"
           },
           {
             "path": "hvigor/hvigor-config.json5",
-            "sizeBytes": 206,
-            "sha256": "bab8c4e07a7d683b15019d38015ad38b2043982df9e1dbc580218c6b21eef3d2"
+            "sizeBytes": 219,
+            "sha256": "c70019efc8435958443c2bf050c7c1736701fb7046f046b70ef86efd55f2e628"
           },
           {
             "path": "hvigorfile.ts",
-            "sizeBytes": 104,
-            "sha256": "1065d54a286b68cdeab133b484547bacf1313724babf19836051fd680b3db2b8"
+            "sizeBytes": 107,
+            "sha256": "09cd052028d3171956ad23da871d6dca38b46ea72a53f8833e082e53b958c954"
           },
           {
             "path": "oh-package.json5",
-            "sizeBytes": 119,
-            "sha256": "46ab3969195dbfa8bb2ade12d538eee33e2768880cfcabf60dfe9f3489d451fe"
+            "sizeBytes": 125,
+            "sha256": "cc727672910519893f10691533ad508137cf2520ff8b4f16655e609b9ba01f87"
           }
         ]
       },
@@ -350,8 +463,8 @@
         {
           "path": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap",
           "exists": true,
-          "sizeBytes": 1126850,
-          "sha256": "486ce44f1bfbe05e3f645c56470c94114b6d7a2f0ee9526e343960b11af9e6aa"
+          "sizeBytes": 9159624,
+          "sha256": "b8711ac8fbc0ef9222c7ff6545fc31cb0953bc44916117a29c0d75ea0326135f"
         }
       ]
     }

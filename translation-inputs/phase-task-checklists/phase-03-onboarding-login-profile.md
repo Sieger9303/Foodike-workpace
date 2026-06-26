@@ -12,10 +12,10 @@ Current-phase task checklist generated from the agent-maintained source coverage
 | --- | --- |
 | phaseFeatureEntries | 25 |
 | phaseCriticalHighFeatureEntries | 23 |
-| mustCompleteFeatureEntries | 23 |
+| mustCompleteFeatureEntries | 0 |
 | needsEvidenceFeatureEntries | 0 |
-| deferredOrFallbackFeatureEntries | 0 |
-| coveredFeatureEntries | 0 |
+| deferredOrFallbackFeatureEntries | 14 |
+| coveredFeatureEntries | 11 |
 | phaseSourceFiles | 8 |
 | phasePlatformCapabilityEntries | 0 |
 | phaseCriticalHighPlatformCapabilityEntries | 0 |
@@ -35,7 +35,7 @@ Current-phase task checklist generated from the agent-maintained source coverage
 | behaviorAuditOpenFeatureContracts | 0 |
 | behaviorAuditPlatformContracts | 0 |
 | testHarnessReportAvailable | True |
-| testHarnessAcceptedPass | True |
+| testHarnessAcceptedPass | False |
 | unassignedCriticalHighFeatureEntries | 116 |
 | unassignedCriticalHighPlatformCapabilityEntries | 5 |
 
@@ -43,7 +43,8 @@ Current-phase task checklist generated from the agent-maintained source coverage
 
 | status | count |
 | --- | --- |
-| planned | 25 |
+| implemented | 11 |
+| not-applicable | 14 |
 
 ## Plan Contract Alignment
 
@@ -68,13 +69,15 @@ Use this section as upstream planning ownership evidence. If it conflicts with s
 
 | status | count |
 | --- | --- |
-| planned | 23 |
+| implemented | 11 |
+| not-applicable | 12 |
 
 ### Behavior Audit Parity Counts
 
 | parity | count |
 | --- | --- |
-| unverified | 23 |
+| equivalent | 11 |
+| not-applicable | 12 |
 
 ### Open Feature Contracts
 
@@ -84,98 +87,82 @@ _No open current-phase feature contracts._
 
 | feature id | importance | status | parity | source path | target behavior |
 | --- | --- | --- | --- | --- | --- |
-| app-src-main-java-com-example-foodike-presentation-login-b030a7b1f9-001-image-viewing-bitmap-exif-handling-zoom | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt |  |
-| app-src-main-java-com-example-foodike-presentation-login-1ed35246b3-002-navigation-surface-menu-drawer-toolbar-o | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt |  |
-| app-src-main-java-com-example-foodike-presentation-login-5777ecba15-003-notification-widget-remoteviews-or-home | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt |  |
-| app-src-main-java-com-example-foodike-presentation-login-7ab3866541-004-runtime-permission-request-permission-re | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt |  |
-| app-src-main-java-com-example-foodike-presentation-login-2c65d08c3b-005-screen-lifecycle-entry-point-initializat | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt |  |
-| app-src-main-java-com-example-foodike-presentation-login-34c5f4ba3a-006-settings-preferences-option-toggles-or-c | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt |  |
-| app-src-main-java-com-example-foodike-presentation-login-78d5c742f4-007-observable-state-viewmodel-flow-livedata | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt |  |
-| app-src-main-java-com-example-foodike-presentation-profi-a1f2ba5cd8-001-image-viewing-bitmap-exif-handling-zoom | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt |  |
-| app-src-main-java-com-example-foodike-presentation-profi-c34aae0a57-002-navigation-surface-menu-drawer-toolbar-o | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt |  |
-| app-src-main-java-com-example-foodike-presentation-profi-106c8cc862-003-runtime-permission-request-permission-re | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt |  |
-| app-src-main-java-com-example-foodike-presentation-profi-e492afed0c-004-observable-state-viewmodel-flow-livedata | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt |  |
-| app-src-main-java-com-example-foodike-presentation-onboa-06e1e43e4e-001-image-viewing-bitmap-exif-handling-zoom | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt |  |
-| app-src-main-java-com-example-foodike-presentation-onboa-71420699c7-002-runtime-permission-request-permission-re | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt |  |
-| app-src-main-java-com-example-foodike-presentation-onboa-d0629b7f1c-001-image-viewing-bitmap-exif-handling-zoom | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt |  |
-| app-src-main-java-com-example-foodike-presentation-onboa-f9447173ee-002-runtime-permission-request-permission-re | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt |  |
-| app-src-main-java-com-example-foodike-presentation-onboa-d591d5d894-003-data-loading-query-search-filter-or-sort | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt |  |
-| app-src-main-java-com-example-foodike-presentation-profi-f941f1a12e-001-runtime-permission-request-permission-re | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt |  |
-| app-src-main-java-com-example-foodike-presentation-profi-9d1239d799-002-screen-lifecycle-entry-point-initializat | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt |  |
-| app-src-main-java-com-example-foodike-presentation-profi-1b04c65221-003-observable-state-viewmodel-flow-livedata | critical | planned | unverified | app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt |  |
-| app-src-main-java-com-example-foodike-presentation-onboa-eed8afd34d-001-navigation-surface-menu-drawer-toolbar-o | high | planned | unverified | app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt |  |
-| app-src-main-java-com-example-foodike-presentation-onboa-70fddfcb28-002-runtime-permission-request-permission-re | high | planned | unverified | app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt |  |
-| app-src-main-java-com-example-foodike-presentation-onboa-fcaf31ccc3-003-screen-lifecycle-entry-point-initializat | high | planned | unverified | app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt |  |
-| app-src-main-java-com-example-foodike-presentation-onboa-579cddd1b6-004-observable-state-viewmodel-flow-livedata | high | planned | unverified | app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt |  |
+| app-src-main-java-com-example-foodike-presentation-login-b030a7b1f9-001-image-viewing-bitmap-exif-handling-zoom | critical | not-applicable | not-applicable | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | The HarmonyOS login route keeps the same static Google/Facebook icon affordances as tappable placeholders without adding any image-viewing or media-preview workflow because the source login screen has none. |
+| app-src-main-java-com-example-foodike-presentation-login-1ed35246b3-002-navigation-surface-menu-drawer-toolbar-o | critical | implemented | equivalent | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | The HarmonyOS bootstrap route host keeps login as a dedicated route and, after successful credential validation, navigates directly to the shared home route through the same route contract used by the shell. The login route remains distinct from onboarding/profile and the success path replaces the visible route instead of leaving the user on the login screen. |
+| app-src-main-java-com-example-foodike-presentation-login-5777ecba15-003-notification-widget-remoteviews-or-home | critical | not-applicable | not-applicable | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | No HarmonyOS notification or widget integration was added for the login route because the inspected source login screen has no such behavior. |
+| app-src-main-java-com-example-foodike-presentation-login-7ab3866541-004-runtime-permission-request-permission-re | critical | not-applicable | not-applicable | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | No HarmonyOS runtime-permission flow was added for the login route because this source login screen does not request permissions or call protected APIs. |
+| app-src-main-java-com-example-foodike-presentation-login-2c65d08c3b-005-screen-lifecycle-entry-point-initializat | critical | implemented | equivalent | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | The HarmonyOS bootstrap route host performs login-screen entry setup by seeding dedicated login state fields, clearing stale error state as users edit, and centralizing login actions in the route host so the login page can be entered, dismissed, and revisited cleanly during onboarding/login/profile flow transitions. The target also preserves immediate one-shot user feedback on failed login through toast emission plus the visible inline error banner. |
+| app-src-main-java-com-example-foodike-presentation-login-34c5f4ba3a-006-settings-preferences-option-toggles-or-c | critical | implemented | equivalent | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | Successful login uses `LoginStore.login()` to write the persisted HarmonyOS login preference through `LoginPreferencesService.login(context)`, preserving the source contract that login updates durable session configuration rather than ephemeral page state. |
+| app-src-main-java-com-example-foodike-presentation-login-78d5c742f4-007-observable-state-viewmodel-flow-livedata | critical | implemented | equivalent | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | The HarmonyOS bootstrap route host preserves the same observable login-screen contract with `@State` fields for email, password, and error message. `renderLoginRoute` binds those values directly into `TextInput` components, clears stale errors when fields change, and re-renders immediately on invalid-login updates while keeping one-shot feedback through toast emission. |
+| app-src-main-java-com-example-foodike-presentation-profi-a1f2ba5cd8-001-image-viewing-bitmap-exif-handling-zoom | critical | not-applicable | not-applicable | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt | The HarmonyOS profile route preserves the static profile avatar presentation only; `renderProfileRoute` shows `mediaProfile` as a non-preview avatar and does not introduce viewer, zoom, or metadata behavior absent from the source screen. |
+| app-src-main-java-com-example-foodike-presentation-profi-c34aae0a57-002-navigation-surface-menu-drawer-toolbar-o | critical | implemented | equivalent | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt | The HarmonyOS profile route keeps the same user-visible navigation commands. `renderProfileRoute` renders a dedicated back affordance, static profile header, section actions, and logout action, `buildProfileRoute` wires back navigation to the history shell route, and `performLogout` clears login-related route state before sending the app to onboarding after persisted logout mutation. |
+| app-src-main-java-com-example-foodike-presentation-profi-106c8cc862-003-runtime-permission-request-permission-re | critical | not-applicable | not-applicable | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt | No HarmonyOS permission request flow was added for the profile route because the inspected source profile screen has no permission or protected-API behavior to translate. |
+| app-src-main-java-com-example-foodike-presentation-profi-e492afed0c-004-observable-state-viewmodel-flow-livedata | critical | implemented | equivalent | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt | The HarmonyOS profile page preserves that UI-action propagation contract by exposing explicit back, edit, section, and logout callbacks from `renderProfileRoute`, then binding them in `FoodikeBootstrap.buildProfileRoute` to the profile store and route host without hiding mutations in the visual builder itself. |
+| app-src-main-java-com-example-foodike-presentation-onboa-06e1e43e4e-001-image-viewing-bitmap-exif-handling-zoom | critical | not-applicable | not-applicable | app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt | The HarmonyOS onboarding route preserves the same static hero illustrations for each onboarding slide without introducing any image-viewer or media-preview workflow because the source screen only displays slide artwork. |
+| app-src-main-java-com-example-foodike-presentation-onboa-71420699c7-002-runtime-permission-request-permission-re | critical | not-applicable | not-applicable | app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt | No HarmonyOS runtime-permission behavior was added for the onboarding slide page because the source page only renders static onboarding content. |
+| app-src-main-java-com-example-foodike-presentation-onboa-d0629b7f1c-001-image-viewing-bitmap-exif-handling-zoom | critical | not-applicable | not-applicable | app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt | The HarmonyOS onboarding store preserves the same three static slide media references as simple resource names and keeps them as non-interactive onboarding artwork only. |
+| app-src-main-java-com-example-foodike-presentation-onboa-f9447173ee-002-runtime-permission-request-permission-re | critical | not-applicable | not-applicable | app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt | The HarmonyOS onboarding store remains a pure in-memory slide catalog and does not add any permission or protected-API behavior because the source helper has none. |
+| app-src-main-java-com-example-foodike-presentation-onboa-d591d5d894-003-data-loading-query-search-filter-or-sort | critical | implemented | equivalent | app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt | The HarmonyOS onboarding store preserves the same ordered three-slide data-loading contract through a dedicated in-memory slide catalog exposed by `slides()`, `pageCount()`, and `slideAt()` for the onboarding route. |
+| app-src-main-java-com-example-foodike-presentation-profi-f941f1a12e-001-runtime-permission-request-permission-re | critical | not-applicable | not-applicable | app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt | The translated profile logout store keeps the same narrow persistence mutation scope and does not introduce HarmonyOS permission handling that is absent from the source view model. |
+| app-src-main-java-com-example-foodike-presentation-profi-9d1239d799-002-screen-lifecycle-entry-point-initializat | critical | not-applicable | not-applicable | app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt | No separate HarmonyOS profile-view-model lifecycle surface was added because the source profile view model has no entry-point or lifecycle behavior beyond event handling. |
+| app-src-main-java-com-example-foodike-presentation-profi-1b04c65221-003-observable-state-viewmodel-flow-livedata | critical | implemented | equivalent | app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt | The target preserves that mutation-order contract by routing profile logout through `ProfileStore.logout` and `LoginPreferencesService.logout` before `FoodikeBootstrap.performLogout` clears route-local login fields, resets onboarding index, and navigates to onboarding. |
+| app-src-main-java-com-example-foodike-presentation-onboa-eed8afd34d-001-navigation-surface-menu-drawer-toolbar-o | high | implemented | equivalent | app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt | The HarmonyOS bootstrap route host preserves the same onboarding navigation contract: the onboarding route owns the swiper surface, the trailing action advances slide state until the last page, and the last-page action routes directly to the dedicated login route. |
+| app-src-main-java-com-example-foodike-presentation-onboa-70fddfcb28-002-runtime-permission-request-permission-re | high | not-applicable | not-applicable | app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt | No HarmonyOS runtime-permission behavior was added for the onboarding route host because the source onboarding flow only coordinates slide progression and route changes. |
+| app-src-main-java-com-example-foodike-presentation-onboa-fcaf31ccc3-003-screen-lifecycle-entry-point-initializat | high | implemented | equivalent | app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt | The HarmonyOS bootstrap route host performs onboarding-route entry setup by initializing the dedicated onboarding page index, binding a `SwiperController`, rendering the onboarding route from startup/login transitions, and resetting onboarding progress on logout before re-entering onboarding. The target also keeps onboarding-specific full-screen presentation through the dedicated route builder. |
+| app-src-main-java-com-example-foodike-presentation-onboa-579cddd1b6-004-observable-state-viewmodel-flow-livedata | high | implemented | equivalent | app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt | The HarmonyOS onboarding route preserves the same observable page-state contract with `@State onboardingPageIndex` updated from the swiper `onChange` callback, and that state directly drives indicator selection plus last-page navigation behavior. |
 
 ## Phase Implementation Groups
 
 | group id | type | priority | platform decision | probe | scope | source paths | target domains | risks |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| phase-03-onboarding-login-profile-source-behavior-presentation-login | source-behavior | critical |  |  | features:7, caps:0, resources:0 | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt |  | current-phase source features are still open; critical/high behavior cannot close on build pass alone; missing target endpoint evidence |
-| phase-03-onboarding-login-profile-source-behavior-presentation-onboarding | source-behavior | critical |  |  | features:11, caps:0, resources:0 | app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt, app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt, app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt |  | current-phase source features are still open; critical/high behavior cannot close on build pass alone; missing target endpoint evidence |
-| phase-03-onboarding-login-profile-source-behavior-presentation-profile | source-behavior | critical |  |  | features:7, caps:0, resources:0 | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt, app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt |  | current-phase source features are still open; critical/high behavior cannot close on build pass alone; missing target endpoint evidence |
+| phase-03-onboarding-login-profile-source-behavior-presentation-login | source-behavior | critical |  |  | features:7, caps:0, resources:0 | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | ohos_app_cangjie_entry/features/login/login_page.cj, ohos_app_cangjie_entry/app/bootstrap_page.cj, ohos_app_cangjie_entry/features/login/login_store.cj | critical/high behavior cannot close on build pass alone |
+| phase-03-onboarding-login-profile-source-behavior-presentation-onboarding | source-behavior | critical |  |  | features:11, caps:0, resources:0 | app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt, app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt, app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt | ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj, ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj, ohos_app_cangjie_entry/app/bootstrap_page.cj | critical/high behavior cannot close on build pass alone |
+| phase-03-onboarding-login-profile-source-behavior-presentation-profile | source-behavior | critical |  |  | features:7, caps:0, resources:0 | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt, app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt | ohos_app_cangjie_entry/features/profile/profile_page.cj, ohos_app_cangjie_entry/app/bootstrap_page.cj, ohos_app_cangjie_entry/features/profile/profile_store.cj | critical/high behavior cannot close on build pass alone |
 | phase-03-onboarding-login-profile-verification-phase-tests-and-evidence | verification | critical |  |  | features:25, caps:0, resources:0 | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt, app/src/main/java/com/example/foodike/presentation/profile/Profile.kt, app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt |  | target tests only count as strong evidence when backed by latest test gate PASS or explicit harness blocker; build pass alone does not close per-feature behavior; manual review evidence must point to concrete target endpoints |
 
 ## Must Complete Before Phase Close
 
-| feature id | importance | status | source path | feature | task |
-| --- | --- | --- | --- | --- | --- |
-| app-src-main-java-com-example-foodike-presentation-login-b030a7b1f9-001-image-viewing-bitmap-exif-handling-zoom | critical | planned | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-login-1ed35246b3-002-navigation-surface-menu-drawer-toolbar-o | critical | planned | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | Navigation surface, menu, drawer, toolbar, or tab command behavior. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-login-5777ecba15-003-notification-widget-remoteviews-or-home | critical | planned | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | Notification, widget, RemoteViews, or home-screen integration behavior. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-login-78d5c742f4-007-observable-state-viewmodel-flow-livedata | critical | planned | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-login-7ab3866541-004-runtime-permission-request-permission-re | critical | planned | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | Runtime permission request, permission result handling, or protected API access. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-login-2c65d08c3b-005-screen-lifecycle-entry-point-initializat | critical | planned | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-login-34c5f4ba3a-006-settings-preferences-option-toggles-or-c | critical | planned | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | Settings/preferences, option toggles, or configuration state behavior. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-onboa-06e1e43e4e-001-image-viewing-bitmap-exif-handling-zoom | critical | planned | app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-onboa-71420699c7-002-runtime-permission-request-permission-re | critical | planned | app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt | Runtime permission request, permission result handling, or protected API access. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-onboa-d591d5d894-003-data-loading-query-search-filter-or-sort | critical | planned | app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt | Data loading, query, search, filter, or sort behavior (get) | status is still open |
-| app-src-main-java-com-example-foodike-presentation-onboa-d0629b7f1c-001-image-viewing-bitmap-exif-handling-zoom | critical | planned | app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-onboa-f9447173ee-002-runtime-permission-request-permission-re | critical | planned | app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt | Runtime permission request, permission result handling, or protected API access. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-profi-a1f2ba5cd8-001-image-viewing-bitmap-exif-handling-zoom | critical | planned | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-profi-c34aae0a57-002-navigation-surface-menu-drawer-toolbar-o | critical | planned | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt | Navigation surface, menu, drawer, toolbar, or tab command behavior. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-profi-e492afed0c-004-observable-state-viewmodel-flow-livedata | critical | planned | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt | Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-profi-106c8cc862-003-runtime-permission-request-permission-re | critical | planned | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt | Runtime permission request, permission result handling, or protected API access. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-profi-1b04c65221-003-observable-state-viewmodel-flow-livedata | critical | planned | app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt | Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-profi-f941f1a12e-001-runtime-permission-request-permission-re | critical | planned | app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt | Runtime permission request, permission result handling, or protected API access. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-profi-9d1239d799-002-screen-lifecycle-entry-point-initializat | critical | planned | app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt | Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-onboa-eed8afd34d-001-navigation-surface-menu-drawer-toolbar-o | high | planned | app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt | Navigation surface, menu, drawer, toolbar, or tab command behavior. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-onboa-579cddd1b6-004-observable-state-viewmodel-flow-livedata | high | planned | app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt | Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-onboa-70fddfcb28-002-runtime-permission-request-permission-re | high | planned | app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt | Runtime permission request, permission result handling, or protected API access. | status is still open |
-| app-src-main-java-com-example-foodike-presentation-onboa-fcaf31ccc3-003-screen-lifecycle-entry-point-initializat | high | planned | app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt | Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior. | status is still open |
+_No must-complete entries for this phase._
 
 ## Phase Source Files
 
 | source path | importance | features | critical/high | open critical/high | statuses |
 | --- | --- | --- | --- | --- | --- |
-| app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | critical | 7 | 7 | 7 | planned:7 |
-| app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt | critical | 2 | 2 | 2 | planned:2 |
-| app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt | critical | 3 | 3 | 3 | planned:3 |
-| app/src/main/java/com/example/foodike/presentation/profile/Profile.kt | critical | 4 | 4 | 4 | planned:4 |
-| app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt | critical | 3 | 3 | 3 | planned:3 |
-| app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt | high | 4 | 4 | 4 | planned:4 |
-| app/src/main/java/com/example/foodike/presentation/onboarding/components/BottomSection.kt | medium | 1 | 0 | 0 | planned:1 |
-| app/src/main/java/com/example/foodike/presentation/onboarding/components/Indicators.kt | medium | 1 | 0 | 0 | planned:1 |
+| app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | critical | 7 | 7 | 0 | implemented:4, not-applicable:3 |
+| app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt | critical | 2 | 2 | 0 | not-applicable:2 |
+| app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt | critical | 3 | 3 | 0 | implemented:1, not-applicable:2 |
+| app/src/main/java/com/example/foodike/presentation/profile/Profile.kt | critical | 4 | 4 | 0 | implemented:2, not-applicable:2 |
+| app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt | critical | 3 | 3 | 0 | implemented:1, not-applicable:2 |
+| app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt | high | 4 | 4 | 0 | implemented:3, not-applicable:1 |
+| app/src/main/java/com/example/foodike/presentation/onboarding/components/BottomSection.kt | medium | 1 | 0 | 0 | not-applicable:1 |
+| app/src/main/java/com/example/foodike/presentation/onboarding/components/Indicators.kt | medium | 1 | 0 | 0 | not-applicable:1 |
 
 ## Test Harness Status
 
 | field | value |
 | --- | --- |
 | available | True |
-| acceptedPass | True |
-| environmentStatus | pass |
-| latestPhase | phase-02-startup-navigation-session |
-| latestResult | PASS |
-| latestPhaseMatchesCurrent | False |
-| referencedTestCount | 0 |
+| acceptedPass | False |
+| environmentStatus | blocked-sdk-or-env |
+| latestPhase | phase-03-onboarding-login-profile |
+| latestResult | TEST_COMPILE_FAIL |
+| latestPhaseMatchesCurrent | True |
+| referencedTestCount | 3 |
 | targetTestPackagePresent | True |
-| targetTestFiles | 1 |
-| sdkOrEnvironmentBlockerSuspected | False |
+| targetTestFiles | 4 |
+| sdkOrEnvironmentBlockerSuspected | True |
 
 ### Test Harness Notes
 
-- The latest test build report is accepted as PASS evidence for matching referenced tests.
+- The latest test build report is not PASS; test references are not strong evidence by themselves.
+- Latest test build blocker looks like an SDK/toolchain/environment issue.
+- Current phase references tests; record a PASS, focused manual/emulator evidence, or a harness blocker.
+
+## Test Hints
+
+- entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::Phase03OnboardingLoginProfileTest.loginStoreAcceptsOnlySourceCredentials
+- entry/src/test/cangjie/phase02_startup_navigation_test.cj::Phase02StartupNavigationTest.loginStateToggleRuleFlipsBothDirections
+- entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::Phase03OnboardingLoginProfileTest.onboardingStorePreservesThreePageProgression
 
 ## Unassigned Critical/High Scope
 

@@ -1,0 +1,1942 @@
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 10.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                       ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the code after the macro is expanded as follows
+   | 
+   |   /* 10.1 */func buildCartTopBar(thisView: CustomView, onBack: ObservedProperty <() -> Unit >): ViewBuilder {
+   |  _^
+   | | /* 10.2 */    
+   | | /* 10.3 */    
+   | | /* 10.4 */    func buildCartTopBar__inner__(thisView: CustomView, onBack:() -> Unit): Unit {
+   | | /* 10.5 */        
+   | | /* 10.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 10.7 */            Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 10.8 */                Button("x").onClick({ _ =>
+   | | /* 10.9 */                    onBack()
+   | | /* 10.10 */                })
+   | | /* 10.11 */            })
+   | | /* 10.12 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 10.13 */                Blank().layoutWeight(1)
+   | | /* 10.14 */            })
+   | | /* 10.15 */        }.width(100.percent).alignItems(VerticalAlign.Center)
+   | | /* 10.16 */    })
+   | | /* 10.17 */    
+   | | /* 10.18 */}
+   | | /* 10.19 */
+   | | /* 10.20 */
+   | | /* 10.21 */ViewBuilder { buildCartTopBar__inner__(thisView, onBack.get()) }
+   | | /* 10.22 */
+   | | /* 10.23 */}
+   | | /* 10.24 */
+   | |___________^
+   | 
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:10:1:
+   | 
+10 |   @Builder
+   |  _^
+11 | | func buildCartTopBar(onBack: () -> Unit) {
+   | | ...
+21 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 10.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                               ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:10:1:
+   | 
+10 |   @Builder
+   |  _^
+11 | | func buildCartTopBar(onBack: () -> Unit) {
+   | | ...
+21 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 10.7 */            Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                 ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:10:1:
+   | 
+10 |   @Builder
+   |  _^
+11 | | func buildCartTopBar(onBack: () -> Unit) {
+   | | ...
+21 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 10.7 */            Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                         ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:10:1:
+   | 
+10 |   @Builder
+   |  _^
+11 | | func buildCartTopBar(onBack: () -> Unit) {
+   | | ...
+21 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 10.12 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                            ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:10:1:
+   | 
+10 |   @Builder
+   |  _^
+11 | | func buildCartTopBar(onBack: () -> Unit) {
+   | | ...
+21 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 10.12 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                    ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:10:1:
+   | 
+10 |   @Builder
+   |  _^
+11 | | func buildCartTopBar(onBack: () -> Unit) {
+   | | ...
+21 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 23.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                       ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the code after the macro is expanded as follows
+   | 
+   |   /* 23.1 */func buildCartQuantityPill(thisView: CustomView, quantity: ObservedProperty < Int64 >, onDecrease: ObservedProperty <() -> Unit >, onIncrease: ObservedProperty <() -> Unit >): ViewBuilder {
+   |  _^
+   | | /* 23.2 */    
+   | | /* 23.3 */    
+   | | /* 23.4 */    func buildCartQuantityPill__inner__(thisView: CustomView, quantity: Int64, onDecrease:() -> Unit, onIncrease:() -> Unit): Unit {
+   | | /* 23.5 */        
+   | | /* 23.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 23.7 */            Row(space: 10) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 23.8 */                Text("-").fontSize(16).fontWeight(FontWeight.Bold).onClick({ _ =>
+   | | /* 23.9 */                    onDecrease()
+   | | /* 23.10 */                })
+   | | /* 23.11 */            })
+   | | /* 23.12 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 23.13 */                Text("${quantity}").fontSize(16).fontWeight(FontWeight.Medium)
+   | | /* 23.14 */            })
+   | | /* 23.15 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 23.16 */                Text("+").fontSize(16).fontWeight(FontWeight.Bold).fontColor(colorDarkGreen).onClick({ _ =>
+   | | /* 23.17 */                    onIncrease()
+   | | /* 23.18 */                })
+   | | /* 23.19 */            })
+   | | /* 23.20 */        }.padding(top: 6, right: 10, bottom: 6, left: 10).borderRadius(14).border(width: 1.px, color: 0x55000000)
+   | | /* 23.21 */    })
+   | | /* 23.22 */    
+   | | /* 23.23 */}
+   | | /* 23.24 */
+   | | /* 23.25 */
+   | | /* 23.26 */ViewBuilder { buildCartQuantityPill__inner__(thisView, quantity.get(), onDecrease.get(), onIncrease.get()) }
+   | | /* 23.27 */
+   | | /* 23.28 */}
+   | | /* 23.29 */
+   | |___________^
+   | 
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:23:1:
+   | 
+23 |   @Builder
+   |  _^
+24 | | func buildCartQuantityPill(quantity: Int64, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+   | | ...
+46 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 23.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                               ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:23:1:
+   | 
+23 |   @Builder
+   |  _^
+24 | | func buildCartQuantityPill(quantity: Int64, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+   | | ...
+46 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 23.7 */            Row(space: 10) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                            ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:23:1:
+   | 
+23 |   @Builder
+   |  _^
+24 | | func buildCartQuantityPill(quantity: Int64, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+   | | ...
+46 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 23.7 */            Row(space: 10) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                                    ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:23:1:
+   | 
+23 |   @Builder
+   |  _^
+24 | | func buildCartQuantityPill(quantity: Int64, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+   | | ...
+46 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 23.12 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                            ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:23:1:
+   | 
+23 |   @Builder
+   |  _^
+24 | | func buildCartQuantityPill(quantity: Int64, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+   | | ...
+46 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 23.12 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                    ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:23:1:
+   | 
+23 |   @Builder
+   |  _^
+24 | | func buildCartQuantityPill(quantity: Int64, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+   | | ...
+46 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 23.15 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                            ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:23:1:
+   | 
+23 |   @Builder
+   |  _^
+24 | | func buildCartQuantityPill(quantity: Int64, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+   | | ...
+46 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 23.15 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                    ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:23:1:
+   | 
+23 |   @Builder
+   |  _^
+24 | | func buildCartQuantityPill(quantity: Int64, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+   | | ...
+46 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 48.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                       ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the code after the macro is expanded as follows
+   | 
+   |   /* 48.1 */func buildCartItemRow(thisView: CustomView, item: ObservedProperty < CartSnapshotItemData >, onDecrease: ObservedProperty <() -> Unit >, onIncrease: ObservedProperty <() -> Unit >): ViewBuilder {
+   |  _^
+   | | /* 48.2 */    
+   | | /* 48.3 */    
+   | | /* 48.4 */    func buildCartItemRow__inner__(thisView: CustomView, item: CartSnapshotItemData, onDecrease:() -> Unit, onIncrease:() -> Unit): Unit {
+   | | /* 48.5 */        
+   | | /* 48.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 48.7 */            Row(space: 16) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 48.8 */                Image(if(item.menuItem.isVegetarian) {
+   | | /* 48.9 */                    mediaIcVeg
+   | | /* 48.10 */                }
+   | | /* 48.11 */                else {
+   | | /* 48.12 */                    mediaIcNonVeg
+   | | /* 48.13 */                }
+   | | /* 48.14 */                ).width(18).height(18)
+   | | /* 48.15 */            })
+   | | /* 48.16 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 48.17 */                Column(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 48.18 */                    Text(item.menuItem.dish).fontSize(16).fontWeight(FontWeight.Medium)
+   | | /* 48.19 */                })
+   | | /* 48.20 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 48.21 */                    Text(cartStore.formatPrice(item.menuItem.price)).fontSize(14).fontColor(Color.Gray)
+   | | /* 48.22 */                })
+   | | /* 48.23 */            }.layoutWeight(1)
+   | | /* 48.24 */        })
+   | | /* 48.25 */        buildCartQuantityPill(thisView, ObservedProperty("", item.quantity), ObservedProperty("", onDecrease), ObservedProperty("", onIncrease)).build()
+   | | /* 48.26 */    }.width(100.percent).alignItems(VerticalAlign.Center)
+   | | /* 48.27 */})
+   | | /* 48.28 */
+   | | /* 48.29 */}
+   | | /* 48.30 */
+   | | /* 48.31 */
+   | | /* 48.32 */ViewBuilder { buildCartItemRow__inner__(thisView, item.get(), onDecrease.get(), onIncrease.get()) }
+   | | /* 48.33 */
+   | | /* 48.34 */}
+   | | /* 48.35 */
+   | |___________^
+   | 
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:48:1:
+   | 
+48 |   @Builder
+   |  _^
+49 | | func buildCartItemRow(item: CartSnapshotItemData, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+   | | ...
+67 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 48.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                               ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:48:1:
+   | 
+48 |   @Builder
+   |  _^
+49 | | func buildCartItemRow(item: CartSnapshotItemData, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+   | | ...
+67 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 48.7 */            Row(space: 16) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                            ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:48:1:
+   | 
+48 |   @Builder
+   |  _^
+49 | | func buildCartItemRow(item: CartSnapshotItemData, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+   | | ...
+67 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 48.7 */            Row(space: 16) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                                    ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:48:1:
+   | 
+48 |   @Builder
+   |  _^
+49 | | func buildCartItemRow(item: CartSnapshotItemData, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+   | | ...
+67 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 48.16 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                            ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:48:1:
+   | 
+48 |   @Builder
+   |  _^
+49 | | func buildCartItemRow(item: CartSnapshotItemData, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+   | | ...
+67 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 48.16 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                    ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:48:1:
+   | 
+48 |   @Builder
+   |  _^
+49 | | func buildCartItemRow(item: CartSnapshotItemData, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+   | | ...
+67 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 48.17 */                Column(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                                   ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:48:1:
+   | 
+48 |   @Builder
+   |  _^
+49 | | func buildCartItemRow(item: CartSnapshotItemData, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+   | | ...
+67 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 48.17 */                Column(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                                           ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:48:1:
+   | 
+48 |   @Builder
+   |  _^
+49 | | func buildCartItemRow(item: CartSnapshotItemData, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+   | | ...
+67 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 48.20 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:48:1:
+   | 
+48 |   @Builder
+   |  _^
+49 | | func buildCartItemRow(item: CartSnapshotItemData, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+   | | ...
+67 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 48.20 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                        ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:48:1:
+   | 
+48 |   @Builder
+   |  _^
+49 | | func buildCartItemRow(item: CartSnapshotItemData, onDecrease: () -> Unit, onIncrease: () -> Unit) {
+   | | ...
+67 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 69.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                       ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the code after the macro is expanded as follows
+    | 
+    |   /* 69.1 */func buildItemSection(thisView: CustomView, items: ObservedProperty < ArrayList < CartSnapshotItemData >>, note: ObservedProperty < String >, onNoteChange: ObservedProperty <(String) -> Unit >, onDecrease: ObservedProperty <(CartSnapshotItemData) -> Unit >, onIncrease: ObservedProperty <(CartSnapshotItemData) -> Unit >): ViewBuilder {
+    |  _^
+    | | /* 69.2 */    
+    | | /* 69.3 */    
+    | | /* 69.4 */    func buildItemSection__inner__(thisView: CustomView, items: ArrayList < CartSnapshotItemData >, note: String, onNoteChange:(String) -> Unit, onDecrease:(CartSnapshotItemData) -> Unit, onIncrease:(CartSnapshotItemData) -> Unit): Unit {
+    | | /* 69.5 */        
+    | | /* 69.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 69.7 */            Column(space: 14) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 69.8 */                If { if(items.size > 0) {
+    | | /* 69.9 */                    thisView.ifElseBranchUpdateFunction(0, { =>
+    | | /* 69.10 */                        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 69.11 */                            ForEach < CartSnapshotItemData > { let forEachItemGenFunction = { item: CartSnapshotItemData, _: Int64 =>
+    | | /* 69.12 */                                buildCartItemRow(thisView, ObservedProperty("", item), ObservedProperty("", { =>
+    | | /* 69.13 */                                    onDecrease(item)
+    | | /* 69.14 */                                }), ObservedProperty("", { =>
+    | | /* 69.15 */                                    onIncrease(item)
+    | | /* 69.16 */                                })).build()
+    | | /* 69.17 */                            }
+    | | /* 69.18 */                            thisView.forEachUpdateFunction(elmtId, items, itemGenFunc: forEachItemGenFunction)
+    | | /* 69.19 */                        }
+    | | /* 69.20 */                    })
+    | | /* 69.21 */                })
+    | | /* 69.22 */            }
+    | | /* 69.23 */            else {
+    | | /* 69.24 */                thisView.ifElseBranchUpdateFunction(1, { =>
+    | | /* 69.25 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 69.26 */                        Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 69.27 */                            Text("Empty").fontSize(16)
+    | | /* 69.28 */                        })
+    | | /* 69.29 */                    }.width(100.percent).justifyContent(FlexAlign.Center)
+    | | /* 69.30 */                })
+    | | /* 69.31 */            })
+    | | /* 69.32 */        }
+    | | /* 69.33 */    }
+    | | /* 69.34 */})
+    | | /* 69.35 */thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 69.36 */    Divider().width(100.percent)
+    | | /* 69.37 */})
+    | | /* 69.38 */thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 69.39 */    TextInput(text: note, placeholder: "Write instruction for restaurant...").width(100.percent).height(52).fontSize(15).placeholderColor(Color.Gray).backgroundColor(Color.White).onChange({ value: String =>
+    | | /* 69.40 */        onNoteChange(value)
+    | | /* 69.41 */    })
+    | | /* 69.42 */})
+    | | /* 69.43 */}.width(100.percent).padding(top: 18, right: 18, bottom: 18, left: 18).backgroundColor(Color.White).borderRadius(22)
+    | | /* 69.44 */})
+    | | /* 69.45 */
+    | | /* 69.46 */}
+    | | /* 69.47 */
+    | | /* 69.48 */
+    | | /* 69.49 */ViewBuilder { buildItemSection__inner__(thisView, items.get(), note.get(), onNoteChange.get(), onDecrease.get(), onIncrease.get()) }
+    | | /* 69.50 */
+    | | /* 69.51 */}
+    | | /* 69.52 */
+    | |___________^
+    | 
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:69:1:
+    | 
+69  |   @Builder
+    |  _^
+70  | | func buildItemSection(
+    | | ...
+111 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 69.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                               ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:69:1:
+    | 
+69  |   @Builder
+    |  _^
+70  | | func buildItemSection(
+    | | ...
+111 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 69.7 */            Column(space: 14) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                               ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:69:1:
+    | 
+69  |   @Builder
+    |  _^
+70  | | func buildItemSection(
+    | | ...
+111 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 69.7 */            Column(space: 14) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                       ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:69:1:
+    | 
+69  |   @Builder
+    |  _^
+70  | | func buildItemSection(
+    | | ...
+111 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 69.10 */                        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:69:1:
+    | 
+69  |   @Builder
+    |  _^
+70  | | func buildItemSection(
+    | | ...
+111 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 69.25 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                    ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:69:1:
+    | 
+69  |   @Builder
+    |  _^
+70  | | func buildItemSection(
+    | | ...
+111 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 69.25 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                            ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:69:1:
+    | 
+69  |   @Builder
+    |  _^
+70  | | func buildItemSection(
+    | | ...
+111 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 69.26 */                        Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                              ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:69:1:
+    | 
+69  |   @Builder
+    |  _^
+70  | | func buildItemSection(
+    | | ...
+111 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 69.26 */                        Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                      ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:69:1:
+    | 
+69  |   @Builder
+    |  _^
+70  | | func buildItemSection(
+    | | ...
+111 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 69.35 */thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:69:1:
+    | 
+69  |   @Builder
+    |  _^
+70  | | func buildItemSection(
+    | | ...
+111 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 69.35 */thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                        ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:69:1:
+    | 
+69  |   @Builder
+    |  _^
+70  | | func buildItemSection(
+    | | ...
+111 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 69.38 */thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:69:1:
+    | 
+69  |   @Builder
+    |  _^
+70  | | func buildItemSection(
+    | | ...
+111 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 69.38 */thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                        ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:69:1:
+    | 
+69  |   @Builder
+    |  _^
+70  | | func buildItemSection(
+    | | ...
+111 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 113.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                        ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the code after the macro is expanded as follows
+    | 
+    |   /* 113.1 */func buildCouponBar(thisView: CustomView, coupon: ObservedProperty < String >, onCouponChange: ObservedProperty <(String) -> Unit >): ViewBuilder {
+    |  _^
+    | | /* 113.2 */    
+    | | /* 113.3 */    
+    | | /* 113.4 */    func buildCouponBar__inner__(thisView: CustomView, coupon: String, onCouponChange:(String) -> Unit): Unit {
+    | | /* 113.5 */        
+    | | /* 113.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 113.7 */            Row(space: 12) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 113.8 */                TextInput(text: coupon, placeholder: "Add a coupon code...").layoutWeight(1).height(52).fontSize(15).placeholderColor(Color.Gray).backgroundColor(Color.White).borderRadius(26).onChange({ value: String =>
+    | | /* 113.9 */                    onCouponChange(value)
+    | | /* 113.10 */                })
+    | | /* 113.11 */            })
+    | | /* 113.12 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 113.13 */                Text("APPLY").fontSize(15).fontWeight(FontWeight.Bold).fontColor(colorDarkGreen)
+    | | /* 113.14 */            })
+    | | /* 113.15 */        }.width(100.percent).padding(top: 14, right: 18, bottom: 14, left: 18).backgroundColor(Color.White).borderRadius(26).alignItems(VerticalAlign.Center)
+    | | /* 113.16 */    })
+    | | /* 113.17 */    
+    | | /* 113.18 */}
+    | | /* 113.19 */
+    | | /* 113.20 */
+    | | /* 113.21 */ViewBuilder { buildCouponBar__inner__(thisView, coupon.get(), onCouponChange.get()) }
+    | | /* 113.22 */
+    | | /* 113.23 */}
+    | | /* 113.24 */
+    | |____________^
+    | 
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:113:1:
+    | 
+113 |   @Builder
+    |  _^
+114 | | func buildCouponBar(coupon: String, onCouponChange: (String) -> Unit) {
+    | | ...
+136 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 113.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:113:1:
+    | 
+113 |   @Builder
+    |  _^
+114 | | func buildCouponBar(coupon: String, onCouponChange: (String) -> Unit) {
+    | | ...
+136 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 113.7 */            Row(space: 12) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                             ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:113:1:
+    | 
+113 |   @Builder
+    |  _^
+114 | | func buildCouponBar(coupon: String, onCouponChange: (String) -> Unit) {
+    | | ...
+136 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 113.7 */            Row(space: 12) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                     ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:113:1:
+    | 
+113 |   @Builder
+    |  _^
+114 | | func buildCouponBar(coupon: String, onCouponChange: (String) -> Unit) {
+    | | ...
+136 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 113.12 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                             ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:113:1:
+    | 
+113 |   @Builder
+    |  _^
+114 | | func buildCouponBar(coupon: String, onCouponChange: (String) -> Unit) {
+    | | ...
+136 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 113.12 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                     ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:113:1:
+    | 
+113 |   @Builder
+    |  _^
+114 | | func buildCouponBar(coupon: String, onCouponChange: (String) -> Unit) {
+    | | ...
+136 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 138.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                        ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the code after the macro is expanded as follows
+    | 
+    |   /* 138.1 */func buildDeliverySection(thisView: CustomView, restaurant: ObservedProperty < RestaurantData >): ViewBuilder {
+    |  _^
+    | | /* 138.2 */    
+    | | /* 138.3 */    
+    | | /* 138.4 */    func buildDeliverySection__inner__(thisView: CustomView, restaurant: RestaurantData): Unit {
+    | | /* 138.5 */        
+    | | /* 138.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 138.7 */            Column(space: 12) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 138.8 */                Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 138.9 */                    Text("Deliver to:").fontWeight(FontWeight.Bold)
+    | | /* 138.10 */                })
+    | | /* 138.11 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 138.12 */                    Blank().layoutWeight(1)
+    | | /* 138.13 */                })
+    | | /* 138.14 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 138.15 */                    Text("Edit").fontColor(Color.Gray)
+    | | /* 138.16 */                })
+    | | /* 138.17 */            }.width(100.percent)
+    | | /* 138.18 */        })
+    | | /* 138.19 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 138.20 */            Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 138.21 */                Column(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 138.22 */                    Text("Location:")
+    | | /* 138.23 */                })
+    | | /* 138.24 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 138.25 */                    Text("Estimated time:")
+    | | /* 138.26 */                })
+    | | /* 138.27 */            }.layoutWeight(1)
+    | | /* 138.28 */        })
+    | | /* 138.29 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 138.30 */            Column(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 138.31 */                Text(cartStore.deliveryLocation())
+    | | /* 138.32 */            })
+    | | /* 138.33 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 138.34 */                Text(cartStore.formatEta(restaurant.etaMinutes))
+    | | /* 138.35 */            })
+    | | /* 138.36 */        }
+    | | /* 138.37 */    })
+    | | /* 138.38 */}.width(100.percent)
+    | | /* 138.39 */})
+    | | /* 138.40 */}.width(100.percent).padding(top: 18, right: 18, bottom: 18, left: 18).backgroundColor(Color.White).borderRadius(22)
+    | | /* 138.41 */})
+    | | /* 138.42 */
+    | | /* 138.43 */}
+    | | /* 138.44 */
+    | | /* 138.45 */
+    | | /* 138.46 */ViewBuilder { buildDeliverySection__inner__(thisView, restaurant.get()) }
+    | | /* 138.47 */
+    | | /* 138.48 */}
+    | | /* 138.49 */
+    | |____________^
+    | 
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 138.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 138.7 */            Column(space: 12) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 138.7 */            Column(space: 12) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                        ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 138.8 */                Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                      ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 138.8 */                Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                              ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 138.11 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                 ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 138.11 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                         ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 138.14 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                 ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 138.14 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                         ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 138.19 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                         ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 138.19 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                 ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 138.20 */            Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                   ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 138.20 */            Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                           ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 138.21 */                Column(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                    ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 138.21 */                Column(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                            ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 138.24 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                 ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 138.24 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                         ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 138.29 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                         ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 138.29 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                 ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 138.30 */            Column(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 138.30 */            Column(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                        ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 138.33 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                             ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 138.33 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                     ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:138:1:
+    | 
+138 |   @Builder
+    |  _^
+139 | | func buildDeliverySection(restaurant: RestaurantData) {
+    | | ...
+167 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 169.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                        ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the code after the macro is expanded as follows
+    | 
+    |   /* 169.1 */func buildBillSection(thisView: CustomView, itemTotal: ObservedProperty < Float64 >): ViewBuilder {
+    |  _^
+    | | /* 169.2 */    
+    | | /* 169.3 */    
+    | | /* 169.4 */    func buildBillSection__inner__(thisView: CustomView, itemTotal: Float64): Unit {
+    | | /* 169.5 */        
+    | | /* 169.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 169.7 */            Column(space: 12) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 169.8 */                Text("Bill Details").fontSize(18).fontWeight(FontWeight.Bold)
+    | | /* 169.9 */            })
+    | | /* 169.10 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 169.11 */                Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 169.12 */                    Column(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 169.13 */                        Text("Item total:")
+    | | /* 169.14 */                    })
+    | | /* 169.15 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 169.16 */                        Text("Taxes and charges:")
+    | | /* 169.17 */                    })
+    | | /* 169.18 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 169.19 */                        Text("Total:")
+    | | /* 169.20 */                    })
+    | | /* 169.21 */                }.layoutWeight(1)
+    | | /* 169.22 */            })
+    | | /* 169.23 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 169.24 */                Column(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 169.25 */                    Text(cartStore.formatPrice(itemTotal))
+    | | /* 169.26 */                })
+    | | /* 169.27 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 169.28 */                    Text(cartStore.formatPrice(cartStore.taxAmount(itemTotal)))
+    | | /* 169.29 */                })
+    | | /* 169.30 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 169.31 */                    Text(cartStore.formatPrice(cartStore.grandTotal(itemTotal)))
+    | | /* 169.32 */                })
+    | | /* 169.33 */            }
+    | | /* 169.34 */        })
+    | | /* 169.35 */    }.width(100.percent)
+    | | /* 169.36 */})
+    | | /* 169.37 */thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 169.38 */    Button("Proceed to Pay").width(220).height(48)
+    | | /* 169.39 */})
+    | | /* 169.40 */}.width(100.percent).padding(top: 18, right: 18, bottom: 18, left: 18).backgroundColor(Color.White).borderRadius(22).alignItems(HorizontalAlign.Center)
+    | | /* 169.41 */})
+    | | /* 169.42 */
+    | | /* 169.43 */}
+    | | /* 169.44 */
+    | | /* 169.45 */
+    | | /* 169.46 */ViewBuilder { buildBillSection__inner__(thisView, itemTotal.get()) }
+    | | /* 169.47 */
+    | | /* 169.48 */}
+    | | /* 169.49 */
+    | |____________^
+    | 
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 169.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 169.7 */            Column(space: 12) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 169.7 */            Column(space: 12) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                        ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 169.10 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                             ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 169.10 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                     ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 169.11 */                Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                       ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 169.11 */                Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                               ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 169.12 */                    Column(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                        ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 169.12 */                    Column(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                                ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 169.15 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                     ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 169.15 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                             ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 169.18 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                     ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 169.18 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                             ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 169.23 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                             ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 169.23 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                     ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 169.24 */                Column(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                    ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 169.24 */                Column(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                            ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 169.27 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                 ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 169.27 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                         ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 169.30 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                 ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 169.30 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                         ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 169.37 */thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                 ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 169.37 */thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                         ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:169:1:
+    | 
+169 |   @Builder
+    |  _^
+170 | | func buildBillSection(itemTotal: Float64) {
+    | | ...
+198 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 200.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                        ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the code after the macro is expanded as follows
+    | 
+    |   /* 200.1 */public func renderCartRoute(thisView: CustomView, state: ObservedProperty < CartPageState >, note: ObservedProperty < String >, coupon: ObservedProperty < String >, onNoteChange: ObservedProperty <(String) -> Unit >, onCouponChange: ObservedProperty <(String) -> Unit >, onDecrease: ObservedProperty <(CartSnapshotItemData) -> Unit >, onIncrease: ObservedProperty <(CartSnapshotItemData) -> Unit >, onBack: ObservedProperty <() -> Unit >): ViewBuilder {
+    |  _^
+    | | /* 200.2 */    
+    | | /* 200.3 */    
+    | | /* 200.4 */    func renderCartRoute__inner__(thisView: CustomView, state: CartPageState, note: String, coupon: String, onNoteChange:(String) -> Unit, onCouponChange:(String) -> Unit, onDecrease:(CartSnapshotItemData) -> Unit, onIncrease:(CartSnapshotItemData) -> Unit, onBack:() -> Unit): Unit {
+    | | /* 200.5 */        
+    | | /* 200.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 200.7 */            Scroll(Scroller()) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 200.8 */                Column(space: 16) { buildCartTopBar(thisView, ObservedProperty("", onBack)).build()
+    | | /* 200.9 */                    buildItemSection(thisView, ObservedProperty("", cartStore.visibleItems(state.items)), ObservedProperty("", note), ObservedProperty("", onNoteChange), ObservedProperty("", onDecrease), ObservedProperty("", onIncrease)).build()
+    | | /* 200.10 */                    buildCouponBar(thisView, ObservedProperty("", coupon), ObservedProperty("", onCouponChange)).build()
+    | | /* 200.11 */                    buildDeliverySection(thisView, ObservedProperty("", state.deliveryRestaurant)).build()
+    | | /* 200.12 */                    buildBillSection(thisView, ObservedProperty("", cartStore.itemTotal(cartStore.visibleItems(state.items)))).build()
+    | | /* 200.13 */                }.width(100.percent).padding(top: 14, right: 16, bottom: 24, left: 16)
+    | | /* 200.14 */            })
+    | | /* 200.15 */        }.scrollable(ScrollDirection.Vertical).scrollBar(BarState.Off).width(100.percent).height(100.percent).backgroundColor(0xFFE8E7E7)
+    | | /* 200.16 */    })
+    | | /* 200.17 */    
+    | | /* 200.18 */}
+    | | /* 200.19 */
+    | | /* 200.20 */
+    | | /* 200.21 */ViewBuilder { renderCartRoute__inner__(thisView, state.get(), note.get(), coupon.get(), onNoteChange.get(), onCouponChange.get(), onDecrease.get(), onIncrease.get(), onBack.get()) }
+    | | /* 200.22 */
+    | | /* 200.23 */}
+    | | /* 200.24 */
+    | |____________^
+    | 
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:200:1:
+    | 
+200 |   @Builder
+    |  _^
+201 | | public func renderCartRoute(
+    | | ...
+227 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 200.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:200:1:
+    | 
+200 |   @Builder
+    |  _^
+201 | | public func renderCartRoute(
+    | | ...
+227 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 200.7 */            Scroll(Scroller()) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                 ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:200:1:
+    | 
+200 |   @Builder
+    |  _^
+201 | | public func renderCartRoute(
+    | | ...
+227 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 200.7 */            Scroll(Scroller()) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                         ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\cart\cart_page.cj:200:1:
+    | 
+200 |   @Builder
+    |  _^
+201 | | public func renderCartRoute(
+    | | ...
+227 | | }
+    | |_^
+    | 
+
+95 warnings generated, 95 warnings printed.

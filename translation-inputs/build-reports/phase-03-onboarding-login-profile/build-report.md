@@ -1,6 +1,6 @@
 # HarmonyOS Cangjie Build Gate Report
 
-- Generated: `2026-06-25T06:25:24+00:00`
+- Generated: `2026-06-25T12:04:05+00:00`
 - Phase: `phase-03-onboarding-login-profile`
 - Workspace: `D:\workspace\Foodike`
 - Target project: `D:\workspace\Foodike\Foodike-Harmony`
@@ -8,16 +8,16 @@
 - Failed stage: `none`
 - Return code: `0`
 - Timed out: `False`
-- Duration seconds: `6.016`
-- Skipped: `False`
-- Reused previous PASS: `False`
-- Skip reason: `none`
+- Duration seconds: `0.0`
+- Skipped: `True`
+- Reused previous PASS: `True`
+- Skip reason: `unchanged target/build-helper inputs`
 - Build log: `D:\workspace\Foodike\translation-inputs\build-reports\phase-03-onboarding-login-profile\build.log`
 
 ## Command
 
 ```bash
-C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe D:\workspace\Foodike\.agents\skills\harmonyos-build\build.py --project-root D:\workspace\Foodike\Foodike-Harmony
+(skipped)
 ```
 
 ## Stage Evidence
@@ -26,9 +26,9 @@ C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe D:\workspace\
 | --- | --- | --- | ---: | ---: |
 | ohpm install | True | True | 6 | 7 |
 | SyncCangjieResource | True | True | 9 | 15 |
-| CompileCangjie | True | True | 45 | 50 |
-| PackageHap | True | True | 54 | 54 |
-| SignHap | True | True | 58 | 58 |
+| CompileCangjie | True | True | 46 | 51 |
+| PackageHap | True | True | 55 | 55 |
+| SignHap | True | True | 59 | 59 |
 
 ## First Blocker
 
@@ -38,12 +38,13 @@ C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe D:\workspace\
 
 - line 10, stage `SyncCangjieResource`: > hvigor WARN: Build analysis mode 'default' is deprecated, please use 'normal' instead.
 - line 19, stage `SyncCangjieResource`: > hvigor WARN: Build analysis mode 'default' is deprecated, please use 'normal' instead.
-- line 56, stage `PackageHap`: > hvigor WARN: Will skip sign 'hos_hap'. No signingConfigs profile is configured in current project.
+- line 45, stage `SyncCangjieResource`: > hvigor WARN: Warning: field 'profile.build.combined' in '.\cjpm.toml' is experimental, it is unstable and has some limitations, please refer to related documentation for more details
+- line 57, stage `PackageHap`: > hvigor WARN: Will skip sign 'hos_hap'. No signingConfigs profile is configured in current project.
 
 ## Resolved Blockers
 
-- > hvigor ERROR: Failed :entry:default@CompileCangjie...
+- No explicit prior blockers were supplied; this run completed the full build gate.
 
 ## HAP Artifacts
 
-- `D:\workspace\Foodike\Foodike-Harmony\entry\build\default\outputs\default\entry-default-unsigned.hap` (1126850 bytes)
+- `D:\workspace\Foodike\Foodike-Harmony\entry\build\default\outputs\default\entry-default-unsigned.hap` (9159624 bytes)

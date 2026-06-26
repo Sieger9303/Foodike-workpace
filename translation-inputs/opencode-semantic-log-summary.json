@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-25T05:40:27+00:00",
+  "generated_at": "2026-06-26T03:59:02+00:00",
   "log_dir": "D:\\workspace\\Foodike\\translation-records\\opencode-logs",
   "recursive": false,
-  "log_file_count": 13,
-  "available_log_file_count": 13,
+  "log_file_count": 51,
+  "available_log_file_count": 51,
   "max_log_files": 80,
-  "session_count": 13,
+  "session_count": 50,
   "semantic_patterns": {
     "context_review": "\\b(read|reading|inspect|review|verify|checking|pulling|load|loaded)\\b.*\\b(protocol|plan|coverage|phase|source|target|workspace|matrix|report)\\b|读取|阅读|检查|确认|查看|审查",
     "implementation_or_repair": "\\b(implement|wire|add|update|modify|create|fix|repair|migrate|translate|preserve|replace)\\b|实现|修复|迁移|翻译|更新|补充|替换",
@@ -17,234 +17,245 @@
     "risk_or_weakening": "\\b(risk|fallback|simplified|placeholder|stub|TODO|in-memory|weak)\\b|风险|简化|占位|弱证据|兜底"
   },
   "totals": {
-    "events": 1722,
-    "textEvents": 213,
-    "toolUses": 883,
-    "failedToolUses": 32,
+    "events": 6416,
+    "textEvents": 777,
+    "toolUses": 3294,
+    "failedToolUses": 110,
     "jsonLineErrors": 8
   },
   "eventCounts": {
-    "step_start": 313,
-    "tool_use": 883,
-    "text": 213,
-    "step_finish": 313
+    "step_start": 1172,
+    "tool_use": 3294,
+    "text": 777,
+    "step_finish": 1171,
+    "error": 2
   },
   "toolCounts": {
-    "todowrite": 26,
-    "read": 593,
-    "glob": 31,
-    "grep": 89,
-    "skill": 14,
-    "bash": 84,
-    "apply_patch": 46
+    "todowrite": 104,
+    "read": 2143,
+    "glob": 151,
+    "grep": 507,
+    "skill": 59,
+    "bash": 206,
+    "apply_patch": 124
   },
   "toolStatusCounts": {
-    "completed": 876,
-    "error": 7
+    "completed": 3249,
+    "error": 45
   },
   "commandClassCounts": {
-    "test": 27,
-    "python": 11,
-    "coverage": 17,
-    "shell": 11,
-    "build": 18
+    "test": 72,
+    "python": 46,
+    "coverage": 32,
+    "shell": 25,
+    "build": 29,
+    "search": 1,
+    "inspect": 1
   },
   "semanticSignals": {
-    "context_review": 106,
-    "structure_quality": 103,
-    "implementation_or_repair": 136,
-    "verification_or_build": 293,
-    "coverage_or_evidence": 208,
-    "platform_capability": 452,
-    "risk_or_weakening": 43,
-    "blocker_or_deferred": 76
+    "context_review": 410,
+    "structure_quality": 249,
+    "implementation_or_repair": 508,
+    "verification_or_build": 1089,
+    "coverage_or_evidence": 858,
+    "platform_capability": 1760,
+    "risk_or_weakening": 101,
+    "blocker_or_deferred": 344
   },
   "topFileReferences": [
     {
       "reference": "/path",
-      "count": 586
+      "count": 2102
     },
     {
       "reference": "/type",
-      "count": 586
-    },
-    {
-      "reference": "entry/src/main/cangjie/app_ability.cj",
-      "count": 17
-    },
-    {
-      "reference": "/cjpm.toml",
-      "count": 16
-    },
-    {
-      "reference": "/entry/src/main/cangjie/app_ability.cj",
-      "count": 16
-    },
-    {
-      "reference": "/session",
-      "count": 15
+      "count": 2102
     },
     {
       "reference": "entry/cjpm.toml",
-      "count": 15
+      "count": 60
     },
     {
-      "reference": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
-      "count": 15
-    },
-    {
-      "reference": "/content",
-      "count": 14
-    },
-    {
-      "reference": "/entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
-      "count": 14
+      "reference": "/cjpm.toml",
+      "count": 58
     },
     {
       "reference": "/build.gradle.kts",
-      "count": 13
+      "count": 49
     },
     {
       "reference": "app/build.gradle.kts",
-      "count": 13
+      "count": 49
     },
     {
       "reference": "/mapcir/skeleton/entry/cjpm.toml",
-      "count": 11
+      "count": 47
     },
     {
       "reference": "translation-inputs/mapcir/skeleton/entry/cjpm.toml",
+      "count": 47
+    },
+    {
+      "reference": "/HarmonyOS",
+      "count": 38
+    },
+    {
+      "reference": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
+      "count": 33
+    },
+    {
+      "reference": "/cart",
+      "count": 32
+    },
+    {
+      "reference": "/entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
+      "count": 30
+    },
+    {
+      "reference": "/test/manual",
+      "count": 27
+    },
+    {
+      "reference": "/content",
+      "count": 26
+    },
+    {
+      "reference": "/history",
+      "count": 24
+    },
+    {
+      "reference": "/test",
+      "count": 23
+    },
+    {
+      "reference": "/usr/bin/env",
+      "count": 22
+    },
+    {
+      "reference": "/session",
+      "count": 22
+    },
+    {
+      "reference": "/source-coverage-matrix.json",
+      "count": 21
+    },
+    {
+      "reference": "/source-coverage-matrix.md",
+      "count": 21
+    },
+    {
+      "reference": "translation-inputs/source-coverage-matrix.json",
+      "count": 21
+    },
+    {
+      "reference": "translation-inputs/source-coverage-matrix.md",
+      "count": 21
+    },
+    {
+      "reference": "entry/src/main/cangjie/app_ability.cj",
+      "count": 20
+    },
+    {
+      "reference": "/evidence",
+      "count": 20
+    },
+    {
+      "reference": "/entry/src/main/cangjie/app_ability.cj",
+      "count": 19
+    },
+    {
+      "reference": "/target",
+      "count": 19
+    },
+    {
+      "reference": "/patch_auth",
+      "count": 18
+    },
+    {
+      "reference": "/source",
+      "count": 18
+    },
+    {
+      "reference": "/login/profile",
+      "count": 17
+    },
+    {
+      "reference": "/entries",
+      "count": 16
+    },
+    {
+      "reference": "/build",
+      "count": 16
+    },
+    {
+      "reference": "entry/src/test/cangjie/cjpm.toml",
+      "count": 14
+    },
+    {
+      "reference": "/patch_authority.py",
+      "count": 12
+    },
+    {
+      "reference": "/FoodikeBootstrap",
+      "count": 12
+    },
+    {
+      "reference": "/shared/source_coverage/patch_authority.py",
+      "count": 12
+    },
+    {
+      "reference": "scripts/shared/source_coverage/patch_authority.py",
+      "count": 12
+    },
+    {
+      "reference": "/store",
+      "count": 11
+    },
+    {
+      "reference": "/entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj",
+      "count": 11
+    },
+    {
+      "reference": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj",
       "count": 11
     },
     {
       "reference": "/agent-source-walkthrough.md",
       "count": 10
-    },
-    {
-      "reference": "translation-inputs/agent-source-walkthrough.md",
-      "count": 10
-    },
-    {
-      "reference": "/entries",
-      "count": 9
-    },
-    {
-      "reference": "/.workflow-cache/capability-sdk-probe-cache.json",
-      "count": 9
-    },
-    {
-      "reference": "/.workflow-cache/source-coverage/kotlin--gate-none--checklist-none.json",
-      "count": 9
-    },
-    {
-      "reference": "/capabil",
-      "count": 9
-    },
-    {
-      "reference": "translation-inputs/.workflow-cache/capability-sdk-probe-cache.json",
-      "count": 9
-    },
-    {
-      "reference": "translation-inputs/.workflow-cache/source-coverage/kotlin--gate-none--checklist-none.json",
-      "count": 9
-    },
-    {
-      "reference": "translation-inputs/capabil",
-      "count": 9
-    },
-    {
-      "reference": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj",
-      "count": 9
-    },
-    {
-      "reference": "/source-coverage-matrix.json",
-      "count": 9
-    },
-    {
-      "reference": "/source-coverage-matrix.md",
-      "count": 9
-    },
-    {
-      "reference": "translation-inputs/source-coverage-matrix.json",
-      "count": 9
-    },
-    {
-      "reference": "translation-inputs/source-coverage-matrix.md",
-      "count": 9
-    },
-    {
-      "reference": "/entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj",
-      "count": 8
-    },
-    {
-      "reference": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj",
-      "count": 8
-    },
-    {
-      "reference": "/FoodikeBootstrap",
-      "count": 8
-    },
-    {
-      "reference": "/HarmonyOS",
-      "count": 7
-    },
-    {
-      "reference": "/resource",
-      "count": 7
-    },
-    {
-      "reference": "/patch_auth",
-      "count": 7
-    },
-    {
-      "reference": "/entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj",
-      "count": 7
-    },
-    {
-      "reference": "/test",
-      "count": 7
-    },
-    {
-      "reference": "/evidence",
-      "count": 7
-    },
-    {
-      "reference": "/store",
-      "count": 7
-    },
-    {
-      "reference": "/module",
-      "count": 6
-    },
-    {
-      "reference": "/history",
-      "count": 6
     }
   ],
   "topReportReferences": [
     {
-      "reference": "/.workflow-cache/source-coverage/kotlin--gate-none--checklist-none.json",
-      "count": 9
-    },
-    {
-      "reference": "translation-inputs/.workflow-cache/source-coverage/kotlin--gate-none--checklist-none.json",
-      "count": 9
-    },
-    {
       "reference": "/source-coverage-matrix.json",
-      "count": 9
+      "count": 21
     },
     {
       "reference": "/source-coverage-matrix.md",
-      "count": 9
+      "count": 21
     },
     {
       "reference": "translation-inputs/source-coverage-matrix.json",
-      "count": 9
+      "count": 21
     },
     {
       "reference": "translation-inputs/source-coverage-matrix.md",
-      "count": 9
+      "count": 21
+    },
+    {
+      "reference": "/shared/source_coverage/patch_authority.py",
+      "count": 12
+    },
+    {
+      "reference": "scripts/shared/source_coverage/patch_authority.py",
+      "count": 12
+    },
+    {
+      "reference": "/.workflow-cache/source-coverage/kotlin--gate-none--checklist-none.json",
+      "count": 10
+    },
+    {
+      "reference": "translation-inputs/.workflow-cache/source-coverage/kotlin--gate-none--checklist-none.json",
+      "count": 10
     },
     {
       "reference": "/matrix-batch1-patch.json",
@@ -255,11 +266,27 @@
       "count": 5
     },
     {
+      "reference": "/test-build-reports/phase-03-onboarding-login-profile/test-build-report.md",
+      "count": 5
+    },
+    {
+      "reference": "translation-inputs/test-build-reports/phase-03-onboarding-login-profile/test-build-report.md",
+      "count": 5
+    },
+    {
       "reference": "/build-reports/phase-01-project-skeleton-resources/build-report.md",
       "count": 3
     },
     {
       "reference": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md",
+      "count": 3
+    },
+    {
+      "reference": "/build-reports/phase-03-onboarding-login-profile/build-report.md",
+      "count": 3
+    },
+    {
+      "reference": "translation-inputs/build-reports/phase-03-onboarding-login-profile/build-report.md",
       "count": 3
     },
     {
@@ -288,6 +315,26 @@
     },
     {
       "reference": "translation-inputs/test-build-reports/phase-02-startup-navigation-session/test-build-report.md",
+      "count": 2
+    },
+    {
+      "reference": "/../Users/Sieger/AppData/Local/Temp/opencode/phase03_onboarding_matrix_patch.json",
+      "count": 2
+    },
+    {
+      "reference": "/agent-inputs/phase04-components-searchbar-matrix-patch.json",
+      "count": 2
+    },
+    {
+      "reference": "translation-inputs/agent-inputs/phase04-components-searchbar-matrix-patch.json",
+      "count": 2
+    },
+    {
+      "reference": "/test-build-reports/phase-06-polish-tests-verification/test-build-report.md",
+      "count": 2
+    },
+    {
+      "reference": "translation-inputs/test-build-reports/phase-06-polish-tests-verification/test-build-report.md",
       "count": 2
     },
     {
@@ -324,14 +371,6 @@
     },
     {
       "reference": "/Users/Sieger/AppData/Local/Temp/opencode/phase01-batch2-matrix-patch.json",
-      "count": 1
-    },
-    {
-      "reference": "/shared/source_coverage/patch_authority.py",
-      "count": 1
-    },
-    {
-      "reference": "scripts/shared/source_coverage/patch_authority.py",
       "count": 1
     },
     {
@@ -2473,6 +2512,1201 @@
         "blocker_or_deferred": 2
       },
       "failedToolUses": 2
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T054030281897Z-phase.log": {
+      "sessionKind": "phase",
+      "sessions": [
+        "ses_102b4b020ffezHsYsEmnxMB0zX"
+      ],
+      "firstTimestamp": 1782366056004,
+      "lastTimestamp": 1782368212643,
+      "eventCounts": {
+        "step_start": 43,
+        "tool_use": 118,
+        "text": 33,
+        "step_finish": 43
+      },
+      "toolCounts": {
+        "skill": 2,
+        "read": 67,
+        "todowrite": 1,
+        "glob": 6,
+        "grep": 31,
+        "bash": 8,
+        "apply_patch": 3
+      },
+      "semanticSignals": {
+        "platform_capability": 100,
+        "context_review": 11,
+        "implementation_or_repair": 21,
+        "verification_or_build": 26,
+        "blocker_or_deferred": 11,
+        "structure_quality": 7,
+        "risk_or_weakening": 14,
+        "coverage_or_evidence": 15
+      },
+      "failedToolUses": 4
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T061700256157Z-fix-build.log": {
+      "sessionKind": "fix-build",
+      "sessions": [
+        "ses_10293461bffeeWYRBGoTh3K6fq"
+      ],
+      "firstTimestamp": 1782368226091,
+      "lastTimestamp": 1782368714771,
+      "eventCounts": {
+        "step_start": 43,
+        "tool_use": 96,
+        "text": 28,
+        "step_finish": 43
+      },
+      "toolCounts": {
+        "todowrite": 4,
+        "read": 32,
+        "skill": 2,
+        "glob": 12,
+        "grep": 30,
+        "apply_patch": 6,
+        "bash": 10
+      },
+      "semanticSignals": {
+        "context_review": 17,
+        "verification_or_build": 56,
+        "blocker_or_deferred": 12,
+        "platform_capability": 77,
+        "structure_quality": 11,
+        "implementation_or_repair": 9,
+        "coverage_or_evidence": 1,
+        "risk_or_weakening": 1
+      },
+      "failedToolUses": 8
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T065349690217Z-phase.log": {
+      "sessionKind": "phase",
+      "sessions": [
+        "ses_102718fc5ffeKX5hudaWeJGgV5"
+      ],
+      "firstTimestamp": 1782370436884,
+      "lastTimestamp": 1782372098679,
+      "eventCounts": {
+        "step_start": 40,
+        "tool_use": 142,
+        "text": 35,
+        "step_finish": 39
+      },
+      "toolCounts": {
+        "todowrite": 2,
+        "read": 91,
+        "skill": 2,
+        "glob": 12,
+        "grep": 27,
+        "bash": 8
+      },
+      "semanticSignals": {
+        "context_review": 16,
+        "platform_capability": 95,
+        "implementation_or_repair": 9,
+        "verification_or_build": 55,
+        "blocker_or_deferred": 10,
+        "structure_quality": 28,
+        "coverage_or_evidence": 6,
+        "risk_or_weakening": 4
+      },
+      "failedToolUses": 9
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T073947966808Z-phase.log": {
+      "sessionKind": "phase",
+      "sessions": [
+        "ses_102477914ffeJWyM4049JcnBhO"
+      ],
+      "firstTimestamp": 1782373194672,
+      "lastTimestamp": 1782378831924,
+      "eventCounts": {
+        "step_start": 37,
+        "tool_use": 97,
+        "text": 26,
+        "step_finish": 37,
+        "error": 1
+      },
+      "toolCounts": {
+        "todowrite": 3,
+        "read": 56,
+        "skill": 2,
+        "glob": 13,
+        "grep": 10,
+        "bash": 8,
+        "apply_patch": 5
+      },
+      "semanticSignals": {
+        "context_review": 9,
+        "platform_capability": 58,
+        "implementation_or_repair": 13,
+        "verification_or_build": 47,
+        "structure_quality": 7,
+        "blocker_or_deferred": 13,
+        "risk_or_weakening": 2,
+        "coverage_or_evidence": 6
+      },
+      "failedToolUses": 5
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T091359467617Z-fix-build.log": {
+      "sessionKind": "fix-build",
+      "sessions": [
+        "ses_101f13c73ffe9uynnaazsrYQ6A"
+      ],
+      "firstTimestamp": 1782379444033,
+      "lastTimestamp": 1782379444033,
+      "eventCounts": {
+        "error": 1
+      },
+      "toolCounts": {},
+      "semanticSignals": {},
+      "failedToolUses": 0
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T092415282659Z-fix-build.log": {
+      "sessionKind": "fix-build",
+      "sessions": [],
+      "firstTimestamp": 0,
+      "lastTimestamp": 0,
+      "eventCounts": {},
+      "toolCounts": {},
+      "semanticSignals": {},
+      "failedToolUses": 0
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T093445004588Z-phase.log": {
+      "sessionKind": "phase",
+      "sessions": [
+        "ses_101de3b79ffel3ckx0Q2nI7Wic"
+      ],
+      "firstTimestamp": 1782380090456,
+      "lastTimestamp": 1782387135415,
+      "eventCounts": {
+        "step_start": 31,
+        "tool_use": 87,
+        "text": 19,
+        "step_finish": 31
+      },
+      "toolCounts": {
+        "todowrite": 3,
+        "read": 59,
+        "skill": 2,
+        "glob": 2,
+        "grep": 13,
+        "bash": 5,
+        "apply_patch": 3
+      },
+      "semanticSignals": {
+        "context_review": 8,
+        "implementation_or_repair": 6,
+        "platform_capability": 55,
+        "verification_or_build": 27,
+        "coverage_or_evidence": 16,
+        "risk_or_weakening": 4,
+        "blocker_or_deferred": 10,
+        "structure_quality": 15
+      },
+      "failedToolUses": 2
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T113237290561Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_101725145ffej8BoFsdX6HrgJf"
+      ],
+      "firstTimestamp": 1782387164248,
+      "lastTimestamp": 1782387495688,
+      "eventCounts": {
+        "step_start": 24,
+        "tool_use": 56,
+        "text": 11,
+        "step_finish": 24
+      },
+      "toolCounts": {
+        "todowrite": 3,
+        "read": 33,
+        "skill": 1,
+        "glob": 3,
+        "grep": 8,
+        "apply_patch": 4,
+        "bash": 4
+      },
+      "semanticSignals": {
+        "context_review": 11,
+        "implementation_or_repair": 13,
+        "coverage_or_evidence": 21,
+        "platform_capability": 25,
+        "verification_or_build": 18,
+        "risk_or_weakening": 2,
+        "structure_quality": 2,
+        "blocker_or_deferred": 3
+      },
+      "failedToolUses": 1
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T113833951930Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_1016ce029ffemCaBB5i2jTaXCt"
+      ],
+      "firstTimestamp": 1782387520224,
+      "lastTimestamp": 1782387844096,
+      "eventCounts": {
+        "step_start": 25,
+        "tool_use": 59,
+        "text": 13,
+        "step_finish": 25
+      },
+      "toolCounts": {
+        "todowrite": 2,
+        "read": 35,
+        "skill": 1,
+        "grep": 6,
+        "apply_patch": 3,
+        "bash": 9,
+        "glob": 3
+      },
+      "semanticSignals": {
+        "context_review": 7,
+        "coverage_or_evidence": 24,
+        "implementation_or_repair": 7,
+        "platform_capability": 19,
+        "verification_or_build": 14,
+        "structure_quality": 1,
+        "risk_or_weakening": 5,
+        "blocker_or_deferred": 3
+      },
+      "failedToolUses": 6
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T114424938556Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_1016784edffe9LVyBWMwWC7FdS"
+      ],
+      "firstTimestamp": 1782387872417,
+      "lastTimestamp": 1782388292617,
+      "eventCounts": {
+        "step_start": 30,
+        "tool_use": 70,
+        "text": 17,
+        "step_finish": 30
+      },
+      "toolCounts": {
+        "todowrite": 3,
+        "read": 39,
+        "skill": 1,
+        "glob": 6,
+        "grep": 11,
+        "bash": 6,
+        "apply_patch": 4
+      },
+      "semanticSignals": {
+        "context_review": 7,
+        "implementation_or_repair": 17,
+        "blocker_or_deferred": 12,
+        "coverage_or_evidence": 17,
+        "platform_capability": 46,
+        "verification_or_build": 47,
+        "risk_or_weakening": 1,
+        "structure_quality": 2
+      },
+      "failedToolUses": 0
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T115139410411Z-fix-build.log": {
+      "sessionKind": "fix-build",
+      "sessions": [
+        "ses_10160e3e2ffe7CWzM39JBNesLy"
+      ],
+      "firstTimestamp": 1782388304708,
+      "lastTimestamp": 1782388555233,
+      "eventCounts": {
+        "step_start": 27,
+        "tool_use": 58,
+        "text": 17,
+        "step_finish": 27
+      },
+      "toolCounts": {
+        "read": 25,
+        "todowrite": 3,
+        "grep": 15,
+        "glob": 2,
+        "apply_patch": 6,
+        "bash": 7
+      },
+      "semanticSignals": {
+        "platform_capability": 54,
+        "context_review": 8,
+        "verification_or_build": 57,
+        "blocker_or_deferred": 19,
+        "implementation_or_repair": 9,
+        "structure_quality": 6,
+        "coverage_or_evidence": 1
+      },
+      "failedToolUses": 5
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T115617212490Z-phase.log": {
+      "sessionKind": "phase",
+      "sessions": [
+        "ses_1015ca6cfffeteaDphZUZFsMdV"
+      ],
+      "firstTimestamp": 1782388583384,
+      "lastTimestamp": 1782389029261,
+      "eventCounts": {
+        "step_start": 33,
+        "tool_use": 72,
+        "text": 18,
+        "step_finish": 33
+      },
+      "toolCounts": {
+        "todowrite": 4,
+        "skill": 2,
+        "read": 40,
+        "glob": 7,
+        "grep": 7,
+        "apply_patch": 4,
+        "bash": 8
+      },
+      "semanticSignals": {
+        "context_review": 12,
+        "implementation_or_repair": 13,
+        "coverage_or_evidence": 34,
+        "platform_capability": 40,
+        "verification_or_build": 38,
+        "blocker_or_deferred": 11,
+        "structure_quality": 5
+      },
+      "failedToolUses": 6
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T120412726942Z-phase.log": {
+      "sessionKind": "phase",
+      "sessions": [
+        "ses_1015564daffeewn8Ynq2E7YoiC"
+      ],
+      "firstTimestamp": 1782389061002,
+      "lastTimestamp": 1782395150005,
+      "eventCounts": {
+        "step_start": 34,
+        "tool_use": 105,
+        "text": 18,
+        "step_finish": 34
+      },
+      "toolCounts": {
+        "todowrite": 3,
+        "read": 76,
+        "skill": 2,
+        "glob": 8,
+        "grep": 10,
+        "bash": 4,
+        "apply_patch": 2
+      },
+      "semanticSignals": {
+        "context_review": 9,
+        "structure_quality": 8,
+        "coverage_or_evidence": 6,
+        "implementation_or_repair": 9,
+        "platform_capability": 59,
+        "verification_or_build": 24,
+        "blocker_or_deferred": 8,
+        "risk_or_weakening": 4
+      },
+      "failedToolUses": 8
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T134602281751Z-fix-build.log": {
+      "sessionKind": "fix-build",
+      "sessions": [
+        "ses_100f82b84ffelf9rdwZam2tflj"
+      ],
+      "firstTimestamp": 1782395168068,
+      "lastTimestamp": 1782395268145,
+      "eventCounts": {
+        "step_start": 13,
+        "tool_use": 27,
+        "text": 7,
+        "step_finish": 13
+      },
+      "toolCounts": {
+        "todowrite": 3,
+        "read": 14,
+        "skill": 1,
+        "grep": 6,
+        "glob": 1,
+        "apply_patch": 1,
+        "bash": 1
+      },
+      "semanticSignals": {
+        "context_review": 6,
+        "verification_or_build": 13,
+        "blocker_or_deferred": 10,
+        "platform_capability": 26,
+        "implementation_or_repair": 4
+      },
+      "failedToolUses": 1
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T152014801718Z-phase.log": {
+      "sessionKind": "phase",
+      "sessions": [
+        "ses_100a1eab4ffeTKCONZ3ie8fSSB"
+      ],
+      "firstTimestamp": 1782400820960,
+      "lastTimestamp": 1782402290531,
+      "eventCounts": {
+        "step_start": 28,
+        "tool_use": 91,
+        "text": 22,
+        "step_finish": 28
+      },
+      "toolCounts": {
+        "skill": 2,
+        "read": 59,
+        "glob": 4,
+        "grep": 20,
+        "apply_patch": 2,
+        "bash": 4
+      },
+      "semanticSignals": {
+        "platform_capability": 40,
+        "context_review": 9,
+        "implementation_or_repair": 8,
+        "verification_or_build": 19,
+        "blocker_or_deferred": 7,
+        "coverage_or_evidence": 43,
+        "risk_or_weakening": 2,
+        "structure_quality": 1
+      },
+      "failedToolUses": 1
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T154456817307Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_1008b4e19ffekRdAT5Lxgyqh5H"
+      ],
+      "firstTimestamp": 1782402302595,
+      "lastTimestamp": 1782402604677,
+      "eventCounts": {
+        "step_start": 16,
+        "tool_use": 62,
+        "text": 15,
+        "step_finish": 16
+      },
+      "toolCounts": {
+        "skill": 1,
+        "read": 44,
+        "grep": 14,
+        "glob": 2,
+        "bash": 1
+      },
+      "semanticSignals": {
+        "platform_capability": 24,
+        "context_review": 8,
+        "implementation_or_repair": 8,
+        "coverage_or_evidence": 31,
+        "verification_or_build": 10,
+        "blocker_or_deferred": 1,
+        "structure_quality": 3
+      },
+      "failedToolUses": 1
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T155006989804Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_1008692e3ffes7wyEd1LjsXTmN"
+      ],
+      "firstTimestamp": 1782402612750,
+      "lastTimestamp": 1782403122231,
+      "eventCounts": {
+        "step_start": 21,
+        "tool_use": 67,
+        "text": 20,
+        "step_finish": 21
+      },
+      "toolCounts": {
+        "skill": 1,
+        "read": 45,
+        "todowrite": 1,
+        "grep": 18,
+        "glob": 2
+      },
+      "semanticSignals": {
+        "platform_capability": 20,
+        "context_review": 10,
+        "implementation_or_repair": 11,
+        "coverage_or_evidence": 32,
+        "verification_or_build": 8,
+        "blocker_or_deferred": 3,
+        "structure_quality": 5,
+        "risk_or_weakening": 1
+      },
+      "failedToolUses": 0
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T155844680221Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_1007eac83ffeWvHUdgrrmS0V2v"
+      ],
+      "firstTimestamp": 1782403130191,
+      "lastTimestamp": 1782404079608,
+      "eventCounts": {
+        "step_start": 25,
+        "tool_use": 72,
+        "text": 11,
+        "step_finish": 25
+      },
+      "toolCounts": {
+        "todowrite": 2,
+        "read": 51,
+        "skill": 1,
+        "grep": 12,
+        "glob": 1,
+        "bash": 3,
+        "apply_patch": 2
+      },
+      "semanticSignals": {
+        "context_review": 8,
+        "implementation_or_repair": 12,
+        "coverage_or_evidence": 28,
+        "platform_capability": 28,
+        "verification_or_build": 20,
+        "blocker_or_deferred": 12,
+        "structure_quality": 4,
+        "risk_or_weakening": 1
+      },
+      "failedToolUses": 1
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T161445647809Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_1007002f9ffeC2nvxFAQ5xgnmW"
+      ],
+      "firstTimestamp": 1782404091364,
+      "lastTimestamp": 1782404318721,
+      "eventCounts": {
+        "step_start": 18,
+        "tool_use": 41,
+        "text": 10,
+        "step_finish": 18
+      },
+      "toolCounts": {
+        "todowrite": 4,
+        "read": 27,
+        "grep": 6,
+        "skill": 1,
+        "apply_patch": 1,
+        "bash": 2
+      },
+      "semanticSignals": {
+        "context_review": 9,
+        "implementation_or_repair": 9,
+        "coverage_or_evidence": 19,
+        "platform_capability": 16,
+        "verification_or_build": 7,
+        "blocker_or_deferred": 4,
+        "risk_or_weakening": 1,
+        "structure_quality": 2
+      },
+      "failedToolUses": 0
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T161844781684Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_1006c5c95ffeP0kIq47sKblB1o"
+      ],
+      "firstTimestamp": 1782404330053,
+      "lastTimestamp": 1782404739966,
+      "eventCounts": {
+        "step_start": 16,
+        "tool_use": 50,
+        "text": 8,
+        "step_finish": 16
+      },
+      "toolCounts": {
+        "todowrite": 2,
+        "read": 39,
+        "skill": 1,
+        "grep": 7,
+        "glob": 1
+      },
+      "semanticSignals": {
+        "context_review": 6,
+        "implementation_or_repair": 9,
+        "verification_or_build": 9,
+        "blocker_or_deferred": 4,
+        "coverage_or_evidence": 21,
+        "platform_capability": 18
+      },
+      "failedToolUses": 0
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T162542303172Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_10065fdc9ffes29QaTZWYB3dSw"
+      ],
+      "firstTimestamp": 1782404748024,
+      "lastTimestamp": 1782404999299,
+      "eventCounts": {
+        "step_start": 14,
+        "tool_use": 42,
+        "text": 10,
+        "step_finish": 14
+      },
+      "toolCounts": {
+        "skill": 1,
+        "todowrite": 2,
+        "read": 32,
+        "grep": 6,
+        "bash": 1
+      },
+      "semanticSignals": {
+        "platform_capability": 13,
+        "implementation_or_repair": 5,
+        "coverage_or_evidence": 21,
+        "context_review": 5,
+        "verification_or_build": 11,
+        "blocker_or_deferred": 7,
+        "risk_or_weakening": 1
+      },
+      "failedToolUses": 1
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T163005621659Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_10061f945ffeAl9WpSa5osoNEh"
+      ],
+      "firstTimestamp": 1782405011733,
+      "lastTimestamp": 1782405925069,
+      "eventCounts": {
+        "step_start": 22,
+        "tool_use": 68,
+        "text": 12,
+        "step_finish": 22
+      },
+      "toolCounts": {
+        "todowrite": 2,
+        "read": 52,
+        "skill": 1,
+        "glob": 1,
+        "grep": 7,
+        "apply_patch": 2,
+        "bash": 3
+      },
+      "semanticSignals": {
+        "context_review": 7,
+        "implementation_or_repair": 10,
+        "platform_capability": 26,
+        "verification_or_build": 11,
+        "coverage_or_evidence": 30,
+        "structure_quality": 3,
+        "blocker_or_deferred": 5
+      },
+      "failedToolUses": 1
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T164534164716Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_10053ce1fffeJEFUjEAeuZr4YW"
+      ],
+      "firstTimestamp": 1782405940739,
+      "lastTimestamp": 1782406107033,
+      "eventCounts": {
+        "step_start": 9,
+        "text": 9,
+        "tool_use": 44,
+        "step_finish": 9
+      },
+      "toolCounts": {
+        "skill": 1,
+        "read": 37,
+        "grep": 6
+      },
+      "semanticSignals": {
+        "context_review": 4,
+        "implementation_or_repair": 8,
+        "platform_capability": 18,
+        "coverage_or_evidence": 16,
+        "verification_or_build": 7,
+        "structure_quality": 3,
+        "blocker_or_deferred": 3,
+        "risk_or_weakening": 1
+      },
+      "failedToolUses": 1
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T164839487932Z-phase.log": {
+      "sessionKind": "phase",
+      "sessions": [
+        "ses_10050fa72ffe1d7GU3GCs1clsN"
+      ],
+      "firstTimestamp": 1782406126084,
+      "lastTimestamp": 1782415073490,
+      "eventCounts": {
+        "step_start": 30,
+        "tool_use": 82,
+        "text": 7,
+        "step_finish": 30
+      },
+      "toolCounts": {
+        "todowrite": 2,
+        "read": 53,
+        "skill": 4,
+        "glob": 2,
+        "grep": 19,
+        "bash": 2
+      },
+      "semanticSignals": {
+        "context_review": 5,
+        "blocker_or_deferred": 4,
+        "platform_capability": 51,
+        "implementation_or_repair": 6,
+        "verification_or_build": 12,
+        "coverage_or_evidence": 2,
+        "structure_quality": 5,
+        "risk_or_weakening": 1
+      },
+      "failedToolUses": 0
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T191804473322Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_0ffc82e87ffeknZ19ViXwtZ5zV"
+      ],
+      "firstTimestamp": 1782415091156,
+      "lastTimestamp": 1782417398272,
+      "eventCounts": {
+        "step_start": 35,
+        "tool_use": 98,
+        "text": 28,
+        "step_finish": 35
+      },
+      "toolCounts": {
+        "read": 63,
+        "skill": 1,
+        "glob": 6,
+        "grep": 15,
+        "todowrite": 3,
+        "apply_patch": 9,
+        "bash": 1
+      },
+      "semanticSignals": {
+        "implementation_or_repair": 17,
+        "coverage_or_evidence": 29,
+        "platform_capability": 53,
+        "verification_or_build": 23,
+        "context_review": 9,
+        "blocker_or_deferred": 6,
+        "structure_quality": 4,
+        "risk_or_weakening": 1
+      },
+      "failedToolUses": 3
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T195713619609Z-fix-build.log": {
+      "sessionKind": "fix-build",
+      "sessions": [
+        "ses_0ffa4560dffedGgtI9g2HboSP0"
+      ],
+      "firstTimestamp": 1782417438816,
+      "lastTimestamp": 1782417544469,
+      "eventCounts": {
+        "step_start": 10,
+        "tool_use": 25,
+        "text": 8,
+        "step_finish": 10
+      },
+      "toolCounts": {
+        "read": 15,
+        "glob": 2,
+        "grep": 2,
+        "todowrite": 2,
+        "apply_patch": 1,
+        "bash": 3
+      },
+      "semanticSignals": {
+        "platform_capability": 16,
+        "context_review": 6,
+        "verification_or_build": 14,
+        "blocker_or_deferred": 6,
+        "implementation_or_repair": 4,
+        "coverage_or_evidence": 1
+      },
+      "failedToolUses": 0
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T021729261869Z-phase.log": {
+      "sessionKind": "phase",
+      "sessions": [
+        "ses_0fe4831ceffeOChODcUYsOMwFi"
+      ],
+      "firstTimestamp": 1782440255462,
+      "lastTimestamp": 1782440975536,
+      "eventCounts": {
+        "step_start": 18,
+        "tool_use": 73,
+        "text": 14,
+        "step_finish": 18
+      },
+      "toolCounts": {
+        "skill": 1,
+        "read": 59,
+        "todowrite": 1,
+        "glob": 6,
+        "grep": 6
+      },
+      "semanticSignals": {
+        "platform_capability": 39,
+        "implementation_or_repair": 9,
+        "verification_or_build": 18,
+        "context_review": 10,
+        "blocker_or_deferred": 8,
+        "coverage_or_evidence": 4,
+        "risk_or_weakening": 2,
+        "structure_quality": 1
+      },
+      "failedToolUses": 4
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T022939651438Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_0fe3d0d4cffeOX6WWdvp2z1kkk"
+      ],
+      "firstTimestamp": 1782440985738,
+      "lastTimestamp": 1782441498743,
+      "eventCounts": {
+        "step_start": 29,
+        "tool_use": 83,
+        "text": 25,
+        "step_finish": 29
+      },
+      "toolCounts": {
+        "todowrite": 1,
+        "read": 46,
+        "skill": 2,
+        "glob": 3,
+        "grep": 24,
+        "apply_patch": 4,
+        "bash": 3
+      },
+      "semanticSignals": {
+        "context_review": 8,
+        "implementation_or_repair": 14,
+        "coverage_or_evidence": 24,
+        "platform_capability": 44,
+        "verification_or_build": 23,
+        "blocker_or_deferred": 7,
+        "structure_quality": 2
+      },
+      "failedToolUses": 4
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T023824849272Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_0fe350a51ffeC6mguZVvqFEyD1"
+      ],
+      "firstTimestamp": 1782441512721,
+      "lastTimestamp": 1782442420733,
+      "eventCounts": {
+        "step_start": 36,
+        "tool_use": 74,
+        "text": 13,
+        "step_finish": 36
+      },
+      "toolCounts": {
+        "todowrite": 3,
+        "read": 42,
+        "glob": 3,
+        "grep": 15,
+        "apply_patch": 8,
+        "bash": 3
+      },
+      "semanticSignals": {
+        "context_review": 7,
+        "implementation_or_repair": 12,
+        "coverage_or_evidence": 15,
+        "platform_capability": 43,
+        "verification_or_build": 13,
+        "blocker_or_deferred": 5,
+        "structure_quality": 2,
+        "risk_or_weakening": 4
+      },
+      "failedToolUses": 3
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T025407067220Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_0fe26a9d2ffer6h4jq2UJwr0EY"
+      ],
+      "firstTimestamp": 1782442453475,
+      "lastTimestamp": 1782443215467,
+      "eventCounts": {
+        "step_start": 20,
+        "tool_use": 68,
+        "step_finish": 20,
+        "text": 15
+      },
+      "toolCounts": {
+        "todowrite": 2,
+        "read": 47,
+        "glob": 3,
+        "grep": 15,
+        "apply_patch": 1
+      },
+      "semanticSignals": {
+        "context_review": 9,
+        "implementation_or_repair": 13,
+        "coverage_or_evidence": 28,
+        "platform_capability": 24,
+        "verification_or_build": 13,
+        "blocker_or_deferred": 8,
+        "structure_quality": 3,
+        "risk_or_weakening": 1
+      },
+      "failedToolUses": 0
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T030714537915Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_0fe1aa5d9ffesFmHB6DHkAouwB"
+      ],
+      "firstTimestamp": 1782443240747,
+      "lastTimestamp": 1782443714092,
+      "eventCounts": {
+        "step_start": 23,
+        "tool_use": 63,
+        "text": 19,
+        "step_finish": 23
+      },
+      "toolCounts": {
+        "skill": 2,
+        "read": 42,
+        "glob": 2,
+        "grep": 9,
+        "apply_patch": 3,
+        "bash": 5
+      },
+      "semanticSignals": {
+        "platform_capability": 29,
+        "implementation_or_repair": 11,
+        "coverage_or_evidence": 28,
+        "verification_or_build": 19,
+        "context_review": 5,
+        "blocker_or_deferred": 7
+      },
+      "failedToolUses": 1
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T031526359714Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_0fe132431ffeMHGv1hKjBaJ0lE"
+      ],
+      "firstTimestamp": 1782443732350,
+      "lastTimestamp": 1782444007879,
+      "eventCounts": {
+        "step_start": 14,
+        "tool_use": 40,
+        "text": 8,
+        "step_finish": 14
+      },
+      "toolCounts": {
+        "todowrite": 2,
+        "read": 27,
+        "skill": 1,
+        "grep": 7,
+        "glob": 2,
+        "bash": 1
+      },
+      "semanticSignals": {
+        "context_review": 6,
+        "implementation_or_repair": 9,
+        "coverage_or_evidence": 15,
+        "platform_capability": 17,
+        "verification_or_build": 8,
+        "structure_quality": 4,
+        "blocker_or_deferred": 1
+      },
+      "failedToolUses": 0
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T032010078980Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_0fe0ed04dffeRxIShbWVKCrhzI"
+      ],
+      "firstTimestamp": 1782444017492,
+      "lastTimestamp": 1782444257430,
+      "eventCounts": {
+        "step_start": 13,
+        "tool_use": 38,
+        "text": 7,
+        "step_finish": 13
+      },
+      "toolCounts": {
+        "todowrite": 3,
+        "read": 31,
+        "grep": 4
+      },
+      "semanticSignals": {
+        "context_review": 7,
+        "implementation_or_repair": 7,
+        "coverage_or_evidence": 16,
+        "platform_capability": 13,
+        "verification_or_build": 10,
+        "blocker_or_deferred": 2,
+        "structure_quality": 1
+      },
+      "failedToolUses": 0
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T032423520046Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_0fe0af24affew3zSj2kt0l7OD2"
+      ],
+      "firstTimestamp": 1782444269524,
+      "lastTimestamp": 1782444614225,
+      "eventCounts": {
+        "step_start": 16,
+        "tool_use": 46,
+        "text": 14,
+        "step_finish": 16
+      },
+      "toolCounts": {
+        "todowrite": 1,
+        "read": 35,
+        "skill": 1,
+        "glob": 1,
+        "grep": 8
+      },
+      "semanticSignals": {
+        "context_review": 10,
+        "implementation_or_repair": 13,
+        "coverage_or_evidence": 26,
+        "platform_capability": 15,
+        "verification_or_build": 9,
+        "blocker_or_deferred": 7,
+        "structure_quality": 2
+      },
+      "failedToolUses": 0
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T033017425162Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_0fe058cafffeQXWj8wzo54yLAu"
+      ],
+      "firstTimestamp": 1782444623123,
+      "lastTimestamp": 1782445708187,
+      "eventCounts": {
+        "step_start": 23,
+        "tool_use": 70,
+        "text": 18,
+        "step_finish": 23
+      },
+      "toolCounts": {
+        "todowrite": 2,
+        "read": 50,
+        "glob": 1,
+        "grep": 11,
+        "skill": 1,
+        "apply_patch": 2,
+        "bash": 3
+      },
+      "semanticSignals": {
+        "context_review": 12,
+        "implementation_or_repair": 14,
+        "coverage_or_evidence": 36,
+        "platform_capability": 31,
+        "verification_or_build": 20,
+        "blocker_or_deferred": 13,
+        "structure_quality": 5,
+        "risk_or_weakening": 2
+      },
+      "failedToolUses": 2
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T034846272186Z-phase.log": {
+      "sessionKind": "phase",
+      "sessions": [
+        "ses_0fdf4a05effeh4r8v5bdsW2oKc"
+      ],
+      "firstTimestamp": 1782445731348,
+      "lastTimestamp": 1782445975241,
+      "eventCounts": {
+        "step_start": 16,
+        "tool_use": 48,
+        "text": 10,
+        "step_finish": 16
+      },
+      "toolCounts": {
+        "read": 33,
+        "todowrite": 3,
+        "glob": 2,
+        "grep": 5,
+        "skill": 2,
+        "bash": 3
+      },
+      "semanticSignals": {
+        "platform_capability": 29,
+        "implementation_or_repair": 12,
+        "verification_or_build": 31,
+        "context_review": 11,
+        "risk_or_weakening": 2,
+        "coverage_or_evidence": 13,
+        "blocker_or_deferred": 10
+      },
+      "failedToolUses": 0
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T035305479075Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_0fdf0abbcffeXZ79acy1pUYMV9"
+      ],
+      "firstTimestamp": 1782445990865,
+      "lastTimestamp": 1782446235007,
+      "eventCounts": {
+        "step_start": 19,
+        "text": 13,
+        "tool_use": 46,
+        "step_finish": 19
+      },
+      "toolCounts": {
+        "skill": 1,
+        "read": 28,
+        "todowrite": 3,
+        "grep": 6,
+        "glob": 1,
+        "bash": 5,
+        "apply_patch": 2
+      },
+      "semanticSignals": {
+        "implementation_or_repair": 12,
+        "coverage_or_evidence": 18,
+        "platform_capability": 25,
+        "verification_or_build": 36,
+        "context_review": 7,
+        "blocker_or_deferred": 12,
+        "structure_quality": 3
+      },
+      "failedToolUses": 0
+    },
+    "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T035723873796Z-coverage-repair.log": {
+      "sessionKind": "coverage-repair",
+      "sessions": [
+        "ses_0fdecba41ffeYcObFS0tyK2vSX"
+      ],
+      "firstTimestamp": 1782446249552,
+      "lastTimestamp": 1782446327655,
+      "eventCounts": {
+        "step_start": 8,
+        "tool_use": 33,
+        "text": 6,
+        "step_finish": 8
+      },
+      "toolCounts": {
+        "todowrite": 3,
+        "read": 26,
+        "skill": 1,
+        "grep": 2,
+        "bash": 1
+      },
+      "semanticSignals": {
+        "context_review": 5,
+        "implementation_or_repair": 9,
+        "verification_or_build": 23,
+        "blocker_or_deferred": 4,
+        "platform_capability": 22,
+        "coverage_or_evidence": 7,
+        "risk_or_weakening": 1,
+        "structure_quality": 1
+      },
+      "failedToolUses": 0
     }
   }
 }

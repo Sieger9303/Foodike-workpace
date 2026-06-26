@@ -1,19 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-25T06:25:26+00:00",
+  "generatedAt": "2026-06-26T04:03:33+00:00",
   "purpose": "Structured verification evidence collected from build/test/manual reports. Build results are discovered automatically; test or manual validation results may be added as non build-report-scan entries and will be preserved across refreshes.",
   "summary": {
-    "totalResults": 3,
+    "totalResults": 6,
     "byType": {
-      "build": 3
+      "build": 6
     },
     "byResult": {
-      "passed": 3
+      "passed": 6
     },
     "passedBuildPhases": [
       "phase-01-project-skeleton-resources",
       "phase-02-startup-navigation-session",
-      "phase-03-onboarding-login-profile"
+      "phase-03-onboarding-login-profile",
+      "phase-04-home-history-discovery",
+      "phase-05-detail-cart-state-mutations",
+      "phase-06-polish-tests-verification"
     ]
   },
   "results": [
@@ -49,6 +52,45 @@
       "type": "build",
       "phase": "phase-03-onboarding-login-profile",
       "result": "passed",
+      "command": [],
+      "returncode": 0,
+      "evidencePath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-03-onboarding-login-profile\\build-report.json",
+      "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-03-onboarding-login-profile\\build-report.md",
+      "generatedAt": "2026-06-25T12:04:05+00:00",
+      "notes": "Build gate result for phase phase-03-onboarding-login-profile."
+    },
+    {
+      "id": "build:phase-04-home-history-discovery",
+      "source": "build-report-scan",
+      "type": "build",
+      "phase": "phase-04-home-history-discovery",
+      "result": "passed",
+      "command": [],
+      "returncode": 0,
+      "evidencePath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-04-home-history-discovery\\build-report.json",
+      "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-04-home-history-discovery\\build-report.md",
+      "generatedAt": "2026-06-25T16:48:30+00:00",
+      "notes": "Build gate result for phase phase-04-home-history-discovery."
+    },
+    {
+      "id": "build:phase-05-detail-cart-state-mutations",
+      "source": "build-report-scan",
+      "type": "build",
+      "phase": "phase-05-detail-cart-state-mutations",
+      "result": "passed",
+      "command": [],
+      "returncode": 0,
+      "evidencePath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-05-detail-cart-state-mutations\\build-report.json",
+      "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-05-detail-cart-state-mutations\\build-report.md",
+      "generatedAt": "2026-06-26T03:48:36+00:00",
+      "notes": "Build gate result for phase phase-05-detail-cart-state-mutations."
+    },
+    {
+      "id": "build:phase-06-polish-tests-verification",
+      "source": "build-report-scan",
+      "type": "build",
+      "phase": "phase-06-polish-tests-verification",
+      "result": "passed",
       "command": [
         "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
         "D:\\workspace\\Foodike\\.agents\\skills\\harmonyos-build\\build.py",
@@ -56,10 +98,10 @@
         "D:\\workspace\\Foodike\\Foodike-Harmony"
       ],
       "returncode": 0,
-      "evidencePath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-03-onboarding-login-profile\\build-report.json",
-      "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-03-onboarding-login-profile\\build-report.md",
-      "generatedAt": "2026-06-25T06:25:24+00:00",
-      "notes": "Build gate result for phase phase-03-onboarding-login-profile."
+      "evidencePath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-06-polish-tests-verification\\build-report.json",
+      "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-06-polish-tests-verification\\build-report.md",
+      "generatedAt": "2026-06-26T03:58:57+00:00",
+      "notes": "Build gate result for phase phase-06-polish-tests-verification."
     }
   ]
 }

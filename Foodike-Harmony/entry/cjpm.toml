@@ -34,3 +34,6 @@ scripts = {}
 [target.x86_64-unknown-windows-gnu.bin-dependencies]
   path-option = ["${X86_64_LIBS}", "${X86_64_MACRO_LIBS}"]
   package-option = {}
+
+[profile.build.combined]
+  ohos_app_cangjie_entry = "dynamic"

@@ -40,6 +40,8 @@ generic coverage regeneration commands merely to sync Markdown if they refresh
 unrelated generated reports; the patch tool is the preferred direct
 JSON-to-Markdown mirror for matrix/capability authority updates.
 
+{structured_facts_guidance}
+
 ## Target Architecture Organization
 
 Use the source project structure as a responsibility guide, then adapt it to

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-25T06:25:26+00:00",
+  "generatedAt": "2026-06-26T04:03:33+00:00",
   "sourceKind": "kotlin",
   "purpose": "Reduce functional gaps and unexplained code-scale gaps during project translation. This file-level survey is a planning baseline, not a replacement for source inspection.",
   "source": {
@@ -5570,78 +5570,129 @@
         "status": "PASS",
         "returncode": 0,
         "timedOut": false,
-        "fileMetrics": 33,
+        "fileMetrics": 49,
         "message": ""
       }
     ],
     "totals": {
-      "files": 42,
-      "textFiles": 34,
-      "assetFiles": 8,
-      "physicalLines": 1373,
-      "nonblankLines": 1223,
-      "locCodeLines": 1222,
+      "files": 79,
+      "textFiles": 56,
+      "assetFiles": 23,
+      "physicalLines": 6205,
+      "nonblankLines": 5838,
+      "locCodeLines": 5837,
       "locCommentLines": 1,
-      "locBlankLines": 150,
-      "productionTextFiles": 32,
-      "productionPhysicalLines": 1246,
-      "productionNonblankLines": 1115,
-      "productionLocCodeLines": 1114,
+      "locBlankLines": 367,
+      "productionTextFiles": 50,
+      "productionPhysicalLines": 5819,
+      "productionNonblankLines": 5499,
+      "productionLocCodeLines": 5498,
       "productionLocCommentLines": 1,
-      "productionLocBlankLines": 131,
-      "codeFiles": 21,
-      "codePhysicalLines": 1008,
-      "codeNonblankLines": 862,
-      "codeLocCodeLines": 861,
+      "productionLocBlankLines": 320,
+      "codeFiles": 40,
+      "codePhysicalLines": 3263,
+      "codeNonblankLines": 2908,
+      "codeLocCodeLines": 2907,
       "codeLocCommentLines": 1,
-      "codeLocBlankLines": 146,
-      "productionCodeFiles": 19,
-      "productionCodePhysicalLines": 881,
-      "productionCodeNonblankLines": 754,
-      "productionCodeLocCodeLines": 753,
+      "codeLocBlankLines": 355,
+      "productionCodeFiles": 36,
+      "productionCodePhysicalLines": 2944,
+      "productionCodeNonblankLines": 2629,
+      "productionCodeLocCodeLines": 2628,
       "productionCodeLocCommentLines": 1,
-      "productionCodeLocBlankLines": 127,
-      "testFiles": 2,
-      "testNonblankLines": 108,
-      "testCodeFiles": 2,
-      "testCodeNonblankLines": 108,
-      "testCodeLocCodeLines": 108,
+      "productionCodeLocBlankLines": 315,
+      "testFiles": 6,
+      "testNonblankLines": 339,
+      "testCodeFiles": 4,
+      "testCodeNonblankLines": 279,
+      "testCodeLocCodeLines": 279,
       "testCodeLocCommentLines": 0,
-      "testCodeLocBlankLines": 19
+      "testCodeLocBlankLines": 40
     },
     "byCategory": {
-      "cangjie-source": 17,
-      "config": 8,
-      "harmony-resource": 13,
+      "cangjie-source": 34,
+      "config": 9,
+      "harmony-resource": 28,
       "script-source": 2,
-      "test": 2
+      "test": 6
     },
     "byExtension": {
-      ".cj": 19,
-      ".json": 5,
+      ".cj": 38,
+      ".jpg": 7,
+      ".json": 6,
       ".json5": 7,
-      ".png": 2,
-      ".svg": 6,
-      ".toml": 1,
+      ".png": 15,
+      ".svg": 1,
+      ".toml": 3,
       ".ts": 2
     },
     "byImportance": {
-      "critical": 6,
-      "high": 6,
+      "critical": 20,
+      "high": 11,
       "low": 3,
-      "medium": 27
+      "medium": 45
     },
     "byRiskTag": {
-      "image_viewer": 1,
-      "intent_uri": 4,
-      "navigation_resource": 1,
-      "permissions": 1,
-      "platform_component": 5,
-      "screen_lifecycle": 2,
-      "settings": 11,
-      "source_test": 2
+      "file_ops": 2,
+      "image_viewer": 9,
+      "intent_uri": 12,
+      "localization": 1,
+      "media_discovery": 1,
+      "navigation_resource": 11,
+      "notification_widget": 6,
+      "permissions": 2,
+      "platform_component": 8,
+      "screen_lifecycle": 4,
+      "settings": 15,
+      "source_test": 6
     },
     "files": [
+      {
+        "path": ".mapcir.json",
+        "extension": ".json",
+        "category": "config",
+        "physicalLines": 2507,
+        "nonblankLines": 2507,
+        "locMetrics": {
+          "source": "internal-fallback",
+          "tool": "",
+          "language": "",
+          "physicalLines": 2507,
+          "nonblankLines": 2507,
+          "codeLines": 2507,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "intent_uri",
+          "localization",
+          "navigation_resource",
+          "permissions",
+          "platform_component",
+          "screen_lifecycle",
+          "settings"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Localized strings or locale-specific resource behavior.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Runtime permission request, permission result handling, or protected API access.",
+          "Android platform component lifecycle such as service, receiver, provider, or application.",
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "Settings/preferences, option toggles, or configuration state behavior."
+        ],
+        "textScanned": true
+      },
       {
         "path": "AppScope/app.json5",
         "extension": ".json5",
@@ -5832,17 +5883,17 @@
         "path": "entry/cjpm.toml",
         "extension": ".toml",
         "category": "config",
-        "physicalLines": 36,
-        "nonblankLines": 32,
+        "physicalLines": 39,
+        "nonblankLines": 34,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "TOML",
-          "physicalLines": 36,
-          "nonblankLines": 32,
-          "codeLines": 32,
+          "physicalLines": 39,
+          "nonblankLines": 34,
+          "codeLines": 34,
           "commentLines": 0,
-          "blankLines": 4
+          "blankLines": 5
         },
         "importance": "high",
         "riskTags": [
@@ -6036,6 +6087,48 @@
         "textScanned": true
       },
       {
+        "path": "entry/src/main/cangjie/main_activity_ability.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 28,
+        "nonblankLines": 24,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 28,
+          "nonblankLines": 24,
+          "codeLines": 24,
+          "commentLines": 0,
+          "blankLines": 4
+        },
+        "importance": "critical",
+        "riskTags": [
+          "screen_lifecycle"
+        ],
+        "symbols": {
+          "classes": [
+            "MainActivity"
+          ],
+          "methods": [
+            "onCreate",
+            "onWindowStageCreate"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "onCreate",
+          "onWindowStageCreate"
+        ],
+        "featurePoints": [
+          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "Lifecycle callback affecting screen initialization, refresh, or cleanup. Evidence method: `onCreate`.",
+          "CRUD mutation or persistent state update behavior. Evidence method: `onWindowStageCreate`."
+        ],
+        "textScanned": true
+      },
+      {
         "path": "entry/src/main/cangjie/module_entry_entry.cj",
         "extension": ".cj",
         "category": "cangjie-source",
@@ -6122,21 +6215,22 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 447,
-        "nonblankLines": 405,
+        "physicalLines": 426,
+        "nonblankLines": 374,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 447,
-          "nonblankLines": 405,
-          "codeLines": 405,
+          "physicalLines": 426,
+          "nonblankLines": 374,
+          "codeLines": 374,
           "commentLines": 0,
-          "blankLines": 42
+          "blankLines": 52
         },
-        "importance": "critical",
+        "importance": "high",
         "riskTags": [
-          "image_viewer",
+          "intent_uri",
+          "navigation_resource",
           "settings"
         ],
         "symbols": {
@@ -6148,17 +6242,27 @@
             "shellState",
             "applyShellCommand",
             "navigateTo",
+            "navigateBack",
             "showBottomShell",
             "routeTitle",
             "showToast",
+            "clearLoginError",
             "performLogin",
             "performLogout",
             "routeSummary",
-            "buildTopBar",
-            "buildOnboardingCard",
+            "homeHour",
+            "goToProfile",
+            "goToRestaurantDetail",
+            "detailState",
+            "selectHomeRestaurant",
+            "selectHistoryRestaurant",
             "buildOnboardingRoute",
             "buildLoginRoute",
             "buildProfileRoute",
+            "buildHomeRoute",
+            "buildHistoryRoute",
+            "buildCartRoute",
+            "buildDetailRoute",
             "buildPlaceholderRoute",
             "build"
           ],
@@ -6167,18 +6271,23 @@
         },
         "keyMethods": [
           "navigateTo",
+          "navigateBack",
           "showBottomShell",
           "showToast",
+          "clearLoginError",
           "performLogin",
           "performLogout",
           "buildLoginRoute"
         ],
         "featurePoints": [
-          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
           "Settings/preferences, option toggles, or configuration state behavior.",
           "Navigation, dialog, visibility, or screen transition behavior. Evidence method: `navigateTo`.",
+          "Navigation, dialog, visibility, or screen transition behavior. Evidence method: `navigateBack`.",
           "Navigation, dialog, visibility, or screen transition behavior. Evidence method: `showBottomShell`.",
           "Navigation, dialog, visibility, or screen transition behavior. Evidence method: `showToast`.",
+          "CRUD mutation or persistent state update behavior. Evidence method: `clearLoginError`.",
           "Authentication, account, or session behavior. Evidence method: `performLogin`.",
           "Authentication, account, or session behavior. Evidence method: `performLogout`.",
           "Authentication, account, or session behavior. Evidence method: `buildLoginRoute`."
@@ -6219,15 +6328,15 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 37,
-        "nonblankLines": 31,
+        "physicalLines": 51,
+        "nonblankLines": 45,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 37,
-          "nonblankLines": 31,
-          "codeLines": 31,
+          "physicalLines": 51,
+          "nonblankLines": 45,
+          "codeLines": 45,
           "commentLines": 0,
           "blankLines": 6
         },
@@ -6248,6 +6357,139 @@
         ],
         "featurePoints": [
           "Intent, URI, bundle, deeplink, or cross-screen parameter flow."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/restaurant_card.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 106,
+        "nonblankLines": 101,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 106,
+          "nonblankLines": 101,
+          "codeLines": 101,
+          "commentLines": 0,
+          "blankLines": 5
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "notification_widget"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "restaurantMedia",
+            "getCustomerInfo",
+            "formatEta",
+            "renderRestaurantCard"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "restaurantMedia",
+          "getCustomerInfo"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Notification, widget, RemoteViews, or home-screen integration behavior.",
+          "Media/gallery/image handling behavior. Evidence method: `restaurantMedia`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getCustomerInfo`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/search_bar.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 18,
+        "nonblankLines": 16,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 18,
+          "nonblankLines": 16,
+          "codeLines": 16,
+          "commentLines": 0,
+          "blankLines": 2
+        },
+        "importance": "medium",
+        "riskTags": [
+          "notification_widget"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "renderSearchBar"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "renderSearchBar"
+        ],
+        "featurePoints": [
+          "Notification, widget, RemoteViews, or home-screen integration behavior.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `renderSearchBar`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/content/home_content_repository.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 57,
+        "nonblankLines": 48,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 57,
+          "nonblankLines": 48,
+          "codeLines": 48,
+          "commentLines": 0,
+          "blankLines": 9
+        },
+        "importance": "critical",
+        "riskTags": [
+          "file_ops",
+          "intent_uri",
+          "settings"
+        ],
+        "symbols": {
+          "classes": [
+            "HomeContentRepository"
+          ],
+          "methods": [
+            "getAds",
+            "getFoodItems",
+            "getRestaurants",
+            "getRestaurantByName"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "getAds",
+          "getFoodItems",
+          "getRestaurants",
+          "getRestaurantByName"
+        ],
+        "featurePoints": [
+          "File, document, storage, SAF, MediaStore, or import/export behavior.",
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Settings/preferences, option toggles, or configuration state behavior.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getAds`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getFoodItems`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getRestaurants`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getRestaurantByName`."
         ],
         "textScanned": true
       },
@@ -6340,6 +6582,543 @@
         "textScanned": true
       },
       {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 104,
+        "nonblankLines": 92,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 104,
+          "nonblankLines": 92,
+          "codeLines": 92,
+          "commentLines": 0,
+          "blankLines": 12
+        },
+        "importance": "critical",
+        "riskTags": [
+          "file_ops",
+          "navigation_resource"
+        ],
+        "symbols": {
+          "classes": [
+            "SessionRepository"
+          ],
+          "methods": [
+            "setSelectedRestaurant",
+            "getSelectedRestaurantName",
+            "getLikedRestaurants",
+            "getCartItems",
+            "menuItemsForRestaurant",
+            "isRestaurantLiked",
+            "setRestaurantLiked",
+            "containsLikedRestaurant"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "getSelectedRestaurantName",
+          "getLikedRestaurants",
+          "getCartItems"
+        ],
+        "featurePoints": [
+          "File, document, storage, SAF, MediaStore, or import/export behavior.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getSelectedRestaurantName`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getLikedRestaurants`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getCartItems`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 196,
+        "nonblankLines": 173,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 196,
+          "nonblankLines": 173,
+          "codeLines": 173,
+          "commentLines": 0,
+          "blankLines": 23
+        },
+        "importance": "high",
+        "riskTags": [
+          "intent_uri",
+          "navigation_resource"
+        ],
+        "symbols": {
+          "classes": [
+            "AdvertisementData",
+            "FoodCategoryData",
+            "RestaurantData",
+            "HistoryRecordData",
+            "HomePageState",
+            "HistoryPageState",
+            "MenuItemData",
+            "DetailMenuItemData",
+            "DetailPageState",
+            "CartSnapshotItemData",
+            "CartPageState"
+          ],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/cart/cart_page.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 227,
+        "nonblankLines": 215,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 227,
+          "nonblankLines": 215,
+          "codeLines": 215,
+          "commentLines": 0,
+          "blankLines": 12
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "navigation_resource"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "buildCartTopBar",
+            "buildCartQuantityPill",
+            "buildCartItemRow",
+            "buildItemSection",
+            "buildCouponBar",
+            "buildDeliverySection",
+            "buildBillSection",
+            "renderCartRoute"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "buildCartTopBar",
+          "buildCartQuantityPill",
+          "buildCartItemRow",
+          "buildItemSection",
+          "buildCouponBar",
+          "buildDeliverySection",
+          "buildBillSection",
+          "renderCartRoute"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/cart/cart_store.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 83,
+        "nonblankLines": 69,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 83,
+          "nonblankLines": 69,
+          "codeLines": 69,
+          "commentLines": 0,
+          "blankLines": 14
+        },
+        "importance": "high",
+        "riskTags": [
+          "navigation_resource"
+        ],
+        "symbols": {
+          "classes": [
+            "CartStore"
+          ],
+          "methods": [
+            "loadCartState",
+            "visibleItems",
+            "itemTotal",
+            "incrementQuantity",
+            "decrementQuantity",
+            "formatPrice",
+            "formatEta",
+            "taxAmount",
+            "grandTotal",
+            "deliveryLocation",
+            "session"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "loadCartState"
+        ],
+        "featurePoints": [
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `loadCartState`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/detail/detail_page.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 275,
+        "nonblankLines": 264,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 275,
+          "nonblankLines": 264,
+          "codeLines": 264,
+          "commentLines": 0,
+          "blankLines": 11
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "navigation_resource",
+          "notification_widget"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "buildDetailTopBar",
+            "buildRestaurantDetailCard",
+            "buildMenuQuantityControls",
+            "buildMenuItemRow",
+            "buildSectionHeader",
+            "buildDetailSection",
+            "buildRestaurantHeroImage",
+            "buildCartFab",
+            "renderDetailRoute"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "buildRestaurantHeroImage"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Notification, widget, RemoteViews, or home-screen integration behavior.",
+          "Media/gallery/image handling behavior. Evidence method: `buildRestaurantHeroImage`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/detail/detail_store.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 143,
+        "nonblankLines": 123,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 143,
+          "nonblankLines": 123,
+          "codeLines": 123,
+          "commentLines": 0,
+          "blankLines": 20
+        },
+        "importance": "high",
+        "riskTags": [
+          "navigation_resource"
+        ],
+        "symbols": {
+          "classes": [
+            "DetailStore"
+          ],
+          "methods": [
+            "loadDetailState",
+            "selectedRestaurant",
+            "recommendedItems",
+            "nonVegItems",
+            "vegItems",
+            "incrementQuantity",
+            "decrementQuantity",
+            "totalSelectedItems",
+            "shouldShowCartAction",
+            "toggleLiked",
+            "formatPrice",
+            "formatRatingCount",
+            "formatRestaurantMeta",
+            "customerCount",
+            "session"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "loadDetailState",
+          "recommendedItems",
+          "totalSelectedItems",
+          "shouldShowCartAction"
+        ],
+        "featurePoints": [
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `loadDetailState`.",
+          "CRUD mutation or persistent state update behavior. Evidence method: `recommendedItems`.",
+          "CRUD mutation or persistent state update behavior. Evidence method: `totalSelectedItems`.",
+          "Navigation, dialog, visibility, or screen transition behavior. Evidence method: `shouldShowCartAction`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/history/history_page.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 167,
+        "nonblankLines": 157,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 167,
+          "nonblankLines": 157,
+          "codeLines": 157,
+          "commentLines": 0,
+          "blankLines": 10
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "intent_uri",
+          "notification_widget"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "buildHistoryTabs",
+            "buildHistoryStatusRow",
+            "buildHistoryRecordCard",
+            "buildHistoryRecords",
+            "buildHistoryFavourites",
+            "renderHistoryRoute"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "buildHistoryTabs",
+          "buildHistoryStatusRow",
+          "buildHistoryRecordCard",
+          "buildHistoryRecords",
+          "buildHistoryFavourites",
+          "renderHistoryRoute"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Notification, widget, RemoteViews, or home-screen integration behavior."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/history/history_store.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 37,
+        "nonblankLines": 29,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 37,
+          "nonblankLines": 29,
+          "codeLines": 29,
+          "commentLines": 0,
+          "blankLines": 8
+        },
+        "importance": "medium",
+        "riskTags": [
+          "intent_uri"
+        ],
+        "symbols": {
+          "classes": [
+            "HistoryStore"
+          ],
+          "methods": [
+            "loadHistoryState",
+            "tabLabel",
+            "selectRestaurant",
+            "session"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "loadHistoryState"
+        ],
+        "featurePoints": [
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `loadHistoryState`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 238,
+        "nonblankLines": 226,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 238,
+          "nonblankLines": 226,
+          "codeLines": 226,
+          "commentLines": 0,
+          "blankLines": 12
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer",
+          "intent_uri",
+          "notification_widget"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "homeMedia",
+            "buildHomeTopSection",
+            "buildHomeGreeting",
+            "buildHomeSectionTitle",
+            "buildHomeAdCards",
+            "buildRecommendedCategories",
+            "buildFavouriteStrip",
+            "buildFilterRow",
+            "buildRestaurantList",
+            "buildHomeFooter",
+            "renderHomeRoute"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "homeMedia",
+          "buildFilterRow"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Notification, widget, RemoteViews, or home-screen integration behavior.",
+          "Media/gallery/image handling behavior. Evidence method: `homeMedia`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `buildFilterRow`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_store.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 60,
+        "nonblankLines": 50,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 60,
+          "nonblankLines": 50,
+          "codeLines": 50,
+          "commentLines": 0,
+          "blankLines": 10
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [
+            "HomeStore"
+          ],
+          "methods": [
+            "loadHomeState",
+            "filtersList",
+            "toggleFilter",
+            "greetingForHour",
+            "selectRestaurant",
+            "session"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "loadHomeState",
+          "filtersList",
+          "toggleFilter"
+        ],
+        "featurePoints": [
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `loadHomeState`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `filtersList`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `toggleFilter`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 124,
+        "nonblankLines": 113,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 124,
+          "nonblankLines": 113,
+          "codeLines": 113,
+          "commentLines": 0,
+          "blankLines": 11
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "buildLoginErrorBanner",
+            "renderLoginRoute"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "buildLoginErrorBanner",
+          "renderLoginRoute"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Authentication, account, or session behavior. Evidence method: `buildLoginErrorBanner`.",
+          "Authentication, account, or session behavior. Evidence method: `renderLoginRoute`."
+        ],
+        "textScanned": true
+      },
+      {
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj",
         "extension": ".cj",
         "category": "cangjie-source",
@@ -6379,6 +7158,46 @@
           "Android platform component lifecycle such as service, receiver, provider, or application.",
           "Settings/preferences, option toggles, or configuration state behavior.",
           "Authentication, account, or session behavior. Evidence method: `login`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 97,
+        "nonblankLines": 92,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 97,
+          "nonblankLines": 92,
+          "codeLines": 92,
+          "commentLines": 0,
+          "blankLines": 5
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "buildOnboardingCard",
+            "buildOnboardingIndicator",
+            "renderOnboardingRoute"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "buildOnboardingCard",
+          "buildOnboardingIndicator",
+          "renderOnboardingRoute"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior."
         ],
         "textScanned": true
       },
@@ -6453,6 +7272,46 @@
         "keyMethods": [],
         "featurePoints": [
           "File-level artifact `entry/src/main/cangjie/ohos_app_cangjie_entry/features/package_anchor.cj` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 110,
+        "nonblankLines": 100,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 110,
+          "nonblankLines": 100,
+          "codeLines": 100,
+          "commentLines": 0,
+          "blankLines": 10
+        },
+        "importance": "critical",
+        "riskTags": [
+          "image_viewer"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "buildProfileTopBar",
+            "buildProfileSection",
+            "renderProfileRoute"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "buildProfileTopBar",
+          "buildProfileSection",
+          "renderProfileRoute"
+        ],
+        "featurePoints": [
+          "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior."
         ],
         "textScanned": true
       },
@@ -6694,8 +7553,8 @@
         "textScanned": true
       },
       {
-        "path": "entry/src/main/resources/base/media/chinese_bowl.svg",
-        "extension": ".svg",
+        "path": "entry/src/main/resources/base/media/applepie.jpg",
+        "extension": ".jpg",
         "category": "harmony-resource",
         "physicalLines": 0,
         "nonblankLines": 0,
@@ -6719,13 +7578,13 @@
         },
         "keyMethods": [],
         "featurePoints": [
-          "File-level artifact `entry/src/main/resources/base/media/chinese_bowl.svg` should be mapped, copied, or explicitly ignored with reason."
+          "File-level artifact `entry/src/main/resources/base/media/applepie.jpg` should be mapped, copied, or explicitly ignored with reason."
         ],
         "textScanned": false
       },
       {
-        "path": "entry/src/main/resources/base/media/clock.svg",
-        "extension": ".svg",
+        "path": "entry/src/main/resources/base/media/biryani.jpg",
+        "extension": ".jpg",
         "category": "harmony-resource",
         "physicalLines": 0,
         "nonblankLines": 0,
@@ -6749,13 +7608,13 @@
         },
         "keyMethods": [],
         "featurePoints": [
-          "File-level artifact `entry/src/main/resources/base/media/clock.svg` should be mapped, copied, or explicitly ignored with reason."
+          "File-level artifact `entry/src/main/resources/base/media/biryani.jpg` should be mapped, copied, or explicitly ignored with reason."
         ],
         "textScanned": false
       },
       {
-        "path": "entry/src/main/resources/base/media/fb_icon.svg",
-        "extension": ".svg",
+        "path": "entry/src/main/resources/base/media/burger.jpg",
+        "extension": ".jpg",
         "category": "harmony-resource",
         "physicalLines": 0,
         "nonblankLines": 0,
@@ -6779,13 +7638,13 @@
         },
         "keyMethods": [],
         "featurePoints": [
-          "File-level artifact `entry/src/main/resources/base/media/fb_icon.svg` should be mapped, copied, or explicitly ignored with reason."
+          "File-level artifact `entry/src/main/resources/base/media/burger.jpg` should be mapped, copied, or explicitly ignored with reason."
         ],
         "textScanned": false
       },
       {
-        "path": "entry/src/main/resources/base/media/goog_icon.svg",
-        "extension": ".svg",
+        "path": "entry/src/main/resources/base/media/chinese.jpg",
+        "extension": ".jpg",
         "category": "harmony-resource",
         "physicalLines": 0,
         "nonblankLines": 0,
@@ -6809,7 +7668,277 @@
         },
         "keyMethods": [],
         "featurePoints": [
-          "File-level artifact `entry/src/main/resources/base/media/goog_icon.svg` should be mapped, copied, or explicitly ignored with reason."
+          "File-level artifact `entry/src/main/resources/base/media/chinese.jpg` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "entry/src/main/resources/base/media/chinese_bowl.png",
+        "extension": ".png",
+        "category": "harmony-resource",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `entry/src/main/resources/base/media/chinese_bowl.png` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "entry/src/main/resources/base/media/clock.png",
+        "extension": ".png",
+        "category": "harmony-resource",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `entry/src/main/resources/base/media/clock.png` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "entry/src/main/resources/base/media/dosa.jpg",
+        "extension": ".jpg",
+        "category": "harmony-resource",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `entry/src/main/resources/base/media/dosa.jpg` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "entry/src/main/resources/base/media/fb_icon.png",
+        "extension": ".png",
+        "category": "harmony-resource",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `entry/src/main/resources/base/media/fb_icon.png` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "entry/src/main/resources/base/media/goog_icon.png",
+        "extension": ".png",
+        "category": "harmony-resource",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `entry/src/main/resources/base/media/goog_icon.png` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "entry/src/main/resources/base/media/groceries.png",
+        "extension": ".png",
+        "category": "harmony-resource",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `entry/src/main/resources/base/media/groceries.png` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "entry/src/main/resources/base/media/ic_launcher.png",
+        "extension": ".png",
+        "category": "harmony-resource",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `entry/src/main/resources/base/media/ic_launcher.png` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "entry/src/main/resources/base/media/ic_launcher_round.png",
+        "extension": ".png",
+        "category": "harmony-resource",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `entry/src/main/resources/base/media/ic_launcher_round.png` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "entry/src/main/resources/base/media/ic_non_veg.png",
+        "extension": ".png",
+        "category": "harmony-resource",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `entry/src/main/resources/base/media/ic_non_veg.png` should be mapped, copied, or explicitly ignored with reason."
         ],
         "textScanned": false
       },
@@ -6844,6 +7973,36 @@
         "textScanned": false
       },
       {
+        "path": "entry/src/main/resources/base/media/ic_veg.png",
+        "extension": ".png",
+        "category": "harmony-resource",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `entry/src/main/resources/base/media/ic_veg.png` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
         "path": "entry/src/main/resources/base/media/icon.png",
         "extension": ".png",
         "category": "harmony-resource",
@@ -6874,8 +8033,8 @@
         "textScanned": false
       },
       {
-        "path": "entry/src/main/resources/base/media/rider.svg",
-        "extension": ".svg",
+        "path": "entry/src/main/resources/base/media/outlet_card.png",
+        "extension": ".png",
         "category": "harmony-resource",
         "physicalLines": 0,
         "nonblankLines": 0,
@@ -6899,7 +8058,157 @@
         },
         "keyMethods": [],
         "featurePoints": [
-          "File-level artifact `entry/src/main/resources/base/media/rider.svg` should be mapped, copied, or explicitly ignored with reason."
+          "File-level artifact `entry/src/main/resources/base/media/outlet_card.png` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "entry/src/main/resources/base/media/paratha.jpg",
+        "extension": ".jpg",
+        "category": "harmony-resource",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `entry/src/main/resources/base/media/paratha.jpg` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "entry/src/main/resources/base/media/pizza.jpg",
+        "extension": ".jpg",
+        "category": "harmony-resource",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `entry/src/main/resources/base/media/pizza.jpg` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "entry/src/main/resources/base/media/rider.png",
+        "extension": ".png",
+        "category": "harmony-resource",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `entry/src/main/resources/base/media/rider.png` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "entry/src/main/resources/base/media/star.png",
+        "extension": ".png",
+        "category": "harmony-resource",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `entry/src/main/resources/base/media/star.png` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": false
+      },
+      {
+        "path": "entry/src/main/resources/base/media/upi.png",
+        "extension": ".png",
+        "category": "harmony-resource",
+        "physicalLines": 0,
+        "nonblankLines": 0,
+        "locMetrics": {
+          "source": "not-text",
+          "tool": "",
+          "language": "",
+          "physicalLines": 0,
+          "nonblankLines": 0,
+          "codeLines": 0,
+          "commentLines": 0,
+          "blankLines": 0
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `entry/src/main/resources/base/media/upi.png` should be mapped, copied, or explicitly ignored with reason."
         ],
         "textScanned": false
       },
@@ -6930,6 +8239,78 @@
         "keyMethods": [],
         "featurePoints": [
           "File-level artifact `entry/src/main/resources/base/profile/main_pages.json` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/ohosTest/cangjie/cjpm.toml",
+        "extension": ".toml",
+        "category": "test",
+        "physicalLines": 25,
+        "nonblankLines": 23,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "TOML",
+          "physicalLines": 25,
+          "nonblankLines": 23,
+          "codeLines": 23,
+          "commentLines": 0,
+          "blankLines": 2
+        },
+        "importance": "critical",
+        "riskTags": [
+          "platform_component",
+          "settings",
+          "source_test"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android platform component lifecycle such as service, receiver, provider, or application.",
+          "Settings/preferences, option toggles, or configuration state behavior.",
+          "Source-side tests or verification assets should be migrated or replaced."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/test/cangjie/cjpm.toml",
+        "extension": ".toml",
+        "category": "test",
+        "physicalLines": 42,
+        "nonblankLines": 37,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "TOML",
+          "physicalLines": 42,
+          "nonblankLines": 37,
+          "codeLines": 37,
+          "commentLines": 0,
+          "blankLines": 5
+        },
+        "importance": "critical",
+        "riskTags": [
+          "platform_component",
+          "settings",
+          "source_test"
+        ],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "Android platform component lifecycle such as service, receiver, provider, or application.",
+          "Settings/preferences, option toggles, or configuration state behavior.",
+          "Source-side tests or verification assets should be migrated or replaced."
         ],
         "textScanned": true
       },
@@ -7035,6 +8416,118 @@
           "Source-side tests or verification assets should be migrated or replaced.",
           "Authentication, account, or session behavior. Evidence method: `loginStoreAcceptsOnlySourceCredentials`.",
           "Authentication, account, or session behavior. Evidence method: `profileStoreRoutesBackAndLogoutToSourceDestinations`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/test/cangjie/phase04_home_history_discovery_test.cj",
+        "extension": ".cj",
+        "category": "test",
+        "physicalLines": 77,
+        "nonblankLines": 69,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 77,
+          "nonblankLines": 69,
+          "codeLines": 69,
+          "commentLines": 0,
+          "blankLines": 8
+        },
+        "importance": "critical",
+        "riskTags": [
+          "intent_uri",
+          "media_discovery",
+          "navigation_resource",
+          "notification_widget",
+          "source_test"
+        ],
+        "symbols": {
+          "classes": [
+            "Phase04HomeHistoryDiscoveryTest"
+          ],
+          "methods": [
+            "homeStoreLoadsFixtureBackedSections",
+            "homeStoreSelectionSavesRestaurantBeforeNavigation",
+            "homeStoreKeepsSourceLocalFilterToggleSemantics",
+            "homeStorePreservesGreetingBuckets",
+            "restaurantCardCustomerInfoMatchesSourceThresholdOrdering",
+            "historyStoreSelectionSavesRestaurantBeforeNavigation",
+            "historyStoreExposesSourceTabOrdering"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "homeStoreLoadsFixtureBackedSections",
+          "homeStoreSelectionSavesRestaurantBeforeNavigation",
+          "homeStoreKeepsSourceLocalFilterToggleSemantics",
+          "historyStoreSelectionSavesRestaurantBeforeNavigation"
+        ],
+        "featurePoints": [
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Media discovery, albums, thumbnails, image buckets, or gallery indexing.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Notification, widget, RemoteViews, or home-screen integration behavior.",
+          "Source-side tests or verification assets should be migrated or replaced.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `homeStoreLoadsFixtureBackedSections`.",
+          "CRUD mutation or persistent state update behavior. Evidence method: `homeStoreSelectionSavesRestaurantBeforeNavigation`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `homeStoreKeepsSourceLocalFilterToggleSemantics`.",
+          "CRUD mutation or persistent state update behavior. Evidence method: `historyStoreSelectionSavesRestaurantBeforeNavigation`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj",
+        "extension": ".cj",
+        "category": "test",
+        "physicalLines": 115,
+        "nonblankLines": 102,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 115,
+          "nonblankLines": 102,
+          "codeLines": 102,
+          "commentLines": 0,
+          "blankLines": 13
+        },
+        "importance": "high",
+        "riskTags": [
+          "navigation_resource",
+          "source_test"
+        ],
+        "symbols": {
+          "classes": [
+            "Phase05DetailCartStateMutationsTest"
+          ],
+          "methods": [
+            "cartStoreFiltersZeroCountItemsAndPreservesSnapshotOrder",
+            "cartStoreCalculatesTotalsFromSnapshotQuantities",
+            "cartStoreMutatesLocalQuantitiesImmediately",
+            "cartStoreKeepsSourceDeliveryPlaceholders",
+            "detailStoreLoadsSelectedRestaurantAndRecommendedMenuSlice",
+            "detailStorePreservesSectionFilteringAndCartVisibilityRules",
+            "detailStoreTogglesLikedStateForSelectedRestaurant"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "cartStoreFiltersZeroCountItemsAndPreservesSnapshotOrder",
+          "cartStoreMutatesLocalQuantitiesImmediately",
+          "detailStoreLoadsSelectedRestaurantAndRecommendedMenuSlice",
+          "detailStorePreservesSectionFilteringAndCartVisibilityRules"
+        ],
+        "featurePoints": [
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Source-side tests or verification assets should be migrated or replaced.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `cartStoreFiltersZeroCountItemsAndPreservesSnapshotOrder`.",
+          "Media/gallery/image handling behavior. Evidence method: `cartStoreMutatesLocalQuantitiesImmediately`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `detailStoreLoadsSelectedRestaurantAndRecommendedMenuSlice`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `detailStorePreservesSectionFilteringAndCartVisibilityRules`."
         ],
         "textScanned": true
       },

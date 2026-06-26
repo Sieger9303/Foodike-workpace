@@ -47,17 +47,17 @@
   "phaseCoverageHardGate": true,
   "incrementalReports": true,
   "gateHashSkip": true,
-  "currentPhase": 3,
+  "currentPhase": 6,
   "planningDone": true,
   "taskPlanningMd": "D:\\workspace\\Foodike\\task-planning.md",
   "planMd": "D:\\workspace\\Foodike\\plan.md",
   "planJson": "D:\\workspace\\Foodike\\plan.json",
   "legacyPlanJson5": "D:\\workspace\\Foodike\\plan.json5",
-  "lastBuildReport": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-03-onboarding-login-profile\\build-report.md",
-  "lastBuildJson": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-03-onboarding-login-profile\\build-report.json",
+  "lastBuildReport": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-06-polish-tests-verification\\build-report.md",
+  "lastBuildJson": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-06-polish-tests-verification\\build-report.json",
   "lastBuildResult": "PASS",
-  "lastRuntimeUiSmokeReport": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\phase-02-startup-navigation-session\\runtime-ui-report.md",
-  "lastRuntimeUiSmokeJson": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\phase-02-startup-navigation-session\\runtime-ui-report.json",
+  "lastRuntimeUiSmokeReport": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\phase-06-polish-tests-verification\\runtime-ui-report.md",
+  "lastRuntimeUiSmokeJson": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\phase-06-polish-tests-verification\\runtime-ui-report.json",
   "lastRuntimeUiSmokeResult": "BLOCKED",
   "runtimeUiSmokeReports": {
     "phase-01-project-skeleton-resources": {
@@ -73,9 +73,37 @@
       "result": "BLOCKED",
       "firstBlocker": "hdc executable was not found.",
       "generatedAt": "2026-06-25T05:40:18+00:00"
+    },
+    "phase-03-onboarding-login-profile": {
+      "json": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\phase-03-onboarding-login-profile\\runtime-ui-report.json",
+      "markdown": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\phase-03-onboarding-login-profile\\runtime-ui-report.md",
+      "result": "BLOCKED",
+      "firstBlocker": "hdc executable was not found.",
+      "generatedAt": "2026-06-25T12:04:06+00:00"
+    },
+    "phase-04-home-history-discovery": {
+      "json": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\phase-04-home-history-discovery\\runtime-ui-report.json",
+      "markdown": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\phase-04-home-history-discovery\\runtime-ui-report.md",
+      "result": "BLOCKED",
+      "firstBlocker": "hdc executable was not found.",
+      "generatedAt": "2026-06-25T16:48:32+00:00"
+    },
+    "phase-05-detail-cart-state-mutations": {
+      "json": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\phase-05-detail-cart-state-mutations\\runtime-ui-report.json",
+      "markdown": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\phase-05-detail-cart-state-mutations\\runtime-ui-report.md",
+      "result": "BLOCKED",
+      "firstBlocker": "hdc executable was not found.",
+      "generatedAt": "2026-06-26T03:48:38+00:00"
+    },
+    "phase-06-polish-tests-verification": {
+      "json": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\phase-06-polish-tests-verification\\runtime-ui-report.json",
+      "markdown": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\phase-06-polish-tests-verification\\runtime-ui-report.md",
+      "result": "BLOCKED",
+      "firstBlocker": "hdc executable was not found.",
+      "generatedAt": "2026-06-26T03:58:58+00:00"
     }
   },
-  "lastOpencodeLog": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T061700256157Z-fix-build.log",
+  "lastOpencodeLog": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T040334179995Z-final-coverage-repair.log",
   "sessionStates": {
     "source-walkthrough": {
       "status": "passed",
@@ -115,16 +143,42 @@
     },
     "fix-build": {
       "status": "passed",
-      "startedAt": "2026-06-25T06:17:00+00:00",
-      "finishedAt": "2026-06-25T06:25:15+00:00",
+      "startedAt": "2026-06-25T19:57:13+00:00",
+      "finishedAt": "2026-06-25T19:59:04+00:00",
       "returnCode": 0,
-      "previousSessionId": "ses_1033fe89fffebPmiMtGBe5glbs",
+      "previousSessionId": "ses_100f82b84ffelf9rdwZam2tflj",
       "kind": "fix-build",
       "variant": "xhigh",
-      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T061700255157Z-phase-03-onboarding-login-profile-fix-build.prompt.txt",
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T061700256157Z-fix-build.log",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T195713619609Z-phase-05-detail-cart-state-mutations-fix-build.prompt.txt",
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T195713619609Z-fix-build.log",
       "resumedSessionId": "",
-      "sessionId": "ses_10293461bffeeWYRBGoTh3K6fq"
+      "sessionId": "ses_0ffa4560dffedGgtI9g2HboSP0"
+    },
+    "coverage-repair": {
+      "status": "passed",
+      "startedAt": "2026-06-26T03:57:23+00:00",
+      "finishedAt": "2026-06-26T03:58:47+00:00",
+      "returnCode": 0,
+      "previousSessionId": "ses_0fdf0abbcffeXZ79acy1pUYMV9",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T035723873796Z-phase-06-polish-tests-verification-coverage-repair-2.prompt.txt",
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T035723873796Z-coverage-repair.log",
+      "resumedSessionId": "",
+      "sessionId": "ses_0fdecba41ffeYcObFS0tyK2vSX"
+    },
+    "final-coverage-repair": {
+      "status": "passed",
+      "startedAt": "2026-06-26T04:03:34+00:00",
+      "finishedAt": "2026-06-26T04:29:17+00:00",
+      "returnCode": 0,
+      "previousSessionId": "ses_0fdeb2bd9ffe2a5Z2QNdYaTYGn",
+      "kind": "final-coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T040334179995Z-final-coverage-repair-2.prompt.txt",
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T040334179995Z-final-coverage-repair.log",
+      "resumedSessionId": "",
+      "sessionId": "ses_0fde714fafferpTuzwUEMQh0gZ"
     }
   },
   "sourceWalkthroughStatus": {
@@ -147,7 +201,10 @@
   "completedPhases": [
     "phase-01-project-skeleton-resources",
     "phase-02-startup-navigation-session",
-    "phase-03-onboarding-login-profile"
+    "phase-03-onboarding-login-profile",
+    "phase-04-home-history-discovery",
+    "phase-05-detail-cart-state-mutations",
+    "phase-06-polish-tests-verification"
   ],
   "failedPhases": [],
   "phaseStates": {
@@ -243,20 +300,153 @@
       "steps": {
         "phase-opencode": {
           "status": "passed",
-          "startedAt": "2026-06-25T05:40:30+00:00",
-          "finishedAt": "2026-06-25T06:16:53+00:00",
+          "startedAt": "2026-06-25T11:56:17+00:00",
+          "finishedAt": "2026-06-25T12:03:49+00:00",
+          "returnCode": 0,
+          "previousSessionId": "ses_101de3b79ffel3ckx0Q2nI7Wic",
+          "kind": "phase",
+          "variant": "xhigh",
+          "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T115617212490Z-phase-03-onboarding-login-profile-phase-batch-01.prompt.txt",
+          "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T115617212490Z-phase.log",
+          "resumedSessionId": "",
+          "sessionId": "ses_1015ca6cfffeteaDphZUZFsMdV",
+          "implementationGroupIds": [
+            "phase-03-onboarding-login-profile-source-behavior-presentation-profile",
+            "phase-03-onboarding-login-profile-verification-phase-tests-and-evidence"
+          ],
+          "batchIndex": 1,
+          "batchTotal": 1
+        },
+        "phase-group-repair-opencode": {
+          "status": "passed",
+          "startedAt": "2026-06-25T11:44:24+00:00",
+          "finishedAt": "2026-06-25T11:51:33+00:00",
+          "returnCode": 0,
+          "previousSessionId": "ses_1016ce029ffemCaBB5i2jTaXCt",
+          "kind": "coverage-repair",
+          "variant": "xhigh",
+          "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T114424900554Z-phase-03-onboarding-login-profile-phase-group-repair-phase-03-onboarding-login-profile-source-behavio-1.prompt.txt",
+          "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T114424938556Z-coverage-repair.log",
+          "resumedSessionId": "",
+          "sessionId": "ses_1016784edffe9LVyBWMwWC7FdS",
+          "implementationGroupIds": [
+            "phase-03-onboarding-login-profile-source-behavior-presentation-profile"
+          ],
+          "groupRepairAttempt": 1,
+          "groupRepairMaxRounds": 2,
+          "groupVerdict": "incomplete"
+        }
+      },
+      "status": "running",
+      "currentStep": "phase-opencode"
+    },
+    "phase-04-home-history-discovery": {
+      "steps": {
+        "phase-opencode": {
+          "status": "passed",
+          "startedAt": "2026-06-25T15:20:14+00:00",
+          "finishedAt": "2026-06-25T15:44:50+00:00",
+          "returnCode": 0,
+          "previousSessionId": "ses_1015564daffeewn8Ynq2E7YoiC",
+          "kind": "phase",
+          "variant": "xhigh",
+          "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T152014801718Z-phase-04-home-history-discovery-phase-batch-01.prompt.txt",
+          "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T152014801718Z-phase.log",
+          "resumedSessionId": "",
+          "sessionId": "ses_100a1eab4ffeTKCONZ3ie8fSSB",
+          "implementationGroupIds": [
+            "phase-04-home-history-discovery-source-behavior-presentation-components",
+            "phase-04-home-history-discovery-source-behavior-presentation-history",
+            "phase-04-home-history-discovery-source-behavior-presentation-home",
+            "phase-04-home-history-discovery-verification-phase-tests-and-evidence"
+          ],
+          "batchIndex": 1,
+          "batchTotal": 1
+        },
+        "phase-group-repair-opencode": {
+          "status": "passed",
+          "startedAt": "2026-06-25T16:25:42+00:00",
+          "finishedAt": "2026-06-25T16:29:59+00:00",
+          "returnCode": 0,
+          "previousSessionId": "ses_1006c5c95ffeP0kIq47sKblB1o",
+          "kind": "coverage-repair",
+          "variant": "xhigh",
+          "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T162542262174Z-phase-04-home-history-discovery-phase-group-repair-phase-04-home-history-discovery-verification-pha-2.prompt.txt",
+          "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T162542303172Z-coverage-repair.log",
+          "resumedSessionId": "",
+          "sessionId": "ses_10065fdc9ffes29QaTZWYB3dSw",
+          "implementationGroupIds": [
+            "phase-04-home-history-discovery-verification-phase-tests-and-evidence"
+          ],
+          "groupRepairAttempt": 2,
+          "groupRepairMaxRounds": 2,
+          "groupVerdict": "incomplete"
+        }
+      },
+      "status": "running",
+      "currentStep": "phase-group-repair-opencode"
+    },
+    "phase-05-detail-cart-state-mutations": {
+      "steps": {
+        "phase-opencode": {
+          "status": "passed",
+          "startedAt": "2026-06-26T02:17:29+00:00",
+          "finishedAt": "2026-06-26T02:29:35+00:00",
+          "returnCode": 0,
+          "previousSessionId": "ses_10050fa72ffe1d7GU3GCs1clsN",
+          "kind": "phase",
+          "variant": "xhigh",
+          "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T021729261869Z-phase-05-detail-cart-state-mutations-phase-batch-01.prompt.txt",
+          "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T021729261869Z-phase.log",
+          "resumedSessionId": "",
+          "sessionId": "ses_0fe4831ceffeOChODcUYsOMwFi",
+          "implementationGroupIds": [
+            "phase-05-detail-cart-state-mutations-source-behavior-presentation-cart",
+            "phase-05-detail-cart-state-mutations-source-behavior-presentation-details",
+            "phase-05-detail-cart-state-mutations-verification-phase-tests-and-evidence"
+          ],
+          "batchIndex": 1,
+          "batchTotal": 1
+        },
+        "phase-group-repair-opencode": {
+          "status": "passed",
+          "startedAt": "2026-06-26T03:20:10+00:00",
+          "finishedAt": "2026-06-26T03:24:17+00:00",
+          "returnCode": 0,
+          "previousSessionId": "ses_0fe132431ffeMHGv1hKjBaJ0lE",
+          "kind": "coverage-repair",
+          "variant": "xhigh",
+          "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T032010015241Z-phase-05-detail-cart-state-mutations-phase-group-repair-phase-05-detail-cart-state-mutations-verificatio-2.prompt.txt",
+          "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T032010078980Z-coverage-repair.log",
+          "resumedSessionId": "",
+          "sessionId": "ses_0fe0ed04dffeRxIShbWVKCrhzI",
+          "implementationGroupIds": [
+            "phase-05-detail-cart-state-mutations-verification-phase-tests-and-evidence"
+          ],
+          "groupRepairAttempt": 2,
+          "groupRepairMaxRounds": 2,
+          "groupVerdict": "incomplete"
+        }
+      },
+      "status": "running",
+      "currentStep": "phase-group-repair-opencode"
+    },
+    "phase-06-polish-tests-verification": {
+      "steps": {
+        "phase-opencode": {
+          "status": "passed",
+          "startedAt": "2026-06-26T03:48:46+00:00",
+          "finishedAt": "2026-06-26T03:52:55+00:00",
           "returnCode": 0,
           "kind": "phase",
           "variant": "xhigh",
-          "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T054030281897Z-phase-03-onboarding-login-profile-phase-batch-01.prompt.txt",
-          "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T054030281897Z-phase.log",
+          "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T034846271186Z-phase-06-polish-tests-verification-phase-batch-01.prompt.txt",
+          "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T034846272186Z-phase.log",
           "resumedSessionId": "",
-          "sessionId": "ses_102b4b020ffezHsYsEmnxMB0zX",
+          "sessionId": "ses_0fdf4a05effeh4r8v5bdsW2oKc",
           "implementationGroupIds": [
-            "phase-03-onboarding-login-profile-source-behavior-presentation-login",
-            "phase-03-onboarding-login-profile-source-behavior-presentation-onboarding",
-            "phase-03-onboarding-login-profile-source-behavior-presentation-profile",
-            "phase-03-onboarding-login-profile-verification-phase-tests-and-evidence"
+            "phase-06-polish-tests-verification-verification-com-example",
+            "phase-06-polish-tests-verification-verification-phase-tests-and-evidence"
           ],
           "batchIndex": 1,
           "batchTotal": 1
@@ -269,34 +459,12 @@
   "deferredIssues": [],
   "retryCounts": {
     "phase-01-project-skeleton-resources:> hvigor ERROR: 00303040 Configuration Error": 1,
-    "phase-03-onboarding-login-profile:> hvigor ERROR: Failed :entry:default@CompileCangjie...": 1
+    "phase-03-onboarding-login-profile:> hvigor ERROR: Failed :entry:default@CompileCangjie...": 3,
+    "phase-04-home-history-discovery:> hvigor ERROR: Failed :entry:default@CompileCangjie...": 1,
+    "phase-05-detail-cart-state-mutations:> hvigor ERROR: Failed :entry:default@CompileCangjie...": 1
   },
-  "pipelineStatus": "blocked",
+  "pipelineStatus": "final-coverage-blocked",
   "promptHistory": [
-    {
-      "at": "2026-06-25T02:00:28+00:00",
-      "kind": "planning",
-      "variant": "xhigh",
-      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T020028619083Z-planning.prompt.txt",
-      "phase": "",
-      "resumedSessionId": ""
-    },
-    {
-      "at": "2026-06-25T02:01:51+00:00",
-      "kind": "source-walkthrough",
-      "variant": "xhigh",
-      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T020151919684Z-source-walkthrough.prompt.txt",
-      "phase": "",
-      "resumedSessionId": ""
-    },
-    {
-      "at": "2026-06-25T02:23:36+00:00",
-      "kind": "planning",
-      "variant": "xhigh",
-      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T022336782583Z-planning.prompt.txt",
-      "phase": "",
-      "resumedSessionId": ""
-    },
     {
       "at": "2026-06-25T02:42:34+00:00",
       "kind": "planning-phase-backfill",
@@ -400,62 +568,370 @@
       "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T061700255157Z-phase-03-onboarding-login-profile-fix-build.prompt.txt",
       "phase": "",
       "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T07:39:47+00:00",
+      "kind": "phase",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T073947966808Z-phase-03-onboarding-login-profile-phase-batch-01.prompt.txt",
+      "phase": "phase-03-onboarding-login-profile",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T09:13:59+00:00",
+      "kind": "fix-build",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T091359466619Z-phase-03-onboarding-login-profile-fix-build.prompt.txt",
+      "phase": "",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T09:24:15+00:00",
+      "kind": "fix-build",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T092415281659Z-phase-03-onboarding-login-profile-fix-build.prompt.txt",
+      "phase": "",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T09:34:45+00:00",
+      "kind": "phase",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T093445004588Z-phase-03-onboarding-login-profile-phase-batch-01.prompt.txt",
+      "phase": "phase-03-onboarding-login-profile",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T11:32:37+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T113237248563Z-phase-03-onboarding-login-profile-phase-group-repair-phase-03-onboarding-login-profile-source-behavio-1.prompt.txt",
+      "phase": "phase-03-onboarding-login-profile",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T11:38:33+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T113833914926Z-phase-03-onboarding-login-profile-phase-group-repair-phase-03-onboarding-login-profile-source-behavio-1.prompt.txt",
+      "phase": "phase-03-onboarding-login-profile",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T11:44:24+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T114424900554Z-phase-03-onboarding-login-profile-phase-group-repair-phase-03-onboarding-login-profile-source-behavio-1.prompt.txt",
+      "phase": "phase-03-onboarding-login-profile",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T11:51:39+00:00",
+      "kind": "fix-build",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T115139410411Z-phase-03-onboarding-login-profile-fix-build.prompt.txt",
+      "phase": "",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T11:56:17+00:00",
+      "kind": "phase",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T115617212490Z-phase-03-onboarding-login-profile-phase-batch-01.prompt.txt",
+      "phase": "phase-03-onboarding-login-profile",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T12:04:12+00:00",
+      "kind": "phase",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T120412726942Z-phase-04-home-history-discovery-phase-batch-01.prompt.txt",
+      "phase": "phase-04-home-history-discovery",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T13:46:02+00:00",
+      "kind": "fix-build",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T134602280751Z-phase-04-home-history-discovery-fix-build.prompt.txt",
+      "phase": "",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T15:20:14+00:00",
+      "kind": "phase",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T152014801718Z-phase-04-home-history-discovery-phase-batch-01.prompt.txt",
+      "phase": "phase-04-home-history-discovery",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T15:44:56+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T154456767309Z-phase-04-home-history-discovery-phase-group-repair-phase-04-home-history-discovery-source-behavior-1.prompt.txt",
+      "phase": "phase-04-home-history-discovery",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T15:50:06+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T155006947803Z-phase-04-home-history-discovery-phase-group-repair-phase-04-home-history-discovery-source-behavior-1.prompt.txt",
+      "phase": "phase-04-home-history-discovery",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T15:58:44+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T155844637222Z-phase-04-home-history-discovery-phase-group-repair-phase-04-home-history-discovery-verification-pha-1.prompt.txt",
+      "phase": "phase-04-home-history-discovery",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T16:14:45+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T161445599628Z-phase-04-home-history-discovery-phase-group-repair-phase-04-home-history-discovery-source-behavior-1.prompt.txt",
+      "phase": "phase-04-home-history-discovery",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T16:18:44+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T161844726388Z-phase-04-home-history-discovery-phase-group-repair-phase-04-home-history-discovery-source-behavior-2.prompt.txt",
+      "phase": "phase-04-home-history-discovery",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T16:25:42+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T162542262174Z-phase-04-home-history-discovery-phase-group-repair-phase-04-home-history-discovery-verification-pha-2.prompt.txt",
+      "phase": "phase-04-home-history-discovery",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T16:30:05+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T163005621659Z-phase-04-home-history-discovery-coverage-repair-1.prompt.txt",
+      "phase": "",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T16:45:34+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T164534163714Z-phase-04-home-history-discovery-coverage-repair-2.prompt.txt",
+      "phase": "",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T16:48:39+00:00",
+      "kind": "phase",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T164839487932Z-phase-05-detail-cart-state-mutations-phase-batch-01.prompt.txt",
+      "phase": "phase-05-detail-cart-state-mutations",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T19:18:04+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T191804433322Z-phase-05-detail-cart-state-mutations-phase-group-repair-phase-05-detail-cart-state-mutations-source-beha-1.prompt.txt",
+      "phase": "phase-05-detail-cart-state-mutations",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-25T19:57:13+00:00",
+      "kind": "fix-build",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T195713619609Z-phase-05-detail-cart-state-mutations-fix-build.prompt.txt",
+      "phase": "",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-26T02:17:29+00:00",
+      "kind": "phase",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T021729261869Z-phase-05-detail-cart-state-mutations-phase-batch-01.prompt.txt",
+      "phase": "phase-05-detail-cart-state-mutations",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-26T02:29:39+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T022939606440Z-phase-05-detail-cart-state-mutations-phase-group-repair-phase-05-detail-cart-state-mutations-source-beha-1.prompt.txt",
+      "phase": "phase-05-detail-cart-state-mutations",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-26T02:38:24+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T023824805244Z-phase-05-detail-cart-state-mutations-phase-group-repair-phase-05-detail-cart-state-mutations-source-beha-1.prompt.txt",
+      "phase": "phase-05-detail-cart-state-mutations",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-26T02:54:07+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T025407007220Z-phase-05-detail-cart-state-mutations-phase-group-repair-phase-05-detail-cart-state-mutations-verificatio-1.prompt.txt",
+      "phase": "phase-05-detail-cart-state-mutations",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-26T03:07:14+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T030714485914Z-phase-05-detail-cart-state-mutations-phase-group-repair-phase-05-detail-cart-state-mutations-source-beha-2.prompt.txt",
+      "phase": "phase-05-detail-cart-state-mutations",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-26T03:15:26+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T031526309713Z-phase-05-detail-cart-state-mutations-phase-group-repair-phase-05-detail-cart-state-mutations-source-beha-2.prompt.txt",
+      "phase": "phase-05-detail-cart-state-mutations",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-26T03:20:10+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T032010015241Z-phase-05-detail-cart-state-mutations-phase-group-repair-phase-05-detail-cart-state-mutations-verificatio-2.prompt.txt",
+      "phase": "phase-05-detail-cart-state-mutations",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-26T03:24:23+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T032423519043Z-phase-05-detail-cart-state-mutations-coverage-repair-1.prompt.txt",
+      "phase": "",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-26T03:30:17+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T033017424160Z-phase-05-detail-cart-state-mutations-coverage-repair-2.prompt.txt",
+      "phase": "",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-26T03:48:46+00:00",
+      "kind": "phase",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T034846271186Z-phase-06-polish-tests-verification-phase-batch-01.prompt.txt",
+      "phase": "phase-06-polish-tests-verification",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-26T03:53:05+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T035305479075Z-phase-06-polish-tests-verification-coverage-repair-1.prompt.txt",
+      "phase": "",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-26T03:57:23+00:00",
+      "kind": "coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T035723873796Z-phase-06-polish-tests-verification-coverage-repair-2.prompt.txt",
+      "phase": "",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-26T03:59:05+00:00",
+      "kind": "final-coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T035905866661Z-final-coverage-repair-1.prompt.txt",
+      "phase": "",
+      "resumedSessionId": ""
+    },
+    {
+      "at": "2026-06-26T04:03:34+00:00",
+      "kind": "final-coverage-repair",
+      "variant": "xhigh",
+      "promptPath": "D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T040334179995Z-final-coverage-repair-2.prompt.txt",
+      "phase": "",
+      "resumedSessionId": ""
     }
   ],
   "commandHistory": [
     {
-      "at": "2026-06-25T05:34:32+00:00",
-      "kind": "build-checkpoint",
-      "dryRun": false,
-      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-02-startup-navigation-session --skip-unchanged-target"
-    },
-    {
-      "at": "2026-06-25T05:34:45+00:00",
-      "kind": "build-checkpoint-result",
-      "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T053432405547Z-build-checkpoint.log"
-    },
-    {
-      "at": "2026-06-25T05:34:45+00:00",
-      "kind": "source-coverage-after-phase-group-repair",
+      "at": "2026-06-26T03:57:15+00:00",
+      "kind": "source-coverage-after-repair",
       "dryRun": false,
       "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental"
     },
     {
-      "at": "2026-06-25T05:34:48+00:00",
-      "kind": "source-coverage-after-phase-group-repair-result",
+      "at": "2026-06-26T03:57:17+00:00",
+      "kind": "source-coverage-after-repair-result",
       "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T053445504206Z-source-coverage-after-phase-group-repair.log"
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T035715273472Z-source-coverage-after-repair.log"
     },
     {
-      "at": "2026-06-25T05:34:48+00:00",
+      "at": "2026-06-26T03:57:17+00:00",
       "kind": "phase-task-checklist",
       "dryRun": false,
-      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --phase-task-checklist-phase phase-02-startup-navigation-session"
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --phase-task-checklist-phase phase-06-polish-tests-verification"
     },
     {
-      "at": "2026-06-25T05:34:50+00:00",
+      "at": "2026-06-26T03:57:20+00:00",
       "kind": "phase-task-checklist-result",
       "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T053448139191Z-phase-task-checklist.log"
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T035717964059Z-phase-task-checklist.log"
     },
     {
-      "at": "2026-06-25T05:34:50+00:00",
+      "at": "2026-06-26T03:57:20+00:00",
+      "kind": "phase-coverage-gate-after-repair",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --phase-gate-phase phase-06-polish-tests-verification --fail-on-phase-gate"
+    },
+    {
+      "at": "2026-06-26T03:57:23+00:00",
+      "kind": "phase-coverage-gate-after-repair-result",
+      "returncode": 3,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T035720837771Z-phase-coverage-gate-after-repair.log"
+    },
+    {
+      "at": "2026-06-26T03:57:23+00:00",
+      "kind": "quality-summary",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\summarize_translation_quality.py --workspace-root D:\\workspace\\Foodike --output-dir D:\\workspace\\Foodike\\translation-inputs"
+    },
+    {
+      "at": "2026-06-26T03:57:23+00:00",
+      "kind": "quality-summary-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T035723585785Z-quality-summary.log"
+    },
+    {
+      "at": "2026-06-26T03:57:23+00:00",
       "kind": "agent-input-coverage-repair",
       "dryRun": false,
-      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\opencode\\agent_input_compiler.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-02-startup-navigation-session --session-kind coverage-repair --implementation-group-id phase-02-startup-navigation-session-source-behavior-presentation-util"
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\opencode\\agent_input_compiler.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-06-polish-tests-verification --session-kind coverage-repair --cluster-id cluster-prep-contract-phase-06-polish-tests-verification-verification"
     },
     {
-      "at": "2026-06-25T05:34:50+00:00",
+      "at": "2026-06-26T03:57:23+00:00",
       "kind": "agent-input-coverage-repair-result",
       "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T053450696142Z-agent-input-coverage-repair.log"
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T035723753783Z-agent-input-coverage-repair.log"
     },
     {
-      "at": "2026-06-25T05:34:50+00:00",
+      "at": "2026-06-26T03:57:23+00:00",
       "kind": "coverage-repair-opencode",
       "dryRun": false,
-      "command": "D:\\X2Cangjie\\workspace\\tools\\opencode\\opencode-cj.exe run --dir D:\\workspace\\Foodike -m xty/gpt-5.4 --variant xhigh --format json --dangerously-skip-permissions \"<prompt from D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T053450814142Z-phase-02-startup-navigation-session-phase-group-repair-phase-02-startup-navigation-session-source-behav-1.prompt.txt>\"",
+      "command": "D:\\X2Cangjie\\workspace\\tools\\opencode\\opencode-cj.exe run --dir D:\\workspace\\Foodike -m xty/gpt-5.4 --variant xhigh --format json --dangerously-skip-permissions \"<prompt from D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T035723873796Z-phase-06-polish-tests-verification-coverage-repair-2.prompt.txt>\"",
       "env": [
         "XTY_API_KEY(set)",
         "XTY_BASE_URL=https://api.xty.app/v1",
@@ -467,502 +943,407 @@
       ]
     },
     {
-      "at": "2026-06-25T05:39:54+00:00",
+      "at": "2026-06-26T03:58:47+00:00",
       "kind": "coverage-repair-opencode-result",
       "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T053450834826Z-coverage-repair.log"
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T035723873796Z-coverage-repair.log"
     },
     {
-      "at": "2026-06-25T05:39:54+00:00",
-      "kind": "build-checkpoint",
-      "dryRun": false,
-      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-02-startup-navigation-session --skip-unchanged-target"
-    },
-    {
-      "at": "2026-06-25T05:40:07+00:00",
-      "kind": "build-checkpoint-result",
-      "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T053954595973Z-build-checkpoint.log"
-    },
-    {
-      "at": "2026-06-25T05:40:07+00:00",
-      "kind": "source-coverage-after-phase-group-repair",
+      "at": "2026-06-26T03:58:47+00:00",
+      "kind": "source-coverage-after-repair",
       "dryRun": false,
       "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental"
     },
     {
-      "at": "2026-06-25T05:40:10+00:00",
-      "kind": "source-coverage-after-phase-group-repair-result",
+      "at": "2026-06-26T03:58:48+00:00",
+      "kind": "source-coverage-after-repair-result",
       "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054007826291Z-source-coverage-after-phase-group-repair.log"
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T035847936700Z-source-coverage-after-repair.log"
     },
     {
-      "at": "2026-06-25T05:40:10+00:00",
+      "at": "2026-06-26T03:58:48+00:00",
       "kind": "phase-task-checklist",
       "dryRun": false,
-      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --phase-task-checklist-phase phase-02-startup-navigation-session"
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --phase-task-checklist-phase phase-06-polish-tests-verification"
     },
     {
-      "at": "2026-06-25T05:40:13+00:00",
+      "at": "2026-06-26T03:58:49+00:00",
       "kind": "phase-task-checklist-result",
       "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054010377241Z-phase-task-checklist.log"
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T035848796654Z-phase-task-checklist.log"
     },
     {
-      "at": "2026-06-25T05:40:13+00:00",
-      "kind": "source-coverage",
+      "at": "2026-06-26T03:58:49+00:00",
+      "kind": "phase-coverage-gate-after-repair",
       "dryRun": false,
-      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental"
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --phase-gate-phase phase-06-polish-tests-verification --fail-on-phase-gate"
     },
     {
-      "at": "2026-06-25T05:40:14+00:00",
-      "kind": "source-coverage-result",
-      "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054013073035Z-source-coverage.log"
+      "at": "2026-06-26T03:58:50+00:00",
+      "kind": "phase-coverage-gate-after-repair-result",
+      "returncode": 3,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T035849761554Z-phase-coverage-gate-after-repair.log"
     },
     {
-      "at": "2026-06-25T05:40:14+00:00",
-      "kind": "phase-coverage-gate",
-      "dryRun": false,
-      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --phase-gate-phase phase-02-startup-navigation-session --fail-on-phase-gate"
-    },
-    {
-      "at": "2026-06-25T05:40:16+00:00",
-      "kind": "phase-coverage-gate-result",
-      "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054014022463Z-phase-coverage-gate.log"
-    },
-    {
-      "at": "2026-06-25T05:40:16+00:00",
+      "at": "2026-06-26T03:58:50+00:00",
       "kind": "build-gate",
       "dryRun": false,
-      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-02-startup-navigation-session --skip-unchanged-target"
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-06-polish-tests-verification --skip-unchanged-target"
     },
     {
-      "at": "2026-06-25T05:40:16+00:00",
+      "at": "2026-06-26T03:58:57+00:00",
       "kind": "build-gate-result",
       "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054016547200Z-build-gate.log"
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T035850594383Z-build-gate.log"
     },
     {
-      "at": "2026-06-25T05:40:16+00:00",
+      "at": "2026-06-26T03:58:57+00:00",
       "kind": "source-coverage-post-build",
       "dryRun": false,
       "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental"
     },
     {
-      "at": "2026-06-25T05:40:17+00:00",
+      "at": "2026-06-26T03:58:57+00:00",
       "kind": "source-coverage-post-build-result",
       "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054016641202Z-source-coverage-post-build.log"
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T035857091857Z-source-coverage-post-build.log"
     },
     {
-      "at": "2026-06-25T05:40:17+00:00",
+      "at": "2026-06-26T03:58:57+00:00",
       "kind": "post-build-phase-coverage-gate",
       "dryRun": false,
-      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --phase-gate-phase phase-02-startup-navigation-session --fail-on-phase-gate"
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --phase-gate-phase phase-06-polish-tests-verification --fail-on-phase-gate"
     },
     {
-      "at": "2026-06-25T05:40:18+00:00",
+      "at": "2026-06-26T03:58:58+00:00",
       "kind": "post-build-phase-coverage-gate-result",
-      "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054017446048Z-post-build-phase-coverage-gate.log"
+      "returncode": 3,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T035857955004Z-post-build-phase-coverage-gate.log"
     },
     {
-      "at": "2026-06-25T05:40:18+00:00",
+      "at": "2026-06-26T03:58:58+00:00",
       "kind": "runtime-ui-smoke",
       "dryRun": false,
-      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\runtime_ui_smoke.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-02-startup-navigation-session --max-device-probe-seconds 3 --timeout 60 --hap-path D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap --skip-unchanged-hap"
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\runtime_ui_smoke.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-06-polish-tests-verification --max-device-probe-seconds 3 --timeout 60 --hap-path D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap --skip-unchanged-hap"
     },
     {
-      "at": "2026-06-25T05:40:18+00:00",
+      "at": "2026-06-26T03:58:58+00:00",
       "kind": "runtime-ui-smoke-result",
       "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054018323537Z-runtime-ui-smoke.log"
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T035858898802Z-runtime-ui-smoke.log"
     },
     {
-      "at": "2026-06-25T05:40:18+00:00",
+      "at": "2026-06-26T03:58:58+00:00",
       "kind": "test-gate",
       "dryRun": false,
-      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\test_build_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-02-startup-navigation-session --skip-unchanged-target"
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\test_build_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-06-polish-tests-verification --skip-unchanged-target"
     },
     {
-      "at": "2026-06-25T05:40:25+00:00",
+      "at": "2026-06-26T03:59:01+00:00",
       "kind": "test-gate-result",
       "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054018392537Z-test-gate.log"
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T035858978802Z-test-gate.log"
     },
     {
-      "at": "2026-06-25T05:40:25+00:00",
+      "at": "2026-06-26T03:59:01+00:00",
       "kind": "log-summary",
       "dryRun": false,
       "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\summarize_opencode_logs.py --workspace-root D:\\workspace\\Foodike --output-dir D:\\workspace\\Foodike\\translation-inputs --workflow-log-dir D:\\workspace\\Foodike\\translation-records\\opencode-logs --semantic-max-log-files 80"
     },
     {
-      "at": "2026-06-25T05:40:27+00:00",
+      "at": "2026-06-26T03:59:02+00:00",
       "kind": "log-summary-result",
       "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054025826893Z-log-summary.log"
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T035901387605Z-log-summary.log"
     },
     {
-      "at": "2026-06-25T05:40:27+00:00",
-      "kind": "phase-task-checklist",
+      "at": "2026-06-26T03:59:02+00:00",
+      "kind": "final-source-coverage",
       "dryRun": false,
-      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --phase-task-checklist-phase phase-03-onboarding-login-profile"
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --fail-on-high-risk"
     },
     {
-      "at": "2026-06-25T05:40:30+00:00",
-      "kind": "phase-task-checklist-result",
+      "at": "2026-06-26T03:59:05+00:00",
+      "kind": "final-source-coverage-result",
+      "returncode": 2,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T035902788113Z-final-source-coverage.log"
+    },
+    {
+      "at": "2026-06-26T03:59:05+00:00",
+      "kind": "quality-summary",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\summarize_translation_quality.py --workspace-root D:\\workspace\\Foodike --output-dir D:\\workspace\\Foodike\\translation-inputs"
+    },
+    {
+      "at": "2026-06-26T03:59:05+00:00",
+      "kind": "quality-summary-result",
       "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054027564417Z-phase-task-checklist.log"
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T035905588335Z-quality-summary.log"
     },
     {
-      "at": "2026-06-25T05:40:30+00:00",
-      "kind": "agent-input-phase",
+      "at": "2026-06-26T03:59:05+00:00",
+      "kind": "agent-input-final-coverage-repair",
       "dryRun": false,
-      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\opencode\\agent_input_compiler.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-03-onboarding-login-profile --session-kind phase --implementation-group-id phase-03-onboarding-login-profile-source-behavior-presentation-login --implementation-group-id phase-03-onboarding-login-profile-source-behavior-presentation-onboarding --implementation-group-id phase-03-onboarding-login-profile-source-behavior-presentation-profile --implementation-group-id phase-03-onboarding-login-profile-verification-phase-tests-and-evidence"
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\opencode\\agent_input_compiler.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase final --session-kind final-coverage-repair --cluster-id cluster-report-finding-whole-project-implement-or-evidence"
     },
     {
-      "at": "2026-06-25T05:40:30+00:00",
-      "kind": "agent-input-phase-result",
+      "at": "2026-06-26T03:59:05+00:00",
+      "kind": "agent-input-final-coverage-repair-result",
       "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T054030185051Z-agent-input-phase.log"
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T035905754660Z-agent-input-final-coverage-repair.log"
     },
     {
-      "at": "2026-06-25T05:40:30+00:00",
-      "kind": "phase-opencode",
+      "at": "2026-06-26T03:59:05+00:00",
+      "kind": "final-coverage-repair-opencode",
       "dryRun": false,
-      "command": "D:\\X2Cangjie\\workspace\\tools\\opencode\\opencode-cj.exe run --dir D:\\workspace\\Foodike -m xty/gpt-5.4 --variant xhigh --format json --dangerously-skip-permissions \"<prompt from D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T054030281897Z-phase-03-onboarding-login-profile-phase-batch-01.prompt.txt>\"",
+      "command": "D:\\X2Cangjie\\workspace\\tools\\opencode\\opencode-cj.exe run --dir D:\\workspace\\Foodike -m xty/gpt-5.4 --variant xhigh --format json --dangerously-skip-permissions \"<prompt from D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T035905866661Z-final-coverage-repair-1.prompt.txt>\"",
       "env": [
         "XTY_API_KEY(set)",
         "XTY_BASE_URL=https://api.xty.app/v1",
         "OPENCODE_CONFIG_CONTENT(provider=xty)",
         "OPENCODE_CONFIG_CONTENT(model=xty/gpt-5.4)",
         "OPENCODE_CONFIG_CONTENT(context=1000000)",
-        "OPENCODE_CONFIG_CONTENT(output=131072)"
+        "OPENCODE_CONFIG_CONTENT(output=131072)",
+        "OPENCODE_CONFIG_CONTENT(lsp=false)"
       ]
     },
     {
-      "at": "2026-06-25T06:16:53+00:00",
-      "kind": "phase-opencode-result",
+      "at": "2026-06-26T04:03:31+00:00",
+      "kind": "final-coverage-repair-opencode-result",
       "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T054030281897Z-phase.log"
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T035905866661Z-final-coverage-repair.log"
     },
     {
-      "at": "2026-06-25T06:16:53+00:00",
-      "kind": "build-checkpoint",
+      "at": "2026-06-26T04:03:31+00:00",
+      "kind": "final-source-coverage-after-repair",
       "dryRun": false,
-      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-03-onboarding-login-profile --skip-unchanged-target"
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --fail-on-high-risk"
     },
     {
-      "at": "2026-06-25T06:17:00+00:00",
-      "kind": "build-checkpoint-result",
-      "returncode": 1,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T061653042281Z-build-checkpoint.log"
+      "at": "2026-06-26T04:03:33+00:00",
+      "kind": "final-source-coverage-after-repair-result",
+      "returncode": 2,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T040331220102Z-final-source-coverage-after-repair.log"
     },
     {
-      "at": "2026-06-25T06:17:00+00:00",
-      "kind": "fix-build-opencode",
+      "at": "2026-06-26T04:03:33+00:00",
+      "kind": "quality-summary",
       "dryRun": false,
-      "command": "D:\\X2Cangjie\\workspace\\tools\\opencode\\opencode-cj.exe run --dir D:\\workspace\\Foodike -m xty/gpt-5.4 --variant xhigh --format json --dangerously-skip-permissions \"<prompt from D:\\workspace\\Foodike\\translation-records\\prompts\\20260625T061700255157Z-phase-03-onboarding-login-profile-fix-build.prompt.txt>\"",
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\summarize_translation_quality.py --workspace-root D:\\workspace\\Foodike --output-dir D:\\workspace\\Foodike\\translation-inputs"
+    },
+    {
+      "at": "2026-06-26T04:03:34+00:00",
+      "kind": "quality-summary-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T040333914612Z-quality-summary.log"
+    },
+    {
+      "at": "2026-06-26T04:03:34+00:00",
+      "kind": "agent-input-final-coverage-repair",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\opencode\\agent_input_compiler.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase final --session-kind final-coverage-repair --cluster-id cluster-report-finding-whole-project-implement-or-evidence"
+    },
+    {
+      "at": "2026-06-26T04:03:34+00:00",
+      "kind": "agent-input-final-coverage-repair-result",
+      "returncode": 0,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T040334065361Z-agent-input-final-coverage-repair.log"
+    },
+    {
+      "at": "2026-06-26T04:03:34+00:00",
+      "kind": "final-coverage-repair-opencode",
+      "dryRun": false,
+      "command": "D:\\X2Cangjie\\workspace\\tools\\opencode\\opencode-cj.exe run --dir D:\\workspace\\Foodike -m xty/gpt-5.4 --variant xhigh --format json --dangerously-skip-permissions \"<prompt from D:\\workspace\\Foodike\\translation-records\\prompts\\20260626T040334179995Z-final-coverage-repair-2.prompt.txt>\"",
       "env": [
         "XTY_API_KEY(set)",
         "XTY_BASE_URL=https://api.xty.app/v1",
         "OPENCODE_CONFIG_CONTENT(provider=xty)",
         "OPENCODE_CONFIG_CONTENT(model=xty/gpt-5.4)",
         "OPENCODE_CONFIG_CONTENT(context=1000000)",
-        "OPENCODE_CONFIG_CONTENT(output=131072)"
+        "OPENCODE_CONFIG_CONTENT(output=131072)",
+        "OPENCODE_CONFIG_CONTENT(lsp=false)"
       ]
     },
     {
-      "at": "2026-06-25T06:25:15+00:00",
-      "kind": "fix-build-opencode-result",
+      "at": "2026-06-26T04:29:17+00:00",
+      "kind": "final-coverage-repair-opencode-result",
       "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260625T061700256157Z-fix-build.log"
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\opencode-logs\\20260626T040334179995Z-final-coverage-repair.log"
     },
     {
-      "at": "2026-06-25T06:25:15+00:00",
-      "kind": "source-coverage",
+      "at": "2026-06-26T04:29:17+00:00",
+      "kind": "final-source-coverage-after-repair",
       "dryRun": false,
-      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental"
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --fail-on-high-risk"
     },
     {
-      "at": "2026-06-25T06:25:17+00:00",
-      "kind": "source-coverage-result",
+      "at": "2026-06-26T04:29:18+00:00",
+      "kind": "final-source-coverage-after-repair-result",
+      "returncode": 2,
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T042917590436Z-final-source-coverage-after-repair.log"
+    },
+    {
+      "at": "2026-06-26T04:29:18+00:00",
+      "kind": "quality-summary",
+      "dryRun": false,
+      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\summarize_translation_quality.py --workspace-root D:\\workspace\\Foodike --output-dir D:\\workspace\\Foodike\\translation-inputs"
+    },
+    {
+      "at": "2026-06-26T04:29:18+00:00",
+      "kind": "quality-summary-result",
       "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T062515302758Z-source-coverage.log"
-    },
-    {
-      "at": "2026-06-25T06:25:17+00:00",
-      "kind": "build-gate",
-      "dryRun": false,
-      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --phase phase-03-onboarding-login-profile --resolved-blocker \"> hvigor ERROR: Failed :entry:default@CompileCangjie...\" --skip-unchanged-target"
-    },
-    {
-      "at": "2026-06-25T06:25:24+00:00",
-      "kind": "build-gate-result",
-      "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T062517911017Z-build-gate.log"
-    },
-    {
-      "at": "2026-06-25T06:25:24+00:00",
-      "kind": "source-coverage-post-build",
-      "dryRun": false,
-      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental"
-    },
-    {
-      "at": "2026-06-25T06:25:24+00:00",
-      "kind": "source-coverage-post-build-result",
-      "returncode": 0,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T062524070501Z-source-coverage-post-build.log"
-    },
-    {
-      "at": "2026-06-25T06:25:24+00:00",
-      "kind": "post-build-phase-coverage-gate",
-      "dryRun": false,
-      "command": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\source_coverage\\cli.py --workspace-root D:\\workspace\\Foodike --source-project D:\\Kotlin2Cangjie\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --output-dir D:\\workspace\\Foodike\\translation-inputs --source-kind kotlin --incremental --phase-gate-phase phase-03-onboarding-login-profile --fail-on-phase-gate"
-    },
-    {
-      "at": "2026-06-25T06:25:27+00:00",
-      "kind": "post-build-phase-coverage-gate-result",
-      "returncode": 3,
-      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260625T062524936428Z-post-build-phase-coverage-gate.log"
+      "logPath": "D:\\workspace\\Foodike\\translation-records\\followup-logs\\20260626T042918523902Z-quality-summary.log"
     }
   ],
   "createdAt": "2026-06-25T02:00:28+00:00",
-  "updatedAt": "2026-06-25T06:25:27+00:00",
+  "updatedAt": "2026-06-26T04:29:18+00:00",
   "runnerSourceKind": "kotlin",
   "gradleModelScript": "D:\\X2Cangjie\\X2Cangjie\\scripts\\kotlin\\export_gradle_model.py",
   "phaseGroupVerdicts": {
-    "phase-01-project-skeleton-resources": {
-      "updatedAt": "2026-06-25T05:02:26+00:00",
+    "phase-05-detail-cart-state-mutations": {
+      "updatedAt": "2026-06-26T03:24:19+00:00",
       "summary": {
-        "implementationGroups": 9,
-        "repairCandidates": 0,
+        "implementationGroups": 3,
+        "repairCandidates": 2,
         "byVerdict": {
-          "complete": 9
+          "complete": 1,
+          "incomplete": 2
         },
         "byPriority": {
-          "critical": 8,
-          "high": 1
+          "critical": 3
         }
       },
       "groups": {
-        "phase-01-project-skeleton-resources-architecture-risk-broad-target-endpoints": {
+        "phase-05-detail-cart-state-mutations-source-behavior-presentation-cart": {
           "verdict": "complete",
           "repairRecommended": false,
           "priority": "critical",
           "featureIds": [
-            "app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat",
-            "app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat",
-            "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m"
+            "app-src-main-java-com-example-foodike-presentation-cart-eaf4711dc9-001-image-viewing-bitmap-exif-handling-zoom",
+            "app-src-main-java-com-example-foodike-presentation-cart-4c136b2d3d-002-navigation-surface-menu-drawer-toolbar-o",
+            "app-src-main-java-com-example-foodike-presentation-cart-f1f520ab22-005-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-cart-8c15fff266-003-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-cart-9969033ff2-004-screen-lifecycle-entry-point-initializat",
+            "app-src-main-java-com-example-foodike-presentation-cart-9cef776f25-003-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-cart-33250392eb-001-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-cart-3db8c1ab5c-002-screen-lifecycle-entry-point-initializat",
+            "app-src-main-java-com-example-foodike-presentation-cart-44d26d6a93-001-image-viewing-bitmap-exif-handling-zoom",
+            "app-src-main-java-com-example-foodike-presentation-cart-87f4a4c93e-002-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-cart-93e7dc2f4a-001-image-viewing-bitmap-exif-handling-zoom",
+            "app-src-main-java-com-example-foodike-presentation-cart-3d782ce4b4-003-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-cart-bb9805ee68-002-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-cart-453ddde6ba-003-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-cart-42a65301ac-001-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-cart-fa0cd53e26-002-settings-preferences-option-toggles-or-c",
+            "app-src-main-java-com-example-foodike-presentation-cart-de5d1e1daf-001-runtime-permission-request-permission-re"
           ],
           "platformCapabilityIds": [],
-          "updatedAt": "2026-06-25T05:02:26+00:00"
+          "updatedAt": "2026-06-26T03:24:19+00:00"
         },
-        "phase-01-project-skeleton-resources-platform-capability-preferences-key-value-persistence": {
-          "verdict": "complete",
-          "repairRecommended": false,
-          "priority": "critical",
-          "featureIds": [],
-          "platformCapabilityIds": [
-            "preferences-key-value-persistence"
-          ],
-          "updatedAt": "2026-06-25T05:02:26+00:00"
-        },
-        "phase-01-project-skeleton-resources-platform-capability-startup-route-and-window-lifecycle": {
-          "verdict": "complete",
-          "repairRecommended": false,
-          "priority": "critical",
-          "featureIds": [],
-          "platformCapabilityIds": [
-            "startup-route-and-window-lifecycle"
-          ],
-          "updatedAt": "2026-06-25T05:02:26+00:00"
-        },
-        "phase-01-project-skeleton-resources-resource-migration-manifest": {
-          "verdict": "complete",
-          "repairRecommended": false,
+        "phase-05-detail-cart-state-mutations-source-behavior-presentation-details": {
+          "verdict": "incomplete",
+          "repairRecommended": true,
           "priority": "critical",
           "featureIds": [
-            "app-src-main-androidmanifest-xml-c7c6907eb1-004-android-platform-component-lifecycle-suc",
-            "app-src-main-androidmanifest-xml-e5fadea668-001-android-resource-configuration-must-be-m",
-            "app-src-main-androidmanifest-xml-525ca85433-002-intent-uri-bundle-deeplink-or-cross-scre",
-            "app-src-main-androidmanifest-xml-dcc4612e71-003-runtime-permission-request-permission-re",
-            "app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat"
-          ],
-          "platformCapabilityIds": [
-            "localization-resources",
-            "startup-route-and-window-lifecycle"
-          ],
-          "updatedAt": "2026-06-25T05:02:26+00:00"
-        },
-        "phase-01-project-skeleton-resources-resource-migration-res-values": {
-          "verdict": "complete",
-          "repairRecommended": false,
-          "priority": "critical",
-          "featureIds": [
-            "app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma",
-            "app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m",
-            "app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma",
-            "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m",
-            "app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re"
-          ],
-          "platformCapabilityIds": [
-            "localization-resources",
-            "startup-route-and-window-lifecycle"
-          ],
-          "updatedAt": "2026-06-25T05:02:26+00:00"
-        },
-        "phase-01-project-skeleton-resources-source-behavior-app": {
-          "verdict": "complete",
-          "repairRecommended": false,
-          "priority": "critical",
-          "featureIds": [
-            "app-build-gradle-kts-52a26dc1e9-003-android-platform-component-lifecycle-suc",
-            "app-build-gradle-kts-ab52d0a44d-001-navigation-surface-menu-drawer-toolbar-o",
-            "app-build-gradle-kts-329cf39b55-002-runtime-permission-request-permission-re",
-            "app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat",
-            "app-build-gradle-kts-aa010bdd3d-005-settings-preferences-option-toggles-or-c"
+            "app-src-main-java-com-example-foodike-presentation-detai-fe74e39178-001-image-viewing-bitmap-exif-handling-zoom",
+            "app-src-main-java-com-example-foodike-presentation-detai-ee3681ccdd-002-intent-uri-bundle-deeplink-or-cross-scre",
+            "app-src-main-java-com-example-foodike-presentation-detai-017392d1f5-003-navigation-surface-menu-drawer-toolbar-o",
+            "app-src-main-java-com-example-foodike-presentation-detai-958b17f285-005-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-detai-830ec138bf-004-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-detai-f5d9a78a4d-001-image-viewing-bitmap-exif-handling-zoom",
+            "app-src-main-java-com-example-foodike-presentation-detai-2c361ce893-002-navigation-surface-menu-drawer-toolbar-o",
+            "app-src-main-java-com-example-foodike-presentation-detai-d2fd9c929d-004-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-detai-9a28c49174-003-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-detai-5078228915-001-image-viewing-bitmap-exif-handling-zoom",
+            "app-src-main-java-com-example-foodike-presentation-detai-715234c0ab-002-runtime-permission-request-permission-re"
           ],
           "platformCapabilityIds": [],
-          "updatedAt": "2026-06-25T05:02:26+00:00"
+          "updatedAt": "2026-06-26T03:24:19+00:00"
         },
-        "phase-01-project-skeleton-resources-source-behavior-kotlin-source": {
-          "verdict": "complete",
-          "repairRecommended": false,
+        "phase-05-detail-cart-state-mutations-verification-phase-tests-and-evidence": {
+          "verdict": "incomplete",
+          "repairRecommended": true,
           "priority": "critical",
           "featureIds": [
-            "build-gradle-kts-6cd8a326ab-002-android-platform-component-lifecycle-suc",
-            "build-gradle-kts-e6afb1cfd2-001-runtime-permission-request-permission-re",
-            "build-gradle-kts-2f9b07ef27-003-settings-preferences-option-toggles-or-c"
+            "app-src-main-java-com-example-foodike-presentation-detai-fe74e39178-001-image-viewing-bitmap-exif-handling-zoom",
+            "app-src-main-java-com-example-foodike-presentation-detai-ee3681ccdd-002-intent-uri-bundle-deeplink-or-cross-scre",
+            "app-src-main-java-com-example-foodike-presentation-detai-017392d1f5-003-navigation-surface-menu-drawer-toolbar-o",
+            "app-src-main-java-com-example-foodike-presentation-detai-830ec138bf-004-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-detai-958b17f285-005-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-detai-f5d9a78a4d-001-image-viewing-bitmap-exif-handling-zoom",
+            "app-src-main-java-com-example-foodike-presentation-detai-2c361ce893-002-navigation-surface-menu-drawer-toolbar-o",
+            "app-src-main-java-com-example-foodike-presentation-detai-9a28c49174-003-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-detai-d2fd9c929d-004-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-detai-5078228915-001-image-viewing-bitmap-exif-handling-zoom",
+            "app-src-main-java-com-example-foodike-presentation-detai-715234c0ab-002-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-cart-93e7dc2f4a-001-image-viewing-bitmap-exif-handling-zoom",
+            "app-src-main-java-com-example-foodike-presentation-cart-bb9805ee68-002-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-cart-3d782ce4b4-003-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-cart-eaf4711dc9-001-image-viewing-bitmap-exif-handling-zoom",
+            "app-src-main-java-com-example-foodike-presentation-cart-4c136b2d3d-002-navigation-surface-menu-drawer-toolbar-o",
+            "app-src-main-java-com-example-foodike-presentation-cart-8c15fff266-003-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-cart-9969033ff2-004-screen-lifecycle-entry-point-initializat",
+            "app-src-main-java-com-example-foodike-presentation-cart-f1f520ab22-005-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-cart-44d26d6a93-001-image-viewing-bitmap-exif-handling-zoom",
+            "app-src-main-java-com-example-foodike-presentation-cart-87f4a4c93e-002-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-cart-33250392eb-001-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-cart-3db8c1ab5c-002-screen-lifecycle-entry-point-initializat",
+            "app-src-main-java-com-example-foodike-presentation-cart-9cef776f25-003-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-cart-42a65301ac-001-runtime-permission-request-permission-re",
+            "app-src-main-java-com-example-foodike-presentation-cart-fa0cd53e26-002-settings-preferences-option-toggles-or-c",
+            "app-src-main-java-com-example-foodike-presentation-cart-453ddde6ba-003-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-cart-de5d1e1daf-001-runtime-permission-request-permission-re"
           ],
           "platformCapabilityIds": [],
-          "updatedAt": "2026-06-25T05:02:26+00:00"
-        },
-        "phase-01-project-skeleton-resources-verification-phase-tests-and-evidence": {
-          "verdict": "complete",
-          "repairRecommended": false,
-          "priority": "critical",
-          "featureIds": [
-            "app-build-gradle-kts-ab52d0a44d-001-navigation-surface-menu-drawer-toolbar-o",
-            "app-build-gradle-kts-329cf39b55-002-runtime-permission-request-permission-re",
-            "app-build-gradle-kts-52a26dc1e9-003-android-platform-component-lifecycle-suc",
-            "app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat",
-            "app-build-gradle-kts-aa010bdd3d-005-settings-preferences-option-toggles-or-c",
-            "build-gradle-kts-e6afb1cfd2-001-runtime-permission-request-permission-re",
-            "build-gradle-kts-6cd8a326ab-002-android-platform-component-lifecycle-suc",
-            "build-gradle-kts-2f9b07ef27-003-settings-preferences-option-toggles-or-c",
-            "app-src-main-androidmanifest-xml-e5fadea668-001-android-resource-configuration-must-be-m",
-            "app-src-main-androidmanifest-xml-525ca85433-002-intent-uri-bundle-deeplink-or-cross-scre",
-            "app-src-main-androidmanifest-xml-dcc4612e71-003-runtime-permission-request-permission-re",
-            "app-src-main-androidmanifest-xml-c7c6907eb1-004-android-platform-component-lifecycle-suc",
-            "app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat",
-            "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m",
-            "app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re",
-            "app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma",
-            "app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m",
-            "app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma"
-          ],
-          "platformCapabilityIds": [
-            "localization-resources",
-            "preferences-key-value-persistence",
-            "startup-route-and-window-lifecycle"
-          ],
-          "updatedAt": "2026-06-25T05:02:26+00:00"
-        },
-        "phase-01-project-skeleton-resources-platform-capability-localization-resources": {
-          "verdict": "complete",
-          "repairRecommended": false,
-          "priority": "high",
-          "featureIds": [],
-          "platformCapabilityIds": [
-            "localization-resources"
-          ],
-          "updatedAt": "2026-06-25T05:02:26+00:00"
+          "updatedAt": "2026-06-26T03:24:19+00:00"
         }
       }
     },
-    "phase-02-startup-navigation-session": {
-      "updatedAt": "2026-06-25T05:40:13+00:00",
+    "phase-06-polish-tests-verification": {
+      "updatedAt": "2026-06-26T03:53:01+00:00",
       "summary": {
-        "implementationGroups": 4,
+        "implementationGroups": 2,
         "repairCandidates": 0,
         "byVerdict": {
-          "complete": 4
+          "complete": 2
         },
         "byPriority": {
-          "critical": 4
+          "low": 2
         }
       },
       "groups": {
-        "phase-02-startup-navigation-session-source-behavior-data-repository": {
+        "phase-06-polish-tests-verification-verification-com-example": {
           "verdict": "complete",
           "repairRecommended": false,
-          "priority": "critical",
+          "priority": "low",
           "featureIds": [
-            "app-src-main-java-com-example-foodike-data-repository-lo-02b022d9dd-004-authentication-account-or-session-behavi",
-            "app-src-main-java-com-example-foodike-data-repository-lo-7dc1a245fb-003-observable-state-viewmodel-flow-livedata",
-            "app-src-main-java-com-example-foodike-data-repository-lo-7e56a71166-001-runtime-permission-request-permission-re",
-            "app-src-main-java-com-example-foodike-data-repository-lo-6ca6819f0d-002-settings-preferences-option-toggles-or-c"
+            "app-src-androidtest-java-com-example-foodike-exampleinst-7ce120cd33-001-source-side-tests-or-verification-assets",
+            "app-src-test-java-com-example-foodike-exampleunittest-kt-504d70964f-002-crud-mutation-or-persistent-state-update",
+            "app-src-test-java-com-example-foodike-exampleunittest-kt-7340d393c5-001-source-side-tests-or-verification-assets"
           ],
           "platformCapabilityIds": [],
-          "updatedAt": "2026-06-25T05:40:13+00:00"
+          "updatedAt": "2026-06-26T03:53:01+00:00"
         },
-        "phase-02-startup-navigation-session-source-behavior-presentation": {
+        "phase-06-polish-tests-verification-verification-phase-tests-and-evidence": {
           "verdict": "complete",
           "repairRecommended": false,
-          "priority": "critical",
+          "priority": "low",
           "featureIds": [
-            "app-src-main-java-com-example-foodike-presentation-maina-f373ac820e-001-intent-uri-bundle-deeplink-or-cross-scre",
-            "app-src-main-java-com-example-foodike-presentation-maina-b4402531cf-006-lifecycle-callback-affecting-screen-init",
-            "app-src-main-java-com-example-foodike-presentation-maina-90afaa2416-002-navigation-surface-menu-drawer-toolbar-o",
-            "app-src-main-java-com-example-foodike-presentation-maina-7ad2de0a80-005-observable-state-viewmodel-flow-livedata",
-            "app-src-main-java-com-example-foodike-presentation-maina-7fe4304034-003-runtime-permission-request-permission-re",
-            "app-src-main-java-com-example-foodike-presentation-maina-da76a1d7cc-004-screen-lifecycle-entry-point-initializat"
+            "app-src-androidtest-java-com-example-foodike-exampleinst-7ce120cd33-001-source-side-tests-or-verification-assets",
+            "app-src-test-java-com-example-foodike-exampleunittest-kt-7340d393c5-001-source-side-tests-or-verification-assets",
+            "app-src-test-java-com-example-foodike-exampleunittest-kt-504d70964f-002-crud-mutation-or-persistent-state-update"
           ],
           "platformCapabilityIds": [],
-          "updatedAt": "2026-06-25T05:40:13+00:00"
-        },
-        "phase-02-startup-navigation-session-source-behavior-presentation-util": {
-          "verdict": "complete",
-          "repairRecommended": false,
-          "priority": "critical",
-          "featureIds": [
-            "app-src-main-java-com-example-foodike-presentation-util-db8f73d266-001-image-viewing-bitmap-exif-handling-zoom",
-            "app-src-main-java-com-example-foodike-presentation-util-417c58decd-002-navigation-surface-menu-drawer-toolbar-o",
-            "app-src-main-java-com-example-foodike-presentation-util-cb2f6fdad2-004-observable-state-viewmodel-flow-livedata",
-            "app-src-main-java-com-example-foodike-presentation-util-dc524a2ddb-003-runtime-permission-request-permission-re",
-            "app-src-main-java-com-example-foodike-presentation-util-e655d230ac-001-runtime-permission-request-permission-re"
-          ],
-          "platformCapabilityIds": [],
-          "updatedAt": "2026-06-25T05:40:13+00:00"
-        },
-        "phase-02-startup-navigation-session-verification-phase-tests-and-evidence": {
-          "verdict": "complete",
-          "repairRecommended": false,
-          "priority": "critical",
-          "featureIds": [
-            "app-src-main-java-com-example-foodike-presentation-util-db8f73d266-001-image-viewing-bitmap-exif-handling-zoom",
-            "app-src-main-java-com-example-foodike-presentation-util-417c58decd-002-navigation-surface-menu-drawer-toolbar-o",
-            "app-src-main-java-com-example-foodike-presentation-util-dc524a2ddb-003-runtime-permission-request-permission-re",
-            "app-src-main-java-com-example-foodike-presentation-util-cb2f6fdad2-004-observable-state-viewmodel-flow-livedata",
-            "app-src-main-java-com-example-foodike-presentation-maina-f373ac820e-001-intent-uri-bundle-deeplink-or-cross-scre",
-            "app-src-main-java-com-example-foodike-presentation-maina-90afaa2416-002-navigation-surface-menu-drawer-toolbar-o",
-            "app-src-main-java-com-example-foodike-presentation-maina-7fe4304034-003-runtime-permission-request-permission-re",
-            "app-src-main-java-com-example-foodike-presentation-maina-da76a1d7cc-004-screen-lifecycle-entry-point-initializat",
-            "app-src-main-java-com-example-foodike-presentation-maina-7ad2de0a80-005-observable-state-viewmodel-flow-livedata",
-            "app-src-main-java-com-example-foodike-presentation-maina-b4402531cf-006-lifecycle-callback-affecting-screen-init",
-            "app-src-main-java-com-example-foodike-data-repository-lo-7e56a71166-001-runtime-permission-request-permission-re",
-            "app-src-main-java-com-example-foodike-data-repository-lo-6ca6819f0d-002-settings-preferences-option-toggles-or-c",
-            "app-src-main-java-com-example-foodike-data-repository-lo-7dc1a245fb-003-observable-state-viewmodel-flow-livedata",
-            "app-src-main-java-com-example-foodike-data-repository-lo-02b022d9dd-004-authentication-account-or-session-behavi",
-            "app-src-main-java-com-example-foodike-presentation-util-e655d230ac-001-runtime-permission-request-permission-re"
-          ],
-          "platformCapabilityIds": [],
-          "updatedAt": "2026-06-25T05:40:13+00:00"
+          "updatedAt": "2026-06-26T03:53:01+00:00"
         }
       }
+    }
+  },
+  "phaseCoverageDebt": {
+    "phase-06-polish-tests-verification": {
+      "status": "carried-forward",
+      "reason": "structure-only medium finding(s) remain: target-structure-broad-shell-endpoints, target-structure-endpoint-concentration, target-structure-ui-endpoint-concentration, target-structure-ui-surface-concentration, target-weakening-signals",
+      "recordedAt": "2026-06-26T03:58:58+00:00"
     }
   }
 }

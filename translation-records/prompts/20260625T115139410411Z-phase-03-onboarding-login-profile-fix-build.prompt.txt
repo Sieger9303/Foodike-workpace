@@ -1,0 +1,61 @@
+Orchestrator note: this build-blocker prompt was generated from a template for traceability only. Do not run workflow scripts from this note unless the user explicitly asks you to. Template file: D:\workspace\Foodike\translation-records\prompt-templates\build-blocker-session-template.md
+Read and follow the agent protocol: D:\X2Cangjie\X2Cangjie\Kotlin2Cangjie\docs\android-kotlin-to-cangjie-agent-protocol.md
+Read the generated build blocker prompt: D:\workspace\Foodike\translation-inputs\build-reports\phase-03-onboarding-login-profile\opencode-build-blocker-prompt.txt
+Read the build report before editing: D:\workspace\Foodike\translation-inputs\build-reports\phase-03-onboarding-login-profile\build-report.md
+
+## Static Analysis Limits
+
+Generated static analysis inputs are aids, not complete truth. They may miss dynamic dispatch, reflection, generated code, callback wiring, resource indirection, build-variant behavior, or platform-specific side effects. Do not rely only on static analysis when source behavior is unclear or when coverage reports indicate possible omissions. Inspect the minimal relevant source files and resources before deciding to simplify, replace, or defer behavior. For Kotlin projects, pay particular attention to Compose state, remembered state, ViewModel/repository flow, coroutine side effects, navigation arguments, and resource bindings that may be missing or only partially summarized.
+
+## Target Architecture Organization
+
+Use the source project structure as a responsibility guide while fixing build
+blockers, then adapt it to idiomatic HarmonyOS Cangjie modules. Do not
+mechanically mirror Android Activity, Fragment, Adapter, BroadcastReceiver,
+ContentProvider, or XML layout boundaries, but do not solve compiler errors by
+moving unrelated behavior into a root view, `index.cj`, `app_state.cj`, or
+one all-purpose state module. If a build fix touches production behavior, keep
+single-file LOC and responsibility scope controlled, keep or create clear
+domain/service/state boundaries, and update coverage targetEndpoints to the
+precise modules or functions involved.
+
+Fix only the current phase's build blocker or the smallest coherent blocker class. Do not perform unrelated refactors, do not advance to a new phase, and do not modify source project files, translation-records, generated reports, or workflow scripts except source-coverage-matrix.json/md and platform-capability-check.json/md when the build fix changes feature or platform capability coverage status. Do not delete, disable, or weaken migrated/generated tests merely to make the build pass; fix the implementation or record a deferred test limitation.
+
+## Coverage And Capability Review
+
+Use `source-coverage-matrix.json/md` as the feature coverage record and `platform-capability-check.json/md` as the platform capability record. During planning and phase work, update them when target behavior is planned, implemented, tested, replaced, or explicitly deferred. For every closed critical/high source feature, record sourceBehavior, targetBehavior, parityLevel, targetEndpoints, and verificationEvidence; use `verification-results.json/md` as supporting evidence, but do not treat a build pass alone as per-feature behavior verification. Avoid marking large groups of behavior deferred or implemented-simplified without concrete source evidence, preserved-behavior explanation, blocker reason, fallback behavior, risk, and future completion path. For critical/high platform capabilities, query CangjieSkills/HarmonyOS/Cangjie API docs and HarmonyOS-Examples before choosing a direct API, platform replacement, fallback, or deferred status. When a third-party package may be needed, also query the Cangjie package index (`https://pkg.cangjie-lang.cn`) or cjpm package lookup. When checking current SDK availability, prefer pure Cangjie `.cj.d`/`.cjo` declarations under `$HOME/.cangjie-sdk/**/cangjie/api/modules` and `$HOME/.cangjie-sdk/**/cangjie/api/lib` before DevEco ETS/JS/native declarations. If a suitable HarmonyOS/Cangjie API, Kit, example, or package exists, implement it or mark it platform-replaced with evidence; do not close the capability with local mock data, in-memory simulation, sample data, or another fallback. Direct target API evidence must be callable from the HarmonyOS Cangjie target. Treat ArkTS `.d.ts` declarations, JS APIs, native C headers/libraries, and generic HarmonyOS capability docs as discovery evidence only. A Cangjie wrapper, FFI, or bridge counts as direct evidence only when it is already part of the target architecture or explicitly planned, and is verified with target endpoints plus build evidence. Do not introduce the first ArkTS/JS/native bridge merely to close coverage or capability rows during repair; if no Cangjie-callable binding is available, record the blocker, fallback behavior, risk, and future completion path. When older docs or examples show a Cangjie API but the current SDK/package index is uncertain, perform at most one bounded compile/import probe in the same target build/package context when available before deciding whether the API is usable; a bare compiler probe that lacks HarmonyOS kit import paths is not conclusive by itself. If the active-context probe fails, keep the capability fallback/deferred instead of switching to a cross-language bridge. Do not cite target test files as strong feature evidence unless `verificationEvidence` or notes record a successful target test compile/run command such as `cjpm test` or a compile-only test pass. If the target test harness is blocked, record the exact blocker and rely on direct Cangjie code endpoints for implemented rows rather than leaving unverified test files as the only evidence.
+
+## Latest Test Build Gate
+
+- Report: `D:\workspace\Foodike\translation-inputs\test-build-reports\phase-03-onboarding-login-profile\test-build-report.md`
+- JSON: `D:\workspace\Foodike\translation-inputs\test-build-reports\phase-03-onboarding-login-profile\test-build-report.json`
+- Log: `D:\workspace\Foodike\translation-inputs\test-build-reports\phase-03-onboarding-login-profile\test-build.log`
+- Preferred script: `D:\X2Cangjie\X2Cangjie\scripts\shared\reports\test_build_report.py`
+- Phase: `phase-03-onboarding-login-profile`
+- Result: `TEST_COMPILE_FAIL`
+- Recommended owner: `opencode-cj-target-project`
+- First blocker: Error: can not find the following dependencies
+
+Guidance:
+- Prefer the workflow test gate script/report over a bare `cjpm test`. If you need to reproduce a failure, read the report's Command, Environment, SDK, and opencode-cj Handoff Prompt sections and reuse that command with the recorded env overlay/target/package root.
+- This is classified as a target test/config/compile/runtime failure. If it belongs to the current repair scope, fix target test harness, test code, imports, package config, or exposed production API; do not delete, skip, or weaken migrated tests. If the script itself failed before invoking cjpm, use the report blocker and recipe for one focused manual reproduction, then update the target fix or record the blocker instead of looping over raw commands.
+
+
+
+## Strict Build-Fix Coverage
+
+Do not resolve build failures by deleting behavior, disabling tests, or replacing implementation with placeholders. Do not delete Compose state, ViewModel/repository flow, coroutine behavior, persistence paths, resources, navigation, settings, or state refresh logic unless a concrete deferred blocker with fallback behavior is recorded.
+
+After fixing, report changed files, commands run, blocker addressed, remaining blockers, deferred issues, and next recommended action. The build gate must be rerun after this session.
+
+
+Build blocker prompt content:
+```text
+Read the generated build report before editing.
+Report: D:\workspace\Foodike\translation-inputs\build-reports\phase-03-onboarding-login-profile\build-report.md
+Phase: phase-03-onboarding-login-profile
+Failed stage: CompileCangjie
+First visible blocker: > hvigor ERROR: Failed :entry:default@CompileCangjie...
+Location: Warning: field 'profile.build.combined' in '.\cjpm.toml' is experimental, it is unstable and has some limitations, please refer to related documentation for more details
+Fix only the current phase's build blockers in the target project, then rerun the same build gate.
+```

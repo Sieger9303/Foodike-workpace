@@ -1,4 +1,4 @@
-package ohos_app_cangjie_entry
+package ohos_app_cangjie_entry_test
 
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.app.{RouteId, ShellCommand, ShellRouteState, primaryActionTarget, resolveStartRoute, routePath, showsBottomShell}
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.LoginPreferencesService

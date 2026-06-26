@@ -1,15 +1,19 @@
 package ohos_app_cangjie_entry.ohos_app_cangjie_entry.app
 
 import kit.ArkUI.*
-import kit.LocalizationKit.*
 import ohos.arkui.state_macro_manage.Builder
 import ohos.arkui.state_macro_manage.Component
 import ohos.arkui.state_macro_manage.Entry
 import ohos.arkui.state_macro_manage.State
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.*
-import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.login.loginStore
-import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.onboarding.onboardingStore
-import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.profileStore
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.domain.{CartSnapshotItemData, DetailMenuItemData, DetailPageState, RestaurantData}
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.cart.{cartStore, renderCartRoute}
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.detail.{detailStore, renderDetailRoute}
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.history.{historyStore, renderHistoryRoute}
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.home.{homeStore, renderHomeRoute}
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.login.{loginStore, renderLoginRoute}
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.onboarding.{onboardingStore, renderOnboardingRoute}
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.{profileStore, renderProfileRoute}
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime.{Global, bootstrapStartRoute}
 
 @Entry
@@ -30,6 +34,48 @@ class FoodikeBootstrap {
     @State
     var loginPassword: String = ""
 
+    @State
+    var loginErrorMessage: String = ""
+
+    @State
+    var homeSearchQuery: String = ""
+
+    @State
+    var homeSelectedFilter: String = ""
+
+    @State
+    var historySearchQuery: String = ""
+
+    @State
+    var historyTabIndex: Int64 = 0
+
+    @State
+    var previousRoute: String = "home_screen"
+
+    @State
+    var cartNote: String = ""
+
+    @State
+    var cartCoupon: String = ""
+
+    @State
+    var cartMutationRevision: Int64 = 0
+
+    @State
+    var detailRecommendedExpanded: Bool = true
+
+    @State
+    var detailNonVegExpanded: Bool = true
+
+    @State
+    var detailVegExpanded: Bool = true
+
+    @State
+    var detailLiked: Bool = false
+
+    @State
+    var detailMutationRevision: Int64 = 0
+
     private var onboardingController: SwiperController = SwiperController()
 
     private func applyShellState(shellState: ShellRouteState): Unit {
@@ -49,9 +95,16 @@ class FoodikeBootstrap {
 
     private func navigateTo(route: String): Unit {
         let shellState = this.shellState()
+        this.previousRoute = shellState.currentRoute
         shellState.currentRoute = route
         shellState.isAtTop = true
         this.applyShellState(shellState)
+    }
+
+    private func navigateBack(): Unit {
+        let targetRoute = this.previousRoute
+        this.previousRoute = this.currentRoute
+        this.navigateTo(targetRoute)
     }
 
     private func showBottomShell(route: String): Bool {
@@ -77,12 +130,18 @@ class FoodikeBootstrap {
         getUIContext().getPromptAction().showToast(ShowToastOptions(message: message))
     }
 
+    private func clearLoginError(): Unit {
+        this.loginErrorMessage = ""
+    }
+
     private func performLogin(): Unit {
         if (loginStore.login(Global.abilityContext, this.loginEmail, this.loginPassword)) {
+            this.clearLoginError()
             this.navigateTo(loginStore.successRoute())
             return
         }
 
+        this.loginErrorMessage = loginStore.invalidLoginMessage
         this.showToast(loginStore.invalidLoginMessage)
     }
 
@@ -90,302 +149,214 @@ class FoodikeBootstrap {
         profileStore.logout(Global.abilityContext)
         this.loginEmail = ""
         this.loginPassword = ""
+        this.clearLoginError()
         this.onboardingPageIndex = 0
+        this.homeSearchQuery = ""
+        this.homeSelectedFilter = ""
+        this.historySearchQuery = ""
+        this.historyTabIndex = 0
         this.navigateTo(profileStore.logoutRoute())
     }
 
     private func routeSummary(route: String): String {
         match (route) {
-            case "home_screen" => "Home remains the shared shell placeholder from phase 02 while onboarding, login, and profile now run as dedicated phase-03 routes."
-            case "history" => "History remains available as a shell route so profile still has a source-consistent back destination."
-            case "cart" => "Cart continues to be a shell-owned placeholder route until later phases land the real content."
-            case "restaurant_details" => "Restaurant detail remains in the route contract but keeps its placeholder body until later phases."
+            case "home_screen" => "Home now renders repository-backed discovery content, local search/filter controls, and restaurant selection before detail routing."
+            case "history" => "History now preserves search plus tab-local content, reuses favourite restaurants, and saves the selected restaurant before navigation."
+            case "cart" => "Cart now renders snapshot-backed items, a local note editor, a local coupon field, delivery details, and bill totals without adding new checkout persistence flows."
+            case "restaurant_details" => "Restaurant detail now reads the selected restaurant, preserves local section expansion and like state, keeps menu quantity controls local to the route, and shows the cart action only when selected quantities are non-zero."
             case _ => ""
         }
     }
 
-    @Builder
-    private func buildTopBar(title: ResourceStr, backLabel: ResourceStr, onBack: () -> Unit) {
-        Row {
-            Button(backLabel)
-                .onClick({ _ => onBack() })
-            Text(title)
-                .fontSize(28)
-                .fontWeight(FontWeight.Bold)
-                .margin(left: 16)
-        }
-        .width(100.percent)
-        .justifyContent(FlexAlign.Start)
-        .alignItems(VerticalAlign.Center)
+    private func homeHour(): Int64 {
+        return 9
     }
 
-    @Builder
-    private func buildOnboardingCard(title: String, description: String, mediaName: String) {
-        Column(space: 18) {
-            Image(
-                match (mediaName) {
-                    case "chinese_bowl" => mediaChineseBowl
-                    case "rider" => mediaRider
-                    case _ => mediaClock
-                }
-            )
-                .width(72.percent)
-                .height(280)
-            Text(title)
-                .fontSize(30)
-                .fontColor(Color.White)
-                .fontWeight(FontWeight.Bold)
-                .textAlign(TextAlign.Center)
-            Text(description)
-                .fontSize(17)
-                .fontColor(Color.White)
-                .textAlign(TextAlign.Center)
-                .width(86.percent)
-        }
-        .width(100.percent)
-        .height(100.percent)
-        .justifyContent(FlexAlign.Center)
-        .alignItems(HorizontalAlign.Center)
+    private func goToProfile(): Unit {
+        this.navigateTo(routePath(RouteId.Profile))
+    }
+
+    private func goToRestaurantDetail(): Unit {
+        this.detailRecommendedExpanded = true
+        this.detailNonVegExpanded = true
+        this.detailVegExpanded = true
+        this.detailLiked = detailStore.session().isRestaurantLiked(detailStore.selectedRestaurant())
+        this.detailMutationRevision = 0
+        this.navigateTo(routePath(RouteId.RestaurantDetails))
+    }
+
+    private func detailState(): DetailPageState {
+        return detailStore.loadDetailState(
+            this.detailRecommendedExpanded,
+            this.detailNonVegExpanded,
+            this.detailVegExpanded
+        )
+    }
+
+    private func selectHomeRestaurant(restaurant: RestaurantData): Unit {
+        homeStore.selectRestaurant(restaurant, { =>
+            this.goToRestaurantDetail()
+        })
+    }
+
+    private func selectHistoryRestaurant(restaurant: RestaurantData): Unit {
+        historyStore.selectRestaurant(restaurant, { =>
+            this.goToRestaurantDetail()
+        })
     }
 
     @Builder
     private func buildOnboardingRoute() {
-        Column(space: 24) {
-            Swiper(controller: this.onboardingController) {
-                this.buildOnboardingCard(
-                    onboardingStore.slideAt(0).title,
-                    onboardingStore.slideAt(0).description,
-                    onboardingStore.slideAt(0).mediaName
-                )
-                this.buildOnboardingCard(
-                    onboardingStore.slideAt(1).title,
-                    onboardingStore.slideAt(1).description,
-                    onboardingStore.slideAt(1).mediaName
-                )
-                this.buildOnboardingCard(
-                    onboardingStore.slideAt(2).title,
-                    onboardingStore.slideAt(2).description,
-                    onboardingStore.slideAt(2).mediaName
-                )
-            }
-            .indicator(true)
-            .onChange({ index: Int32 =>
+        renderOnboardingRoute(
+            this.onboardingPageIndex,
+            this.onboardingController,
+            { index: Int32 =>
                 this.onboardingPageIndex = Int64(index)
-            })
-            .width(100.percent)
-            .height(78.percent)
-
-            Row {
-                Text("${this.onboardingPageIndex + 1}/${onboardingStore.pageCount()}")
-                    .fontSize(16)
-                    .fontColor(Color.White)
-                Button(if (onboardingStore.isLastPage(this.onboardingPageIndex)) { "Login" } else { "Next" })
-                    .onClick({ _ =>
-                        if (onboardingStore.isLastPage(this.onboardingPageIndex)) {
-                            this.navigateTo(routePath(RouteId.Login))
-                        } else {
-                            this.onboardingController.showNext()
-                        }
-                    })
+            },
+            { =>
+                if (onboardingStore.isLastPage(this.onboardingPageIndex)) {
+                    this.navigateTo(routePath(RouteId.Login))
+                } else {
+                    this.onboardingController.showNext()
+                }
             }
-            .width(90.percent)
-            .justifyContent(FlexAlign.SpaceBetween)
-            .alignItems(VerticalAlign.Center)
-            .margin(bottom: 12)
-        }
-        .width(100.percent)
-        .height(100.percent)
-        .backgroundColor(colorDarkGreen)
-        .alignItems(HorizontalAlign.Center)
-        .justifyContent(FlexAlign.SpaceBetween)
+        )
     }
 
     @Builder
     private func buildLoginRoute() {
-        Column(space: 16) {
-            Text(stringWelcomeBack)
-                .fontSize(32)
-                .fontWeight(FontWeight.Bold)
-
-            TextInput(text: this.loginEmail, placeholder: loginStore.emailHint)
-                .width(90.percent)
-                .height(52)
-                .fontSize(16)
-                .placeholderColor(Color.Gray)
-                .onChange({ value: String =>
-                    this.loginEmail = value
-                })
-
-            TextInput(text: this.loginPassword, placeholder: loginStore.passwordHint)
-                .width(90.percent)
-                .height(52)
-                .fontSize(16)
-                .placeholderColor(Color.Gray)
-                .enterKeyType(EnterKeyType.Done)
-                .onChange({ value: String =>
-                    this.loginPassword = value
-                })
-                .onSubmit({ _ =>
-                    this.performLogin()
-                })
-
-            Text(stringForgotPassword)
-                .fontSize(14)
-                .fontColor(Color.Gray)
-                .width(90.percent)
-                .textAlign(TextAlign.End)
-                .onClick({ _ =>
-                    this.showToast(loginStore.comingSoonMessage)
-                })
-
-            Button(stringLogin)
-                .width(220)
-                .height(50)
-                .onClick({ _ =>
-                    this.performLogin()
-                })
-
-            Row {
-                Text(stringOrSignInWith)
-                    .fontSize(16)
-                    .fontColor(Color.Gray)
-            }
-            .margin(top: 8)
-
-            Row(space: 20) {
-                Image(mediaGoogIcon)
-                    .width(48)
-                    .height(48)
-                    .onClick({ _ =>
-                        this.showToast(loginStore.comingSoonMessage)
-                    })
-                Image(mediaFbIcon)
-                    .width(48)
-                    .height(48)
-                    .onClick({ _ =>
-                        this.showToast(loginStore.comingSoonMessage)
-                    })
-            }
-
-            Text(stringNewToFoodike)
-                .fontSize(15)
-                .fontColor(Color.Gray)
-                .margin(top: 8)
-                .onClick({ _ =>
-                    this.showToast(loginStore.comingSoonMessage)
-                })
-        }
-        .width(100.percent)
-        .height(100.percent)
-        .padding(top: 24, right: 24, bottom: 24, left: 24)
-        .justifyContent(FlexAlign.Center)
-        .alignItems(HorizontalAlign.Center)
-        .backgroundColor(Color.White)
+        renderLoginRoute(
+            this.loginEmail,
+            this.loginPassword,
+            this.loginErrorMessage,
+            { value: String =>
+                this.loginEmail = value
+                this.clearLoginError()
+            },
+            { value: String =>
+                this.loginPassword = value
+                this.clearLoginError()
+            },
+            { => this.showToast(loginStore.comingSoonMessage) },
+            { => this.performLogin() },
+            { => this.showToast(loginStore.comingSoonMessage) },
+            { => this.showToast(loginStore.comingSoonMessage) },
+            { => this.showToast(loginStore.comingSoonMessage) },
+            { => this.clearLoginError() }
+        )
     }
 
     @Builder
     private func buildProfileRoute() {
-        Column(space: 18) {
-            this.buildTopBar(stringProfileTitle, stringBack, { =>
-                this.navigateTo(profileStore.backRoute())
-            })
+        renderProfileRoute(
+            profileStore.userName,
+            profileStore.userEmail,
+            { => this.navigateTo(profileStore.backRoute()) },
+            { => this.showToast(profileStore.placeholderActionMessage) },
+            { => this.showToast(profileStore.placeholderActionMessage) },
+            { => this.performLogout() }
+        )
+    }
 
-            Row {
-                Column(space: 6) {
-                    Text(profileStore.userName)
-                        .fontSize(28)
-                        .fontWeight(FontWeight.Bold)
-                    Text(profileStore.userEmail)
-                        .fontSize(15)
-                        .fontColor(Color.Gray)
-                }
-                .layoutWeight(1)
-
-                Column(space: 8) {
-                    Image(mediaProfile)
-                        .width(96)
-                        .height(96)
-                    Text(stringEdit)
-                        .fontSize(15)
-                        .fontColor(colorDarkGreen)
-                        .fontWeight(FontWeight.Bold)
-                        .onClick({ _ =>
-                            this.showToast(profileStore.placeholderActionMessage)
-                        })
-                }
-                .alignItems(HorizontalAlign.Center)
+    @Builder
+    private func buildHomeRoute() {
+        renderHomeRoute(
+            homeStore.loadHomeState(),
+            this.homeHour(),
+            this.homeSearchQuery,
+            this.homeSelectedFilter,
+            { value: String =>
+                this.homeSearchQuery = value
+            },
+            { value: String =>
+                this.homeSelectedFilter = homeStore.toggleFilter(this.homeSelectedFilter, value)
+            },
+            { => this.goToProfile() },
+            { restaurant: RestaurantData =>
+                this.selectHomeRestaurant(restaurant)
             }
-            .width(100.percent)
-            .alignItems(VerticalAlign.Center)
+        )
+    }
 
-            Divider()
-                .width(100.percent)
-
-            Column {
-                Column(space: 8) {
-                    Text(stringSavedAddresses)
-                        .fontSize(21)
-                        .fontWeight(FontWeight.Medium)
-                    Text(stringAddEditSavedAddresses)
-                        .fontSize(15)
-                        .fontColor(Color.Gray)
-                    Divider().width(100.percent)
-                }
-                .width(100.percent)
-                .padding(top: 10, bottom: 10)
-                .onClick({ _ => this.showToast(profileStore.placeholderActionMessage) })
-                Column(space: 8) {
-                    Text(stringPaymentsAndRefunds)
-                        .fontSize(21)
-                        .fontWeight(FontWeight.Medium)
-                    Text(stringRefundsInformation)
-                        .fontSize(15)
-                        .fontColor(Color.Gray)
-                    Divider().width(100.percent)
-                }
-                .width(100.percent)
-                .padding(top: 10, bottom: 10)
-                .onClick({ _ => this.showToast(profileStore.placeholderActionMessage) })
-                Column(space: 8) {
-                    Text(stringOnlineOrderingHelp)
-                        .fontSize(21)
-                        .fontWeight(FontWeight.Medium)
-                    Text(stringOrderingInformation)
-                        .fontSize(15)
-                        .fontColor(Color.Gray)
-                    Divider().width(100.percent)
-                }
-                .width(100.percent)
-                .padding(top: 10, bottom: 10)
-                .onClick({ _ => this.showToast(profileStore.placeholderActionMessage) })
-                Column(space: 8) {
-                    Text(stringAbout)
-                        .fontSize(21)
-                        .fontWeight(FontWeight.Medium)
-                    Text(stringAboutTheApp)
-                        .fontSize(15)
-                        .fontColor(Color.Gray)
-                }
-                .width(100.percent)
-                .padding(top: 10, bottom: 10)
-                .onClick({ _ => this.showToast(profileStore.placeholderActionMessage) })
+    @Builder
+    private func buildHistoryRoute() {
+        renderHistoryRoute(
+            historyStore.loadHistoryState(),
+            this.historyTabIndex,
+            this.historySearchQuery,
+            { value: String =>
+                this.historySearchQuery = value
+            },
+            { value: Int64 =>
+                this.historyTabIndex = value
+            },
+            { restaurant: RestaurantData =>
+                this.selectHistoryRestaurant(restaurant)
             }
-            .width(100.percent)
+        )
+    }
 
-            Blank()
-                .layoutWeight(1)
+    @Builder
+    private func buildCartRoute() {
+        renderCartRoute(
+            cartStore.loadCartState(),
+            this.cartNote,
+            this.cartCoupon,
+            { value: String =>
+                this.cartNote = value
+            },
+            { value: String =>
+                this.cartCoupon = value
+            },
+            { item: CartSnapshotItemData =>
+                cartStore.decrementQuantity(item)
+                this.cartMutationRevision += 1
+            },
+            { item: CartSnapshotItemData =>
+                cartStore.incrementQuantity(item)
+                this.cartMutationRevision += 1
+            },
+            { =>
+                this.navigateBack()
+            }
+        )
+    }
 
-            Button(stringLogOut)
-                .width(220)
-                .height(50)
-                .onClick({ _ =>
-                    this.performLogout()
-                })
-        }
-        .width(100.percent)
-        .height(100.percent)
-        .padding(top: 18, right: 24, bottom: 24, left: 24)
-        .backgroundColor(Color.White)
+    @Builder
+    private func buildDetailRoute() {
+        renderDetailRoute(
+            this.detailState(),
+            { =>
+                this.navigateBack()
+            },
+            { =>
+                let restaurant = detailStore.selectedRestaurant()
+                this.detailLiked = detailStore.toggleLiked(restaurant, this.detailLiked)
+            },
+            { =>
+                this.showToast("Share coming soon")
+            },
+            { =>
+                this.detailRecommendedExpanded = !this.detailRecommendedExpanded
+            },
+            { =>
+                this.detailNonVegExpanded = !this.detailNonVegExpanded
+            },
+            { =>
+                this.detailVegExpanded = !this.detailVegExpanded
+            },
+            { item: DetailMenuItemData =>
+                detailStore.incrementQuantity(item)
+                this.detailMutationRevision += 1
+            },
+            { item: DetailMenuItemData =>
+                detailStore.decrementQuantity(item)
+                this.detailMutationRevision += 1
+            },
+            { =>
+                this.navigateTo(routePath(RouteId.Cart))
+            }
+        )
     }
 
     @Builder
@@ -438,6 +409,14 @@ class FoodikeBootstrap {
             this.buildOnboardingRoute()
         } else if (this.currentRoute == routePath(RouteId.Login)) {
             this.buildLoginRoute()
+        } else if (this.currentRoute == routePath(RouteId.Home)) {
+            this.buildHomeRoute()
+        } else if (this.currentRoute == routePath(RouteId.History)) {
+            this.buildHistoryRoute()
+        } else if (this.currentRoute == routePath(RouteId.Cart)) {
+            this.buildCartRoute()
+        } else if (this.currentRoute == routePath(RouteId.RestaurantDetails)) {
+            this.buildDetailRoute()
         } else if (this.currentRoute == routePath(RouteId.Profile)) {
             this.buildProfileRoute()
         } else {

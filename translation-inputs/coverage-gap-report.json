@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-25T06:25:26+00:00",
+  "generatedAt": "2026-06-26T04:03:33+00:00",
   "sourceRoot": "D:\\Kotlin2Cangjie\\Foodike",
   "targetRoot": "D:\\workspace\\Foodike\\Foodike-Harmony",
   "locProviders": {
@@ -104,28 +104,23 @@
     "notes": "LOC gap findings use external tool code lines when available. Physical/nonblank/comment/blank ratios remain supporting evidence."
   },
   "ratios": {
-    "targetToSourceFiles": 0.2877,
-    "targetToSourceTextFiles": 0.3208,
-    "targetToSourceNonblankLines": 0.1612,
-    "targetToSourceProductionTextFiles": 0.3077,
-    "targetToSourceProductionNonblankLines": 0.1476,
-    "targetToSourceCodeFiles": 0.2471,
-    "targetToSourceCodeNonblankLines": 0.1255,
-    "targetToSourceProductionCodeFiles": 0.2289,
-    "targetToSourceProductionCodeNonblankLines": 0.1104,
-    "targetToSourceProductionCodeLines": 0.1589,
-    "targetToSourceTestFiles": 1.0
+    "targetToSourceFiles": 0.5411,
+    "targetToSourceTextFiles": 0.5283,
+    "targetToSourceNonblankLines": 0.7696,
+    "targetToSourceProductionTextFiles": 0.4808,
+    "targetToSourceProductionNonblankLines": 0.7282,
+    "targetToSourceCodeFiles": 0.4706,
+    "targetToSourceCodeNonblankLines": 0.4235,
+    "targetToSourceProductionCodeFiles": 0.4337,
+    "targetToSourceProductionCodeNonblankLines": 0.3848,
+    "targetToSourceProductionCodeLines": 0.5545,
+    "targetToSourceTestFiles": 3.0
   },
   "findings": [
     {
-      "severity": "high",
-      "kind": "large-loc-gap",
-      "message": "Target production code LoC is below 50% of source production code LoC. This may be valid only if the plan explains major platform/library replacements and deferred scope."
-    },
-    {
       "severity": "medium",
-      "kind": "file-count-gap",
-      "message": "Target text file count is much smaller than source; check for omitted screens, adapters, resources, tests, or platform integrations."
+      "kind": "medium-loc-gap",
+      "message": "Target production code LoC is below 75% of source production code LoC; verify that feature coverage is intentional and not hidden by tests or notes."
     },
     {
       "severity": "high",
@@ -133,29 +128,34 @@
       "message": "Target string resources cover only part of source base strings."
     },
     {
+      "severity": "medium",
+      "kind": "target-weakening-signals",
+      "message": "Target code contains implementation-placeholder/stub/in-memory/deferred wording; verify each occurrence is intentional and documented."
+    },
+    {
       "severity": "high",
       "kind": "coverage-matrix-uncovered-entry",
-      "message": "192 critical/high source feature(s) remain planned, unreviewed, or not covered."
+      "message": "116 critical/high source feature(s) remain planned, unreviewed, or not covered."
     },
     {
       "severity": "medium",
-      "kind": "target-structure-large-file",
-      "message": "1 production target code file(s) are large or dominate target production code. Use the source project structure as a responsibility reference and split overgrown files into coherent Cangjie domain/service/state modules when it improves later repairability."
+      "kind": "target-structure-endpoint-concentration",
+      "message": "1 target file(s) carry a concentrated share of matrix targetEndpoints. Check whether unrelated source clusters are being closed through a broad shell instead of precise domain functions."
     },
     {
       "severity": "medium",
       "kind": "target-structure-broad-shell-endpoints",
-      "message": "2 broad shell-like target file(s) carry many coverage endpoints. Prefer targetEndpoints that name specific business functions or extracted modules."
+      "message": "1 broad shell-like target file(s) carry many coverage endpoints. Prefer targetEndpoints that name specific business functions or extracted modules."
     },
     {
       "severity": "medium",
       "kind": "target-structure-ui-surface-concentration",
-      "message": "1 target UI surface file(s) contain many page/view/dialog/list symbols. Split obvious settings/viewer/folder/about/player/gallery surfaces when they are becoming one long root shell."
+      "message": "2 target UI surface file(s) contain many page/view/dialog/list symbols. Split obvious settings/viewer/folder/about/player/gallery surfaces when they are becoming one long root shell."
     },
     {
       "severity": "medium",
       "kind": "target-structure-ui-endpoint-concentration",
-      "message": "3 target file(s) concentrate UI-related matrix endpoints. Check that routes are mutually rendered, back behavior is explicit, and UI evidence points at screen/page-specific builders rather than one debug-style shell."
+      "message": "2 target file(s) concentrate UI-related matrix endpoints. Check that routes are mutually rendered, back behavior is explicit, and UI evidence points at screen/page-specific builders rather than one debug-style shell."
     }
   ],
   "coverageMatrix": {
@@ -165,7 +165,7 @@
       "actualEntries": 260,
       "staleEntries": 0,
       "missingCriticalHighEntries": 0,
-      "uncoveredCriticalHighEntries": 192,
+      "uncoveredCriticalHighEntries": 116,
       "deferredCriticalHighEntries": 0,
       "deferredCriticalHighRatio": 0.0,
       "simplifiedCriticalHighEntries": 0,
@@ -180,16 +180,17 @@
       "repeatedImplementedEndpointGroups": 0,
       "broadImplementedEndpointCriticalHighEntries": 0,
       "unverifiedTestEvidenceCriticalHighEntries": 0,
-      "testEvidenceVerifiedByLatestTestGateEntries": 9,
+      "testEvidenceVerifiedByLatestTestGateEntries": 29,
       "weakEvidenceCriticalHighEntries": 0,
+      "implementedWithoutEndpointOrTestCriticalHighEntries": 0,
       "missingSourceBehaviorCriticalHighEntries": 0,
       "missingTargetBehaviorCriticalHighEntries": 0,
       "missingVerificationEvidenceCriticalHighEntries": 0,
       "parityMismatchCriticalHighEntries": 0,
       "byStatus": {
-        "implemented": 13,
-        "not-applicable": 11,
-        "planned": 227,
+        "implemented": 60,
+        "not-applicable": 50,
+        "planned": 141,
         "platform-replaced": 9
       },
       "allowedParityLevels": [
@@ -259,20 +260,20 @@
   },
   "targetStructure": {
     "summary": {
-      "productionCodeFiles": 19,
-      "productionCodeNonblankLines": 754,
-      "largestProductionCodeFileNonblankLines": 405,
-      "largeProductionCodeFiles": 1,
-      "endpointBearingFeatureRows": 22,
-      "endpointTargetFiles": 16,
-      "largestEndpointFileShare": 0.3636,
-      "concentratedEndpointFiles": 0,
-      "broadShellEndpointFiles": 2,
-      "uiSurfaceFiles": 6,
-      "concentratedUiSurfaceFiles": 1,
-      "uiEndpointBearingFeatureRows": 22,
-      "uiEndpointTargetFiles": 16,
-      "concentratedUiEndpointFiles": 3,
+      "productionCodeFiles": 36,
+      "productionCodeNonblankLines": 2629,
+      "largestProductionCodeFileNonblankLines": 374,
+      "largeProductionCodeFiles": 0,
+      "endpointBearingFeatureRows": 69,
+      "endpointTargetFiles": 37,
+      "largestEndpointFileShare": 0.5652,
+      "concentratedEndpointFiles": 1,
+      "broadShellEndpointFiles": 1,
+      "uiSurfaceFiles": 18,
+      "concentratedUiSurfaceFiles": 2,
+      "uiEndpointBearingFeatureRows": 66,
+      "uiEndpointTargetFiles": 33,
+      "concentratedUiEndpointFiles": 2,
       "entryModuleStatus": "PASS",
       "entryRootPackage": "ohos_app_cangjie_entry"
     },
@@ -281,29 +282,39 @@
     "findings": [
       {
         "severity": "medium",
-        "kind": "target-structure-large-file",
-        "message": "1 production target code file(s) are large or dominate target production code. Use the source project structure as a responsibility reference and split overgrown files into coherent Cangjie domain/service/state modules when it improves later repairability."
+        "kind": "target-structure-endpoint-concentration",
+        "message": "1 target file(s) carry a concentrated share of matrix targetEndpoints. Check whether unrelated source clusters are being closed through a broad shell instead of precise domain functions."
       },
       {
         "severity": "medium",
         "kind": "target-structure-broad-shell-endpoints",
-        "message": "2 broad shell-like target file(s) carry many coverage endpoints. Prefer targetEndpoints that name specific business functions or extracted modules."
+        "message": "1 broad shell-like target file(s) carry many coverage endpoints. Prefer targetEndpoints that name specific business functions or extracted modules."
       },
       {
         "severity": "medium",
         "kind": "target-structure-ui-surface-concentration",
-        "message": "1 target UI surface file(s) contain many page/view/dialog/list symbols. Split obvious settings/viewer/folder/about/player/gallery surfaces when they are becoming one long root shell."
+        "message": "2 target UI surface file(s) contain many page/view/dialog/list symbols. Split obvious settings/viewer/folder/about/player/gallery surfaces when they are becoming one long root shell."
       },
       {
         "severity": "medium",
         "kind": "target-structure-ui-endpoint-concentration",
-        "message": "3 target file(s) concentrate UI-related matrix endpoints. Check that routes are mutually rendered, back behavior is explicit, and UI evidence points at screen/page-specific builders rather than one debug-style shell."
+        "message": "2 target file(s) concentrate UI-related matrix endpoints. Check that routes are mutually rendered, back behavior is explicit, and UI evidence points at screen/page-specific builders rather than one debug-style shell."
       }
     ]
   },
   "targetWeakeningSignals": {
-    "counts": {},
-    "samples": {}
+    "counts": {
+      "todo": 1
+    },
+    "samples": {
+      "todo": [
+        {
+          "path": ".mapcir.json",
+          "line": 95,
+          "text": "\"text\": \"Convert diagnostics into warnings, TODO items, or manual review notes in generated migration output.\""
+        }
+      ]
+    }
   },
   "mustReviewSourceFiles": [
     {

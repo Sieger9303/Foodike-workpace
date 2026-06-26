@@ -22,6 +22,7 @@ These standing rules apply when an agent translates a source app to a HarmonyOS 
 
 - Do not mechanically match source lines of code. Large unexplained shrinkage is a warning signal for omitted behavior or weakened platform integration.
 - Maintain the source coverage matrix and platform capability check as the translation progresses.
+- When you update source coverage rows, keep `coverageFacts` aligned with the legacy status/evidence fields. Use `factsSource: agent` only for source/target facts you can support with evidence. When you update platform capability rows, keep `capabilityFacts` aligned with the capability decision. The workflow reads these structured facts for gates and repair queues; explanatory prose is useful, but it does not replace required structured fields.
 - Map critical/high source features, resources, tests, and platform integrations to implemented target behavior, supplemental tests, platform replacement, or explicit deferred items.
 - Critical/high `implemented` entries need specific evidence. Record sourceBehavior, targetBehavior, parityLevel, targetEndpoints, and verificationEvidence. Do not bulk-promote many rows with the same notes/tests/endpoints, do not rely only on root pages, shell views, state classes, whole files, or grouped endpoint lists, and do not cite target tests as strong evidence unless the notes or verificationEvidence record a successful target test compile/run command.
 - A build pass alone is not per-feature behavior verification.

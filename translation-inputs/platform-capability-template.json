@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-25T06:25:26+00:00",
+  "generatedAt": "2026-06-26T04:03:32+00:00",
   "purpose": "Detected platform capability contracts. The agent must verify target HarmonyOS/Cangjie APIs or libraries with CangjieSkills/HarmonyOS/Cangjie API docs, HarmonyOS-Examples, platform docs, or package index lookup before direct replacement, fallback, or deferred status. Direct evidence must be callable from the Cangjie target; ArkTS declarations or native headers/libraries alone are discovery evidence until a Cangjie wrapper, FFI, or bridge is verified. cjpm/project-management docs are only dependency configuration evidence after a package/library is chosen.",
   "allowedStatuses": [
     "deferred",
@@ -12,6 +12,69 @@
     "unreviewed",
     "verified-direct"
   ],
+  "allowedCapabilityFacts": {
+    "resolutionKind": [
+      "open",
+      "direct-api",
+      "platform-replacement",
+      "fallback",
+      "deferred",
+      "not-applicable"
+    ],
+    "apiEvidenceKinds": [
+      "cangjie-sdk-declaration",
+      "cangjie-callable-api",
+      "harmonyos-example",
+      "third-party-package",
+      "target-endpoint",
+      "compile-probe-pass",
+      "build-gate-pass"
+    ],
+    "callableApiEvidenceKinds": [
+      "cangjie-sdk-declaration",
+      "cangjie-callable-api",
+      "harmonyos-example",
+      "third-party-package"
+    ],
+    "discoveryOnlyEvidenceKinds": [
+      "arkts-doc",
+      "native-doc",
+      "overview-doc",
+      "marketing-doc",
+      "unknown-language-example"
+    ],
+    "compileProbeEvidenceKinds": [
+      "compile-probe-pass",
+      "compile-probe-fail",
+      "compile-probe-blocked",
+      "build-gate-pass",
+      "build-gate-fail"
+    ],
+    "fallbackKinds": [
+      "local-simulation",
+      "sample-data",
+      "in-memory-state",
+      "manual-user-action",
+      "ui-disabled",
+      "product-omission"
+    ],
+    "blockerKinds": [
+      "missing-cangjie-sdk-declaration",
+      "arkts-only-api",
+      "native-only-api",
+      "missing-package",
+      "requires-device-service",
+      "requires-credentials",
+      "requires-product-decision",
+      "compile-probe-failed",
+      "unknown"
+    ],
+    "factsSource": [
+      "agent",
+      "inferred-from-legacy",
+      "template"
+    ]
+  },
   "deferredRequiredFields": [
     "targetCapabilitySearch",
     "blocker",
@@ -597,7 +660,28 @@
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": ""
+      "notes": "",
+      "capabilityFacts": {
+        "schemaVersion": 1,
+        "resolutionKind": "open",
+        "activeFallback": {
+          "used": false,
+          "fallbackKind": "",
+          "reason": "",
+          "blocker": ""
+        },
+        "apiEvidence": [],
+        "discoveryOnlyEvidence": [],
+        "compileProbeEvidence": [],
+        "targetEndpoints": [],
+        "blocker": {
+          "used": false,
+          "kind": "",
+          "detail": "",
+          "futureCompletionPath": ""
+        },
+        "factsSource": "template"
+      }
     },
     {
       "capabilityId": "file-access-and-saf",
@@ -2281,7 +2365,28 @@
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": ""
+      "notes": "",
+      "capabilityFacts": {
+        "schemaVersion": 1,
+        "resolutionKind": "open",
+        "activeFallback": {
+          "used": false,
+          "fallbackKind": "",
+          "reason": "",
+          "blocker": ""
+        },
+        "apiEvidence": [],
+        "discoveryOnlyEvidence": [],
+        "compileProbeEvidence": [],
+        "targetEndpoints": [],
+        "blocker": {
+          "used": false,
+          "kind": "",
+          "detail": "",
+          "futureCompletionPath": ""
+        },
+        "factsSource": "template"
+      }
     },
     {
       "capabilityId": "image-viewer-gestures",
@@ -2933,7 +3038,28 @@
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": ""
+      "notes": "",
+      "capabilityFacts": {
+        "schemaVersion": 1,
+        "resolutionKind": "open",
+        "activeFallback": {
+          "used": false,
+          "fallbackKind": "",
+          "reason": "",
+          "blocker": ""
+        },
+        "apiEvidence": [],
+        "discoveryOnlyEvidence": [],
+        "compileProbeEvidence": [],
+        "targetEndpoints": [],
+        "blocker": {
+          "used": false,
+          "kind": "",
+          "detail": "",
+          "futureCompletionPath": ""
+        },
+        "factsSource": "template"
+      }
     },
     {
       "capabilityId": "localization-resources",
@@ -3703,7 +3829,28 @@
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": ""
+      "notes": "",
+      "capabilityFacts": {
+        "schemaVersion": 1,
+        "resolutionKind": "open",
+        "activeFallback": {
+          "used": false,
+          "fallbackKind": "",
+          "reason": "",
+          "blocker": ""
+        },
+        "apiEvidence": [],
+        "discoveryOnlyEvidence": [],
+        "compileProbeEvidence": [],
+        "targetEndpoints": [],
+        "blocker": {
+          "used": false,
+          "kind": "",
+          "detail": "",
+          "futureCompletionPath": ""
+        },
+        "factsSource": "template"
+      }
     },
     {
       "capabilityId": "runtime-permissions",
@@ -5449,7 +5596,28 @@
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": ""
+      "notes": "",
+      "capabilityFacts": {
+        "schemaVersion": 1,
+        "resolutionKind": "open",
+        "activeFallback": {
+          "used": false,
+          "fallbackKind": "",
+          "reason": "",
+          "blocker": ""
+        },
+        "apiEvidence": [],
+        "discoveryOnlyEvidence": [],
+        "compileProbeEvidence": [],
+        "targetEndpoints": [],
+        "blocker": {
+          "used": false,
+          "kind": "",
+          "detail": "",
+          "futureCompletionPath": ""
+        },
+        "factsSource": "template"
+      }
     },
     {
       "capabilityId": "background-and-platform-components",
@@ -5713,7 +5881,28 @@
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": ""
+      "notes": "",
+      "capabilityFacts": {
+        "schemaVersion": 1,
+        "resolutionKind": "open",
+        "activeFallback": {
+          "used": false,
+          "fallbackKind": "",
+          "reason": "",
+          "blocker": ""
+        },
+        "apiEvidence": [],
+        "discoveryOnlyEvidence": [],
+        "compileProbeEvidence": [],
+        "targetEndpoints": [],
+        "blocker": {
+          "used": false,
+          "kind": "",
+          "detail": "",
+          "futureCompletionPath": ""
+        },
+        "factsSource": "template"
+      }
     }
   ]
 }

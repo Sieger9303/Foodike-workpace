@@ -1,0 +1,746 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-26T03:59:01+00:00",
+  "phase": "phase-06-polish-tests-verification",
+  "workspaceRoot": "D:\\workspace\\Foodike",
+  "targetProject": "D:\\workspace\\Foodike\\Foodike-Harmony",
+  "outputDir": "D:\\workspace\\Foodike\\translation-inputs",
+  "reportDir": "D:\\workspace\\Foodike\\translation-inputs\\test-build-reports\\phase-06-polish-tests-verification",
+  "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\test-build-reports\\phase-06-polish-tests-verification\\test-build-report.md",
+  "jsonPath": "D:\\workspace\\Foodike\\translation-inputs\\test-build-reports\\phase-06-polish-tests-verification\\test-build-report.json",
+  "logPath": "D:\\workspace\\Foodike\\translation-inputs\\test-build-reports\\phase-06-polish-tests-verification\\test-build.log",
+  "platform": {
+    "osName": "nt",
+    "sysPlatform": "win32",
+    "pathSeparator": ";"
+  },
+  "target": "aarch64-linux-ohos",
+  "result": "PASS",
+  "recommendedOwner": "none",
+  "returncode": 0,
+  "timedOut": false,
+  "durationSeconds": 2.266,
+  "testRoot": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\test\\cangjie",
+  "packageRoot": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\test\\cangjie",
+  "referencedEnvVars": [
+    "AARCH64_KIT_LIBS",
+    "AARCH64_LIBS",
+    "AARCH64_MACRO_LIBS",
+    "COMPILE_CONDITION_ENTRY",
+    "DEVECO_CANGJIE_HOME",
+    "DEVECO_OH_NATIVE_HOME",
+    "X86_64_LIBS",
+    "X86_64_MACRO_LIBS",
+    "X86_64_OHOS_KIT_LIBS",
+    "X86_64_OHOS_LIBS",
+    "X86_64_OHOS_MACRO_LIBS"
+  ],
+  "command": [
+    "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\build-tools\\tools\\bin\\cjpm.exe",
+    "test",
+    "--target",
+    "aarch64-linux-ohos"
+  ],
+  "sdk": {
+    "selectedPath": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie",
+    "missingMessage": null,
+    "candidateCount": 2,
+    "candidates": [
+      {
+        "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie",
+        "version": "6.1",
+        "kind": "full-harmonyos-cangjie-sdk",
+        "usable": true,
+        "missing": [],
+        "required_paths": [
+          "oh-uni-package.json",
+          "api/modules",
+          "build-tools/bin/cjc",
+          "build-tools/tools/bin/cjpm",
+          "build-tools/tools/bin/cjfmt",
+          "build-tools/tools/bin/LSPServer",
+          "build-tools/tools/hvigor/cangjie-build-support/index.js",
+          "build-tools/runtime/lib/linux_ohos_aarch64_cjnative",
+          "build-tools/modules/linux_ohos_aarch64_cjnative"
+        ],
+        "cjc": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\build-tools\\bin\\cjc.exe",
+        "cjpm": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\build-tools\\tools\\bin\\cjpm.exe",
+        "cjfmt": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\build-tools\\tools\\bin\\cjfmt.exe",
+        "lsp_server": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\build-tools\\tools\\bin\\LSPServer.exe"
+      },
+      {
+        "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie",
+        "version": "6.0",
+        "kind": "full-harmonyos-cangjie-sdk",
+        "usable": true,
+        "missing": [],
+        "required_paths": [
+          "oh-uni-package.json",
+          "api/modules",
+          "build-tools/bin/cjc",
+          "build-tools/tools/bin/cjpm",
+          "build-tools/tools/bin/cjfmt",
+          "build-tools/tools/bin/LSPServer",
+          "build-tools/tools/hvigor/cangjie-build-support/index.js",
+          "build-tools/runtime/lib/linux_ohos_aarch64_cjnative",
+          "build-tools/modules/linux_ohos_aarch64_cjnative"
+        ],
+        "cjc": "C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\build-tools\\bin\\cjc.exe",
+        "cjpm": "C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\build-tools\\tools\\bin\\cjpm.exe",
+        "cjfmt": "C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\build-tools\\tools\\bin\\cjfmt.exe",
+        "lsp_server": "C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\build-tools\\tools\\bin\\LSPServer.exe"
+      }
+    ]
+  },
+  "cjpm": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\build-tools\\tools\\bin\\cjpm.exe",
+  "environment": {
+    "env": {
+      "DEVECO_CANGJIE_HOME": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie",
+      "AARCH64_LIBS": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos",
+      "AARCH64_MACRO_LIBS": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\macro\\ohos",
+      "AARCH64_KIT_LIBS": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit",
+      "DEVECO_OH_NATIVE_HOME": "D:\\Deveco\\Software\\DevEco Studio\\sdk\\default\\openharmony\\native",
+      "COMPILE_CONDITION_ENTRY": "entry=test"
+    },
+    "checks": [
+      {
+        "name": "AARCH64_KIT_LIBS",
+        "value": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit",
+        "required": true,
+        "paths": [
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit",
+            "exists": true
+          }
+        ],
+        "exists": true
+      },
+      {
+        "name": "AARCH64_LIBS",
+        "value": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos",
+        "required": true,
+        "paths": [
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos",
+            "exists": true
+          }
+        ],
+        "exists": true
+      },
+      {
+        "name": "AARCH64_MACRO_LIBS",
+        "value": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\macro\\ohos",
+        "required": true,
+        "paths": [
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\macro\\ohos",
+            "exists": true
+          }
+        ],
+        "exists": true
+      },
+      {
+        "name": "DEVECO_CANGJIE_HOME",
+        "value": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie",
+        "required": true,
+        "paths": [
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie",
+            "exists": true
+          }
+        ],
+        "exists": true
+      },
+      {
+        "name": "DEVECO_OH_NATIVE_HOME",
+        "value": "D:\\Deveco\\Software\\DevEco Studio\\sdk\\default\\openharmony\\native",
+        "required": true,
+        "paths": [
+          {
+            "path": "D:\\Deveco\\Software\\DevEco Studio\\sdk\\default\\openharmony\\native",
+            "exists": true
+          }
+        ],
+        "exists": true
+      }
+    ],
+    "missingRequired": [],
+    "missingOptional": [],
+    "referencedEnv": [
+      "AARCH64_KIT_LIBS",
+      "AARCH64_LIBS",
+      "AARCH64_MACRO_LIBS",
+      "COMPILE_CONDITION_ENTRY",
+      "DEVECO_CANGJIE_HOME",
+      "DEVECO_OH_NATIVE_HOME",
+      "X86_64_LIBS",
+      "X86_64_MACRO_LIBS",
+      "X86_64_OHOS_KIT_LIBS",
+      "X86_64_OHOS_LIBS",
+      "X86_64_OHOS_MACRO_LIBS"
+    ],
+    "nativeSdk": {
+      "selectedPath": "D:\\Deveco\\Software\\DevEco Studio\\sdk\\default\\openharmony\\native",
+      "candidates": [
+        {
+          "path": "D:\\Deveco\\Software\\DevEco Studio\\sdk\\default\\openharmony\\native",
+          "exists": true,
+          "valid": true
+        },
+        {
+          "path": "D:\\Deveco\\Software\\DevEco Studio\\sdk\\default\\hms\\native",
+          "exists": true,
+          "valid": true
+        },
+        {
+          "path": "D:\\Deveco\\Software\\DevEco Studio\\Contents\\sdk\\default\\openharmony\\native",
+          "exists": false,
+          "valid": false
+        },
+        {
+          "path": "D:\\Deveco\\Software\\DevEco Studio\\Contents\\sdk\\default\\hms\\native",
+          "exists": false,
+          "valid": false
+        },
+        {
+          "path": "\\Applications\\DevEco-Studio.app\\Contents\\sdk\\default\\openharmony\\native",
+          "exists": false,
+          "valid": false
+        },
+        {
+          "path": "\\Applications\\DevEco-Studio.app\\Contents\\sdk\\default\\hms\\native",
+          "exists": false,
+          "valid": false
+        },
+        {
+          "path": "C:\\Users\\Sieger\\Library\\Huawei\\Sdk\\default\\openharmony\\native",
+          "exists": false,
+          "valid": false
+        },
+        {
+          "path": "C:\\Users\\Sieger\\Library\\Huawei\\Sdk\\default\\hms\\native",
+          "exists": false,
+          "valid": false
+        },
+        {
+          "path": "C:\\Users\\Sieger\\AppData\\Local\\Huawei\\Sdk\\default\\openharmony\\native",
+          "exists": false,
+          "valid": false
+        },
+        {
+          "path": "C:\\Users\\Sieger\\AppData\\Local\\Huawei\\Sdk\\default\\hms\\native",
+          "exists": false,
+          "valid": false
+        },
+        {
+          "path": "C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\default\\openharmony\\native",
+          "exists": false,
+          "valid": false
+        },
+        {
+          "path": "C:\\Program Files\\Huawei\\DevEco Studio\\sdk\\default\\hms\\native",
+          "exists": false,
+          "valid": false
+        },
+        {
+          "path": "\\opt\\DevEco-Studio\\sdk\\default\\openharmony\\native",
+          "exists": false,
+          "valid": false
+        },
+        {
+          "path": "\\opt\\DevEco-Studio\\sdk\\default\\hms\\native",
+          "exists": false,
+          "valid": false
+        }
+      ]
+    },
+    "hostSdk": {
+      "selectedPath": "",
+      "candidates": [],
+      "source": "not-darwin"
+    },
+    "scalarDefaultsApplied": {
+      "COMPILE_CONDITION_ENTRY": "entry=test"
+    }
+  },
+  "reproductionRecipe": {
+    "preferred": "workflow-test-gate-script",
+    "workflowCommand": [
+      "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\test_build_report.py",
+      "--workspace-root",
+      "D:\\workspace\\Foodike",
+      "--target-project",
+      "D:\\workspace\\Foodike\\Foodike-Harmony",
+      "--output-dir",
+      "D:\\workspace\\Foodike\\translation-inputs",
+      "--phase",
+      "phase-06-polish-tests-verification",
+      "--target",
+      "aarch64-linux-ohos",
+      "--timeout",
+      "600"
+    ],
+    "manualCommand": [
+      "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\build-tools\\tools\\bin\\cjpm.exe",
+      "test",
+      "--target",
+      "aarch64-linux-ohos"
+    ],
+    "manualCwd": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\test\\cangjie",
+    "envOverlay": {
+      "DEVECO_CANGJIE_HOME": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie",
+      "AARCH64_LIBS": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos",
+      "AARCH64_MACRO_LIBS": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\macro\\ohos",
+      "AARCH64_KIT_LIBS": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit",
+      "DEVECO_OH_NATIVE_HOME": "D:\\Deveco\\Software\\DevEco Studio\\sdk\\default\\openharmony\\native",
+      "COMPILE_CONDITION_ENTRY": "entry=test"
+    },
+    "rules": [
+      "Prefer workflowCommand first; it rebuilds the report and classifies failures.",
+      "If manual reproduction is needed, run manualCommand from manualCwd with envOverlay applied.",
+      "Do not run a bare cjpm test without the reported target/package root and env overlay.",
+      "Limit manual reproduction to one focused pass unless the report identifies a concrete portable fix."
+    ]
+  },
+  "blockers": [],
+  "firstBlocker": null,
+  "handoffPrompt": "",
+  "reusedPreviousPass": false,
+  "skipReason": "",
+  "inputFingerprint": {
+    "sha256": "bc5c1197895905dfc179d9c537a0ff9764446c6b4cdffa648cd3759c389aa9de",
+    "parts": {
+      "version": "test-build-report-v1",
+      "targetProject": {
+        "path": "D:\\workspace\\Foodike\\Foodike-Harmony",
+        "exists": true,
+        "fileCount": 81,
+        "sha256": "c45759d9cb114ba83857130ed53a08ef4ee4211b724e8bc7aebd8566083c1e49",
+        "files": [
+          {
+            "path": ".mapcir.json",
+            "sizeBytes": 72868,
+            "sha256": "9ef92612270a89b001928dc9a1543909f11b7ba2fa3eb1d8b5c8bb57945957d6"
+          },
+          {
+            "path": "AppScope/app.json5",
+            "sizeBytes": 203,
+            "sha256": "8478665bb6559f2e1a545496830d9a2ed64335cfdbd79e6e91c308e8071e4ba3"
+          },
+          {
+            "path": "AppScope/resources/base/element/color.json",
+            "sizeBytes": 742,
+            "sha256": "32e806d050683392433b2a6e3b5122d34170f38aecfecc7a96fd6728eaa2e618"
+          },
+          {
+            "path": "AppScope/resources/base/element/string.json",
+            "sizeBytes": 93,
+            "sha256": "67de9ade79433bc74c247ddbea397416828cdd021916a3695a8f604de893c08d"
+          },
+          {
+            "path": "AppScope/resources/base/media/icon.png",
+            "sizeBytes": 9393,
+            "sha256": "4b7260eed6fe84e185c141b5690ee8adf8ec267245d37d3f80e574728d8d71d7"
+          },
+          {
+            "path": "build-profile.json5",
+            "sizeBytes": 843,
+            "sha256": "f22e0ce317460eafa862448cc33d04dc47cd3617ddc72faeac46b5493843753f"
+          },
+          {
+            "path": "entry/build-profile.json5",
+            "sizeBytes": 293,
+            "sha256": "62d278f092ff72848b71b9b68f25cdbd568d770e077bda778b9009a496087798"
+          },
+          {
+            "path": "entry/cjpm.lock",
+            "sizeBytes": 27,
+            "sha256": "0c5143e1df64599643d0c66ea4ad548eb4760d7161fd616c297d22aac52c7eb2"
+          },
+          {
+            "path": "entry/cjpm.toml",
+            "sizeBytes": 1929,
+            "sha256": "36b7bc50fba1d1a83c6795ed505972e7c99559e8a4d4026917c08ac18ac7e5d8"
+          },
+          {
+            "path": "entry/hvigorfile.ts",
+            "sizeBytes": 107,
+            "sha256": "03843c370f5ba500eed824aef818d38cac0c1f4b9f8f96f1391c938e33fcaf48"
+          },
+          {
+            "path": "entry/oh-package.json5",
+            "sizeBytes": 173,
+            "sha256": "9d103a60bcaf0bee65fb8e8faf9f37a01d5fa32e4d091269a3799459615f6372"
+          },
+          {
+            "path": "entry/src/main/cangjie/ability_mainability_entry.cj",
+            "sizeBytes": 163,
+            "sha256": "a1af8b1a2b79cf755ec606dc0d0a6f9e3e5cfbe69f54c79afe393d42c0a89ba3"
+          },
+          {
+            "path": "entry/src/main/cangjie/ability_stage.cj",
+            "sizeBytes": 285,
+            "sha256": "86e6461bae6fa0028143013613c96cc982d0f7bc33a2abbfa2ead23453185455"
+          },
+          {
+            "path": "entry/src/main/cangjie/app_ability.cj",
+            "sizeBytes": 1750,
+            "sha256": "fa715604a030bc2dba9c1adeff18125c96cfab4f55d65c886b9be22787c4f3f3"
+          },
+          {
+            "path": "entry/src/main/cangjie/main_activity_ability.cj",
+            "sizeBytes": 892,
+            "sha256": "8b5aa1e40567b9a51899dfc7a31128d437a566e77dd7de196fb1952f33cb9e6d"
+          },
+          {
+            "path": "entry/src/main/cangjie/module_entry_entry.cj",
+            "sizeBytes": 168,
+            "sha256": "64646fcadf1ed762010a34aae5d5a8d4130bb2c911664b22f4368e1399a19e58"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj",
+            "sizeBytes": 2767,
+            "sha256": "ebe5209b6c8dc8a7c165863b33f5ce37b0849dc7704a558caa47168eed896087"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
+            "sizeBytes": 14544,
+            "sha256": "e98acd968bb10382fa36299f01f25896b34f94a7f7e482eed252bc80813db0cc"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_state.cj",
+            "sizeBytes": 116,
+            "sha256": "d62a0b6a5017f7415c3f15e5f8f448dd1c11760cf306f49209e6354b352673f9"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj",
+            "sizeBytes": 2623,
+            "sha256": "3aa5f8b270b6bc96964031fc2fee0253e9a4678a9be1275698a6ca97ee96ac79"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/restaurant_card.cj",
+            "sizeBytes": 3111,
+            "sha256": "d04661475668d65e5c5f5b37747d51bfc23d8f65bce43de894a164cc50510dd6"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/search_bar.cj",
+            "sizeBytes": 530,
+            "sha256": "7234b150af34bc517b3a6feec5dd3b8e399bb4ff486ba74e9139b8ecc24ba148"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/content/home_content_repository.cj",
+            "sizeBytes": 2461,
+            "sha256": "0adaeff4dd88a390957633c9e63dfc8c8004df8f6391913e78afb87117627ad4"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/package_anchor.cj",
+            "sizeBytes": 108,
+            "sha256": "c197d77fd1f5d62ffd0c6c2fa7a16cd039326e99af6068658200c70d2f94a1f2"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj",
+            "sizeBytes": 1644,
+            "sha256": "34507213b046a24f32eb7ade6678f14f3a1bdda0479450aeef94f7a950f93928"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj",
+            "sizeBytes": 5102,
+            "sha256": "dca86682e2a9a12bc4e01294e3bd656204b4b281ed986dd4511e298019cb1a21"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj",
+            "sizeBytes": 5578,
+            "sha256": "317998b20021b107e4e5ab4c212349e7c84e1cd101684a40510c22a6da14a0a4"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/cart/cart_page.cj",
+            "sizeBytes": 6790,
+            "sha256": "4ce602757f2cff8894b75eb83a6a14af97d9b39e62c58830bebe634a6a8c502b"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/cart/cart_store.cj",
+            "sizeBytes": 2537,
+            "sha256": "2f92f06bd9d08618b014db81105149777481ea49a9e8efa070a03f225c856bd6"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/detail/detail_page.cj",
+            "sizeBytes": 8000,
+            "sha256": "da24c816d94bc495a7e0fb7e01d959be1f384ef261cba49d2ad8521557e2c8c7"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/detail/detail_store.cj",
+            "sizeBytes": 4682,
+            "sha256": "dbce191bc45c5e0a6fc0d253f8eca963bbc585116b0d2d778fe6de87db63f464"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/history/history_page.cj",
+            "sizeBytes": 5216,
+            "sha256": "0731d44605b1321818199e97e1794a939367a688aa48fd8e8441b199bb5655a8"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/history/history_store.cj",
+            "sizeBytes": 1367,
+            "sha256": "6239bd77c76f5b0825d7a95adf606c1fac266ec0eee1fb03277dad5dc75a7cbd"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj",
+            "sizeBytes": 7808,
+            "sha256": "48e9f8915e477b84b34727953d008f3421bf04f7838bd688d2ae15a318632845"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_store.cj",
+            "sizeBytes": 1790,
+            "sha256": "df8394f1cdb481ad4dfcd3317a607226b35d3a9e339b4cf78cbbfe531a0f1d69"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj",
+            "sizeBytes": 3438,
+            "sha256": "a6a007b9beb7ae915741428868cb457da76d2bc0f9427c8c916c4af748a7745e"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj",
+            "sizeBytes": 1240,
+            "sha256": "9e31573f4d18623ea2268372abd6c1b23074b890bebcce8f79eedf2d5adaf3a4"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj",
+            "sizeBytes": 2955,
+            "sha256": "490c7de04592af7d345ec899d9cdbee06815c83654dbbf76bca3203ef96eb032"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj",
+            "sizeBytes": 1709,
+            "sha256": "2801feb4f6ee19183b43567547dd48822a1a43c66b9f3c757814e2aa710b915f"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/package_anchor.cj",
+            "sizeBytes": 116,
+            "sha256": "b7d89c9af50f4fa38a290cae9a0043f80a822905a336e34cba97d8e8634e5e98"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj",
+            "sizeBytes": 3079,
+            "sha256": "a930c25b1b69e4d263353fbe1c4fa1e20eb04e75ea536ce1288603c32150908e"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj",
+            "sizeBytes": 850,
+            "sha256": "a21d79f635c7043eef6fbbbd053f8603d572dfe9a753c435e5533dec37525149"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj",
+            "sizeBytes": 511,
+            "sha256": "16857e932692d86c8b957c35924260244a8eb7889e4da66d97e70e14c36342c3"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/package_anchor.cj",
+            "sizeBytes": 178,
+            "sha256": "5c882a132c8e5eebdca4349ce6fd1be3991ead44595cb601efcf81d540200a02"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/runtime/app_runtime.cj",
+            "sizeBytes": 896,
+            "sha256": "6b876910ed6cb5bef1fafc8f3c3cfa596cc47e7f2381638917618eb1e5343dc3"
+          },
+          {
+            "path": "entry/src/main/module.json5",
+            "sizeBytes": 1056,
+            "sha256": "758c8ab40d87721870eff1d78d4c7537cf31d503e65c64d4acf3f5d92b1c51e8"
+          },
+          {
+            "path": "entry/src/main/resources/base/element/color.json",
+            "sizeBytes": 742,
+            "sha256": "32e806d050683392433b2a6e3b5122d34170f38aecfecc7a96fd6728eaa2e618"
+          },
+          {
+            "path": "entry/src/main/resources/base/element/string.json",
+            "sizeBytes": 1793,
+            "sha256": "519b9e4b063fe68805e01c2144ed231aa0619b3aa0e86d33cbb00c3669cae42a"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/applepie.jpg",
+            "sizeBytes": 248315,
+            "sha256": "5e7f6dec7a195b2638c50c8765271f0ea71aecf678ea87e4f59edb5cf635bccb"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/biryani.jpg",
+            "sizeBytes": 12362,
+            "sha256": "13a8a5e65ac5295d3ddec0dcd949119471082695be1883d93f5a57fc7567a74b"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/burger.jpg",
+            "sizeBytes": 9146,
+            "sha256": "2730d27c2b6a5647802dca30a1af37fa6ab2a39c21b6a7f43cb84298c893cc8e"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/chinese.jpg",
+            "sizeBytes": 15335,
+            "sha256": "c671a7b5245dd1fde171f91074d67363578bdbdcd569ba96524b3a4d08b4ee4e"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/chinese_bowl.png",
+            "sizeBytes": 195832,
+            "sha256": "f95ef60a4664803365d577a613bbb659b593fe4b3c400f2cc25d0c870e15b106"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/clock.png",
+            "sizeBytes": 27732,
+            "sha256": "579261b6914df9b4e2885a610e3118152035fc07a073a0e00b9dade6a51b6f6b"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/dosa.jpg",
+            "sizeBytes": 6996155,
+            "sha256": "a56d66689f15e6bc0e5c10041a3c675fe6681665300a0096cd83ec52317537bc"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/fb_icon.png",
+            "sizeBytes": 2580,
+            "sha256": "bded8d5d2f5b9b5b060b5b889bdec4e947180464dfc541f5541e4c41f76dacff"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/goog_icon.png",
+            "sizeBytes": 19867,
+            "sha256": "8edb2dab855419b307f2822fd2df3671ba5598dc2e7869e51b50c47749536b37"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/groceries.png",
+            "sizeBytes": 235132,
+            "sha256": "b2e6f7faac9c64960ff2396e4b63c87dc5fef24bbcb29d3195679665cc428125"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/ic_launcher.png",
+            "sizeBytes": 1741,
+            "sha256": "84456ebf38305bbdca641c486a647952b95fefbe4969beb475ff5bb47bad3e1d"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/ic_launcher_round.png",
+            "sizeBytes": 3728,
+            "sha256": "a2316090c2db73008ca68a989aa66ddc224acf289c0962137a6b8a1d20de7e1d"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/ic_non_veg.png",
+            "sizeBytes": 12227,
+            "sha256": "c0c3e06d5f5e46daa10b3e010a2a09e5d09bf769b1c96f98b05b9baf56d221f1"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/ic_profile.svg",
+            "sizeBytes": 242,
+            "sha256": "b5a5b8715581bd485dc37512e03cc4e16e5644e94f5e4ee17fc0608e4865d2d6"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/ic_veg.png",
+            "sizeBytes": 16482,
+            "sha256": "f24812bbe46f451bf3d1dd3733af2fa9e8312a311bd49335e1cc746d81662ef0"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/icon.png",
+            "sizeBytes": 9393,
+            "sha256": "4b7260eed6fe84e185c141b5690ee8adf8ec267245d37d3f80e574728d8d71d7"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/outlet_card.png",
+            "sizeBytes": 197,
+            "sha256": "1b7eaed531c60e1028265e6880437c3358d99011634dd1173f89e70c8b216dcd"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/paratha.jpg",
+            "sizeBytes": 8654,
+            "sha256": "7b5139f22dbdbc103633adeea2741920cc00806f41ba89033352b4379e8a4935"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/pizza.jpg",
+            "sizeBytes": 55516,
+            "sha256": "d9a6aeaa803da9e2b276b7c6c49b921291584226bdf2298b3cc6a1fe2716a1fa"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/rider.png",
+            "sizeBytes": 101444,
+            "sha256": "e7a090a463a64cbd6d416356b46696400579c1d6d0705e7accaee310f43811df"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/star.png",
+            "sizeBytes": 1436,
+            "sha256": "8e52e4352fdb0ca3956b612e861f7504bf8db922b0cb6477fbfa76fcfebc14a1"
+          },
+          {
+            "path": "entry/src/main/resources/base/media/upi.png",
+            "sizeBytes": 44937,
+            "sha256": "88fe87c68804acce4cf95b2df00897ee3623b699931beb3d927b772bbd2291c0"
+          },
+          {
+            "path": "entry/src/main/resources/base/profile/main_pages.json",
+            "sizeBytes": 53,
+            "sha256": "9589e0abc2470290e27c66e47e260e98d500fd61af1aa3f580bf864affc79a89"
+          },
+          {
+            "path": "entry/src/ohosTest/cangjie/cjpm.toml",
+            "sizeBytes": 647,
+            "sha256": "e3ab6d70a7b2d3cc4f64b090dbf5fbd0f506d755910ed7b764fbb91cdb99d921"
+          },
+          {
+            "path": "entry/src/test/cangjie/cjpm.lock",
+            "sizeBytes": 24,
+            "sha256": "7b09643cc3e7107d2a0f09605871366c547525d40221945a60bee8a9a5e3f3b0"
+          },
+          {
+            "path": "entry/src/test/cangjie/cjpm.toml",
+            "sizeBytes": 1966,
+            "sha256": "b12f5338a40be9b34400f9689f3faae1c74c4509cf079ea8de633aa55a6fa3c5"
+          },
+          {
+            "path": "entry/src/test/cangjie/phase02_startup_navigation_test.cj",
+            "sizeBytes": 3618,
+            "sha256": "3bf4c40bd59186d1accbc190a4b95b6cde1cfa560a5df726576c933398135e8a"
+          },
+          {
+            "path": "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
+            "sizeBytes": 1708,
+            "sha256": "58f7a11756e0598dd36d9c9b184adce4a6ab6cab6bbb9b7b1824e517b28aecca"
+          },
+          {
+            "path": "entry/src/test/cangjie/phase04_home_history_discovery_test.cj",
+            "sizeBytes": 2814,
+            "sha256": "d34a8726a9197ef393807d9ba1dfc5a7b39037a5daf2ae2fce189321f8338d5c"
+          },
+          {
+            "path": "entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj",
+            "sizeBytes": 4564,
+            "sha256": "308483a066d4691948e21ecdb608a154e6872450c447d59b083ed2b3a3d4cf3b"
+          },
+          {
+            "path": "hvigor/hvigor-config.json5",
+            "sizeBytes": 219,
+            "sha256": "c70019efc8435958443c2bf050c7c1736701fb7046f046b70ef86efd55f2e628"
+          },
+          {
+            "path": "hvigorfile.ts",
+            "sizeBytes": 107,
+            "sha256": "09cd052028d3171956ad23da871d6dca38b46ea72a53f8833e082e53b958c954"
+          },
+          {
+            "path": "oh-package.json5",
+            "sizeBytes": 125,
+            "sha256": "cc727672910519893f10691533ad508137cf2520ff8b4f16655e609b9ba01f87"
+          }
+        ]
+      },
+      "target": "aarch64-linux-ohos",
+      "cangjieSdk": "",
+      "environment": {
+        "DEVECO_CANGJIE_HOME": "C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie",
+        "DEVECO_OH_NATIVE_HOME": "",
+        "AARCH64_LIBS": "",
+        "AARCH64_MACRO_LIBS": "",
+        "AARCH64_KIT_LIBS": "",
+        "COMPILE_CONDITION_ENTRY": "",
+        "SDKROOT": ""
+      },
+      "platform": {
+        "osName": "nt",
+        "sysPlatform": "win32",
+        "pathSeparator": ";"
+      }
+    }
+  }
+}

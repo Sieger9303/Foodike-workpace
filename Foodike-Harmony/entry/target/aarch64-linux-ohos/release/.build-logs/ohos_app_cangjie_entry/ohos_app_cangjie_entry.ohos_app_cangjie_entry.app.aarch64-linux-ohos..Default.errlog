@@ -1,1467 +1,1270 @@
-warning[0m: unused function:'navigateTo'
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:32:5:
+warning[0m: imported decl 'bootstrapStartRoute' is shadowed, it will be ignored by compiler
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:12:71:
    | 
-32 |     private func navigateTo(route: String): Unit {
-   |     ^ unused function
+12 | import ohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime.{Global, bootstrapStartRoute}
+   |                                                                       ^^^^^^^^^^^^^^^^^^^ 
    | 
-   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   # note: this warning can be suppressed by setting the compiler option `-Woff package-import`
+note[0m: 'bootstrapStartRoute' is declared here
+ ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_state.cj:3:12:
+  | 
+3 | public var bootstrapStartRoute: String = "onboarding"
+  |            ^^^^^^^^^^^^^^^^^^^ 
+  | 
+
+warning[0m: unreachable pattern
     | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
+    | /* 14.165 */            case _ => LegalCallCheck.check(renderOnboardingRoute(thisView, stateVarDecl_onboardingPageIndex_, ObservedProperty("", this.onboardingController), ObservedProperty("", { index: Int32 =>
+    |                              ^ 
     | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the code after the macro is expanded as follows
     | 
-    |   /* 8.1 */class FoodikeBootstrap <: CustomView {
+    |   /* 14.1 */class FoodikeBootstrap <: CustomView {
     |  _^
-    | | /* 8.2 */    private var stateVarDecl_currentRoute_: ObservedProperty < String >= ObservedProperty < String >("stateVarDecl_currentRoute_", bootstrapStartRoute)
-    | | /* 8.3 */    private mut prop currentRoute: String {
-    | | /* 8.4 */        get() {
-    | | /* 8.5 */            return this.stateVarDecl_currentRoute_.get()
-    | | /* 8.6 */        }
-    | | /* 8.7 */        set(v) {
-    | | /* 8.8 */            this.stateVarDecl_currentRoute_.set(v)
-    | | /* 8.9 */        }
-    | | /* 8.10 */    }
-    | | /* 8.11 */    private var stateVarDecl_isShellAtTop_: ObservedProperty < Bool >= ObservedProperty < Bool >("stateVarDecl_isShellAtTop_", true)
-    | | /* 8.12 */    private mut prop isShellAtTop: Bool {
-    | | /* 8.13 */        get() {
-    | | /* 8.14 */            return this.stateVarDecl_isShellAtTop_.get()
-    | | /* 8.15 */        }
-    | | /* 8.16 */        set(v) {
-    | | /* 8.17 */            this.stateVarDecl_isShellAtTop_.set(v)
-    | | /* 8.18 */        }
-    | | /* 8.19 */    }
-    | | /* 8.20 */    private func applyShellState(shellState: ShellRouteState): Unit {
-    | | /* 8.21 */        this.currentRoute = shellState.currentRoute
-    | | /* 8.22 */        this.isShellAtTop = shellState.isAtTop
-    | | /* 8.23 */    }
-    | | /* 8.24 */    private func shellState(): ShellRouteState {
-    | | /* 8.25 */        ShellRouteState(this.currentRoute, this.isShellAtTop)
-    | | /* 8.26 */    }
-    | | /* 8.27 */    private func applyShellCommand(command: ShellCommand): Unit {
-    | | /* 8.28 */        let shellState = this.shellState()
-    | | /* 8.29 */        shellState.applyCommand(command)
-    | | /* 8.30 */        this.applyShellState(shellState)
-    | | /* 8.31 */    }
-    | | /* 8.32 */    private func navigateTo(route: String): Unit {
-    | | /* 8.33 */        let shellState = this.shellState()
-    | | /* 8.34 */        shellState.currentRoute = route
-    | | /* 8.35 */        this.applyShellState(shellState)
-    | | /* 8.36 */    }
-    | | /* 8.37 */    private func showBottomShell(route: String): Bool {
-    | | /* 8.38 */        let shellState = this.shellState()
-    | | /* 8.39 */        shellState.currentRoute = route
-    | | /* 8.40 */        shellState.showBottomShell()
-    | | /* 8.41 */    }
-    | | /* 8.42 */    private func routeTitle(route: String): String {
-    | | /* 8.43 */        match(route) {
-    | | /* 8.44 */            case "onboarding" => "Onboarding"
-    | | /* 8.45 */            case "login_screen" => "Login"
-    | | /* 8.46 */            case "home_screen" => "Home"
-    | | /* 8.47 */            case "history" => "History"
-    | | /* 8.48 */            case "cart" => "Cart"
-    | | /* 8.49 */            case "profile" => "Profile"
-    | | /* 8.50 */            case "restaurant_details" => "Restaurant Detail"
-    | | /* 8.51 */            case _ => "Unknown Route"
-    | | /* 8.52 */        }
-    | | /* 8.53 */    }
-    | | /* 8.54 */    private func routeSummary(route: String): String {
-    | | /* 8.55 */        match(route) {
-    | | /* 8.56 */            case "onboarding" => "Logged-out startup resolves here first, and the primary action advances to login."
-    | | /* 8.57 */            case "login_screen" => "Login stays in the route host and hands off to home once the session flow succeeds."
-    | | /* 8.58 */            case "home_screen" => "Home owns the shared shell chrome, including the conditional bottom bar and cart command."
-    | | /* 8.59 */            case "history" => "History shares the same shell-owned bottom bar and floating cart command as home."
-    | | /* 8.60 */            case "cart" => "Cart is reached from the shell-owned cart action without replacing the startup route contract."
-    | | /* 8.61 */            case "profile" => "Profile remains in the phase-02 route host so logout can later hand control back to onboarding."
-    | | /* 8.62 */            case "restaurant_details" => "Restaurant detail remains part of the route host even before full content arrives in later phases."
-    | | /* 8.63 */            case _ => "No summary available."
-    | | /* 8.64 */        }
-    | | /* 8.65 */    }
-    | | /* 8.66 */    private func primaryActionLabel(route: String): String {
-    | | /* 8.67 */        match(route) {
-    | | /* 8.68 */            case "onboarding" => "Continue to Login"
-    | | /* 8.69 */            case "login_screen" => "Enter Home"
-    | | /* 8.70 */            case "home_screen" => "Open Restaurant Detail"
-    | | /* 8.71 */            case "history" => "Open Profile"
-    | | /* 8.72 */            case "cart" => "Return Home"
-    | | /* 8.73 */            case "profile" => "Log Out to Onboarding"
-    | | /* 8.74 */            case "restaurant_details" => "Back to Home"
-    | | /* 8.75 */            case _ => "Go Home"
-    | | /* 8.76 */        }
-    | | /* 8.77 */    }
-    | | /* 8.78 */    private func runPrimaryAction(): Unit {
-    | | /* 8.79 */        this.applyShellCommand(ShellCommand.PrimaryAction)
-    | | /* 8.80 */    }
-    | | /* 8.81 */    public func build() {
-    | | /* 8.82 */        this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.83 */            Row { this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.84 */                Column { this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.85 */                    Text("Foodike").fontSize(42)
-    | | /* 8.86 */                })
-    | | /* 8.87 */                this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.88 */                    Text("Startup route host").fontSize(18)
-    | | /* 8.89 */                })
-    | | /* 8.90 */                this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.91 */                    Text(this.routeTitle(this.currentRoute)).fontSize(26).margin(top: 18)
-    | | /* 8.92 */                })
-    | | /* 8.93 */                this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.94 */                    Text(this.routeSummary(this.currentRoute)).fontSize(16).margin(top: 8)
-    | | /* 8.95 */                })
-    | | /* 8.96 */                this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.97 */                    Text("Current route: ${this.currentRoute}").fontSize(14).margin(top: 12)
-    | | /* 8.98 */                })
-    | | /* 8.99 */                this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.100 */                    If { if(this.currentRoute == routePath(RouteId.Onboarding)) {
-    | | /* 8.101 */                        this.ifElseBranchUpdateFunction(0, { =>
-    | | /* 8.102 */                            this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.103 */                                Text("The source activity composes navigation only after startup picks a first destination. This route represents the logged-out path.").fontSize(14).margin(top: 18)
-    | | /* 8.104 */                            })
-    | | /* 8.105 */                        })
-    | | /* 8.106 */                    }
-    | | /* 8.107 */                    else {
-    | | /* 8.108 */                        If.branchId(1)
-    | | /* 8.109 */                    }
-    | | /* 8.110 */                }
-    | | /* 8.111 */            })
-    | | /* 8.112 */            this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.113 */                If { if(this.currentRoute == routePath(RouteId.Login)) {
-    | | /* 8.114 */                    this.ifElseBranchUpdateFunction(0, { =>
-    | | /* 8.115 */                        this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.116 */                            Text("Login remains a dedicated destination inside the shared route host, just as `SetupNavigation` keeps it in the source destination graph.").fontSize(14).margin(top: 18)
-    | | /* 8.117 */                        })
-    | | /* 8.118 */                    })
-    | | /* 8.119 */                }
-    | | /* 8.120 */                else {
-    | | /* 8.121 */                    If.branchId(1)
-    | | /* 8.122 */                }
-    | | /* 8.123 */            }
-    | | /* 8.124 */        })
-    | | /* 8.125 */        this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.126 */            If { if(this.currentRoute == routePath(RouteId.Home) || this.currentRoute == routePath(RouteId.History)) {
-    | | /* 8.127 */                this.ifElseBranchUpdateFunction(0, { =>
-    | | /* 8.128 */                    this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.129 */                        Text("The shared shell reacts to both the active route and the top-of-list state before showing bottom-bar commands.").fontSize(14).margin(top: 18)
-    | | /* 8.130 */                    })
-    | | /* 8.131 */                    this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.132 */                        Button(if(this.isShellAtTop) {
-    | | /* 8.133 */                            "Simulate Scrolled Content"
-    | | /* 8.134 */                        }
-    | | /* 8.135 */                        else {
-    | | /* 8.136 */                            "Return To Top"
-    | | /* 8.137 */                        }
-    | | /* 8.138 */                        ).onClick({ evt =>
-    | | /* 8.139 */                            let shellState = this.shellState()
-    | | /* 8.140 */                            shellState.setTopState(! shellState.isAtTop)
-    | | /* 8.141 */                            this.applyShellState(shellState)
-    | | /* 8.142 */                        }).margin(top: 12)
-    | | /* 8.143 */                    })
-    | | /* 8.144 */                    this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.145 */                        Text(if(this.isShellAtTop) {
-    | | /* 8.146 */                            "Shell chrome is visible because the shared top-level list is at the first item."
-    | | /* 8.147 */                        }
-    | | /* 8.148 */                        else {
-    | | /* 8.149 */                            "Shell chrome is hidden because the shared top-level list has moved away from the first item."
-    | | /* 8.150 */                        }
-    | | /* 8.151 */                        ).fontSize(14).margin(top: 8)
-    | | /* 8.152 */                    })
-    | | /* 8.153 */                })
-    | | /* 8.154 */            }
-    | | /* 8.155 */            else {
-    | | /* 8.156 */                If.branchId(1)
-    | | /* 8.157 */            }
-    | | /* 8.158 */        }
-    | | /* 8.159 */    })
-    | | /* 8.160 */    this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.161 */        If { if(this.currentRoute == routePath(RouteId.Cart)) {
-    | | /* 8.162 */            this.ifElseBranchUpdateFunction(0, { =>
-    | | /* 8.163 */                this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.164 */                    Text("Cart is not a bottom-bar destination in the source graph. It is opened from the shell-owned cart action.").fontSize(14).margin(top: 18)
-    | | /* 8.165 */                })
-    | | /* 8.166 */            })
-    | | /* 8.167 */        }
-    | | /* 8.168 */        else {
-    | | /* 8.169 */            If.branchId(1)
-    | | /* 8.170 */        }
-    | | /* 8.171 */    }
-    | | /* 8.172 */})
-    | | /* 8.173 */this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.174 */    If { if(this.currentRoute == routePath(RouteId.Profile)) {
-    | | /* 8.175 */        this.ifElseBranchUpdateFunction(0, { =>
-    | | /* 8.176 */            this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.177 */                Text("Profile remains a first-class route so later logout work can clear back to onboarding through the same host.").fontSize(14).margin(top: 18)
-    | | /* 8.178 */            })
-    | | /* 8.179 */        })
-    | | /* 8.180 */    }
-    | | /* 8.181 */    else {
-    | | /* 8.182 */        If.branchId(1)
-    | | /* 8.183 */    }
-    | | /* 8.184 */}
-    | | /* 8.185 */})
-    | | /* 8.186 */this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.187 */If { if(this.currentRoute == routePath(RouteId.RestaurantDetails)) {
-    | | /* 8.188 */    this.ifElseBranchUpdateFunction(0, { =>
-    | | /* 8.189 */        this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.190 */            Text("Restaurant detail already participates in the route host, preserving the source destination contract before feature content lands in phase 05.").fontSize(14).margin(top: 18)
-    | | /* 8.191 */        })
-    | | /* 8.192 */    })
-    | | /* 8.193 */}
-    | | /* 8.194 */else {
-    | | /* 8.195 */    If.branchId(1)
-    | | /* 8.196 */}
-    | | /* 8.197 */}
-    | | /* 8.198 */})
-    | | /* 8.199 */this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.200 */Button(this.primaryActionLabel(this.currentRoute)).onClick({ evt =>
-    | | /* 8.201 */this.runPrimaryAction()
-    | | /* 8.202 */}).margin(top: 20)
-    | | /* 8.203 */})
-    | | /* 8.204 */this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.205 */If { if(this.showBottomShell(this.currentRoute)) {
-    | | /* 8.206 */this.ifElseBranchUpdateFunction(0, { =>
-    | | /* 8.207 */    this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.208 */        Text("Bottom shell commands").fontSize(18).margin(top: 28)
-    | | /* 8.209 */    })
-    | | /* 8.210 */    this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.211 */        Row { this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.212 */            Button("Home Tab").onClick({ evt =>
-    | | /* 8.213 */                this.applyShellCommand(ShellCommand.HomeTab)
-    | | /* 8.214 */            })
-    | | /* 8.215 */        })
-    | | /* 8.216 */        this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.217 */            Button("Cart").onClick({ evt =>
-    | | /* 8.218 */                this.applyShellCommand(ShellCommand.CartAction)
-    | | /* 8.219 */            }).margin(left: 12)
-    | | /* 8.220 */        })
-    | | /* 8.221 */        this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.222 */            Button("History Tab").onClick({ evt =>
-    | | /* 8.223 */                this.applyShellCommand(ShellCommand.HistoryTab)
-    | | /* 8.224 */            }).margin(left: 12)
-    | | /* 8.225 */        })
-    | | /* 8.226 */    }.margin(top: 12)
-    | | /* 8.227 */})
-    | | /* 8.228 */this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.229 */    Text("The shell-owned bottom bar and cart action appear only on home and history routes while the shared top-level list remains at the first item, matching the source route contract for this phase.").fontSize(14).margin(top: 8)
-    | | /* 8.230 */})
-    | | /* 8.231 */})
-    | | /* 8.232 */}
-    | | /* 8.233 */else {
-    | | /* 8.234 */this.ifElseBranchUpdateFunction(1, { =>
-    | | /* 8.235 */this.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 8.236 */    Text("Bottom shell chrome is inactive for this route, matching the source scaffold contract.").fontSize(14).margin(top: 24)
-    | | /* 8.237 */})
-    | | /* 8.238 */})
-    | | /* 8.239 */}
-    | | /* 8.240 */}
-    | | /* 8.241 */})
-    | | /* 8.242 */}.width(100.percent)
-    | | /* 8.243 */})
-    | | /* 8.244 */}.height(100.percent)
-    | | /* 8.245 */})
-    | | /* 8.246 */()
-    | | /* 8.247 */}
-    | | /* 8.248 */public init(__gen_parent: Option < CustomView >, currentRoute!: Option < ObservedProperty < String >>= None, isShellAtTop!: Option < ObservedProperty < Bool >>= None, __gen_local_storage!: Option < LocalStorage >= None) {
-    | | /* 8.249 */super(__gen_parent, __gen_local_storage)
-    | | /* 8.250 */match(currentRoute) {
-    | | /* 8.251 */case Some(v) => this.stateVarDecl_currentRoute_ = ObservedProperty < String >("stateVarDecl_currentRoute_", v.get())
-    | | /* 8.252 */case _ =>()
-    | | /* 8.253 */}
-    | | /* 8.254 */match(isShellAtTop) {
-    | | /* 8.255 */case Some(v) => this.stateVarDecl_isShellAtTop_ = ObservedProperty < Bool >("stateVarDecl_isShellAtTop_", v.get())
-    | | /* 8.256 */case _ =>()
-    | | /* 8.257 */}
-    | | /* 8.258 */this.stateVarDecl_currentRoute_.subscribeEx(this)
-    | | /* 8.259 */this.stateVarDecl_isShellAtTop_.subscribeEx(this)
-    | | /* 8.260 */SubscriberManager.getInstance().add(this)
-    | | /* 8.261 */registerSelf()
-    | | /* 8.262 */__gen_parent?.addChildById(id(), this)
-    | | /* 8.263 */}
-    | | /* 8.264 */public override func aboutToBeDeleted() {
-    | | /* 8.265 */this.stateVarDecl_currentRoute_.unsubscribeEx(this)
-    | | /* 8.266 */this.stateVarDecl_isShellAtTop_.unsubscribeEx(this)
-    | | /* 8.267 */SubscriberManager.getInstance().delete(this)
-    | | /* 8.268 */this.aboutToBeDeletedInternal()
-    | | /* 8.269 */}
-    | | /* 8.270 */func updateWithValueParams(currentRoute!: Option < String >= Option < String >.None, isShellAtTop!: Option < Bool >= Option < Bool >.None): Unit {
-    | | /* 8.271 */match(currentRoute) {
-    | | /* 8.272 */case Some(v) => this.currentRoute = v
-    | | /* 8.273 */case _ =>()
-    | | /* 8.274 */}
-    | | /* 8.275 */match(isShellAtTop) {
-    | | /* 8.276 */case Some(v) => this.isShellAtTop = v
-    | | /* 8.277 */case _ =>()
-    | | /* 8.278 */}
-    | | /* 8.279 */}
-    | | /* 8.280 */public func rerender() {
-    | | /* 8.281 */this.updateDirtyElements()
-    | | /* 8.282 */}
-    | | /* 8.283 */public func purgeVariableDependenciesOnElmtId(rmElmtId: Int64) {
-    | | /* 8.284 */this.stateVarDecl_currentRoute_.purgeDependencyOnElmtId(rmElmtId)
-    | | /* 8.285 */this.stateVarDecl_isShellAtTop_.purgeDependencyOnElmtId(rmElmtId)
-    | | /* 8.286 */}
-    | | /* 8.287 */public func forceRerender(deep!: Bool = false) {
-    | | /* 8.288 */this.forceCompleteRerender(deep)
-    | | /* 8.289 */}
-    | | /* 8.290 */}
-    | | /* 8.291 */
-    | | /* 8.292 */public func appEntry0(): Bool {
-    | | /* 8.293 */let view = FoodikeBootstrap(Option < CustomView >.None)
-    | | /* 8.294 */loadNativeView(view)
-    | | /* 8.295 */}
-    | | /* 8.296 */
-    | | /* 8.297 */let A_P_1 = CJEntry.getInstance().registerEntry("FoodikeBootstrap", appEntry0)
-    | | /* 8.298 */
-    | |___________^
+    | | /* 14.2 */    private var stateVarDecl_currentRoute_: ObservedProperty < String >= ObservedProperty < String >("stateVarDecl_currentRoute_", bootstrapStartRoute)
+    | | /* 14.3 */    private mut prop currentRoute: String {
+    | | /* 14.4 */        get() {
+    | | /* 14.5 */            return this.stateVarDecl_currentRoute_.get()
+    | | /* 14.6 */        }
+    | | /* 14.7 */        set(v) {
+    | | /* 14.8 */            this.stateVarDecl_currentRoute_.set(v)
+    | | /* 14.9 */        }
+    | | /* 14.10 */    }
+    | | /* 14.11 */    private var stateVarDecl_isShellAtTop_: ObservedProperty < Bool >= ObservedProperty < Bool >("stateVarDecl_isShellAtTop_", true)
+    | | /* 14.12 */    private mut prop isShellAtTop: Bool {
+    | | /* 14.13 */        get() {
+    | | /* 14.14 */            return this.stateVarDecl_isShellAtTop_.get()
+    | | /* 14.15 */        }
+    | | /* 14.16 */        set(v) {
+    | | /* 14.17 */            this.stateVarDecl_isShellAtTop_.set(v)
+    | | /* 14.18 */        }
+    | | /* 14.19 */    }
+    | | /* 14.20 */    private var stateVarDecl_onboardingPageIndex_: ObservedProperty < Int64 >= ObservedProperty < Int64 >("stateVarDecl_onboardingPageIndex_", 0)
+    | | /* 14.21 */    private mut prop onboardingPageIndex: Int64 {
+    | | /* 14.22 */        get() {
+    | | /* 14.23 */            return this.stateVarDecl_onboardingPageIndex_.get()
+    | | /* 14.24 */        }
+    | | /* 14.25 */        set(v) {
+    | | /* 14.26 */            this.stateVarDecl_onboardingPageIndex_.set(v)
+    | | /* 14.27 */        }
+    | | /* 14.28 */    }
+    | | /* 14.29 */    private var stateVarDecl_loginEmail_: ObservedProperty < String >= ObservedProperty < String >("stateVarDecl_loginEmail_", "")
+    | | /* 14.30 */    private mut prop loginEmail: String {
+    | | /* 14.31 */        get() {
+    | | /* 14.32 */            return this.stateVarDecl_loginEmail_.get()
+    | | /* 14.33 */        }
+    | | /* 14.34 */        set(v) {
+    | | /* 14.35 */            this.stateVarDecl_loginEmail_.set(v)
+    | | /* 14.36 */        }
+    | | /* 14.37 */    }
+    | | /* 14.38 */    private var stateVarDecl_loginPassword_: ObservedProperty < String >= ObservedProperty < String >("stateVarDecl_loginPassword_", "")
+    | | /* 14.39 */    private mut prop loginPassword: String {
+    | | /* 14.40 */        get() {
+    | | /* 14.41 */            return this.stateVarDecl_loginPassword_.get()
+    | | /* 14.42 */        }
+    | | /* 14.43 */        set(v) {
+    | | /* 14.44 */            this.stateVarDecl_loginPassword_.set(v)
+    | | /* 14.45 */        }
+    | | /* 14.46 */    }
+    | | /* 14.47 */    private var stateVarDecl_loginErrorMessage_: ObservedProperty < String >= ObservedProperty < String >("stateVarDecl_loginErrorMessage_", "")
+    | | /* 14.48 */    private mut prop loginErrorMessage: String {
+    | | /* 14.49 */        get() {
+    | | /* 14.50 */            return this.stateVarDecl_loginErrorMessage_.get()
+    | | /* 14.51 */        }
+    | | /* 14.52 */        set(v) {
+    | | /* 14.53 */            this.stateVarDecl_loginErrorMessage_.set(v)
+    | | /* 14.54 */        }
+    | | /* 14.55 */    }
+    | | /* 14.56 */    private var onboardingController: SwiperController = SwiperController()
+    | | /* 14.57 */    private func applyShellState(shellState: ShellRouteState): Unit {
+    | | /* 14.58 */        this.currentRoute = shellState.currentRoute
+    | | /* 14.59 */        this.isShellAtTop = shellState.isAtTop
+    | | /* 14.60 */    }
+    | | /* 14.61 */    private func shellState(): ShellRouteState {
+    | | /* 14.62 */        ShellRouteState(this.currentRoute, this.isShellAtTop)
+    | | /* 14.63 */    }
+    | | /* 14.64 */    private func applyShellCommand(command: ShellCommand): Unit {
+    | | /* 14.65 */        let shellState = this.shellState()
+    | | /* 14.66 */        shellState.applyCommand(command)
+    | | /* 14.67 */        this.applyShellState(shellState)
+    | | /* 14.68 */    }
+    | | /* 14.69 */    private func navigateTo(route: String): Unit {
+    | | /* 14.70 */        let shellState = this.shellState()
+    | | /* 14.71 */        shellState.currentRoute = route
+    | | /* 14.72 */        shellState.isAtTop = true
+    | | /* 14.73 */        this.applyShellState(shellState)
+    | | /* 14.74 */    }
+    | | /* 14.75 */    private func showBottomShell(route: String): Bool {
+    | | /* 14.76 */        let shellState = this.shellState()
+    | | /* 14.77 */        shellState.currentRoute = route
+    | | /* 14.78 */        return shellState.showBottomShell()
+    | | /* 14.79 */    }
+    | | /* 14.80 */    private func routeTitle(route: String): String {
+    | | /* 14.81 */        match(route) {
+    | | /* 14.82 */            case "onboarding" => "Onboarding"
+    | | /* 14.83 */            case "login_screen" => "Login"
+    | | /* 14.84 */            case "home_screen" => "Home"
+    | | /* 14.85 */            case "history" => "History"
+    | | /* 14.86 */            case "cart" => "Cart"
+    | | /* 14.87 */            case "profile" => "Profile"
+    | | /* 14.88 */            case "restaurant_details" => "Restaurant Detail"
+    | | /* 14.89 */            case _ => "Unknown Route"
+    | | /* 14.90 */        }
+    | | /* 14.91 */    }
+    | | /* 14.92 */    private func showToast(message: String): Unit {
+    | | /* 14.93 */        getUIContext().getPromptAction().showToast(ShowToastOptions(message: message))
+    | | /* 14.94 */    }
+    | | /* 14.95 */    private func clearLoginError(): Unit {
+    | | /* 14.96 */        this.loginErrorMessage = ""
+    | | /* 14.97 */    }
+    | | /* 14.98 */    private func performLogin(): Unit {
+    | | /* 14.99 */        if(loginStore.login(Global.abilityContext, this.loginEmail, this.loginPassword)) {
+    | | /* 14.100 */            this.clearLoginError()
+    | | /* 14.101 */            this.navigateTo(loginStore.successRoute())
+    | | /* 14.102 */            return
+    | | /* 14.103 */        }
+    | | /* 14.104 */        this.loginErrorMessage = loginStore.invalidLoginMessage
+    | | /* 14.105 */        this.showToast(loginStore.invalidLoginMessage)
+    | | /* 14.106 */    }
+    | | /* 14.107 */    private func performLogout(): Unit {
+    | | /* 14.108 */        profileStore.logout(Global.abilityContext)
+    | | /* 14.109 */        this.loginEmail = ""
+    | | /* 14.110 */        this.loginPassword = ""
+    | | /* 14.111 */        this.clearLoginError()
+    | | /* 14.112 */        this.onboardingPageIndex = 0
+    | | /* 14.113 */        this.navigateTo(profileStore.logoutRoute())
+    | | /* 14.114 */    }
+    | | /* 14.115 */    private func routeSummary(route: String): String {
+    | | /* 14.116 */        match(route) {
+    | | /* 14.117 */            case "home_screen" => "Home remains the shared shell placeholder from phase 02 while onboarding, login, and profile now run as dedicated phase-03 routes."
+    | | /* 14.118 */            case "history" => "History remains available as a shell route so profile still has a source-consistent back destination."
+    | | /* 14.119 */            case "cart" => "Cart continues to be a shell-owned placeholder route until later phases land the real content."
+    | | /* 14.120 */            case "restaurant_details" => "Restaurant detail remains in the route contract but keeps its placeholder body until later phases."
+    | | /* 14.121 */            case _ => ""
+    | | /* 14.122 */        }
+    | | /* 14.123 */    }
+    | | /* 14.124 */    private func buildOnboardingRoute(thisView: CustomView): ViewBuilder {
+    | | /* 14.125 */        func buildOnboardingRoute__inner__(thisView: CustomView): Unit {
+    | | /* 14.126 */            match(renderOnboardingRoute(thisView, stateVarDecl_onboardingPageIndex_, ObservedProperty("", this.onboardingController), ObservedProperty("", { index: Int32 =>
+    | | /* 14.127 */                this.onboardingPageIndex = Int64(index)
+    | | /* 14.128 */            }), ObservedProperty("", { =>
+    | | /* 14.129 */                if(onboardingStore.isLastPage(this.onboardingPageIndex)) {
+    | | /* 14.130 */                    this.navigateTo(routePath(RouteId.Login))
+    | | /* 14.131 */                }
+    | | /* 14.132 */                else {
+    | | /* 14.133 */                    this.onboardingController.showNext()
+    | | /* 14.134 */                }
+    | | /* 14.135 */            }))) {
+    | | /* 14.136 */                case cv: CustomView => if(cv.isReusable_inner__) {
+    | | /* 14.137 */                    let rp: ReuseParams = ReuseParams([("", this.onboardingPageIndex),("", this.onboardingController),("", { index: Int32 =>
+    | | /* 14.138 */                        this.onboardingPageIndex = Int64(index)
+    | | /* 14.139 */                    }),("", { =>
+    | | /* 14.140 */                        if(onboardingStore.isLastPage(this.onboardingPageIndex)) {
+    | | /* 14.141 */                            this.navigateTo(routePath(RouteId.Login))
+    | | /* 14.142 */                        }
+    | | /* 14.143 */                        else {
+    | | /* 14.144 */                            this.onboardingController.showNext()
+    | | /* 14.145 */                        }
+    | | /* 14.146 */                    })])
+    | | /* 14.147 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 14.148 */                        __Recycle__ { thisView.observeRecycleComponentCreation("renderOnboardingRoute", { elmtId, isInitialRender, recycleNode =>
+    | | /* 14.149 */                            CustomView.createRecycle(recycleNode??cv, recycleNode.isSome(), "renderOnboardingRoute", { =>
+    | | /* 14.150 */                                if(let Some(rn) <- recycleNode) {
+    | | /* 14.151 */                                    rn.aboutToReuseInternal(rp)
+    | | /* 14.152 */                                }
+    | | /* 14.153 */                            })
+    | | /* 14.154 */                            EmptyComponent()
+    | | /* 14.155 */                        })
+    | | /* 14.156 */                    }
+    | | /* 14.157 */                })
+    | | /* 14.158 */            }
+    | | /* 14.159 */            else {
+    | | /* 14.160 */                ViewStackProcessor.startGetAccessRecordingFor(ViewStackProcessor.allocateNewElmetIdForNextComponent())
+    | | /* 14.161 */                CustomView.create(cv)
+    | | /* 14.162 */                ViewStackProcessor.stopGetAccessRecording()
+    | | /* 14.163 */            }
+    | | /* 14.164 */            case vb: ViewBuilder => vb.build()
+    | | /* 14.165 */            case _ => LegalCallCheck.check(renderOnboardingRoute(thisView, stateVarDecl_onboardingPageIndex_, ObservedProperty("", this.onboardingController), ObservedProperty("", { index: Int32 =>
+    | | /* 14.166 */                this.onboardingPageIndex = Int64(index)
+    | | /* 14.167 */            }), ObservedProperty("", { =>
+    | | /* 14.168 */                if(onboardingStore.isLastPage(this.onboardingPageIndex)) {
+    | | /* 14.169 */                    this.navigateTo(routePath(RouteId.Login))
+    | | /* 14.170 */                }
+    | | /* 14.171 */                else {
+    | | /* 14.172 */                    this.onboardingController.showNext()
+    | | /* 14.173 */                }
+    | | /* 14.174 */            })))
+    | | /* 14.175 */        }
+    | | /* 14.176 */    }
+    | | /* 14.177 */    ViewBuilder { buildOnboardingRoute__inner__(thisView)
+    | | /* 14.178 */    }
+    | | /* 14.179 */}
+    | | /* 14.180 */private func buildLoginRoute(thisView: CustomView): ViewBuilder {
+    | | /* 14.181 */    func buildLoginRoute__inner__(thisView: CustomView): Unit {
+    | | /* 14.182 */        match(renderLoginRoute(thisView, stateVarDecl_loginEmail_, stateVarDecl_loginPassword_, stateVarDecl_loginErrorMessage_, ObservedProperty("", { value: String =>
+    | | /* 14.183 */            this.loginEmail = value
+    | | /* 14.184 */            this.clearLoginError()
+    | | /* 14.185 */        }), ObservedProperty("", { value: String =>
+    | | /* 14.186 */            this.loginPassword = value
+    | | /* 14.187 */            this.clearLoginError()
+    | | /* 14.188 */        }), ObservedProperty("", { =>
+    | | /* 14.189 */            this.showToast(loginStore.comingSoonMessage)
+    | | /* 14.190 */        }), ObservedProperty("", { =>
+    | | /* 14.191 */            this.performLogin()
+    | | /* 14.192 */        }), ObservedProperty("", { =>
+    | | /* 14.193 */            this.showToast(loginStore.comingSoonMessage)
+    | | /* 14.194 */        }), ObservedProperty("", { =>
+    | | /* 14.195 */            this.showToast(loginStore.comingSoonMessage)
+    | | /* 14.196 */        }), ObservedProperty("", { =>
+    | | /* 14.197 */            this.showToast(loginStore.comingSoonMessage)
+    | | /* 14.198 */        }), ObservedProperty("", { =>
+    | | /* 14.199 */            this.clearLoginError()
+    | | /* 14.200 */        }))) {
+    | | /* 14.201 */            case cv: CustomView => if(cv.isReusable_inner__) {
+    | | /* 14.202 */                let rp: ReuseParams = ReuseParams([("", this.loginEmail),("", this.loginPassword),("", this.loginErrorMessage),("", { value: String =>
+    | | /* 14.203 */                    this.loginEmail = value
+    | | /* 14.204 */                    this.clearLoginError()
+    | | /* 14.205 */                }),("", { value: String =>
+    | | /* 14.206 */                    this.loginPassword = value
+    | | /* 14.207 */                    this.clearLoginError()
+    | | /* 14.208 */                }),("", { =>
+    | | /* 14.209 */                    this.showToast(loginStore.comingSoonMessage)
+    | | /* 14.210 */                }),("", { =>
+    | | /* 14.211 */                    this.performLogin()
+    | | /* 14.212 */                }),("", { =>
+    | | /* 14.213 */                    this.showToast(loginStore.comingSoonMessage)
+    | | /* 14.214 */                }),("", { =>
+    | | /* 14.215 */                    this.showToast(loginStore.comingSoonMessage)
+    | | /* 14.216 */                }),("", { =>
+    | | /* 14.217 */                    this.showToast(loginStore.comingSoonMessage)
+    | | /* 14.218 */                }),("", { =>
+    | | /* 14.219 */                    this.clearLoginError()
+    | | /* 14.220 */                })])
+    | | /* 14.221 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 14.222 */                    __Recycle__ { thisView.observeRecycleComponentCreation("renderLoginRoute", { elmtId, isInitialRender, recycleNode =>
+    | | /* 14.223 */                        CustomView.createRecycle(recycleNode??cv, recycleNode.isSome(), "renderLoginRoute", { =>
+    | | /* 14.224 */                            if(let Some(rn) <- recycleNode) {
+    | | /* 14.225 */                                rn.aboutToReuseInternal(rp)
+    | | /* 14.226 */                            }
+    | | /* 14.227 */                        })
+    | | /* 14.228 */                        EmptyComponent()
+    | | /* 14.229 */                    })
+    | | /* 14.230 */                }
+    | | /* 14.231 */            })
+    | | /* 14.232 */        }
+    | | /* 14.233 */        else {
+    | | /* 14.234 */            ViewStackProcessor.startGetAccessRecordingFor(ViewStackProcessor.allocateNewElmetIdForNextComponent())
+    | | /* 14.235 */            CustomView.create(cv)
+    | | /* 14.236 */            ViewStackProcessor.stopGetAccessRecording()
+    | | /* 14.237 */        }
+    | | /* 14.238 */        case vb: ViewBuilder => vb.build()
+    | | /* 14.239 */        case _ => LegalCallCheck.check(renderLoginRoute(thisView, stateVarDecl_loginEmail_, stateVarDecl_loginPassword_, stateVarDecl_loginErrorMessage_, ObservedProperty("", { value: String =>
+    | | /* 14.240 */            this.loginEmail = value
+    | | /* 14.241 */            this.clearLoginError()
+    | | /* 14.242 */        }), ObservedProperty("", { value: String =>
+    | | /* 14.243 */            this.loginPassword = value
+    | | /* 14.244 */            this.clearLoginError()
+    | | /* 14.245 */        }), ObservedProperty("", { =>
+    | | /* 14.246 */            this.showToast(loginStore.comingSoonMessage)
+    | | /* 14.247 */        }), ObservedProperty("", { =>
+    | | /* 14.248 */            this.performLogin()
+    | | /* 14.249 */        }), ObservedProperty("", { =>
+    | | /* 14.250 */            this.showToast(loginStore.comingSoonMessage)
+    | | /* 14.251 */        }), ObservedProperty("", { =>
+    | | /* 14.252 */            this.showToast(loginStore.comingSoonMessage)
+    | | /* 14.253 */        }), ObservedProperty("", { =>
+    | | /* 14.254 */            this.showToast(loginStore.comingSoonMessage)
+    | | /* 14.255 */        }), ObservedProperty("", { =>
+    | | /* 14.256 */            this.clearLoginError()
+    | | /* 14.257 */        })))
+    | | /* 14.258 */    }
+    | | /* 14.259 */}
+    | | /* 14.260 */ViewBuilder { buildLoginRoute__inner__(thisView)
+    | | /* 14.261 */}
+    | | /* 14.262 */}
+    | | /* 14.263 */private func buildProfileRoute(thisView: CustomView): ViewBuilder {
+    | | /* 14.264 */func buildProfileRoute__inner__(thisView: CustomView): Unit {
+    | | /* 14.265 */    match(renderProfileRoute(thisView, ObservedProperty("", profileStore.userName), ObservedProperty("", profileStore.userEmail), ObservedProperty("", { =>
+    | | /* 14.266 */        this.navigateTo(profileStore.backRoute())
+    | | /* 14.267 */    }), ObservedProperty("", { =>
+    | | /* 14.268 */        this.showToast(profileStore.placeholderActionMessage)
+    | | /* 14.269 */    }), ObservedProperty("", { =>
+    | | /* 14.270 */        this.showToast(profileStore.placeholderActionMessage)
+    | | /* 14.271 */    }), ObservedProperty("", { =>
+    | | /* 14.272 */        this.performLogout()
+    | | /* 14.273 */    }))) {
+    | | /* 14.274 */        case cv: CustomView => if(cv.isReusable_inner__) {
+    | | /* 14.275 */            let rp: ReuseParams = ReuseParams([("", profileStore.userName),("", profileStore.userEmail),("", { =>
+    | | /* 14.276 */                this.navigateTo(profileStore.backRoute())
+    | | /* 14.277 */            }),("", { =>
+    | | /* 14.278 */                this.showToast(profileStore.placeholderActionMessage)
+    | | /* 14.279 */            }),("", { =>
+    | | /* 14.280 */                this.showToast(profileStore.placeholderActionMessage)
+    | | /* 14.281 */            }),("", { =>
+    | | /* 14.282 */                this.performLogout()
+    | | /* 14.283 */            })])
+    | | /* 14.284 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 14.285 */                __Recycle__ { thisView.observeRecycleComponentCreation("renderProfileRoute", { elmtId, isInitialRender, recycleNode =>
+    | | /* 14.286 */                    CustomView.createRecycle(recycleNode??cv, recycleNode.isSome(), "renderProfileRoute", { =>
+    | | /* 14.287 */                        if(let Some(rn) <- recycleNode) {
+    | | /* 14.288 */                            rn.aboutToReuseInternal(rp)
+    | | /* 14.289 */                        }
+    | | /* 14.290 */                    })
+    | | /* 14.291 */                    EmptyComponent()
+    | | /* 14.292 */                })
+    | | /* 14.293 */            }
+    | | /* 14.294 */        })
+    | | /* 14.295 */    }
+    | | /* 14.296 */    else {
+    | | /* 14.297 */        ViewStackProcessor.startGetAccessRecordingFor(ViewStackProcessor.allocateNewElmetIdForNextComponent())
+    | | /* 14.298 */        CustomView.create(cv)
+    | | /* 14.299 */        ViewStackProcessor.stopGetAccessRecording()
+    | | /* 14.300 */    }
+    | | /* 14.301 */    case vb: ViewBuilder => vb.build()
+    | | /* 14.302 */    case _ => LegalCallCheck.check(renderProfileRoute(thisView, ObservedProperty("", profileStore.userName), ObservedProperty("", profileStore.userEmail), ObservedProperty("", { =>
+    | | /* 14.303 */        this.navigateTo(profileStore.backRoute())
+    | | /* 14.304 */    }), ObservedProperty("", { =>
+    | | /* 14.305 */        this.showToast(profileStore.placeholderActionMessage)
+    | | /* 14.306 */    }), ObservedProperty("", { =>
+    | | /* 14.307 */        this.showToast(profileStore.placeholderActionMessage)
+    | | /* 14.308 */    }), ObservedProperty("", { =>
+    | | /* 14.309 */        this.performLogout()
+    | | /* 14.310 */    })))
+    | | /* 14.311 */}
+    | | /* 14.312 */}
+    | | /* 14.313 */ViewBuilder { buildProfileRoute__inner__(thisView)
+    | | /* 14.314 */}
+    | | /* 14.315 */}
+    | | /* 14.316 */private func buildPlaceholderRoute(thisView: CustomView): ViewBuilder {
+    | | /* 14.317 */func buildPlaceholderRoute__inner__(thisView: CustomView): Unit {
+    | | /* 14.318 */thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 14.319 */    Column(space: 18) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 14.320 */        Text("Foodike").fontSize(42).fontWeight(FontWeight.Bold)
+    | | /* 14.321 */    })
+    | | /* 14.322 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 14.323 */        Text(this.routeTitle(this.currentRoute)).fontSize(28)
+    | | /* 14.324 */    })
+    | | /* 14.325 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 14.326 */        Text(this.routeSummary(this.currentRoute)).fontSize(16).textAlign(TextAlign.Center).width(86.percent)
+    | | /* 14.327 */    })
+    | | /* 14.328 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 14.329 */        If { if(this.currentRoute == routePath(RouteId.Home) || this.currentRoute == routePath(RouteId.History)) {
+    | | /* 14.330 */            thisView.ifElseBranchUpdateFunction(0, { =>
+    | | /* 14.331 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 14.332 */                    Button(if(this.isShellAtTop) {
+    | | /* 14.333 */                        "Simulate Scrolled Content"
+    | | /* 14.334 */                    }
+    | | /* 14.335 */                    else {
+    | | /* 14.336 */                        "Return To Top"
+    | | /* 14.337 */                    }
+    | | /* 14.338 */                    ).onClick({ _ =>
+    | | /* 14.339 */                        let shellState = this.shellState()
+    | | /* 14.340 */                        shellState.setTopState(! shellState.isAtTop)
+    | | /* 14.341 */                        this.applyShellState(shellState)
+    | | /* 14.342 */                    })
+    | | /* 14.343 */                })
+    | | /* 14.344 */            })
+    | | /* 14.345 */        }
+    | | /* 14.346 */        else {
+    | | /* 14.347 */            If.branchId(1)
+    | | /* 14.348 */        }
+    | | /* 14.349 */    }
+    | | /* 14.350 */})
+    | | /* 14.351 */thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 14.352 */    Button("Primary Route Action").onClick({ _ =>
+    | | /* 14.353 */        this.applyShellCommand(ShellCommand.PrimaryAction)
+    | | /* 14.354 */    })
+    | | /* 14.355 */})
+    | | /* 14.356 */thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 14.357 */    If { if(this.showBottomShell(this.currentRoute)) {
+    | | /* 14.358 */        thisView.ifElseBranchUpdateFunction(0, { =>
+    | | /* 14.359 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 14.360 */                Row(space: 12) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 14.361 */                    Button("Home Tab").onClick({ _ =>
+    | | /* 14.362 */                        this.applyShellCommand(ShellCommand.HomeTab)
+    | | /* 14.363 */                    })
+    | | /* 14.364 */                })
+    | | /* 14.365 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 14.366 */                    Button("Cart").onClick({ _ =>
+    | | /* 14.367 */                        this.applyShellCommand(ShellCommand.CartAction)
+    | | /* 14.368 */                    })
+    | | /* 14.369 */                })
+    | | /* 14.370 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 14.371 */                    Button("History Tab").onClick({ _ =>
+    | | /* 14.372 */                        this.applyShellCommand(ShellCommand.HistoryTab)
+    | | /* 14.373 */                    })
+    | | /* 14.374 */                })
+    | | /* 14.375 */            }
+    | | /* 14.376 */        })
+    | | /* 14.377 */    })
+    | | /* 14.378 */}
+    | | /* 14.379 */else {
+    | | /* 14.380 */    If.branchId(1)
+    | | /* 14.381 */}
+    | | /* 14.382 */}
+    | | /* 14.383 */})
+    | | /* 14.384 */}.width(100.percent).height(100.percent).justifyContent(FlexAlign.Center).alignItems(HorizontalAlign.Center).padding(top: 24, right: 24, bottom: 24, left: 24)
+    | | /* 14.385 */})
+    | | /* 14.386 */}
+    | | /* 14.387 */ViewBuilder { buildPlaceholderRoute__inner__(thisView)
+    | | /* 14.388 */}
+    | | /* 14.389 */}
+    | | /* 14.390 */public func build() {
+    | | /* 14.391 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 14.392 */If { if(this.currentRoute == routePath(RouteId.Onboarding)) {
+    | | /* 14.393 */this.ifElseBranchUpdateFunction(0, { =>
+    | | /* 14.394 */this.buildOnboardingRoute(this).build()
+    | | /* 14.395 */})
+    | | /* 14.396 */}
+    | | /* 14.397 */else if(this.currentRoute == routePath(RouteId.Login)) {
+    | | /* 14.398 */this.ifElseBranchUpdateFunction(1, { =>
+    | | /* 14.399 */this.buildLoginRoute(this).build()
+    | | /* 14.400 */})
+    | | /* 14.401 */}
+    | | /* 14.402 */else if(this.currentRoute == routePath(RouteId.Profile)) {
+    | | /* 14.403 */this.ifElseBranchUpdateFunction(2, { =>
+    | | /* 14.404 */this.buildProfileRoute(this).build()
+    | | /* 14.405 */})
+    | | /* 14.406 */}
+    | | /* 14.407 */else {
+    | | /* 14.408 */this.ifElseBranchUpdateFunction(3, { =>
+    | | /* 14.409 */this.buildPlaceholderRoute(this).build()
+    | | /* 14.410 */})
+    | | /* 14.411 */}
+    | | /* 14.412 */}
+    | | /* 14.413 */})
+    | | /* 14.414 */()
+    | | /* 14.415 */}
+    | | /* 14.416 */public init(__gen_parent: Option < CustomView >, currentRoute!: Option < ObservedProperty < String >>= None, isShellAtTop!: Option < ObservedProperty < Bool >>= None, onboardingPageIndex!: Option < ObservedProperty < Int64 >>= None, loginEmail!: Option < ObservedProperty < String >>= None, loginPassword!: Option < ObservedProperty < String >>= None, loginErrorMessage!: Option < ObservedProperty < String >>= None, onboardingController!: Option < ObservedProperty < SwiperController >>= None, __gen_local_storage!: Option < LocalStorage >= None) {
+    | | /* 14.417 */super(__gen_parent, __gen_local_storage)
+    | | /* 14.418 */match(currentRoute) {
+    | | /* 14.419 */case Some(v) => this.stateVarDecl_currentRoute_ = ObservedProperty < String >("stateVarDecl_currentRoute_", v.get())
+    | | /* 14.420 */case _ =>()
+    | | /* 14.421 */}
+    | | /* 14.422 */match(isShellAtTop) {
+    | | /* 14.423 */case Some(v) => this.stateVarDecl_isShellAtTop_ = ObservedProperty < Bool >("stateVarDecl_isShellAtTop_", v.get())
+    | | /* 14.424 */case _ =>()
+    | | /* 14.425 */}
+    | | /* 14.426 */match(onboardingPageIndex) {
+    | | /* 14.427 */case Some(v) => this.stateVarDecl_onboardingPageIndex_ = ObservedProperty < Int64 >("stateVarDecl_onboardingPageIndex_", v.get())
+    | | /* 14.428 */case _ =>()
+    | | /* 14.429 */}
+    | | /* 14.430 */match(loginEmail) {
+    | | /* 14.431 */case Some(v) => this.stateVarDecl_loginEmail_ = ObservedProperty < String >("stateVarDecl_loginEmail_", v.get())
+    | | /* 14.432 */case _ =>()
+    | | /* 14.433 */}
+    | | /* 14.434 */match(loginPassword) {
+    | | /* 14.435 */case Some(v) => this.stateVarDecl_loginPassword_ = ObservedProperty < String >("stateVarDecl_loginPassword_", v.get())
+    | | /* 14.436 */case _ =>()
+    | | /* 14.437 */}
+    | | /* 14.438 */match(loginErrorMessage) {
+    | | /* 14.439 */case Some(v) => this.stateVarDecl_loginErrorMessage_ = ObservedProperty < String >("stateVarDecl_loginErrorMessage_", v.get())
+    | | /* 14.440 */case _ =>()
+    | | /* 14.441 */}
+    | | /* 14.442 */match(onboardingController) {
+    | | /* 14.443 */case Some(v) => this.onboardingController = v.get()
+    | | /* 14.444 */case _ =>()
+    | | /* 14.445 */}
+    | | /* 14.446 */this.stateVarDecl_currentRoute_.subscribeEx(this)
+    | | /* 14.447 */this.stateVarDecl_isShellAtTop_.subscribeEx(this)
+    | | /* 14.448 */this.stateVarDecl_onboardingPageIndex_.subscribeEx(this)
+    | | /* 14.449 */this.stateVarDecl_loginEmail_.subscribeEx(this)
+    | | /* 14.450 */this.stateVarDecl_loginPassword_.subscribeEx(this)
+    | | /* 14.451 */this.stateVarDecl_loginErrorMessage_.subscribeEx(this)
+    | | /* 14.452 */SubscriberManager.getInstance().add(this)
+    | | /* 14.453 */registerSelf()
+    | | /* 14.454 */__gen_parent?.addChildById(id(), this)
+    | | /* 14.455 */}
+    | | /* 14.456 */public override func aboutToBeDeleted() {
+    | | /* 14.457 */this.stateVarDecl_currentRoute_.unsubscribeEx(this)
+    | | /* 14.458 */this.stateVarDecl_isShellAtTop_.unsubscribeEx(this)
+    | | /* 14.459 */this.stateVarDecl_onboardingPageIndex_.unsubscribeEx(this)
+    | | /* 14.460 */this.stateVarDecl_loginEmail_.unsubscribeEx(this)
+    | | /* 14.461 */this.stateVarDecl_loginPassword_.unsubscribeEx(this)
+    | | /* 14.462 */this.stateVarDecl_loginErrorMessage_.unsubscribeEx(this)
+    | | /* 14.463 */SubscriberManager.getInstance().delete(this)
+    | | /* 14.464 */this.aboutToBeDeletedInternal()
+    | | /* 14.465 */}
+    | | /* 14.466 */func updateWithValueParams(currentRoute!: Option < String >= Option < String >.None, isShellAtTop!: Option < Bool >= Option < Bool >.None, onboardingPageIndex!: Option < Int64 >= Option < Int64 >.None, loginEmail!: Option < String >= Option < String >.None, loginPassword!: Option < String >= Option < String >.None, loginErrorMessage!: Option < String >= Option < String >.None, onboardingController!: Option < SwiperController >= Option < SwiperController >.None): Unit {
+    | | /* 14.467 */match(currentRoute) {
+    | | /* 14.468 */case Some(v) => this.currentRoute = v
+    | | /* 14.469 */case _ =>()
+    | | /* 14.470 */}
+    | | /* 14.471 */match(isShellAtTop) {
+    | | /* 14.472 */case Some(v) => this.isShellAtTop = v
+    | | /* 14.473 */case _ =>()
+    | | /* 14.474 */}
+    | | /* 14.475 */match(onboardingPageIndex) {
+    | | /* 14.476 */case Some(v) => this.onboardingPageIndex = v
+    | | /* 14.477 */case _ =>()
+    | | /* 14.478 */}
+    | | /* 14.479 */match(loginEmail) {
+    | | /* 14.480 */case Some(v) => this.loginEmail = v
+    | | /* 14.481 */case _ =>()
+    | | /* 14.482 */}
+    | | /* 14.483 */match(loginPassword) {
+    | | /* 14.484 */case Some(v) => this.loginPassword = v
+    | | /* 14.485 */case _ =>()
+    | | /* 14.486 */}
+    | | /* 14.487 */match(loginErrorMessage) {
+    | | /* 14.488 */case Some(v) => this.loginErrorMessage = v
+    | | /* 14.489 */case _ =>()
+    | | /* 14.490 */}
+    | | /* 14.491 */}
+    | | /* 14.492 */public func rerender() {
+    | | /* 14.493 */this.updateDirtyElements()
+    | | /* 14.494 */}
+    | | /* 14.495 */public func purgeVariableDependenciesOnElmtId(rmElmtId: Int64) {
+    | | /* 14.496 */this.stateVarDecl_currentRoute_.purgeDependencyOnElmtId(rmElmtId)
+    | | /* 14.497 */this.stateVarDecl_isShellAtTop_.purgeDependencyOnElmtId(rmElmtId)
+    | | /* 14.498 */this.stateVarDecl_onboardingPageIndex_.purgeDependencyOnElmtId(rmElmtId)
+    | | /* 14.499 */this.stateVarDecl_loginEmail_.purgeDependencyOnElmtId(rmElmtId)
+    | | /* 14.500 */this.stateVarDecl_loginPassword_.purgeDependencyOnElmtId(rmElmtId)
+    | | /* 14.501 */this.stateVarDecl_loginErrorMessage_.purgeDependencyOnElmtId(rmElmtId)
+    | | /* 14.502 */}
+    | | /* 14.503 */public func forceRerender(deep!: Bool = false) {
+    | | /* 14.504 */this.forceCompleteRerender(deep)
+    | | /* 14.505 */}
+    | | /* 14.506 */}
+    | | /* 14.507 */
+    | | /* 14.508 */public func appEntry0(): Bool {
+    | | /* 14.509 */let view = FoodikeBootstrap(Option < CustomView >.None)
+    | | /* 14.510 */loadNativeView(view)
+    | | /* 14.511 */}
+    | | /* 14.512 */
+    | | /* 14.513 */let A_P_1 = CJEntry.getInstance().registerEntry("FoodikeBootstrap", appEntry0)
+    | | /* 14.514 */
+    | |____________^
     | 
-note[0m: which is expanded as follows
-   | 
-   |   /* 8.32 */    private func navigateTo(route: String): Unit {
-   |  _______________^
-   | | /* 8.33 */        let shellState = this.shellState()
-   | | /* 8.34 */        shellState.currentRoute = route
-   | | /* 8.35 */        this.applyShellState(shellState)
-   | | /* 8.36 */    }
-   | |_______________^
-   | 
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
+    | 
+14  |   @Entry
+    |  _^
+15  | | @Component
+    | | ...
+225 | | }
+    | |_^
+    | 
 
-warning[0m: unused variable:'elmtId'
+warning[0m: unreachable pattern
+    | 
+    | /* 14.239 */        case _ => LegalCallCheck.check(renderLoginRoute(thisView, stateVarDecl_loginEmail_, stateVarDecl_loginPassword_, stateVarDecl_loginErrorMessage_, ObservedProperty("", { value: String =>
+    |                          ^ 
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
+    | 
+14  |   @Entry
+    |  _^
+15  | | @Component
+    | | ...
+225 | | }
+    | |_^
+    | 
+
+warning[0m: unreachable pattern
+    | 
+    | /* 14.302 */    case _ => LegalCallCheck.check(renderProfileRoute(thisView, ObservedProperty("", profileStore.userName), ObservedProperty("", profileStore.userEmail), ObservedProperty("", { =>
+    |                      ^ 
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
+    | 
+14  |   @Entry
+    |  _^
+15  | | @Component
+    | | ...
+225 | | }
+    | |_^
+    | 
+
+warning[0m: unused import 'ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.*'
+ ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+  | 
+8 | import ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.*
+  | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ unused import
+  | 
+  # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+warning[0m: unused import 'ohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime.bootstrapStartRoute'
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:12:71:
    | 
-   | /* 8.82 */        this.observeComponentCreation({ elmtId, isInitialRender =>
-   |                                                   ^^^^^^ unused variable
+12 | import ohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime.{Global, bootstrapStartRoute}
+   |                                                                       ^^^^^^^^^^^^^^^^^^^ unused import
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+
+warning[0m: unused variable:'onboardingController'
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:35:17:
+   | 
+35 |     private var onboardingController: SwiperController = SwiperController()
+   |                 ^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'isInitialRender'
-   | 
-   | /* 8.82 */        this.observeComponentCreation({ elmtId, isInitialRender =>
-   |                                                           ^^^^^^^^^^^^^^^ unused variable
-   | 
-   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'elmtId'
-   | 
-   | /* 8.83 */            Row { this.observeComponentCreation({ elmtId, isInitialRender =>
-   |                                                             ^^^^^^ unused variable
-   | 
-   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'isInitialRender'
-   | 
-   | /* 8.83 */            Row { this.observeComponentCreation({ elmtId, isInitialRender =>
-   |                                                                     ^^^^^^^^^^^^^^^ unused variable
-   | 
-   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'elmtId'
-   | 
-   | /* 8.84 */                Column { this.observeComponentCreation({ elmtId, isInitialRender =>
-   |                                                                    ^^^^^^ unused variable
-   | 
-   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'isInitialRender'
-   | 
-   | /* 8.84 */                Column { this.observeComponentCreation({ elmtId, isInitialRender =>
-   |                                                                            ^^^^^^^^^^^^^^^ unused variable
-   | 
-   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'elmtId'
-   | 
-   | /* 8.87 */                this.observeComponentCreation({ elmtId, isInitialRender =>
-   |                                                           ^^^^^^ unused variable
-   | 
-   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'isInitialRender'
-   | 
-   | /* 8.87 */                this.observeComponentCreation({ elmtId, isInitialRender =>
-   |                                                                   ^^^^^^^^^^^^^^^ unused variable
-   | 
-   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'elmtId'
-   | 
-   | /* 8.90 */                this.observeComponentCreation({ elmtId, isInitialRender =>
-   |                                                           ^^^^^^ unused variable
-   | 
-   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'isInitialRender'
-   | 
-   | /* 8.90 */                this.observeComponentCreation({ elmtId, isInitialRender =>
-   |                                                                   ^^^^^^^^^^^^^^^ unused variable
-   | 
-   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'elmtId'
-    | 
-    | /* 8.93 */                this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                           ^^^^^^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'isInitialRender'
-    | 
-    | /* 8.93 */                this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                                   ^^^^^^^^^^^^^^^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'elmtId'
-    | 
-    | /* 8.96 */                this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                           ^^^^^^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'isInitialRender'
-    | 
-    | /* 8.96 */                this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                                   ^^^^^^^^^^^^^^^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'elmtId'
-    | 
-    | /* 8.99 */                this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                           ^^^^^^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'isInitialRender'
-    | 
-    | /* 8.99 */                this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                                   ^^^^^^^^^^^^^^^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'elmtId'
-    | 
-    | /* 8.102 */                            this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                                        ^^^^^^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'isInitialRender'
-    | 
-    | /* 8.102 */                            this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                                                ^^^^^^^^^^^^^^^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'elmtId'
-    | 
-    | /* 8.112 */            this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                        ^^^^^^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'isInitialRender'
-    | 
-    | /* 8.112 */            this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                                ^^^^^^^^^^^^^^^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'evt'
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:122:36:
-    | 
-122 |                         .onClick({ evt =>
-    |                                    ^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 note[0m: which is expanded as follows
     | 
-    | /* 8.138 */                        ).onClick({ evt =>
-    |                                                ^^^ 
+    | /* 14.466 */func updateWithValueParams(currentRoute!: Option < String >= Option < String >.None, isShellAtTop!: Option < Bool >= Option < Bool >.None, onboardingPageIndex!: Option < Int64 >= Option < Int64 >.None, loginEmail!: Option < String >= Option < String >.None, loginPassword!: Option < String >= Option < String >.None, loginErrorMessage!: Option < String >= Option < String >.None, onboardingController!: Option < SwiperController >= Option < SwiperController >.None): Unit {
+    |                                                                                                                                                                                                                                                                                                                                                                                                         ^^^^^^^^^^^^^^^^^^^^ 
     | 
 
 warning[0m: unused variable:'elmtId'
     | 
-    | /* 8.115 */                        this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                                    ^^^^^^ unused variable
+    | /* 14.147 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                     ^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
     | 
-    | /* 8.115 */                        this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                                            ^^^^^^^^^^^^^^^ unused variable
+    | /* 14.147 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                             ^^^^^^^^^^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
     | 
-    | /* 8.125 */        this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                    ^^^^^^ unused variable
+    | /* 14.148 */                        __Recycle__ { thisView.observeRecycleComponentCreation("renderOnboardingRoute", { elmtId, isInitialRender, recycleNode =>
+    |                                                                                                                       ^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
     | 
-    | /* 8.125 */        this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                            ^^^^^^^^^^^^^^^ unused variable
+    | /* 14.148 */                        __Recycle__ { thisView.observeRecycleComponentCreation("renderOnboardingRoute", { elmtId, isInitialRender, recycleNode =>
+    |                                                                                                                               ^^^^^^^^^^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
     | 
-    | /* 8.128 */                    this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                                ^^^^^^ unused variable
+    | /* 14.221 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                 ^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
     | 
-    | /* 8.128 */                    this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                                        ^^^^^^^^^^^^^^^ unused variable
+    | /* 14.221 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                         ^^^^^^^^^^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
     | 
-    | /* 8.131 */                    this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                                ^^^^^^ unused variable
+    | /* 14.222 */                    __Recycle__ { thisView.observeRecycleComponentCreation("renderLoginRoute", { elmtId, isInitialRender, recycleNode =>
+    |                                                                                                              ^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
     | 
-    | /* 8.131 */                    this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                                        ^^^^^^^^^^^^^^^ unused variable
+    | /* 14.222 */                    __Recycle__ { thisView.observeRecycleComponentCreation("renderLoginRoute", { elmtId, isInitialRender, recycleNode =>
+    |                                                                                                                      ^^^^^^^^^^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
     | 
-    | /* 8.144 */                    this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                                ^^^^^^ unused variable
+    | /* 14.284 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                             ^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
     | 
-    | /* 8.144 */                    this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                                        ^^^^^^^^^^^^^^^ unused variable
+    | /* 14.284 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                     ^^^^^^^^^^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'evt'
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:152:32:
-    | 
-152 |                     .onClick({ evt =>
-    |                                ^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-note[0m: which is expanded as follows
-    | 
-    | /* 8.200 */Button(this.primaryActionLabel(this.currentRoute)).onClick({ evt =>
-    |                                                                         ^^^ 
-    | 
-
-warning[0m: unused variable:'evt'
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:163:40:
-    | 
-163 |                             .onClick({ evt => this.applyShellCommand(ShellCommand.HomeTab) })
-    |                                        ^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-note[0m: which is expanded as follows
-    | 
-    | /* 8.212 */            Button("Home Tab").onClick({ evt =>
-    |                                                     ^^^ 
-    | 
-
-warning[0m: unused variable:'evt'
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:165:40:
-    | 
-165 |                             .onClick({ evt => this.applyShellCommand(ShellCommand.CartAction) })
-    |                                        ^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-note[0m: which is expanded as follows
-    | 
-    | /* 8.217 */            Button("Cart").onClick({ evt =>
-    |                                                 ^^^ 
-    | 
-
-warning[0m: unused variable:'elmtId'
-    | 
-    | /* 8.160 */    this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                ^^^^^^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'isInitialRender'
-    | 
-    | /* 8.160 */    this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                        ^^^^^^^^^^^^^^^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'evt'
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:168:40:
-    | 
-168 |                             .onClick({ evt => this.applyShellCommand(ShellCommand.HistoryTab) })
-    |                                        ^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-note[0m: which is expanded as follows
-    | 
-    | /* 8.222 */            Button("History Tab").onClick({ evt =>
-    |                                                        ^^^ 
-    | 
-
-warning[0m: unused variable:'elmtId'
-    | 
-    | /* 8.163 */                this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                            ^^^^^^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
-    | |_^
-    | 
-
-warning[0m: unused variable:'isInitialRender'
-    | 
-    | /* 8.163 */                this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                                    ^^^^^^^^^^^^^^^ unused variable
-    | 
-    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
-    | 
-8   |   @Entry
-    |  _^
-9   | | @Component
-    | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
     | 
-    | /* 8.173 */this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                            ^^^^^^ unused variable
+    | /* 14.285 */                __Recycle__ { thisView.observeRecycleComponentCreation("renderProfileRoute", { elmtId, isInitialRender, recycleNode =>
+    |                                                                                                            ^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
     | 
-    | /* 8.173 */this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                    ^^^^^^^^^^^^^^^ unused variable
+    | /* 14.285 */                __Recycle__ { thisView.observeRecycleComponentCreation("renderProfileRoute", { elmtId, isInitialRender, recycleNode =>
+    |                                                                                                                    ^^^^^^^^^^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
     | 
-    | /* 8.176 */            this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                        ^^^^^^ unused variable
+    | /* 14.318 */thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                 ^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
     | 
-    | /* 8.176 */            this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                                ^^^^^^^^^^^^^^^ unused variable
+    | /* 14.318 */thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                         ^^^^^^^^^^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
     | 
-    | /* 8.186 */this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                            ^^^^^^ unused variable
+    | /* 14.319 */    Column(space: 18) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                         ^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
     | 
-    | /* 8.186 */this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                    ^^^^^^^^^^^^^^^ unused variable
+    | /* 14.319 */    Column(space: 18) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                 ^^^^^^^^^^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
     | 
-    | /* 8.189 */        this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                    ^^^^^^ unused variable
+    | /* 14.322 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                     ^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
     | 
-    | /* 8.189 */        this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                            ^^^^^^^^^^^^^^^ unused variable
+    | /* 14.322 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                             ^^^^^^^^^^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
     | 
-    | /* 8.199 */this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                            ^^^^^^ unused variable
+    | /* 14.325 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                     ^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
     | 
-    | /* 8.199 */this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                    ^^^^^^^^^^^^^^^ unused variable
+    | /* 14.325 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                             ^^^^^^^^^^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
     | 
-    | /* 8.204 */this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                            ^^^^^^ unused variable
+    | /* 14.328 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                     ^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
     | 
-    | /* 8.204 */this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                    ^^^^^^^^^^^^^^^ unused variable
+    | /* 14.328 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                             ^^^^^^^^^^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
     | 
-    | /* 8.207 */    this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                ^^^^^^ unused variable
+    | /* 14.331 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                 ^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
     | 
-    | /* 8.207 */    this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                        ^^^^^^^^^^^^^^^ unused variable
+    | /* 14.331 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                         ^^^^^^^^^^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
     | 
-    | /* 8.210 */    this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                ^^^^^^ unused variable
+    | /* 14.351 */thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                 ^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
     | 
-    | /* 8.210 */    this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                        ^^^^^^^^^^^^^^^ unused variable
+    | /* 14.351 */thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                         ^^^^^^^^^^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
     | 
-    | /* 8.211 */        Row { this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                          ^^^^^^ unused variable
+    | /* 14.356 */thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                 ^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
     | 
-    | /* 8.211 */        Row { this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                                  ^^^^^^^^^^^^^^^ unused variable
+    | /* 14.356 */thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                         ^^^^^^^^^^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
     | 
-    | /* 8.216 */        this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                    ^^^^^^ unused variable
+    | /* 14.359 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                             ^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
     | 
-    | /* 8.216 */        this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                            ^^^^^^^^^^^^^^^ unused variable
+    | /* 14.359 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                     ^^^^^^^^^^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
     | 
-    | /* 8.221 */        this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                    ^^^^^^ unused variable
+    | /* 14.360 */                Row(space: 12) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                  ^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
     | 
-    | /* 8.221 */        this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                            ^^^^^^^^^^^^^^^ unused variable
+    | /* 14.360 */                Row(space: 12) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                          ^^^^^^^^^^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
     | 
-    | /* 8.228 */this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                            ^^^^^^ unused variable
+    | /* 14.365 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                 ^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
     | 
-    | /* 8.228 */this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                    ^^^^^^^^^^^^^^^ unused variable
+    | /* 14.365 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                         ^^^^^^^^^^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
     | 
-    | /* 8.235 */this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                            ^^^^^^ unused variable
+    | /* 14.370 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                 ^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
     | 
-    | /* 8.235 */this.observeComponentCreation({ elmtId, isInitialRender =>
-    |                                                    ^^^^^^^^^^^^^^^ unused variable
+    | /* 14.370 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                         ^^^^^^^^^^^^^^^ unused variable
     | 
     # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:8:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
     | 
-8   |   @Entry
+14  |   @Entry
     |  _^
-9   | | @Component
+15  | | @Component
     | | ...
-182 | | }
+225 | | }
     | |_^
     | 
 
-66 warnings generated, 66 warnings printed.
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 14.391 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                             ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
+    | 
+14  |   @Entry
+    |  _^
+15  | | @Component
+    | | ...
+225 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 14.391 */this.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                     ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\app\bootstrap_page.cj:14:1:
+    | 
+14  |   @Entry
+    |  _^
+15  | | @Component
+    | | ...
+225 | | }
+    | |_^
+    | 
+
+45 warnings generated, 45 warnings printed.

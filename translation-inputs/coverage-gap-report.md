@@ -15,30 +15,30 @@ Reduce functional coverage gaps first, and use code-scale gaps as a warning sign
 
 | ratio | target/source |
 | --- | --- |
-| targetToSourceFiles | 28.8% |
-| targetToSourceTextFiles | 32.1% |
-| targetToSourceNonblankLines | 16.1% |
-| targetToSourceProductionTextFiles | 30.8% |
-| targetToSourceProductionNonblankLines | 14.8% |
-| targetToSourceCodeFiles | 24.7% |
-| targetToSourceCodeNonblankLines | 12.6% |
-| targetToSourceProductionCodeFiles | 22.9% |
-| targetToSourceProductionCodeNonblankLines | 11.0% |
-| targetToSourceProductionCodeLines | 15.9% |
-| targetToSourceTestFiles | 100.0% |
+| targetToSourceFiles | 54.1% |
+| targetToSourceTextFiles | 52.8% |
+| targetToSourceNonblankLines | 77.0% |
+| targetToSourceProductionTextFiles | 48.1% |
+| targetToSourceProductionNonblankLines | 72.8% |
+| targetToSourceCodeFiles | 47.1% |
+| targetToSourceCodeNonblankLines | 42.4% |
+| targetToSourceProductionCodeFiles | 43.4% |
+| targetToSourceProductionCodeNonblankLines | 38.5% |
+| targetToSourceProductionCodeLines | 55.5% |
+| targetToSourceTestFiles | 300.0% |
 
 ## Findings
 
 | severity | kind | message |
 | --- | --- | --- |
-| high | large-loc-gap | Target production code LoC is below 50% of source production code LoC. This may be valid only if the plan explains major platform/library replacements and deferred scope. |
 | high | string-resource-coverage | Target string resources cover only part of source base strings. |
-| high | coverage-matrix-uncovered-entry | 192 critical/high source feature(s) remain planned, unreviewed, or not covered. |
-| medium | file-count-gap | Target text file count is much smaller than source; check for omitted screens, adapters, resources, tests, or platform integrations. |
-| medium | target-structure-large-file | 1 production target code file(s) are large or dominate target production code. Use the source project structure as a responsibility reference and split overgrown files into coherent Cangjie domain/service/state modules when it improves later repairability. |
-| medium | target-structure-broad-shell-endpoints | 2 broad shell-like target file(s) carry many coverage endpoints. Prefer targetEndpoints that name specific business functions or extracted modules. |
-| medium | target-structure-ui-surface-concentration | 1 target UI surface file(s) contain many page/view/dialog/list symbols. Split obvious settings/viewer/folder/about/player/gallery surfaces when they are becoming one long root shell. |
-| medium | target-structure-ui-endpoint-concentration | 3 target file(s) concentrate UI-related matrix endpoints. Check that routes are mutually rendered, back behavior is explicit, and UI evidence points at screen/page-specific builders rather than one debug-style shell. |
+| high | coverage-matrix-uncovered-entry | 116 critical/high source feature(s) remain planned, unreviewed, or not covered. |
+| medium | medium-loc-gap | Target production code LoC is below 75% of source production code LoC; verify that feature coverage is intentional and not hidden by tests or notes. |
+| medium | target-weakening-signals | Target code contains implementation-placeholder/stub/in-memory/deferred wording; verify each occurrence is intentional and documented. |
+| medium | target-structure-endpoint-concentration | 1 target file(s) carry a concentrated share of matrix targetEndpoints. Check whether unrelated source clusters are being closed through a broad shell instead of precise domain functions. |
+| medium | target-structure-broad-shell-endpoints | 1 broad shell-like target file(s) carry many coverage endpoints. Prefer targetEndpoints that name specific business functions or extracted modules. |
+| medium | target-structure-ui-surface-concentration | 2 target UI surface file(s) contain many page/view/dialog/list symbols. Split obvious settings/viewer/folder/about/player/gallery surfaces when they are becoming one long root shell. |
+| medium | target-structure-ui-endpoint-concentration | 2 target file(s) concentrate UI-related matrix endpoints. Check that routes are mutually rendered, back behavior is explicit, and UI evidence points at screen/page-specific builders rather than one debug-style shell. |
 
 ## Source Coverage Matrix
 
@@ -49,7 +49,7 @@ Reduce functional coverage gaps first, and use code-scale gaps as a warning sign
 | actualEntries | 260 |
 | staleEntries | 0 |
 | missingCriticalHighEntries | 0 |
-| uncoveredCriticalHighEntries | 192 |
+| uncoveredCriticalHighEntries | 116 |
 | deferredCriticalHighEntries | 0 |
 | deferredCriticalHighRatio | 0.0 |
 | simplifiedCriticalHighEntries | 0 |
@@ -64,8 +64,9 @@ Reduce functional coverage gaps first, and use code-scale gaps as a warning sign
 | repeatedImplementedEndpointGroups | 0 |
 | broadImplementedEndpointCriticalHighEntries | 0 |
 | unverifiedTestEvidenceCriticalHighEntries | 0 |
-| testEvidenceVerifiedByLatestTestGateEntries | 9 |
+| testEvidenceVerifiedByLatestTestGateEntries | 29 |
 | weakEvidenceCriticalHighEntries | 0 |
+| implementedWithoutEndpointOrTestCriticalHighEntries | 0 |
 | missingSourceBehaviorCriticalHighEntries | 0 |
 | missingTargetBehaviorCriticalHighEntries | 0 |
 | missingVerificationEvidenceCriticalHighEntries | 0 |
@@ -77,9 +78,9 @@ Reduce functional coverage gaps first, and use code-scale gaps as a warning sign
 
 | status | count |
 | --- | --- |
-| implemented | 13 |
-| not-applicable | 11 |
-| planned | 227 |
+| implemented | 60 |
+| not-applicable | 50 |
+| planned | 141 |
 | platform-replaced | 9 |
 
 ## Platform Capability Check
@@ -117,26 +118,28 @@ Reduce functional coverage gaps first, and use code-scale gaps as a warning sign
 
 | metric | value |
 | --- | --- |
-| productionCodeFiles | 19 |
-| productionCodeNonblankLines | 754 |
-| largestProductionCodeFileNonblankLines | 405 |
-| largeProductionCodeFiles | 1 |
-| endpointBearingFeatureRows | 22 |
-| endpointTargetFiles | 16 |
-| largestEndpointFileShare | 36.4% |
-| concentratedEndpointFiles | 0 |
-| broadShellEndpointFiles | 2 |
-| uiSurfaceFiles | 6 |
-| concentratedUiSurfaceFiles | 1 |
-| uiEndpointBearingFeatureRows | 22 |
-| uiEndpointTargetFiles | 16 |
-| concentratedUiEndpointFiles | 3 |
+| productionCodeFiles | 36 |
+| productionCodeNonblankLines | 2629 |
+| largestProductionCodeFileNonblankLines | 374 |
+| largeProductionCodeFiles | 0 |
+| endpointBearingFeatureRows | 69 |
+| endpointTargetFiles | 37 |
+| largestEndpointFileShare | 56.5% |
+| concentratedEndpointFiles | 1 |
+| broadShellEndpointFiles | 1 |
+| uiSurfaceFiles | 18 |
+| concentratedUiSurfaceFiles | 2 |
+| uiEndpointBearingFeatureRows | 66 |
+| uiEndpointTargetFiles | 33 |
+| concentratedUiEndpointFiles | 2 |
 | entryModuleStatus | PASS |
 | entryRootPackage | ohos_app_cangjie_entry |
 
 ## Target Weakening Signals
 
-_No placeholder/stub/in-memory/deferred wording found in target text files._
+| signal | count |
+| --- | --- |
+| todo | 1 |
 
 ## Must-Review Source Files
 

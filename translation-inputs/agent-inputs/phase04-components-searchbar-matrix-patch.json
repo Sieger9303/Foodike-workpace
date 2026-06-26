@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Close the phase-04 presentation/components SearchBar authority rows using existing target endpoints and source-reviewed not-applicable evidence.",
+  "updates": [
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-compo-cd0d46a2f4-002-runtime-permission-request-permission-re",
+      "set": {
+        "status": "not-applicable",
+        "sourceBehavior": "Source review found no runtime permission request, permission callback, or protected API access in SearchBar; the composable only owns a remembered search text field and leading icon.",
+        "targetBehavior": "No permission flow was introduced in the HarmonyOS search bar because renderSearchBar only binds a visible query string to a Search input and emits text-change callbacks.",
+        "verificationEvidence": [
+          "Source review: D:/Kotlin2Cangjie/Foodike/app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt contains only local mutableStateOf text, a TextField, placeholder text, and a leading search icon.",
+          "Target review: entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/search_bar.cj contains only a Search component with onQueryChange wiring; no permission API is referenced.",
+          "Manual classification: this permission row is a static-analysis false positive on a pure search-input component."
+        ],
+        "parityLevel": "not-applicable",
+        "targetEndpoints": [],
+        "tests": [],
+        "notes": "SearchBar is a pure text-input widget in both source and target; there is no protected platform access to translate.",
+        "deferredReason": "",
+        "targetFallback": "",
+        "risk": "",
+        "futureCompletionPath": "",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [],
+            "testEvidence": [],
+            "buildEvidence": [],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "Reviewed SearchBar.kt and search_bar.cj; both are search-input components without permission-gated behavior."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-compo-3484491a45-003-settings-preferences-option-toggles-or-c",
+      "set": {
+        "status": "not-applicable",
+        "sourceBehavior": "Source review found no settings/preferences persistence, option toggles, or configuration state in SearchBar; the composable only remembers the current text field value for the visible search input.",
+        "targetBehavior": "No preference or configuration toggle was added to the HarmonyOS search bar because renderSearchBar remains a stateless query-input widget fed by route-owned state.",
+        "verificationEvidence": [
+          "Source review: D:/Kotlin2Cangjie/Foodike/app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt only keeps a local text string for the TextField value; it does not read or write settings/preferences.",
+          "Target review: entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/search_bar.cj plus bootstrap_page.cj keep query state in-memory for immediate UI refresh only, with no persisted preference or toggle behavior.",
+          "Manual classification: this settings row is a static-analysis false positive on a simple search field component."
+        ],
+        "parityLevel": "not-applicable",
+        "targetEndpoints": [],
+        "tests": [],
+        "notes": "Phase-04 search state is local/route-owned UI state, not a preference or settings contract.",
+        "deferredReason": "",
+        "targetFallback": "",
+        "risk": "",
+        "futureCompletionPath": "",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [],
+            "testEvidence": [],
+            "buildEvidence": [],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "Reviewed SearchBar.kt, search_bar.cj, and bootstrap_page.cj; they contain only transient UI query state, not settings/preferences behavior."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-compo-0411e44e98-004-observable-state-viewmodel-flow-livedata",
+      "set": {
+        "status": "implemented",
+        "sourceBehavior": "SearchBar owns a remembered text state and updates it immediately through onValueChange so the visible query text recomposes in place as the user types.",
+        "targetBehavior": "The HarmonyOS search bar preserves the same immediate UI propagation contract by rendering the current query through renderSearchBar and updating route-owned @State in FoodikeBootstrap on each onQueryChange callback.",
+        "verificationEvidence": [
+          "Source review: D:/Kotlin2Cangjie/Foodike/app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt uses remember { mutableStateOf(\"\") } and assigns text = it inside TextField.onValueChange for immediate recomposition.",
+          "Target review: entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/search_bar.cj emits onQueryChange from Search.onChange, and entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj stores homeSearchQuery/historySearchQuery as @State that rerender renderHomeRoute/renderHistoryRoute immediately.",
+          "Test harness blocked after compile: the latest reported cjpm test command for target tests fails in ld.lld with missing Scrt1.o/crti.o/libm/libc before phase-04 tests can be counted as PASS, so this row relies on direct endpoint review instead of test-pass evidence."
+        ],
+        "parityLevel": "equivalent",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/search_bar.cj::renderSearchBar",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.homeSearchQuery",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.historySearchQuery",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.buildHomeRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.buildHistoryRoute"
+        ],
+        "tests": [],
+        "notes": "The target hoists search query state to route-owned @State instead of storing it inside the widget, but preserves the same user-visible immediate text update semantics.",
+        "deferredReason": "",
+        "targetFallback": "",
+        "risk": "",
+        "futureCompletionPath": "",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/search_bar.cj::renderSearchBar",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.homeSearchQuery",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.historySearchQuery",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.buildHomeRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.buildHistoryRoute"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "The latest workflow test report for cjpm test --target aarch64-linux-ohos fails during ld.lld link with missing Scrt1.o/crti.o/libm/libc before phase-04 tests can run."
+              }
+            ],
+            "buildEvidence": [],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "Compared SearchBar.kt remembered text state with renderSearchBar callback wiring and FoodikeBootstrap @State updates for home/history routes."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-compo-b7134befc8-005-data-loading-query-search-filter-or-sort",
+      "set": {
+        "status": "implemented",
+        "sourceBehavior": "SearchBar presents a single-line search input with a visible \"Search\" placeholder and leading search icon, updating the current query text on every input change.",
+        "targetBehavior": "The HarmonyOS translation preserves the search-input behavior with renderSearchBar, which shows the same visible placeholder text and forwards each query edit into route-owned state consumed by home and history discovery routes.",
+        "verificationEvidence": [
+          "Source review: D:/Kotlin2Cangjie/Foodike/app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt renders a single-line TextField with placeholder \"Search\", a leading Icons.Outlined.Search icon, and onValueChange text updates.",
+          "Target review: entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/search_bar.cj renders a Search input with placeholder \"Search\" and onChange callback, and bootstrap_page.cj wires the updated query into renderHomeRoute and renderHistoryRoute.",
+          "Phase evidence: D:/workspace/Foodike/translation-inputs/build-reports/phase-04-home-history-discovery/build-report.json records a passed build for the phase containing the search bar routes, while direct endpoint review confirms the per-feature behavior."
+        ],
+        "parityLevel": "equivalent",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/search_bar.cj::renderSearchBar",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj::renderHomeRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/history/history_page.cj::renderHistoryRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.buildHomeRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.buildHistoryRoute"
+        ],
+        "tests": [],
+        "notes": "Source SearchBar does not perform repository-backed filtering; the target preserves the same visible query-entry behavior without inventing backend search semantics.",
+        "deferredReason": "",
+        "targetFallback": "",
+        "risk": "",
+        "futureCompletionPath": "",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/search_bar.cj::renderSearchBar",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj::renderHomeRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/history/history_page.cj::renderHistoryRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.buildHomeRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.buildHistoryRoute"
+            ],
+            "testEvidence": [],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "verification-results.md records a passed build gate for phase-04-home-history-discovery at translation-inputs/build-reports/phase-04-home-history-discovery/build-report.json."
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "Compared SearchBar.kt with search_bar.cj plus route wiring in bootstrap_page.cj/home_page.cj/history_page.cj to confirm visible search-input parity."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    }
+  ]
+}

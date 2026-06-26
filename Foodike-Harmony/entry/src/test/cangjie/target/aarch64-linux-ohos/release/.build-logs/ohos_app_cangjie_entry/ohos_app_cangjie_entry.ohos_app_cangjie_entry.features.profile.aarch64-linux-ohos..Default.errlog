@@ -1,0 +1,815 @@
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 7.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                      ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the code after the macro is expanded as follows
+   | 
+   |   /* 7.1 */func buildProfileTopBar(thisView: CustomView, onBack: ObservedProperty <() -> Unit >): ViewBuilder {
+   |  _^
+   | | /* 7.2 */    
+   | | /* 7.3 */    
+   | | /* 7.4 */    func buildProfileTopBar__inner__(thisView: CustomView, onBack:() -> Unit): Unit {
+   | | /* 7.5 */        
+   | | /* 7.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 7.7 */            Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 7.8 */                Button("<").onClick({ _ =>
+   | | /* 7.9 */                    onBack()
+   | | /* 7.10 */                })
+   | | /* 7.11 */            })
+   | | /* 7.12 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 7.13 */                Text(stringProfileTitle).fontSize(28).fontWeight(FontWeight.Bold).margin(left: 16)
+   | | /* 7.14 */            })
+   | | /* 7.15 */        }.width(100.percent).justifyContent(FlexAlign.Start).alignItems(VerticalAlign.Center)
+   | | /* 7.16 */    })
+   | | /* 7.17 */    
+   | | /* 7.18 */}
+   | | /* 7.19 */
+   | | /* 7.20 */
+   | | /* 7.21 */ViewBuilder { buildProfileTopBar__inner__(thisView, onBack.get()) }
+   | | /* 7.22 */
+   | | /* 7.23 */}
+   | | /* 7.24 */
+   | |__________^
+   | 
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:7:1:
+   | 
+7  |   @Builder
+   |  _^
+8  | | func buildProfileTopBar(onBack: () -> Unit) {
+   | | ...
+22 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 7.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                              ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:7:1:
+   | 
+7  |   @Builder
+   |  _^
+8  | | func buildProfileTopBar(onBack: () -> Unit) {
+   | | ...
+22 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 7.7 */            Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:7:1:
+   | 
+7  |   @Builder
+   |  _^
+8  | | func buildProfileTopBar(onBack: () -> Unit) {
+   | | ...
+22 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 7.7 */            Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                        ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:7:1:
+   | 
+7  |   @Builder
+   |  _^
+8  | | func buildProfileTopBar(onBack: () -> Unit) {
+   | | ...
+22 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 7.12 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                           ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:7:1:
+   | 
+7  |   @Builder
+   |  _^
+8  | | func buildProfileTopBar(onBack: () -> Unit) {
+   | | ...
+22 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 7.12 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                   ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:7:1:
+   | 
+7  |   @Builder
+   |  _^
+8  | | func buildProfileTopBar(onBack: () -> Unit) {
+   | | ...
+22 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 24.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                       ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the code after the macro is expanded as follows
+   | 
+   |   /* 24.1 */func buildProfileSection(thisView: CustomView, title: ObservedProperty < ResourceStr >, subtitle: ObservedProperty < ResourceStr >, showDivider: ObservedProperty < Bool >, onClick: ObservedProperty <() -> Unit >): ViewBuilder {
+   |  _^
+   | | /* 24.2 */    
+   | | /* 24.3 */    
+   | | /* 24.4 */    func buildProfileSection__inner__(thisView: CustomView, title: ResourceStr, subtitle: ResourceStr, showDivider: Bool, onClick:() -> Unit): Unit {
+   | | /* 24.5 */        
+   | | /* 24.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 24.7 */            Column(space: 8) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 24.8 */                Text(title).fontSize(21).fontWeight(FontWeight.Medium)
+   | | /* 24.9 */            })
+   | | /* 24.10 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 24.11 */                Text(subtitle).fontSize(15).fontColor(Color.Gray)
+   | | /* 24.12 */            })
+   | | /* 24.13 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 24.14 */                If { if(showDivider) {
+   | | /* 24.15 */                    thisView.ifElseBranchUpdateFunction(0, { =>
+   | | /* 24.16 */                        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 24.17 */                            Divider().width(100.percent)
+   | | /* 24.18 */                        })
+   | | /* 24.19 */                    })
+   | | /* 24.20 */                }
+   | | /* 24.21 */                else {
+   | | /* 24.22 */                    If.branchId(1)
+   | | /* 24.23 */                }
+   | | /* 24.24 */            }
+   | | /* 24.25 */        })
+   | | /* 24.26 */    }.width(100.percent).padding(top: 10, bottom: 10).onClick({ _ =>
+   | | /* 24.27 */        onClick()
+   | | /* 24.28 */    })
+   | | /* 24.29 */})
+   | | /* 24.30 */
+   | | /* 24.31 */}
+   | | /* 24.32 */
+   | | /* 24.33 */
+   | | /* 24.34 */ViewBuilder { buildProfileSection__inner__(thisView, title.get(), subtitle.get(), showDivider.get(), onClick.get()) }
+   | | /* 24.35 */
+   | | /* 24.36 */}
+   | | /* 24.37 */
+   | |___________^
+   | 
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:24:1:
+   | 
+24 |   @Builder
+   |  _^
+25 | | func buildProfileSection(title: ResourceStr, subtitle: ResourceStr, showDivider: Bool, onClick: () -> Unit) {
+   | | ...
+42 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 24.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                               ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:24:1:
+   | 
+24 |   @Builder
+   |  _^
+25 | | func buildProfileSection(title: ResourceStr, subtitle: ResourceStr, showDivider: Bool, onClick: () -> Unit) {
+   | | ...
+42 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 24.7 */            Column(space: 8) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                              ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:24:1:
+   | 
+24 |   @Builder
+   |  _^
+25 | | func buildProfileSection(title: ResourceStr, subtitle: ResourceStr, showDivider: Bool, onClick: () -> Unit) {
+   | | ...
+42 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 24.7 */            Column(space: 8) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                                      ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:24:1:
+   | 
+24 |   @Builder
+   |  _^
+25 | | func buildProfileSection(title: ResourceStr, subtitle: ResourceStr, showDivider: Bool, onClick: () -> Unit) {
+   | | ...
+42 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 24.10 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                            ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:24:1:
+   | 
+24 |   @Builder
+   |  _^
+25 | | func buildProfileSection(title: ResourceStr, subtitle: ResourceStr, showDivider: Bool, onClick: () -> Unit) {
+   | | ...
+42 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 24.10 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                    ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:24:1:
+   | 
+24 |   @Builder
+   |  _^
+25 | | func buildProfileSection(title: ResourceStr, subtitle: ResourceStr, showDivider: Bool, onClick: () -> Unit) {
+   | | ...
+42 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 24.13 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                            ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:24:1:
+   | 
+24 |   @Builder
+   |  _^
+25 | | func buildProfileSection(title: ResourceStr, subtitle: ResourceStr, showDivider: Bool, onClick: () -> Unit) {
+   | | ...
+42 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 24.13 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                    ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:24:1:
+   | 
+24 |   @Builder
+   |  _^
+25 | | func buildProfileSection(title: ResourceStr, subtitle: ResourceStr, showDivider: Bool, onClick: () -> Unit) {
+   | | ...
+42 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 24.16 */                        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                        ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:24:1:
+   | 
+24 |   @Builder
+   |  _^
+25 | | func buildProfileSection(title: ResourceStr, subtitle: ResourceStr, showDivider: Bool, onClick: () -> Unit) {
+   | | ...
+42 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 24.16 */                        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                                ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:24:1:
+   | 
+24 |   @Builder
+   |  _^
+25 | | func buildProfileSection(title: ResourceStr, subtitle: ResourceStr, showDivider: Bool, onClick: () -> Unit) {
+   | | ...
+42 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 44.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                       ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the code after the macro is expanded as follows
+    | 
+    |   /* 44.1 */public func renderProfileRoute(thisView: CustomView, userName: ObservedProperty < String >, userEmail: ObservedProperty < String >, onBack: ObservedProperty <() -> Unit >, onEdit: ObservedProperty <() -> Unit >, onSectionClick: ObservedProperty <() -> Unit >, onLogout: ObservedProperty <() -> Unit >): ViewBuilder {
+    |  _^
+    | | /* 44.2 */    
+    | | /* 44.3 */    
+    | | /* 44.4 */    func renderProfileRoute__inner__(thisView: CustomView, userName: String, userEmail: String, onBack:() -> Unit, onEdit:() -> Unit, onSectionClick:() -> Unit, onLogout:() -> Unit): Unit {
+    | | /* 44.5 */        
+    | | /* 44.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 44.7 */            Column(space: 18) { buildProfileTopBar(thisView, ObservedProperty("", onBack)).build()
+    | | /* 44.8 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 44.9 */                    Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 44.10 */                        Column(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 44.11 */                            Text(userName).fontSize(28).fontWeight(FontWeight.Bold)
+    | | /* 44.12 */                        })
+    | | /* 44.13 */                        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 44.14 */                            Text(userEmail).fontSize(15).fontColor(Color.Gray)
+    | | /* 44.15 */                        })
+    | | /* 44.16 */                    }.layoutWeight(1)
+    | | /* 44.17 */                })
+    | | /* 44.18 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 44.19 */                    Column(space: 8) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 44.20 */                        Image(mediaProfile).width(96).height(96).borderRadius(48)
+    | | /* 44.21 */                    })
+    | | /* 44.22 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 44.23 */                        Text(stringEdit).fontSize(15).fontColor(colorDarkGreen).fontWeight(FontWeight.Bold).onClick({ _ =>
+    | | /* 44.24 */                            onEdit()
+    | | /* 44.25 */                        })
+    | | /* 44.26 */                    })
+    | | /* 44.27 */                }.alignItems(HorizontalAlign.Center)
+    | | /* 44.28 */            })
+    | | /* 44.29 */        }.width(100.percent).alignItems(VerticalAlign.Center)
+    | | /* 44.30 */    })
+    | | /* 44.31 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 44.32 */        Divider().width(100.percent)
+    | | /* 44.33 */    })
+    | | /* 44.34 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 44.35 */        Column { buildProfileSection(thisView, ObservedProperty("", stringSavedAddresses), ObservedProperty("", stringAddEditSavedAddresses), ObservedProperty("", true), ObservedProperty("", onSectionClick)).build()
+    | | /* 44.36 */            buildProfileSection(thisView, ObservedProperty("", stringPaymentsAndRefunds), ObservedProperty("", stringRefundsInformation), ObservedProperty("", true), ObservedProperty("", onSectionClick)).build()
+    | | /* 44.37 */            buildProfileSection(thisView, ObservedProperty("", stringOnlineOrderingHelp), ObservedProperty("", stringOrderingInformation), ObservedProperty("", true), ObservedProperty("", onSectionClick)).build()
+    | | /* 44.38 */            buildProfileSection(thisView, ObservedProperty("", stringAbout), ObservedProperty("", stringAboutTheApp), ObservedProperty("", false), ObservedProperty("", onSectionClick)).build()
+    | | /* 44.39 */        }.width(100.percent)
+    | | /* 44.40 */    })
+    | | /* 44.41 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 44.42 */        Blank().layoutWeight(1)
+    | | /* 44.43 */    })
+    | | /* 44.44 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 44.45 */        Button(stringLogOut).width(220).height(50).onClick({ _ =>
+    | | /* 44.46 */            onLogout()
+    | | /* 44.47 */        })
+    | | /* 44.48 */    })
+    | | /* 44.49 */}.width(100.percent).height(100.percent).padding(top: 18, right: 24, bottom: 24, left: 24).backgroundColor(Color.White)
+    | | /* 44.50 */})
+    | | /* 44.51 */
+    | | /* 44.52 */}
+    | | /* 44.53 */
+    | | /* 44.54 */
+    | | /* 44.55 */ViewBuilder { renderProfileRoute__inner__(thisView, userName.get(), userEmail.get(), onBack.get(), onEdit.get(), onSectionClick.get(), onLogout.get()) }
+    | | /* 44.56 */
+    | | /* 44.57 */}
+    | | /* 44.58 */
+    | |___________^
+    | 
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 44.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                               ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 44.8 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                               ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 44.8 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                       ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 44.9 */                    Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                         ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 44.9 */                    Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                                 ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 44.10 */                        Column(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                                           ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 44.10 */                        Column(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                                                   ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 44.13 */                        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                        ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 44.13 */                        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                                ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 44.18 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 44.18 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                        ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 44.19 */                    Column(space: 8) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                                       ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 44.19 */                    Column(space: 8) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                                               ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 44.22 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                    ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 44.22 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                            ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 44.31 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                    ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 44.31 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                            ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 44.34 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                    ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 44.34 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                            ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 44.41 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                    ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 44.41 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                            ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'elmtId'
+    | 
+    | /* 44.44 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                    ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+warning[0m: unused variable:'isInitialRender'
+    | 
+    | /* 44.44 */    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                            ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\profile\profile_page.cj:44:1:
+    | 
+44  |   @Builder
+    |  _^
+45  | | public func renderProfileRoute(
+    | | ...
+110 | | }
+    | |_^
+    | 
+
+40 warnings generated, 40 warnings printed.
