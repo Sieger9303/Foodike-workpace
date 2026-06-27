@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-25T03:22:20+00:00",
+  "generatedAt": "2026-06-27T02:18:47+00:00",
   "phase": "phase-01-project-skeleton-resources",
   "sessionKind": "phase",
   "focusMode": "implementation-group",
@@ -40,11 +40,11 @@
       "path": "D:\\workspace\\Foodike\\translation-inputs\\phase-task-checklist.json",
       "exists": true,
       "error": "",
-      "generatedAt": "2026-06-25T03:22:19+00:00",
+      "generatedAt": "2026-06-27T02:15:11+00:00",
       "phase": "phase-01-project-skeleton-resources",
       "kind": "",
-      "mtime": 1782357739.8896527,
-      "size": 187831
+      "mtime": 1782526511.2282636,
+      "size": 203427
     },
     {
       "name": "phaseGroupVerdicts",
@@ -60,11 +60,11 @@
       "path": "D:\\workspace\\Foodike\\translation-inputs\\phase-capability-checklist.json",
       "exists": true,
       "error": "",
-      "generatedAt": "2026-06-25T03:22:20+00:00",
+      "generatedAt": "2026-06-27T02:18:47+00:00",
       "phase": "phase-01-project-skeleton-resources",
       "kind": "",
-      "mtime": 1782357740.6074233,
-      "size": 1932
+      "mtime": 1782526727.2906272,
+      "size": 19360
     },
     {
       "name": "translationQualitySummary",
@@ -78,46 +78,44 @@
     {
       "name": "phaseCoverageGate",
       "path": "D:\\workspace\\Foodike\\translation-inputs\\phase-coverage-gate-report.json",
-      "exists": true,
-      "error": "",
-      "generatedAt": "2026-06-25T03:11:13+00:00",
-      "phase": "phase-01-project-skeleton-resources",
-      "kind": "",
-      "mtime": 1782357073.4666326,
-      "size": 9422
+      "exists": false,
+      "error": "missing",
+      "generatedAt": "",
+      "phase": "",
+      "kind": ""
     },
     {
       "name": "targetStructure",
       "path": "D:\\workspace\\Foodike\\translation-inputs\\target-structure-report.json",
       "exists": true,
       "error": "",
-      "generatedAt": "2026-06-25T03:22:19+00:00",
+      "generatedAt": "2026-06-27T02:15:11+00:00",
       "phase": "",
       "kind": "",
-      "mtime": 1782357739.8946521,
-      "size": 2201
+      "mtime": 1782526511.2367828,
+      "size": 3617
     },
     {
       "name": "sourceCoverageMatrix",
       "path": "D:\\workspace\\Foodike\\translation-inputs\\source-coverage-matrix.json",
       "exists": true,
       "error": "",
-      "generatedAt": "2026-06-25T02:01:25+00:00",
+      "generatedAt": "2026-06-27T01:35:38+00:00",
       "phase": "",
       "kind": "",
-      "mtime": 1782355497.119678,
-      "size": 408780
+      "mtime": 1782526486.1017685,
+      "size": 642048
     },
     {
       "name": "platformCapabilityCheck",
       "path": "D:\\workspace\\Foodike\\translation-inputs\\platform-capability-check.json",
       "exists": true,
       "error": "",
-      "generatedAt": "2026-06-25T02:01:25+00:00",
+      "generatedAt": "2026-06-27T01:35:38+00:00",
       "phase": "",
       "kind": "",
-      "mtime": 1782353998.0819938,
-      "size": 191846
+      "mtime": 1782526690.129233,
+      "size": 193083
     }
   ],
   "workingSet": {
@@ -127,16 +125,16 @@
     "requestedImplementationGroupIds": [
       "phase-01-project-skeleton-resources-resource-migration-manifest",
       "phase-01-project-skeleton-resources-source-behavior-app",
-      "phase-01-project-skeleton-resources-source-behavior-kotlin-source",
-      "phase-01-project-skeleton-resources-resource-migration-res-values"
+      "phase-01-project-skeleton-resources-source-behavior-gradle",
+      "phase-01-project-skeleton-resources-source-behavior-gradle-wrapper"
     ],
     "clusterIds": [],
     "repairGroupIds": [],
     "implementationGroupIds": [
       "phase-01-project-skeleton-resources-resource-migration-manifest",
       "phase-01-project-skeleton-resources-source-behavior-app",
-      "phase-01-project-skeleton-resources-source-behavior-kotlin-source",
-      "phase-01-project-skeleton-resources-resource-migration-res-values"
+      "phase-01-project-skeleton-resources-source-behavior-gradle",
+      "phase-01-project-skeleton-resources-source-behavior-gradle-wrapper"
     ],
     "featureIds": [
       "app-src-main-androidmanifest-xml-c7c6907eb1-004-android-platform-component-lifecycle-suc",
@@ -149,28 +147,29 @@
       "app-build-gradle-kts-329cf39b55-002-runtime-permission-request-permission-re",
       "app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat",
       "app-build-gradle-kts-aa010bdd3d-005-settings-preferences-option-toggles-or-c",
-      "build-gradle-kts-6cd8a326ab-002-android-platform-component-lifecycle-suc",
-      "build-gradle-kts-e6afb1cfd2-001-runtime-permission-request-permission-re",
-      "build-gradle-kts-2f9b07ef27-003-settings-preferences-option-toggles-or-c",
-      "app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma",
-      "app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m",
-      "app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma",
-      "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m",
-      "app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re"
+      "app-proguard-rules-pro-0b4df5e718-001-settings-preferences-option-toggles-or-c",
+      "gradle-libs-versions-toml-cc0d706dd9-002-android-platform-component-lifecycle-suc",
+      "gradle-libs-versions-toml-3aed645f54-001-navigation-surface-menu-drawer-toolbar-o",
+      "gradle-libs-versions-toml-84d742a20a-003-screen-lifecycle-entry-point-initializat",
+      "gradle-libs-versions-toml-e5bf6af034-004-settings-preferences-option-toggles-or-c",
+      "gradle-wrapper-gradle-wrapper-properties-631c1456ba-001-android-platform-component-lifecycle-suc"
     ],
-    "capabilityIds": [],
+    "capabilityIds": [
+      "localization-resources"
+    ],
     "sourcePaths": [
       "app/src/main/AndroidManifest.xml",
       "app/build.gradle.kts",
-      "build.gradle.kts",
-      "app/src/main/res/values/colors.xml",
-      "app/src/main/res/values/themes.xml"
+      "app/proguard-rules.pro",
+      "gradle/libs.versions.toml",
+      "gradle/wrapper/gradle-wrapper.properties"
     ],
     "targetEndpoints": [],
     "acceptanceEvidence": [
       "Closed critical/high features must record sourceBehavior, targetBehavior, parityLevel, targetEndpoints, and verificationEvidence.",
       "Build pass alone is not per-feature verification.",
-      "Resource inputs must be implemented, mapped to equivalent target behavior, or closed with a specific deferred/replaced reason."
+      "Resource inputs must be implemented, mapped to equivalent target behavior, or closed with a specific deferred/replaced reason.",
+      "Related platform capabilities must cite targetCapabilitySearch and a Cangjie-callable API, verified replacement, fallback blocker, or deferred blocker."
     ],
     "testHints": [],
     "overflowRefs": [
@@ -203,7 +202,9 @@
         "{'sourcePath': 'app/src/main/AndroidManifest.xml', 'category': 'android-manifest', 'featureId': 'app-src-main-androidmanifest-xml-dcc4612e71-003-runtime-permission-request-permission-re', 'migrationMode': 'platform-configuration-or-documented-replacement', 'semantics': 'Runtime permission request, permission result handling, or protected API access.'}",
         "{'sourcePath': 'app/src/main/AndroidManifest.xml', 'category': 'android-manifest', 'featureId': 'app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat', 'migrationMode': 'platform-configuration-or-documented-replacement', 'semantics': 'Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.'}"
       ],
-      "platformCapabilityIds": [],
+      "platformCapabilityIds": [
+        "localization-resources"
+      ],
       "expectedTargetDomains": [],
       "requiredBehaviors": [
         "Android platform component lifecycle such as service, receiver, provider, or application.",
@@ -217,12 +218,14 @@
         "critical/high behavior cannot close on build pass alone",
         "resource semantics must be mapped to target resources, UI/components, or a specific replacement",
         "missing target endpoint evidence",
-        "missing focused test or verification evidence"
+        "missing focused test or verification evidence",
+        "related platform capability must be resolved with Cangjie-callable API, replacement, fallback blocker, or deferred evidence"
       ],
       "acceptanceEvidence": [
         "Closed critical/high features must record sourceBehavior, targetBehavior, parityLevel, targetEndpoints, and verificationEvidence.",
         "Build pass alone is not per-feature verification.",
-        "Resource inputs must be implemented, mapped to equivalent target behavior, or closed with a specific deferred/replaced reason."
+        "Resource inputs must be implemented, mapped to equivalent target behavior, or closed with a specific deferred/replaced reason.",
+        "Related platform capabilities must cite targetCapabilitySearch and a Cangjie-callable API, verified replacement, fallback blocker, or deferred blocker."
       ],
       "testHints": [],
       "compileProbeRecommended": false,
@@ -235,14 +238,16 @@
       "groupType": "source-behavior",
       "priority": "critical",
       "sourcePaths": [
-        "app/build.gradle.kts"
+        "app/build.gradle.kts",
+        "app/proguard-rules.pro"
       ],
       "featureIds": [
         "app-build-gradle-kts-52a26dc1e9-003-android-platform-component-lifecycle-suc",
         "app-build-gradle-kts-ab52d0a44d-001-navigation-surface-menu-drawer-toolbar-o",
         "app-build-gradle-kts-329cf39b55-002-runtime-permission-request-permission-re",
         "app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat",
-        "app-build-gradle-kts-aa010bdd3d-005-settings-preferences-option-toggles-or-c"
+        "app-build-gradle-kts-aa010bdd3d-005-settings-preferences-option-toggles-or-c",
+        "app-proguard-rules-pro-0b4df5e718-001-settings-preferences-option-toggles-or-c"
       ],
       "resourceInputs": [],
       "platformCapabilityIds": [],
@@ -270,24 +275,26 @@
       "uiContract": {}
     },
     {
-      "groupId": "phase-01-project-skeleton-resources-source-behavior-kotlin-source",
-      "title": "Source behavior: kotlin-source",
+      "groupId": "phase-01-project-skeleton-resources-source-behavior-gradle",
+      "title": "Source behavior: gradle",
       "groupType": "source-behavior",
       "priority": "critical",
       "sourcePaths": [
-        "build.gradle.kts"
+        "gradle/libs.versions.toml"
       ],
       "featureIds": [
-        "build-gradle-kts-6cd8a326ab-002-android-platform-component-lifecycle-suc",
-        "build-gradle-kts-e6afb1cfd2-001-runtime-permission-request-permission-re",
-        "build-gradle-kts-2f9b07ef27-003-settings-preferences-option-toggles-or-c"
+        "gradle-libs-versions-toml-cc0d706dd9-002-android-platform-component-lifecycle-suc",
+        "gradle-libs-versions-toml-3aed645f54-001-navigation-surface-menu-drawer-toolbar-o",
+        "gradle-libs-versions-toml-84d742a20a-003-screen-lifecycle-entry-point-initializat",
+        "gradle-libs-versions-toml-e5bf6af034-004-settings-preferences-option-toggles-or-c"
       ],
       "resourceInputs": [],
       "platformCapabilityIds": [],
       "expectedTargetDomains": [],
       "requiredBehaviors": [
         "Android platform component lifecycle such as service, receiver, provider, or application.",
-        "Runtime permission request, permission result handling, or protected API access.",
+        "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+        "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
         "Settings/preferences, option toggles, or configuration state behavior."
       ],
       "riskHints": [
@@ -306,46 +313,31 @@
       "uiContract": {}
     },
     {
-      "groupId": "phase-01-project-skeleton-resources-resource-migration-res-values",
-      "title": "Resource migration: res/values",
-      "groupType": "resource-migration",
-      "priority": "high",
+      "groupId": "phase-01-project-skeleton-resources-source-behavior-gradle-wrapper",
+      "title": "Source behavior: Android platform component lifecycle such as service, receiver, provider, or application.",
+      "groupType": "source-behavior",
+      "priority": "critical",
       "sourcePaths": [
-        "app/src/main/res/values/colors.xml",
-        "app/src/main/res/values/themes.xml"
+        "gradle/wrapper/gradle-wrapper.properties"
       ],
       "featureIds": [
-        "app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma",
-        "app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m",
-        "app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma",
-        "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m",
-        "app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re"
+        "gradle-wrapper-gradle-wrapper-properties-631c1456ba-001-android-platform-component-lifecycle-suc"
       ],
-      "resourceInputs": [
-        "{'sourcePath': 'app/src/main/res/values/colors.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma', 'migrationMode': 'user-visible-resource', 'semantics': 'Android `android-values` file should be mapped to target resources, components, or documented deferred scope.'}",
-        "{'sourcePath': 'app/src/main/res/values/colors.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m', 'migrationMode': 'user-visible-resource', 'semantics': 'Android resource/configuration must be mapped or explicitly deferred.'}",
-        "{'sourcePath': 'app/src/main/res/values/themes.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma', 'migrationMode': 'user-visible-resource', 'semantics': 'Android `android-values` file should be mapped to target resources, components, or documented deferred scope.'}",
-        "{'sourcePath': 'app/src/main/res/values/themes.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m', 'migrationMode': 'user-visible-resource', 'semantics': 'Android resource/configuration must be mapped or explicitly deferred.'}",
-        "{'sourcePath': 'app/src/main/res/values/themes.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re', 'migrationMode': 'user-visible-resource', 'semantics': 'Runtime permission request, permission result handling, or protected API access.'}"
-      ],
+      "resourceInputs": [],
       "platformCapabilityIds": [],
       "expectedTargetDomains": [],
       "requiredBehaviors": [
-        "Android `android-values` file should be mapped to target resources, components, or documented deferred scope.",
-        "Android resource/configuration must be mapped or explicitly deferred.",
-        "Runtime permission request, permission result handling, or protected API access."
+        "Android platform component lifecycle such as service, receiver, provider, or application."
       ],
       "riskHints": [
         "current-phase source features are still open",
         "critical/high behavior cannot close on build pass alone",
-        "resource semantics must be mapped to target resources, UI/components, or a specific replacement",
         "missing target endpoint evidence",
         "missing focused test or verification evidence"
       ],
       "acceptanceEvidence": [
         "Closed critical/high features must record sourceBehavior, targetBehavior, parityLevel, targetEndpoints, and verificationEvidence.",
-        "Build pass alone is not per-feature verification.",
-        "Resource inputs must be implemented, mapped to equivalent target behavior, or closed with a specific deferred/replaced reason."
+        "Build pass alone is not per-feature verification."
       ],
       "testHints": [],
       "compileProbeRecommended": false,
@@ -357,110 +349,65 @@
     "available": true,
     "phase": "phase-01-project-skeleton-resources",
     "summary": {
-      "planGroups": 2,
-      "matchedGroups": 2,
+      "planGroups": 1,
+      "matchedGroups": 1,
       "unmatchedGroups": 0,
-      "generatedImplementationGroups": 5
+      "generatedImplementationGroups": 12
     },
     "alignmentFindings": [],
     "matchedGroups": [
       {
-        "groupId": "phase-01-bootstrap-module",
-        "title": "Bootstrap target entry module",
+        "groupId": "phase-01-route-shell-and-resource-baseline",
+        "title": "Route shell and resource baseline",
         "groupType": "source-behavior",
         "priority": "critical",
         "sourcePaths": [
           "app/src/main/AndroidManifest.xml",
-          "app/build.gradle.kts",
-          "build.gradle.kts"
+          "app/src/main/res/values/strings.xml",
+          "app/src/main/res/values/colors.xml",
+          "app/src/main/res/values/themes.xml",
+          "app/src/main/java/com/example/foodike/presentation/util/Screen.kt"
         ],
         "sourceMethods": [
-          "MainActivity.onCreate"
+          "Screen"
         ],
         "featureIds": [],
         "resourceInputs": [
-          "translation-inputs/mapcir/skeleton/entry/cjpm.toml",
-          "translation-inputs/mapcir/skeleton/entry/src/main/module.json5",
-          "translation-inputs/mapcir/skeleton/AppScope/app.json5"
+          "strings",
+          "colors",
+          "theme values",
+          "drawables",
+          "mipmaps"
         ],
         "platformCapabilityIds": [
-          "background-and-platform-components",
           "localization-resources"
         ],
         "expectedTargetDomains": [
           "app",
-          "config"
-        ],
-        "requiredBehaviors": [
-          "Target project exists with a valid entry module and correct root package.",
-          "App metadata aligns with source identity and startup resources."
-        ],
-        "riskHints": [
-          "Do not leave the target in a rootless or placeholder package state.",
-          "Keep ability shell thin so later logic lands in domain features instead of the entry file."
-        ],
-        "acceptanceEvidence": [
-          "Build gate passes for phase-01-project-skeleton-resources.",
-          "entry/cjpm.toml and module metadata exist under Foodike-Harmony."
-        ],
-        "uiContracts": [
-          "single entry ability launching the app shell"
-        ],
-        "dataContracts": [
-          "none in phase 1 beyond package/module wiring"
-        ],
-        "matchedImplementationGroupIds": [
-          "phase-01-project-skeleton-resources-resource-migration-manifest",
-          "phase-01-project-skeleton-resources-source-behavior-app",
-          "phase-01-project-skeleton-resources-source-behavior-kotlin-source",
-          "phase-01-project-skeleton-resources-verification-phase-tests-and-evidence"
-        ]
-      },
-      {
-        "groupId": "phase-01-resource-catalog",
-        "title": "Migrate strings, colors, and media",
-        "groupType": "resource-contract",
-        "priority": "critical",
-        "sourcePaths": [
-          "app/src/main/res/values/strings.xml",
-          "app/src/main/res/values/colors.xml",
-          "app/src/main/res/values/themes.xml",
-          "app/src/main/res/drawable",
-          "app/src/main/res/mipmap-anydpi-v26"
-        ],
-        "sourceMethods": [],
-        "featureIds": [],
-        "resourceInputs": [
-          "plan-seed.resourceContracts.strings",
-          "plan-seed.resourceContracts.valuesFiles",
-          "plan-seed.resourceContracts.drawables",
-          "plan-seed.resourceContracts.mipmaps"
-        ],
-        "platformCapabilityIds": [
-          "localization-resources"
-        ],
-        "expectedTargetDomains": [
+          "common",
           "resources"
         ],
         "requiredBehaviors": [
-          "All source strings have target resource keys.",
-          "Referenced card, icon, and onboarding media are available in target resources."
+          "Preserve canonical route names and screen labels.",
+          "Ensure current target shell remains a composition surface rather than business-logic sink."
         ],
         "riskHints": [
-          "Resource shrinkage is currently total; do not postpone the base catalog beyond phase 1.",
-          "Vector and adaptive-icon assets may need conversion instead of direct copying."
+          "Current target string coverage is only partial.",
+          "Target shell concentration already exists in bootstrap_page.cj."
         ],
         "acceptanceEvidence": [
-          "Target string and media resources exist and are referenced by planned target pages.",
-          "No phase-1 code references missing resource keys."
+          "build gate pass for phase 01",
+          "manual review of resource coverage deltas"
         ],
         "uiContracts": [
-          "onboarding/login/home/history/detail/cart/profile labels",
-          "startup icon and splash visuals"
+          "route inventory: onboarding, login_screen, home_screen, history, cart, profile, restaurant_details"
         ],
         "dataContracts": [],
         "matchedImplementationGroupIds": [
+          "phase-01-project-skeleton-resources-resource-migration-manifest",
           "phase-01-project-skeleton-resources-resource-migration-res-values",
+          "phase-01-project-skeleton-resources-source-behavior-presentation-util",
+          "phase-01-project-skeleton-resources-platform-capability-localization-resources",
           "phase-01-project-skeleton-resources-verification-phase-tests-and-evidence"
         ]
       }
@@ -469,13 +416,76 @@
   },
   "phaseGroupIndex": [
     {
+      "groupId": "phase-01-project-skeleton-resources-source-behavior-kotlin-source",
+      "title": "Source behavior: kotlin-source",
+      "groupType": "source-behavior",
+      "priority": "critical",
+      "sourcePathCount": 2,
+      "featureCount": 4,
+      "capabilityCount": 0
+    },
+    {
+      "groupId": "phase-01-project-skeleton-resources-source-behavior-other",
+      "title": "Source behavior: other",
+      "groupType": "source-behavior",
+      "priority": "critical",
+      "sourcePathCount": 2,
+      "featureCount": 9,
+      "capabilityCount": 0
+    },
+    {
+      "groupId": "phase-01-project-skeleton-resources-resource-migration-res-values",
+      "title": "Resource migration: res/values",
+      "groupType": "resource-migration",
+      "priority": "high",
+      "sourcePathCount": 4,
+      "featureCount": 12,
+      "capabilityCount": 1
+    },
+    {
+      "groupId": "phase-01-project-skeleton-resources-source-behavior-config",
+      "title": "Source behavior: config",
+      "groupType": "source-behavior",
+      "priority": "high",
+      "sourcePathCount": 1,
+      "featureCount": 3,
+      "capabilityCount": 0
+    },
+    {
+      "groupId": "phase-01-project-skeleton-resources-source-behavior-presentation-util",
+      "title": "Source behavior: Runtime permission request, permission result handling, or protected API access.",
+      "groupType": "source-behavior",
+      "priority": "medium",
+      "sourcePathCount": 1,
+      "featureCount": 1,
+      "capabilityCount": 0
+    },
+    {
+      "groupId": "phase-01-project-skeleton-resources-source-behavior-ui-theme",
+      "title": "Source behavior: ui/theme",
+      "groupType": "source-behavior",
+      "priority": "medium",
+      "sourcePathCount": 4,
+      "featureCount": 4,
+      "capabilityCount": 0
+    },
+    {
+      "groupId": "phase-01-project-skeleton-resources-platform-capability-localization-resources",
+      "title": "Platform capability: Localized resources and formatted strings",
+      "groupType": "platform-capability",
+      "priority": "high",
+      "sourcePathCount": 42,
+      "featureCount": 0,
+      "capabilityCount": 1
+    },
+    {
       "groupId": "phase-01-project-skeleton-resources-verification-phase-tests-and-evidence",
       "title": "Verification and evidence policy",
       "groupType": "verification",
       "priority": "critical",
-      "sourcePathCount": 5,
-      "featureCount": 18,
-      "capabilityCount": 0
+      "sourcePathCount": 19,
+      "featureCount": 49,
+      "capabilityCount": 1
     }
   ],
   "sharedSurfaceDigest": {
@@ -508,6 +518,7 @@
       "plannedPhase": "phase-01-project-skeleton-resources",
       "importance": "critical",
       "status": "planned",
+      "legacyStatus": "planned",
       "parityLevel": "unverified",
       "sourcePath": "app/build.gradle.kts",
       "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
@@ -521,6 +532,7 @@
       "plannedPhase": "phase-01-project-skeleton-resources",
       "importance": "critical",
       "status": "planned",
+      "legacyStatus": "planned",
       "parityLevel": "unverified",
       "sourcePath": "app/build.gradle.kts",
       "featureName": "Runtime permission request, permission result handling, or protected API access.",
@@ -534,6 +546,7 @@
       "plannedPhase": "phase-01-project-skeleton-resources",
       "importance": "critical",
       "status": "planned",
+      "legacyStatus": "planned",
       "parityLevel": "unverified",
       "sourcePath": "app/build.gradle.kts",
       "featureName": "Android platform component lifecycle such as service, receiver, provider, or application.",
@@ -547,6 +560,7 @@
       "plannedPhase": "phase-01-project-skeleton-resources",
       "importance": "critical",
       "status": "planned",
+      "legacyStatus": "planned",
       "parityLevel": "unverified",
       "sourcePath": "app/build.gradle.kts",
       "featureName": "Settings/preferences, option toggles, or configuration state behavior.",
@@ -560,6 +574,7 @@
       "plannedPhase": "phase-01-project-skeleton-resources",
       "importance": "critical",
       "status": "planned",
+      "legacyStatus": "planned",
       "parityLevel": "unverified",
       "sourcePath": "app/build.gradle.kts",
       "featureName": "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
@@ -573,6 +588,7 @@
       "plannedPhase": "phase-01-project-skeleton-resources",
       "importance": "critical",
       "status": "planned",
+      "legacyStatus": "planned",
       "parityLevel": "unverified",
       "sourcePath": "app/src/main/AndroidManifest.xml",
       "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
@@ -586,6 +602,7 @@
       "plannedPhase": "phase-01-project-skeleton-resources",
       "importance": "critical",
       "status": "planned",
+      "legacyStatus": "planned",
       "parityLevel": "unverified",
       "sourcePath": "app/src/main/AndroidManifest.xml",
       "featureName": "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
@@ -599,6 +616,7 @@
       "plannedPhase": "phase-01-project-skeleton-resources",
       "importance": "critical",
       "status": "planned",
+      "legacyStatus": "planned",
       "parityLevel": "unverified",
       "sourcePath": "app/src/main/AndroidManifest.xml",
       "featureName": "Android platform component lifecycle such as service, receiver, provider, or application.",
@@ -612,6 +630,7 @@
       "plannedPhase": "phase-01-project-skeleton-resources",
       "importance": "critical",
       "status": "planned",
+      "legacyStatus": "planned",
       "parityLevel": "unverified",
       "sourcePath": "app/src/main/AndroidManifest.xml",
       "featureName": "Runtime permission request, permission result handling, or protected API access.",
@@ -625,6 +644,7 @@
       "plannedPhase": "phase-01-project-skeleton-resources",
       "importance": "critical",
       "status": "planned",
+      "legacyStatus": "planned",
       "parityLevel": "unverified",
       "sourcePath": "app/src/main/AndroidManifest.xml",
       "featureName": "Android resource/configuration must be mapped or explicitly deferred.",
@@ -634,25 +654,41 @@
       "tests": []
     },
     {
-      "featureId": "build-gradle-kts-2f9b07ef27-003-settings-preferences-option-toggles-or-c",
+      "featureId": "gradle-libs-versions-toml-3aed645f54-001-navigation-surface-menu-drawer-toolbar-o",
       "plannedPhase": "phase-01-project-skeleton-resources",
       "importance": "critical",
       "status": "planned",
+      "legacyStatus": "planned",
       "parityLevel": "unverified",
-      "sourcePath": "build.gradle.kts",
-      "featureName": "Settings/preferences, option toggles, or configuration state behavior.",
-      "featurePoint": "Settings/preferences, option toggles, or configuration state behavior.",
+      "sourcePath": "gradle/libs.versions.toml",
+      "featureName": "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+      "featurePoint": "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
       "targetEndpoints": [],
       "verificationEvidence": [],
       "tests": []
     },
     {
-      "featureId": "build-gradle-kts-6cd8a326ab-002-android-platform-component-lifecycle-suc",
+      "featureId": "gradle-libs-versions-toml-84d742a20a-003-screen-lifecycle-entry-point-initializat",
       "plannedPhase": "phase-01-project-skeleton-resources",
       "importance": "critical",
       "status": "planned",
+      "legacyStatus": "planned",
       "parityLevel": "unverified",
-      "sourcePath": "build.gradle.kts",
+      "sourcePath": "gradle/libs.versions.toml",
+      "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+      "featurePoint": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+      "targetEndpoints": [],
+      "verificationEvidence": [],
+      "tests": []
+    },
+    {
+      "featureId": "gradle-libs-versions-toml-cc0d706dd9-002-android-platform-component-lifecycle-suc",
+      "plannedPhase": "phase-01-project-skeleton-resources",
+      "importance": "critical",
+      "status": "planned",
+      "legacyStatus": "planned",
+      "parityLevel": "unverified",
+      "sourcePath": "gradle/libs.versions.toml",
       "featureName": "Android platform component lifecycle such as service, receiver, provider, or application.",
       "featurePoint": "Android platform component lifecycle such as service, receiver, provider, or application.",
       "targetEndpoints": [],
@@ -660,104 +696,106 @@
       "tests": []
     },
     {
-      "featureId": "build-gradle-kts-e6afb1cfd2-001-runtime-permission-request-permission-re",
+      "featureId": "gradle-libs-versions-toml-e5bf6af034-004-settings-preferences-option-toggles-or-c",
       "plannedPhase": "phase-01-project-skeleton-resources",
       "importance": "critical",
       "status": "planned",
+      "legacyStatus": "planned",
       "parityLevel": "unverified",
-      "sourcePath": "build.gradle.kts",
-      "featureName": "Runtime permission request, permission result handling, or protected API access.",
-      "featurePoint": "Runtime permission request, permission result handling, or protected API access.",
+      "sourcePath": "gradle/libs.versions.toml",
+      "featureName": "Settings/preferences, option toggles, or configuration state behavior.",
+      "featurePoint": "Settings/preferences, option toggles, or configuration state behavior.",
       "targetEndpoints": [],
       "verificationEvidence": [],
       "tests": []
     },
     {
-      "featureId": "app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma",
+      "featureId": "gradle-wrapper-gradle-wrapper-properties-631c1456ba-001-android-platform-component-lifecycle-suc",
       "plannedPhase": "phase-01-project-skeleton-resources",
-      "importance": "high",
+      "importance": "critical",
       "status": "planned",
+      "legacyStatus": "planned",
       "parityLevel": "unverified",
-      "sourcePath": "app/src/main/res/values/colors.xml",
-      "featureName": "Android android-values file should be mapped to target resources, components, or documented deferred scope.",
-      "featurePoint": "Android `android-values` file should be mapped to target resources, components, or documented deferred scope.",
+      "sourcePath": "gradle/wrapper/gradle-wrapper.properties",
+      "featureName": "Android platform component lifecycle such as service, receiver, provider, or application.",
+      "featurePoint": "Android platform component lifecycle such as service, receiver, provider, or application.",
       "targetEndpoints": [],
       "verificationEvidence": [],
       "tests": []
     },
     {
-      "featureId": "app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m",
+      "featureId": "app-proguard-rules-pro-0b4df5e718-001-settings-preferences-option-toggles-or-c",
       "plannedPhase": "phase-01-project-skeleton-resources",
       "importance": "high",
       "status": "planned",
+      "legacyStatus": "planned",
       "parityLevel": "unverified",
-      "sourcePath": "app/src/main/res/values/colors.xml",
-      "featureName": "Android resource/configuration must be mapped or explicitly deferred.",
-      "featurePoint": "Android resource/configuration must be mapped or explicitly deferred.",
-      "targetEndpoints": [],
-      "verificationEvidence": [],
-      "tests": []
-    },
-    {
-      "featureId": "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m",
-      "plannedPhase": "phase-01-project-skeleton-resources",
-      "importance": "high",
-      "status": "planned",
-      "parityLevel": "unverified",
-      "sourcePath": "app/src/main/res/values/themes.xml",
-      "featureName": "Android resource/configuration must be mapped or explicitly deferred.",
-      "featurePoint": "Android resource/configuration must be mapped or explicitly deferred.",
-      "targetEndpoints": [],
-      "verificationEvidence": [],
-      "tests": []
-    },
-    {
-      "featureId": "app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma",
-      "plannedPhase": "phase-01-project-skeleton-resources",
-      "importance": "high",
-      "status": "planned",
-      "parityLevel": "unverified",
-      "sourcePath": "app/src/main/res/values/themes.xml",
-      "featureName": "Android android-values file should be mapped to target resources, components, or documented deferred scope.",
-      "featurePoint": "Android `android-values` file should be mapped to target resources, components, or documented deferred scope.",
-      "targetEndpoints": [],
-      "verificationEvidence": [],
-      "tests": []
-    },
-    {
-      "featureId": "app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re",
-      "plannedPhase": "phase-01-project-skeleton-resources",
-      "importance": "high",
-      "status": "planned",
-      "parityLevel": "unverified",
-      "sourcePath": "app/src/main/res/values/themes.xml",
-      "featureName": "Runtime permission request, permission result handling, or protected API access.",
-      "featurePoint": "Runtime permission request, permission result handling, or protected API access.",
+      "sourcePath": "app/proguard-rules.pro",
+      "featureName": "Settings/preferences, option toggles, or configuration state behavior.",
+      "featurePoint": "Settings/preferences, option toggles, or configuration state behavior.",
       "targetEndpoints": [],
       "verificationEvidence": [],
       "tests": []
     }
   ],
-  "capabilityRows": [],
+  "capabilityRows": [
+    {
+      "capabilityId": "localization-resources",
+      "plannedPhase": "phase-01-project-skeleton-resources",
+      "importance": "high",
+      "status": "verified-direct",
+      "legacyStatus": "verified-direct",
+      "capability": "Localized resources and formatted strings",
+      "targetApiOrLibrary": "HarmonyOS Cangjie LocalizationKit resource model (`ohos.base.ResourceStr`, `ohos.resource.AppResource`, `ohos.resource_manager.ResourceManager`) with standard HarmonyOS `string.json`/`color.json` resources",
+      "resolutionStatus": "",
+      "preResolutionDecision": "resolved-real-api",
+      "derivedPreResolutionDecision": "direct-api",
+      "evidenceKinds": [
+        "target-search",
+        "sdk-declaration",
+        "cangjie-callable"
+      ],
+      "compileProbeState": "not-needed",
+      "compileProbeRecommended": false,
+      "discoveryOnlyEvidenceFound": false,
+      "cangjieCallableEvidenceFound": true,
+      "sdkDeclarationEvidenceFound": true,
+      "unavailableBlockerFound": false,
+      "sourcePaths": [
+        "app/src/main/AndroidManifest.xml",
+        "app/src/main/res/values/strings.xml",
+        "app/src/main/res/values/themes.xml",
+        "app/src/main/res/values/colors.xml",
+        "app/src/main/res/values/ic_launcher_background.xml",
+        "app/src/main/res/drawable/ic_launcher_background.xml",
+        "app/src/main/res/xml/data_extraction_rules.xml",
+        "app/src/main/res/drawable/ic_launcher_foreground.xml",
+        "app/src/main/res/drawable/ic_profile.xml",
+        "app/src/main/res/xml/backup_rules.xml"
+      ],
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj",
+        "entry/src/main/resources/base/element/string.json",
+        "entry/src/main/resources/base/element/color.json"
+      ]
+    }
+  ],
   "pathHints": {
     "sourcePaths": [
       "app/src/main/AndroidManifest.xml",
       "app/build.gradle.kts",
-      "build.gradle.kts",
-      "app/src/main/res/values/colors.xml",
-      "app/src/main/res/values/themes.xml"
+      "app/proguard-rules.pro",
+      "gradle/libs.versions.toml",
+      "gradle/wrapper/gradle-wrapper.properties"
     ],
     "targetEndpoints": [],
-    "platformCapabilityIds": []
+    "platformCapabilityIds": [
+      "localization-resources"
+    ]
   },
   "debtSummary": {
-    "blockingFunctionalDebt": [
-      {
-        "severity": "high",
-        "kind": "phase-gate-open-entry",
-        "message": "18 current-phase critical/high feature(s) remain planned, unreviewed, or not covered. The phase cannot close until each is implemented, replaced, not-applicable, or explicitly deferred with complete evidence."
-      }
-    ],
+    "blockingFunctionalDebt": [],
     "repairableQualityDebt": [],
     "structureOnlyDebt": [],
     "carryForwardDebt": [
@@ -768,12 +806,14 @@
           "critical/high behavior cannot close on build pass alone",
           "resource semantics must be mapped to target resources, UI/components, or a specific replacement",
           "missing target endpoint evidence",
-          "missing focused test or verification evidence"
+          "missing focused test or verification evidence",
+          "related platform capability must be resolved with Cangjie-callable API, replacement, fallback blocker, or deferred evidence"
         ],
         "acceptanceEvidence": [
           "Closed critical/high features must record sourceBehavior, targetBehavior, parityLevel, targetEndpoints, and verificationEvidence.",
           "Build pass alone is not per-feature verification.",
-          "Resource inputs must be implemented, mapped to equivalent target behavior, or closed with a specific deferred/replaced reason."
+          "Resource inputs must be implemented, mapped to equivalent target behavior, or closed with a specific deferred/replaced reason.",
+          "Related platform capabilities must cite targetCapabilitySearch and a Cangjie-callable API, verified replacement, fallback blocker, or deferred blocker."
         ]
       },
       {
@@ -790,7 +830,7 @@
         ]
       },
       {
-        "groupId": "phase-01-project-skeleton-resources-source-behavior-kotlin-source",
+        "groupId": "phase-01-project-skeleton-resources-source-behavior-gradle",
         "riskHints": [
           "current-phase source features are still open",
           "critical/high behavior cannot close on build pass alone",
@@ -803,18 +843,16 @@
         ]
       },
       {
-        "groupId": "phase-01-project-skeleton-resources-resource-migration-res-values",
+        "groupId": "phase-01-project-skeleton-resources-source-behavior-gradle-wrapper",
         "riskHints": [
           "current-phase source features are still open",
           "critical/high behavior cannot close on build pass alone",
-          "resource semantics must be mapped to target resources, UI/components, or a specific replacement",
           "missing target endpoint evidence",
           "missing focused test or verification evidence"
         ],
         "acceptanceEvidence": [
           "Closed critical/high features must record sourceBehavior, targetBehavior, parityLevel, targetEndpoints, and verificationEvidence.",
-          "Build pass alone is not per-feature verification.",
-          "Resource inputs must be implemented, mapped to equivalent target behavior, or closed with a specific deferred/replaced reason."
+          "Build pass alone is not per-feature verification."
         ]
       }
     ],
@@ -835,10 +873,10 @@
     "implementationGroups": 4,
     "repairClusters": 0,
     "repairGroups": 0,
-    "matrixRows": 18,
-    "capabilityRows": 0,
+    "matrixRows": 16,
+    "capabilityRows": 1,
     "sourcePaths": 5,
     "targetEndpoints": 0,
-    "platformCapabilityIds": 0
+    "platformCapabilityIds": 1
   }
 }

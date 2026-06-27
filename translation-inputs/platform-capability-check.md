@@ -16,11 +16,9 @@ This is the agent-maintained platform capability check. Before marking a critica
 
 | capability id | status | phase | importance | decision | probe | capability | target API/library | strategy |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| media-library-access | not-applicable |  | critical | not-applicable | yes | Media library and album discovery |  |  |
-| file-access-and-saf | not-applicable |  | critical | not-applicable | yes | File access, document permissions, and share URIs |  |  |
-| image-viewer-gestures | not-applicable |  | critical | not-applicable |  | Image viewer gestures and metadata |  |  |
-| localization-resources | verified-direct | phase-01-project-skeleton-resources | high | direct-api |  | Localized resources and formatted strings | HarmonyOS resource bundles (AppScope/resources and entry/resources) | Map Android manifest/theme/color/string resource contracts into HarmonyOS string/color/media/profile resources and module metadata. |
-| runtime-permissions | not-applicable |  | high | not-applicable | yes | Runtime permissions and protected platform access |  |  |
-| background-and-platform-components | not-applicable |  | high | not-applicable |  | Background work, services, receivers, widgets, and notifications |  |  |
-| preferences-key-value-persistence | verified-direct | phase-01-project-skeleton-resources | critical | direct-api |  | Lightweight key-value session persistence | kit.ArkData.Preferences | Use HarmonyOS Cangjie Preferences as the direct replacement for Android DataStore boolean session persistence. |
-| startup-route-and-window-lifecycle | platform-replaced | phase-01-project-skeleton-resources | critical | platform-replaced |  | Startup route gating and main window lifecycle | kit.AbilityKit.UIAbility + kit.ArkUI.WindowStage | Use HarmonyOS UIAbility lifecycle and WindowStage.loadContent as the startup shell replacement for Android Activity + SplashScreen lifecycle wiring. |
+| media-library-access | planned | phase-04-home-history | critical | needs-target-search |  | Media library and album discovery |  |  |
+| file-access-and-saf | planned | phase-05-detail-cart | critical | needs-target-search |  | File access, document permissions, and share URIs |  |  |
+| image-viewer-gestures | planned | phase-05-detail-cart | critical | needs-target-search |  | Image viewer gestures and metadata |  |  |
+| localization-resources | verified-direct | phase-01-project-skeleton-resources | high | resolved-real-api |  | Localized resources and formatted strings | HarmonyOS Cangjie LocalizationKit resource model (`ohos.base.ResourceStr`, `ohos.resource.AppResource`, `ohos.resource_manager.ResourceManager`) with standard HarmonyOS `string.json`/`color.json` resources | Phase 01 migrates Android labels, start-window colors, and resource-backed UI text into HarmonyOS descriptor/resource files, with AppResource helpers for Cangjie access where needed. |
+| runtime-permissions | planned | phase-02-startup-session-navigation | high | needs-target-search |  | Runtime permissions and protected platform access |  |  |
+| background-and-platform-components | planned | phase-02-startup-session-navigation | high | needs-target-search |  | Background work, services, receivers, widgets, and notifications |  |  |

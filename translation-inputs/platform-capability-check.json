@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-25T02:01:25+00:00",
+  "generatedAt": "2026-06-27T01:35:38+00:00",
   "lastUpdatedBy": "source_coverage/patch_authority.py",
   "purpose": "Agent-maintained platform capability check. Update each entry after querying CangjieSkills/HarmonyOS/Cangjie API docs, HarmonyOS-Examples, or package index lookup for the detected capability. Use cjpm/project-management docs only to configure the chosen dependency in cjpm.toml. Direct API status requires Cangjie-callable evidence; ArkTS-only or native-only declarations should record the missing Cangjie binding as a blocker unless a target bridge/wrapper is implemented and verified.",
   "allowedStatuses": [
@@ -13,6 +13,69 @@
     "unreviewed",
     "verified-direct"
   ],
+  "allowedCapabilityFacts": {
+    "resolutionKind": [
+      "open",
+      "direct-api",
+      "platform-replacement",
+      "fallback",
+      "deferred",
+      "not-applicable"
+    ],
+    "apiEvidenceKinds": [
+      "cangjie-sdk-declaration",
+      "cangjie-callable-api",
+      "harmonyos-example",
+      "third-party-package",
+      "target-endpoint",
+      "compile-probe-pass",
+      "build-gate-pass"
+    ],
+    "callableApiEvidenceKinds": [
+      "cangjie-sdk-declaration",
+      "cangjie-callable-api",
+      "harmonyos-example",
+      "third-party-package"
+    ],
+    "discoveryOnlyEvidenceKinds": [
+      "arkts-doc",
+      "native-doc",
+      "overview-doc",
+      "marketing-doc",
+      "unknown-language-example"
+    ],
+    "compileProbeEvidenceKinds": [
+      "compile-probe-pass",
+      "compile-probe-fail",
+      "compile-probe-blocked",
+      "build-gate-pass",
+      "build-gate-fail"
+    ],
+    "fallbackKinds": [
+      "local-simulation",
+      "sample-data",
+      "in-memory-state",
+      "manual-user-action",
+      "ui-disabled",
+      "product-omission"
+    ],
+    "blockerKinds": [
+      "missing-cangjie-sdk-declaration",
+      "arkts-only-api",
+      "native-only-api",
+      "missing-package",
+      "requires-device-service",
+      "requires-credentials",
+      "requires-product-decision",
+      "compile-probe-failed",
+      "unknown"
+    ],
+    "factsSource": [
+      "agent",
+      "inferred-from-legacy",
+      "template"
+    ]
+  },
   "deferredRequiredFields": [
     "targetCapabilitySearch",
     "blocker",
@@ -582,12 +645,9 @@
         "unavailable HarmonyOS media API in current SDK",
         "device/media permission unavailable in test environment"
       ],
-      "status": "not-applicable",
-      "plannedPhase": "",
-      "targetCapabilitySearch": [
-        "HarmonyOS Cangjie media picker photo library",
-        "D:/workspace/Foodike/.agents/skills/cangjie-harmonyos-doc-search/harmonyos-6.1-8k/API/MediaLibraryKit/cj-apis-file-photo_access_helper/ohosfilephoto_access_helper相册管理模块/.overview.md"
-      ],
+      "status": "planned",
+      "plannedPhase": "phase-04-home-history",
+      "targetCapabilitySearch": [],
       "targetApiOrLibrary": "",
       "targetStrategy": "",
       "targetEndpoints": [],
@@ -601,7 +661,28 @@
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": "Source walkthrough found only packaged drawable and mipmap assets rendered by Compose Image composables. No PhotoAccessHelper, MediaStore, gallery query, album discovery, picker, or external media metadata flow exists in the source app."
+      "notes": "",
+      "capabilityFacts": {
+        "schemaVersion": 1,
+        "resolutionKind": "open",
+        "activeFallback": {
+          "used": false,
+          "fallbackKind": "",
+          "reason": "",
+          "blocker": ""
+        },
+        "apiEvidence": [],
+        "discoveryOnlyEvidence": [],
+        "compileProbeEvidence": [],
+        "targetEndpoints": [],
+        "blocker": {
+          "used": false,
+          "kind": "",
+          "detail": "",
+          "futureCompletionPath": ""
+        },
+        "factsSource": "template"
+      }
     },
     {
       "capabilityId": "file-access-and-saf",
@@ -2269,12 +2350,9 @@
         "target file picker API unavailable",
         "cross-app document permission requires device integration"
       ],
-      "status": "not-applicable",
-      "plannedPhase": "",
-      "targetCapabilitySearch": [
-        "HarmonyOS Cangjie file picker document SAF URI permissions",
-        "D:/workspace/Foodike/.agents/skills/cangjie-harmonyos-doc-search/harmonyos-6.1-8k/API/CoreFileKit/cj-apis-file_fileuri/ohosfilefileuri文件URI/class_FileUri.md"
-      ],
+      "status": "planned",
+      "plannedPhase": "phase-05-detail-cart",
+      "targetCapabilitySearch": [],
       "targetApiOrLibrary": "",
       "targetStrategy": "",
       "targetEndpoints": [],
@@ -2288,7 +2366,28 @@
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": "Source walkthrough found no file picker, document open/import/export flow, content/file URI sharing, or filesystem read/write behavior. The app only uses bundled resources and in-memory/static data."
+      "notes": "",
+      "capabilityFacts": {
+        "schemaVersion": 1,
+        "resolutionKind": "open",
+        "activeFallback": {
+          "used": false,
+          "fallbackKind": "",
+          "reason": "",
+          "blocker": ""
+        },
+        "apiEvidence": [],
+        "discoveryOnlyEvidence": [],
+        "compileProbeEvidence": [],
+        "targetEndpoints": [],
+        "blocker": {
+          "used": false,
+          "kind": "",
+          "detail": "",
+          "futureCompletionPath": ""
+        },
+        "factsSource": "template"
+      }
     },
     {
       "capabilityId": "image-viewer-gestures",
@@ -2924,8 +3023,8 @@
         "target gesture API unavailable",
         "EXIF API unavailable in current SDK"
       ],
-      "status": "not-applicable",
-      "plannedPhase": "",
+      "status": "planned",
+      "plannedPhase": "phase-05-detail-cart",
       "targetCapabilitySearch": [],
       "targetApiOrLibrary": "",
       "targetStrategy": "",
@@ -2940,7 +3039,28 @@
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": "Source app displays bundled images in cards, ads, onboarding pages, and profile art only. No zoom, pan, gallery preview, EXIF, bitmap editing, or dedicated viewer gesture behavior exists in inspected source files."
+      "notes": "",
+      "capabilityFacts": {
+        "schemaVersion": 1,
+        "resolutionKind": "open",
+        "activeFallback": {
+          "used": false,
+          "fallbackKind": "",
+          "reason": "",
+          "blocker": ""
+        },
+        "apiEvidence": [],
+        "discoveryOnlyEvidence": [],
+        "compileProbeEvidence": [],
+        "targetEndpoints": [],
+        "blocker": {
+          "used": false,
+          "kind": "",
+          "detail": "",
+          "futureCompletionPath": ""
+        },
+        "factsSource": "template"
+      }
     },
     {
       "capabilityId": "localization-resources",
@@ -3697,33 +3817,127 @@
       "status": "verified-direct",
       "plannedPhase": "phase-01-project-skeleton-resources",
       "targetCapabilitySearch": [
-        "HarmonyOS Cangjie string resources localization app resources",
-        "D:/workspace/Foodike/.agents/skills/cangjie-harmonyos-doc-search/harmonyos-6.1-8k/Guide/internationalization/cj-i18n-l10n/.overview.md"
+        "Cangjie SDK declarations confirm direct resource support in pure Cangjie: `ohos.base.ResourceStr` (`C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.base.cj.d:618-626`), `ohos.resource.AppResource` (`...\\ohos.resource.cj.d:20-97`), and `ohos.resource_manager.ResourceManager` formatted string APIs including `getString`, `getStringByName`, `getPluralStringByName`, and numeric lookups (`...\\ohos.resource_manager.cj.d:20-199`).",
+        "HarmonyOS Cangjie docs confirm `ohos.resource` is a Cangjie-callable LocalizationKit module imported via `import kit.LocalizationKit.*`, and `AppResource` carries bundle/module/id plus formatting params for resource lookup (`D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\harmonyos-6.1-8k\\API\\LocalizationKit\\cj-apis-resource\\cj-apis-resource.md:9-153`).",
+        "HarmonyOS resource guidance confirms the standard HarmonyOS resource-category and access path should be used for multi-language and multi-device adaptation rather than custom fallback handling (`D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\harmonyos-6.1-8k\\Guide\\cj-start\\start\\cj-ide-resource-categories-and-access\\资源分类与访问\\.abstract.md:1`)."
       ],
-      "targetApiOrLibrary": "HarmonyOS resource bundles (AppScope/resources and entry/resources)",
-      "targetStrategy": "Map Android manifest/theme/color/string resource contracts into HarmonyOS string/color/media/profile resources and module metadata.",
+      "targetApiOrLibrary": "HarmonyOS Cangjie LocalizationKit resource model (`ohos.base.ResourceStr`, `ohos.resource.AppResource`, `ohos.resource_manager.ResourceManager`) with standard HarmonyOS `string.json`/`color.json` resources",
+      "targetStrategy": "Phase 01 migrates Android labels, start-window colors, and resource-backed UI text into HarmonyOS descriptor/resource files, with AppResource helpers for Cangjie access where needed.",
       "targetEndpoints": [
-        "AppScope/app.json5",
-        "AppScope/resources/base/element/string.json",
-        "AppScope/resources/base/element/color.json",
-        "entry/src/main/module.json5",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj",
         "entry/src/main/resources/base/element/string.json",
         "entry/src/main/resources/base/element/color.json",
-        "entry/src/main/resources/base/profile/main_pages.json"
+        "AppScope/app.json5",
+        "entry/src/main/module.json5"
       ],
       "tests": [
+        "string key coverage check",
+        "placeholder preservation check",
+        "locale selection smoke test",
+        "manual review of descriptor/resource mapping",
         "build_hap_report.py --phase phase-01-project-skeleton-resources"
       ],
-      "sdkDeclarationEvidence": [],
-      "cangjieCallableEvidence": [],
+      "sdkDeclarationEvidence": [
+        "`ohos.base.ResourceStr` is a direct SDK interface and `String` extends it (`C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.base.cj.d:618-626`).",
+        "`ohos.resource.AppResource` directly implements `ResourceStr` and carries `params` for formatted resource usage (`C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.resource.cj.d:20-97`).",
+        "`ohos.resource_manager.ResourceManager` exposes direct Cangjie string/number/plural retrieval APIs including formatted lookups (`C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.resource_manager.cj.d:20-199`).",
+        "ArkUI components consume resource-backed values directly, for example `Text.init(content: ?ResourceStr, ...)` (`C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.arkui.component.text.cj.d:47-59`) and `Button.init(label: ResourceStr)` (`C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.arkui.component.button.cj.d:306-314`)."
+      ],
+      "cangjieCallableEvidence": [
+        "LocalizationKit documentation defines `ohos.resource` as a Cangjie module imported with `import kit.LocalizationKit.*`, with `AppResource` available to Cangjie code (`D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\harmonyos-6.1-8k\\API\\LocalizationKit\\cj-apis-resource\\cj-apis-resource.md:9-153`).",
+        "The installed SDK declarations plus ArkUI `ResourceStr` component signatures provide a direct Cangjie-callable path for localized labels and formatted resources without introducing an ArkTS bridge."
+      ],
       "discoveryOnlyEvidence": [],
-      "compileProbeEvidence": [],
-      "preResolutionDecision": "",
+      "compileProbeEvidence": [
+        "Phase 01 build gate PASS: translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md"
+      ],
+      "preResolutionDecision": "resolved-real-api",
       "phaseCapabilityResolution": "resolved-real-api",
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": "This batch covers the manifest and values-file portion of the resource capability; broader strings/media migration continues in later phase batches."
+      "notes": "Batch 1 confirmed the active entry/module descriptors and resource files compile together. Later phase batches still need to expand string/media coverage beyond the current baseline.",
+      "capabilityFacts": {
+        "schemaVersion": 1,
+        "resolutionKind": "direct-api",
+        "activeFallback": {
+          "used": false,
+          "fallbackKind": "",
+          "reason": "",
+          "blocker": ""
+        },
+        "apiEvidence": [
+          {
+            "kind": "cangjie-sdk-declaration",
+            "detail": "`ohos.base.ResourceStr` plus `String <: ResourceStr` in `ohos.base.cj.d:618-626`."
+          },
+          {
+            "kind": "cangjie-sdk-declaration",
+            "detail": "`ohos.resource.AppResource <: Length & ResourceColor & ResourceStr` in `ohos.resource.cj.d:20-97`."
+          },
+          {
+            "kind": "cangjie-sdk-declaration",
+            "detail": "`ohos.resource_manager.ResourceManager` string/plural/number APIs in `ohos.resource_manager.cj.d:20-199`."
+          },
+          {
+            "kind": "cangjie-callable-api",
+            "detail": "LocalizationKit Cangjie docs document `import kit.LocalizationKit.*` and `AppResource` usage in `cj-apis-resource.md:9-153`."
+          },
+          {
+            "kind": "target-endpoint",
+            "detail": "AppScope/app.json5",
+            "path": "AppScope/app.json5"
+          },
+          {
+            "kind": "target-endpoint",
+            "detail": "entry/src/main/module.json5",
+            "path": "entry/src/main/module.json5"
+          },
+          {
+            "kind": "target-endpoint",
+            "detail": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj",
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj"
+          },
+          {
+            "kind": "target-endpoint",
+            "detail": "entry/src/main/resources/base/element/string.json",
+            "path": "entry/src/main/resources/base/element/string.json"
+          },
+          {
+            "kind": "target-endpoint",
+            "detail": "entry/src/main/resources/base/element/color.json",
+            "path": "entry/src/main/resources/base/element/color.json"
+          },
+          {
+            "kind": "build-gate-pass",
+            "detail": "Phase 01 build gate PASS: translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md",
+            "path": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md"
+          }
+        ],
+        "discoveryOnlyEvidence": [],
+        "compileProbeEvidence": [
+          {
+            "kind": "build-gate-pass",
+            "detail": "Phase 01 build gate PASS: translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md",
+            "path": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md"
+          }
+        ],
+        "targetEndpoints": [
+          "AppScope/app.json5",
+          "entry/src/main/module.json5",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj",
+          "entry/src/main/resources/base/element/string.json",
+          "entry/src/main/resources/base/element/color.json"
+        ],
+        "blocker": {
+          "used": false,
+          "kind": "",
+          "detail": "",
+          "futureCompletionPath": ""
+        },
+        "factsSource": "agent"
+      }
     },
     {
       "capabilityId": "runtime-permissions",
@@ -5453,12 +5667,9 @@
         "permission API requires device integration",
         "capability unavailable in simulator"
       ],
-      "status": "not-applicable",
-      "plannedPhase": "",
-      "targetCapabilitySearch": [
-        "HarmonyOS Cangjie request runtime permissions",
-        "D:/workspace/Foodike/.agents/skills/cangjie-harmonyos-doc-search/harmonyos-6.1-8k/API/AbilityKit/cj-apis-ability_access_ctrl/ohosability_access_ctrl程序访问控制管理/class_AtManager/func_requestPermissionsFromUserUIAbilityC_82361e31.md"
-      ],
+      "status": "planned",
+      "plannedPhase": "phase-02-startup-session-navigation",
+      "targetCapabilitySearch": [],
       "targetApiOrLibrary": "",
       "targetStrategy": "",
       "targetEndpoints": [],
@@ -5472,7 +5683,28 @@
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": "Source walkthrough found no dangerous permission declarations in AndroidManifest.xml and no runtime permission request code. The generated row is a heuristic false positive for this app."
+      "notes": "",
+      "capabilityFacts": {
+        "schemaVersion": 1,
+        "resolutionKind": "open",
+        "activeFallback": {
+          "used": false,
+          "fallbackKind": "",
+          "reason": "",
+          "blocker": ""
+        },
+        "apiEvidence": [],
+        "discoveryOnlyEvidence": [],
+        "compileProbeEvidence": [],
+        "targetEndpoints": [],
+        "blocker": {
+          "used": false,
+          "kind": "",
+          "detail": "",
+          "futureCompletionPath": ""
+        },
+        "factsSource": "template"
+      }
     },
     {
       "capabilityId": "background-and-platform-components",
@@ -5720,8 +5952,8 @@
         "target background capability unavailable",
         "requires signed device or service configuration"
       ],
-      "status": "not-applicable",
-      "plannedPhase": "",
+      "status": "planned",
+      "plannedPhase": "phase-02-startup-session-navigation",
       "targetCapabilitySearch": [],
       "targetApiOrLibrary": "",
       "targetStrategy": "",
@@ -5736,162 +5968,46 @@
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": "Source app has only standard Application and launcher Activity startup wiring with splash/theme setup. It does not define background work, services, receivers, providers, widgets, notifications, or home-screen integration. Startup lifecycle is tracked separately in an added reviewed capability row."
-    },
-    {
-      "status": "verified-direct",
-      "plannedPhase": "phase-01-project-skeleton-resources",
-      "sourcePaths": [
-        "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
-        "app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt",
-        "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
-        "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt"
-      ],
-      "sourceEvidence": [
-        {
-          "sourcePath": "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
-          "evidence": "DataStore preference file user_login_state_pref stores boolean key user_login_state; toggleLoginState flips it; loginState exposes Flow<Boolean>."
+      "notes": "",
+      "capabilityFacts": {
+        "schemaVersion": 1,
+        "resolutionKind": "open",
+        "activeFallback": {
+          "used": false,
+          "fallbackKind": "",
+          "reason": "",
+          "blocker": ""
         },
-        {
-          "sourcePath": "app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt",
-          "evidence": "Startup route is selected by reading repository.loginState.first() before clearing splash loading state."
-        }
-      ],
-      "requiredTargetCapabilitySearch": [
-        "HarmonyOS Cangjie preferences persistent key value storage"
-      ],
-      "targetStrategyHint": "Use HarmonyOS Preferences key-value storage for persisted login/session state and preserve startup route selection semantics.",
-      "minimumParity": "Persist a boolean login flag across launches and resolve the initial route from that stored state before rendering the main shell.",
-      "requiredTests": [
-        "preferences read/write roundtrip test",
-        "startup route selection from persisted login flag test"
-      ],
-      "allowedDeferredReasons": [
-        "preferences API unavailable in selected SDK"
-      ],
-      "targetCapabilitySearch": [
-        "D:/workspace/Foodike/.agents/skills/cangjie-harmonyos-doc-search/harmonyos-6.1-8k/API/ArkData/cj-apis-preferences/ohosdatapreferences用户首选项/class_Preferences/static_func_getPr_2more_c22d3d6a.md",
-        "D:/workspace/Foodike/.agents/skills/cangjie-harmonyos-doc-search/harmonyos-6.1-8k/API/ArkData/cj-apis-preferences/ohosdatapreferences用户首选项/class_Preferences/func_getString_Pr_2more_0f22f412.md",
-        "D:/workspace/Foodike/.agents/skills/cangjie-harmonyos-doc-search/harmonyos-6.1-8k/API/ArkData/cj-apis-preferences/ohosdatapreferences用户首选项/class_Preferences/func_putString_Preferen_e22bc770.md",
-        "D:/workspace/Foodike/.agents/skills/cangjie-harmonyos-doc-search/harmonyos-6.1-8k/Guide/database/cj-data-persistence-by-preferences/通过用户首选项实现数据持久化/通过用户首选项实现数据持久化_5more_adada06c.md"
-      ],
-      "targetApiOrLibrary": "kit.ArkData.Preferences",
-      "targetStrategy": "Use HarmonyOS Cangjie Preferences as the direct replacement for Android DataStore boolean session persistence.",
-      "targetEndpoints": [
-        "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::readLoginState",
-        "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::toggleLoginState",
-        "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate"
-      ],
-      "tests": [
-        "build_hap_report.py --phase phase-01-project-skeleton-resources"
-      ],
-      "sdkDeclarationEvidence": [],
-      "cangjieCallableEvidence": [
-        "SDK declaration: C:/Users/Sieger/.cangjie-sdk/6.1/cangjie/api/modules/linux_ohos_aarch64_cjnative/ohos/ohos.data.preferences.cj.d declares Preferences.getPreferences(UIAbilityContext, String), Preferences.get, Preferences.put, and Preferences.flush.",
-        "Target implementation: login_preferences_service.cj uses PreferencesValueType.BoolData with file name user_login_state_pref and key user_login_state; app_ability.cj reads the same persisted flag during startup."
-      ],
-      "discoveryOnlyEvidence": [],
-      "compileProbeEvidence": [],
-      "preResolutionDecision": "",
-      "phaseCapabilityResolution": "resolved-real-api",
-      "blocker": "",
-      "targetFallback": "",
-      "futureCompletionPath": "",
-      "notes": "Phase-01 wires the persisted login preference boundary to the Cangjie-callable Preferences API and uses it during EntryAbility startup inspection.",
-      "capabilityId": "preferences-key-value-persistence",
-      "capabilityName": "Lightweight key-value session persistence",
-      "importance": "critical",
-      "sourceEvidenceSummary": "LoginRepositoryImpl persists login state in Android DataStore preferences and SplashViewModel reads it to select onboarding versus home at startup."
-    },
-    {
-      "status": "platform-replaced",
-      "plannedPhase": "phase-01-project-skeleton-resources",
-      "sourcePaths": [
-        "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
-        "app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt",
-        "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
-        "app/src/main/AndroidManifest.xml",
-        "app/src/main/res/values/themes.xml",
-        "app/src/main/java/com/example/foodike/FoodikeApp.kt"
-      ],
-      "sourceEvidence": [
-        {
-          "sourcePath": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
-          "evidence": "Installs splash screen, keeps it visible while SplashViewModel.isLoading is true, then renders SetupNavigation(startDestination)."
+        "apiEvidence": [],
+        "discoveryOnlyEvidence": [],
+        "compileProbeEvidence": [],
+        "targetEndpoints": [],
+        "blocker": {
+          "used": false,
+          "kind": "",
+          "detail": "",
+          "futureCompletionPath": ""
         },
-        {
-          "sourcePath": "app/src/main/res/values/themes.xml",
-          "evidence": "Theme.SplashScreenTheme defines splash background, animated icon, and postSplashScreenTheme."
-        },
-        {
-          "sourcePath": "app/src/main/AndroidManifest.xml",
-          "evidence": "Launcher activity uses Theme.SplashScreenTheme and application/theme wiring."
-        }
-      ],
-      "requiredTargetCapabilitySearch": [
-        "HarmonyOS Cangjie startup splash window stage app lifecycle ability stage"
-      ],
-      "targetStrategyHint": "Map Android splash/startup behavior to HarmonyOS UIAbility and WindowStage startup flow while preserving delayed initial route selection and shell setup.",
-      "minimumParity": "Do not show the main routed experience until persisted session state is resolved; then open onboarding or home with equivalent main-window content loading behavior.",
-      "requiredTests": [
-        "startup route selection test",
-        "manual startup shell verification"
-      ],
-      "allowedDeferredReasons": [
-        "selected template lacks splash customization hook in current SDK"
-      ],
-      "targetCapabilitySearch": [
-        "D:/workspace/Foodike/.agents/skills/cangjie-harmonyos-doc-search/harmonyos-6.1-8k/Guide/windowmanager/cj-application-window-stage/管理应用窗口/设置应用主窗口_c9facda4.md"
-      ],
-      "targetApiOrLibrary": "kit.AbilityKit.UIAbility + kit.ArkUI.WindowStage",
-      "targetStrategy": "Use HarmonyOS UIAbility lifecycle and WindowStage.loadContent as the startup shell replacement for Android Activity + SplashScreen lifecycle wiring.",
-      "targetEndpoints": [
-        "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
-        "entry/src/main/cangjie/app_ability.cj::EntryAbility.onWindowStageCreate",
-        "entry/src/main/cangjie/ability_stage.cj::FoodikeAbilityStage.onCreate",
-        "entry/src/main/module.json5"
-      ],
-      "tests": [
-        "build_hap_report.py --phase phase-01-project-skeleton-resources"
-      ],
-      "sdkDeclarationEvidence": [],
-      "cangjieCallableEvidence": [
-        "SDK declaration: C:/Users/Sieger/.cangjie-sdk/6.1/cangjie/api/modules/linux_ohos_aarch64_cjnative/ohos/ohos.app.ability.ui_ability.cj.d exposes UIAbility.context and onWindowStageCreate(WindowStage).",
-        "Doc evidence: 设置应用主窗口_c9facda4.md documents loading target content from UIAbility.onWindowStageCreate via WindowStage.loadContent(String)."
-      ],
-      "discoveryOnlyEvidence": [],
-      "compileProbeEvidence": [],
-      "preResolutionDecision": "",
-      "phaseCapabilityResolution": "resolved-platform-replacement",
-      "blocker": "",
-      "targetFallback": "",
-      "futureCompletionPath": "",
-      "notes": "Phase-01 establishes the startup shell and persisted-login inspection, but full user-visible route gating remains phase-02 work.",
-      "capabilityId": "startup-route-and-window-lifecycle",
-      "capabilityName": "Startup route gating and main window lifecycle",
-      "importance": "critical",
-      "sourceEvidenceSummary": "App startup is gated by splash/loading state and chooses onboarding or home before normal navigation shell rendering; activity/application/theme wiring participates in this behavior."
+        "factsSource": "template"
+      }
     }
   ],
-  "lastPatchedAt": "2026-06-25T04:38:42+00:00",
+  "lastPatchedAt": "2026-06-27T03:00:00+00:00",
   "lastPatchSummary": {
     "kind": "platform",
-    "updatedEntries": 3,
+    "updatedEntries": 1,
     "addedEntries": 0,
     "updatedIds": [
-      "preferences-key-value-persistence",
-      "startup-route-and-window-lifecycle",
       "localization-resources"
     ],
     "addedIds": [],
     "statusCountsBefore": {
-      "not-applicable": 5,
-      "planned": 3
+      "planned": 5,
+      "verified-direct": 1
     },
     "statusCountsAfter": {
-      "not-applicable": 5,
-      "platform-replaced": 1,
-      "verified-direct": 2
+      "planned": 5,
+      "verified-direct": 1
     }
   }
 }

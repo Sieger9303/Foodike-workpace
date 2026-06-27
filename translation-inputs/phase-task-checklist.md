@@ -1,6 +1,6 @@
 # Phase Task Checklist
 
-- Phase: `phase-06-polish-tests-verification`
+- Phase: `phase-01-project-skeleton-resources`
 
 ## Purpose
 
@@ -10,180 +10,264 @@ Current-phase task checklist generated from the agent-maintained source coverage
 
 | metric | value |
 | --- | --- |
-| phaseFeatureEntries | 3 |
-| phaseCriticalHighFeatureEntries | 0 |
-| mustCompleteFeatureEntries | 0 |
+| phaseFeatureEntries | 49 |
+| phaseCriticalHighFeatureEntries | 44 |
+| mustCompleteFeatureEntries | 44 |
 | needsEvidenceFeatureEntries | 0 |
 | deferredOrFallbackFeatureEntries | 0 |
-| coveredFeatureEntries | 3 |
-| phaseSourceFiles | 2 |
-| phasePlatformCapabilityEntries | 0 |
-| phaseCriticalHighPlatformCapabilityEntries | 0 |
-| mustCompletePlatformCapabilityEntries | 0 |
+| coveredFeatureEntries | 0 |
+| phaseSourceFiles | 19 |
+| phasePlatformCapabilityEntries | 1 |
+| phaseCriticalHighPlatformCapabilityEntries | 1 |
+| mustCompletePlatformCapabilityEntries | 1 |
 | needsEvidencePlatformCapabilityEntries | 0 |
-| implementationGroups | 2 |
+| implementationGroups | 12 |
 | planContractAvailable | True |
 | planContractMatchedGroups | 1 |
-| planContractUnmatchedGroups | 1 |
-| implementationGroupSourceBehavior | 0 |
-| implementationGroupResourceMigration | 0 |
-| implementationGroupPlatformCapability | 0 |
-| implementationGroupVerification | 2 |
+| planContractUnmatchedGroups | 0 |
+| implementationGroupSourceBehavior | 8 |
+| implementationGroupResourceMigration | 2 |
+| implementationGroupPlatformCapability | 1 |
+| implementationGroupVerification | 1 |
 | implementationGroupArchitectureRisk | 0 |
-| implementationGroupUiContracts | 0 |
-| behaviorAuditFeatureContracts | 0 |
+| implementationGroupUiContracts | 1 |
+| behaviorAuditFeatureContracts | 44 |
 | behaviorAuditOpenFeatureContracts | 0 |
-| behaviorAuditPlatformContracts | 0 |
-| testHarnessReportAvailable | True |
+| behaviorAuditPlatformContracts | 1 |
+| testHarnessReportAvailable | False |
 | testHarnessAcceptedPass | False |
-| unassignedCriticalHighFeatureEntries | 116 |
-| unassignedCriticalHighPlatformCapabilityEntries | 5 |
+| unassignedCriticalHighFeatureEntries | 0 |
+| unassignedCriticalHighPlatformCapabilityEntries | 0 |
 
 ## Feature Status Counts
 
 | status | count |
 | --- | --- |
-| implemented | 3 |
+| planned | 49 |
+
+## Platform Capability Status Counts
+
+| status | count |
+| --- | --- |
+| planned | 1 |
 
 ## Plan Contract Alignment
 
 Use this section as upstream planning ownership evidence. If it conflicts with source code, source-coverage-matrix.json, or platform-capability-check.json, resolve the authority records or document an analysis gap/source override before closing the phase.
 
-### Alignment Findings
-
-- 1 plan implementation group(s) did not match generated phase implementationGroups.
-
 ### Matched Plan Groups
 
 | group id | type | priority | matched generated groups | source paths | features | capabilities | risks |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| phase-06-test-harness | test-obligation | high | phase-06-polish-tests-verification-verification-com-example, phase-06-polish-tests-verification-verification-phase-tests-and-evidence | app/src/test/java/com/example/foodike/ExampleUnitTest.kt, app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt, app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt |  |  | Do not use generated placeholder tests as the only proof of behavior.; Record exact test harness blockers if `cjpm test` cannot run. |
-
-### Unmatched Plan Groups
-
-| group id | type | priority | matched generated groups | source paths | features | capabilities | risks |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| phase-06-resource-and-evidence-closeout | resource-contract | high |  | app/src/main/res/values/strings.xml, app/src/main/res/drawable, app/src/main/res/mipmap-anydpi-v26 |  | localization-resources | Resource omissions can hide as late compile or runtime defects if not closed here. |
+| phase-01-route-shell-and-resource-baseline | source-behavior | critical | phase-01-project-skeleton-resources-resource-migration-manifest, phase-01-project-skeleton-resources-resource-migration-res-values, phase-01-project-skeleton-resources-source-behavior-presentation-util | app/src/main/AndroidManifest.xml, app/src/main/res/values/strings.xml, app/src/main/res/values/colors.xml |  | localization-resources | Current target string coverage is only partial.; Target shell concentration already exists in bootstrap_page.cj. |
 
 ## Behavior Audit
 
 | metric | value |
 | --- | --- |
-| featureContracts | 0 |
+| featureContracts | 44 |
 | openFeatureContracts | 0 |
-| platformContracts | 0 |
+| platformContracts | 1 |
+
+### Behavior Audit Feature Status Counts
+
+| status | count |
+| --- | --- |
+| planned | 44 |
+
+### Behavior Audit Parity Counts
+
+| parity | count |
+| --- | --- |
+| unverified | 44 |
 
 ### Open Feature Contracts
 
 _No open current-phase feature contracts._
 
+### Feature Contracts
+
+| feature id | importance | status | parity | source path | target behavior |
+| --- | --- | --- | --- | --- | --- |
+| app-build-gradle-kts-ab52d0a44d-001-navigation-surface-menu-drawer-toolbar-o | critical | planned | unverified | app/build.gradle.kts |  |
+| app-build-gradle-kts-329cf39b55-002-runtime-permission-request-permission-re | critical | planned | unverified | app/build.gradle.kts |  |
+| app-build-gradle-kts-52a26dc1e9-003-android-platform-component-lifecycle-suc | critical | planned | unverified | app/build.gradle.kts |  |
+| app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat | critical | planned | unverified | app/build.gradle.kts |  |
+| app-build-gradle-kts-aa010bdd3d-005-settings-preferences-option-toggles-or-c | critical | planned | unverified | app/build.gradle.kts |  |
+| build-gradle-kts-e6afb1cfd2-001-runtime-permission-request-permission-re | critical | planned | unverified | build.gradle.kts |  |
+| build-gradle-kts-6cd8a326ab-002-android-platform-component-lifecycle-suc | critical | planned | unverified | build.gradle.kts |  |
+| build-gradle-kts-2f9b07ef27-003-settings-preferences-option-toggles-or-c | critical | planned | unverified | build.gradle.kts |  |
+| readme-md-44b694e8e8-001-file-document-storage-saf-mediastore-or | critical | planned | unverified | README.md |  |
+| readme-md-fabca22af6-002-image-viewing-bitmap-exif-handling-zoom | critical | planned | unverified | README.md |  |
+| readme-md-d2eb97d44e-003-navigation-surface-menu-drawer-toolbar-o | critical | planned | unverified | README.md |  |
+| readme-md-2508cec37d-004-runtime-permission-request-permission-re | critical | planned | unverified | README.md |  |
+| readme-md-d602d28d83-005-android-platform-component-lifecycle-suc | critical | planned | unverified | README.md |  |
+| readme-md-6721045c2d-006-screen-lifecycle-entry-point-initializat | critical | planned | unverified | README.md |  |
+| readme-md-449a470b45-007-observable-state-viewmodel-flow-livedata | critical | planned | unverified | README.md |  |
+| app-src-main-androidmanifest-xml-e5fadea668-001-android-resource-configuration-must-be-m | critical | planned | unverified | app/src/main/AndroidManifest.xml |  |
+| app-src-main-androidmanifest-xml-525ca85433-002-intent-uri-bundle-deeplink-or-cross-scre | critical | planned | unverified | app/src/main/AndroidManifest.xml |  |
+| app-src-main-androidmanifest-xml-dcc4612e71-003-runtime-permission-request-permission-re | critical | planned | unverified | app/src/main/AndroidManifest.xml |  |
+| app-src-main-androidmanifest-xml-c7c6907eb1-004-android-platform-component-lifecycle-suc | critical | planned | unverified | app/src/main/AndroidManifest.xml |  |
+| app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat | critical | planned | unverified | app/src/main/AndroidManifest.xml |  |
+| gradle-libs-versions-toml-3aed645f54-001-navigation-surface-menu-drawer-toolbar-o | critical | planned | unverified | gradle/libs.versions.toml |  |
+| gradle-libs-versions-toml-cc0d706dd9-002-android-platform-component-lifecycle-suc | critical | planned | unverified | gradle/libs.versions.toml |  |
+| gradle-libs-versions-toml-84d742a20a-003-screen-lifecycle-entry-point-initializat | critical | planned | unverified | gradle/libs.versions.toml |  |
+| gradle-libs-versions-toml-e5bf6af034-004-settings-preferences-option-toggles-or-c | critical | planned | unverified | gradle/libs.versions.toml |  |
+| gradle-wrapper-gradle-wrapper-properties-631c1456ba-001-android-platform-component-lifecycle-suc | critical | planned | unverified | gradle/wrapper/gradle-wrapper.properties |  |
+| settings-gradle-kts-154ff1ba1f-001-settings-preferences-option-toggles-or-c | high | planned | unverified | settings.gradle.kts |  |
+| app-src-main-res-values-strings-xml-b708bc8e6b-001-android-resource-configuration-must-be-m | high | planned | unverified | app/src/main/res/values/strings.xml |  |
+| app-src-main-res-values-strings-xml-36dc10345e-002-intent-uri-bundle-deeplink-or-cross-scre | high | planned | unverified | app/src/main/res/values/strings.xml |  |
+| app-src-main-res-values-strings-xml-6fbcdd736d-003-localized-strings-or-locale-specific-res | high | planned | unverified | app/src/main/res/values/strings.xml |  |
+| app-src-main-res-values-strings-xml-b2fc0b9ad5-004-runtime-permission-request-permission-re | high | planned | unverified | app/src/main/res/values/strings.xml |  |
+| app-src-main-res-values-strings-xml-3b47f3dbef-005-android-android-values-file-should-be-ma | high | planned | unverified | app/src/main/res/values/strings.xml |  |
+| contributing-md-4572619c62-001-navigation-surface-menu-drawer-toolbar-o | high | planned | unverified | CONTRIBUTING.md |  |
+| contributing-md-503bb8fc04-002-observable-state-viewmodel-flow-livedata | high | planned | unverified | CONTRIBUTING.md |  |
+| gradle-properties-4e2ecb7555-001-background-work-scheduled-tasks-alarms-w | high | planned | unverified | gradle.properties |  |
+| gradle-properties-76940e282a-002-intent-uri-bundle-deeplink-or-cross-scre | high | planned | unverified | gradle.properties |  |
+| gradle-properties-7106f28f85-003-settings-preferences-option-toggles-or-c | high | planned | unverified | gradle.properties |  |
+| app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m | high | planned | unverified | app/src/main/res/values/themes.xml |  |
+| app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re | high | planned | unverified | app/src/main/res/values/themes.xml |  |
+| app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma | high | planned | unverified | app/src/main/res/values/themes.xml |  |
+| app-proguard-rules-pro-0b4df5e718-001-settings-preferences-option-toggles-or-c | high | planned | unverified | app/proguard-rules.pro |  |
+| app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m | high | planned | unverified | app/src/main/res/values/colors.xml |  |
+| app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma | high | planned | unverified | app/src/main/res/values/colors.xml |  |
+| app-src-main-res-values-ic-launcher-background-xml-a73289ef8d-001-android-resource-configuration-must-be-m | high | planned | unverified | app/src/main/res/values/ic_launcher_background.xml |  |
+| app-src-main-res-values-ic-launcher-background-xml-76f22ce278-002-android-android-values-file-should-be-ma | high | planned | unverified | app/src/main/res/values/ic_launcher_background.xml |  |
+
+### Platform Capability Contracts
+
+| capability id | importance | status | capability | target API/library |
+| --- | --- | --- | --- | --- |
+| localization-resources | high | planned | Localized resources and formatted strings |  |
+
 ## Phase Implementation Groups
 
 | group id | type | priority | platform decision | probe | scope | source paths | target domains | risks |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| phase-06-polish-tests-verification-verification-com-example | verification | low |  |  | features:3, caps:0, resources:0 | app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt, app/src/test/java/com/example/foodike/ExampleUnitTest.kt | phase02_startup_navigation_test.cj, phase03_onboarding_login_profile_test.cj, phase04_home_history_discovery_test.cj | source tests should become target focused tests or explicit verification evidence |
-| phase-06-polish-tests-verification-verification-phase-tests-and-evidence | verification | low |  |  | features:3, caps:0, resources:0 | app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt, app/src/test/java/com/example/foodike/ExampleUnitTest.kt |  | target tests only count as strong evidence when backed by latest test gate PASS or explicit harness blocker; build pass alone does not close per-feature behavior; manual review evidence must point to concrete target endpoints |
+| phase-01-project-skeleton-resources-resource-migration-manifest | resource-migration | critical |  |  | features:5, caps:1, resources:5 | app/src/main/AndroidManifest.xml |  | current-phase source features are still open; critical/high behavior cannot close on build pass alone; resource semantics must be mapped to target resources, UI/components, or a specific replacement |
+| phase-01-project-skeleton-resources-source-behavior-app | source-behavior | critical |  |  | features:6, caps:0, resources:0 | app/build.gradle.kts, app/proguard-rules.pro |  | current-phase source features are still open; critical/high behavior cannot close on build pass alone; missing target endpoint evidence |
+| phase-01-project-skeleton-resources-source-behavior-gradle | source-behavior | critical |  |  | features:4, caps:0, resources:0 | gradle/libs.versions.toml |  | current-phase source features are still open; critical/high behavior cannot close on build pass alone; missing target endpoint evidence |
+| phase-01-project-skeleton-resources-source-behavior-gradle-wrapper | source-behavior | critical |  |  | features:1, caps:0, resources:0 | gradle/wrapper/gradle-wrapper.properties |  | current-phase source features are still open; critical/high behavior cannot close on build pass alone; missing target endpoint evidence |
+| phase-01-project-skeleton-resources-source-behavior-kotlin-source | source-behavior | critical |  |  | features:4, caps:0, resources:0 | build.gradle.kts, settings.gradle.kts |  | current-phase source features are still open; critical/high behavior cannot close on build pass alone; missing target endpoint evidence |
+| phase-01-project-skeleton-resources-source-behavior-other | source-behavior | critical |  |  | features:9, caps:0, resources:0 | README.md, CONTRIBUTING.md |  | current-phase source features are still open; critical/high behavior cannot close on build pass alone; missing target endpoint evidence |
+| phase-01-project-skeleton-resources-resource-migration-res-values | resource-migration | high |  |  | features:12, caps:1, resources:12 | app/src/main/res/values/colors.xml, app/src/main/res/values/ic_launcher_background.xml, app/src/main/res/values/strings.xml |  | current-phase source features are still open; critical/high behavior cannot close on build pass alone; resource semantics must be mapped to target resources, UI/components, or a specific replacement |
+| phase-01-project-skeleton-resources-source-behavior-config | source-behavior | high |  |  | features:3, caps:0, resources:0 | gradle.properties |  | current-phase source features are still open; critical/high behavior cannot close on build pass alone; missing target endpoint evidence |
+| phase-01-project-skeleton-resources-source-behavior-presentation-util | source-behavior | medium |  |  | features:1, caps:0, resources:0 | app/src/main/java/com/example/foodike/presentation/util/Screen.kt |  | current-phase source features are still open; missing target endpoint evidence; missing focused test or verification evidence |
+| phase-01-project-skeleton-resources-source-behavior-ui-theme | source-behavior | medium |  |  | features:4, caps:0, resources:0 | app/src/main/java/com/example/foodike/ui/theme/Color.kt, app/src/main/java/com/example/foodike/ui/theme/Shape.kt, app/src/main/java/com/example/foodike/ui/theme/Theme.kt |  | current-phase source features are still open; missing target endpoint evidence; missing focused test or verification evidence |
+| phase-01-project-skeleton-resources-platform-capability-localization-resources | platform-capability | high | needs-target-search |  | features:0, caps:1, resources:0 | app/src/main/AndroidManifest.xml, app/src/main/res/values/strings.xml, app/src/main/res/values/themes.xml |  | platform capability is unresolved before implementation; missing target capability search evidence |
+| phase-01-project-skeleton-resources-verification-phase-tests-and-evidence | verification | critical |  |  | features:49, caps:1, resources:0 | app/build.gradle.kts, build.gradle.kts, README.md |  | target tests only count as strong evidence when backed by latest test gate PASS or explicit harness blocker; build pass alone does not close per-feature behavior; manual review evidence must point to concrete target endpoints |
+
+## UI / Route / Action Contract
+
+Use this contract before editing UI code, but treat it as static-analysis planning evidence, not a complete UI specification. It is the minimum known screen/route/action/state evidence. Re-read the relevant source files, layouts, menus, preferences, adapters, navigation/back-stack code, and resources before implementing or closing UI-related rows; preserve source-visible behavior even when it is absent from this contract.
+| group id | patterns | route expectations | action expectations | state feedback | visual evidence |
+| --- | --- | --- | --- | --- | --- |
+| phase-01-project-skeleton-resources-source-behavior-kotlin-source | settings-preference-list |  |  |  | settings/preference rows should show current value/toggle state, not only a generic Open button |
 
 ## Must Complete Before Phase Close
 
-_No must-complete entries for this phase._
+| feature id | importance | status | source path | feature | task |
+| --- | --- | --- | --- | --- | --- |
+| readme-md-d602d28d83-005-android-platform-component-lifecycle-suc | critical | planned | README.md | Android platform component lifecycle such as service, receiver, provider, or application. | status is still open |
+| readme-md-44b694e8e8-001-file-document-storage-saf-mediastore-or | critical | planned | README.md | File, document, storage, SAF, MediaStore, or import/export behavior. | status is still open |
+| readme-md-fabca22af6-002-image-viewing-bitmap-exif-handling-zoom | critical | planned | README.md | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. | status is still open |
+| readme-md-d2eb97d44e-003-navigation-surface-menu-drawer-toolbar-o | critical | planned | README.md | Navigation surface, menu, drawer, toolbar, or tab command behavior. | status is still open |
+| readme-md-449a470b45-007-observable-state-viewmodel-flow-livedata | critical | planned | README.md | Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation. | status is still open |
+| readme-md-2508cec37d-004-runtime-permission-request-permission-re | critical | planned | README.md | Runtime permission request, permission result handling, or protected API access. | status is still open |
+| readme-md-6721045c2d-006-screen-lifecycle-entry-point-initializat | critical | planned | README.md | Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior. | status is still open |
+| app-build-gradle-kts-52a26dc1e9-003-android-platform-component-lifecycle-suc | critical | planned | app/build.gradle.kts | Android platform component lifecycle such as service, receiver, provider, or application. | status is still open |
+| app-build-gradle-kts-ab52d0a44d-001-navigation-surface-menu-drawer-toolbar-o | critical | planned | app/build.gradle.kts | Navigation surface, menu, drawer, toolbar, or tab command behavior. | status is still open |
+| app-build-gradle-kts-329cf39b55-002-runtime-permission-request-permission-re | critical | planned | app/build.gradle.kts | Runtime permission request, permission result handling, or protected API access. | status is still open |
+| app-build-gradle-kts-0a842e752f-004-screen-lifecycle-entry-point-initializat | critical | planned | app/build.gradle.kts | Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior. | status is still open |
+| app-build-gradle-kts-aa010bdd3d-005-settings-preferences-option-toggles-or-c | critical | planned | app/build.gradle.kts | Settings/preferences, option toggles, or configuration state behavior. | status is still open |
+| app-src-main-androidmanifest-xml-c7c6907eb1-004-android-platform-component-lifecycle-suc | critical | planned | app/src/main/AndroidManifest.xml | Android platform component lifecycle such as service, receiver, provider, or application. | status is still open |
+| app-src-main-androidmanifest-xml-e5fadea668-001-android-resource-configuration-must-be-m | critical | planned | app/src/main/AndroidManifest.xml | Android resource/configuration must be mapped or explicitly deferred. | status is still open |
+| app-src-main-androidmanifest-xml-525ca85433-002-intent-uri-bundle-deeplink-or-cross-scre | critical | planned | app/src/main/AndroidManifest.xml | Intent, URI, bundle, deeplink, or cross-screen parameter flow. | status is still open |
+| app-src-main-androidmanifest-xml-dcc4612e71-003-runtime-permission-request-permission-re | critical | planned | app/src/main/AndroidManifest.xml | Runtime permission request, permission result handling, or protected API access. | status is still open |
+| app-src-main-androidmanifest-xml-422b0d36ae-005-screen-lifecycle-entry-point-initializat | critical | planned | app/src/main/AndroidManifest.xml | Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior. | status is still open |
+| build-gradle-kts-6cd8a326ab-002-android-platform-component-lifecycle-suc | critical | planned | build.gradle.kts | Android platform component lifecycle such as service, receiver, provider, or application. | status is still open |
+| build-gradle-kts-e6afb1cfd2-001-runtime-permission-request-permission-re | critical | planned | build.gradle.kts | Runtime permission request, permission result handling, or protected API access. | status is still open |
+| build-gradle-kts-2f9b07ef27-003-settings-preferences-option-toggles-or-c | critical | planned | build.gradle.kts | Settings/preferences, option toggles, or configuration state behavior. | status is still open |
+| gradle-libs-versions-toml-cc0d706dd9-002-android-platform-component-lifecycle-suc | critical | planned | gradle/libs.versions.toml | Android platform component lifecycle such as service, receiver, provider, or application. | status is still open |
+| gradle-libs-versions-toml-3aed645f54-001-navigation-surface-menu-drawer-toolbar-o | critical | planned | gradle/libs.versions.toml | Navigation surface, menu, drawer, toolbar, or tab command behavior. | status is still open |
+| gradle-libs-versions-toml-84d742a20a-003-screen-lifecycle-entry-point-initializat | critical | planned | gradle/libs.versions.toml | Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior. | status is still open |
+| gradle-libs-versions-toml-e5bf6af034-004-settings-preferences-option-toggles-or-c | critical | planned | gradle/libs.versions.toml | Settings/preferences, option toggles, or configuration state behavior. | status is still open |
+| gradle-wrapper-gradle-wrapper-properties-631c1456ba-001-android-platform-component-lifecycle-suc | critical | planned | gradle/wrapper/gradle-wrapper.properties | Android platform component lifecycle such as service, receiver, provider, or application. | status is still open |
+| contributing-md-4572619c62-001-navigation-surface-menu-drawer-toolbar-o | high | planned | CONTRIBUTING.md | Navigation surface, menu, drawer, toolbar, or tab command behavior. | status is still open |
+| contributing-md-503bb8fc04-002-observable-state-viewmodel-flow-livedata | high | planned | CONTRIBUTING.md | Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation. | status is still open |
+| app-proguard-rules-pro-0b4df5e718-001-settings-preferences-option-toggles-or-c | high | planned | app/proguard-rules.pro | Settings/preferences, option toggles, or configuration state behavior. | status is still open |
+| app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma | high | planned | app/src/main/res/values/colors.xml | Android android-values file should be mapped to target resources, components, or documented deferred scope. | status is still open |
+| app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m | high | planned | app/src/main/res/values/colors.xml | Android resource/configuration must be mapped or explicitly deferred. | status is still open |
+| app-src-main-res-values-ic-launcher-background-xml-76f22ce278-002-android-android-values-file-should-be-ma | high | planned | app/src/main/res/values/ic_launcher_background.xml | Android android-values file should be mapped to target resources, components, or documented deferred scope. | status is still open |
+| app-src-main-res-values-ic-launcher-background-xml-a73289ef8d-001-android-resource-configuration-must-be-m | high | planned | app/src/main/res/values/ic_launcher_background.xml | Android resource/configuration must be mapped or explicitly deferred. | status is still open |
+| app-src-main-res-values-strings-xml-3b47f3dbef-005-android-android-values-file-should-be-ma | high | planned | app/src/main/res/values/strings.xml | Android android-values file should be mapped to target resources, components, or documented deferred scope. | status is still open |
+| app-src-main-res-values-strings-xml-b708bc8e6b-001-android-resource-configuration-must-be-m | high | planned | app/src/main/res/values/strings.xml | Android resource/configuration must be mapped or explicitly deferred. | status is still open |
+| app-src-main-res-values-strings-xml-36dc10345e-002-intent-uri-bundle-deeplink-or-cross-scre | high | planned | app/src/main/res/values/strings.xml | Intent, URI, bundle, deeplink, or cross-screen parameter flow. | status is still open |
+| app-src-main-res-values-strings-xml-6fbcdd736d-003-localized-strings-or-locale-specific-res | high | planned | app/src/main/res/values/strings.xml | Localized strings or locale-specific resource behavior. | status is still open |
+| app-src-main-res-values-strings-xml-b2fc0b9ad5-004-runtime-permission-request-permission-re | high | planned | app/src/main/res/values/strings.xml | Runtime permission request, permission result handling, or protected API access. | status is still open |
+| app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma | high | planned | app/src/main/res/values/themes.xml | Android android-values file should be mapped to target resources, components, or documented deferred scope. | status is still open |
+| app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m | high | planned | app/src/main/res/values/themes.xml | Android resource/configuration must be mapped or explicitly deferred. | status is still open |
+| app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re | high | planned | app/src/main/res/values/themes.xml | Runtime permission request, permission result handling, or protected API access. | status is still open |
+| gradle-properties-4e2ecb7555-001-background-work-scheduled-tasks-alarms-w | high | planned | gradle.properties | Background work, scheduled tasks, alarms, workers, or job services. | status is still open |
+| gradle-properties-76940e282a-002-intent-uri-bundle-deeplink-or-cross-scre | high | planned | gradle.properties | Intent, URI, bundle, deeplink, or cross-screen parameter flow. | status is still open |
+| gradle-properties-7106f28f85-003-settings-preferences-option-toggles-or-c | high | planned | gradle.properties | Settings/preferences, option toggles, or configuration state behavior. | status is still open |
+| settings-gradle-kts-154ff1ba1f-001-settings-preferences-option-toggles-or-c | high | planned | settings.gradle.kts | Settings/preferences, option toggles, or configuration state behavior. | status is still open |
+
+### Platform Capabilities
+
+| capability id | importance | status | capability | task |
+| --- | --- | --- | --- | --- |
+| localization-resources | high | planned | Localized resources and formatted strings | platform capability is still open |
 
 ## Phase Source Files
 
 | source path | importance | features | critical/high | open critical/high | statuses |
 | --- | --- | --- | --- | --- | --- |
-| app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt | low | 1 | 0 | 0 | implemented:1 |
-| app/src/test/java/com/example/foodike/ExampleUnitTest.kt | low | 2 | 0 | 0 | implemented:2 |
+| README.md | critical | 7 | 7 | 7 | planned:7 |
+| app/build.gradle.kts | critical | 5 | 5 | 5 | planned:5 |
+| app/src/main/AndroidManifest.xml | critical | 5 | 5 | 5 | planned:5 |
+| build.gradle.kts | critical | 3 | 3 | 3 | planned:3 |
+| gradle/libs.versions.toml | critical | 4 | 4 | 4 | planned:4 |
+| gradle/wrapper/gradle-wrapper.properties | critical | 1 | 1 | 1 | planned:1 |
+| CONTRIBUTING.md | high | 2 | 2 | 2 | planned:2 |
+| app/proguard-rules.pro | high | 1 | 1 | 1 | planned:1 |
+| app/src/main/res/values/colors.xml | high | 2 | 2 | 2 | planned:2 |
+| app/src/main/res/values/ic_launcher_background.xml | high | 2 | 2 | 2 | planned:2 |
+| app/src/main/res/values/strings.xml | high | 5 | 5 | 5 | planned:5 |
+| app/src/main/res/values/themes.xml | high | 3 | 3 | 3 | planned:3 |
+| gradle.properties | high | 3 | 3 | 3 | planned:3 |
+| settings.gradle.kts | high | 1 | 1 | 1 | planned:1 |
+| app/src/main/java/com/example/foodike/presentation/util/Screen.kt | medium | 1 | 0 | 0 | planned:1 |
+| app/src/main/java/com/example/foodike/ui/theme/Color.kt | medium | 1 | 0 | 0 | planned:1 |
+| app/src/main/java/com/example/foodike/ui/theme/Shape.kt | medium | 1 | 0 | 0 | planned:1 |
+| app/src/main/java/com/example/foodike/ui/theme/Theme.kt | medium | 1 | 0 | 0 | planned:1 |
+| app/src/main/java/com/example/foodike/ui/theme/Type.kt | medium | 1 | 0 | 0 | planned:1 |
 
 ## Test Harness Status
 
 | field | value |
 | --- | --- |
-| available | True |
+| available | False |
 | acceptedPass | False |
-| environmentStatus | failed-or-blocked |
-| latestPhase | phase-06-polish-tests-verification |
-| latestResult | TEST_COMPILE_FAIL |
-| latestPhaseMatchesCurrent | True |
-| referencedTestCount | 8 |
+| environmentStatus | unknown |
+| latestPhase |  |
+| latestResult |  |
+| latestPhaseMatchesCurrent | False |
+| referencedTestCount | 3 |
 | targetTestPackagePresent | True |
 | targetTestFiles | 6 |
 | sdkOrEnvironmentBlockerSuspected | False |
 
 ### Test Harness Notes
 
-- The latest test build report is not PASS; test references are not strong evidence by themselves.
+- No test build report is available yet.
 - Current phase references tests; record a PASS, focused manual/emulator evidence, or a harness blocker.
 
 ## Test Hints
 
-- entry/src/test/cangjie/phase02_startup_navigation_test.cj::Phase02StartupNavigationTest.resolvesLoggedOutUsersToOnboarding
-- entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::Phase03OnboardingLoginProfileTest.loginStoreAcceptsOnlySourceCredentials
-- entry/src/test/cangjie/phase04_home_history_discovery_test.cj::Phase04HomeHistoryDiscoveryTest.homeStoreSelectionSavesRestaurantBeforeNavigation
-- entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj::Phase05DetailCartStateMutationsTest.detailStorePreservesSectionFilteringAndCartVisibilityRules
-- entry/src/test/cangjie/phase02_startup_navigation_test.cj::Phase02StartupNavigationTest.startupStorePublishesResolvedRouteAndClearsLoading
-- entry/src/test/cangjie/phase04_home_history_discovery_test.cj::Phase04HomeHistoryDiscoveryTest.historyStoreSelectionSavesRestaurantBeforeNavigation
-- entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj::Phase05DetailCartStateMutationsTest.cartStoreMutatesLocalQuantitiesImmediately
-- entry/src/test/cangjie/phase02_startup_navigation_test.cj::Phase02StartupNavigationTest.loginStateToggleRuleFlipsBothDirections
-
-## Unassigned Critical/High Scope
-
-These entries have no `plannedPhase`; assign them when they belong to the current or a future phase.
-
-### Source Features
-
-| feature id | importance | status | source path | feature | task |
-| --- | --- | --- | --- | --- | --- |
-| readme-md-d602d28d83-005-android-platform-component-lifecycle-suc | critical | planned | README.md | Android platform component lifecycle such as service, receiver, provider, or application. |  |
-| readme-md-44b694e8e8-001-file-document-storage-saf-mediastore-or | critical | planned | README.md | File, document, storage, SAF, MediaStore, or import/export behavior. |  |
-| readme-md-fabca22af6-002-image-viewing-bitmap-exif-handling-zoom | critical | planned | README.md | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |  |
-| readme-md-d2eb97d44e-003-navigation-surface-menu-drawer-toolbar-o | critical | planned | README.md | Navigation surface, menu, drawer, toolbar, or tab command behavior. |  |
-| readme-md-449a470b45-007-observable-state-viewmodel-flow-livedata | critical | planned | README.md | Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation. |  |
-| readme-md-2508cec37d-004-runtime-permission-request-permission-re | critical | planned | README.md | Runtime permission request, permission result handling, or protected API access. |  |
-| readme-md-6721045c2d-006-screen-lifecycle-entry-point-initializat | critical | planned | README.md | Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior. |  |
-| app-src-main-java-com-example-foodike-foodikeapp-kt-694075bf4f-002-android-platform-component-lifecycle-suc | critical | planned | app/src/main/java/com/example/foodike/FoodikeApp.kt | Android platform component lifecycle such as service, receiver, provider, or application. |  |
-| app-src-main-java-com-example-foodike-foodikeapp-kt-864c7fbb30-001-runtime-permission-request-permission-re | critical | planned | app/src/main/java/com/example/foodike/FoodikeApp.kt | Runtime permission request, permission result handling, or protected API access. |  |
-| app-src-main-java-com-example-foodike-data-data-source-f-f170137f2d-001-file-document-storage-saf-mediastore-or | critical | planned | app/src/main/java/com/example/foodike/data/data_source/FakeData.kt | File, document, storage, SAF, MediaStore, or import/export behavior. |  |
-| app-src-main-java-com-example-foodike-data-data-source-f-8d9b6c748e-002-image-viewing-bitmap-exif-handling-zoom | critical | planned | app/src/main/java/com/example/foodike/data/data_source/FakeData.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |  |
-| app-src-main-java-com-example-foodike-data-data-source-f-5dbff38a8a-003-intent-uri-bundle-deeplink-or-cross-scre | critical | planned | app/src/main/java/com/example/foodike/data/data_source/FakeData.kt | Intent, URI, bundle, deeplink, or cross-screen parameter flow. |  |
-| app-src-main-java-com-example-foodike-data-data-source-f-d03fbb20a2-004-navigation-surface-menu-drawer-toolbar-o | critical | planned | app/src/main/java/com/example/foodike/data/data_source/FakeData.kt | Navigation surface, menu, drawer, toolbar, or tab command behavior. |  |
-| app-src-main-java-com-example-foodike-data-data-source-f-552e89ac77-005-runtime-permission-request-permission-re | critical | planned | app/src/main/java/com/example/foodike/data/data_source/FakeData.kt | Runtime permission request, permission result handling, or protected API access. |  |
-| app-src-main-java-com-example-foodike-data-repository-ho-edd4386452-003-data-loading-query-search-filter-or-sort | critical | planned | app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt | Data loading, query, search, filter, or sort behavior (getAds) |  |
-| app-src-main-java-com-example-foodike-data-repository-ho-f136ace752-004-data-loading-query-search-filter-or-sort | critical | planned | app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt | Data loading, query, search, filter, or sort behavior (getFoodItems) |  |
-| app-src-main-java-com-example-foodike-data-repository-ho-b8a31f9d55-005-data-loading-query-search-filter-or-sort | critical | planned | app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt | Data loading, query, search, filter, or sort behavior (getRestaurantFromName) |  |
-| app-src-main-java-com-example-foodike-data-repository-ho-76a8c28790-002-data-loading-query-search-filter-or-sort | critical | planned | app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt | Data loading, query, search, filter, or sort behavior (getRestaurants) |  |
-| app-src-main-java-com-example-foodike-data-repository-ho-4b6d5fb3fe-001-runtime-permission-request-permission-re | critical | planned | app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt | Runtime permission request, permission result handling, or protected API access. |  |
-| app-src-main-java-com-example-foodike-data-repository-us-55de2fa45e-008-data-loading-query-search-filter-or-sort | critical | planned | app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt | Data loading, query, search, filter, or sort behavior (getCartItems) |  |
-| app-src-main-java-com-example-foodike-data-repository-us-eaf58c5eae-007-data-loading-query-search-filter-or-sort | critical | planned | app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt | Data loading, query, search, filter, or sort behavior (getLikedRestaurants) |  |
-| app-src-main-java-com-example-foodike-data-repository-us-96bdd242a3-006-data-loading-query-search-filter-or-sort | critical | planned | app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt | Data loading, query, search, filter, or sort behavior (getMenuItems) |  |
-| app-src-main-java-com-example-foodike-data-repository-us-99a6434a5f-005-data-loading-query-search-filter-or-sort | critical | planned | app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt | Data loading, query, search, filter, or sort behavior (getSavedRestaurant) |  |
-| app-src-main-java-com-example-foodike-data-repository-us-63ccbabe48-001-intent-uri-bundle-deeplink-or-cross-scre | critical | planned | app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt | Intent, URI, bundle, deeplink, or cross-screen parameter flow. |  |
-| app-src-main-java-com-example-foodike-data-repository-us-7db3c9ce8e-002-navigation-surface-menu-drawer-toolbar-o | critical | planned | app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt | Navigation surface, menu, drawer, toolbar, or tab command behavior. |  |
-| app-src-main-java-com-example-foodike-data-repository-us-8ccc510949-004-observable-state-viewmodel-flow-livedata | critical | planned | app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt | Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation. |  |
-| app-src-main-java-com-example-foodike-data-repository-us-7d28c63dc6-003-runtime-permission-request-permission-re | critical | planned | app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt | Runtime permission request, permission result handling, or protected API access. |  |
-| app-src-main-java-com-example-foodike-di-appmodule-kt-1305c7ec20-002-android-platform-component-lifecycle-suc | critical | planned | app/src/main/java/com/example/foodike/di/AppModule.kt | Android platform component lifecycle such as service, receiver, provider, or application. |  |
-| app-src-main-java-com-example-foodike-di-appmodule-kt-767a0d2c9a-003-authentication-account-or-session-behavi | critical | planned | app/src/main/java/com/example/foodike/di/AppModule.kt | Authentication, account, or session behavior (provideLoginRepository) |  |
-| app-src-main-java-com-example-foodike-di-appmodule-kt-30d21fc769-001-runtime-permission-request-permission-re | critical | planned | app/src/main/java/com/example/foodike/di/AppModule.kt | Runtime permission request, permission result handling, or protected API access. |  |
-| app-src-main-java-com-example-foodike-domain-model-adver-5b81b742b7-001-image-viewing-bitmap-exif-handling-zoom | critical | planned | app/src/main/java/com/example/foodike/domain/model/Advertisement.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |  |
-| app-src-main-java-com-example-foodike-domain-model-adver-c080027e3f-002-runtime-permission-request-permission-re | critical | planned | app/src/main/java/com/example/foodike/domain/model/Advertisement.kt | Runtime permission request, permission result handling, or protected API access. |  |
-| app-src-main-java-com-example-foodike-domain-model-foodi-b0371acad0-001-image-viewing-bitmap-exif-handling-zoom | critical | planned | app/src/main/java/com/example/foodike/domain/model/FoodItem.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |  |
-| app-src-main-java-com-example-foodike-domain-model-foodi-7e99f748b4-002-runtime-permission-request-permission-re | critical | planned | app/src/main/java/com/example/foodike/domain/model/FoodItem.kt | Runtime permission request, permission result handling, or protected API access. |  |
-| app-src-main-java-com-example-foodike-domain-model-resta-d23115b0d8-001-image-viewing-bitmap-exif-handling-zoom | critical | planned | app/src/main/java/com/example/foodike/domain/model/Restaurant.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |  |
-| app-src-main-java-com-example-foodike-domain-model-resta-85862752f1-002-navigation-surface-menu-drawer-toolbar-o | critical | planned | app/src/main/java/com/example/foodike/domain/model/Restaurant.kt | Navigation surface, menu, drawer, toolbar, or tab command behavior. |  |
-| app-src-main-java-com-example-foodike-domain-model-resta-a1fab43dc5-003-runtime-permission-request-permission-re | critical | planned | app/src/main/java/com/example/foodike/domain/model/Restaurant.kt | Runtime permission request, permission result handling, or protected API access. |  |
-| app-src-main-java-com-example-foodike-domain-repository-a10dacf77c-003-data-loading-query-search-filter-or-sort | critical | planned | app/src/main/java/com/example/foodike/domain/repository/HomeRepository.kt | Data loading, query, search, filter, or sort behavior (getAds) |  |
-| app-src-main-java-com-example-foodike-domain-repository-d1f77c8f28-004-data-loading-query-search-filter-or-sort | critical | planned | app/src/main/java/com/example/foodike/domain/repository/HomeRepository.kt | Data loading, query, search, filter, or sort behavior (getFoodItems) |  |
-| app-src-main-java-com-example-foodike-domain-repository-96ff1499a7-005-data-loading-query-search-filter-or-sort | critical | planned | app/src/main/java/com/example/foodike/domain/repository/HomeRepository.kt | Data loading, query, search, filter, or sort behavior (getRestaurantFromName) |  |
-
-### Platform Capabilities
-
-| capability id | importance | status | capability | task |
-| --- | --- | --- | --- | --- |
-| file-access-and-saf | critical | not-applicable | File access, document permissions, and share URIs |  |
-| image-viewer-gestures | critical | not-applicable | Image viewer gestures and metadata |  |
-| media-library-access | critical | not-applicable | Media library and album discovery |  |
-| background-and-platform-components | high | not-applicable | Background work, services, receivers, widgets, and notifications |  |
-| runtime-permissions | high | not-applicable | Runtime permissions and protected platform access |  |
+- string key coverage check
+- placeholder preservation check
+- locale selection smoke test
 
 ## Instructions
 

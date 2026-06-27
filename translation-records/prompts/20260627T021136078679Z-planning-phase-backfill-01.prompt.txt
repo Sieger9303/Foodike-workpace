@@ -1,0 +1,75 @@
+This is a post-planning plannedPhase backfill session.
+Backfill round: 1/3.
+
+The plan artifacts have already passed validation. Do not rewrite plan.md or plan.json. Do not modify source files, target project files, workflow scripts, generated reports, or test/build artifacts.
+Use only the validated plan and existing authority rows to assign row-level phase ownership. Do not perform broad source exploration, SDK searches, implementation, or coverage closure in this session.
+Every active row in source-coverage-matrix.json and platform-capability-check.json must have a non-empty plannedPhase before phase execution can start. This requirement applies to all severities, not only critical/high rows.
+
+- plan.md: `D:\workspace\Foodike\plan.md`
+- plan.json: `D:\workspace\Foodike\plan.json`
+- source coverage matrix JSON: `D:\workspace\Foodike\translation-inputs\source-coverage-matrix.json`
+- source coverage matrix Markdown: `D:\workspace\Foodike\translation-inputs\source-coverage-matrix.md`
+- platform capability check JSON: `D:\workspace\Foodike\translation-inputs\platform-capability-check.json`
+- platform capability check Markdown: `D:\workspace\Foodike\translation-inputs\platform-capability-check.md`
+- remaining source coverage rows without plannedPhase: `248`
+- remaining platform capability rows without plannedPhase: `0`
+
+Current validation issues to resolve:
+- plan contract after backfill: 248 source coverage row(s) have no plannedPhase; examples: `app-src-main-java-com-example-foodike-data-data-source-f-f170137f2d-001-file-document-storage-saf-mediastore-or`, `app-src-main-java-com-example-foodike-data-data-source-f-8d9b6c748e-002-image-viewing-bitmap-exif-handling-zoom`, `app-src-main-java-com-example-foodike-data-data-source-f-5dbff38a8a-003-intent-uri-bundle-deeplink-or-cross-scre`, `app-src-main-java-com-example-foodike-data-data-source-f-d03fbb20a2-004-navigation-surface-menu-drawer-toolbar-o`, `app-src-main-java-com-example-foodike-data-data-source-f-552e89ac77-005-runtime-permission-request-permission-re`, `app-src-main-java-com-example-foodike-presentation-detai-fe74e39178-001-image-viewing-bitmap-exif-handling-zoom`, `app-src-main-java-com-example-foodike-presentation-detai-ee3681ccdd-002-intent-uri-bundle-deeplink-or-cross-scre`, `app-src-main-java-com-example-foodike-presentation-detai-830ec138bf-004-runtime-permission-request-permission-re`, `app-src-main-java-com-example-foodike-presentation-histo-bc35fac081-001-image-viewing-bitmap-exif-handling-zoom`, `app-src-main-java-com-example-foodike-presentation-histo-78c1f5d90b-002-runtime-permission-request-permission-re`, `app-src-main-java-com-example-foodike-presentation-util-db8f73d266-001-image-viewing-bitmap-exif-handling-zoom`, `app-src-main-java-com-example-foodike-presentation-util-417c58decd-002-navigation-surface-menu-drawer-toolbar-o`, `app-src-main-java-com-example-foodike-presentation-util-dc524a2ddb-003-runtime-permission-request-permission-re`, `app-src-main-java-com-example-foodike-presentation-util-cb2f6fdad2-004-observable-state-viewmodel-flow-livedata`, `app-src-main-java-com-example-foodike-presentation-login-b030a7b1f9-001-image-viewing-bitmap-exif-handling-zoom`, `app-src-main-java-com-example-foodike-presentation-login-1ed35246b3-002-navigation-surface-menu-drawer-toolbar-o`, `app-src-main-java-com-example-foodike-presentation-login-5777ecba15-003-notification-widget-remoteviews-or-home`, `app-src-main-java-com-example-foodike-presentation-login-7ab3866541-004-runtime-permission-request-permission-re`, `app-src-main-java-com-example-foodike-presentation-login-2c65d08c3b-005-screen-lifecycle-entry-point-initializat`, `app-src-main-java-com-example-foodike-presentation-login-34c5f4ba3a-006-settings-preferences-option-toggles-or-c`; plus 228 more
+
+Allowed edits:
+- Set `plannedPhase` on matrix rows when `plan.json` maps the row through phase/group `featureIds`, source paths, source methods, resources, UI/data/test contracts, acceptance evidence, or required behavior.
+- Set `plannedPhase` on platform capability rows when `plan.json` maps the row through phase/group `platformCapabilityIds`, source paths, named platform capability requirements, resources, or required behavior.
+- Use best-fit semantic ownership for rows that lack explicit ids. Prefer the phase/group with the closest sourcePath/sourceMethods/resourceInputs/requiredBehaviors match. Do not leave rows unassigned merely because the match is semantic rather than id-exact.
+- If a row is genuinely ambiguous, still choose the safest owning phase and record the ambiguity in notes; remaining empty plannedPhase values will block the workflow.
+- Preserve status/parity/evidence fields. Do not mark features implemented, simplified, deferred, or not-applicable here.
+
+Matrix authority patch command:
+
+POSIX shell:
+
+```sh
+'C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe' 'D:\X2Cangjie\X2Cangjie\scripts\shared\source_coverage\patch_authority.py' --kind matrix --authority 'D:\workspace\Foodike\translation-inputs\source-coverage-matrix.json' --patch '<patch.json>' --markdown 'D:\workspace\Foodike\translation-inputs\source-coverage-matrix.md' --plan-json 'D:\workspace\Foodike\plan.json'
+```
+
+Windows PowerShell:
+
+```powershell
+& 'C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe' 'D:\X2Cangjie\X2Cangjie\scripts\shared\source_coverage\patch_authority.py' '--kind' 'matrix' '--authority' 'D:\workspace\Foodike\translation-inputs\source-coverage-matrix.json' '--patch' '<patch.json>' '--markdown' 'D:\workspace\Foodike\translation-inputs\source-coverage-matrix.md' '--plan-json' 'D:\workspace\Foodike\plan.json'
+```
+
+Platform capability patch command:
+
+POSIX shell:
+
+```sh
+'C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe' 'D:\X2Cangjie\X2Cangjie\scripts\shared\source_coverage\patch_authority.py' --kind platform --authority 'D:\workspace\Foodike\translation-inputs\platform-capability-check.json' --patch '<patch.json>' --markdown 'D:\workspace\Foodike\translation-inputs\platform-capability-check.md' --plan-json 'D:\workspace\Foodike\plan.json'
+```
+
+Windows PowerShell:
+
+```powershell
+& 'C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe' 'D:\X2Cangjie\X2Cangjie\scripts\shared\source_coverage\patch_authority.py' '--kind' 'platform' '--authority' 'D:\workspace\Foodike\translation-inputs\platform-capability-check.json' '--patch' '<patch.json>' '--markdown' 'D:\workspace\Foodike\translation-inputs\platform-capability-check.md' '--plan-json' 'D:\workspace\Foodike\plan.json'
+```
+
+Before finishing, validate the plan artifacts still parse:
+
+POSIX shell:
+
+```sh
+test -s 'D:\workspace\Foodike\plan.md' && \
+  test -s 'D:\workspace\Foodike\plan.json' && \
+  'C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe' -m json.tool 'D:\workspace\Foodike\plan.json' >/dev/null
+```
+
+Windows PowerShell:
+
+```powershell
+if (!(Test-Path -LiteralPath 'D:\workspace\Foodike\plan.md' -PathType Leaf)) { exit 1 }
+if ((Get-Item -LiteralPath 'D:\workspace\Foodike\plan.md').Length -eq 0) { exit 1 }
+if (!(Test-Path -LiteralPath 'D:\workspace\Foodike\plan.json' -PathType Leaf)) { exit 1 }
+if ((Get-Item -LiteralPath 'D:\workspace\Foodike\plan.json').Length -eq 0) { exit 1 }
+& 'C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe' '-m' 'json.tool' 'D:\workspace\Foodike\plan.json' | Out-Null
+```
+
+Report updated row counts, unchanged uncertain row counts, commands run, and any blocker that prevented using the authority patch tool.

@@ -176,7 +176,7 @@ _Additional 9 item(s) omitted; see plan-seed.json._
 | mipmaps | mipmaps (12) | [] | ['resource semantics should map to target UI/resources or replacement'] |
 | otherResources | otherResources (2) | [] | ['resource semantics should map to target UI/resources or replacement'] |
 | valuesFiles | valuesFiles (4) | [] | ['resource semantics should map to target UI/resources or replacement'] |
-| strings | source strings (52) | ['ad', 'add', 'all_around_you', 'cart', 'coming_soon', 'display_picture', 'drop_down_arrow', 'empty', 'favourite', 'from_creator', 'history', 'home', 'location', 'login_with_facebook', 'login_with_google', 'love', 'non_vegetarian', 'onboardingHeading1', 'onboardingHeading2', 'onboardingHeading3', 'onboardingText1', 'onboardingText2', 'onboardingText3', 'order_from_favourites', 'outlet', 'outlet_2', 'rating', 'recommended', 'recommended_for_you', 'restaurant', 'share', 'subtract', 'vegetarian', 'with', 'your_location'] | ['user-visible strings should be preserved, localized, or explicitly replaced'] |
+| strings | source strings (52) | [] | ['user-visible strings should be preserved, localized, or explicitly replaced'] |
 
 ## Platform Capability Contracts
 

@@ -2,6 +2,7 @@ package ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.detail
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.Builder
+import ohos.base.ResourceStr
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.*
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.widgets.restaurantMedia
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.domain.*
@@ -22,7 +23,7 @@ func buildDetailTopBar(isLiked: Bool, onBack: () -> Unit, onToggleLike: () -> Un
                 .onClick({ _ =>
                     onToggleLike()
                 })
-            Text("Share")
+            Text(stringShare)
                 .fontColor(Color.Gray)
                 .onClick({ _ =>
                     onShare()
@@ -58,7 +59,7 @@ func buildRestaurantDetailCard(restaurant: RestaurantData) {
                 .width(42)
                 .height(42)
             Column(space: 4) {
-                Text("Outlet")
+                Text(stringOutlet)
                     .fontWeight(FontWeight.Medium)
                 Text("${restaurant.etaMinutes} Min")
                     .fontColor(Color.Gray)
@@ -67,7 +68,7 @@ func buildRestaurantDetailCard(restaurant: RestaurantData) {
             Column(space: 4) {
                 Text(restaurant.place)
                     .fontColor(Color.Gray)
-                Text("Your location")
+                Text(stringYourLocation)
                     .fontColor(Color.Gray)
             }
         }
@@ -86,7 +87,7 @@ func buildMenuQuantityControls(
     onRemove: () -> Unit
 ) {
     if (item.quantity == 0) {
-        Text("ADD")
+        Text(stringAdd)
             .fontSize(15)
             .fontWeight(FontWeight.Bold)
             .fontColor(colorDarkGreen)
@@ -95,7 +96,7 @@ func buildMenuQuantityControls(
             })
     } else {
         Row(space: 10) {
-            Text("-")
+            Text(stringSubtract)
                 .fontSize(16)
                 .fontWeight(FontWeight.Bold)
                 .onClick({ _ =>
@@ -155,7 +156,7 @@ func buildMenuItemRow(
 }
 
 @Builder
-func buildSectionHeader(title: String, expanded: Bool, onToggle: () -> Unit) {
+func buildSectionHeader(title: ResourceStr, expanded: Bool, onToggle: () -> Unit) {
     Row {
         Text(title)
             .fontSize(22)
@@ -174,7 +175,7 @@ func buildSectionHeader(title: String, expanded: Bool, onToggle: () -> Unit) {
 
 @Builder
 func buildDetailSection(
-    title: String,
+    title: ResourceStr,
     expanded: Bool,
     items: ArrayList<DetailMenuItemData>,
     onToggle: () -> Unit,
@@ -208,7 +209,7 @@ func buildRestaurantHeroImage(restaurant: RestaurantData) {
 func buildCartFab(onOpenCart: () -> Unit) {
     Row {
         Blank().layoutWeight(1)
-        Button("Cart")
+        Button(stringCart)
             .backgroundColor(colorDarkGreen)
             .fontColor(Color.White)
             .onClick({ _ =>
@@ -237,7 +238,7 @@ public func renderDetailRoute(
             buildRestaurantHeroImage(state.restaurant)
             buildRestaurantDetailCard(state.restaurant)
             buildDetailSection(
-                "Recommended",
+                stringRecommended,
                 state.recommendedExpanded,
                 state.recommendedItems,
                 onToggleRecommended,
@@ -245,7 +246,7 @@ public func renderDetailRoute(
                 onRemove
             )
             buildDetailSection(
-                "Non Vegetarian",
+                stringNonVegetarian,
                 state.nonVegExpanded,
                 detailStore.nonVegItems(state.menuItems),
                 onToggleNonVeg,
@@ -253,7 +254,7 @@ public func renderDetailRoute(
                 onRemove
             )
             buildDetailSection(
-                "Vegetarian",
+                stringVegetarian,
                 state.vegExpanded,
                 detailStore.vegItems(state.menuItems),
                 onToggleVeg,

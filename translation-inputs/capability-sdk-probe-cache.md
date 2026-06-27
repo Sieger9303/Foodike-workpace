@@ -1,6 +1,6 @@
 # Capability SDK Probe Cache
 
-- Generated: `2026-06-25T04:48:00+00:00`
+- Generated: `2026-06-27T03:22:05+00:00`
 - Cache hit: `True`
 - SDK root: `C:\Users\Sieger\.cangjie-sdk\6.1\cangjie`
 
@@ -10,21 +10,19 @@ This is preparation evidence only. It lists pure Cangjie declaration/library can
 
 | metric | value |
 | --- | --- |
-| capabilityEntries | 8 |
+| capabilityEntries | 6 |
 | sdkFilesIndexed | 1050 |
-| withPureCangjieDeclarationCandidates | 8 |
-| withCangjieLibraryCandidates | 8 |
+| withPureCangjieDeclarationCandidates | 6 |
+| withCangjieLibraryCandidates | 6 |
 | withoutCandidates | 0 |
 
 ## Capability Candidates
 
 | capability id | importance | phase | interpretation | declarations | libraries | terms |
 | --- | --- | --- | --- | --- | --- | --- |
-| media-library-access | critical |  | declaration-candidate | 12 | 12 | media, access, and, album, discovery, use, photo, picker |
-| file-access-and-saf | critical |  | declaration-candidate | 12 | 12 | file, access, and, saf, document, permissions, share, uris |
-| image-viewer-gestures | critical |  | declaration-candidate | 12 | 12 | image, viewer, gestures, and, metadata, not, port, vendored |
-| localization-resources | high | phase-01-project-skeleton-resources | declaration-candidate | 12 | 12 | localization, resources, localized, and, formatted, strings, resource, bundles |
-| runtime-permissions | high |  | declaration-candidate | 12 | 12 | runtime, permissions, and, protected, access, map, permission, flows |
-| background-and-platform-components | high |  | declaration-candidate | 12 | 12 | background, and, components, work, services, receivers, widgets, notifications |
-| preferences-key-value-persistence | critical | phase-01-project-skeleton-resources | declaration-candidate | 12 | 12 | preferences, key, value, persistence, lightweight, session, arkdata, use |
-| startup-route-and-window-lifecycle | critical | phase-01-project-skeleton-resources | declaration-candidate | 12 | 12 | startup, route, and, window, lifecycle, gating, main, abilitykit |
+| media-library-access | critical | phase-04-home-history | declaration-candidate | 12 | 12 | media, access, and, album, discovery, use, photo, picker |
+| file-access-and-saf | critical | phase-05-detail-cart | declaration-candidate | 12 | 12 | file, access, and, saf, document, permissions, share, uris |
+| image-viewer-gestures | critical | phase-05-detail-cart | declaration-candidate | 12 | 12 | image, viewer, gestures, and, metadata, not, port, vendored |
+| localization-resources | high | phase-01-project-skeleton-resources | declaration-candidate | 12 | 12 | localization, resources, localized, and, formatted, strings, localizationkit, resource |
+| runtime-permissions | high | phase-02-startup-session-navigation | declaration-candidate | 12 | 12 | runtime, permissions, and, protected, access, map, permission, flows |
+| background-and-platform-components | high | phase-02-startup-session-navigation | declaration-candidate | 12 | 12 | background, and, components, work, services, receivers, widgets, notifications |

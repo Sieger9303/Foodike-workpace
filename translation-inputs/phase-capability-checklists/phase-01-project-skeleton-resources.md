@@ -10,15 +10,27 @@ Phase-scoped platform capability pre-resolution checklist. This is generated fro
 
 | metric | value |
 | --- | --- |
-| phasePlatformCapabilities | 0 |
+| phasePlatformCapabilities | 1 |
 | unresolvedPlatformCapabilities | 0 |
 | compileProbeRecommendedCapabilities | 0 |
 | discoveryOnlyCapabilities | 0 |
-| sdkProbeDeclarationCandidateCapabilities | 0 |
+| sdkProbeDeclarationCandidateCapabilities | 1 |
+
+## Resolution Status Counts
+
+| resolution status | count |
+| --- | --- |
+| resolved-real-api | 1 |
 
 ## Unresolved Platform Capabilities
 
 _No unresolved current-phase platform capabilities._
+
+## All Current-Phase Platform Capabilities
+
+| capability id | importance | platform status | resolution | decision | probe | sdk cache | capability | target API/library | reason |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| localization-resources | high | verified-direct | resolved-real-api | resolved-real-api |  | declaration-candidate | Localized resources and formatted strings | HarmonyOS Cangjie LocalizationKit resource model (`ohos.base.ResourceStr`, `ohos.resource.AppResource`, `ohos.resource_manager.ResourceManager`) with standard HarmonyOS `string.json`/`color.json` resources | explicit direct API/Kit/package resolution |
 
 ## Instructions
 

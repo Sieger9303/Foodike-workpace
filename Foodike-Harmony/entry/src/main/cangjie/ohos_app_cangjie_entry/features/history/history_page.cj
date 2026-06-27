@@ -2,7 +2,7 @@ package ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.history
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.Builder
-import ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.{mediaIcNonVeg, mediaIcVeg}
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.{mediaIcNonVeg, mediaIcVeg, stringEmpty}
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.widgets.{renderRestaurantCard, renderSearchBar}
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.domain.*
 import std.collection.ArrayList
@@ -129,7 +129,7 @@ func buildHistoryFavourites(favourites: ArrayList<RestaurantData>, onSelectResta
         .width(100.percent)
     } else {
         Row {
-            Text("Empty")
+            Text(stringEmpty)
                 .fontSize(16)
         }
         .width(100.percent)

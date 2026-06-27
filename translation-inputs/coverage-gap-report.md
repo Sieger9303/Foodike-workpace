@@ -15,28 +15,27 @@ Reduce functional coverage gaps first, and use code-scale gaps as a warning sign
 
 | ratio | target/source |
 | --- | --- |
-| targetToSourceFiles | 54.1% |
-| targetToSourceTextFiles | 52.8% |
-| targetToSourceNonblankLines | 77.0% |
-| targetToSourceProductionTextFiles | 48.1% |
-| targetToSourceProductionNonblankLines | 72.8% |
-| targetToSourceCodeFiles | 47.1% |
-| targetToSourceCodeNonblankLines | 42.4% |
-| targetToSourceProductionCodeFiles | 43.4% |
-| targetToSourceProductionCodeNonblankLines | 38.5% |
-| targetToSourceProductionCodeLines | 55.5% |
+| targetToSourceFiles | 52.7% |
+| targetToSourceTextFiles | 50.9% |
+| targetToSourceNonblankLines | 79.1% |
+| targetToSourceProductionTextFiles | 46.2% |
+| targetToSourceProductionNonblankLines | 75.0% |
+| targetToSourceCodeFiles | 44.7% |
+| targetToSourceCodeNonblankLines | 42.6% |
+| targetToSourceProductionCodeFiles | 41.0% |
+| targetToSourceProductionCodeNonblankLines | 38.7% |
+| targetToSourceProductionCodeLines | 55.8% |
 | targetToSourceTestFiles | 300.0% |
 
 ## Findings
 
 | severity | kind | message |
 | --- | --- | --- |
-| high | string-resource-coverage | Target string resources cover only part of source base strings. |
-| high | coverage-matrix-uncovered-entry | 116 critical/high source feature(s) remain planned, unreviewed, or not covered. |
+| high | coverage-matrix-uncovered-entry | 208 critical/high source feature(s) remain planned, unreviewed, or not covered. |
+| high | platform-capability-unresolved | 5 critical/high platform capability check(s) remain planned, unreviewed, or not covered. |
 | medium | medium-loc-gap | Target production code LoC is below 75% of source production code LoC; verify that feature coverage is intentional and not hidden by tests or notes. |
 | medium | target-weakening-signals | Target code contains implementation-placeholder/stub/in-memory/deferred wording; verify each occurrence is intentional and documented. |
-| medium | target-structure-endpoint-concentration | 1 target file(s) carry a concentrated share of matrix targetEndpoints. Check whether unrelated source clusters are being closed through a broad shell instead of precise domain functions. |
-| medium | target-structure-broad-shell-endpoints | 1 broad shell-like target file(s) carry many coverage endpoints. Prefer targetEndpoints that name specific business functions or extracted modules. |
+| medium | target-structure-endpoint-concentration | 2 target file(s) carry a concentrated share of matrix targetEndpoints. Check whether unrelated source clusters are being closed through a broad shell instead of precise domain functions. |
 | medium | target-structure-ui-surface-concentration | 2 target UI surface file(s) contain many page/view/dialog/list symbols. Split obvious settings/viewer/folder/about/player/gallery surfaces when they are becoming one long root shell. |
 | medium | target-structure-ui-endpoint-concentration | 2 target file(s) concentrate UI-related matrix endpoints. Check that routes are mutually rendered, back behavior is explicit, and UI evidence points at screen/page-specific builders rather than one debug-style shell. |
 
@@ -49,7 +48,7 @@ Reduce functional coverage gaps first, and use code-scale gaps as a warning sign
 | actualEntries | 260 |
 | staleEntries | 0 |
 | missingCriticalHighEntries | 0 |
-| uncoveredCriticalHighEntries | 116 |
+| uncoveredCriticalHighEntries | 208 |
 | deferredCriticalHighEntries | 0 |
 | deferredCriticalHighRatio | 0.0 |
 | simplifiedCriticalHighEntries | 0 |
@@ -62,9 +61,9 @@ Reduce functional coverage gaps first, and use code-scale gaps as a warning sign
 | repeatedDeferredJustificationGroups | 0 |
 | repeatedImplementedEvidenceGroups | 0 |
 | repeatedImplementedEndpointGroups | 0 |
-| broadImplementedEndpointCriticalHighEntries | 0 |
+| broadImplementedEndpointCriticalHighEntries | 1 |
 | unverifiedTestEvidenceCriticalHighEntries | 0 |
-| testEvidenceVerifiedByLatestTestGateEntries | 29 |
+| testEvidenceVerifiedByLatestTestGateEntries | 0 |
 | weakEvidenceCriticalHighEntries | 0 |
 | implementedWithoutEndpointOrTestCriticalHighEntries | 0 |
 | missingSourceBehaviorCriticalHighEntries | 0 |
@@ -78,10 +77,10 @@ Reduce functional coverage gaps first, and use code-scale gaps as a warning sign
 
 | status | count |
 | --- | --- |
-| implemented | 60 |
-| not-applicable | 50 |
-| planned | 141 |
-| platform-replaced | 9 |
+| implemented | 1 |
+| not-applicable | 3 |
+| planned | 244 |
+| platform-replaced | 12 |
 
 ## Platform Capability Check
 
@@ -89,9 +88,9 @@ Reduce functional coverage gaps first, and use code-scale gaps as a warning sign
 | --- | --- |
 | expectedEntries | 6 |
 | expectedCriticalHighEntries | 6 |
-| actualEntries | 8 |
+| actualEntries | 6 |
 | missingCriticalHighEntries | 0 |
-| unresolvedCriticalHighEntries | 0 |
+| unresolvedCriticalHighEntries | 5 |
 | missingDocSearchCriticalHighEntries | 0 |
 | implementedWeakTargetDecisionEntries | 0 |
 | implementedWeakTestEntries | 0 |
@@ -110,27 +109,26 @@ Reduce functional coverage gaps first, and use code-scale gaps as a warning sign
 
 | status | count |
 | --- | --- |
-| not-applicable | 5 |
-| platform-replaced | 1 |
-| verified-direct | 2 |
+| planned | 5 |
+| verified-direct | 1 |
 
 ## Target Structure
 
 | metric | value |
 | --- | --- |
-| productionCodeFiles | 36 |
-| productionCodeNonblankLines | 2629 |
+| productionCodeFiles | 34 |
+| productionCodeNonblankLines | 2646 |
 | largestProductionCodeFileNonblankLines | 374 |
 | largeProductionCodeFiles | 0 |
-| endpointBearingFeatureRows | 69 |
-| endpointTargetFiles | 37 |
-| largestEndpointFileShare | 56.5% |
-| concentratedEndpointFiles | 1 |
-| broadShellEndpointFiles | 1 |
+| endpointBearingFeatureRows | 13 |
+| endpointTargetFiles | 15 |
+| largestEndpointFileShare | 53.8% |
+| concentratedEndpointFiles | 2 |
+| broadShellEndpointFiles | 0 |
 | uiSurfaceFiles | 18 |
 | concentratedUiSurfaceFiles | 2 |
-| uiEndpointBearingFeatureRows | 66 |
-| uiEndpointTargetFiles | 33 |
+| uiEndpointBearingFeatureRows | 12 |
+| uiEndpointTargetFiles | 15 |
 | concentratedUiEndpointFiles | 2 |
 | entryModuleStatus | PASS |
 | entryRootPackage | ohos_app_cangjie_entry |

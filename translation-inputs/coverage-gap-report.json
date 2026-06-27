@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-26T04:03:33+00:00",
+  "generatedAt": "2026-06-27T03:22:15+00:00",
   "sourceRoot": "D:\\Kotlin2Cangjie\\Foodike",
   "targetRoot": "D:\\workspace\\Foodike\\Foodike-Harmony",
   "locProviders": {
@@ -104,16 +104,16 @@
     "notes": "LOC gap findings use external tool code lines when available. Physical/nonblank/comment/blank ratios remain supporting evidence."
   },
   "ratios": {
-    "targetToSourceFiles": 0.5411,
-    "targetToSourceTextFiles": 0.5283,
-    "targetToSourceNonblankLines": 0.7696,
-    "targetToSourceProductionTextFiles": 0.4808,
-    "targetToSourceProductionNonblankLines": 0.7282,
-    "targetToSourceCodeFiles": 0.4706,
-    "targetToSourceCodeNonblankLines": 0.4235,
-    "targetToSourceProductionCodeFiles": 0.4337,
-    "targetToSourceProductionCodeNonblankLines": 0.3848,
-    "targetToSourceProductionCodeLines": 0.5545,
+    "targetToSourceFiles": 0.5274,
+    "targetToSourceTextFiles": 0.5094,
+    "targetToSourceNonblankLines": 0.7908,
+    "targetToSourceProductionTextFiles": 0.4615,
+    "targetToSourceProductionNonblankLines": 0.7495,
+    "targetToSourceCodeFiles": 0.4471,
+    "targetToSourceCodeNonblankLines": 0.426,
+    "targetToSourceProductionCodeFiles": 0.4096,
+    "targetToSourceProductionCodeNonblankLines": 0.3873,
+    "targetToSourceProductionCodeLines": 0.5581,
     "targetToSourceTestFiles": 3.0
   },
   "findings": [
@@ -123,11 +123,6 @@
       "message": "Target production code LoC is below 75% of source production code LoC; verify that feature coverage is intentional and not hidden by tests or notes."
     },
     {
-      "severity": "high",
-      "kind": "string-resource-coverage",
-      "message": "Target string resources cover only part of source base strings."
-    },
-    {
       "severity": "medium",
       "kind": "target-weakening-signals",
       "message": "Target code contains implementation-placeholder/stub/in-memory/deferred wording; verify each occurrence is intentional and documented."
@@ -135,17 +130,17 @@
     {
       "severity": "high",
       "kind": "coverage-matrix-uncovered-entry",
-      "message": "116 critical/high source feature(s) remain planned, unreviewed, or not covered."
+      "message": "208 critical/high source feature(s) remain planned, unreviewed, or not covered."
+    },
+    {
+      "severity": "high",
+      "kind": "platform-capability-unresolved",
+      "message": "5 critical/high platform capability check(s) remain planned, unreviewed, or not covered."
     },
     {
       "severity": "medium",
       "kind": "target-structure-endpoint-concentration",
-      "message": "1 target file(s) carry a concentrated share of matrix targetEndpoints. Check whether unrelated source clusters are being closed through a broad shell instead of precise domain functions."
-    },
-    {
-      "severity": "medium",
-      "kind": "target-structure-broad-shell-endpoints",
-      "message": "1 broad shell-like target file(s) carry many coverage endpoints. Prefer targetEndpoints that name specific business functions or extracted modules."
+      "message": "2 target file(s) carry a concentrated share of matrix targetEndpoints. Check whether unrelated source clusters are being closed through a broad shell instead of precise domain functions."
     },
     {
       "severity": "medium",
@@ -165,7 +160,7 @@
       "actualEntries": 260,
       "staleEntries": 0,
       "missingCriticalHighEntries": 0,
-      "uncoveredCriticalHighEntries": 116,
+      "uncoveredCriticalHighEntries": 208,
       "deferredCriticalHighEntries": 0,
       "deferredCriticalHighRatio": 0.0,
       "simplifiedCriticalHighEntries": 0,
@@ -178,9 +173,9 @@
       "repeatedDeferredJustificationGroups": 0,
       "repeatedImplementedEvidenceGroups": 0,
       "repeatedImplementedEndpointGroups": 0,
-      "broadImplementedEndpointCriticalHighEntries": 0,
+      "broadImplementedEndpointCriticalHighEntries": 1,
       "unverifiedTestEvidenceCriticalHighEntries": 0,
-      "testEvidenceVerifiedByLatestTestGateEntries": 29,
+      "testEvidenceVerifiedByLatestTestGateEntries": 0,
       "weakEvidenceCriticalHighEntries": 0,
       "implementedWithoutEndpointOrTestCriticalHighEntries": 0,
       "missingSourceBehaviorCriticalHighEntries": 0,
@@ -188,10 +183,10 @@
       "missingVerificationEvidenceCriticalHighEntries": 0,
       "parityMismatchCriticalHighEntries": 0,
       "byStatus": {
-        "implemented": 60,
-        "not-applicable": 50,
-        "planned": 141,
-        "platform-replaced": 9
+        "implemented": 1,
+        "not-applicable": 3,
+        "planned": 244,
+        "platform-replaced": 12
       },
       "allowedParityLevels": [
         "",
@@ -218,9 +213,9 @@
     "summary": {
       "expectedEntries": 6,
       "expectedCriticalHighEntries": 6,
-      "actualEntries": 8,
+      "actualEntries": 6,
       "missingCriticalHighEntries": 0,
-      "unresolvedCriticalHighEntries": 0,
+      "unresolvedCriticalHighEntries": 5,
       "missingDocSearchCriticalHighEntries": 0,
       "implementedWeakTargetDecisionEntries": 0,
       "implementedWeakTestEntries": 0,
@@ -233,9 +228,8 @@
       "incompleteDeferredCriticalHighEntries": 0,
       "genericDeferredCriticalHighEntries": 0,
       "byStatus": {
-        "not-applicable": 5,
-        "platform-replaced": 1,
-        "verified-direct": 2
+        "planned": 5,
+        "verified-direct": 1
       },
       "allowedStatuses": [
         "deferred",
@@ -260,19 +254,19 @@
   },
   "targetStructure": {
     "summary": {
-      "productionCodeFiles": 36,
-      "productionCodeNonblankLines": 2629,
+      "productionCodeFiles": 34,
+      "productionCodeNonblankLines": 2646,
       "largestProductionCodeFileNonblankLines": 374,
       "largeProductionCodeFiles": 0,
-      "endpointBearingFeatureRows": 69,
-      "endpointTargetFiles": 37,
-      "largestEndpointFileShare": 0.5652,
-      "concentratedEndpointFiles": 1,
-      "broadShellEndpointFiles": 1,
+      "endpointBearingFeatureRows": 13,
+      "endpointTargetFiles": 15,
+      "largestEndpointFileShare": 0.5385,
+      "concentratedEndpointFiles": 2,
+      "broadShellEndpointFiles": 0,
       "uiSurfaceFiles": 18,
       "concentratedUiSurfaceFiles": 2,
-      "uiEndpointBearingFeatureRows": 66,
-      "uiEndpointTargetFiles": 33,
+      "uiEndpointBearingFeatureRows": 12,
+      "uiEndpointTargetFiles": 15,
       "concentratedUiEndpointFiles": 2,
       "entryModuleStatus": "PASS",
       "entryRootPackage": "ohos_app_cangjie_entry"
@@ -283,12 +277,7 @@
       {
         "severity": "medium",
         "kind": "target-structure-endpoint-concentration",
-        "message": "1 target file(s) carry a concentrated share of matrix targetEndpoints. Check whether unrelated source clusters are being closed through a broad shell instead of precise domain functions."
-      },
-      {
-        "severity": "medium",
-        "kind": "target-structure-broad-shell-endpoints",
-        "message": "1 broad shell-like target file(s) carry many coverage endpoints. Prefer targetEndpoints that name specific business functions or extracted modules."
+        "message": "2 target file(s) carry a concentrated share of matrix targetEndpoints. Check whether unrelated source clusters are being closed through a broad shell instead of precise domain functions."
       },
       {
         "severity": "medium",

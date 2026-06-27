@@ -1,400 +1,291 @@
 {
   "files": [
     {
-      "path": "entry/cjpm.toml",
-      "kind": "build-config",
-      "sourceRefs": [
-        "translation-inputs/mapcir/skeleton/entry/cjpm.toml",
-        "app/build.gradle.kts",
-        "gradle/libs.versions.toml"
-      ],
-      "topLevelDefinitions": [
-        "package metadata",
-        "target profiles",
-        "HarmonyOS Cangjie compile options"
-      ],
-      "translationGuidelines": [
-        "Start from the mapcir skeleton but keep package and module names aligned to Foodike.",
-        "Do not carry Android dependency concepts into Cangjie build config except as replacement notes."
-      ]
-    },
-    {
-      "path": "AppScope/app.json5",
-      "kind": "app-config",
-      "sourceRefs": [
-        "app/src/main/AndroidManifest.xml",
-        "translation-inputs/mapcir/skeleton/AppScope/app.json5"
-      ],
-      "topLevelDefinitions": [
-        "bundle name",
-        "app icon",
-        "app label",
-        "version"
-      ],
-      "translationGuidelines": [
-        "Preserve the source bundle/application identity and startup label resources."
-      ]
-    },
-    {
-      "path": "entry/src/main/module.json5",
-      "kind": "module-config",
-      "sourceRefs": [
-        "app/src/main/AndroidManifest.xml",
-        "translation-inputs/mapcir/skeleton/entry/src/main/module.json5"
-      ],
-      "topLevelDefinitions": [
-        "entry ability",
-        "main element",
-        "startup window resources",
-        "page profile binding"
-      ],
-      "translationGuidelines": [
-        "Map the Android launcher activity and splash theme into HarmonyOS entry-module metadata."
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_ability.cj",
-      "kind": "ability-shell",
-      "sourceRefs": [
+      "targetPath": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
+      "sourceReferences": [
         "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
-        "app/src/main/java/com/example/foodike/FoodikeApp.kt"
+        "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt"
       ],
       "topLevelDefinitions": [
-        "EntryAbility",
-        "startup page handoff"
+        "bootstrap page shell",
+        "root route composition"
       ],
       "translationGuidelines": [
-        "Keep ability code thin and compose startup/session services instead of storing repository logic here."
+        "Keep this file as a shell that delegates to feature modules.",
+        "Do not absorb repository or screen-specific logic here."
       ]
     },
     {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj",
-      "kind": "routing",
-      "sourceRefs": [
+      "targetPath": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj",
+      "sourceReferences": [
         "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
         "app/src/main/java/com/example/foodike/presentation/util/Screen.kt"
       ],
       "topLevelDefinitions": [
-        "RouteId",
-        "AppRouter",
-        "shell visibility rules"
+        "route ids",
+        "navigation helpers",
+        "bottom shell visibility rules"
       ],
       "translationGuidelines": [
-        "Preserve startup destination selection, shared shell ownership, and conditional bottom-bar/cart-button display."
+        "Preserve onboarding/login/home/history/cart/profile/detail routes.",
+        "Preserve home/history bottom bar plus cart action visibility semantics."
       ]
     },
     {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/models.cj",
-      "kind": "domain-model",
-      "sourceRefs": [
-        "app/src/main/java/com/example/foodike/domain/model/Advertisement.kt",
-        "app/src/main/java/com/example/foodike/domain/model/CartItem.kt",
-        "app/src/main/java/com/example/foodike/domain/model/FoodItem.kt",
-        "app/src/main/java/com/example/foodike/domain/model/MenuItem.kt",
-        "app/src/main/java/com/example/foodike/domain/model/Restaurant.kt"
+      "targetPath": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup",
+      "sourceReferences": [
+        "app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/MainActivity.kt"
       ],
       "topLevelDefinitions": [
-        "Advertisement",
-        "CartItem",
-        "FoodItem",
-        "MenuItem",
-        "Restaurant"
+        "startup state store",
+        "start destination resolver"
       ],
       "translationGuidelines": [
-        "Keep immutable business models separate from feature stores and resource adaptation helpers."
+        "Startup logic should read persisted session state and decide onboarding vs home before normal route rendering."
       ]
     },
     {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/fixture/foodike_fixture_data.cj",
-      "kind": "fixture-data",
-      "sourceRefs": [
-        "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt"
-      ],
-      "topLevelDefinitions": [
-        "menu fixtures",
-        "restaurant fixtures",
-        "ad fixtures",
-        "recommended fixtures",
-        "cart fixtures",
-        "favourite fixtures"
-      ],
-      "translationGuidelines": [
-        "Split the very large source fake-data file by target responsibility but keep the content semantics and identifiers stable enough for feature parity."
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj",
-      "kind": "persistence-service",
-      "sourceRefs": [
+      "targetPath": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session",
+      "sourceReferences": [
         "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
-        "app/src/main/java/com/example/foodike/domain/repository/LoginRepository.kt"
-      ],
-      "topLevelDefinitions": [
-        "LoginPreferencesService",
-        "readLoginState",
-        "toggleLoginState"
-      ],
-      "translationGuidelines": [
-        "This is the primary persisted state boundary and should use a HarmonyOS-direct preference API rather than in-memory fallback."
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj",
-      "kind": "repository",
-      "sourceRefs": [
         "app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt",
+        "app/src/main/java/com/example/foodike/domain/repository/LoginRepository.kt",
         "app/src/main/java/com/example/foodike/domain/repository/UserDataRepository.kt"
       ],
       "topLevelDefinitions": [
-        "SessionRepository",
-        "setSelectedRestaurant",
-        "getSelectedRestaurant",
-        "getMenuItems",
-        "getLikedRestaurants",
-        "isRestaurantLiked",
-        "getCartItems"
+        "session persistence service",
+        "selected restaurant store",
+        "liked restaurant stream",
+        "cart item stream"
       ],
       "translationGuidelines": [
-        "Keep session-scoped mutable state in one repository boundary, but avoid folding it into the UI shell."
+        "Keep persistent login state separate from fake catalogue content.",
+        "Expose stream-like update surfaces so UI refresh remains immediate after mutations."
       ]
     },
     {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/content/home_content_repository.cj",
-      "kind": "repository",
-      "sourceRefs": [
-        "app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt",
-        "app/src/main/java/com/example/foodike/domain/repository/HomeRepository.kt"
+      "targetPath": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/content",
+      "sourceReferences": [
+        "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+        "app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt"
       ],
       "topLevelDefinitions": [
-        "HomeContentRepository",
-        "getRestaurants",
-        "getAds",
-        "getFoodItems",
-        "getRestaurantByName"
+        "fake catalogue data",
+        "ads/food/restaurant repository implementations",
+        "search and lookup helpers"
       ],
       "translationGuidelines": [
-        "Preserve repository method boundaries because multiple features depend on them for screen state composition."
+        "Split catalog, restaurant, and helper logic into focused files rather than one giant data source translation."
       ]
     },
     {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj",
-      "kind": "feature-store",
-      "sourceRefs": [
-        "app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt"
+      "targetPath": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding",
+      "sourceReferences": [
+        "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt"
       ],
       "topLevelDefinitions": [
-        "StartupState",
-        "resolveStartRoute"
+        "onboarding page",
+        "pager state",
+        "page item builder"
       ],
       "translationGuidelines": [
-        "Preserve the source startup contract: route is resolved before the shell becomes interactive."
+        "Preserve onboarding sequencing and transition into login."
       ]
     },
     {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj",
-      "kind": "feature-store",
-      "sourceRefs": [
+      "targetPath": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login",
+      "sourceReferences": [
+        "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
         "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
-        "app/src/main/java/com/example/foodike/presentation/login/LoginEvent.kt",
-        "app/src/main/java/com/example/foodike/presentation/login/UiEvent.kt"
+        "app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt"
       ],
       "topLevelDefinitions": [
-        "LoginState",
-        "LoginCommand",
-        "LoginUiEvent",
-        "handleLoginCommand"
+        "login page",
+        "login reducer/store",
+        "text field widget"
       ],
       "translationGuidelines": [
-        "Keep field state, validation, persisted login mutation, and snackbar/error emission separate from page widgets."
+        "Preserve hard-coded credential check, snackbar error, and successful navigation to home after session toggle."
       ]
     },
     {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_store.cj",
-      "kind": "feature-store",
-      "sourceRefs": [
+      "targetPath": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home",
+      "sourceReferences": [
+        "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
         "app/src/main/java/com/example/foodike/presentation/home/HomeViewModel.kt",
         "app/src/main/java/com/example/foodike/presentation/home/HomeScreenState.kt",
-        "app/src/main/java/com/example/foodike/presentation/home/HomeScreenEvent.kt"
+        "app/src/main/java/com/example/foodike/presentation/home/components/*.kt",
+        "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt",
+        "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt"
       ],
       "topLevelDefinitions": [
-        "HomeState",
-        "loadHomeContent",
-        "selectRestaurant"
+        "home page",
+        "home state store",
+        "home widgets",
+        "search/filter helpers"
       ],
       "translationGuidelines": [
-        "Preserve the source ordering of operations when a restaurant is selected: update repository/session first, then route to detail."
+        "Preserve section order, conditional favourites block, and restaurant selection path into detail state."
       ]
     },
     {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/detail/detail_store.cj",
-      "kind": "feature-store",
-      "sourceRefs": [
+      "targetPath": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/history",
+      "sourceReferences": [
+        "app/src/main/java/com/example/foodike/presentation/history/History.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/HistoryViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/components/*.kt"
+      ],
+      "topLevelDefinitions": [
+        "history page",
+        "liked restaurants state store",
+        "tab content widgets"
+      ],
+      "translationGuidelines": [
+        "Preserve tabs plus liked restaurant selection into detail route."
+      ]
+    },
+    {
+      "targetPath": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/detail",
+      "sourceReferences": [
+        "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
         "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt",
         "app/src/main/java/com/example/foodike/presentation/details/DetailScreenState.kt",
-        "app/src/main/java/com/example/foodike/presentation/details/DetailScreenEvent.kt"
+        "app/src/main/java/com/example/foodike/presentation/details/components/*.kt"
       ],
       "topLevelDefinitions": [
-        "DetailState",
-        "DetailCommand",
-        "toggleRecommendedSection",
-        "toggleNonVegSection",
-        "toggleVegSection",
-        "toggleLikedState"
+        "detail page",
+        "detail state store",
+        "menu grouping helpers",
+        "detail widgets"
       ],
       "translationGuidelines": [
-        "Keep detail mutation logic explicit so floating-cart visibility and section expansion remain easy to verify."
+        "Preserve expandable recommended, non-veg, and veg sections and cart action visibility when total count is non-zero."
       ]
     },
     {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/cart/cart_store.cj",
-      "kind": "feature-store",
-      "sourceRefs": [
+      "targetPath": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/cart",
+      "sourceReferences": [
+        "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
         "app/src/main/java/com/example/foodike/presentation/cart/CartViewModel.kt",
-        "app/src/main/java/com/example/foodike/presentation/cart/CartState.kt"
+        "app/src/main/java/com/example/foodike/presentation/cart/CartState.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/*.kt"
       ],
       "topLevelDefinitions": [
-        "CartState",
-        "loadCartSnapshot"
+        "cart page",
+        "cart state store",
+        "cart summary widgets"
       ],
       "translationGuidelines": [
-        "Keep cart snapshot loading separate from UI-local coupon/note editor state."
+        "Keep item filtering, coupon, delivery, and bill sections modular; do not fold them into the root page file."
+      ]
+    },
+    {
+      "targetPath": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile",
+      "sourceReferences": [
+        "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/components/ProfileCard.kt"
+      ],
+      "topLevelDefinitions": [
+        "profile page",
+        "logout action handler",
+        "profile option widgets"
+      ],
+      "translationGuidelines": [
+        "Preserve logout to onboarding and keep current placeholder cards explicit rather than silently omitted."
+      ]
+    },
+    {
+      "targetPath": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj",
+      "sourceReferences": [
+        "app/src/main/res/values/strings.xml",
+        "app/src/main/res/values/colors.xml",
+        "app/src/main/res/values/themes.xml"
+      ],
+      "topLevelDefinitions": [
+        "resource lookup helpers",
+        "string and color mapping"
+      ],
+      "translationGuidelines": [
+        "Avoid hard-coded English labels for migrated UI text."
       ]
     }
   ],
   "assets": [
     {
-      "assetId": "asset-strings-base",
-      "kind": "string-resource-set",
-      "sourceRefs": [
-        "app/src/main/res/values/strings.xml",
-        "translation-inputs/resource-coverage-report.md"
+      "assetType": "strings",
+      "sourcePaths": [
+        "app/src/main/res/values/strings.xml"
       ],
       "targetPaths": [
-        "entry/src/main/resources/base/element/string.json"
+        "entry/src/main/resources/base/element/string.json",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj"
       ],
       "rules": [
-        "Migrate all 52 source strings before final feature verification.",
-        "Retain visible labels and content descriptions even when source logic is placeholder-only."
+        "Migrate all user-visible source strings, especially onboarding, login, navigation, cart, detail, profile, and placeholder labels.",
+        "Keep resource ids stable enough for later matrix evidence and tests."
       ]
     },
     {
-      "assetId": "asset-colors-theme",
-      "kind": "color-resource-set",
-      "sourceRefs": [
+      "assetType": "colors-and-theme",
+      "sourcePaths": [
         "app/src/main/res/values/colors.xml",
-        "app/src/main/res/values/themes.xml"
+        "app/src/main/res/values/themes.xml",
+        "app/src/main/res/values/ic_launcher_background.xml"
       ],
       "targetPaths": [
-        "entry/src/main/resources/base/element/color.json",
-        "AppScope/resources/base/element/color.json"
+        "entry/src/main/resources/base/element/color.json"
       ],
       "rules": [
-        "Map splash, page background, primary green, and neutral chrome colors into HarmonyOS tokens.",
-        "Do not leave Android theme names as direct target resource keys if clearer HarmonyOS naming is available."
+        "Carry over primary/neutral accents that drive onboarding, top bars, and cards.",
+        "Map status/navigation bar styling intent into HarmonyOS page/theme composition where available."
       ]
     },
     {
-      "assetId": "asset-media-core",
-      "kind": "image-and-vector-set",
-      "sourceRefs": [
+      "assetType": "drawables-and-images",
+      "sourcePaths": [
         "app/src/main/res/drawable",
-        "app/src/main/res/mipmap-anydpi-v26",
-        "app/src/main/res/mipmap-hdpi",
-        "app/src/main/res/mipmap-mdpi",
-        "app/src/main/res/mipmap-xhdpi",
-        "app/src/main/res/mipmap-xxhdpi",
-        "app/src/main/res/mipmap-xxxhdpi"
+        "app/src/main/res/mipmap*",
+        "app/src/main/assets",
+        "README.md screenshots and demo references"
       ],
       "targetPaths": [
-        "entry/src/main/resources/base/media",
-        "AppScope/resources/base/media"
+        "entry/src/main/resources/base/media"
       ],
       "rules": [
-        "Copy bitmap assets directly when compatible.",
-        "Convert Android vectors and adaptive-icon resources into HarmonyOS media assets or equivalent target resource composition.",
-        "Keep card, onboarding, profile, rating, and splash visuals source-identifiable."
-      ]
-    },
-    {
-      "assetId": "asset-app-config",
-      "kind": "profile-and-metadata",
-      "sourceRefs": [
-        "app/src/main/AndroidManifest.xml",
-        "translation-inputs/mapcir/skeleton/entry/src/main/module.json5",
-        "translation-inputs/mapcir/skeleton/AppScope/app.json5"
-      ],
-      "targetPaths": [
-        "AppScope/app.json5",
-        "entry/src/main/module.json5",
-        "entry/src/main/resources/base/profile/main_pages.json"
-      ],
-      "rules": [
-        "Preserve launcher identity, startup entry binding, and page profile references."
+        "Copy raster assets directly when valid.",
+        "Convert icon/vector/state resources into HarmonyOS-friendly media or state code without losing semantic role."
       ]
     }
   ],
   "dependencies": [
     {
-      "sourceDependency": "Jetpack Compose UI/material/foundation/runtime",
-      "sourceEvidence": [
-        "app/build.gradle.kts",
-        "gradle/libs.versions.toml"
-      ],
-      "targetStrategy": "Replace with HarmonyOS Cangjie ArkUI components and feature-specific builder composition.",
-      "targetDependency": "HarmonyOS Cangjie UI framework",
-      "status": "planned"
+      "sourceDependency": "androidx.navigation:navigation-compose",
+      "replacementStrategy": "Use current HarmonyOS route/page shell under `app/` and feature pages instead of Android Navigation Compose.",
+      "ownerPhase": "phase-02-startup-session-navigation"
     },
     {
-      "sourceDependency": "Navigation Compose",
-      "sourceEvidence": [
-        "app/build.gradle.kts",
-        "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt"
-      ],
-      "targetStrategy": "Replace with an app router plus page stack coordination in Cangjie; keep explicit route ids and shell rules.",
-      "targetDependency": "HarmonyOS routing/page navigation APIs",
-      "status": "planned"
+      "sourceDependency": "androidx.datastore:datastore-preferences",
+      "replacementStrategy": "Replace with HarmonyOS-compatible preferences/storage service for persisted login state.",
+      "ownerPhase": "phase-02-startup-session-navigation"
     },
     {
-      "sourceDependency": "AndroidX DataStore Preferences",
-      "sourceEvidence": [
-        "app/build.gradle.kts",
-        "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt"
-      ],
-      "targetStrategy": "Replace with a direct HarmonyOS preference or app-storage service callable from Cangjie.",
-      "targetDependency": "HarmonyOS preference/app storage API",
-      "status": "planned"
+      "sourceDependency": "com.google.accompanist:accompanist-pager",
+      "replacementStrategy": "Replace with HarmonyOS pager/swiper equivalent or custom lightweight pager behavior for onboarding and history tabs.",
+      "ownerPhase": "phase-03-onboarding-login"
     },
     {
-      "sourceDependency": "AndroidX SplashScreen",
-      "sourceEvidence": [
-        "app/build.gradle.kts",
-        "app/src/main/java/com/example/foodike/presentation/MainActivity.kt"
-      ],
-      "targetStrategy": "Use HarmonyOS startup-page behavior or platform-replaced startup gating while preserving delayed initial route reveal.",
-      "targetDependency": "HarmonyOS startup window resources and page lifecycle",
-      "status": "planned"
+      "sourceDependency": "com.google.dagger:hilt-android",
+      "replacementStrategy": "Use idiomatic Cangjie composition/service wiring rather than Android Hilt injection APIs.",
+      "ownerPhase": "phase-02-startup-session-navigation"
     },
     {
-      "sourceDependency": "Hilt",
-      "sourceEvidence": [
-        "app/build.gradle.kts",
-        "app/src/main/java/com/example/foodike/di/AppModule.kt"
-      ],
-      "targetStrategy": "Replace with simple explicit service construction and composition roots in the target app shell; avoid introducing a DI framework unless required later.",
-      "targetDependency": "none initially",
-      "status": "planned"
-    },
-    {
-      "sourceDependency": "Accompanist pager and flowlayout",
-      "sourceEvidence": [
-        "app/build.gradle.kts",
-        "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
-        "app/src/main/java/com/example/foodike/presentation/history/components/TabsContent.kt",
-        "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt"
-      ],
-      "targetStrategy": "Replace with native HarmonyOS pager/list layout patterns or a verified Cangjie-callable package only if needed.",
-      "targetDependency": "HarmonyOS pager and layout APIs",
-      "status": "planned"
+      "sourceDependency": "androidx.core:core-splashscreen",
+      "replacementStrategy": "Use HarmonyOS startup page/loading gate behavior around persisted session lookup.",
+      "ownerPhase": "phase-02-startup-session-navigation"
     }
   ],
   "tests": [
@@ -403,23 +294,18 @@
       "sourcePaths": [
         "app/src/test/java/com/example/foodike/ExampleUnitTest.kt"
       ],
-      "migrationDecision": "do-not-migrate-verbatim",
-      "reason": "Boilerplate arithmetic test does not verify app behavior.",
-      "targetTests": [
-        "session persistence tests",
-        "startup route tests"
-      ]
+      "strategy": "Do not migrate as meaningful business coverage; replace with focused target tests for actual app behavior.",
+      "ownerPhase": "phase-06-profile-capabilities-verification",
+      "commands": []
     },
     {
       "name": "source-example-instrumented-test",
       "sourcePaths": [
         "app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt"
       ],
-      "migrationDecision": "do-not-migrate-verbatim",
-      "reason": "Boilerplate package-name assertion does not verify translated behavior.",
-      "targetTests": [
-        "basic target build/test harness smoke only if the template supports it"
-      ]
+      "strategy": "Do not rely on package-name smoke test; replace with focused target-side verification and manual route smoke where harness is limited.",
+      "ownerPhase": "phase-06-profile-capabilities-verification",
+      "commands": []
     },
     {
       "name": "startup-session-tests",
@@ -427,55 +313,47 @@
         "app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt",
         "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt"
       ],
-      "migrationDecision": "generate-target-test",
-      "reason": "Critical startup destination and persisted login behavior are not covered by source tests.",
-      "targetTests": [
-        "startup_store_test.cj",
-        "login_preferences_service_test.cj"
-      ],
-      "plannedCommand": "cjpm test"
+      "strategy": "Add focused target tests for start destination selection and persisted session toggling.",
+      "ownerPhase": "phase-02-startup-session-navigation",
+      "commands": [
+        "cjpm test"
+      ]
     },
     {
       "name": "login-validation-tests",
       "sourcePaths": [
         "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt"
       ],
-      "migrationDecision": "generate-target-test",
-      "reason": "Credential validation and snackbar emission are user-visible and currently untested.",
-      "targetTests": [
-        "login_store_test.cj"
-      ],
-      "plannedCommand": "cjpm test"
+      "strategy": "Add focused target tests for accepted credentials, rejected credentials, and emitted error state/snackbar model.",
+      "ownerPhase": "phase-03-onboarding-login",
+      "commands": [
+        "cjpm test"
+      ]
     },
     {
-      "name": "selection-and-detail-state-tests",
+      "name": "repository-refresh-tests",
       "sourcePaths": [
-        "app/src/main/java/com/example/foodike/presentation/home/HomeViewModel.kt",
-        "app/src/main/java/com/example/foodike/presentation/history/HistoryViewModel.kt",
-        "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt"
+        "app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt",
+        "app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt"
       ],
-      "migrationDecision": "generate-target-test",
-      "reason": "Restaurant selection ordering and detail expansion state are high-risk behavior paths.",
-      "targetTests": [
-        "home_store_test.cj",
-        "history_store_test.cj",
-        "detail_store_test.cj"
-      ],
-      "plannedCommand": "cjpm test"
+      "strategy": "Add focused target tests for selected restaurant propagation, menu retrieval, liked restaurant stream refresh, and cart item read behavior.",
+      "ownerPhase": "phase-04-home-history",
+      "commands": [
+        "cjpm test"
+      ]
     },
     {
-      "name": "pure-helper-tests",
+      "name": "detail-cart-state-tests",
       "sourcePaths": [
-        "app/src/main/java/com/example/foodike/presentation/home/util/Filters.kt",
-        "app/src/main/java/com/example/foodike/presentation/common/Extensions.kt"
+        "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/DetailScreenState.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt"
       ],
-      "migrationDecision": "generate-target-test",
-      "reason": "Small helper modules can provide stable automated coverage even if UI automation is limited.",
-      "targetTests": [
-        "filter_helpers_test.cj",
-        "formatting_helpers_test.cj"
-      ],
-      "plannedCommand": "cjpm test"
+      "strategy": "Add focused target tests for section toggles, menu partitioning, cart visibility rules, and summary helpers.",
+      "ownerPhase": "phase-05-detail-cart",
+      "commands": [
+        "cjpm test"
+      ]
     }
   ],
   "phases": [
@@ -484,157 +362,103 @@
       "title": "Project skeleton and resources",
       "priority": "critical",
       "targetScope": [
-        "Bootstrap Foodike-Harmony from the mapcir skeleton.",
-        "Create entry/AppScope configs, package roots, base resources, and domain/data skeletons.",
-        "Lay down target file structure for feature stores, repositories, and page builders."
+        "Stabilize root app shell and route map.",
+        "Raise string/color/media resource parity before behavior-heavy phases.",
+        "Prevent broad shell files from absorbing unrelated future behavior."
       ],
       "sourceEvidence": [
-        "translation-inputs/mapcir/skeleton/.mapcir.json",
-        "translation-inputs/mapcir/skeleton/entry/cjpm.toml",
-        "translation-inputs/mapcir/skeleton/entry/src/main/module.json5",
-        "translation-inputs/android-analysis/manifest-summary.json",
-        "translation-inputs/android-analysis/resource-map.json",
-        "translation-inputs/resource-coverage-report.md",
         "app/src/main/AndroidManifest.xml",
         "app/src/main/res/values/strings.xml",
         "app/src/main/res/values/colors.xml",
         "app/src/main/res/values/themes.xml",
-        "app/src/main/java/com/example/foodike/domain/model/Restaurant.kt",
-        "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt"
+        "README.md",
+        "translation-inputs/resource-coverage-report.md",
+        "translation-inputs/target-structure-report.md"
       ],
       "requiredInputs": [
-        "translation-inputs/preflight-report.md",
-        "translation-inputs/sdk-report.json",
-        "translation-inputs/skills-report.md",
         "translation-inputs/plan-seed.md",
-        "translation-inputs/plan-seed.json",
         "translation-inputs/source-feature-survey.md",
         "translation-inputs/resource-coverage-report.md",
-        "translation-inputs/coverage-gap-report.md"
+        "translation-inputs/target-structure-report.md"
       ],
       "expectedFiles": [
-        "Foodike-Harmony/AppScope/app.json5",
-        "Foodike-Harmony/entry/cjpm.toml",
-        "Foodike-Harmony/entry/src/main/module.json5",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/domain/models.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/data/fixture/foodike_fixture_data.cj",
-        "Foodike-Harmony/entry/src/main/resources/base/element/string.json",
-        "Foodike-Harmony/entry/src/main/resources/base/element/color.json",
-        "Foodike-Harmony/entry/src/main/resources/base/media"
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj",
+        "entry/src/main/resources/base/element/string.json",
+        "entry/src/main/resources/base/element/color.json",
+        "entry/src/main/resources/base/media"
       ],
       "gateCommand": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --phase phase-01-project-skeleton-resources",
       "expectedTests": [
-        "No feature tests required yet; optional compile-only smoke after skeleton bootstrap."
+        "resource key/manual review of migrated strings and media references"
       ],
       "stateDataBehavior": [
-        "Resource keys for strings, colors, icons, and startup visuals must exist before feature pages reference them.",
-        "Domain models and repositories stay separate so later phases do not collapse business logic into the shell."
+        "Route ids and screen titles must stay resource-backed.",
+        "Shell pages should stay thin so later state/data modules own business behavior."
       ],
       "deferredRisks": [
-        "If the skeleton package root is not normalized early, later matrix endpoint validation will become noisy.",
-        "Leaving large resource gaps beyond phase 1 will block reliable page composition in later phases."
+        "String/media parity remains incomplete if phase 01 is rushed.",
+        "Further expansion in bootstrap shell risks later evidence concentration."
       ],
       "implementationGroups": [
         {
-          "groupId": "phase-01-bootstrap-module",
-          "title": "Bootstrap target entry module",
+          "groupId": "phase-01-route-shell-and-resource-baseline",
+          "title": "Route shell and resource baseline",
           "groupType": "source-behavior",
           "priority": "critical",
           "sourcePaths": [
             "app/src/main/AndroidManifest.xml",
-            "app/build.gradle.kts",
-            "build.gradle.kts"
-          ],
-          "sourceMethods": [
-            "MainActivity.onCreate"
-          ],
-          "featureIds": [],
-          "resourceInputs": [
-            "translation-inputs/mapcir/skeleton/entry/cjpm.toml",
-            "translation-inputs/mapcir/skeleton/entry/src/main/module.json5",
-            "translation-inputs/mapcir/skeleton/AppScope/app.json5"
-          ],
-          "platformCapabilityIds": [
-            "background-and-platform-components",
-            "localization-resources"
-          ],
-          "uiContracts": [
-            "single entry ability launching the app shell"
-          ],
-          "dataContracts": [
-            "none in phase 1 beyond package/module wiring"
-          ],
-          "expectedTargetDomains": [
-            "app",
-            "config"
-          ],
-          "requiredBehaviors": [
-            "Target project exists with a valid entry module and correct root package.",
-            "App metadata aligns with source identity and startup resources."
-          ],
-          "riskHints": [
-            "Do not leave the target in a rootless or placeholder package state.",
-            "Keep ability shell thin so later logic lands in domain features instead of the entry file."
-          ],
-          "acceptanceEvidence": [
-            "Build gate passes for phase-01-project-skeleton-resources.",
-            "entry/cjpm.toml and module metadata exist under Foodike-Harmony."
-          ]
-        },
-        {
-          "groupId": "phase-01-resource-catalog",
-          "title": "Migrate strings, colors, and media",
-          "groupType": "resource-contract",
-          "priority": "critical",
-          "sourcePaths": [
             "app/src/main/res/values/strings.xml",
             "app/src/main/res/values/colors.xml",
             "app/src/main/res/values/themes.xml",
-            "app/src/main/res/drawable",
-            "app/src/main/res/mipmap-anydpi-v26"
+            "app/src/main/java/com/example/foodike/presentation/util/Screen.kt"
           ],
-          "sourceMethods": [],
+          "sourceMethods": [
+            "Screen"
+          ],
           "featureIds": [],
           "resourceInputs": [
-            "plan-seed.resourceContracts.strings",
-            "plan-seed.resourceContracts.valuesFiles",
-            "plan-seed.resourceContracts.drawables",
-            "plan-seed.resourceContracts.mipmaps"
+            "strings",
+            "colors",
+            "theme values",
+            "drawables",
+            "mipmaps"
           ],
           "platformCapabilityIds": [
             "localization-resources"
           ],
           "uiContracts": [
-            "onboarding/login/home/history/detail/cart/profile labels",
-            "startup icon and splash visuals"
+            "route inventory: onboarding, login_screen, home_screen, history, cart, profile, restaurant_details"
           ],
           "dataContracts": [],
           "expectedTargetDomains": [
+            "app",
+            "common",
             "resources"
           ],
           "requiredBehaviors": [
-            "All source strings have target resource keys.",
-            "Referenced card, icon, and onboarding media are available in target resources."
+            "Preserve canonical route names and screen labels.",
+            "Ensure current target shell remains a composition surface rather than business-logic sink."
           ],
           "riskHints": [
-            "Resource shrinkage is currently total; do not postpone the base catalog beyond phase 1.",
-            "Vector and adaptive-icon assets may need conversion instead of direct copying."
+            "Current target string coverage is only partial.",
+            "Target shell concentration already exists in bootstrap_page.cj."
           ],
           "acceptanceEvidence": [
-            "Target string and media resources exist and are referenced by planned target pages.",
-            "No phase-1 code references missing resource keys."
+            "build gate pass for phase 01",
+            "manual review of resource coverage deltas"
           ]
         }
       ]
     },
     {
-      "id": "phase-02-startup-navigation-session",
-      "title": "Startup, navigation, and session services",
+      "id": "phase-02-startup-session-navigation",
+      "title": "Startup, session persistence, navigation, and shared data contracts",
       "priority": "critical",
       "targetScope": [
-        "Implement persisted login state service and startup route resolution.",
-        "Create target routing model, app shell, and shared bottom-bar/cart-button visibility behavior.",
-        "Introduce session repository boundaries for selected restaurant, favourites, menu items, and cart snapshots."
+        "Implement startup route decision from persisted login state.",
+        "Implement shared session, selected restaurant, liked restaurant, and cart data contracts.",
+        "Implement route shell behavior and bottom bar/cart action rules."
       ],
       "sourceEvidence": [
         "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
@@ -642,72 +466,61 @@
         "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
         "app/src/main/java/com/example/foodike/presentation/util/Screen.kt",
         "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
+        "app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt",
         "app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt",
-        "translation-inputs/android-analysis/screen-map.json",
-        "translation-inputs/android-analysis/behavior-spec.md",
-        "translation-inputs/agent-source-walkthrough.md"
+        "translation-inputs/android-analysis/behavior-spec.md"
       ],
       "requiredInputs": [
-        "translation-inputs/kotlin-analysis/analysis.json",
-        "translation-inputs/kotlin-analysis/locations.json",
-        "translation-inputs/android-analysis/screen-map.json",
-        "translation-inputs/agent-source-walkthrough.md"
+        "translation-inputs/android-analysis/behavior-spec.md",
+        "translation-inputs/source-coverage-matrix.json",
+        "translation-inputs/platform-capability-check.json"
       ],
       "expectedFiles": [
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_ability.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj"
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/data/content",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/domain"
       ],
-      "gateCommand": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --phase phase-02-startup-navigation-session",
+      "gateCommand": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --phase phase-02-startup-session-navigation",
       "expectedTests": [
-        "startup_store_test.cj",
-        "login_preferences_service_test.cj"
+        "startup-session-tests"
       ],
       "stateDataBehavior": [
-        "Persisted login state must control the first route before the app shell becomes interactive.",
-        "Bottom bar appears only on home/history routes when the shared top-level scroll state is at the first item.",
-        "Floating cart action remains shell-owned, not duplicated by feature pages."
+        "Preserve splash-gated startup selection between onboarding and home.",
+        "Preserve immediate UI refresh after login state toggle and selected restaurant writes.",
+        "Preserve bottom bar visibility limited to home/history and state-sensitive cart action visibility."
       ],
       "deferredRisks": [
-        "If startup routing is made asynchronous without a guard screen, users may briefly see the wrong page.",
-        "Session repository boundaries must stay explicit or later detail/home/history parity will be hard to verify."
+        "HarmonyOS persistence API choice may require capability validation before closure.",
+        "Seed-reported runtime permission/platform-component scope may narrow after implementation inspection."
       ],
       "implementationGroups": [
         {
-          "groupId": "phase-02-startup-session",
-          "title": "Startup routing and persisted login state",
+          "groupId": "phase-02-startup-routing",
+          "title": "Startup routing and splash gate",
           "groupType": "source-behavior",
           "priority": "critical",
           "sourcePaths": [
             "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
             "app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt",
-            "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt"
+            "app/src/main/java/com/example/foodike/presentation/util/Screen.kt"
           ],
           "sourceMethods": [
-            "MainActivity.onCreate",
-            "SplashViewModel.init",
-            "LoginRepositoryImpl.toggleLoginState"
+            "MainActivity.onCreate"
           ],
           "featureIds": [
-            "app-src-main-java-com-example-foodike-presentation-login-321f648503-008-authentication-account-or-session-behavi"
+            "app-src-main-java-com-example-foodike-presentation-maina-b4402531cf-006-lifecycle-callback-affecting-screen-init",
+            "app-src-main-java-com-example-foodike-presentation-commo-ede592af84-002-screen-lifecycle-entry-point-initializat"
           ],
-          "resourceInputs": [
-            "app_name",
-            "start window icon/background"
-          ],
+          "resourceInputs": [],
           "platformCapabilityIds": [
-            "background-and-platform-components",
-            "localization-resources"
+            "background-and-platform-components"
           ],
           "uiContracts": [
-            "startup gate before page routing",
-            "logged-in users land on home",
-            "logged-out users land on onboarding"
+            "startup route chosen before normal navigation shell"
           ],
           "dataContracts": [
-            "boolean login state persisted across launches"
+            "persisted loginState controls start destination"
           ],
           "expectedTargetDomains": [
             "app",
@@ -715,139 +528,179 @@
             "data/session"
           ],
           "requiredBehaviors": [
-            "Initial route depends on persisted login flag.",
-            "Login and logout both mutate the same persisted state service."
+            "Home start when login state is true.",
+            "Onboarding start when login state is false.",
+            "Loading gate clears only after start destination is resolved."
           ],
           "riskHints": [
-            "Do not replace persistence with in-memory state.",
-            "Avoid blocking initialization unless the target framework requires it."
+            "Source uses blocking Flow read in startup; target should preserve user-visible gating without unnecessary shell coupling."
           ],
           "acceptanceEvidence": [
-            "Build gate passes for phase-02-startup-navigation-session.",
-            "Target tests prove both login-state values resolve to the correct first route."
+            "build gate pass",
+            "focused startup session test pass or compile pass"
           ]
         },
         {
-          "groupId": "phase-02-shell-navigation",
-          "title": "App shell and route composition",
-          "groupType": "ui-contract",
+          "groupId": "phase-02-session-and-selection-repositories",
+          "title": "Session and selection repositories",
+          "groupType": "source-behavior",
           "priority": "critical",
           "sourcePaths": [
-            "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
-            "app/src/main/java/com/example/foodike/presentation/util/Screen.kt"
+            "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
+            "app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt",
+            "app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt",
+            "app/src/main/java/com/example/foodike/domain/repository/LoginRepository.kt",
+            "app/src/main/java/com/example/foodike/domain/repository/HomeRepository.kt",
+            "app/src/main/java/com/example/foodike/domain/repository/UserDataRepository.kt"
+          ],
+          "sourceMethods": [
+            "toggleLoginState",
+            "getRestaurants",
+            "getAds",
+            "getFoodItems",
+            "getRestaurantFromName",
+            "setRestaurant",
+            "getSavedRestaurant",
+            "getMenuItems",
+            "getLikedRestaurants",
+            "isRestaurantLiked",
+            "getCartItems"
+          ],
+          "featureIds": [
+            "app-src-main-java-com-example-foodike-data-repository-lo-02b022d9dd-004-authentication-account-or-session-behavi",
+            "app-src-main-java-com-example-foodike-data-repository-us-8ccc510949-004-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-data-repository-us-99a6434a5f-005-data-loading-query-search-filter-or-sort"
+          ],
+          "resourceInputs": [
+            "fake catalogue media and labels"
+          ],
+          "platformCapabilityIds": [
+            "runtime-permissions"
+          ],
+          "uiContracts": [],
+          "dataContracts": [
+            "loginState Flow",
+            "selected restaurant state",
+            "menu items stream",
+            "liked restaurant stream",
+            "cart items stream",
+            "restaurant lookup by name"
+          ],
+          "expectedTargetDomains": [
+            "data/content",
+            "data/session",
+            "domain"
+          ],
+          "requiredBehaviors": [
+            "Repository reads provide ads, food, and restaurants for home UI.",
+            "Selected restaurant write must be observable by detail/history/cart flows.",
+            "Session toggle persists across startup."
+          ],
+          "riskHints": [
+            "Source fake repositories are simple but UI relies on their immediate emission semantics."
+          ],
+          "acceptanceEvidence": [
+            "focused repository refresh tests",
+            "build gate pass"
+          ]
+        },
+        {
+          "groupId": "phase-02-navigation-shell",
+          "title": "Navigation shell and bottom bar rules",
+          "groupType": "source-behavior",
+          "priority": "critical",
+          "sourcePaths": [
+            "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt"
           ],
           "sourceMethods": [
             "NavigationGraph",
             "SetupNavigation",
             "BottomBar"
           ],
-          "featureIds": [
-            "app-src-main-java-com-example-foodike-presentation-util-417c58decd-002-navigation-surface-menu-drawer-toolbar-o",
-            "app-src-main-java-com-example-foodike-presentation-util-cb2f6fdad2-004-observable-state-viewmodel-flow-livedata"
-          ],
+          "featureIds": [],
           "resourceInputs": [
-            "home",
-            "history",
-            "cart",
-            "ic_baseline_assignment_24"
+            "bottom navigation icons",
+            "home/history/cart labels"
           ],
-          "platformCapabilityIds": [
-            "background-and-platform-components"
-          ],
+          "platformCapabilityIds": [],
           "uiContracts": [
-            "onboarding/login/home/history/cart/profile/detail routes",
-            "bottom bar visible only on home/history when at top",
-            "floating cart action above bottom shell"
+            "home and history show bottom bar when scroll position is at top",
+            "cart action sits above bottom bar"
           ],
           "dataContracts": [
-            "shared top-level scroll state influences shell visibility"
+            "route state"
           ],
           "expectedTargetDomains": [
             "app",
-            "common"
+            "features/home",
+            "features/history"
           ],
           "requiredBehaviors": [
-            "Route stack preserves source destination set.",
-            "State restoration or equivalent non-duplicating navigation semantics are retained for shell tabs."
+            "Route transitions preserve single-top style semantics where practical.",
+            "Bottom bar is not shown on onboarding, login, detail, cart, or profile surfaces."
           ],
           "riskHints": [
-            "Do not collapse all feature pages into one giant page file.",
-            "Treat the duplicate onboarding composable in source as analyzer noise, not a second real feature."
+            "Do not overfit Android Nav APIs; preserve user-visible routing behavior only."
           ],
           "acceptanceEvidence": [
-            "Target shell renders route-specific chrome correctly.",
-            "Home/history tab switching does not stack duplicate pages."
+            "manual review of navigation shell",
+            "build gate pass"
           ]
         }
       ]
     },
     {
-      "id": "phase-03-onboarding-login-profile",
-      "title": "Onboarding, login, and profile flows",
+      "id": "phase-03-onboarding-login",
+      "title": "Onboarding and login flow",
       "priority": "critical",
       "targetScope": [
-        "Implement onboarding pager flow.",
-        "Implement login form state, credential validation, snackbar errors, and successful navigation.",
-        "Implement profile view and logout flow."
+        "Migrate onboarding pager and page content.",
+        "Migrate login form state, validation, snackbar/error model, and successful session handoff."
       ],
       "sourceEvidence": [
         "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
-        "app/src/main/java/com/example/foodike/presentation/onboarding/components/BottomSection.kt",
-        "app/src/main/java/com/example/foodike/presentation/onboarding/components/Indicators.kt",
         "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
         "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
         "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
         "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
-        "app/src/main/java/com/example/foodike/presentation/login/LoginEvent.kt",
-        "app/src/main/java/com/example/foodike/presentation/login/UiEvent.kt",
-        "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
-        "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt",
-        "app/src/main/java/com/example/foodike/presentation/profile/ProfileEvent.kt"
+        "app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt"
       ],
       "requiredInputs": [
-        "translation-inputs/android-analysis/screen-map.json",
-        "translation-inputs/android-analysis/resource-map.json",
-        "translation-inputs/agent-source-walkthrough.md"
+        "translation-inputs/android-analysis/behavior-spec.md",
+        "translation-inputs/resource-coverage-report.md"
       ],
       "expectedFiles": [
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj"
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login"
       ],
-      "gateCommand": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --phase phase-03-onboarding-login-profile",
+      "gateCommand": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --phase phase-03-onboarding-login",
       "expectedTests": [
-        "login_store_test.cj",
-        "startup_store_test.cj"
+        "login-validation-tests"
       ],
       "stateDataBehavior": [
-        "Onboarding advances page by page and finishes by routing to login.",
-        "Login state updates email/password immediately and emits snackbar errors on invalid credentials.",
-        "Logout flips the same persisted flag used by startup routing and clears navigation history back to onboarding."
+        "Onboarding current page state advances through all pages then routes to login.",
+        "Login text field state updates immediately as user types.",
+        "Invalid credentials trigger visible error state/snackbar.",
+        "Successful login toggles session state and routes to home."
       ],
       "deferredRisks": [
-        "Social login, sign-up, forgot-password, and profile-edit actions are placeholders in source and should remain visibly present or explicitly replaced, not removed."
+        "Pager API may need a target replacement rather than one-to-one library parity.",
+        "Social login buttons remain product placeholders unless product direction changes."
       ],
       "implementationGroups": [
         {
-          "groupId": "phase-03-onboarding-flow",
-          "title": "Onboarding pager and progress flow",
-          "groupType": "ui-contract",
+          "groupId": "phase-03-onboarding-pager",
+          "title": "Onboarding pager and page content",
+          "groupType": "source-behavior",
           "priority": "high",
           "sourcePaths": [
             "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
-            "app/src/main/java/com/example/foodike/presentation/onboarding/components/BottomSection.kt",
-            "app/src/main/java/com/example/foodike/presentation/onboarding/components/Indicators.kt",
             "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
             "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt"
           ],
           "sourceMethods": [
             "OnBoarding",
             "OnboardingPage",
-            "Indicators",
-            "BottomSection",
             "OnBoardingItem.get"
           ],
           "featureIds": [],
@@ -858,55 +711,47 @@
             "onboardingText1",
             "onboardingText2",
             "onboardingText3",
-            "chinese_bowl",
-            "rider",
-            "clock"
+            "onboarding media"
           ],
-          "platformCapabilityIds": [
-            "localization-resources"
-          ],
+          "platformCapabilityIds": [],
           "uiContracts": [
-            "three onboarding pages",
-            "progress indicators",
-            "next action advances page or routes to login"
+            "multi-page onboarding with bottom action/indicator"
           ],
           "dataContracts": [
             "static onboarding item list"
           ],
           "expectedTargetDomains": [
-            "features/onboarding"
+            "features/onboarding",
+            "common"
           ],
           "requiredBehaviors": [
-            "Pager state is preserved within the onboarding session.",
-            "Final step transitions to login only after the last page."
+            "Sequential page progression.",
+            "Final action navigates to login."
           ],
           "riskHints": [
-            "Accompanist pager is source-specific; do not copy its API shape into the target."
+            "Seed over-detects image-viewer behavior here; likely static onboarding media only."
           ],
           "acceptanceEvidence": [
-            "Page indicators and next button behavior match source progression semantics."
+            "manual review of onboarding flow",
+            "build gate pass"
           ]
         },
         {
-          "groupId": "phase-03-login-profile-session",
-          "title": "Login and logout session flows",
+          "groupId": "phase-03-login-validation-and-session-handoff",
+          "title": "Login validation and session handoff",
           "groupType": "source-behavior",
           "priority": "critical",
           "sourcePaths": [
             "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
             "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
-            "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
-            "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt"
+            "app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt"
           ],
           "sourceMethods": [
             "LoginScreen",
             "LoginViewModel.onEvent",
-            "Profile",
-            "ProfileViewModel.onEvent"
+            "FoodikeTextField"
           ],
-          "featureIds": [
-            "app-src-main-java-com-example-foodike-presentation-login-321f648503-008-authentication-account-or-session-behavi"
-          ],
+          "featureIds": [],
           "resourceInputs": [
             "welcome_back",
             "forgot_password",
@@ -915,518 +760,473 @@
             "or_sign_in_with",
             "login_with_google",
             "login_with_facebook",
-            "new_to_foodike",
-            "log_out"
+            "new_to_foodike"
           ],
-          "platformCapabilityIds": [
-            "localization-resources"
-          ],
+          "platformCapabilityIds": [],
           "uiContracts": [
-            "invalid login shows snackbar",
-            "valid login routes to home and clears back stack",
-            "logout routes to onboarding and clears back stack"
+            "two text fields plus login button and social placeholder actions"
           ],
           "dataContracts": [
-            "valid credentials are hard-coded",
-            "login flag toggles through the persisted session service"
+            "email state",
+            "password state",
+            "snackbar event flow",
+            "session toggle callback"
           ],
           "expectedTargetDomains": [
             "features/login",
-            "features/profile",
             "data/session"
           ],
           "requiredBehaviors": [
-            "Credential entry updates local field state immediately.",
-            "Incorrect credentials keep the user on the login page with an error message.",
-            "Login and logout both mutate the persisted login state service."
+            "Accepted credentials are `abcxyz@gmail.com` and `abcdef`.",
+            "Rejected credentials emit a visible error message.",
+            "Successful login clears back stack semantics into home where practical."
           ],
           "riskHints": [
-            "Do not replace snackbar feedback with silent failure.",
-            "Do not infer real authentication or network behavior that does not exist in source."
+            "Source uses hard-coded credentials and placeholder social actions; preserve current UX rather than inventing backend auth."
           ],
           "acceptanceEvidence": [
-            "Target tests verify successful and unsuccessful login outcomes.",
-            "Build gate passes for phase-03-onboarding-login-profile."
+            "focused login validation tests",
+            "build gate pass"
           ]
         }
       ]
     },
     {
-      "id": "phase-04-home-history-discovery",
+      "id": "phase-04-home-history",
       "title": "Home and history discovery flows",
       "priority": "critical",
       "targetScope": [
-        "Implement fixture-backed home and history pages.",
-        "Implement shared restaurant selection commands and local discovery UI state.",
-        "Keep top section, search, chip filters, ads, recommended cards, favourites, and history tabs modular."
+        "Migrate home discovery feed and search/filter surfaces.",
+        "Migrate favourites/history route and detail selection behavior."
       ],
       "sourceEvidence": [
         "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
         "app/src/main/java/com/example/foodike/presentation/home/HomeViewModel.kt",
         "app/src/main/java/com/example/foodike/presentation/home/HomeScreenState.kt",
-        "app/src/main/java/com/example/foodike/presentation/home/HomeScreenEvent.kt",
-        "app/src/main/java/com/example/foodike/presentation/home/components",
+        "app/src/main/java/com/example/foodike/presentation/home/components/*.kt",
         "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt",
         "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt",
         "app/src/main/java/com/example/foodike/presentation/history/History.kt",
         "app/src/main/java/com/example/foodike/presentation/history/HistoryViewModel.kt",
-        "app/src/main/java/com/example/foodike/presentation/history/HistoryState.kt",
-        "app/src/main/java/com/example/foodike/presentation/history/HistoryEvent.kt",
-        "app/src/main/java/com/example/foodike/presentation/history/components",
-        "app/src/main/java/com/example/foodike/presentation/home/util/Filters.kt",
-        "app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt",
-        "app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt"
+        "app/src/main/java/com/example/foodike/presentation/history/components/*.kt"
       ],
       "requiredInputs": [
-        "translation-inputs/kotlin-analysis/analysis.json",
-        "translation-inputs/android-analysis/screen-map.json",
         "translation-inputs/android-analysis/behavior-spec.md",
-        "translation-inputs/agent-source-walkthrough.md"
+        "translation-inputs/source-feature-survey.md"
       ],
       "expectedFiles": [
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_store.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/features/history/history_page.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/features/history/history_store.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/search_bar.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/restaurant_card.cj"
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/history"
       ],
-      "gateCommand": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --phase phase-04-home-history-discovery",
+      "gateCommand": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --phase phase-04-home-history",
       "expectedTests": [
-        "home_store_test.cj",
-        "history_store_test.cj",
-        "filter_helpers_test.cj"
+        "repository-refresh-tests"
       ],
       "stateDataBehavior": [
-        "Home loads three static content groups plus a live favourites snapshot from the session repository.",
-        "History reads the same favourites snapshot and uses tab-local UI state.",
-        "Search text and chip selection update immediately as local UI state even though source does not apply repository filtering."
+        "Home state populates ads, food, restaurant, and liked restaurant sections from repositories.",
+        "Selecting a restaurant writes shared state before navigation.",
+        "Favourite/history surfaces refresh immediately from liked restaurant stream.",
+        "Search and filter affordances remain visible and stateful."
       ],
       "deferredRisks": [
-        "Source filters and search currently stop at local state; target should not invent data-filtering semantics without explicit justification."
+        "Search/filter semantics may require explicit target helpers because source uses local mutable state in widgets.",
+        "History tab pager replacement must preserve visible tab switching."
       ],
       "implementationGroups": [
         {
-          "groupId": "phase-04-home-content",
-          "title": "Home discovery content and restaurant selection",
+          "groupId": "phase-04-home-feed-and-selection",
+          "title": "Home feed, search, favourites, and selection",
           "groupType": "source-behavior",
           "priority": "critical",
           "sourcePaths": [
             "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
             "app/src/main/java/com/example/foodike/presentation/home/HomeViewModel.kt",
-            "app/src/main/java/com/example/foodike/presentation/home/components",
-            "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt",
-            "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt"
+            "app/src/main/java/com/example/foodike/presentation/home/HomeScreenState.kt",
+            "app/src/main/java/com/example/foodike/presentation/home/components/*.kt",
+            "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt",
+            "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt"
           ],
           "sourceMethods": [
             "Home",
             "HomeViewModel.onEvent",
-            "TopSection",
-            "AdSection",
-            "RecommendedSection",
-            "FavouriteSection",
             "SearchBar",
             "getCustomerInfo"
           ],
-          "featureIds": [],
+          "featureIds": [
+            "app-src-main-java-com-example-foodike-presentation-home-5415bc8d6b-006-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-home-ef0657c4ea-005-screen-lifecycle-entry-point-initializat"
+          ],
           "resourceInputs": [
-            "location",
+            "home",
             "your_location",
-            "recommended",
-            "all_around_you",
+            "recommended_for_you",
             "order_from_favourites",
             "restaurant",
-            "recommended_for_you",
-            "ad"
+            "rating",
+            "location",
+            "ad",
+            "recommended"
           ],
           "platformCapabilityIds": [
-            "localization-resources"
+            "media-library-access"
           ],
           "uiContracts": [
-            "home top section routes to profile",
-            "favourites render only when non-empty",
-            "restaurant tap stores selection then routes to detail",
-            "search field state updates immediately",
-            "chip selection toggles immediately"
+            "home section order: top, greeting, search, ads, recommended foods, favourites, chips, restaurant list, thank you"
           ],
           "dataContracts": [
-            "ads, food items, restaurants, and favourites are read from repositories",
-            "selection command mutates session repository"
+            "HomeScreenState.adsList",
+            "HomeScreenState.foodList",
+            "HomeScreenState.likedRestaurantList",
+            "HomeScreenState.restaurantList"
           ],
           "expectedTargetDomains": [
             "features/home",
-            "common/widgets",
             "data/content",
             "data/session"
           ],
           "requiredBehaviors": [
-            "Home sections appear in the same source order.",
-            "A selected restaurant is saved before detail navigation occurs."
+            "Home screen renders all sections from repository-backed state.",
+            "Favourite section is conditional on non-empty liked list.",
+            "Restaurant selection updates shared selection and navigates to detail."
           ],
           "riskHints": [
-            "Do not push home-specific state into the global shell.",
-            "Search and filter controls are visible behavior even without backend filtering."
+            "Current target home page is already a concentration risk; keep extracted widgets and helpers."
           ],
           "acceptanceEvidence": [
-            "Target tests verify selection command ordering.",
-            "Build gate passes for phase-04-home-history-discovery."
+            "focused repository refresh tests",
+            "build gate pass"
           ]
         },
         {
-          "groupId": "phase-04-history-tabs",
-          "title": "History tabs and favourites reuse",
-          "groupType": "ui-contract",
+          "groupId": "phase-04-history-tabs-and-liked-flow",
+          "title": "History tabs and liked restaurant flow",
+          "groupType": "source-behavior",
           "priority": "high",
           "sourcePaths": [
             "app/src/main/java/com/example/foodike/presentation/history/History.kt",
             "app/src/main/java/com/example/foodike/presentation/history/HistoryViewModel.kt",
-            "app/src/main/java/com/example/foodike/presentation/history/components/Tabs.kt",
-            "app/src/main/java/com/example/foodike/presentation/history/components/TabsContent.kt",
-            "app/src/main/java/com/example/foodike/presentation/history/components/FavouritesSection.kt",
-            "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt"
+            "app/src/main/java/com/example/foodike/presentation/history/components/*.kt",
+            "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt"
           ],
           "sourceMethods": [
             "History",
             "HistoryViewModel.onEvent",
-            "Tabs",
-            "TabsContent",
-            "FavouritesSection",
-            "HistorySection"
+            "Tabs"
           ],
-          "featureIds": [],
+          "featureIds": [
+            "app-src-main-java-com-example-foodike-presentation-histo-47de2975d1-003-observable-state-viewmodel-flow-livedata"
+          ],
           "resourceInputs": [
             "history",
-            "favourite",
-            "empty"
+            "favourite"
           ],
-          "platformCapabilityIds": [
-            "localization-resources"
-          ],
+          "platformCapabilityIds": [],
           "uiContracts": [
-            "history page shows search bar and tabs",
-            "favourites tab uses liked-restaurant data",
-            "restaurant tap stores selection then routes to detail"
+            "search bar plus tabs over liked restaurant content"
           ],
           "dataContracts": [
-            "liked restaurants come from the same session repository as home"
+            "HistoryState.likedRestaurantList"
           ],
           "expectedTargetDomains": [
             "features/history",
-            "common/widgets"
+            "data/session"
           ],
           "requiredBehaviors": [
-            "History preserves tab-local state and list rendering semantics.",
-            "Selection command matches home/detail flow."
+            "Liked list renders from shared repository stream.",
+            "Selecting a restaurant writes selection then navigates to detail."
           ],
           "riskHints": [
-            "The source history section is largely placeholder content; keep visible structure without inventing backend behavior."
+            "Source uses pager tabs; target should preserve visible switching even with a different implementation."
           ],
           "acceptanceEvidence": [
-            "Target history store test proves selection command behavior.",
-            "Page build shows tab sections with the expected labels and ordering."
+            "manual review of tab switching",
+            "build gate pass"
           ]
         }
       ]
     },
     {
-      "id": "phase-05-detail-cart-state-mutations",
-      "title": "Detail and cart state mutations",
+      "id": "phase-05-detail-cart",
+      "title": "Detail and cart mutation flows",
       "priority": "critical",
       "targetScope": [
-        "Implement detail-state composition from the selected restaurant and session snapshots.",
-        "Implement local expansion, like, quantity, and cart-visibility behavior.",
-        "Implement cart page rendering with item-note, coupon, delivery, and bill sections."
+        "Migrate detail page selection display, menu grouping, toggles, like state, and cart shortcut.",
+        "Migrate cart page item list, coupon, delivery, and bill sections."
       ],
       "sourceEvidence": [
         "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
         "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt",
         "app/src/main/java/com/example/foodike/presentation/details/DetailScreenState.kt",
-        "app/src/main/java/com/example/foodike/presentation/details/DetailScreenEvent.kt",
-        "app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt",
-        "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/components/*.kt",
         "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
         "app/src/main/java/com/example/foodike/presentation/cart/CartViewModel.kt",
         "app/src/main/java/com/example/foodike/presentation/cart/CartState.kt",
-        "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt",
-        "app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt",
-        "app/src/main/java/com/example/foodike/presentation/cart/components/CouponBar.kt",
-        "app/src/main/java/com/example/foodike/presentation/cart/components/DeliverySection.kt",
-        "app/src/main/java/com/example/foodike/presentation/cart/components/BillSection.kt"
+        "app/src/main/java/com/example/foodike/presentation/cart/components/*.kt",
+        "app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt"
       ],
       "requiredInputs": [
         "translation-inputs/android-analysis/behavior-spec.md",
-        "translation-inputs/agent-source-walkthrough.md",
-        "translation-inputs/source-feature-survey.md"
+        "translation-inputs/source-coverage-matrix.json"
       ],
       "expectedFiles": [
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/features/detail/detail_page.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/features/detail/detail_store.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/features/cart/cart_page.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/features/cart/cart_store.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/menu_item_card.cj",
-        "Foodike-Harmony/entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/cart_item_card.cj"
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/detail",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/cart"
       ],
-      "gateCommand": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --phase phase-05-detail-cart-state-mutations",
+      "gateCommand": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --phase phase-05-detail-cart",
       "expectedTests": [
-        "detail_store_test.cj",
-        "cart_store_test.cj"
+        "detail-cart-state-tests"
       ],
       "stateDataBehavior": [
-        "Recommended, non-veg, and veg sections derive from current menu snapshots and preserve independent expansion toggles.",
-        "Like toggle updates immediately in local detail state.",
-        "Menu-item add/subtract controls update visible counts immediately in-place.",
-        "Floating cart action appears only when the visible detail item total is non-zero.",
-        "Cart page filters out zero-count items and keeps note/coupon text local to the page."
+        "Detail screen consumes selected restaurant and menu/cart streams from shared repository state.",
+        "Recommended, non-veg, and veg sections preserve independent expansion state.",
+        "Like toggle updates visible state immediately.",
+        "Cart page filters out zero-count items and keeps summary sections visible."
       ],
       "deferredRisks": [
-        "The source never persists detail quantity changes back into repository cart data, creating a parity tension between visible local counts and cart snapshot data.",
-        "If target harmonizes this inconsistency, the later matrix record may need an explicit simplified note."
+        "Source cart increment/decrement callbacks are placeholders; target needs a documented parity decision on mutation depth.",
+        "Share action remains placeholder unless product specifies outbound sharing UX."
       ],
       "implementationGroups": [
         {
-          "groupId": "phase-05-detail-sections",
-          "title": "Restaurant detail page and menu-section state",
+          "groupId": "phase-05-detail-state-and-sections",
+          "title": "Detail state, menu grouping, and toggles",
           "groupType": "source-behavior",
           "priority": "critical",
           "sourcePaths": [
             "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
             "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt",
-            "app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt",
-            "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt"
+            "app/src/main/java/com/example/foodike/presentation/details/DetailScreenState.kt",
+            "app/src/main/java/com/example/foodike/presentation/details/components/*.kt",
+            "app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt"
           ],
           "sourceMethods": [
             "RestaurantDetail",
             "RestaurantDetailViewModel.onEvent",
-            "MenuItemCard",
-            "RestaurantDetailCard"
+            "getSavedRestaurant",
+            "getMenuItems",
+            "isRestaurantLiked"
           ],
           "featureIds": [
-            "app-src-main-java-com-example-foodike-presentation-detai-958b17f285-005-observable-state-viewmodel-flow-livedata"
+            "app-src-main-java-com-example-foodike-presentation-detai-958b17f285-005-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-detai-017392d1f5-003-navigation-surface-menu-drawer-toolbar-o"
           ],
           "resourceInputs": [
             "recommended",
             "non_vegetarian",
             "vegetarian",
             "drop_down_arrow",
-            "favourite",
             "share",
-            "cart",
-            "add",
-            "subtract",
-            "rating",
-            "ic_veg",
-            "ic_non_veg"
+            "cart"
           ],
           "platformCapabilityIds": [
-            "localization-resources"
+            "image-viewer-gestures",
+            "file-access-and-saf"
           ],
           "uiContracts": [
-            "back, like, and share actions in the header",
-            "three expandable menu sections with animated arrow rotation",
-            "floating cart action only when item counts are non-zero"
+            "back action plus like/share actions",
+            "restaurant card followed by expandable menu sections",
+            "floating cart action when menu count sum is non-zero"
           ],
           "dataContracts": [
-            "selected restaurant comes from session repository",
-            "menu and liked state come from detail store composition"
+            "DetailScreenState.restaurant",
+            "DetailScreenState.recommendedExpandedState",
+            "DetailScreenState.nonVegExpandedState",
+            "DetailScreenState.vegExpandedState",
+            "DetailScreenState.menuList",
+            "DetailScreenState.recommendedList",
+            "DetailScreenState.isLiked"
           ],
           "expectedTargetDomains": [
             "features/detail",
-            "common/widgets",
             "data/session"
           ],
           "requiredBehaviors": [
-            "Section toggles update immediately and independently.",
-            "Like toggle updates immediately.",
-            "Menu-item counts update immediately in visible UI state."
+            "Menu list partitions into recommended, veg, and non-veg views.",
+            "Expansion toggles update immediately without leaving the page.",
+            "Selected restaurant details render from shared state rather than route-only stubs."
           ],
           "riskHints": [
-            "Do not hide the cart action behind repository-only counts because the source uses local visible counts.",
-            "Share is a visible affordance but currently no-op in source; preserve the affordance even if still non-functional."
+            "Seed may overstate file access/image viewer capability from static resource usage; confirm before closing capability rows."
           ],
           "acceptanceEvidence": [
-            "Detail store test verifies expansion and cart-visibility logic.",
-            "Build gate passes for phase-05-detail-cart-state-mutations."
+            "focused detail/cart state tests",
+            "build gate pass"
           ]
         },
         {
-          "groupId": "phase-05-cart-page",
-          "title": "Cart page sections and local editor states",
-          "groupType": "ui-contract",
+          "groupId": "phase-05-cart-summary-and-mutations",
+          "title": "Cart summary and mutation surfaces",
+          "groupType": "source-behavior",
           "priority": "high",
           "sourcePaths": [
             "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
             "app/src/main/java/com/example/foodike/presentation/cart/CartViewModel.kt",
-            "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt",
-            "app/src/main/java/com/example/foodike/presentation/cart/components/CouponBar.kt",
-            "app/src/main/java/com/example/foodike/presentation/cart/components/DeliverySection.kt",
-            "app/src/main/java/com/example/foodike/presentation/cart/components/BillSection.kt"
+            "app/src/main/java/com/example/foodike/presentation/cart/CartState.kt",
+            "app/src/main/java/com/example/foodike/presentation/cart/components/*.kt"
           ],
           "sourceMethods": [
-            "Cart",
-            "ItemSection",
-            "CouponBar",
-            "DeliverySection",
-            "BillSection"
+            "Cart"
           ],
           "featureIds": [],
           "resourceInputs": [
             "back",
-            "empty"
+            "add",
+            "subtract",
+            "cart"
           ],
-          "platformCapabilityIds": [
-            "localization-resources"
-          ],
+          "platformCapabilityIds": [],
           "uiContracts": [
-            "cart list hides zero-count items",
-            "empty cart shows empty message",
-            "item-note editor and coupon field update locally",
-            "delivery and bill sections remain visible below items"
+            "close/back affordance",
+            "item list, coupon bar, delivery section, bill section"
           ],
           "dataContracts": [
-            "cart snapshot comes from session repository",
-            "delivery restaurant and bill total are currently hard-coded UI content in source"
+            "CartState.list"
           ],
           "expectedTargetDomains": [
             "features/cart",
-            "common/widgets"
+            "data/session"
           ],
           "requiredBehaviors": [
-            "Cart renders snapshot data in the same order as source sections.",
-            "Note/coupon field edits update immediately without requiring repository round-trips."
+            "Zero-count items are hidden from the rendered list.",
+            "Coupon, delivery, and bill sections remain visible.",
+            "Mutation affordances must not be silently removed even if source callbacks are placeholders."
           ],
           "riskHints": [
-            "Avoid inventing checkout or persistence flows that do not exist in source.",
-            "Bill and delivery are source placeholders; keep them visible but do not over-model them as real backend state."
+            "Source cart mutation callbacks are empty; parity may require a small clarified target behavior rather than no-op buttons hidden from UI."
           ],
           "acceptanceEvidence": [
-            "Cart page composes item, coupon, delivery, and bill sections with the expected visible conditions."
+            "focused detail/cart state tests",
+            "manual review of cart page"
           ]
         }
       ]
     },
     {
-      "id": "phase-06-polish-tests-verification",
-      "title": "Polish, tests, and verification",
+      "id": "phase-06-profile-capabilities-verification",
+      "title": "Profile, capability resolution, and verification hardening",
       "priority": "high",
       "targetScope": [
-        "Close remaining resource gaps.",
-        "Add and run focused target tests when the template allows it.",
-        "Prepare evidence for later narrow coverage and capability backfill sessions."
+        "Migrate profile/logout flow and document placeholder profile actions.",
+        "Resolve or explicitly defer remaining platform capabilities with evidence.",
+        "Add focused target verification for core state and data behavior."
       ],
       "sourceEvidence": [
-        "translation-inputs/resource-coverage-report.md",
-        "translation-inputs/coverage-gap-report.md",
-        "translation-inputs/source-coverage-matrix.json",
-        "translation-inputs/platform-capability-check.json",
+        "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt",
         "app/src/test/java/com/example/foodike/ExampleUnitTest.kt",
-        "app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt"
+        "app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt",
+        "translation-inputs/platform-capability-check.json",
+        "translation-inputs/coverage-gap-report.md"
       ],
       "requiredInputs": [
-        "translation-inputs/verification-results.md",
-        "translation-inputs/target-structure-report.md",
+        "translation-inputs/platform-capability-check.json",
         "translation-inputs/source-coverage-matrix.json",
-        "translation-inputs/platform-capability-check.json"
+        "translation-inputs/verification-results.json"
       ],
       "expectedFiles": [
-        "Foodike-Harmony/entry/src/test",
-        "Foodike-Harmony/entry/src/ohosTest",
-        "Foodike-Harmony/entry/src/main/resources/base/element/string.json",
-        "Foodike-Harmony/entry/src/main/resources/base/media"
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile",
+        "entry/src/test",
+        "plan.md",
+        "plan.json"
       ],
-      "gateCommand": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --phase phase-06-polish-tests-verification",
+      "gateCommand": "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe D:\\X2Cangjie\\X2Cangjie\\scripts\\shared\\reports\\build_hap_report.py --workspace-root D:\\workspace\\Foodike --target-project D:\\workspace\\Foodike\\Foodike-Harmony --phase phase-06-profile-capabilities-verification",
       "expectedTests": [
         "cjpm test",
-        "target-side store/helper tests",
-        "final build gate"
+        "manual profile/logout smoke review if device available"
       ],
       "stateDataBehavior": [
-        "Target tests focus on pure behavior and store logic so they remain stable without fragile UI automation.",
-        "No resource key used by code should remain unresolved."
+        "Logout must clear session path and return to onboarding-style entry.",
+        "Focused tests must cover startup/session/repository/detail helper logic rather than placeholder package checks only."
       ],
       "deferredRisks": [
-        "If the target template blocks runnable tests, verification evidence will rely more heavily on direct endpoint review and build gates until the harness is repaired."
+        "Capability rows for file/media/permissions may end as source overrides or deferred depending on confirmed source behavior and HarmonyOS callable APIs.",
+        "If target test harness cannot run, exact blocker must be recorded and behavior proof must rely on compile/manual evidence plus pure-module tests."
       ],
       "implementationGroups": [
         {
-          "groupId": "phase-06-test-harness",
-          "title": "Target-side verification harness",
-          "groupType": "test-obligation",
+          "groupId": "phase-06-profile-and-logout",
+          "title": "Profile page and logout flow",
+          "groupType": "source-behavior",
           "priority": "high",
           "sourcePaths": [
-            "app/src/test/java/com/example/foodike/ExampleUnitTest.kt",
-            "app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt",
-            "app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt",
-            "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
-            "app/src/main/java/com/example/foodike/presentation/home/HomeViewModel.kt",
-            "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt"
+            "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+            "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt",
+            "app/src/main/java/com/example/foodike/presentation/profile/components/ProfileCard.kt"
           ],
           "sourceMethods": [
-            "SplashViewModel.init",
-            "LoginViewModel.onEvent",
-            "HomeViewModel.onEvent",
-            "RestaurantDetailViewModel.onEvent"
+            "Profile",
+            "ProfileViewModel.onEvent"
           ],
-          "featureIds": [],
-          "resourceInputs": [],
+          "featureIds": [
+            "app-src-main-java-com-example-foodike-presentation-profi-e492afed0c-004-observable-state-viewmodel-flow-livedata",
+            "app-src-main-java-com-example-foodike-presentation-profi-c34aae0a57-002-navigation-surface-menu-drawer-toolbar-o"
+          ],
+          "resourceInputs": [
+            "display_picture",
+            "edit",
+            "saved_addresses",
+            "payments_and_refunds",
+            "online_ordering_help",
+            "about",
+            "log_out"
+          ],
           "platformCapabilityIds": [],
           "uiContracts": [
-            "none; phase focuses on store-level behavior validation"
+            "profile summary, profile cards, logout button"
           ],
           "dataContracts": [
-            "persisted login state",
-            "selection command ordering",
-            "detail expansion and quantity state"
+            "logout callback to session store"
           ],
           "expectedTargetDomains": [
-            "tests"
+            "features/profile",
+            "data/session"
           ],
           "requiredBehaviors": [
-            "Critical business and state logic have target-side automated coverage where feasible."
+            "Logout navigates back to onboarding/root unauthenticated path.",
+            "Placeholder profile cards remain represented or explicitly documented as product placeholders."
           ],
           "riskHints": [
-            "Do not use generated placeholder tests as the only proof of behavior.",
-            "Record exact test harness blockers if `cjpm test` cannot run."
+            "Source profile data is mostly static; avoid inventing edit/profile backend behavior."
           ],
           "acceptanceEvidence": [
-            "`cjpm test` passes, or the exact blocker is recorded with compile/build evidence for the tested modules."
+            "build gate pass",
+            "manual review or runtime smoke if available"
           ]
         },
         {
-          "groupId": "phase-06-resource-and-evidence-closeout",
-          "title": "Resource closeout and evidence prep",
-          "groupType": "resource-contract",
+          "groupId": "phase-06-capability-and-test-hardening",
+          "title": "Capability resolution and focused verification",
+          "groupType": "platform-capability",
           "priority": "high",
           "sourcePaths": [
-            "app/src/main/res/values/strings.xml",
-            "app/src/main/res/drawable",
-            "app/src/main/res/mipmap-anydpi-v26"
+            "translation-inputs/platform-capability-check.json",
+            "translation-inputs/source-coverage-matrix.json",
+            "app/src/test/java/com/example/foodike/ExampleUnitTest.kt",
+            "app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt"
           ],
           "sourceMethods": [],
           "featureIds": [],
-          "resourceInputs": [
-            "all 52 source strings",
-            "all source drawables and mipmaps used by the translated pages"
+          "resourceInputs": [],
+          "platformCapabilityIds": [],
+          "uiContracts": [],
+          "dataContracts": [
+            "target-side test coverage for startup/session/repository/detail state behaviors"
           ],
-          "platformCapabilityIds": [
-            "localization-resources"
-          ],
-          "uiContracts": [
-            "every visible label and icon reference used by translated pages resolves in target resources"
-          ],
-          "dataContracts": [],
           "expectedTargetDomains": [
-            "resources",
-            "verification"
+            "tests",
+            "records follow-up"
           ],
           "requiredBehaviors": [
-            "No translated feature depends on missing resource keys.",
-            "Plan artifacts are ready for later plannedPhase backfill and matrix evidence updates."
+            "Close capability rows with direct API, platform replacement, fallback, or deferred evidence as appropriate.",
+            "Replace template example tests with focused behavior coverage."
           ],
           "riskHints": [
-            "Resource omissions can hide as late compile or runtime defects if not closed here."
+            "Several capability rows are probably static-analysis false positives and should be narrowed by source override rather than bulk deferred."
           ],
           "acceptanceEvidence": [
-            "Final build gate passes and resource coverage warnings are either resolved or explicitly deferred with reason."
+            "cjpm test or compile evidence",
+            "build gate pass",
+            "documented capability evidence in implementation sessions"
           ]
         }
       ]
@@ -1434,98 +1234,32 @@
   ],
   "deferred": [
     {
-      "id": "deferred-detail-cart-consistency",
-      "title": "Detail quantity state versus cart snapshot consistency",
-      "ownerPhase": "phase-05-detail-cart-state-mutations",
-      "reason": "The source app keeps menu-item quantity state locally inside `MenuItemCard` while the cart page reads a separate repository snapshot. Preserving visible behavior is straightforward, but a fully unified target state model may exceed source fidelity unless handled carefully.",
-      "sourceEvidence": [
-        "app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt",
-        "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
-        "app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt",
-        "translation-inputs/agent-source-walkthrough.md"
-      ],
-      "targetFallback": "Preserve immediate local quantity updates and cart-button visibility first, while keeping explicit store boundaries so later reconciliation is possible.",
-      "risk": "If target unifies the states without care, cart behavior may diverge from source. If target keeps them separate, coverage records may need an explicit simplified rationale.",
-      "validationNeeded": [
-        "manual comparison of detail quantity interactions versus cart rendering",
-        "store-level test coverage for detail visible counts"
-      ],
-      "futureCompletionPath": "After feature implementation, decide whether exact source inconsistency or a documented simplified reconciliation best preserves user-visible behavior, then reflect that decision in coverage records."
+      "item": "Exact closure status of file/media/permission/background capability rows",
+      "reason": "Static analysis over-detects these capabilities across many source files; implementation sessions must confirm real user-visible behavior before choosing direct, replaced, fallback, or deferred status.",
+      "ownerPhase": "phase-06-profile-capabilities-verification",
+      "validationNeeded": "Source-confirmed capability review plus HarmonyOS/Cangjie API evidence."
     },
     {
-      "id": "deferred-runtime-capability-row-cleanup",
-      "title": "Capability and matrix cleanup for heuristic false positives",
-      "ownerPhase": "phase-06-polish-tests-verification",
-      "reason": "Generated planning evidence still marks several files with media, SAF, runtime-permission, and notification/widget concerns that source walkthrough evidence does not support as real behaviors.",
-      "sourceEvidence": [
-        "translation-inputs/plan-seed.md",
-        "translation-inputs/platform-capability-check.json",
-        "translation-inputs/agent-source-walkthrough.md"
-      ],
-      "targetFallback": "Do not schedule these capabilities for implementation work unless later source inspection finds real evidence.",
-      "risk": "If row-level backfill happens before the walkthrough evidence is applied, later sessions may chase non-existent capabilities.",
-      "validationNeeded": [
-        "narrow post-planning matrix and capability review using exact authority patch commands"
-      ],
-      "futureCompletionPath": "Use the later records-only planning backfill session to apply row-level plannedPhase and notes updates based on the walkthrough overrides."
+      "item": "Broad source-coverage-matrix plannedPhase backfill",
+      "reason": "Main planning session must first establish valid plan artifacts; row-level backfill should be done in a separate narrow records-only session.",
+      "ownerPhase": "phase-06-profile-capabilities-verification",
+      "validationNeeded": "Run a follow-up planning-phase-backfill session using the phase and implementation group ids from this plan."
     },
     {
-      "id": "deferred-test-harness-availability",
-      "title": "Runnable target test harness availability",
-      "ownerPhase": "phase-06-polish-tests-verification",
-      "reason": "The target project is currently empty, and no verification results exist yet. Runnable `cjpm test` support depends on the final HarmonyOS template and module wiring that phase 1 must establish.",
-      "sourceEvidence": [
-        "translation-inputs/verification-results.md",
-        "translation-inputs/target-structure-report.md",
-        "translation-inputs/mapcir/skeleton/entry/src/test"
-      ],
-      "targetFallback": "Keep critical logic in small pure modules so compile/build evidence remains meaningful if the runtime test harness needs extra setup.",
-      "risk": "Without runnable tests, feature evidence may rely too heavily on build-only signals unless store logic remains easy to inspect directly.",
-      "validationNeeded": [
-        "attempt `cjpm test` after skeleton bootstrap",
-        "record exact blocker if the harness still cannot run"
-      ],
-      "futureCompletionPath": "If `cjpm test` is blocked, repair the target test wiring in phase 6 and update verification evidence with the exact command outcome."
+      "item": "Automated UI verification for pager/tab-heavy surfaces if harness is limited",
+      "reason": "Target HarmonyOS/Cangjie test harness capability is not yet confirmed for page-level UI automation.",
+      "ownerPhase": "phase-06-profile-capabilities-verification",
+      "validationNeeded": "Attempt `cjpm test`; if blocked, record harness blocker and keep manual smoke targets explicit."
     }
   ],
   "analysisGaps": [
     {
-      "kind": "missing-sidecar-summary",
-      "paths": [
-        "translation-inputs/kotlin-analysis/compose-map.json",
-        "translation-inputs/kotlin-analysis/navigation-map.json",
-        "translation-inputs/kotlin-analysis/viewmodel-map.json",
-        "translation-inputs/kotlin-analysis/repository-map.json",
-        "translation-inputs/kotlin-analysis/flow-livedata-map.json"
-      ],
-      "impact": "Planning relied on primary Kotlin analysis, Android screen map, behavior spec, and direct source inspection instead of these missing summaries."
+      "kind": "stale-seed-warning",
+      "detail": "plan-seed reports missing `kotlin-analysis/analysis.json`, `kotlin-analysis/locations.json`, and `android-analysis/behavior-spec.md`, but those files are present and were read during planning. Treat seed warnings as stale metadata."
     },
     {
-      "kind": "missing-plan-validation-report",
-      "paths": [
-        "translation-inputs/plan-validation-report.md",
-        "translation-inputs/plan-validation-report.json"
-      ],
-      "impact": "The plan was built from protocol rules and direct evidence rather than a prior plan-contract validator report."
-    }
-  ],
-  "sourceOverrides": [
-    {
-      "topic": "platform capability heuristics",
-      "evidence": [
-        "translation-inputs/agent-source-walkthrough.md",
-        "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
-        "app/src/main/AndroidManifest.xml"
-      ],
-      "override": "Treat media-library, SAF/file access, runtime-permission, and notification/widget tags as reviewed noise for this app unless later source inspection contradicts the walkthrough."
-    },
-    {
-      "topic": "search and filter semantics",
-      "evidence": [
-        "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt",
-        "app/src/main/java/com/example/foodike/presentation/home/components/ChipBar.kt"
-      ],
-      "override": "Source search and filter controls currently maintain local visible state only; target should preserve their immediate UI behavior without inventing repository filtering logic."
+      "kind": "capability-overdetection",
+      "detail": "Seed and capability reports broadly tag file access, media library, image viewer gestures, runtime permissions, and background/platform components across many files that inspected source code does not clearly use directly. Confirm per source flow before records closure."
     }
   ]
 }

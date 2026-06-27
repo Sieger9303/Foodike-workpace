@@ -2,10 +2,11 @@ package ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.onboarding
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.Builder
+import ohos.base.ResourceStr
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.*
 
 @Builder
-func buildOnboardingCard(title: String, description: String, mediaName: String) {
+func buildOnboardingCard(title: ResourceStr, description: ResourceStr, mediaName: String) {
     Column(space: 18) {
         Image(
             match (mediaName) {

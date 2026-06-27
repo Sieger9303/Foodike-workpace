@@ -1,176 +1,214 @@
-# Foodike HarmonyOS Cangjie Migration Plan
+# Foodike Translation Plan
 
-## Scope
+## Scope And Evidence
 
 - Source project: `D:\Kotlin2Cangjie\Foodike`
 - Target project: `D:\workspace\Foodike\Foodike-Harmony`
-- Session type: planning only
-- Source app shape: single-module Jetpack Compose app with splash-gated startup, Compose navigation, static fixture-backed content, and DataStore-backed login persistence.
+- Planning evidence: `translation-inputs/plan-seed.md`, `translation-inputs/plan-seed.json`, `translation-inputs/source-feature-survey.md`, `translation-inputs/source-coverage-matrix.json`, `translation-inputs/platform-capability-check.json`, `translation-inputs/android-analysis/behavior-spec.md`, `translation-inputs/resource-coverage-report.md`, `translation-inputs/coverage-gap-report.md`, `translation-inputs/target-structure-report.md`
+- Source inspection used to confirm behavior beyond static hints: `presentation/MainActivity.kt`, `presentation/common/SplashViewModel.kt`, `presentation/util/Navigation.kt`, `presentation/onboarding/OnBoarding.kt`, `presentation/login/LoginScreen.kt`, `presentation/home/HomeScreen.kt`, `presentation/history/History.kt`, `presentation/details/RestaurantDetail.kt`, `presentation/cart/Cart.kt`, `presentation/profile/Profile.kt`, `presentation/*ViewModel.kt`, `data/repository/*.kt`, `README.md`
 
-## Confirmed Source Behavior
+## Source Behavior Summary
 
-- Startup uses `SplashViewModel` plus Android splash screen keep-on-screen behavior to resolve the first route before showing the app shell.
-- Initial route is `onboarding` when login state is false and `home` when login state is true.
-- Navigation shell owns the nav controller, a shared list scroll state, a floating cart button, and conditional bottom-bar visibility.
-- Onboarding is a three-page pager with next-step progression and final navigation to login.
-- Login stores only a boolean logged-in flag. Valid credentials are hard-coded to `abcxyz@gmail.com` and `abcdef`; invalid login emits a snackbar.
-- Home loads ads, recommended food cards, restaurant lists, and favourites from repositories. Selecting a restaurant stores the active restaurant in session state before navigating to detail.
-- History reads liked restaurants from the same session repository and also stores the selected restaurant before navigating to detail.
-- Restaurant detail reads the selected restaurant, derives recommended/non-veg/veg menu sections, toggles section expansion and local liked state, and shows the floating cart button only when the summed local item count is non-zero.
-- Cart currently reads repository cart snapshots but keeps bill totals, delivery restaurant, item-note editor, and quantity buttons mostly as local UI behavior with no persistent mutation wiring.
-- Profile shows static profile information and toggles the persisted login state on logout before clearing navigation history back to onboarding.
-- Real persistence is limited to login state. Restaurant selection, favourites, menu counts, liked state, and cart snapshots are in-memory session state only.
+Foodike is a single-activity Jetpack Compose app with MVVM-style state and fake local repositories. Startup uses splash gating plus persisted login state to choose onboarding or home. Navigation includes onboarding, login, home, history, cart, profile, and restaurant detail routes, with a conditional bottom bar plus central cart FAB on home/history. Home renders greeting, search, ads, recommended foods, favourite restaurants, chip filters, and restaurant cards; selecting a restaurant writes it into shared repository state before navigating. Detail consumes repository state to show the selected restaurant, recommended/non-veg/veg collapsible sections, like toggle, share affordance, and cart shortcut when any item count is non-zero. History reuses search plus tabs over liked restaurants. Cart shows selected items, coupon, delivery, and bill sections. Profile shows static user info, profile actions, and logout. Login validates hard-coded credentials, persists login state through DataStore, and uses snackbar errors for invalid input. Recomposition is driven by mutable Compose state and Flow collection in ViewModels and repositories, so immediate UI updates after repository mutation are part of required parity.
 
-## Static Analysis Overrides
+## Planning Baseline
 
-- Generated platform-capability heuristics over-report media library, SAF/file access, runtime permissions, and notification/widget behavior. Source walkthrough evidence shows no actual media picker, external storage, SAF, dangerous permission request, service, receiver, widget, or notification flow in the app.
-- `Navigation.kt` contains a duplicated onboarding destination entry. Planning keeps the intended destination set but treats the duplicate as source cleanup noise, not a required user-visible behavior.
-- `SearchBar`, `ChipBar`, `MenuItemCard`, `ItemSection`, and some cart/detail interactions are currently local UI state only. They still matter for parity because the visible counters, filter chips, and note editors update immediately in-place.
+- `source-feature-survey.md` reports 224 critical/high feature rows and 6 unresolved critical/high platform capabilities.
+- `resource-coverage-report.md` reports 52 source strings versus 31 target strings, so resource parity needs an explicit early phase.
+- `coverage-gap-report.md` reports target production code LoC below source and warns about uncovered feature rows and unresolved platform capabilities.
+- `target-structure-report.md` shows current target architecture already has app/data/features folders, but `bootstrap_page.cj` and `features/home/home_page.cj` are concentration risks and should not absorb unrelated behavior.
 
-## Target Architecture
+## Target Architecture Direction
 
-Plan the HarmonyOS Cangjie target around business domains instead of mirroring every Compose file one-for-one:
+Use the current target module layout as the base and keep responsibilities clear:
 
-- `entry/src/main/cangjie/ohos_app_cangjie_entry/app/` for app shell, startup, and route composition.
-- `entry/src/main/cangjie/ohos_app_cangjie_entry/domain/` for immutable models and route-safe view data.
-- `entry/src/main/cangjie/ohos_app_cangjie_entry/data/` for fixture loading, session repository logic, and preference-backed login state.
-- `entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding|login|home|history|detail|cart|profile/` for feature stores and page composition.
-- `entry/src/main/cangjie/ohos_app_cangjie_entry/common/` for reusable widgets, formatting helpers, and resource adapters.
-- `entry/src/main/resources/base/` plus `AppScope/resources/` for strings, colors, images, app icon, startup visuals, and page profile wiring.
+- `app/`: bootstrap state, startup route selection, root router, shell composition
+- `data/content/`: fake content catalogs, repository implementations, resource-backed sample data, search/filter helpers
+- `data/session/`: login/session persistence, selected restaurant state, liked/cart state storage
+- `domain/`: domain models and service contracts shaped after source repositories and screen state needs
+- `features/startup/`: splash and start-destination selection
+- `features/onboarding/`, `login/`, `home/`, `history/`, `detail/`, `cart/`, `profile/`: page composition, screen-local state adapters, focused widgets
+- `common/`: shared widgets, resource adapters, formatting helpers
 
-Thin ability/page shell files may compose feature stores, but they should not absorb repository or preference logic.
+Do not close broad source behavior through only `bootstrap_page.cj` or one broad state file. Screen and repository behaviors should land in precise feature or data modules.
 
-## Phase Plan
+## Phases
 
-### Phase 1: `phase-01-project-skeleton-resources`
+### Phase 01: Project Skeleton And Resource Parity
 
-- Goal: bootstrap the HarmonyOS entry module, resource tree, startup wiring, and domain/data skeleton.
-- Key outputs:
-  - Target entry module from the mapcir skeleton.
-  - AppScope and entry metadata files.
-  - Core domain models.
-  - Resource catalog for strings, colors, and media copied/adapted from source drawables and mipmaps.
-  - Placeholder service boundaries for fixture content and persisted login state.
+- Goal: stabilize target app entry, startup route shell, domain package anchors, and resource coverage so later behavior work does not hard-code strings or overload shell pages.
+- Depends on: existing target skeleton only.
+- Key source evidence:
+  - `app/src/main/AndroidManifest.xml`
+  - `app/src/main/res/values/strings.xml`
+  - `app/src/main/res/values/colors.xml`
+  - `app/src/main/res/values/themes.xml`
+  - `README.md` screenshots and screen list
+- Required target focus:
+  - Confirm route ids and bootstrap shell match source screen inventory.
+  - Expand string/color/media assets coverage for onboarding, login, home, history, detail, cart, and profile labels.
+  - Split or guard concentrated shell surfaces before later phase expansion.
 - Gate:
   - `C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe D:\X2Cangjie\X2Cangjie\scripts\shared\reports\build_hap_report.py --workspace-root D:\workspace\Foodike --target-project D:\workspace\Foodike\Foodike-Harmony --phase phase-01-project-skeleton-resources`
-- Review focus:
-  - Entry package normalization to `ohos_app_cangjie_entry`.
-  - App icon, startup resources, and base strings exist.
-  - No broad shell file owns all business logic.
+- Expected evidence:
+  - Build gate pass.
+  - Resource files and route shell endpoints exist under feature/common modules.
+  - No new shell concentration beyond current warnings.
 
-### Phase 2: `phase-02-startup-navigation-session`
+### Phase 02: Startup, Session Persistence, Navigation, And Shared Data Contracts
 
-- Goal: implement startup route resolution, persisted login state, and the shared application shell.
-- Key outputs:
-  - Preference-backed login state service.
-  - Startup/session store that resolves first route before page composition.
-  - App navigation host with onboarding, login, home, history, cart, profile, and detail routes.
-  - Shared bottom-bar and floating cart-button shell behavior, including route and scroll gating.
+- Goal: implement startup routing, login-state persistence, shared selected-restaurant/cart/favourites state, repository contracts, and navigation shell behavior that other screens depend on.
+- Depends on: phase 01 resources and route shell.
+- Key source evidence:
+  - `presentation/MainActivity.kt`
+  - `presentation/common/SplashViewModel.kt`
+  - `presentation/util/Navigation.kt`
+  - `domain/repository/LoginRepository.kt`
+  - `data/repository/LoginRepositoryImpl.kt`
+  - `domain/repository/HomeRepository.kt`
+  - `domain/repository/UserDataRepository.kt`
+  - `data/repository/HomeRepositoryImpl.kt`
+  - `data/repository/UserDataRepositoryImpl.kt`
+- Required target focus:
+  - Preserve start destination semantics: onboarding when logged out, home when logged in.
+  - Persist session state with HarmonyOS-compatible preferences/storage.
+  - Preserve repository-driven immediate updates after `setRestaurant`, login toggle, liked/cart stream reads, and menu retrieval.
+  - Preserve bottom bar and cart FAB visibility rules for home/history.
+  - Establish target endpoints precise enough for later matrix closure.
 - Gate:
-  - `C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe D:\X2Cangjie\X2Cangjie\scripts\shared\reports\build_hap_report.py --workspace-root D:\workspace\Foodike --target-project D:\workspace\Foodike\Foodike-Harmony --phase phase-02-startup-navigation-session`
-- Review focus:
-  - Startup does not flash the wrong initial page.
-  - Login/logout mutations immediately change visible navigation behavior.
-  - Route ownership remains separate from data services.
+  - `C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe D:\X2Cangjie\X2Cangjie\scripts\shared\reports\build_hap_report.py --workspace-root D:\workspace\Foodike --target-project D:\workspace\Foodike\Foodike-Harmony --phase phase-02-startup-session-navigation`
+- Expected evidence:
+  - Build gate pass.
+  - Focused tests for session persistence and repository mutation/refresh behavior where harness allows.
 
-### Phase 3: `phase-03-onboarding-login-profile`
+### Phase 03: Onboarding And Login Flow
 
-- Goal: land the onboarding, login, and profile user flows with persisted session semantics.
-- Key outputs:
-  - Three-page onboarding sequence with progress indicators and next/final navigation behavior.
-  - Login form state, hard-coded credential validation, snackbar error path, and successful login transition to home.
-  - Profile page sections, static profile visuals, and logout mutation that clears the shell stack to onboarding.
+- Goal: migrate onboarding pager flow and login UI/validation/session handoff.
+- Depends on: phase 02 shared navigation and session persistence.
+- Key source evidence:
+  - `presentation/onboarding/OnBoarding.kt`
+  - `presentation/onboarding/components/OnboardingPage.kt`
+  - `presentation/onboarding/util/OnBoardingItem.kt`
+  - `presentation/login/LoginScreen.kt`
+  - `presentation/login/LoginViewModel.kt`
+  - `presentation/login/components/FoodikeTextField.kt`
+- Required target focus:
+  - Preserve multi-page onboarding progression and final navigation to login.
+  - Preserve login text entry state, hard-coded credential check, snackbar error, and successful transition to home with session toggle.
+  - Preserve coming-soon affordances for social login and ancillary actions unless product decides otherwise.
 - Gate:
-  - `C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe D:\X2Cangjie\X2Cangjie\scripts\shared\reports\build_hap_report.py --workspace-root D:\workspace\Foodike --target-project D:\workspace\Foodike\Foodike-Harmony --phase phase-03-onboarding-login-profile`
-- Review focus:
-  - Login failure messaging remains immediate and non-blocking.
-  - Persisted login state survives app restart semantics.
-  - Placeholder social/signup/profile edit actions are visibly retained as non-implemented affordances, not silently removed.
+  - `C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe D:\X2Cangjie\X2Cangjie\scripts\shared\reports\build_hap_report.py --workspace-root D:\workspace\Foodike --target-project D:\workspace\Foodike\Foodike-Harmony --phase phase-03-onboarding-login`
+- Expected evidence:
+  - Build gate pass.
+  - Focused tests for credential validation and session toggle path where possible.
+  - Manual review note for onboarding pager progression if automated UI coverage is unavailable.
 
-### Phase 4: `phase-04-home-history-discovery`
+### Phase 04: Home And History Discovery Flows
 
-- Goal: implement fixture-backed discovery screens and restaurant selection flow.
-- Key outputs:
-  - Fixture content repository and session repository.
-  - Home screen sections for top bar, greeting, search bar, ads, recommended cards, favourites, filters, and restaurant list.
-  - History page with tab state and favourite restaurant selection flow.
-  - Shared selection command that stores the current restaurant before detail navigation.
+- Goal: migrate feed/list discovery, search/filter affordances, favourites/history flows, and route-to-detail selection behavior.
+- Depends on: phase 02 shared repositories and phase 03 authenticated entry.
+- Key source evidence:
+  - `presentation/home/HomeScreen.kt`
+  - `presentation/home/HomeViewModel.kt`
+  - `presentation/home/HomeScreenState.kt`
+  - `presentation/home/components/*.kt`
+  - `presentation/components/SearchBar.kt`
+  - `presentation/components/RestaurantCard.kt`
+  - `presentation/history/History.kt`
+  - `presentation/history/HistoryViewModel.kt`
+  - `presentation/history/components/*.kt`
+- Required target focus:
+  - Preserve home section ordering, conditional favourite section, and restaurant selection semantics.
+  - Preserve search/filter chip interactions and list refresh behavior.
+  - Preserve history tabs and liked restaurant navigation back into detail using repository selection.
+  - Keep bottom bar/cart FAB behavior aligned with the source shell.
 - Gate:
-  - `C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe D:\X2Cangjie\X2Cangjie\scripts\shared\reports\build_hap_report.py --workspace-root D:\workspace\Foodike --target-project D:\workspace\Foodike\Foodike-Harmony --phase phase-04-home-history-discovery`
-- Review focus:
-  - Favourite sections render only when non-empty.
-  - Filter chips and search bar preserve immediate local-state updates.
-  - Selection and navigation happen in the same order as the source: save restaurant first, then navigate.
+  - `C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe D:\X2Cangjie\X2Cangjie\scripts\shared\reports\build_hap_report.py --workspace-root D:\workspace\Foodike --target-project D:\workspace\Foodike\Foodike-Harmony --phase phase-04-home-history`
+- Expected evidence:
+  - Build gate pass.
+  - Focused tests for repository-backed restaurant selection, favourites stream updates, and search/filter helpers.
 
-### Phase 5: `phase-05-detail-cart-state-mutations`
+### Phase 05: Detail And Cart Mutation Flows
 
-- Goal: implement restaurant detail, menu section expansion, local quantity controls, and cart rendering semantics.
-- Key outputs:
-  - Detail store fed by session-selected restaurant and repository snapshots.
-  - Recommended/non-veg/veg section grouping with expandable headers and icon rotation semantics.
-  - Local liked toggle state.
-  - Menu item quantity controls with immediate UI updates.
-  - Floating cart button visibility driven by non-zero summed item counts.
-  - Cart page sections for selected items, note editor, coupon input shell, delivery card, and bill section.
+- Goal: migrate restaurant detail, expandable menu sections, like/cart state, and cart summary flow.
+- Depends on: phase 02 shared repository state and phase 04 selection flows.
+- Key source evidence:
+  - `presentation/details/RestaurantDetail.kt`
+  - `presentation/details/RestaurantDetailViewModel.kt`
+  - `presentation/details/DetailScreenState.kt`
+  - `presentation/details/components/*.kt`
+  - `presentation/cart/Cart.kt`
+  - `presentation/cart/CartViewModel.kt`
+  - `presentation/cart/CartState.kt`
+  - `presentation/cart/components/*.kt`
+  - `data/repository/UserDataRepositoryImpl.kt`
+- Required target focus:
+  - Preserve selected restaurant display and menu grouping into recommended/non-veg/veg sections.
+  - Preserve expandable section state and immediate recomposition on toggle.
+  - Preserve like toggle semantics, cart FAB visibility, cart item count filtering, coupon/delivery/bill sections, and navigation back behavior.
+  - Replace any source placeholder mutation gaps with explicit target commands that keep intended user-visible behavior coherent.
 - Gate:
-  - `C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe D:\X2Cangjie\X2Cangjie\scripts\shared\reports\build_hap_report.py --workspace-root D:\workspace\Foodike --target-project D:\workspace\Foodike\Foodike-Harmony --phase phase-05-detail-cart-state-mutations`
-- Review focus:
-  - Immediate visible updates for expansion toggles, add/subtract controls, and note text.
-  - Detail-to-cart routing is preserved.
-  - Any simplification between local detail quantity state and repository cart state must be documented explicitly in coverage records if retained.
+  - `C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe D:\X2Cangjie\X2Cangjie\scripts\shared\reports\build_hap_report.py --workspace-root D:\workspace\Foodike --target-project D:\workspace\Foodike\Foodike-Harmony --phase phase-05-detail-cart`
+- Expected evidence:
+  - Build gate pass.
+  - Focused tests for section toggles, menu partitioning helpers, and cart summary math/state where possible.
 
-### Phase 6: `phase-06-polish-tests-verification`
+### Phase 06: Profile, Capability Resolution, And Verification Hardening
 
-- Goal: close resource gaps, add focused tests, and verify high-risk behavior before row-level coverage backfill.
-- Key outputs:
-  - Target tests for session persistence, startup route resolution, login validation, route selection commands, and pure state reducers/helpers.
-  - Resource completeness check for missing strings and media references.
-  - Final build-gate evidence and any explicit deferred items recorded with risk.
+- Goal: finish profile/logout flow, close remaining resource/capability decisions, and add focused target-side verification for core state/data behaviors.
+- Depends on phases 01-05.
+- Key source evidence:
+  - `presentation/profile/Profile.kt`
+  - `presentation/profile/ProfileViewModel.kt`
+  - `app/src/test/java/com/example/foodike/ExampleUnitTest.kt`
+  - `app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt`
+  - `translation-inputs/platform-capability-check.json`
+- Required target focus:
+  - Preserve logout flow back to onboarding and any profile action placeholders with clear product-level handling.
+  - Resolve or explicitly defer the six platform capabilities with evidence, not local simulation as final capability closure.
+  - Add focused tests for startup routing, repository state streams, login persistence, selection propagation, and screen-local reducer logic.
+  - Prepare row-level records follow-up after the plan contract passes.
 - Gate:
-  - `C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe D:\X2Cangjie\X2Cangjie\scripts\shared\reports\build_hap_report.py --workspace-root D:\workspace\Foodike --target-project D:\workspace\Foodike\Foodike-Harmony --phase phase-06-polish-tests-verification`
-- Review focus:
-  - No unresolved string/media references.
-  - Target tests verify behavior that source tests did not cover.
-  - Coverage and capability backfill can proceed narrowly from the completed plan.
+  - `C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe D:\X2Cangjie\X2Cangjie\scripts\shared\reports\build_hap_report.py --workspace-root D:\workspace\Foodike --target-project D:\workspace\Foodike\Foodike-Harmony --phase phase-06-profile-capabilities-verification`
+- Expected evidence:
+  - Build gate pass.
+  - Test compile/run evidence for focused target tests where supported.
+  - Capability notes updated with doc/package evidence during implementation sessions.
 
 ## Test Strategy
 
-- Source tests are only boilerplate examples and do not cover app behavior.
-- Add target-side tests for:
-  - login preference persistence and startup destination resolution
-  - login credential validation and snackbar error emission
-  - restaurant-selection command behavior
-  - detail section expansion and floating-cart visibility state
-  - filter helper mapping and any extracted formatting helpers
-- Prefer `cjpm test` where the target template supports it. If the HarmonyOS template blocks runnable tests, keep logic in small pure modules and record the exact harness limitation before relying on compile-only evidence.
+- Source tests are only template examples and do not cover real app behavior.
+- Add target-side focused tests for:
+  - startup destination selection from persisted session state
+  - login credential validation and logout/session mutation
+  - repository data retrieval and selected restaurant propagation
+  - favourites/cart/menu stream refresh semantics
+  - search/filter and detail-section partition helpers
+- When full target test execution is blocked by SDK or harness limits, keep testable pure modules and record exact harness blockers instead of leaving only placeholder test files.
 
-## Resource Plan
+## Platform Capability Review Plan
 
-- Migrate all 52 source strings into HarmonyOS string resources before feature-complete review.
-- Copy and adapt all referenced bitmap/vector assets used by onboarding, login, cards, icons, splash, and app icon.
-- Convert Android theme values into HarmonyOS startup colors and page token resources.
-- Preserve content descriptions and user-facing labels where they are visible or accessibility-relevant.
+- `media-library-access`: review whether current target only needs bundled images or also user media selection; if user media is required, resolve with HarmonyOS picker/media APIs behind a service boundary.
+- `file-access-and-saf`: inspect whether any source share/import/export behavior is real versus seed over-detection; if no real source flow exists, narrow via source override during implementation records.
+- `image-viewer-gestures`: confirm whether source really has zoom/gallery behavior or only static image cards; prefer source override if static only, otherwise plan a reusable image viewer surface.
+- `localization-resources`: critical for current plan due to string coverage gap.
+- `runtime-permissions`: likely over-detected for much of the app because the inspected source files do not request permissions directly; verify before closing capability rows.
+- `background-and-platform-components`: likely limited to splash and app entry for this sample; verify before treating as a large deferred area.
 
-## Platform Capability Decisions For Planning
+## Analysis Gaps And Source Overrides To Track
 
-- Persisted preferences/login state: required and should map to a direct HarmonyOS preference/storage API.
-- Startup splash behavior: required, but exact API may be platform-replaced with HarmonyOS startup-page behavior if direct splash parity differs.
-- Localization resources: required and should map to HarmonyOS resource bundles.
-- Runtime permissions: currently not source-backed as a real user flow; keep as a reviewed capability row but do not plan first-phase implementation work for it.
-- Media library, SAF/file access, notifications/widgets: currently not source-backed; keep these out of active implementation scope unless later source inspection contradicts the walkthrough.
-
-## Missing Inputs
-
-- `translation-inputs/plan-validation-report.md` and `.json` are missing.
-- `translation-inputs/phase-task-checklist.md` and `.json` are missing.
-- `translation-inputs/phase-capability-checklist.md` and `.json` are missing.
-- `translation-inputs/test-build-reports/` is missing.
-- Several Kotlin sidecar summaries listed in `task-planning.md` are missing, but the primary Kotlin analysis, locations, Android analysis, walkthrough, and source inspection were sufficient for planning.
-- `translation-inputs/mapcir/skeleton-hybrid/` is missing; the plain skeleton is present and sufficient for bootstrap planning.
+- `plan-seed.md` reports missing-analysis warnings for files that are actually present in the workspace. Treat that as stale generated metadata rather than absence of evidence.
+- Seed/platform hints over-flag file access, media library, image viewer gestures, runtime permissions, and background components across many files. Implementation sessions must confirm these from source before closing capability rows or planning a large replacement.
+- The source app itself contains placeholders or shallow behaviors, especially social login, profile action cards, share button, and cart increment/decrement callbacks. Preserve current user-visible semantics, but do not invent backend completeness without explicit product direction.
 
 ## Deferred Risks
 
-- The source cart/detail mutation model is inconsistent: quantity changes are local to `MenuItemCard`, while cart data comes from a separate in-memory repository snapshot. Target implementation should preserve visible behavior first, but the final parity record may require an `implemented-simplified` note unless this mismatch is harmonized carefully.
-- Source search and chip filters currently keep local UI state without repository filtering logic. Removing them would be a regression, but over-implementing new filtering semantics would also diverge from source behavior.
-- Static analysis still tags many files with permissions/file/media concerns that are not source-backed. Coverage and platform records should be updated later with source-evidence notes to avoid false implementation pressure.
-- The target project is currently empty; phase 1 must establish a valid entry module before any row-level planned-phase backfill can safely validate target endpoints.
+- Capability rows may shrink after source confirmation; until then they remain planning risks rather than confirmed implementation scope.
+- Current target string coverage is incomplete and risks silent UX drift if resource parity is not addressed first.
+- The current target shell already concentrates multiple routes in `bootstrap_page.cj`; expanding features there would make later coverage repair harder.
+- Automated UI verification may be limited; if so, behavior proof must rely on focused tests plus documented manual review targets.
+
+## Post-Planning Follow-Up
+
+- Do not perform broad `plannedPhase` backfill during this session.
+- After this plan contract is accepted, run a narrow records-only backfill session to map matrix rows and platform capability rows to the phase/group ids defined in `plan.json`.

@@ -1,20 +1,20 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-26T04:03:33+00:00",
+  "generatedAt": "2026-06-27T03:22:15+00:00",
   "summary": {
-    "productionCodeFiles": 36,
-    "productionCodeNonblankLines": 2629,
+    "productionCodeFiles": 34,
+    "productionCodeNonblankLines": 2646,
     "largestProductionCodeFileNonblankLines": 374,
     "largeProductionCodeFiles": 0,
-    "endpointBearingFeatureRows": 69,
-    "endpointTargetFiles": 37,
-    "largestEndpointFileShare": 0.5652,
-    "concentratedEndpointFiles": 1,
-    "broadShellEndpointFiles": 1,
+    "endpointBearingFeatureRows": 13,
+    "endpointTargetFiles": 15,
+    "largestEndpointFileShare": 0.5385,
+    "concentratedEndpointFiles": 2,
+    "broadShellEndpointFiles": 0,
     "uiSurfaceFiles": 18,
     "concentratedUiSurfaceFiles": 2,
-    "uiEndpointBearingFeatureRows": 66,
-    "uiEndpointTargetFiles": 33,
+    "uiEndpointBearingFeatureRows": 12,
+    "uiEndpointTargetFiles": 15,
     "concentratedUiEndpointFiles": 2,
     "entryModuleStatus": "PASS",
     "entryRootPackage": "ohos_app_cangjie_entry"
@@ -32,12 +32,7 @@
     {
       "severity": "medium",
       "kind": "target-structure-endpoint-concentration",
-      "message": "1 target file(s) carry a concentrated share of matrix targetEndpoints. Check whether unrelated source clusters are being closed through a broad shell instead of precise domain functions."
-    },
-    {
-      "severity": "medium",
-      "kind": "target-structure-broad-shell-endpoints",
-      "message": "1 broad shell-like target file(s) carry many coverage endpoints. Prefer targetEndpoints that name specific business functions or extracted modules."
+      "message": "2 target file(s) carry a concentrated share of matrix targetEndpoints. Check whether unrelated source clusters are being closed through a broad shell instead of precise domain functions."
     },
     {
       "severity": "medium",
@@ -53,157 +48,99 @@
   "largeFiles": [],
   "endpointConcentration": [
     {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
-      "featureRows": 39,
-      "endpointRefs": 73,
-      "shareOfEndpointRows": 0.5652,
-      "isBroadShellPath": true,
+      "path": "entry/src/main/module.js",
+      "featureRows": 7,
+      "endpointRefs": 7,
+      "shareOfEndpointRows": 0.5385,
+      "isBroadShellPath": false,
       "byStatus": {
-        "implemented": 37,
-        "platform-replaced": 2
+        "implemented": 1,
+        "platform-replaced": 6
       },
       "byImportance": {
-        "critical": 31,
-        "high": 7,
-        "medium": 1
+        "critical": 7
       },
       "topSourcePaths": [
         {
-          "value": "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
-          "count": 4
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+          "value": "app/src/main/AndroidManifest.xml",
           "count": 3
         },
         {
-          "value": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/History.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "value": "app/build.gradle.kts",
           "count": 2
+        },
+        {
+          "value": "gradle/libs.versions.toml",
+          "count": 1
+        },
+        {
+          "value": "gradle/wrapper/gradle-wrapper.properties",
+          "count": 1
         }
       ],
       "suggestedDomainHints": [
         {
           "value": "permission",
-          "count": 17
-        },
-        {
-          "value": "image",
-          "count": 14
-        },
-        {
-          "value": "detail",
           "count": 4
         },
         {
-          "value": "file",
-          "count": 3
+          "value": "config",
+          "count": 1
         },
         {
-          "value": "filter",
+          "value": "settings",
+          "count": 1
+        },
+        {
+          "value": "wrapper",
           "count": 1
         }
       ]
-    }
-  ],
-  "broadShellEndpointFiles": [
+    },
     {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
-      "featureRows": 39,
-      "endpointRefs": 73,
-      "shareOfEndpointRows": 0.5652,
-      "isBroadShellPath": true,
+      "path": "entry/src/main/cangjie/app_ability.cj",
+      "featureRows": 6,
+      "endpointRefs": 6,
+      "shareOfEndpointRows": 0.4615,
+      "isBroadShellPath": false,
       "byStatus": {
-        "implemented": 37,
-        "platform-replaced": 2
+        "platform-replaced": 6
       },
       "byImportance": {
-        "critical": 31,
-        "high": 7,
-        "medium": 1
+        "critical": 6
       },
       "topSourcePaths": [
         {
-          "value": "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
-          "count": 4
+          "value": "app/build.gradle.kts",
+          "count": 2
         },
         {
-          "value": "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
-          "count": 3
+          "value": "app/src/main/AndroidManifest.xml",
+          "count": 2
         },
         {
-          "value": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/History.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "value": "gradle/libs.versions.toml",
           "count": 2
         }
       ],
       "suggestedDomainHints": [
         {
           "value": "permission",
-          "count": 17
-        },
-        {
-          "value": "image",
-          "count": 14
-        },
-        {
-          "value": "detail",
           "count": 4
         },
         {
-          "value": "file",
-          "count": 3
-        },
-        {
-          "value": "filter",
-          "count": 1
+          "value": "settings",
+          "count": 2
         }
       ]
     }
   ],
+  "broadShellEndpointFiles": [],
   "uiSurfaceFiles": [
     {
       "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
       "nonblankLines": 374,
-      "shareOfProductionCode": 0.1423,
+      "shareOfProductionCode": 0.1413,
       "isBroadShellPath": true,
       "uiSymbolCount": 12,
       "uiSymbols": [
@@ -223,8 +160,8 @@
     },
     {
       "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj",
-      "nonblankLines": 226,
-      "shareOfProductionCode": 0.086,
+      "nonblankLines": 227,
+      "shareOfProductionCode": 0.0858,
       "isBroadShellPath": true,
       "uiSymbolCount": 8,
       "uiSymbols": [
@@ -241,115 +178,67 @@
   ],
   "uiEndpointConcentration": [
     {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
-      "featureRows": 39,
-      "endpointRefs": 73,
-      "shareOfUiEndpointRows": 0.5909,
-      "isBroadShellPath": true,
+      "path": "entry/src/main/cangjie/app_ability.cj",
+      "featureRows": 6,
+      "endpointRefs": 6,
+      "shareOfUiEndpointRows": 0.5,
+      "isBroadShellPath": false,
       "suggestedDomainHints": [
         {
           "value": "permission",
-          "count": 17
-        },
-        {
-          "value": "image",
-          "count": 14
-        },
-        {
-          "value": "detail",
           "count": 4
         },
         {
-          "value": "file",
-          "count": 3
-        },
-        {
-          "value": "filter",
-          "count": 1
+          "value": "settings",
+          "count": 2
         }
       ],
       "topSourcePaths": [
         {
-          "value": "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
-          "count": 4
+          "value": "app/build.gradle.kts",
+          "count": 2
         },
         {
-          "value": "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
-          "count": 3
+          "value": "app/src/main/AndroidManifest.xml",
+          "count": 2
         },
         {
-          "value": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/History.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "value": "gradle/libs.versions.toml",
           "count": 2
         }
       ]
     },
     {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/history/history_page.cj",
-      "featureRows": 10,
-      "endpointRefs": 17,
-      "shareOfUiEndpointRows": 0.1515,
-      "isBroadShellPath": true,
+      "path": "entry/src/main/module.js",
+      "featureRows": 6,
+      "endpointRefs": 6,
+      "shareOfUiEndpointRows": 0.5,
+      "isBroadShellPath": false,
       "suggestedDomainHints": [
         {
           "value": "permission",
-          "count": 8
+          "count": 4
         },
         {
-          "value": "gallery",
+          "value": "config",
           "count": 1
         },
         {
-          "value": "filter",
+          "value": "settings",
           "count": 1
         }
       ],
       "topSourcePaths": [
         {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/History.kt",
+          "value": "app/src/main/AndroidManifest.xml",
           "count": 3
         },
         {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/HistoryViewModel.kt",
+          "value": "app/build.gradle.kts",
           "count": 2
         },
         {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/components/Tabs.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/components/FavouritesSection.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/components/TabsContent.kt",
+          "value": "gradle/libs.versions.toml",
           "count": 1
         }
       ]
@@ -357,227 +246,33 @@
   ],
   "topEndpointFiles": [
     {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
-      "featureRows": 39,
-      "endpointRefs": 73,
-      "shareOfEndpointRows": 0.5652,
-      "isBroadShellPath": true,
-      "byStatus": {
-        "implemented": 37,
-        "platform-replaced": 2
-      },
-      "byImportance": {
-        "critical": 31,
-        "high": 7,
-        "medium": 1
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
-          "count": 4
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/History.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
-          "count": 2
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "permission",
-          "count": 17
-        },
-        {
-          "value": "image",
-          "count": 14
-        },
-        {
-          "value": "detail",
-          "count": 4
-        },
-        {
-          "value": "file",
-          "count": 3
-        },
-        {
-          "value": "filter",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/history/history_page.cj",
-      "featureRows": 10,
-      "endpointRefs": 17,
-      "shareOfEndpointRows": 0.1449,
-      "isBroadShellPath": true,
-      "byStatus": {
-        "implemented": 10
-      },
-      "byImportance": {
-        "critical": 4,
-        "high": 4,
-        "medium": 2
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/History.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/HistoryViewModel.kt",
-          "count": 2
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/components/Tabs.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/components/FavouritesSection.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/components/TabsContent.kt",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "permission",
-          "count": 8
-        },
-        {
-          "value": "gallery",
-          "count": 1
-        },
-        {
-          "value": "filter",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj",
-      "featureRows": 9,
-      "endpointRefs": 15,
-      "shareOfEndpointRows": 0.1304,
-      "isBroadShellPath": true,
-      "byStatus": {
-        "implemented": 9
-      },
-      "byImportance": {
-        "critical": 8,
-        "high": 1
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
-          "count": 2
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
-          "count": 2
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
-          "count": 1
-        },
-        {
-          "value": "app/build.gradle.kts",
-          "count": 1
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "permission",
-          "count": 5
-        },
-        {
-          "value": "image",
-          "count": 3
-        },
-        {
-          "value": "file",
-          "count": 1
-        }
-      ]
-    },
-    {
       "path": "entry/src/main/module.js",
-      "featureRows": 8,
-      "endpointRefs": 18,
-      "shareOfEndpointRows": 0.1159,
+      "featureRows": 7,
+      "endpointRefs": 7,
+      "shareOfEndpointRows": 0.5385,
       "isBroadShellPath": false,
       "byStatus": {
-        "implemented": 3,
-        "platform-replaced": 5
+        "implemented": 1,
+        "platform-replaced": 6
       },
       "byImportance": {
-        "critical": 5,
-        "high": 3
+        "critical": 7
       },
       "topSourcePaths": [
+        {
+          "value": "app/src/main/AndroidManifest.xml",
+          "count": 3
+        },
         {
           "value": "app/build.gradle.kts",
           "count": 2
         },
         {
-          "value": "app/src/main/AndroidManifest.xml",
-          "count": 2
-        },
-        {
-          "value": "app/src/main/res/values/themes.xml",
-          "count": 2
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
+          "value": "gradle/libs.versions.toml",
           "count": 1
         },
         {
-          "value": "app/src/main/res/values/colors.xml",
+          "value": "gradle/wrapper/gradle-wrapper.properties",
           "count": 1
         }
       ],
@@ -588,343 +283,97 @@
         },
         {
           "value": "config",
-          "count": 3
+          "count": 1
         },
         {
-          "value": "file",
+          "value": "settings",
+          "count": 1
+        },
+        {
+          "value": "wrapper",
           "count": 1
         }
       ]
     },
     {
       "path": "entry/src/main/cangjie/app_ability.cj",
-      "featureRows": 8,
-      "endpointRefs": 15,
-      "shareOfEndpointRows": 0.1159,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "implemented": 3,
-        "platform-replaced": 5
-      },
-      "byImportance": {
-        "critical": 8
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
-          "count": 4
-        },
-        {
-          "value": "app/src/main/AndroidManifest.xml",
-          "count": 2
-        },
-        {
-          "value": "app/build.gradle.kts",
-          "count": 1
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "permission",
-          "count": 8
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj",
-      "featureRows": 7,
-      "endpointRefs": 16,
-      "shareOfEndpointRows": 0.1014,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "implemented": 7
-      },
-      "byImportance": {
-        "critical": 6,
-        "low": 1
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
-          "count": 1
-        },
-        {
-          "value": "app/build.gradle.kts",
-          "count": 1
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/test/java/com/example/foodike/ExampleUnitTest.kt",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "config",
-          "count": 3
-        },
-        {
-          "value": "permission",
-          "count": 1
-        },
-        {
-          "value": "auth",
-          "count": 1
-        },
-        {
-          "value": "file",
-          "count": 1
-        },
-        {
-          "value": "foodike",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/cart/cart_page.cj",
-      "featureRows": 7,
-      "endpointRefs": 11,
-      "shareOfEndpointRows": 0.1014,
-      "isBroadShellPath": true,
-      "byStatus": {
-        "implemented": 7
-      },
-      "byImportance": {
-        "critical": 6,
-        "high": 1
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt",
-          "count": 2
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/cart/CartViewModel.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/cart/components/CouponBar.kt",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "image",
-          "count": 4
-        },
-        {
-          "value": "permission",
-          "count": 2
-        },
-        {
-          "value": "gallery",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/detail/detail_page.cj",
       "featureRows": 6,
-      "endpointRefs": 13,
-      "shareOfEndpointRows": 0.087,
-      "isBroadShellPath": true,
+      "endpointRefs": 6,
+      "shareOfEndpointRows": 0.4615,
+      "isBroadShellPath": false,
       "byStatus": {
-        "implemented": 6
+        "platform-replaced": 6
       },
       "byImportance": {
         "critical": 6
       },
       "topSourcePaths": [
         {
-          "value": "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt",
-          "count": 2
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "detail",
-          "count": 6
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/cart/cart_store.cj",
-      "featureRows": 6,
-      "endpointRefs": 11,
-      "shareOfEndpointRows": 0.087,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "implemented": 6
-      },
-      "byImportance": {
-        "critical": 5,
-        "low": 1
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
-          "count": 2
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/cart/CartViewModel.kt",
-          "count": 2
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/test/java/com/example/foodike/ExampleUnitTest.kt",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "image",
-          "count": 3
-        },
-        {
-          "value": "permission",
-          "count": 2
-        },
-        {
-          "value": "foodike",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/resources/base/element/color.js",
-      "featureRows": 5,
-      "endpointRefs": 12,
-      "shareOfEndpointRows": 0.0725,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "implemented": 3,
-        "platform-replaced": 2
-      },
-      "byImportance": {
-        "critical": 1,
-        "high": 4
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/res/values/themes.xml",
-          "count": 2
-        },
-        {
-          "value": "app/src/main/res/values/colors.xml",
+          "value": "app/build.gradle.kts",
           "count": 2
         },
         {
           "value": "app/src/main/AndroidManifest.xml",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "config",
-          "count": 3
-        },
-        {
-          "value": "file",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj",
-      "featureRows": 4,
-      "endpointRefs": 8,
-      "shareOfEndpointRows": 0.058,
-      "isBroadShellPath": true,
-      "byStatus": {
-        "implemented": 4
-      },
-      "byImportance": {
-        "critical": 4
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
-          "count": 3
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "image",
           "count": 2
         },
         {
-          "value": "gallery",
-          "count": 1
-        },
-        {
-          "value": "filter",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/history/history_store.cj",
-      "featureRows": 4,
-      "endpointRefs": 5,
-      "shareOfEndpointRows": 0.058,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "implemented": 4
-      },
-      "byImportance": {
-        "critical": 2,
-        "high": 1,
-        "medium": 1
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/HistoryViewModel.kt",
+          "value": "gradle/libs.versions.toml",
           "count": 2
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/History.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/components/FavouritesSection.kt",
-          "count": 1
         }
       ],
       "suggestedDomainHints": [
         {
           "value": "permission",
           "count": 4
+        },
+        {
+          "value": "settings",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "path": "entry/cjpm.toml",
+      "featureRows": 5,
+      "endpointRefs": 5,
+      "shareOfEndpointRows": 0.3846,
+      "isBroadShellPath": false,
+      "byStatus": {
+        "platform-replaced": 5
+      },
+      "byImportance": {
+        "critical": 5
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/build.gradle.kts",
+          "count": 2
+        },
+        {
+          "value": "gradle/libs.versions.toml",
+          "count": 2
+        },
+        {
+          "value": "gradle/wrapper/gradle-wrapper.properties",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "config",
+          "count": 2
+        },
+        {
+          "value": "permission",
+          "count": 1
+        },
+        {
+          "value": "settings",
+          "count": 1
+        },
+        {
+          "value": "wrapper",
+          "count": 1
         }
       ]
     },
@@ -932,27 +381,25 @@
       "path": "entry/src/main/resources/base/profile/main_pages.js",
       "featureRows": 4,
       "endpointRefs": 4,
-      "shareOfEndpointRows": 0.058,
+      "shareOfEndpointRows": 0.3077,
       "isBroadShellPath": false,
       "byStatus": {
-        "implemented": 1,
-        "platform-replaced": 3
+        "platform-replaced": 4
       },
       "byImportance": {
-        "critical": 3,
-        "high": 1
+        "critical": 4
       },
       "topSourcePaths": [
         {
-          "value": "app/src/main/AndroidManifest.xml",
+          "value": "app/build.gradle.kts",
           "count": 2
         },
         {
-          "value": "app/build.gradle.kts",
+          "value": "app/src/main/AndroidManifest.xml",
           "count": 1
         },
         {
-          "value": "app/src/main/res/values/themes.xml",
+          "value": "gradle/libs.versions.toml",
           "count": 1
         }
       ],
@@ -962,140 +409,100 @@
           "count": 3
         },
         {
-          "value": "file",
+          "value": "settings",
           "count": 1
         }
       ]
     },
     {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/detail/detail_store.cj",
-      "featureRows": 3,
-      "endpointRefs": 7,
-      "shareOfEndpointRows": 0.0435,
+      "path": "entry/build-profile.js",
+      "featureRows": 4,
+      "endpointRefs": 4,
+      "shareOfEndpointRows": 0.3077,
       "isBroadShellPath": false,
       "byStatus": {
-        "implemented": 3
+        "platform-replaced": 4
       },
       "byImportance": {
-        "critical": 2,
-        "low": 1
+        "critical": 4
       },
       "topSourcePaths": [
         {
-          "value": "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+          "value": "gradle/libs.versions.toml",
           "count": 2
         },
         {
-          "value": "app/src/test/java/com/example/foodike/ExampleUnitTest.kt",
+          "value": "app/build.gradle.kts",
+          "count": 1
+        },
+        {
+          "value": "gradle/wrapper/gradle-wrapper.properties",
           "count": 1
         }
       ],
       "suggestedDomainHints": [
         {
-          "value": "detail",
+          "value": "settings",
           "count": 2
         },
         {
-          "value": "foodike",
+          "value": "permission",
+          "count": 1
+        },
+        {
+          "value": "wrapper",
           "count": 1
         }
       ]
     },
     {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_store.cj",
+      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj",
       "featureRows": 3,
-      "endpointRefs": 4,
-      "shareOfEndpointRows": 0.0435,
-      "isBroadShellPath": false,
+      "endpointRefs": 3,
+      "shareOfEndpointRows": 0.2308,
+      "isBroadShellPath": true,
       "byStatus": {
-        "implemented": 3
+        "platform-replaced": 3
       },
       "byImportance": {
         "critical": 3
       },
       "topSourcePaths": [
         {
-          "value": "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
-          "count": 3
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "image",
-          "count": 3
-        }
-      ]
-    },
-    {
-      "path": "AppScope/resources/base/element/color.js",
-      "featureRows": 2,
-      "endpointRefs": 9,
-      "shareOfEndpointRows": 0.029,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "implemented": 2
-      },
-      "byImportance": {
-        "high": 2
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/res/values/colors.xml",
-          "count": 2
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "config",
+          "value": "app/build.gradle.kts",
           "count": 1
         },
         {
-          "value": "file",
+          "value": "app/src/main/AndroidManifest.xml",
           "count": 1
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/restaurant_card.cj",
-      "featureRows": 2,
-      "endpointRefs": 4,
-      "shareOfEndpointRows": 0.029,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "implemented": 2
-      },
-      "byImportance": {
-        "critical": 2
-      },
-      "topSourcePaths": [
+        },
         {
-          "value": "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt",
-          "count": 2
+          "value": "gradle/libs.versions.toml",
+          "count": 1
         }
       ],
       "suggestedDomainHints": [
         {
-          "value": "gallery",
-          "count": 1
+          "value": "permission",
+          "count": 2
         },
         {
-          "value": "filter",
+          "value": "settings",
           "count": 1
         }
       ]
     },
     {
-      "path": "AppScope/app.js",
-      "featureRows": 2,
-      "endpointRefs": 4,
-      "shareOfEndpointRows": 0.029,
+      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
+      "featureRows": 3,
+      "endpointRefs": 3,
+      "shareOfEndpointRows": 0.2308,
       "isBroadShellPath": true,
       "byStatus": {
-        "implemented": 1,
-        "platform-replaced": 1
+        "platform-replaced": 3
       },
       "byImportance": {
-        "critical": 2
+        "critical": 3
       },
       "topSourcePaths": [
         {
@@ -1105,30 +512,34 @@
         {
           "value": "app/src/main/AndroidManifest.xml",
           "count": 1
+        },
+        {
+          "value": "gradle/libs.versions.toml",
+          "count": 1
         }
       ],
       "suggestedDomainHints": [
         {
           "value": "permission",
-          "count": 1
+          "count": 2
         },
         {
-          "value": "config",
+          "value": "settings",
           "count": 1
         }
       ]
     },
     {
-      "path": "entry/cjpm.toml",
-      "featureRows": 2,
-      "endpointRefs": 4,
-      "shareOfEndpointRows": 0.029,
+      "path": "build-profile.js",
+      "featureRows": 3,
+      "endpointRefs": 3,
+      "shareOfEndpointRows": 0.2308,
       "isBroadShellPath": false,
       "byStatus": {
-        "platform-replaced": 2
+        "platform-replaced": 3
       },
       "byImportance": {
-        "critical": 2
+        "critical": 3
       },
       "topSourcePaths": [
         {
@@ -1136,406 +547,11 @@
           "count": 1
         },
         {
-          "value": "build.gradle.kts",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "permission",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj",
-      "featureRows": 2,
-      "endpointRefs": 4,
-      "shareOfEndpointRows": 0.029,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "implemented": 2
-      },
-      "byImportance": {
-        "critical": 1,
-        "high": 1
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+          "value": "gradle/libs.versions.toml",
           "count": 1
         },
         {
-          "value": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "filter",
-          "count": 1
-        },
-        {
-          "value": "permission",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj",
-      "featureRows": 2,
-      "endpointRefs": 3,
-      "shareOfEndpointRows": 0.029,
-      "isBroadShellPath": true,
-      "byStatus": {
-        "implemented": 2
-      },
-      "byImportance": {
-        "critical": 2
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
-          "count": 2
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "image",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj",
-      "featureRows": 2,
-      "endpointRefs": 3,
-      "shareOfEndpointRows": 0.029,
-      "isBroadShellPath": true,
-      "byStatus": {
-        "implemented": 2
-      },
-      "byImportance": {
-        "critical": 2
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
-          "count": 2
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "file",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj",
-      "featureRows": 2,
-      "endpointRefs": 3,
-      "shareOfEndpointRows": 0.029,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "implemented": 2
-      },
-      "byImportance": {
-        "critical": 2
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "file",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj",
-      "featureRows": 2,
-      "endpointRefs": 2,
-      "shareOfEndpointRows": 0.029,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "implemented": 2
-      },
-      "byImportance": {
-        "critical": 2
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
-          "count": 2
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "image",
-          "count": 1
-        },
-        {
-          "value": "config",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj",
-      "featureRows": 2,
-      "endpointRefs": 2,
-      "shareOfEndpointRows": 0.029,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "implemented": 2
-      },
-      "byImportance": {
-        "critical": 2
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/history/HistoryViewModel.kt",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "image",
-          "count": 1
-        },
-        {
-          "value": "permission",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/search_bar.cj",
-      "featureRows": 2,
-      "endpointRefs": 2,
-      "shareOfEndpointRows": 0.029,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "implemented": 2
-      },
-      "byImportance": {
-        "critical": 2
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt",
-          "count": 2
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "image",
-          "count": 1
-        },
-        {
-          "value": "filter",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj",
-      "featureRows": 2,
-      "endpointRefs": 2,
-      "shareOfEndpointRows": 0.029,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "implemented": 2
-      },
-      "byImportance": {
-        "critical": 2
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/MainActivity.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "permission",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj",
-      "featureRows": 2,
-      "endpointRefs": 2,
-      "shareOfEndpointRows": 0.029,
-      "isBroadShellPath": true,
-      "byStatus": {
-        "implemented": 2
-      },
-      "byImportance": {
-        "high": 2
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
-          "count": 2
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "permission",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "path": "entry/src/test/cangjie/phase02_startup_navigation_test.cj",
-      "featureRows": 2,
-      "endpointRefs": 2,
-      "shareOfEndpointRows": 0.029,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "implemented": 2
-      },
-      "byImportance": {
-        "low": 2
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/test/java/com/example/foodike/ExampleUnitTest.kt",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "foodike",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "path": "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
-      "featureRows": 2,
-      "endpointRefs": 2,
-      "shareOfEndpointRows": 0.029,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "implemented": 2
-      },
-      "byImportance": {
-        "low": 2
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/test/java/com/example/foodike/ExampleUnitTest.kt",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "foodike",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "path": "entry/src/test/cangjie/phase04_home_history_discovery_test.cj",
-      "featureRows": 2,
-      "endpointRefs": 2,
-      "shareOfEndpointRows": 0.029,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "implemented": 2
-      },
-      "byImportance": {
-        "low": 2
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/test/java/com/example/foodike/ExampleUnitTest.kt",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "foodike",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "path": "entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj",
-      "featureRows": 2,
-      "endpointRefs": 2,
-      "shareOfEndpointRows": 0.029,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "implemented": 2
-      },
-      "byImportance": {
-        "low": 2
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt",
-          "count": 1
-        },
-        {
-          "value": "app/src/test/java/com/example/foodike/ExampleUnitTest.kt",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "foodike",
-          "count": 2
-        }
-      ]
-    },
-    {
-      "path": "build-profile.js",
-      "featureRows": 1,
-      "endpointRefs": 2,
-      "shareOfEndpointRows": 0.0145,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "platform-replaced": 1
-      },
-      "byImportance": {
-        "critical": 1
-      },
-      "topSourcePaths": [
-        {
-          "value": "build.gradle.kts",
+          "value": "gradle/wrapper/gradle-wrapper.properties",
           "count": 1
         }
       ],
@@ -1543,40 +559,172 @@
         {
           "value": "permission",
           "count": 1
-        }
-      ]
-    },
-    {
-      "path": "hvigorfile.ts",
-      "featureRows": 1,
-      "endpointRefs": 1,
-      "shareOfEndpointRows": 0.0145,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "platform-replaced": 1
-      },
-      "byImportance": {
-        "critical": 1
-      },
-      "topSourcePaths": [
+        },
         {
-          "value": "build.gradle.kts",
+          "value": "settings",
           "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
+        },
         {
-          "value": "permission",
+          "value": "wrapper",
           "count": 1
         }
       ]
     },
     {
       "path": "entry/src/main/cangjie/ability_stage.cj",
+      "featureRows": 3,
+      "endpointRefs": 3,
+      "shareOfEndpointRows": 0.2308,
+      "isBroadShellPath": false,
+      "byStatus": {
+        "platform-replaced": 3
+      },
+      "byImportance": {
+        "critical": 3
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/build.gradle.kts",
+          "count": 1
+        },
+        {
+          "value": "app/src/main/AndroidManifest.xml",
+          "count": 1
+        },
+        {
+          "value": "gradle/libs.versions.toml",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "permission",
+          "count": 2
+        },
+        {
+          "value": "settings",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj",
+      "featureRows": 3,
+      "endpointRefs": 3,
+      "shareOfEndpointRows": 0.2308,
+      "isBroadShellPath": false,
+      "byStatus": {
+        "platform-replaced": 3
+      },
+      "byImportance": {
+        "critical": 3
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/build.gradle.kts",
+          "count": 1
+        },
+        {
+          "value": "app/src/main/AndroidManifest.xml",
+          "count": 1
+        },
+        {
+          "value": "gradle/libs.versions.toml",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "config",
+          "count": 2
+        },
+        {
+          "value": "permission",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "AppScope/app.js",
       "featureRows": 1,
       "endpointRefs": 1,
-      "shareOfEndpointRows": 0.0145,
+      "shareOfEndpointRows": 0.0769,
+      "isBroadShellPath": true,
+      "byStatus": {
+        "implemented": 1
+      },
+      "byImportance": {
+        "critical": 1
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/src/main/AndroidManifest.xml",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "config",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "entry/src/main/resources/base/element/color.js",
+      "featureRows": 1,
+      "endpointRefs": 1,
+      "shareOfEndpointRows": 0.0769,
       "isBroadShellPath": false,
+      "byStatus": {
+        "implemented": 1
+      },
+      "byImportance": {
+        "critical": 1
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/src/main/AndroidManifest.xml",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "config",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "entry/src/main/resources/base/element/string.js",
+      "featureRows": 1,
+      "endpointRefs": 1,
+      "shareOfEndpointRows": 0.0769,
+      "isBroadShellPath": false,
+      "byStatus": {
+        "implemented": 1
+      },
+      "byImportance": {
+        "critical": 1
+      },
+      "topSourcePaths": [
+        {
+          "value": "app/src/main/AndroidManifest.xml",
+          "count": 1
+        }
+      ],
+      "suggestedDomainHints": [
+        {
+          "value": "config",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "path": "entry/src/main/cangjie/ability_mainability_entry.cj",
+      "featureRows": 1,
+      "endpointRefs": 1,
+      "shareOfEndpointRows": 0.0769,
+      "isBroadShellPath": true,
       "byStatus": {
         "platform-replaced": 1
       },
@@ -1597,51 +745,26 @@
       ]
     },
     {
-      "path": "AppScope/resources/base/media/icon.png",
+      "path": "entry/src/main/cangjie/module_entry_entry.cj",
       "featureRows": 1,
       "endpointRefs": 1,
-      "shareOfEndpointRows": 0.0145,
-      "isBroadShellPath": false,
+      "shareOfEndpointRows": 0.0769,
+      "isBroadShellPath": true,
       "byStatus": {
         "platform-replaced": 1
       },
       "byImportance": {
-        "high": 1
+        "critical": 1
       },
       "topSourcePaths": [
         {
-          "value": "app/src/main/res/values/themes.xml",
+          "value": "app/src/main/AndroidManifest.xml",
           "count": 1
         }
       ],
       "suggestedDomainHints": [
         {
-          "value": "config",
-          "count": 1
-        }
-      ]
-    },
-    {
-      "path": "entry/src/main/resources/base/media/icon.png",
-      "featureRows": 1,
-      "endpointRefs": 1,
-      "shareOfEndpointRows": 0.0145,
-      "isBroadShellPath": false,
-      "byStatus": {
-        "platform-replaced": 1
-      },
-      "byImportance": {
-        "high": 1
-      },
-      "topSourcePaths": [
-        {
-          "value": "app/src/main/res/values/themes.xml",
-          "count": 1
-        }
-      ],
-      "suggestedDomainHints": [
-        {
-          "value": "config",
+          "value": "permission",
           "count": 1
         }
       ]

@@ -1,5 +1,7 @@
 package ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.history
 
+import ohos.base.ResourceStr
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.{stringFavourite, stringHistory}
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.{SessionRepository, sessionRepository}
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.domain.*
 import std.collection.ArrayList
@@ -19,11 +21,11 @@ public class HistoryStore {
         return HistoryPageState(sessionRepository.getLikedRestaurants(), orderHistory)
     }
 
-    public func tabLabel(index: Int64): String {
+    public func tabLabel(index: Int64): ResourceStr {
         if (index == 0) {
-            return "History"
+            return stringHistory
         }
-        return "Favourites"
+        return stringFavourite
     }
 
     public func selectRestaurant(restaurant: RestaurantData, onNavigate: () -> Unit): Unit {

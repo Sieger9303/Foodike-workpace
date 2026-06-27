@@ -13,7 +13,7 @@ Validate that critical/high source features have an explicit migration status. I
 | actualEntries | 260 |
 | staleEntries | 0 |
 | missingCriticalHighEntries | 0 |
-| uncoveredCriticalHighEntries | 116 |
+| uncoveredCriticalHighEntries | 208 |
 | deferredCriticalHighEntries | 0 |
 | deferredCriticalHighRatio | 0.0 |
 | simplifiedCriticalHighEntries | 0 |
@@ -26,9 +26,9 @@ Validate that critical/high source features have an explicit migration status. I
 | repeatedDeferredJustificationGroups | 0 |
 | repeatedImplementedEvidenceGroups | 0 |
 | repeatedImplementedEndpointGroups | 0 |
-| broadImplementedEndpointCriticalHighEntries | 0 |
+| broadImplementedEndpointCriticalHighEntries | 1 |
 | unverifiedTestEvidenceCriticalHighEntries | 0 |
-| testEvidenceVerifiedByLatestTestGateEntries | 29 |
+| testEvidenceVerifiedByLatestTestGateEntries | 0 |
 | weakEvidenceCriticalHighEntries | 0 |
 | implementedWithoutEndpointOrTestCriticalHighEntries | 0 |
 | missingSourceBehaviorCriticalHighEntries | 0 |
@@ -42,20 +42,10 @@ Validate that critical/high source features have an explicit migration status. I
 
 | status | count |
 | --- | --- |
-| implemented | 60 |
-| not-applicable | 50 |
-| planned | 141 |
-| platform-replaced | 9 |
-
-## Test Build Evidence
-
-| metric | value |
-| --- | --- |
-| acceptedPass | True |
-| acceptedReport | D:\workspace\Foodike\translation-inputs\test-build-reports\phase-06-polish-tests-verification\test-build-report.md |
-| acceptedPhase | phase-06-polish-tests-verification |
-| latestResult | PASS |
-| latestReport | D:\workspace\Foodike\translation-inputs\test-build-reports\phase-06-polish-tests-verification\test-build-report.md |
+| implemented | 1 |
+| not-applicable | 3 |
+| planned | 244 |
+| platform-replaced | 12 |
 
 ## Template Sync
 
@@ -63,7 +53,7 @@ Validate that critical/high source features have an explicit migration status. I
 | --- | --- |
 | schemaVersion | 1 |
 | featureIdVersion | 2 |
-| syncedAt | 2026-06-25T15:19:39+00:00 |
+| syncedAt | 2026-06-27T01:35:38+00:00 |
 | applied | True |
 | templateEntries | 260 |
 | activeEntriesBefore | 260 |
@@ -78,7 +68,7 @@ Validate that critical/high source features have an explicit migration status. I
 
 | severity | kind | message |
 | --- | --- | --- |
-| high | coverage-matrix-uncovered-entry | 116 critical/high source feature(s) remain planned, unreviewed, or not covered. |
+| high | coverage-matrix-uncovered-entry | 208 critical/high source feature(s) remain planned, unreviewed, or not covered. |
 
 ## Uncovered Entries
 
@@ -89,38 +79,44 @@ Validate that critical/high source features have an explicit migration status. I
 | app-src-main-java-com-example-foodike-data-data-source-f-5dbff38a8a-003-intent-uri-bundle-deeplink-or-cross-scre | planned | critical | app/src/main/java/com/example/foodike/data/data_source/FakeData.kt | Intent, URI, bundle, deeplink, or cross-screen parameter flow. |
 | app-src-main-java-com-example-foodike-data-data-source-f-d03fbb20a2-004-navigation-surface-menu-drawer-toolbar-o | planned | critical | app/src/main/java/com/example/foodike/data/data_source/FakeData.kt | Navigation surface, menu, drawer, toolbar, or tab command behavior. |
 | app-src-main-java-com-example-foodike-data-data-source-f-552e89ac77-005-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/data/data_source/FakeData.kt | Runtime permission request, permission result handling, or protected API access. |
+| app-src-main-java-com-example-foodike-presentation-detai-fe74e39178-001-image-viewing-bitmap-exif-handling-zoom | planned | critical | app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |
+| app-src-main-java-com-example-foodike-presentation-detai-ee3681ccdd-002-intent-uri-bundle-deeplink-or-cross-scre | planned | critical | app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt | Intent, URI, bundle, deeplink, or cross-screen parameter flow. |
+| app-src-main-java-com-example-foodike-presentation-detai-017392d1f5-003-navigation-surface-menu-drawer-toolbar-o | planned | critical | app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt | Navigation surface, menu, drawer, toolbar, or tab command behavior. |
+| app-src-main-java-com-example-foodike-presentation-detai-830ec138bf-004-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt | Runtime permission request, permission result handling, or protected API access. |
+| app-src-main-java-com-example-foodike-presentation-detai-958b17f285-005-observable-state-viewmodel-flow-livedata | planned | critical | app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt | Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation. |
+| app-src-main-java-com-example-foodike-presentation-histo-bc35fac081-001-image-viewing-bitmap-exif-handling-zoom | planned | critical | app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |
+| app-src-main-java-com-example-foodike-presentation-histo-78c1f5d90b-002-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt | Runtime permission request, permission result handling, or protected API access. |
+| app-src-main-java-com-example-foodike-presentation-util-db8f73d266-001-image-viewing-bitmap-exif-handling-zoom | planned | critical | app/src/main/java/com/example/foodike/presentation/util/Navigation.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |
+| app-src-main-java-com-example-foodike-presentation-util-417c58decd-002-navigation-surface-menu-drawer-toolbar-o | planned | critical | app/src/main/java/com/example/foodike/presentation/util/Navigation.kt | Navigation surface, menu, drawer, toolbar, or tab command behavior. |
+| app-src-main-java-com-example-foodike-presentation-util-dc524a2ddb-003-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/presentation/util/Navigation.kt | Runtime permission request, permission result handling, or protected API access. |
+| app-src-main-java-com-example-foodike-presentation-util-cb2f6fdad2-004-observable-state-viewmodel-flow-livedata | planned | critical | app/src/main/java/com/example/foodike/presentation/util/Navigation.kt | Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation. |
+| app-src-main-java-com-example-foodike-presentation-login-b030a7b1f9-001-image-viewing-bitmap-exif-handling-zoom | planned | critical | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |
+| app-src-main-java-com-example-foodike-presentation-login-1ed35246b3-002-navigation-surface-menu-drawer-toolbar-o | planned | critical | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | Navigation surface, menu, drawer, toolbar, or tab command behavior. |
+| app-src-main-java-com-example-foodike-presentation-login-5777ecba15-003-notification-widget-remoteviews-or-home | planned | critical | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | Notification, widget, RemoteViews, or home-screen integration behavior. |
+| app-src-main-java-com-example-foodike-presentation-login-7ab3866541-004-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | Runtime permission request, permission result handling, or protected API access. |
+| app-src-main-java-com-example-foodike-presentation-login-2c65d08c3b-005-screen-lifecycle-entry-point-initializat | planned | critical | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior. |
+| app-src-main-java-com-example-foodike-presentation-login-34c5f4ba3a-006-settings-preferences-option-toggles-or-c | planned | critical | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | Settings/preferences, option toggles, or configuration state behavior. |
+| app-src-main-java-com-example-foodike-presentation-login-78d5c742f4-007-observable-state-viewmodel-flow-livedata | planned | critical | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation. |
 | app-src-main-java-com-example-foodike-presentation-login-321f648503-008-authentication-account-or-session-behavi | planned | critical | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt | Authentication, account, or session behavior (LoginScreen) |
-| app-src-main-java-com-example-foodike-presentation-cart-1fe9838c96-001-image-viewing-bitmap-exif-handling-zoom | planned | critical | app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |
-| app-src-main-java-com-example-foodike-presentation-cart-d44800ece1-002-navigation-surface-menu-drawer-toolbar-o | planned | critical | app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt | Navigation surface, menu, drawer, toolbar, or tab command behavior. |
-| app-src-main-java-com-example-foodike-presentation-cart-390de3a439-003-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt | Runtime permission request, permission result handling, or protected API access. |
-| app-src-main-java-com-example-foodike-presentation-cart-ac20374210-004-observable-state-viewmodel-flow-livedata | planned | critical | app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt | Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation. |
-| app-src-main-java-com-example-foodike-presentation-detai-d61d34c070-001-navigation-surface-menu-drawer-toolbar-o | planned | critical | app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt | Navigation surface, menu, drawer, toolbar, or tab command behavior. |
-| app-src-main-java-com-example-foodike-presentation-detai-b9908eedc8-002-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt | Runtime permission request, permission result handling, or protected API access. |
-| app-src-main-java-com-example-foodike-presentation-detai-fe3552443b-003-screen-lifecycle-entry-point-initializat | planned | critical | app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt | Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior. |
-| app-src-main-java-com-example-foodike-presentation-detai-4fdb060ca4-004-observable-state-viewmodel-flow-livedata | planned | critical | app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt | Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation. |
-| app-src-main-java-com-example-foodike-presentation-home-8fdfd71e46-001-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/presentation/home/HomeViewModel.kt | Runtime permission request, permission result handling, or protected API access. |
-| app-src-main-java-com-example-foodike-presentation-home-396c6a9d71-002-screen-lifecycle-entry-point-initializat | planned | critical | app/src/main/java/com/example/foodike/presentation/home/HomeViewModel.kt | Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior. |
-| app-src-main-java-com-example-foodike-presentation-home-ec64cedf3e-003-observable-state-viewmodel-flow-livedata | planned | critical | app/src/main/java/com/example/foodike/presentation/home/HomeViewModel.kt | Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation. |
-| app-src-main-java-com-example-foodike-presentation-login-94031fc378-001-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt | Runtime permission request, permission result handling, or protected API access. |
-| app-src-main-java-com-example-foodike-presentation-login-b8f806f9cb-002-screen-lifecycle-entry-point-initializat | planned | critical | app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt | Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior. |
-| app-src-main-java-com-example-foodike-presentation-login-121975f8dc-003-observable-state-viewmodel-flow-livedata | planned | critical | app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt | Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation. |
-| app-src-main-java-com-example-foodike-presentation-home-bc8762ed08-001-image-viewing-bitmap-exif-handling-zoom | planned | critical | app/src/main/java/com/example/foodike/presentation/home/components/AdCard.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |
-| app-src-main-java-com-example-foodike-presentation-home-7376664941-002-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/presentation/home/components/AdCard.kt | Runtime permission request, permission result handling, or protected API access. |
-| app-src-main-java-com-example-foodike-presentation-home-fd0ebd1426-001-image-viewing-bitmap-exif-handling-zoom | planned | critical | app/src/main/java/com/example/foodike/presentation/home/components/TopSection.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |
-| app-src-main-java-com-example-foodike-presentation-home-ccbec99b1d-002-navigation-surface-menu-drawer-toolbar-o | planned | critical | app/src/main/java/com/example/foodike/presentation/home/components/TopSection.kt | Navigation surface, menu, drawer, toolbar, or tab command behavior. |
-| app-src-main-java-com-example-foodike-presentation-home-a5ebbf81ff-003-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/presentation/home/components/TopSection.kt | Runtime permission request, permission result handling, or protected API access. |
-| app-src-main-java-com-example-foodike-presentation-home-b2f747d090-001-image-viewing-bitmap-exif-handling-zoom | planned | critical | app/src/main/java/com/example/foodike/presentation/home/components/ThankYouSection.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |
-| app-src-main-java-com-example-foodike-presentation-home-a2e9e87e5f-002-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/presentation/home/components/ThankYouSection.kt | Runtime permission request, permission result handling, or protected API access. |
-| app-src-main-java-com-example-foodike-data-repository-us-63ccbabe48-001-intent-uri-bundle-deeplink-or-cross-scre | planned | critical | app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt | Intent, URI, bundle, deeplink, or cross-screen parameter flow. |
-| app-src-main-java-com-example-foodike-data-repository-us-7db3c9ce8e-002-navigation-surface-menu-drawer-toolbar-o | planned | critical | app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt | Navigation surface, menu, drawer, toolbar, or tab command behavior. |
-| app-src-main-java-com-example-foodike-data-repository-us-7d28c63dc6-003-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt | Runtime permission request, permission result handling, or protected API access. |
-| app-src-main-java-com-example-foodike-data-repository-us-8ccc510949-004-observable-state-viewmodel-flow-livedata | planned | critical | app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt | Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation. |
-| app-src-main-java-com-example-foodike-data-repository-us-99a6434a5f-005-data-loading-query-search-filter-or-sort | planned | critical | app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt | Data loading, query, search, filter, or sort behavior (getSavedRestaurant) |
-| app-src-main-java-com-example-foodike-data-repository-us-96bdd242a3-006-data-loading-query-search-filter-or-sort | planned | critical | app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt | Data loading, query, search, filter, or sort behavior (getMenuItems) |
-| app-src-main-java-com-example-foodike-data-repository-us-eaf58c5eae-007-data-loading-query-search-filter-or-sort | planned | critical | app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt | Data loading, query, search, filter, or sort behavior (getLikedRestaurants) |
-| app-src-main-java-com-example-foodike-data-repository-us-55de2fa45e-008-data-loading-query-search-filter-or-sort | planned | critical | app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt | Data loading, query, search, filter, or sort behavior (getCartItems) |
-| app-src-main-java-com-example-foodike-presentation-home-7643f9e1b1-001-image-viewing-bitmap-exif-handling-zoom | planned | critical | app/src/main/java/com/example/foodike/presentation/home/components/FavouriteCard.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |
-| app-src-main-java-com-example-foodike-presentation-home-6e8a895574-002-intent-uri-bundle-deeplink-or-cross-scre | planned | critical | app/src/main/java/com/example/foodike/presentation/home/components/FavouriteCard.kt | Intent, URI, bundle, deeplink, or cross-screen parameter flow. |
-| app-src-main-java-com-example-foodike-presentation-home-8fd098b772-003-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/presentation/home/components/FavouriteCard.kt | Runtime permission request, permission result handling, or protected API access. |
-| app-src-main-java-com-example-foodike-presentation-home-9ddedb9d99-001-image-viewing-bitmap-exif-handling-zoom | planned | critical | app/src/main/java/com/example/foodike/presentation/home/components/RecommendedCard.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |
-| app-src-main-java-com-example-foodike-presentation-home-48405a0422-002-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/presentation/home/components/RecommendedCard.kt | Runtime permission request, permission result handling, or protected API access. |
+| app-src-main-java-com-example-foodike-presentation-profi-a1f2ba5cd8-001-image-viewing-bitmap-exif-handling-zoom | planned | critical | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |
+| app-src-main-java-com-example-foodike-presentation-profi-c34aae0a57-002-navigation-surface-menu-drawer-toolbar-o | planned | critical | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt | Navigation surface, menu, drawer, toolbar, or tab command behavior. |
+| app-src-main-java-com-example-foodike-presentation-profi-106c8cc862-003-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt | Runtime permission request, permission result handling, or protected API access. |
+| app-src-main-java-com-example-foodike-presentation-profi-e492afed0c-004-observable-state-viewmodel-flow-livedata | planned | critical | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt | Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation. |
+| app-src-main-java-com-example-foodike-presentation-detai-f5d9a78a4d-001-image-viewing-bitmap-exif-handling-zoom | planned | critical | app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |
+| app-src-main-java-com-example-foodike-presentation-detai-2c361ce893-002-navigation-surface-menu-drawer-toolbar-o | planned | critical | app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt | Navigation surface, menu, drawer, toolbar, or tab command behavior. |
+| app-src-main-java-com-example-foodike-presentation-detai-9a28c49174-003-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt | Runtime permission request, permission result handling, or protected API access. |
+| app-src-main-java-com-example-foodike-presentation-detai-d2fd9c929d-004-observable-state-viewmodel-flow-livedata | planned | critical | app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt | Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation. |
+| app-src-main-java-com-example-foodike-presentation-compo-d8d2dca559-001-image-viewing-bitmap-exif-handling-zoom | planned | critical | app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |
+| app-src-main-java-com-example-foodike-presentation-compo-978df5e1d8-002-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt | Runtime permission request, permission result handling, or protected API access. |
+| app-src-main-java-com-example-foodike-presentation-compo-4599e7aba9-003-data-loading-query-search-filter-or-sort | planned | critical | app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt | Data loading, query, search, filter, or sort behavior (getCustomerInfo) |
+| app-src-main-java-com-example-foodike-presentation-home-085460c333-001-image-viewing-bitmap-exif-handling-zoom | planned | critical | app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt | Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior. |
+| app-src-main-java-com-example-foodike-presentation-home-75e43540b7-002-intent-uri-bundle-deeplink-or-cross-scre | planned | critical | app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt | Intent, URI, bundle, deeplink, or cross-screen parameter flow. |
+| app-src-main-java-com-example-foodike-presentation-home-ef2f599530-003-navigation-surface-menu-drawer-toolbar-o | planned | critical | app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt | Navigation surface, menu, drawer, toolbar, or tab command behavior. |
+| app-src-main-java-com-example-foodike-presentation-home-73b7c6cb19-004-runtime-permission-request-permission-re | planned | critical | app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt | Runtime permission request, permission result handling, or protected API access. |
+| app-src-main-java-com-example-foodike-presentation-home-ef0657c4ea-005-screen-lifecycle-entry-point-initializat | planned | critical | app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt | Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior. |
+
+## Broad Implemented Endpoint Entries
+
+| feature id | status | importance | source path | feature |
+| --- | --- | --- | --- | --- |
+| app-src-main-androidmanifest-xml-e5fadea668-001-android-resource-configuration-must-be-m | implemented | critical | app/src/main/AndroidManifest.xml | Android resource/configuration must be mapped or explicitly deferred. |

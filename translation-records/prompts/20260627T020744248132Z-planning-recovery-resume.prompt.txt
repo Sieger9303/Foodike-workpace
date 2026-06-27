@@ -1,0 +1,139 @@
+This is a planning artifact recovery session (same-session resume).
+
+The previous planning session completed, but the workflow rejected its planning artifacts.
+Do not restart broad source exploration. Do not run SDK searches. Do not update source-coverage-matrix.json, source-coverage-matrix.md, platform-capability-check.json, or platform-capability-check.md in this recovery.
+Your only goal is to create or repair the planning artifacts so they pass the plan contract.
+
+- plan.md: `D:\workspace\Foodike\plan.md`
+- plan.json: `D:\workspace\Foodike\plan.json`
+
+Validation errors to fix:
+- featureId `app-src-main-java-com-example-foodike-data-repository-us-96bdd242a3-006-data-loading-query-search-filter-or-sort` is explicitly assigned to both `phase-02-startup-session-navigation` and `phase-05-detail-cart`
+- platformCapabilityId `localization-resources` is explicitly assigned to both `phase-01-project-skeleton-resources` and `phase-03-onboarding-login`
+- platformCapabilityId `image-viewer-gestures` is explicitly assigned to both `phase-03-onboarding-login` and `phase-04-home-history`
+- platformCapabilityId `image-viewer-gestures` is explicitly assigned to both `phase-03-onboarding-login` and `phase-04-home-history`
+- platformCapabilityId `image-viewer-gestures` is explicitly assigned to both `phase-03-onboarding-login` and `phase-05-detail-cart`
+- platformCapabilityId `media-library-access` is explicitly assigned to both `phase-04-home-history` and `phase-06-profile-capabilities-verification`
+- platformCapabilityId `file-access-and-saf` is explicitly assigned to both `phase-05-detail-cart` and `phase-06-profile-capabilities-verification`
+- platformCapabilityId `image-viewer-gestures` is explicitly assigned to both `phase-03-onboarding-login` and `phase-06-profile-capabilities-verification`
+- platformCapabilityId `localization-resources` is explicitly assigned to both `phase-01-project-skeleton-resources` and `phase-06-profile-capabilities-verification`
+- platformCapabilityId `runtime-permissions` is explicitly assigned to both `phase-02-startup-session-navigation` and `phase-06-profile-capabilities-verification`
+- platformCapabilityId `background-and-platform-components` is explicitly assigned to both `phase-02-startup-session-navigation` and `phase-06-profile-capabilities-verification`
+- source coverage row `app-src-main-androidmanifest-xml` is referenced by plan.json but is not present in authority entries
+- source coverage row `app-src-main-java-com-example-foodike-presentation-cart-3906ec7c4c-004-screen-lifecycle-entry-point-initializat` is referenced by plan.json but is not present in authority entries
+- source coverage row `app-src-main-java-com-example-foodike-presentation-cart-ff4d2f6eef-005-observable-state-viewmodel-flow-livedata` is referenced by plan.json but is not present in authority entries
+- source coverage row `app-src-main-java-com-example-foodike-presentation-compo-348d144c7b-005-data-loading-query-search-filter-or-sort` is referenced by plan.json but is not present in authority entries
+- source coverage row `app-src-main-java-com-example-foodike-presentation-histo-2d9d5ee80d-004-navigation-surface-menu-drawer-toolbar-o` is referenced by plan.json but is not present in authority entries
+- source coverage row `app-src-main-java-com-example-foodike-presentation-logi-577266e75b-008-authentication-account-or-session-behavi` is referenced by plan.json but is not present in authority entries
+- source coverage row `app-src-main-java-com-example-foodike-presentation-logi-806b8d217e-006-settings-preferences-option-toggles-or-co` is referenced by plan.json but is not present in authority entries
+- source coverage row `app-src-main-java-com-example-foodike-presentation-logi-b606dd8956-007-observable-state-viewmodel-flow-livedata` is referenced by plan.json but is not present in authority entries
+- source coverage row `app-src-main-java-com-example-foodike-presentation-onboa-85caebe653-004-observable-state-viewmodel-flow-livedata` is referenced by plan.json but is not present in authority entries
+- source coverage row `app-src-main-java-com-example-foodike-presentation-onboa-c34e73f96d-003-screen-lifecycle-entry-point-initializat` is referenced by plan.json but is not present in authority entries
+- source coverage row `app-src-main-java-com-example-foodike-presentation-onboa-d09ab718bf-001-navigation-surface-menu-drawer-toolbar-o` is referenced by plan.json but is not present in authority entries
+- source coverage row `app-src-main-java-com-example-foodike-presentation-util-navi-124e969892-004-observable-state-viewmodel-flow-livedata` is referenced by plan.json but is not present in authority entries
+- source coverage row `app-src-main-java-com-example-foodike-presentation-util-navi-6b69c05182-002-navigation-surface-menu-drawer-toolbar-o` is referenced by plan.json but is not present in authority entries
+- source coverage row `app-src-main-res-values-strings-xml` is referenced by plan.json but is not present in authority entries
+
+Read only the narrow planning inputs needed to fill missing structure:
+- `D:\workspace\Foodike\task-planning.md`
+- `D:\workspace\Foodike\translation-inputs\plan-seed.md`
+- `D:\workspace\Foodike\translation-inputs\plan-seed.json`
+- `D:\workspace\Foodike\translation-inputs\agent-source-walkthrough.md` if present
+- `D:\workspace\Foodike\translation-inputs\source-feature-survey.md` if needed
+- `D:\workspace\Foodike\translation-inputs\source-file-inventory.md` if needed
+- `D:\workspace\Foodike\translation-inputs\resource-coverage-report.md` if needed
+- `D:\workspace\Foodike\translation-inputs\platform-capability-check-report.md` if needed
+
+If plan.md or plan.json already exists, preserve useful existing content and repair only the missing or invalid contract pieces. If a required section is uncertain, add a conservative empty array plus a risk/deferred note rather than inventing unsupported behavior.
+
+## Plan JSON Contract
+
+`plan.json` must be strict JSON and must include these required top-level keys:
+
+- `files`
+- `assets`
+- `dependencies`
+- `tests`
+- `phases`
+- `deferred`
+
+Extra top-level keys are allowed, but they do not replace the required keys. For
+example, `testStrategy` may provide detail, but `tests` must still exist.
+Likewise, `platformCapabilityDecisions` may provide detail, but
+`dependencies`, `assets`, and `deferred` must still exist when relevant.
+
+Minimum valid skeleton:
+
+```json
+{
+  "files": [],
+  "assets": [],
+  "dependencies": [],
+  "tests": [],
+  "phases": [
+    {
+      "id": "phase-01-project-skeleton-resources",
+      "title": "Project skeleton and resources",
+      "priority": "critical",
+      "targetScope": [],
+      "sourceEvidence": [],
+      "requiredInputs": [],
+      "expectedFiles": [],
+      "gateCommand": "",
+      "expectedTests": [],
+      "stateDataBehavior": [],
+      "deferredRisks": [],
+      "implementationGroups": [
+        {
+          "groupId": "phase-01-bootstrap",
+          "title": "Bootstrap target project",
+          "groupType": "source-behavior",
+          "priority": "critical",
+          "sourcePaths": [],
+          "sourceMethods": [],
+          "featureIds": [],
+          "resourceInputs": [],
+          "platformCapabilityIds": [],
+          "uiContracts": [],
+          "dataContracts": [],
+          "expectedTargetDomains": [],
+          "requiredBehaviors": [],
+          "riskHints": [],
+          "acceptanceEvidence": []
+        }
+      ]
+    }
+  ],
+  "deferred": []
+}
+```
+
+Use canonical phase identifiers such as `phase-01-project-skeleton-resources`.
+Each implementation group needs a stable `groupId`, `title`, `groupType`, and
+`priority`; bind it to source behavior, resources, capabilities, UI/data
+contracts, tests, or acceptance evidence whenever available. If the plan is
+large, write this complete valid skeleton first, then expand it in batches while
+keeping the file valid strict JSON after every write.
+
+
+After writing both artifacts, validate that plan.json is strict JSON and has the required top-level keys. Use the platform-appropriate command below:
+
+POSIX shell:
+
+```sh
+test -s 'D:\workspace\Foodike\plan.md' && \
+  test -s 'D:\workspace\Foodike\plan.json' && \
+  'C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe' -m json.tool 'D:\workspace\Foodike\plan.json' >/dev/null
+```
+
+Windows PowerShell:
+
+```powershell
+if (!(Test-Path -LiteralPath 'D:\workspace\Foodike\plan.md' -PathType Leaf)) { exit 1 }
+if ((Get-Item -LiteralPath 'D:\workspace\Foodike\plan.md').Length -eq 0) { exit 1 }
+if (!(Test-Path -LiteralPath 'D:\workspace\Foodike\plan.json' -PathType Leaf)) { exit 1 }
+if ((Get-Item -LiteralPath 'D:\workspace\Foodike\plan.json').Length -eq 0) { exit 1 }
+& 'C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe' '-m' 'json.tool' 'D:\workspace\Foodike\plan.json' | Out-Null
+```
+
+End with changed files and remaining risks only after the files are written.

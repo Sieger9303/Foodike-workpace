@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-25T05:02:29+00:00",
+  "generatedAt": "2026-06-27T03:22:15+00:00",
   "phase": "phase-01-project-skeleton-resources",
   "targetExists": true,
   "summary": {
-    "phaseEntries": 18,
-    "phaseCriticalHighEntries": 18,
-    "openCriticalHighEntries": 0,
+    "phaseEntries": 49,
+    "phaseCriticalHighEntries": 44,
+    "openCriticalHighEntries": 28,
     "invalidStatusCriticalHighEntries": 0,
     "deferredCriticalHighEntries": 0,
     "simplifiedCriticalHighEntries": 0,
@@ -19,18 +19,20 @@
     "repeatedDeferredJustificationGroups": 0,
     "repeatedImplementedEvidenceGroups": 0,
     "repeatedImplementedEndpointGroups": 0,
-    "broadImplementedEndpointCriticalHighEntries": 0,
+    "broadImplementedEndpointCriticalHighEntries": 1,
     "unverifiedTestEvidenceCriticalHighEntries": 0,
     "testEvidenceVerifiedByLatestTestGateEntries": 0,
     "weakEvidenceCriticalHighEntries": 0,
+    "implementedWithoutEndpointOrTestCriticalHighEntries": 0,
     "missingSourceBehaviorCriticalHighEntries": 0,
     "missingTargetBehaviorCriticalHighEntries": 0,
     "missingVerificationEvidenceCriticalHighEntries": 0,
     "parityMismatchCriticalHighEntries": 0,
     "byStatus": {
-      "implemented": 6,
-      "not-applicable": 5,
-      "platform-replaced": 7
+      "implemented": 1,
+      "not-applicable": 3,
+      "planned": 33,
+      "platform-replaced": 12
     },
     "allowedParityLevels": [
       "",
@@ -52,19 +54,230 @@
     "mustCompletePlatformCapabilityEntries": 0,
     "needsEvidencePlatformCapabilityEntries": 0
   },
-  "findings": [],
+  "findings": [
+    {
+      "severity": "high",
+      "kind": "phase-gate-open-entry",
+      "message": "28 current-phase critical/high feature(s) remain planned, unreviewed, or not covered. The phase cannot close until each is implemented, replaced, not-applicable, or explicitly deferred with complete evidence."
+    }
+  ],
   "testBuildEvidence": {
     "available": false,
     "acceptedPass": false
   },
   "samples": {
     "invalidStatusEntries": [],
-    "openEntries": [],
+    "openEntries": [
+      {
+        "featureId": "build-gradle-kts-e6afb1cfd2-001-runtime-permission-request-permission-re",
+        "sourcePath": "build.gradle.kts",
+        "featureName": "Runtime permission request, permission result handling, or protected API access.",
+        "importance": "critical",
+        "status": "planned"
+      },
+      {
+        "featureId": "build-gradle-kts-6cd8a326ab-002-android-platform-component-lifecycle-suc",
+        "sourcePath": "build.gradle.kts",
+        "featureName": "Android platform component lifecycle such as service, receiver, provider, or application.",
+        "importance": "critical",
+        "status": "planned"
+      },
+      {
+        "featureId": "build-gradle-kts-2f9b07ef27-003-settings-preferences-option-toggles-or-c",
+        "sourcePath": "build.gradle.kts",
+        "featureName": "Settings/preferences, option toggles, or configuration state behavior.",
+        "importance": "critical",
+        "status": "planned"
+      },
+      {
+        "featureId": "readme-md-44b694e8e8-001-file-document-storage-saf-mediastore-or",
+        "sourcePath": "README.md",
+        "featureName": "File, document, storage, SAF, MediaStore, or import/export behavior.",
+        "importance": "critical",
+        "status": "planned"
+      },
+      {
+        "featureId": "readme-md-fabca22af6-002-image-viewing-bitmap-exif-handling-zoom",
+        "sourcePath": "README.md",
+        "featureName": "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+        "importance": "critical",
+        "status": "planned"
+      },
+      {
+        "featureId": "readme-md-d2eb97d44e-003-navigation-surface-menu-drawer-toolbar-o",
+        "sourcePath": "README.md",
+        "featureName": "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+        "importance": "critical",
+        "status": "planned"
+      },
+      {
+        "featureId": "readme-md-2508cec37d-004-runtime-permission-request-permission-re",
+        "sourcePath": "README.md",
+        "featureName": "Runtime permission request, permission result handling, or protected API access.",
+        "importance": "critical",
+        "status": "planned"
+      },
+      {
+        "featureId": "readme-md-d602d28d83-005-android-platform-component-lifecycle-suc",
+        "sourcePath": "README.md",
+        "featureName": "Android platform component lifecycle such as service, receiver, provider, or application.",
+        "importance": "critical",
+        "status": "planned"
+      },
+      {
+        "featureId": "readme-md-6721045c2d-006-screen-lifecycle-entry-point-initializat",
+        "sourcePath": "README.md",
+        "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+        "importance": "critical",
+        "status": "planned"
+      },
+      {
+        "featureId": "readme-md-449a470b45-007-observable-state-viewmodel-flow-livedata",
+        "sourcePath": "README.md",
+        "featureName": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+        "importance": "critical",
+        "status": "planned"
+      },
+      {
+        "featureId": "settings-gradle-kts-154ff1ba1f-001-settings-preferences-option-toggles-or-c",
+        "sourcePath": "settings.gradle.kts",
+        "featureName": "Settings/preferences, option toggles, or configuration state behavior.",
+        "importance": "high",
+        "status": "planned"
+      },
+      {
+        "featureId": "app-src-main-res-values-strings-xml-b708bc8e6b-001-android-resource-configuration-must-be-m",
+        "sourcePath": "app/src/main/res/values/strings.xml",
+        "featureName": "Android resource/configuration must be mapped or explicitly deferred.",
+        "importance": "high",
+        "status": "planned"
+      },
+      {
+        "featureId": "app-src-main-res-values-strings-xml-36dc10345e-002-intent-uri-bundle-deeplink-or-cross-scre",
+        "sourcePath": "app/src/main/res/values/strings.xml",
+        "featureName": "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+        "importance": "high",
+        "status": "planned"
+      },
+      {
+        "featureId": "app-src-main-res-values-strings-xml-6fbcdd736d-003-localized-strings-or-locale-specific-res",
+        "sourcePath": "app/src/main/res/values/strings.xml",
+        "featureName": "Localized strings or locale-specific resource behavior.",
+        "importance": "high",
+        "status": "planned"
+      },
+      {
+        "featureId": "app-src-main-res-values-strings-xml-b2fc0b9ad5-004-runtime-permission-request-permission-re",
+        "sourcePath": "app/src/main/res/values/strings.xml",
+        "featureName": "Runtime permission request, permission result handling, or protected API access.",
+        "importance": "high",
+        "status": "planned"
+      },
+      {
+        "featureId": "app-src-main-res-values-strings-xml-3b47f3dbef-005-android-android-values-file-should-be-ma",
+        "sourcePath": "app/src/main/res/values/strings.xml",
+        "featureName": "Android android-values file should be mapped to target resources, components, or documented deferred scope.",
+        "importance": "high",
+        "status": "planned"
+      },
+      {
+        "featureId": "contributing-md-4572619c62-001-navigation-surface-menu-drawer-toolbar-o",
+        "sourcePath": "CONTRIBUTING.md",
+        "featureName": "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+        "importance": "high",
+        "status": "planned"
+      },
+      {
+        "featureId": "contributing-md-503bb8fc04-002-observable-state-viewmodel-flow-livedata",
+        "sourcePath": "CONTRIBUTING.md",
+        "featureName": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+        "importance": "high",
+        "status": "planned"
+      },
+      {
+        "featureId": "gradle-properties-4e2ecb7555-001-background-work-scheduled-tasks-alarms-w",
+        "sourcePath": "gradle.properties",
+        "featureName": "Background work, scheduled tasks, alarms, workers, or job services.",
+        "importance": "high",
+        "status": "planned"
+      },
+      {
+        "featureId": "gradle-properties-76940e282a-002-intent-uri-bundle-deeplink-or-cross-scre",
+        "sourcePath": "gradle.properties",
+        "featureName": "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+        "importance": "high",
+        "status": "planned"
+      },
+      {
+        "featureId": "gradle-properties-7106f28f85-003-settings-preferences-option-toggles-or-c",
+        "sourcePath": "gradle.properties",
+        "featureName": "Settings/preferences, option toggles, or configuration state behavior.",
+        "importance": "high",
+        "status": "planned"
+      },
+      {
+        "featureId": "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m",
+        "sourcePath": "app/src/main/res/values/themes.xml",
+        "featureName": "Android resource/configuration must be mapped or explicitly deferred.",
+        "importance": "high",
+        "status": "planned"
+      },
+      {
+        "featureId": "app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re",
+        "sourcePath": "app/src/main/res/values/themes.xml",
+        "featureName": "Runtime permission request, permission result handling, or protected API access.",
+        "importance": "high",
+        "status": "planned"
+      },
+      {
+        "featureId": "app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma",
+        "sourcePath": "app/src/main/res/values/themes.xml",
+        "featureName": "Android android-values file should be mapped to target resources, components, or documented deferred scope.",
+        "importance": "high",
+        "status": "planned"
+      },
+      {
+        "featureId": "app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m",
+        "sourcePath": "app/src/main/res/values/colors.xml",
+        "featureName": "Android resource/configuration must be mapped or explicitly deferred.",
+        "importance": "high",
+        "status": "planned"
+      },
+      {
+        "featureId": "app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma",
+        "sourcePath": "app/src/main/res/values/colors.xml",
+        "featureName": "Android android-values file should be mapped to target resources, components, or documented deferred scope.",
+        "importance": "high",
+        "status": "planned"
+      },
+      {
+        "featureId": "app-src-main-res-values-ic-launcher-background-xml-a73289ef8d-001-android-resource-configuration-must-be-m",
+        "sourcePath": "app/src/main/res/values/ic_launcher_background.xml",
+        "featureName": "Android resource/configuration must be mapped or explicitly deferred.",
+        "importance": "high",
+        "status": "planned"
+      },
+      {
+        "featureId": "app-src-main-res-values-ic-launcher-background-xml-76f22ce278-002-android-android-values-file-should-be-ma",
+        "sourcePath": "app/src/main/res/values/ic_launcher_background.xml",
+        "featureName": "Android android-values file should be mapped to target resources, components, or documented deferred scope.",
+        "importance": "high",
+        "status": "planned"
+      }
+    ],
     "incompleteDeferredEntries": [],
     "weakDeferredJustificationEntries": [],
     "genericDeferredTextEntries": [],
     "weakEvidenceEntries": [],
-    "broadImplementedEndpointEntries": [],
+    "broadImplementedEndpointEntries": [
+      {
+        "featureId": "app-src-main-androidmanifest-xml-e5fadea668-001-android-resource-configuration-must-be-m",
+        "sourcePath": "app/src/main/AndroidManifest.xml",
+        "featureName": "Android resource/configuration must be mapped or explicitly deferred.",
+        "importance": "critical",
+        "status": "implemented"
+      }
+    ],
     "unverifiedTestEvidenceEntries": [],
     "simplifiedEntries": [],
     "simplifiedWithoutReasonEntries": [],

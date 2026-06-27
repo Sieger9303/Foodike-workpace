@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-26T04:03:33+00:00",
+  "generatedAt": "2026-06-27T03:22:15+00:00",
   "sourceKind": "kotlin",
   "purpose": "Reduce functional gaps and unexplained code-scale gaps during project translation. This file-level survey is a planning baseline, not a replacement for source inspection.",
   "source": {
@@ -5570,37 +5570,37 @@
         "status": "PASS",
         "returncode": 0,
         "timedOut": false,
-        "fileMetrics": 49,
+        "fileMetrics": 47,
         "message": ""
       }
     ],
     "totals": {
-      "files": 79,
-      "textFiles": 56,
+      "files": 77,
+      "textFiles": 54,
       "assetFiles": 23,
-      "physicalLines": 6205,
-      "nonblankLines": 5838,
-      "locCodeLines": 5837,
+      "physicalLines": 6361,
+      "nonblankLines": 5999,
+      "locCodeLines": 5998,
       "locCommentLines": 1,
-      "locBlankLines": 367,
-      "productionTextFiles": 50,
-      "productionPhysicalLines": 5819,
-      "productionNonblankLines": 5499,
-      "productionLocCodeLines": 5498,
+      "locBlankLines": 362,
+      "productionTextFiles": 48,
+      "productionPhysicalLines": 5975,
+      "productionNonblankLines": 5660,
+      "productionLocCodeLines": 5659,
       "productionLocCommentLines": 1,
-      "productionLocBlankLines": 320,
-      "codeFiles": 40,
-      "codePhysicalLines": 3263,
-      "codeNonblankLines": 2908,
-      "codeLocCodeLines": 2907,
+      "productionLocBlankLines": 315,
+      "codeFiles": 38,
+      "codePhysicalLines": 3275,
+      "codeNonblankLines": 2925,
+      "codeLocCodeLines": 2924,
       "codeLocCommentLines": 1,
-      "codeLocBlankLines": 355,
-      "productionCodeFiles": 36,
-      "productionCodePhysicalLines": 2944,
-      "productionCodeNonblankLines": 2629,
-      "productionCodeLocCodeLines": 2628,
+      "codeLocBlankLines": 350,
+      "productionCodeFiles": 34,
+      "productionCodePhysicalLines": 2956,
+      "productionCodeNonblankLines": 2646,
+      "productionCodeLocCodeLines": 2645,
       "productionCodeLocCommentLines": 1,
-      "productionCodeLocBlankLines": 315,
+      "productionCodeLocBlankLines": 310,
       "testFiles": 6,
       "testNonblankLines": 339,
       "testCodeFiles": 4,
@@ -5610,14 +5610,14 @@
       "testCodeLocBlankLines": 40
     },
     "byCategory": {
-      "cangjie-source": 34,
+      "cangjie-source": 32,
       "config": 9,
       "harmony-resource": 28,
       "script-source": 2,
       "test": 6
     },
     "byExtension": {
-      ".cj": 38,
+      ".cj": 36,
       ".jpg": 7,
       ".json": 6,
       ".json5": 7,
@@ -5627,10 +5627,10 @@
       ".ts": 2
     },
     "byImportance": {
-      "critical": 20,
+      "critical": 19,
       "high": 11,
       "low": 3,
-      "medium": 45
+      "medium": 44
     },
     "byRiskTag": {
       "file_ops": 2,
@@ -5642,7 +5642,7 @@
       "notification_widget": 6,
       "permissions": 2,
       "platform_component": 8,
-      "screen_lifecycle": 4,
+      "screen_lifecycle": 3,
       "settings": 15,
       "source_test": 6
     },
@@ -6087,48 +6087,6 @@
         "textScanned": true
       },
       {
-        "path": "entry/src/main/cangjie/main_activity_ability.cj",
-        "extension": ".cj",
-        "category": "cangjie-source",
-        "physicalLines": 28,
-        "nonblankLines": 24,
-        "locMetrics": {
-          "source": "external-tool",
-          "tool": "tokei",
-          "language": "Cangjie",
-          "physicalLines": 28,
-          "nonblankLines": 24,
-          "codeLines": 24,
-          "commentLines": 0,
-          "blankLines": 4
-        },
-        "importance": "critical",
-        "riskTags": [
-          "screen_lifecycle"
-        ],
-        "symbols": {
-          "classes": [
-            "MainActivity"
-          ],
-          "methods": [
-            "onCreate",
-            "onWindowStageCreate"
-          ],
-          "androidIds": [],
-          "dependencies": []
-        },
-        "keyMethods": [
-          "onCreate",
-          "onWindowStageCreate"
-        ],
-        "featurePoints": [
-          "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
-          "Lifecycle callback affecting screen initialization, refresh, or cleanup. Evidence method: `onCreate`.",
-          "CRUD mutation or persistent state update behavior. Evidence method: `onWindowStageCreate`."
-        ],
-        "textScanned": true
-      },
-      {
         "path": "entry/src/main/cangjie/module_entry_entry.cj",
         "extension": ".cj",
         "category": "cangjie-source",
@@ -6295,48 +6253,18 @@
         "textScanned": true
       },
       {
-        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_state.cj",
-        "extension": ".cj",
-        "category": "cangjie-source",
-        "physicalLines": 3,
-        "nonblankLines": 2,
-        "locMetrics": {
-          "source": "external-tool",
-          "tool": "tokei",
-          "language": "Cangjie",
-          "physicalLines": 3,
-          "nonblankLines": 2,
-          "codeLines": 2,
-          "commentLines": 0,
-          "blankLines": 1
-        },
-        "importance": "medium",
-        "riskTags": [],
-        "symbols": {
-          "classes": [],
-          "methods": [],
-          "androidIds": [],
-          "dependencies": []
-        },
-        "keyMethods": [],
-        "featurePoints": [
-          "File-level artifact `entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_state.cj` should be mapped, copied, or explicitly ignored with reason."
-        ],
-        "textScanned": true
-      },
-      {
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 51,
-        "nonblankLines": 45,
+        "physicalLines": 87,
+        "nonblankLines": 81,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 51,
-          "nonblankLines": 45,
-          "codeLines": 45,
+          "physicalLines": 87,
+          "nonblankLines": 81,
+          "codeLines": 81,
           "commentLines": 0,
           "blankLines": 6
         },
@@ -6784,15 +6712,15 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/detail/detail_page.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 275,
-        "nonblankLines": 264,
+        "physicalLines": 276,
+        "nonblankLines": 265,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 275,
-          "nonblankLines": 264,
-          "codeLines": 264,
+          "physicalLines": 276,
+          "nonblankLines": 265,
+          "codeLines": 265,
           "commentLines": 0,
           "blankLines": 11
         },
@@ -6942,15 +6870,15 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/history/history_store.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 37,
-        "nonblankLines": 29,
+        "physicalLines": 39,
+        "nonblankLines": 31,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 37,
-          "nonblankLines": 29,
-          "codeLines": 29,
+          "physicalLines": 39,
+          "nonblankLines": 31,
+          "codeLines": 31,
           "commentLines": 0,
           "blankLines": 8
         },
@@ -6984,15 +6912,15 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 238,
-        "nonblankLines": 226,
+        "physicalLines": 239,
+        "nonblankLines": 227,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 238,
-          "nonblankLines": 226,
-          "codeLines": 226,
+          "physicalLines": 239,
+          "nonblankLines": 227,
+          "codeLines": 227,
           "commentLines": 0,
           "blankLines": 12
         },
@@ -7165,15 +7093,15 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 97,
-        "nonblankLines": 92,
+        "physicalLines": 98,
+        "nonblankLines": 93,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 97,
-          "nonblankLines": 92,
-          "codeLines": 92,
+          "physicalLines": 98,
+          "nonblankLines": 93,
+          "codeLines": 93,
           "commentLines": 0,
           "blankLines": 5
         },
@@ -7205,22 +7133,20 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 63,
-        "nonblankLines": 51,
+        "physicalLines": 65,
+        "nonblankLines": 53,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 63,
-          "nonblankLines": 51,
-          "codeLines": 51,
+          "physicalLines": 65,
+          "nonblankLines": 53,
+          "codeLines": 53,
           "commentLines": 0,
           "blankLines": 12
         },
         "importance": "medium",
-        "riskTags": [
-          "intent_uri"
-        ],
+        "riskTags": [],
         "symbols": {
           "classes": [
             "OnboardingSlide",
@@ -7240,7 +7166,6 @@
           "nextIndex"
         ],
         "featurePoints": [
-          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
           "Media playback control or queue state behavior. Evidence method: `nextIndex`."
         ],
         "textScanned": true
@@ -7496,15 +7421,15 @@
         "path": "entry/src/main/resources/base/element/color.json",
         "extension": ".json",
         "category": "harmony-resource",
-        "physicalLines": 44,
-        "nonblankLines": 44,
+        "physicalLines": 48,
+        "nonblankLines": 48,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "JSON",
-          "physicalLines": 44,
-          "nonblankLines": 44,
-          "codeLines": 44,
+          "physicalLines": 48,
+          "nonblankLines": 48,
+          "codeLines": 48,
           "commentLines": 0,
           "blankLines": 0
         },
@@ -7526,20 +7451,22 @@
         "path": "entry/src/main/resources/base/element/string.json",
         "extension": ".json",
         "category": "harmony-resource",
-        "physicalLines": 88,
-        "nonblankLines": 88,
+        "physicalLines": 228,
+        "nonblankLines": 228,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "JSON",
-          "physicalLines": 88,
-          "nonblankLines": 88,
-          "codeLines": 88,
+          "physicalLines": 228,
+          "nonblankLines": 228,
+          "codeLines": 228,
           "commentLines": 0,
           "blankLines": 0
         },
         "importance": "medium",
-        "riskTags": [],
+        "riskTags": [
+          "intent_uri"
+        ],
         "symbols": {
           "classes": [],
           "methods": [],
@@ -7548,7 +7475,7 @@
         },
         "keyMethods": [],
         "featurePoints": [
-          "File-level artifact `entry/src/main/resources/base/element/string.json` should be mapped, copied, or explicitly ignored with reason."
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow."
         ],
         "textScanned": true
       },

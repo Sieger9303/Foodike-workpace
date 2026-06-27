@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-26T04:03:33+00:00",
+  "generatedAt": "2026-06-27T03:22:15+00:00",
   "targetExists": true,
   "summary": {
     "expectedEntries": 6,
     "expectedCriticalHighEntries": 6,
-    "actualEntries": 8,
+    "actualEntries": 6,
     "missingCriticalHighEntries": 0,
-    "unresolvedCriticalHighEntries": 0,
+    "unresolvedCriticalHighEntries": 5,
     "missingDocSearchCriticalHighEntries": 0,
     "implementedWeakTargetDecisionEntries": 0,
     "implementedWeakTestEntries": 0,
@@ -20,9 +20,8 @@
     "incompleteDeferredCriticalHighEntries": 0,
     "genericDeferredCriticalHighEntries": 0,
     "byStatus": {
-      "not-applicable": 5,
-      "platform-replaced": 1,
-      "verified-direct": 2
+      "planned": 5,
+      "verified-direct": 1
     },
     "allowedStatuses": [
       "deferred",
@@ -41,11 +40,83 @@
       "futureCompletionPath"
     ]
   },
-  "findings": [],
+  "findings": [
+    {
+      "severity": "high",
+      "kind": "platform-capability-unresolved",
+      "message": "5 critical/high platform capability check(s) remain planned, unreviewed, or not covered."
+    }
+  ],
   "samples": {
     "missingEntries": [],
     "invalidStatusEntries": [],
-    "unresolvedEntries": [],
+    "unresolvedEntries": [
+      {
+        "capabilityId": "media-library-access",
+        "capabilityName": "Media library and album discovery",
+        "importance": "critical",
+        "status": "planned",
+        "sourcePaths": [
+          "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+          "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+          "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+          "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt"
+        ]
+      },
+      {
+        "capabilityId": "file-access-and-saf",
+        "capabilityName": "File access, document permissions, and share URIs",
+        "importance": "critical",
+        "status": "planned",
+        "sourcePaths": [
+          "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+          "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+          "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+          "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt"
+        ]
+      },
+      {
+        "capabilityId": "image-viewer-gestures",
+        "capabilityName": "Image viewer gestures and metadata",
+        "importance": "critical",
+        "status": "planned",
+        "sourcePaths": [
+          "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+          "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+          "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+          "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt"
+        ]
+      },
+      {
+        "capabilityId": "runtime-permissions",
+        "capabilityName": "Runtime permissions and protected platform access",
+        "importance": "high",
+        "status": "planned",
+        "sourcePaths": [
+          "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+          "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+          "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+          "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+          "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt"
+        ]
+      },
+      {
+        "capabilityId": "background-and-platform-components",
+        "capabilityName": "Background work, services, receivers, widgets, and notifications",
+        "importance": "high",
+        "status": "planned",
+        "sourcePaths": [
+          "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+          "app/build.gradle.kts",
+          "README.md",
+          "app/src/main/java/com/example/foodike/di/AppModule.kt",
+          "app/src/main/AndroidManifest.xml"
+        ]
+      }
+    ],
     "missingSearchEntries": [],
     "missingApiEntries": [],
     "missingTestEntries": [],

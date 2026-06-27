@@ -2,8 +2,9 @@ package ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.home
 
 import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.Builder
+import ohos.base.ResourceStr
 import ohos.resource.AppResource
-import ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.{mediaChineseBowl, mediaClock, mediaGroceries, mediaIcProfile, mediaRider, mediaUpi}
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.{mediaChineseBowl, mediaClock, mediaGroceries, mediaIcProfile, mediaRider, mediaUpi, stringAllAroundYou, stringFromCreator, stringLocation, stringLove, stringOrderFromFavourites, stringRecommendedForYou, stringWith}
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.widgets.{renderRestaurantCard, restaurantMedia, renderSearchBar}
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.domain.*
 import std.collection.ArrayList
@@ -29,7 +30,7 @@ func buildHomeTopSection(onProfileClick: () -> Unit) {
                 onProfileClick()
             })
         Row(space: 4) {
-            Text("Location")
+            Text(stringLocation)
                 .fontSize(14)
                 .fontColor(Color.Gray)
             Text("Guwahati")
@@ -56,7 +57,7 @@ func buildHomeGreeting(hour: Int64) {
 }
 
 @Builder
-func buildHomeSectionTitle(title: String) {
+func buildHomeSectionTitle(title: ResourceStr) {
     Text(title)
         .fontSize(20)
         .fontWeight(FontWeight.Regular)
@@ -121,7 +122,7 @@ func buildRecommendedCategories(categories: ArrayList<FoodCategoryData>) {
 func buildFavouriteStrip(favourites: ArrayList<RestaurantData>, onSelectRestaurant: (RestaurantData) -> Unit) {
     if (favourites.size > 0) {
         Column(space: 10) {
-            buildHomeSectionTitle("Order from favourites")
+            buildHomeSectionTitle(stringOrderFromFavourites)
             Scroll(Scroller()) {
                 Row(space: 12) {
                     ForEach(favourites, itemGeneratorFunc: { restaurant: RestaurantData, _: Int64 =>
@@ -188,13 +189,13 @@ func buildRestaurantList(restaurants: ArrayList<RestaurantData>, onSelectRestaur
 @Builder
 func buildHomeFooter() {
     Row(space: 6) {
-        Text("with")
+        Text(stringWith)
             .fontSize(24)
             .fontColor(Color.Gray)
-        Text("love")
+        Text(stringLove)
             .fontSize(24)
             .fontColor(Color.Red)
-        Text("from creator")
+        Text(stringFromCreator)
             .fontSize(24)
             .fontColor(Color.Gray)
     }
@@ -219,11 +220,11 @@ public func renderHomeRoute(
             buildHomeGreeting(hour)
             renderSearchBar(query, onQueryChange)
             buildHomeAdCards(state.advertisements)
-            buildHomeSectionTitle("Recommended for you")
+            buildHomeSectionTitle(stringRecommendedForYou)
             buildRecommendedCategories(state.categories)
             buildFavouriteStrip(state.favourites, onSelectRestaurant)
             buildFilterRow(selectedFilter, onToggleFilter)
-            buildHomeSectionTitle("All around you")
+            buildHomeSectionTitle(stringAllAroundYou)
             buildRestaurantList(state.restaurants, onSelectRestaurant)
             buildHomeFooter()
         }
