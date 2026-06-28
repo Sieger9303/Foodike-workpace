@@ -51,6 +51,24 @@ public class OnboardingStore {
         return slidesData[index]
     }
 
+    public func slideTitleText(index: Int64): String {
+        match (index) {
+            case 0 => "Choose your favourite food"
+            case 1 => "Vaccinated delivery partners"
+            case 2 => "Expect Delivery in 20 minutes"
+            case _ => ""
+        }
+    }
+
+    public func slideDescriptionText(index: Int64): String {
+        match (index) {
+            case 0 => "Choose from a range of restaurants and hotels near you"
+            case 1 => "To maintain social distancing, all our delivery partners are vaccinated"
+            case 2 => "You can expect delivery in 20 minutes"
+            case _ => ""
+        }
+    }
+
     public func isLastPage(index: Int64): Bool {
         return index >= pageCount() - 1
     }

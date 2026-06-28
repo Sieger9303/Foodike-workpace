@@ -1,0 +1,384 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-28T09:08:16+00:00",
+  "phase": "phase-04-home-history",
+  "purpose": "Phase-scoped platform capability pre-resolution checklist. This is generated from phase-task-checklist.json and platform-capability-check.json before phase implementation. All current-phase critical/high platform capabilities must be resolved before target code edits begin.",
+  "allowedResolutionStatuses": [
+    "resolved-deferred",
+    "resolved-not-applicable",
+    "resolved-platform-replacement",
+    "resolved-real-api"
+  ],
+  "summary": {
+    "phasePlatformCapabilities": 1,
+    "unresolvedPlatformCapabilities": 0,
+    "compileProbeRecommendedCapabilities": 0,
+    "discoveryOnlyCapabilities": 0,
+    "sdkProbeDeclarationCandidateCapabilities": 1,
+    "byResolutionStatus": {
+      "resolved-not-applicable": 1
+    }
+  },
+  "instructions": [
+    "If any entry is unresolved, run a capability resolution session before phase implementation.",
+    "Capability resolution may update only platform-capability-check.json/md.",
+    "A real HarmonyOS/Cangjie API, Kit, example, or package must be used when available; do not close with local mock, in-memory data, sample data, or generic fallback.",
+    "Use resolved-deferred only after checking CangjieSkills/HarmonyOS/Cangjie docs, HarmonyOS-Examples, SDK declarations, and package lookup when relevant.",
+    "Use capability-sdk-probe-cache.json as preparation evidence for SDK declaration/library candidates; it is not authority by itself.",
+    "Treat ArkTS/native/overview declarations as discovery-only until a Cangjie-callable API, wrapper, FFI, bridge, or compile probe is recorded.",
+    "When compileProbeRecommended is true, run a bounded target-context compile probe or record the concrete SDK/tooling blocker before phase implementation."
+  ],
+  "entries": [
+    {
+      "capabilityId": "media-library-access",
+      "capabilityName": "Media library and album discovery",
+      "importance": "critical",
+      "plannedPhase": "phase-04-home-history",
+      "platformStatus": "not-applicable",
+      "resolutionStatus": "resolved-not-applicable",
+      "resolutionReason": "explicitly marked not-applicable with notes",
+      "sourcePaths": [
+        "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+        "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/DeliverySection.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/AdCard.kt",
+        "README.md",
+        "app/src/main/java/com/example/foodike/presentation/home/components/TopSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/ThankYouSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt"
+      ],
+      "requiredTargetCapabilitySearch": [
+        "HarmonyOS Cangjie media library album query",
+        "HarmonyOS media assets photo album Cangjie API",
+        "HarmonyOS Examples media library photo picker Cangjie"
+      ],
+      "targetCapabilitySearch": [
+        "Phase-04 source inspection found no Android media-store, album, gallery picker, content URI, or runtime media permission flow in the home/history implementation surface. A repository-wide grep over D:\\Kotlin2Cangjie\\Foodike\\app\\src\\main\\java found no MediaStore, contentResolver, ACTION_PICK, GetContent, OpenDocument, PickVisualMedia, rememberLauncherForActivityResult, READ_EXTERNAL_STORAGE, or READ_MEDIA* usage.",
+        "The actual phase-04 UI code renders bundled app resources through painterResource and R.drawable only, including presentation/history/components/HistorySection.kt:111-115 and 240-243, presentation/components/RestaurantCard.kt:70-76 and 88-89, and the static catalog media ids in data/data_source/FakeData.kt:512-803.",
+        "Current HarmonyOS Cangjie SDK does provide a direct media-library and album API through ohos.file.photo_access_helper, including getPhotoAccessHelper(context: UIAbilityContext): PhotoAccessHelper and PhotoAccessHelper.getAlbums(...), so this row is resolved as a false-positive phase match rather than missing platform support."
+      ],
+      "targetApiOrLibrary": "HarmonyOS Cangjie MediaLibraryKit / ohos.file.photo_access_helper (getPhotoAccessHelper, PhotoAccessHelper.getAlbums, album/media asset APIs) exists in the current SDK, but phase-04 home/history source behavior only consumes bundled drawable resources and does not browse user albums.",
+      "targetStrategy": "Treat the phase-04 media-library requirement as a source-analysis false positive. Implement home/history images from packaged app media resources only; do not add album discovery, gallery picker, or media permission scaffolding in this phase unless later source-backed behavior proves a real user-media flow.",
+      "sdkDeclarationEvidence": [
+        "Current Cangjie SDK declares getPhotoAccessHelper(context: UIAbilityContext): PhotoAccessHelper and PhotoAccessHelper.getAlbums(albumType: AlbumType, subtype: AlbumSubtype, options!: FetchOptions = FetchOptions([\"uri\", \"album_name\"], DataSharePredicates())): AlbumResult in C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.file.photo_access_helper.cj.d:646-709.",
+        "Current Cangjie SDK also declares album/media entities in the same module, including Album, PhotoAccessHelper, and related album subtype/type enums under SystemCapability.FileManagement.PhotoAccessHelper.Core in C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.file.photo_access_helper.cj.d."
+      ],
+      "cangjieCallableEvidence": [
+        "HarmonyOS Cangjie docs index the direct album/media API in harmonyos-6.1-8k/API/MediaLibraryKit/cj-apis-file-photo_access_helper/ohosfilephoto_access_helper相册管理模块/.overview.md, describing PhotoAccessHelper, Album, and PhotoAsset as the callable Cangjie media-library surface.",
+        "HarmonyOS Cangjie docs include album-specific API references such as class_Album.md, confirming the target platform has a real album-discovery path if a later source phase needs it."
+      ],
+      "discoveryOnlyEvidence": [],
+      "compileProbeEvidence": [],
+      "capabilityEvidenceProfile": {
+        "effectiveStatus": "not-applicable",
+        "targetSearchEvidenceFound": true,
+        "sdkDeclarationEvidenceFound": true,
+        "cangjieCallableEvidenceFound": true,
+        "discoveryOnlyEvidenceFound": false,
+        "compileProbeEvidenceFound": false,
+        "compileProbeRecommended": false,
+        "compileProbeState": "not-needed",
+        "preResolutionDecision": "resolved-not-applicable",
+        "derivedPreResolutionDecision": "not-applicable",
+        "localFallbackDetected": false,
+        "unavailableBlockerFound": false,
+        "evidenceKinds": [
+          "target-search",
+          "sdk-declaration",
+          "cangjie-callable"
+        ]
+      },
+      "sdkProbeCache": {
+        "capabilityId": "media-library-access",
+        "capabilityName": "Media library and album discovery",
+        "importance": "critical",
+        "plannedPhase": "phase-04-home-history",
+        "terms": [
+          "media",
+          "access",
+          "and",
+          "album",
+          "discovery",
+          "medialibrarykit",
+          "file",
+          "photo_access_helper",
+          "getphotoaccesshelper",
+          "photoaccesshelper",
+          "getalbums",
+          "asset",
+          "apis",
+          "exists",
+          "the",
+          "sdk",
+          "but",
+          "phase",
+          "home",
+          "history",
+          "source",
+          "behavior",
+          "only",
+          "consumes"
+        ],
+        "pureCangjieDeclarationCandidates": [
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.AbilityKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.AbilityKit.cj.d",
+            "matchedTerms": [
+              "access",
+              "and",
+              "file",
+              "the",
+              "but"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkData.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkData.cj.d",
+            "matchedTerms": [
+              "and",
+              "file",
+              "the",
+              "but"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkGraphics2D.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkGraphics2D.cj.d",
+            "matchedTerms": [
+              "and",
+              "file",
+              "the",
+              "but"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkUI.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkUI.cj.d",
+            "matchedTerms": [
+              "and",
+              "file",
+              "the",
+              "but"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkWeb.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkWeb.cj.d",
+            "matchedTerms": [
+              "and",
+              "file",
+              "the",
+              "but"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.BasicServicesKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.BasicServicesKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "file",
+              "the",
+              "but"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CameraKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CameraKit.cj.d",
+            "matchedTerms": [
+              "media",
+              "and",
+              "file",
+              "the",
+              "but"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CangjieKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CangjieKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "file",
+              "the",
+              "but"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ConnectivityKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ConnectivityKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "file",
+              "the",
+              "but"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CoreFileKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CoreFileKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "file",
+              "the",
+              "but"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CryptoArchitectureKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CryptoArchitectureKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "file",
+              "the",
+              "but"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ImageKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ImageKit.cj.d",
+            "matchedTerms": [
+              "media",
+              "and",
+              "file",
+              "the",
+              "but"
+            ]
+          }
+        ],
+        "cangjieLibraryCandidates": [
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\kit.CoreFileKit.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/kit.CoreFileKit.cjo",
+            "matchedTerms": [
+              "file"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\kit.MediaKit.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/kit.MediaKit.cjo",
+            "matchedTerms": [
+              "media"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\kit.MediaLibraryKit.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/kit.MediaLibraryKit.cjo",
+            "matchedTerms": [
+              "media",
+              "medialibrarykit"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\libkit.CoreFileKit.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/libkit.CoreFileKit.so",
+            "matchedTerms": [
+              "file"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\libkit.MediaKit.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/libkit.MediaKit.so",
+            "matchedTerms": [
+              "media"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\libkit.MediaLibraryKit.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/libkit.MediaLibraryKit.so",
+            "matchedTerms": [
+              "media",
+              "medialibrarykit"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.ability_access_ctrl.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.ability_access_ctrl.so",
+            "matchedTerms": [
+              "access"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.app.ability.completion_handler.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.app.ability.completion_handler.so",
+            "matchedTerms": [
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.button.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.button.so",
+            "matchedTerms": [
+              "but"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.bluetooth.base_profile.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.bluetooth.base_profile.so",
+            "matchedTerms": [
+              "file"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.data.distributed_kv_store.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.data.distributed_kv_store.so",
+            "matchedTerms": [
+              "but"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.file.fileuri.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.file.fileuri.so",
+            "matchedTerms": [
+              "file"
+            ]
+          }
+        ],
+        "candidateCounts": {
+          "pureCangjieDeclarations": 12,
+          "cangjieLibraries": 12
+        },
+        "probeInterpretation": "declaration-candidate"
+      },
+      "preResolutionDecision": "resolved-not-applicable",
+      "compileProbeRecommended": false,
+      "compileProbeState": "not-needed",
+      "sdkDeclarationEvidenceFound": true,
+      "cangjieCallableEvidenceFound": true,
+      "discoveryOnlyEvidenceFound": false,
+      "implementationGroupIds": [
+        "phase-04-home-history-source-behavior-domain-model",
+        "phase-04-home-history-source-behavior-presentation-components",
+        "phase-04-home-history-source-behavior-presentation-history",
+        "phase-04-home-history-source-behavior-presentation-home",
+        "phase-04-home-history-platform-capability-media-library-access",
+        "phase-04-home-history-verification-phase-tests-and-evidence"
+      ],
+      "affectedPhases": [
+        "phase-04-home-history"
+      ],
+      "targetEndpoints": [],
+      "tests": [
+        "phase-04 repository-wide source grep confirms no media-library or picker flow in app/src/main/java",
+        "manual source inspection confirms bundled drawable rendering only in home/history surfaces"
+      ],
+      "blocker": "",
+      "targetFallback": "",
+      "futureCompletionPath": "",
+      "notes": "The phase capability was over-detected from generic gallery term matches in source/resource data. Phase-04 home/history behavior uses packaged assets and repository-backed selection/filter flows only; closing this row as not-applicable keeps the real HarmonyOS media API recorded without widening current-phase scope."
+    }
+  ],
+  "unresolved": [],
+  "compileProbeRecommended": [],
+  "discoveryOnly": []
+}

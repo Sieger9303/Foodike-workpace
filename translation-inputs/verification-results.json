@@ -1,17 +1,22 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-27T03:22:15+00:00",
+  "generatedAt": "2026-06-28T12:11:43+00:00",
   "purpose": "Structured verification evidence collected from build/test/manual reports. Build results are discovered automatically; test or manual validation results may be added as non build-report-scan entries and will be preserved across refreshes.",
   "summary": {
-    "totalResults": 1,
+    "totalResults": 6,
     "byType": {
-      "build": 1
+      "build": 6
     },
     "byResult": {
-      "passed": 1
+      "passed": 6
     },
     "passedBuildPhases": [
-      "phase-01-project-skeleton-resources"
+      "phase-01-project-skeleton-resources",
+      "phase-02-startup-session-navigation",
+      "phase-03-onboarding-login",
+      "phase-04-home-history",
+      "phase-05-detail-cart",
+      "phase-06-profile-capabilities-verification"
     ]
   },
   "results": [
@@ -21,17 +26,77 @@
       "type": "build",
       "phase": "phase-01-project-skeleton-resources",
       "result": "passed",
-      "command": [
-        "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
-        "D:\\workspace\\Foodike\\.agents\\skills\\harmonyos-build\\build.py",
-        "--project-root",
-        "D:\\workspace\\Foodike\\Foodike-Harmony"
-      ],
+      "command": [],
       "returncode": 0,
       "evidencePath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-01-project-skeleton-resources\\build-report.json",
       "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-01-project-skeleton-resources\\build-report.md",
-      "generatedAt": "2026-06-27T03:22:12+00:00",
+      "generatedAt": "2026-06-27T05:44:36+00:00",
       "notes": "Build gate result for phase phase-01-project-skeleton-resources."
+    },
+    {
+      "id": "build:phase-02-startup-session-navigation",
+      "source": "build-report-scan",
+      "type": "build",
+      "phase": "phase-02-startup-session-navigation",
+      "result": "passed",
+      "command": [],
+      "returncode": 0,
+      "evidencePath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-02-startup-session-navigation\\build-report.json",
+      "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-02-startup-session-navigation\\build-report.md",
+      "generatedAt": "2026-06-28T10:22:09+00:00",
+      "notes": "Build gate result for phase phase-02-startup-session-navigation."
+    },
+    {
+      "id": "build:phase-03-onboarding-login",
+      "source": "build-report-scan",
+      "type": "build",
+      "phase": "phase-03-onboarding-login",
+      "result": "passed",
+      "command": [],
+      "returncode": 0,
+      "evidencePath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-03-onboarding-login\\build-report.json",
+      "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-03-onboarding-login\\build-report.md",
+      "generatedAt": "2026-06-28T10:29:07+00:00",
+      "notes": "Build gate result for phase phase-03-onboarding-login."
+    },
+    {
+      "id": "build:phase-04-home-history",
+      "source": "build-report-scan",
+      "type": "build",
+      "phase": "phase-04-home-history",
+      "result": "passed",
+      "command": [],
+      "returncode": 0,
+      "evidencePath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-04-home-history\\build-report.json",
+      "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-04-home-history\\build-report.md",
+      "generatedAt": "2026-06-28T10:00:42+00:00",
+      "notes": "Build gate result for phase phase-04-home-history."
+    },
+    {
+      "id": "build:phase-05-detail-cart",
+      "source": "build-report-scan",
+      "type": "build",
+      "phase": "phase-05-detail-cart",
+      "result": "passed",
+      "command": [],
+      "returncode": 0,
+      "evidencePath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-05-detail-cart\\build-report.json",
+      "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-05-detail-cart\\build-report.md",
+      "generatedAt": "2026-06-28T11:34:04+00:00",
+      "notes": "Build gate result for phase phase-05-detail-cart."
+    },
+    {
+      "id": "build:phase-06-profile-capabilities-verification",
+      "source": "build-report-scan",
+      "type": "build",
+      "phase": "phase-06-profile-capabilities-verification",
+      "result": "passed",
+      "command": [],
+      "returncode": 0,
+      "evidencePath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-06-profile-capabilities-verification\\build-report.json",
+      "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-06-profile-capabilities-verification\\build-report.md",
+      "generatedAt": "2026-06-28T11:44:59+00:00",
+      "notes": "Build gate result for phase phase-06-profile-capabilities-verification."
     }
   ]
 }

@@ -1,0 +1,294 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Close false-positive domain model feature rows for phase-05 detail/cart domain-model group.",
+  "updates": [
+    {
+      "featureId": "app-src-main-java-com-example-foodike-domain-model-menui-7b27ec2c61-001-navigation-surface-menu-drawer-toolbar-o",
+      "set": {
+        "status": "not-applicable",
+        "sourceBehavior": "`MenuItem.kt` is a pure data class with dish, price, rating, rating-count, and vegetarian fields only; it does not declare navigation routes, toolbar commands, drawers, tabs, or menu-surface callbacks.",
+        "targetBehavior": "The HarmonyOS target keeps `MenuItem` as pure menu data through `MenuItemData`, then consumes that data from detail/cart stores and pages without placing navigation behavior inside the domain model layer.",
+        "verificationEvidence": [
+          "Source inspection: `app/src/main/java/com/example/foodike/domain/model/MenuItem.kt` contains only five scalar fields and no navigation/menu command APIs.",
+          "Target inspection: `entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::MenuItemData`, `::DetailMenuItemData`, and `entry/src/main/cangjie/ohos_app_cangjie_entry/features/detail/detail_store.cj` preserve menu-item data for section rendering while leaving route changes to page/store surfaces.",
+          "Focused test evidence: `entry/src/test/cangjie/phase02_repository_contract_test.cj` verifies selected-restaurant menu item data is exposed through the repository contract, and `entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj` verifies menu items still drive detail/cart state mutations without any model-layer navigation side effects."
+        ],
+        "parityLevel": "not-applicable",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::MenuItemData",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::DetailMenuItemData",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/detail/detail_store.cj::loadDetailState"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase02_repository_contract_test.cj",
+          "entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj"
+        ],
+        "notes": "Source override: static analysis attached a navigation/menu-surface feature to a data-only model file. The translated target likewise keeps navigation outside the menu item model layer.",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::MenuItemData",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::DetailMenuItemData",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/detail/detail_store.cj::loadDetailState"
+            ],
+            "testEvidence": [
+              {
+                "kind": "focused-test-pass",
+                "detail": "`phase02_repository_contract_test.cj` covers repository exposure of translated menu-item data for the selected restaurant detail flow.",
+                "path": "entry/src/test/cangjie/phase02_repository_contract_test.cj"
+              },
+              {
+                "kind": "focused-test-pass",
+                "detail": "`phase05_detail_cart_state_mutations_test.cj` covers detail/cart mutations over translated menu-item data without model-layer navigation behavior.",
+                "path": "entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj"
+              }
+            ],
+            "buildEvidence": [],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "`MenuItem.kt` is a pure data class and contains no navigation/menu-surface behavior to translate."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-domain-model-menui-9a25063300-002-runtime-permission-request-permission-re",
+      "set": {
+        "status": "not-applicable",
+        "sourceBehavior": "`MenuItem.kt` is a pure data class with menu metadata only; it does not request runtime permissions, handle permission callbacks, or access protected platform APIs.",
+        "targetBehavior": "The HarmonyOS target keeps the menu item model as data-only through `MenuItemData` and related detail/cart snapshot wrappers, with no permission handling placed in the domain model layer.",
+        "verificationEvidence": [
+          "Source inspection: `app/src/main/java/com/example/foodike/domain/model/MenuItem.kt` contains only scalar menu fields and no permission or protected API calls.",
+          "Target inspection: `entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::MenuItemData` and `::DetailMenuItemData` keep menu-item data pure while `detail_store.cj` and `cart_store.cj` consume it without permission logic.",
+          "Focused test evidence: `entry/src/test/cangjie/phase02_repository_contract_test.cj` and `entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj` both exercise translated menu-item data flows, confirming the phase-05 target uses these models without any permission-gated behavior."
+        ],
+        "parityLevel": "not-applicable",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::MenuItemData",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::DetailMenuItemData",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/cart/cart_store.cj::loadCartState"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase02_repository_contract_test.cj",
+          "entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj"
+        ],
+        "notes": "Source override: static analysis attached a runtime-permission feature to a model file that only carries menu metadata. No permission behavior exists in either source or target model surfaces.",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::MenuItemData",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::DetailMenuItemData",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/cart/cart_store.cj::loadCartState"
+            ],
+            "testEvidence": [
+              {
+                "kind": "focused-test-pass",
+                "detail": "`phase02_repository_contract_test.cj` covers repository exposure of translated menu-item data with no permission-gated API surface.",
+                "path": "entry/src/test/cangjie/phase02_repository_contract_test.cj"
+              },
+              {
+                "kind": "focused-test-pass",
+                "detail": "`phase05_detail_cart_state_mutations_test.cj` covers translated detail/cart state mutations driven by menu-item data without permission handling.",
+                "path": "entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj"
+              }
+            ],
+            "buildEvidence": [],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "`MenuItem.kt` contains no runtime permission request or protected API access behavior."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-domain-model-carti-beeee34863-001-navigation-surface-menu-drawer-toolbar-o",
+      "set": {
+        "status": "not-applicable",
+        "sourceBehavior": "`CartItem.kt` is a pure data class wrapping a `MenuItem` plus quantity; it does not implement navigation surfaces, toolbar actions, drawers, tabs, or menu commands.",
+        "targetBehavior": "The HarmonyOS target preserves this role through `CartSnapshotItemData`, which is consumed by cart/detail stores and pages while keeping all route and toolbar behavior outside the domain model layer.",
+        "verificationEvidence": [
+          "Source inspection: `app/src/main/java/com/example/foodike/domain/model/CartItem.kt` contains only a `MenuItem` reference and mutable item count with no navigation APIs.",
+          "Target inspection: `entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::CartSnapshotItemData`, `data/session/session_repository.cj::getCartItems`, and `features/cart/cart_store.cj::buildState` preserve cart-item data flow while leaving navigation behavior to page-level code.",
+          "Focused test evidence: `entry/src/test/cangjie/phase02_repository_contract_test.cj` validates seeded cart items, and `entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj` validates cart quantity mutations over the translated cart snapshot model."
+        ],
+        "parityLevel": "not-applicable",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::CartSnapshotItemData",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj::getCartItems",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/cart/cart_store.cj::loadCartState"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase02_repository_contract_test.cj",
+          "entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj"
+        ],
+        "notes": "Source override: static analysis attached navigation/menu-surface behavior to a quantity wrapper model. The target keeps the same data-only separation via `CartSnapshotItemData`.",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::CartSnapshotItemData",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj::getCartItems",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/cart/cart_store.cj::loadCartState"
+            ],
+            "testEvidence": [
+              {
+                "kind": "focused-test-pass",
+                "detail": "`phase02_repository_contract_test.cj` verifies the translated repository exposes seeded cart snapshot items.",
+                "path": "entry/src/test/cangjie/phase02_repository_contract_test.cj"
+              },
+              {
+                "kind": "focused-test-pass",
+                "detail": "`phase05_detail_cart_state_mutations_test.cj` verifies translated cart snapshot quantities mutate correctly for detail/cart flows.",
+                "path": "entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj"
+              }
+            ],
+            "buildEvidence": [],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "`CartItem.kt` is a data-only quantity wrapper and contains no navigation/menu-surface behavior."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-domain-model-carti-bc4758feb7-002-runtime-permission-request-permission-re",
+      "set": {
+        "status": "not-applicable",
+        "sourceBehavior": "`CartItem.kt` only carries a `MenuItem` plus quantity state; it does not request permissions, process permission results, or invoke protected storage/media/location APIs.",
+        "targetBehavior": "The HarmonyOS target keeps cart item state as pure data through `CartSnapshotItemData` and repository/store quantity helpers, with no permission handling placed in the domain model layer.",
+        "verificationEvidence": [
+          "Source inspection: `app/src/main/java/com/example/foodike/domain/model/CartItem.kt` contains only data fields and no permission or protected API references.",
+          "Target inspection: `entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::CartSnapshotItemData`, `data/session/session_repository.cj`, and `features/cart/cart_store.cj` preserve cart item data/mutation flow without permission logic.",
+          "Focused test evidence: `entry/src/test/cangjie/phase02_repository_contract_test.cj` and `entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj` exercise translated cart snapshot behavior and confirm this phase uses data-only cart items rather than permission-gated model APIs."
+        ],
+        "parityLevel": "not-applicable",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::CartSnapshotItemData",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj::incrementMenuItemQuantity",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj::decrementMenuItemQuantity"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase02_repository_contract_test.cj",
+          "entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj"
+        ],
+        "notes": "Source override: static analysis attached runtime-permission behavior to a cart quantity wrapper model. Neither the source model nor the translated target model carries permission logic.",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::CartSnapshotItemData",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj::incrementMenuItemQuantity",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj::decrementMenuItemQuantity"
+            ],
+            "testEvidence": [
+              {
+                "kind": "focused-test-pass",
+                "detail": "`phase02_repository_contract_test.cj` verifies the translated repository exposes cart snapshot data without any permission-gated API surface.",
+                "path": "entry/src/test/cangjie/phase02_repository_contract_test.cj"
+              },
+              {
+                "kind": "focused-test-pass",
+                "detail": "`phase05_detail_cart_state_mutations_test.cj` verifies translated cart quantity mutations without permission handling in the model layer.",
+                "path": "entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj"
+              }
+            ],
+            "buildEvidence": [],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "`CartItem.kt` contains no runtime permission request, permission-result handling, or protected API access behavior."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    }
+  ]
+}

@@ -57,428 +57,428 @@ note[0m: the warning occurs after the macro is expanded
 
 warning[0m: unused variable:'elmtId'
    | 
-   | /* 68.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                       ^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the code after the macro is expanded as follows
     | 
-    |   /* 68.1 */public func renderRestaurantCard(thisView: CustomView, restaurant: ObservedProperty < RestaurantData >, onSelect: ObservedProperty <() -> Unit >): ViewBuilder {
+    |   /* 67.1 */public func renderRestaurantCard(thisView: CustomView, restaurant: ObservedProperty < RestaurantData >, onSelect: ObservedProperty <() -> Unit >): ViewBuilder {
     |  _^
-    | | /* 68.2 */    
-    | | /* 68.3 */    
-    | | /* 68.4 */    func renderRestaurantCard__inner__(thisView: CustomView, restaurant: RestaurantData, onSelect:() -> Unit): Unit {
-    | | /* 68.5 */        
-    | | /* 68.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 68.7 */            Row(space: 14) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 68.8 */                Image(restaurantMedia(restaurant.mediaName)).width(120).height(154).borderRadius(12)
-    | | /* 68.9 */            })
-    | | /* 68.10 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 68.11 */                Column(space: 8) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 68.12 */                    Text(restaurant.name).fontSize(18).fontWeight(FontWeight.Bold)
-    | | /* 68.13 */                })
-    | | /* 68.14 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 68.15 */                    Row(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 68.16 */                        Image(mediaStar).width(18).height(18)
-    | | /* 68.17 */                    })
-    | | /* 68.18 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 68.19 */                        Text("${restaurant.rating}(${getCustomerInfo(restaurant.ratingCount)})").fontSize(14)
-    | | /* 68.20 */                    })
-    | | /* 68.21 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 68.22 */                        Text(".").fontWeight(FontWeight.Bold)
-    | | /* 68.23 */                    })
-    | | /* 68.24 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 68.25 */                        Text(formatEta(restaurant.etaMinutes)).fontSize(14)
-    | | /* 68.26 */                    })
-    | | /* 68.27 */                }
-    | | /* 68.28 */            })
-    | | /* 68.29 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 68.30 */                Text(restaurant.variety).fontSize(14).fontColor(Color.Gray)
-    | | /* 68.31 */            })
-    | | /* 68.32 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 68.33 */                Text(restaurant.place).fontSize(14).fontColor(Color.Gray)
-    | | /* 68.34 */            })
-    | | /* 68.35 */        }.layoutWeight(1)
-    | | /* 68.36 */    })
-    | | /* 68.37 */}.width(100.percent).padding(top: 8, right: 8, bottom: 8, left: 8).backgroundColor(Color.White).borderRadius(16).onClick({ _ =>
-    | | /* 68.38 */    onSelect()
-    | | /* 68.39 */})
-    | | /* 68.40 */})
-    | | /* 68.41 */
-    | | /* 68.42 */}
-    | | /* 68.43 */
-    | | /* 68.44 */
-    | | /* 68.45 */ViewBuilder { renderRestaurantCard__inner__(thisView, restaurant.get(), onSelect.get()) }
-    | | /* 68.46 */
-    | | /* 68.47 */}
-    | | /* 68.48 */
+    | | /* 67.2 */    
+    | | /* 67.3 */    
+    | | /* 67.4 */    func renderRestaurantCard__inner__(thisView: CustomView, restaurant: RestaurantData, onSelect:() -> Unit): Unit {
+    | | /* 67.5 */        
+    | | /* 67.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 67.7 */            Row(space: 14) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 67.8 */                Image(restaurantMedia(restaurant.mediaName)).width(120).height(154).borderRadius(12)
+    | | /* 67.9 */            })
+    | | /* 67.10 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 67.11 */                Column(space: 8) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 67.12 */                    Text(restaurant.name).fontSize(18).fontWeight(FontWeight.Bold)
+    | | /* 67.13 */                })
+    | | /* 67.14 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 67.15 */                    Row(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 67.16 */                        Image(mediaStar).width(18).height(18)
+    | | /* 67.17 */                    })
+    | | /* 67.18 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 67.19 */                        Text("${restaurant.rating}(${getCustomerInfo(restaurant.ratingCount)})").fontSize(14)
+    | | /* 67.20 */                    })
+    | | /* 67.21 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 67.22 */                        Text(".").fontWeight(FontWeight.Bold)
+    | | /* 67.23 */                    })
+    | | /* 67.24 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 67.25 */                        Text(formatEta(restaurant.etaMinutes)).fontSize(14)
+    | | /* 67.26 */                    })
+    | | /* 67.27 */                }
+    | | /* 67.28 */            })
+    | | /* 67.29 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 67.30 */                Text(restaurant.variety).fontSize(14).fontColor(Color.Gray)
+    | | /* 67.31 */            })
+    | | /* 67.32 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 67.33 */                Text(restaurant.place).fontSize(14).fontColor(Color.Gray)
+    | | /* 67.34 */            })
+    | | /* 67.35 */        }.layoutWeight(1)
+    | | /* 67.36 */    })
+    | | /* 67.37 */}.width(100.percent).padding(top: 8, right: 8, bottom: 8, left: 8).backgroundColor(Color.White).borderRadius(16).onClick({ _ =>
+    | | /* 67.38 */    onSelect()
+    | | /* 67.39 */})
+    | | /* 67.40 */})
+    | | /* 67.41 */
+    | | /* 67.42 */}
+    | | /* 67.43 */
+    | | /* 67.44 */
+    | | /* 67.45 */ViewBuilder { renderRestaurantCard__inner__(thisView, restaurant.get(), onSelect.get()) }
+    | | /* 67.46 */
+    | | /* 67.47 */}
+    | | /* 67.48 */
     | |___________^
     | 
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
    | 
-   | /* 68.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                               ^^^^^^^^^^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
    | 
-   | /* 68.7 */            Row(space: 14) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.7 */            Row(space: 14) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                            ^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
    | 
-   | /* 68.7 */            Row(space: 14) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.7 */            Row(space: 14) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                                    ^^^^^^^^^^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
    | 
-   | /* 68.10 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.10 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                            ^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
    | 
-   | /* 68.10 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.10 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                    ^^^^^^^^^^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
    | 
-   | /* 68.11 */                Column(space: 8) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.11 */                Column(space: 8) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                                   ^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
    | 
-   | /* 68.11 */                Column(space: 8) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.11 */                Column(space: 8) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                                           ^^^^^^^^^^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
    | 
-   | /* 68.14 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.14 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                ^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
    | 
-   | /* 68.14 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.14 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                        ^^^^^^^^^^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
    | 
-   | /* 68.15 */                    Row(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.15 */                    Row(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                                    ^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
    | 
-   | /* 68.15 */                    Row(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.15 */                    Row(space: 6) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                                            ^^^^^^^^^^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
    | 
-   | /* 68.18 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.18 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                    ^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
    | 
-   | /* 68.18 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.18 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                            ^^^^^^^^^^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
    | 
-   | /* 68.21 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.21 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                    ^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
    | 
-   | /* 68.21 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.21 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                            ^^^^^^^^^^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
    | 
-   | /* 68.24 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.24 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                    ^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
    | 
-   | /* 68.24 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.24 */                    thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                            ^^^^^^^^^^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
    | 
-   | /* 68.29 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.29 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                            ^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
    | 
-   | /* 68.29 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.29 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                    ^^^^^^^^^^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'elmtId'
    | 
-   | /* 68.32 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.32 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                            ^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 
 warning[0m: unused variable:'isInitialRender'
    | 
-   | /* 68.32 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 67.32 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                    ^^^^^^^^^^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:68:1:
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\common\widgets\restaurant_card.cj:67:1:
     | 
-68  |   @Builder
+67  |   @Builder
     |  _^
-69  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
+68  | | public func renderRestaurantCard(restaurant: RestaurantData, onSelect: () -> Unit) {
     | | ...
-106 | | }
+105 | | }
     | |_^
     | 
 

@@ -1,0 +1,72 @@
+{
+  "updates": [
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-commo-14c96350b3-001-runtime-permission-request-permission-re",
+      "set": {
+      "status": "not-applicable",
+      "sourceBehavior": "`Extensions.kt` only defines `Double.round(decimals)` and `Long.getTimeInMins()` formatting helpers; it does not request runtime permissions, handle permission results, or access protected platform APIs.",
+      "targetBehavior": "No HarmonyOS replacement is needed for this source file's permission surface. Phase-02 startup/session/navigation keeps `entry/src/main/module.json5::requestPermissions` empty, and the translated common/startup path adds no permission or protected-access scaffolding for these helper functions.",
+      "verificationEvidence": [
+        "source inspection: `app/src/main/java/com/example/foodike/presentation/common/Extensions.kt` contains only numeric/time formatting helpers with no permission APIs",
+        "target inspection: `entry/src/main/module.json5::requestPermissions` is `[]`, matching the source file's lack of permission behavior",
+        "phase-02 source grep confirms no permission request path in startup/session/navigation sources"
+      ],
+      "parityLevel": "not-applicable",
+      "targetEndpoints": [
+        "entry/src/main/module.json5::requestPermissions"
+      ],
+      "tests": [
+        "phase-02 source grep confirms no permission request path in startup/session/navigation sources",
+        "blocked: cjpm test (entry/src/test/cangjie)"
+      ],
+      "notes": "Source override: static analysis over-detected a permission feature on `Extensions.kt` because of comment/license text and generic permission heuristics. The file only contains pure formatting helpers.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": "",
+      "coverageFacts": {
+        "schemaVersion": 1,
+        "closureKind": "not-applicable",
+        "parityKind": "not-applicable",
+        "sourceBehaviorMapped": true,
+        "targetBehaviorImplemented": true,
+        "activeSimplification": {
+          "used": false,
+          "reason": "",
+          "preservedBehaviors": [],
+          "omittedBehaviors": []
+        },
+        "activeDeferred": {
+          "used": false,
+          "blockerKind": "",
+          "blocker": "",
+          "fallbackBehavior": "",
+          "futureCompletionPath": ""
+        },
+        "verification": {
+          "targetEndpoints": [
+            "entry/src/main/module.json5::requestPermissions"
+          ],
+          "testEvidence": [
+            {
+              "kind": "harness-blocked",
+              "detail": "Latest phase-02 test gate is blocked by a compile error in `entry/src/test/cangjie/phase02_repository_contract_test.cj`, so no permission-focused target test ran for this not-applicable helper-file row.",
+              "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"
+            }
+          ],
+          "buildEvidence": [],
+          "runtimeEvidence": [],
+          "manualEvidence": [
+            {
+              "kind": "manual-review",
+              "detail": "Reviewed the source helper file and confirmed it only contains rounding and duration-formatting extensions, while the target module keeps `requestPermissions` empty for phase-02 startup/session/navigation.",
+              "path": "app/src/main/java/com/example/foodike/presentation/common/Extensions.kt"
+            }
+          ]
+        },
+        "factsSource": "agent"
+      }
+      }
+    }
+  ]
+}

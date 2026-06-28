@@ -12,6 +12,10 @@ public class AdvertisementData {
         this.subtitle = subtitle
         this.mediaName = mediaName
     }
+
+    public func usesBundledMediaOnly(): Bool {
+        return this.mediaName != ""
+    }
 }
 
 public class FoodCategoryData {
@@ -21,6 +25,10 @@ public class FoodCategoryData {
     public init(name: String, mediaName: String) {
         this.name = name
         this.mediaName = mediaName
+    }
+
+    public func usesBundledMediaOnly(): Bool {
+        return this.mediaName != ""
     }
 }
 
@@ -52,6 +60,10 @@ public class RestaurantData {
         this.place = place
         this.averagePrice = averagePrice
         this.mediaName = mediaName
+    }
+
+    public func usesBundledMediaOnly(): Bool {
+        return this.mediaName != ""
     }
 }
 

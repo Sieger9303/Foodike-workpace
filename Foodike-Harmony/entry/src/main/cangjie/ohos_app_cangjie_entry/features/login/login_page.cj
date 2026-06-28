@@ -27,6 +27,42 @@ func buildLoginErrorBanner(message: String, onDismiss: () -> Unit) {
 }
 
 @Builder
+func buildPlaceholderActionText(label: ResourceStr, onClick: () -> Unit) {
+    Text(label)
+        .fontSize(15)
+        .fontColor(Color.Gray)
+        .margin(top: 8)
+        .onClick({ _ =>
+            onClick()
+        })
+}
+
+@Builder
+func buildSocialLoginSection(onGoogleLogin: () -> Unit, onFacebookLogin: () -> Unit) {
+    Row {
+        Text(stringOrSignInWith)
+            .fontSize(16)
+            .fontColor(Color.Gray)
+    }
+    .margin(top: 8)
+
+    Row(space: 20) {
+        Image(mediaGoogIcon)
+            .width(48)
+            .height(48)
+            .onClick({ _ =>
+                onGoogleLogin()
+            })
+        Image(mediaFbIcon)
+            .width(48)
+            .height(48)
+            .onClick({ _ =>
+                onFacebookLogin()
+            })
+    }
+}
+
+@Builder
 public func renderLoginRoute(
     email: String,
     password: String,
@@ -85,35 +121,9 @@ public func renderLoginRoute(
                 onPerformLogin()
             })
 
-        Row {
-            Text(stringOrSignInWith)
-                .fontSize(16)
-                .fontColor(Color.Gray)
-        }
-        .margin(top: 8)
+        buildSocialLoginSection(onGoogleLogin, onFacebookLogin)
 
-        Row(space: 20) {
-            Image(mediaGoogIcon)
-                .width(48)
-                .height(48)
-                .onClick({ _ =>
-                    onGoogleLogin()
-                })
-            Image(mediaFbIcon)
-                .width(48)
-                .height(48)
-                .onClick({ _ =>
-                    onFacebookLogin()
-                })
-        }
-
-        Text(stringNewToFoodike)
-            .fontSize(15)
-            .fontColor(Color.Gray)
-            .margin(top: 8)
-            .onClick({ _ =>
-                onSignUp()
-            })
+        buildPlaceholderActionText(stringNewToFoodike, onSignUp)
     }
     .width(100.percent)
     .height(100.percent)

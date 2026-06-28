@@ -1,7 +1,8 @@
 package ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.cart
 
-import ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.content.HomeContentRepository
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.content.homeContentRepository
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.{SessionRepository, sessionRepository}
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.formatMinutesDuration
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.domain.*
 import std.collection.ArrayList
 
@@ -9,7 +10,7 @@ public let cartStore = CartStore()
 
 public class CartStore {
     private let sessionRepository = sessionRepository
-    private let contentRepository = HomeContentRepository()
+    private let contentRepository = homeContentRepository
 
     public init() {}
 
@@ -44,13 +45,11 @@ public class CartStore {
     }
 
     public func incrementQuantity(item: CartSnapshotItemData): Unit {
-        item.quantity += 1
+        sessionRepository.incrementMenuItemQuantity(item.menuItem.dish)
     }
 
     public func decrementQuantity(item: CartSnapshotItemData): Unit {
-        if (item.quantity > 0) {
-            item.quantity -= 1
-        }
+        sessionRepository.decrementMenuItemQuantity(item.menuItem.dish)
     }
 
     public func formatPrice(price: Float64): String {
@@ -58,12 +57,7 @@ public class CartStore {
     }
 
     public func formatEta(minutes: Int64): String {
-        let hours = minutes / 60
-        let remainder = minutes % 60
-        if (hours > 0) {
-            return "${hours} Hr ${remainder} Min"
-        }
-        return "${remainder} Min"
+        return formatMinutesDuration(minutes)
     }
 
     public func taxAmount(itemTotal: Float64): Float64 {

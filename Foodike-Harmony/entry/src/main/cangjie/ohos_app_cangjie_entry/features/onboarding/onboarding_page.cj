@@ -43,6 +43,30 @@ func buildOnboardingIndicator(isSelected: Bool) {
 }
 
 @Builder
+func buildOnboardingIndicatorRow(pageIndex: Int64) {
+    Row(space: 12) {
+        buildOnboardingIndicator(pageIndex == 0)
+        buildOnboardingIndicator(pageIndex == 1)
+        buildOnboardingIndicator(pageIndex == 2)
+    }
+}
+
+@Builder
+func buildOnboardingFooter(pageIndex: Int64, onNext: () -> Unit) {
+    Row {
+        buildOnboardingIndicatorRow(pageIndex)
+        Button(">")
+            .onClick({ _ =>
+                onNext()
+            })
+    }
+    .width(90.percent)
+    .justifyContent(FlexAlign.SpaceBetween)
+    .alignItems(VerticalAlign.Center)
+    .margin(bottom: 12)
+}
+
+@Builder
 public func renderOnboardingRoute(
     pageIndex: Int64,
     controller: SwiperController,
@@ -74,21 +98,7 @@ public func renderOnboardingRoute(
         .width(100.percent)
         .height(78.percent)
 
-        Row {
-            Row(space: 12) {
-                buildOnboardingIndicator(pageIndex == 0)
-                buildOnboardingIndicator(pageIndex == 1)
-                buildOnboardingIndicator(pageIndex == 2)
-            }
-            Button(">")
-                .onClick({ _ =>
-                    onNext()
-                })
-        }
-        .width(90.percent)
-        .justifyContent(FlexAlign.SpaceBetween)
-        .alignItems(VerticalAlign.Center)
-        .margin(bottom: 12)
+        buildOnboardingFooter(pageIndex, onNext)
     }
     .width(100.percent)
     .height(100.percent)

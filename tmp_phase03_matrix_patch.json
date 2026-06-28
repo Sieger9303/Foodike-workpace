@@ -1,0 +1,218 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Tighten phase-03 onboarding/login endpoints and record the workflow test blocker precisely.",
+  "updates": [
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-2c65d08c3b-005-screen-lifecycle-entry-point-initializat",
+      "set": {
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildLoginRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::clearLoginError",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::renderLoginRoute"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildLoginRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::clearLoginError",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::renderLoginRoute"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "Workflow report `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` shows `cjpm test --target aarch64-linux-ohos` is blocked by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj` before the phase-03 onboarding/login tests can run."
+              }
+            ],
+            "buildEvidence": [],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "`buildLoginRoute` and `renderLoginRoute` keep the active login route state local and clear the inline error state on field edits."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-78d5c742f4-007-observable-state-viewmodel-flow-livedata",
+      "set": {
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildLoginRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::clearLoginError",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::renderLoginRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildLoginErrorBanner"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildLoginRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::clearLoginError",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::renderLoginRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildLoginErrorBanner"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "Workflow report `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` shows `cjpm test --target aarch64-linux-ohos` is blocked by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj` before the phase-03 onboarding/login tests can run."
+              }
+            ],
+            "buildEvidence": [],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "Login input callbacks and `buildLoginErrorBanner` make the translated route update field state and invalid-login feedback immediately."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-121975f8dc-003-observable-state-viewmodel-flow-livedata",
+      "set": {
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildLoginRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogin",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::clearLoginError",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildLoginErrorBanner"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildLoginRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogin",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::clearLoginError",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildLoginErrorBanner"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "Workflow report `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` shows `cjpm test --target aarch64-linux-ohos` is blocked by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj` before the phase-03 onboarding/login tests can run."
+              }
+            ],
+            "buildEvidence": [],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "The translated login flow mutates route-local email, password, and inline error state directly in response to the same source edit and submit events."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-fcaf31ccc3-003-screen-lifecycle-entry-point-initializat",
+      "set": {
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildOnboardingRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::renderOnboardingRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::buildOnboardingIndicator"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildOnboardingRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::renderOnboardingRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::buildOnboardingIndicator"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "Workflow report `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` shows `cjpm test --target aarch64-linux-ohos` is blocked by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj` before the phase-03 onboarding/login tests can run."
+              }
+            ],
+            "buildEvidence": [],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "The translated onboarding route keeps page-local controller and indicator behavior within `buildOnboardingRoute` and `renderOnboardingRoute`, matching the source pager lifecycle scope."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    }
+  ]
+}

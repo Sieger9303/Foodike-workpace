@@ -645,43 +645,100 @@
         "unavailable HarmonyOS media API in current SDK",
         "device/media permission unavailable in test environment"
       ],
-      "status": "planned",
+      "status": "not-applicable",
       "plannedPhase": "phase-04-home-history",
-      "targetCapabilitySearch": [],
-      "targetApiOrLibrary": "",
-      "targetStrategy": "",
-      "targetEndpoints": [],
-      "tests": [],
-      "sdkDeclarationEvidence": [],
-      "cangjieCallableEvidence": [],
+      "targetCapabilitySearch": [
+        "Phase-04 source inspection found no Android media-store, album, gallery picker, content URI, or runtime media permission flow in the home/history implementation surface. A repository-wide grep over D:\\Kotlin2Cangjie\\Foodike\\app\\src\\main\\java found no MediaStore, contentResolver, ACTION_PICK, GetContent, OpenDocument, PickVisualMedia, rememberLauncherForActivityResult, READ_EXTERNAL_STORAGE, or READ_MEDIA* usage.",
+        "The actual phase-04 UI code renders bundled app resources through painterResource and R.drawable only, including presentation/history/components/HistorySection.kt:111-115 and 240-243, presentation/components/RestaurantCard.kt:70-76 and 88-89, and the static catalog media ids in data/data_source/FakeData.kt:512-803.",
+        "Current HarmonyOS Cangjie SDK does provide a direct media-library and album API through ohos.file.photo_access_helper, including getPhotoAccessHelper(context: UIAbilityContext): PhotoAccessHelper and PhotoAccessHelper.getAlbums(...), so this row is resolved as a false-positive phase match rather than missing platform support.",
+        "Phase-04 implementation confirmed the translated home/history batch still uses packaged resource images only; no additional user-media or album flow was introduced while closing the scoped rows.",
+        "Focused phase-04 verification on 2026-06-28 reran a repository-wide grep across `D:\\Kotlin2Cangjie\\Foodike\\app\\src\\main\\java` for `MediaStore|photo|gallery|picker|READ_MEDIA|READ_EXTERNAL_STORAGE|ContentResolver|Uri|Exif|zoom` and found no matches, reinforcing that the current home/history scope has no real user-media or album-discovery flow.",
+        "Focused target verification on 2026-06-28 ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie`; `phase04_home_history_discovery_test.cj` passed while home/history surfaces continued to rely on packaged media endpoints only."
+      ],
+      "targetApiOrLibrary": "HarmonyOS Cangjie MediaLibraryKit / ohos.file.photo_access_helper (getPhotoAccessHelper, PhotoAccessHelper.getAlbums, album/media asset APIs) exists in the current SDK, but phase-04 home/history source behavior only consumes bundled drawable resources and does not browse user albums.",
+      "targetStrategy": "Treat the phase-04 media-library requirement as a source-analysis false positive. Implement home/history images from packaged app media resources only; do not add album discovery, gallery picker, or media permission scaffolding in this phase unless later source-backed behavior proves a real user-media flow.",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::AdvertisementData::usesBundledMediaOnly",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::FoodCategoryData::usesBundledMediaOnly",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::RestaurantData::usesBundledMediaOnly",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/restaurant_card.cj::usesBundledRestaurantMedia",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj::buildHomeAdCards",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj::buildRecommendedCategories",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/history/history_page.cj::buildHistoryRecordCard"
+      ],
+      "tests": [
+        "phase-04 repository-wide source grep confirms no media-library or picker flow in app/src/main/java",
+        "manual source inspection confirms bundled drawable rendering only in home/history surfaces",
+        "Phase-04 Harmony build rerun PASS on 2026-06-28 after source-backed home/history fixes",
+        "`cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` PASS on 2026-06-28",
+        "entry/src/test/cangjie/phase04_home_history_discovery_test.cj (PASS 2026-06-28)"
+      ],
+      "sdkDeclarationEvidence": [
+        "Current Cangjie SDK declares getPhotoAccessHelper(context: UIAbilityContext): PhotoAccessHelper and PhotoAccessHelper.getAlbums(albumType: AlbumType, subtype: AlbumSubtype, options!: FetchOptions = FetchOptions([\"uri\", \"album_name\"], DataSharePredicates())): AlbumResult in C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.file.photo_access_helper.cj.d:646-709.",
+        "Current Cangjie SDK also declares album/media entities in the same module, including Album, PhotoAccessHelper, and related album subtype/type enums under SystemCapability.FileManagement.PhotoAccessHelper.Core in C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.file.photo_access_helper.cj.d."
+      ],
+      "cangjieCallableEvidence": [
+        "HarmonyOS Cangjie docs index the direct album/media API in harmonyos-6.1-8k/API/MediaLibraryKit/cj-apis-file-photo_access_helper/ohosfilephoto_access_helper相册管理模块/.overview.md, describing PhotoAccessHelper, Album, and PhotoAsset as the callable Cangjie media-library surface.",
+        "HarmonyOS Cangjie docs include album-specific API references such as class_Album.md, confirming the target platform has a real album-discovery path if a later source phase needs it."
+      ],
       "discoveryOnlyEvidence": [],
       "compileProbeEvidence": [],
-      "preResolutionDecision": "",
-      "phaseCapabilityResolution": "",
+      "preResolutionDecision": "resolved-not-applicable",
+      "phaseCapabilityResolution": "resolved-not-applicable",
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": "",
+      "notes": "Phase-04 implementation preserved bundled-resource media rendering for the scoped home/history surfaces and did not widen the phase into album discovery or picker flows.",
       "capabilityFacts": {
         "schemaVersion": 1,
-        "resolutionKind": "open",
+        "resolutionKind": "not-applicable",
         "activeFallback": {
           "used": false,
           "fallbackKind": "",
           "reason": "",
           "blocker": ""
         },
-        "apiEvidence": [],
+        "apiEvidence": [
+          {
+            "kind": "cangjie-sdk-declaration",
+            "detail": "ohos.file.photo_access_helper remains available in the current Cangjie SDK if a later phase needs real album discovery."
+          },
+          {
+            "kind": "cangjie-callable-api",
+            "detail": "HarmonyOS Cangjie MediaLibraryKit docs still document callable media-library APIs, but this scoped home/history batch remains packaged-media only."
+          },
+          {
+            "kind": "target-endpoint",
+            "detail": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/restaurant_card.cj::usesBundledRestaurantMedia"
+          },
+          {
+            "kind": "build-gate-pass",
+            "detail": "Phase-04 Harmony build rerun on 2026-06-28 completed successfully after the home/history source-backed fixes."
+          }
+        ],
         "discoveryOnlyEvidence": [],
-        "compileProbeEvidence": [],
-        "targetEndpoints": [],
+        "compileProbeEvidence": [
+          {
+            "kind": "build-gate-pass",
+            "detail": "`python D:\\workspace\\Foodike\\.agents\\skills\\harmonyos-build\\build.py --project-root D:\\workspace\\Foodike\\Foodike-Harmony` passed on 2026-06-28."
+          }
+        ],
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::AdvertisementData::usesBundledMediaOnly",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::FoodCategoryData::usesBundledMediaOnly",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::RestaurantData::usesBundledMediaOnly",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/restaurant_card.cj::usesBundledRestaurantMedia",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj::buildHomeAdCards",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj::buildRecommendedCategories",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/history/history_page.cj::buildHistoryRecordCard"
+        ],
         "blocker": {
           "used": false,
           "kind": "",
           "detail": "",
           "futureCompletionPath": ""
         },
-        "factsSource": "template"
+        "factsSource": "agent"
       }
     },
     {
@@ -2350,33 +2407,50 @@
         "target file picker API unavailable",
         "cross-app document permission requires device integration"
       ],
-      "status": "planned",
+      "status": "not-applicable",
       "plannedPhase": "phase-05-detail-cart",
-      "targetCapabilitySearch": [],
-      "targetApiOrLibrary": "",
-      "targetStrategy": "",
+      "targetCapabilitySearch": [
+        "Source inspection of phase-05 detail/cart files shows no file picker, document import/export, URI grant, or share intent implementation: RestaurantDetail.kt only renders a share icon with an empty onClick block; Cart.kt, CartItemCard.kt, MenuItemCard.kt, and RestaurantDetailCard.kt render packaged resources and local state only.",
+        "Current Cangjie SDK still exposes a real share/URI path through ohos.app.ability.want Want(uri, action, entities, dataType, parameters, fds) plus URI permission constants under ohos.app.ability.want_constant.Flags, so later source-backed cross-app share/file behavior should use Want-based HarmonyOS sharing rather than a local fallback.",
+        "Because the current phase source behavior has no actual file/document/share flow to preserve, treat this capability match as a phase-05 static-analysis false positive rather than implementation scope."
+      ],
+      "targetApiOrLibrary": "HarmonyOS Cangjie AbilityKit Want/URI APIs (`ohos.app.ability.want.Want`, `ohos.app.ability.want_constant.Flags`) exist for real cross-app URI/file sharing, but phase-05 detail/cart source behavior does not invoke them.",
+      "targetStrategy": "Treat the phase-05 file/document/share capability as not applicable for detail/cart. Keep the phase focused on detail/cart state and packaged-resource rendering; if a later source-backed share flow is implemented, route it through HarmonyOS Want-based sharing with explicit URI permission flags instead of introducing Android SAF assumptions.",
       "targetEndpoints": [],
-      "tests": [],
-      "sdkDeclarationEvidence": [],
-      "cangjieCallableEvidence": [],
+      "tests": [
+        "phase-05 source grep found no ACTION_SEND, FileProvider, ContentResolver, MediaStore, file picker, or SAF calls in app/src/main/java",
+        "manual source inspection confirms RestaurantDetail.kt share IconButton has an empty onClick block and cart/detail components use only bundled resources and local UI state"
+      ],
+      "sdkDeclarationEvidence": [
+        "Current Cangjie SDK declares Want constructors with uri/action/entities/dataType/parameters fields in C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\ohos.app.ability.want.cjo, including `Want(... uri=6String!3uri=6String!6action=5Array<6String>!8entities=6String!8dataType=7HashMap<6String13WantValueType>!10parameters=7HashMap<6Stringi>!3fds ...)` and related `Want3uri` symbols.",
+        "Current Cangjie SDK also exposes URI grant constants for real share/file flows in C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\ohos.app.ability.want_constant.cjo, including `FLAG_AUTH_READ_URI_PERMISSION`, `FLAG_AUTH_WRITE_URI_PERMISSION`, and `FLAG_AUTH_PERSISTABLE_URI_PERMISSION`."
+      ],
+      "cangjieCallableEvidence": [
+        "Current Cangjie SDK exposes Cangjie-callable AbilityKit sharing/URI surfaces through `ohos.app.ability.want.Want` and `ohos.app.ability.want_constant.Flags`, which are the target-platform replacement path if a later source-backed share flow is needed."
+      ],
       "discoveryOnlyEvidence": [],
       "compileProbeEvidence": [],
-      "preResolutionDecision": "",
-      "phaseCapabilityResolution": "",
+      "preResolutionDecision": "resolved-not-applicable",
+      "phaseCapabilityResolution": "resolved-not-applicable",
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": "",
+      "notes": "Phase-05 detail/cart source behavior does not include any implemented file access, document picker, or URI sharing workflow. The share affordance is present only as an empty button handler, so closing this capability as not-applicable preserves actual source behavior instead of inventing SAF scope.",
       "capabilityFacts": {
         "schemaVersion": 1,
-        "resolutionKind": "open",
+        "resolutionKind": "not-applicable",
         "activeFallback": {
           "used": false,
           "fallbackKind": "",
           "reason": "",
           "blocker": ""
         },
-        "apiEvidence": [],
+        "apiEvidence": [
+          {
+            "kind": "cangjie-sdk-declaration",
+            "detail": "AbilityKit Want and URI permission constants exist in the current Cangjie SDK for real share/file flows if a later source-backed phase needs them."
+          }
+        ],
         "discoveryOnlyEvidence": [],
         "compileProbeEvidence": [],
         "targetEndpoints": [],
@@ -2386,7 +2460,7 @@
           "detail": "",
           "futureCompletionPath": ""
         },
-        "factsSource": "template"
+        "factsSource": "agent"
       }
     },
     {
@@ -3023,33 +3097,55 @@
         "target gesture API unavailable",
         "EXIF API unavailable in current SDK"
       ],
-      "status": "planned",
+      "status": "not-applicable",
       "plannedPhase": "phase-05-detail-cart",
-      "targetCapabilitySearch": [],
-      "targetApiOrLibrary": "",
-      "targetStrategy": "",
+      "targetCapabilitySearch": [
+        "Source inspection of phase-05 detail/cart files shows static image rendering only: RestaurantDetailCard.kt, MenuItemCard.kt, CartItemCard.kt, and Cart.kt use `painterResource`/drawable assets and local counters; no zoom state, gesture detectors, bitmap decode pipeline, metadata panel, or full-screen image viewer route exists.",
+        "HarmonyOS Cangjie docs and SDK provide direct image display and image-source APIs, including ArkUI Image and ImageKit createImageSource(String), but the current source phase does not require zoom, EXIF, or metadata behavior to preserve.",
+        "Because the source behavior is packaged-image display without viewer interactions, treat this capability as a phase-05 static-analysis false positive rather than adding a gesture viewer feature not present in the app."
+      ],
+      "targetApiOrLibrary": "HarmonyOS Cangjie ArkUI `Image` and ImageKit `ohos.multimedia.image.createImageSource(String)` exist for real image display/processing, but phase-05 detail/cart source behavior only needs static packaged-image rendering.",
+      "targetStrategy": "Resolve the capability as not applicable for phase-05. Implement the detail/cart visuals with normal HarmonyOS Image rendering from packaged media; do not add zoom, reset, metadata, or EXIF UI unless a later source-backed requirement proves a real image viewer flow.",
       "targetEndpoints": [],
-      "tests": [],
-      "sdkDeclarationEvidence": [],
-      "cangjieCallableEvidence": [],
+      "tests": [
+        "phase-05 source grep found no zoom, EXIF, bitmap decode, gesture detector, gallery preview, or image metadata flow in app/src/main/java",
+        "manual source inspection confirms detail/cart image surfaces are static resource images with no viewer state machine or gesture callbacks"
+      ],
+      "sdkDeclarationEvidence": [
+        "HarmonyOS Cangjie docs index the direct ArkUI image component in harmonyos-6.1-8k/API/arkui-cj/cj-image-video-image/Image/.overview.md, confirming a callable Cangjie image-rendering surface for packaged or remote images.",
+        "HarmonyOS Cangjie docs also include ImageKit `createImageSource(String)` for URI/path-backed image decoding in harmonyos-6.1-8k/API/ImageKit/cj-apis-image/ohosmultimediaimage图片处理/func_createImageS_2more_375f064b.md, showing the current platform has a real image-source API if a later source-backed viewer feature appears."
+      ],
+      "cangjieCallableEvidence": [
+        "ArkUI Cangjie `Image` is the direct callable target API for the actual phase-05 behavior of rendering packaged images.",
+        "ImageKit `createImageSource(String)` is a callable Cangjie image-processing API available for future source-backed metadata/decoder work, but it is not required by this phase source behavior."
+      ],
       "discoveryOnlyEvidence": [],
       "compileProbeEvidence": [],
-      "preResolutionDecision": "",
-      "phaseCapabilityResolution": "",
+      "preResolutionDecision": "resolved-not-applicable",
+      "phaseCapabilityResolution": "resolved-not-applicable",
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": "",
+      "notes": "The current phase only shows packaged images inside detail and cart cards. There is no source-backed zoom, pan, reset, metadata, or EXIF flow to preserve, so adding a gesture viewer here would over-implement beyond the source app.",
       "capabilityFacts": {
         "schemaVersion": 1,
-        "resolutionKind": "open",
+        "resolutionKind": "not-applicable",
         "activeFallback": {
           "used": false,
           "fallbackKind": "",
           "reason": "",
           "blocker": ""
         },
-        "apiEvidence": [],
+        "apiEvidence": [
+          {
+            "kind": "cangjie-callable-api",
+            "detail": "ArkUI Image is the direct Cangjie-callable API for the packaged-image rendering behavior actually used in phase-05."
+          },
+          {
+            "kind": "cangjie-sdk-declaration",
+            "detail": "ImageKit createImageSource(String) exists as a real Cangjie image-source API if a later source-backed viewer flow is introduced."
+          }
+        ],
         "discoveryOnlyEvidence": [],
         "compileProbeEvidence": [],
         "targetEndpoints": [],
@@ -3059,7 +3155,7 @@
           "detail": "",
           "futureCompletionPath": ""
         },
-        "factsSource": "template"
+        "factsSource": "agent"
       }
     },
     {
@@ -3822,21 +3918,24 @@
         "HarmonyOS resource guidance confirms the standard HarmonyOS resource-category and access path should be used for multi-language and multi-device adaptation rather than custom fallback handling (`D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\harmonyos-6.1-8k\\Guide\\cj-start\\start\\cj-ide-resource-categories-and-access\\资源分类与访问\\.abstract.md:1`)."
       ],
       "targetApiOrLibrary": "HarmonyOS Cangjie LocalizationKit resource model (`ohos.base.ResourceStr`, `ohos.resource.AppResource`, `ohos.resource_manager.ResourceManager`) with standard HarmonyOS `string.json`/`color.json` resources",
-      "targetStrategy": "Phase 01 migrates Android labels, start-window colors, and resource-backed UI text into HarmonyOS descriptor/resource files, with AppResource helpers for Cangjie access where needed.",
+      "targetStrategy": "Phase 01 migrates Android labels, start-window colors, and resource-backed UI text into HarmonyOS descriptor/resource files, with AppResource helpers for Cangjie access where needed. Batch 3 also removes hard-coded route-shell labels by routing them through `foodike_resources.cj` and `app_router.cj` before display in `bootstrap_page.cj`.",
       "targetEndpoints": [
         "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj",
         "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj",
         "entry/src/main/resources/base/element/string.json",
         "entry/src/main/resources/base/element/color.json",
         "AppScope/app.json5",
-        "entry/src/main/module.json5"
+        "entry/src/main/module.json5",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj"
       ],
       "tests": [
         "string key coverage check",
         "placeholder preservation check",
         "locale selection smoke test",
         "manual review of descriptor/resource mapping",
-        "build_hap_report.py --phase phase-01-project-skeleton-resources"
+        "build_hap_report.py --phase phase-01-project-skeleton-resources",
+        "entry/src/test/cangjie/phase01_resource_theme_contract_test.cj",
+        "cjpm test in entry/src/test/cangjie (blocked before test execution: root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`)"
       ],
       "sdkDeclarationEvidence": [
         "`ohos.base.ResourceStr` is a direct SDK interface and `String` extends it (`C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.base.cj.d:618-626`).",
@@ -3850,14 +3949,15 @@
       ],
       "discoveryOnlyEvidence": [],
       "compileProbeEvidence": [
-        "Phase 01 build gate PASS: translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md"
+        "Phase 01 build gate PASS: translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md",
+        "Harness blocker during batch-3 verification: `cjpm test` in `entry/src/test/cangjie` stops before executing tests because `entry/cjpm.toml` does not declare dependencies for imported `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` packages."
       ],
       "preResolutionDecision": "resolved-real-api",
       "phaseCapabilityResolution": "resolved-real-api",
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": "Batch 1 confirmed the active entry/module descriptors and resource files compile together. Later phase batches still need to expand string/media coverage beyond the current baseline.",
+      "notes": "Batch 1 confirmed the active entry/module descriptors and resource files compile together. Batch 3 moved phase-01 route-shell labels off hard-coded English text and added a focused route/theme contract test, but `cjpm test` remains harness-blocked because `entry/cjpm.toml` lacks declared dependencies for imported `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` packages.",
       "capabilityFacts": {
         "schemaVersion": 1,
         "resolutionKind": "direct-api",
@@ -5667,43 +5767,85 @@
         "permission API requires device integration",
         "capability unavailable in simulator"
       ],
-      "status": "planned",
+      "status": "not-applicable",
       "plannedPhase": "phase-02-startup-session-navigation",
-      "targetCapabilitySearch": [],
-      "targetApiOrLibrary": "",
-      "targetStrategy": "",
-      "targetEndpoints": [],
-      "tests": [],
-      "sdkDeclarationEvidence": [],
-      "cangjieCallableEvidence": [],
+      "targetCapabilitySearch": [
+        "Phase-02 source inspection found no Android runtime permission request or protected-API flow in the startup/session/navigation implementation scope: `presentation/MainActivity.kt`, `presentation/common/SplashViewModel.kt`, `presentation/util/Navigation.kt`, `domain/repository/HomeRepository.kt`, `domain/repository/LoginRepository.kt`, and `domain/repository/UserDataRepository.kt` contain startup routing, repository contracts, and shell behavior only.",
+        "Repository-wide source grep over `D:\\Kotlin2Cangjie\\Foodike\\app\\src\\main\\java` found DataStore and `Application` usage only for this phase surface; it did not find `requestPermissions`, `rememberLauncherForActivityResult`, `ActivityResultContracts.RequestPermission`, `READ_EXTERNAL_STORAGE`, `WRITE_EXTERNAL_STORAGE`, `POST_NOTIFICATIONS`, `Service`, `BroadcastReceiver`, `WorkManager`, or notification APIs in the inspected phase sources.",
+        "Current Cangjie SDK does provide a callable runtime-permission path through `AtManager.requestPermissionsFromUser(context: UIAbilityContext, permissionList: Array<Permissions>, requestCallback: AsyncCallback<PermissionRequestResult>)` and `PermissionRequestResult`, so this row is closed as phase-specific not-applicable rather than missing-platform-support."
+      ],
+      "targetApiOrLibrary": "HarmonyOS Cangjie AbilityKit permission APIs exist (`ohos.ability_access_ctrl.AtManager`, `ohos.security.permission_request_result.PermissionRequestResult`) but are not required by phase-02 startup/session/navigation source behavior.",
+      "targetStrategy": "Treat the phase-02 permission requirement as a source-analysis false positive. Do not add permission prompts or protected-access scaffolding during startup/session/navigation implementation unless later source-backed phases introduce real protected APIs.",
+      "targetEndpoints": [
+        "entry/src/main/module.json5::requestPermissions"
+      ],
+      "tests": [
+        "phase-02 source grep confirms no permission request path in startup/session/navigation sources",
+        "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+      ],
+      "sdkDeclarationEvidence": [
+        "Cangjie SDK declares `AtManager.requestPermissionsFromUser(context: UIAbilityContext, permissionList: Array<Permissions>, requestCallback: AsyncCallback<PermissionRequestResult>): Unit` in `C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.ability_access_ctrl.cj.d:163-164`.",
+        "Cangjie SDK declares `PermissionRequestResult` in `C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.security.permission_request_result.cj.d:29-50`."
+      ],
+      "cangjieCallableEvidence": [
+        "HarmonyOS Cangjie docs index `requestPermissionsFromUser` under AbilityKit and document it as the direct user-authorization dialog API for Cangjie apps (`D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\harmonyos-6.1-8k\\API\\AbilityKit\\cj-apis-ability_access_ctrl\\ohosability_access_ctrl程序访问控制管理\\class_AtManager\\func_requestPermissionsFromUserUIAbilityC_82361e31.md`).",
+        "HarmonyOS security guide documents the runtime authorization flow for Cangjie apps (`D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\harmonyos-6.1-8k\\Guide\\security\\AccessToken\\cj-request-user-authorization\\向用户申请授权\\开发步骤\\开发步骤_1.md`)."
+      ],
       "discoveryOnlyEvidence": [],
       "compileProbeEvidence": [],
-      "preResolutionDecision": "",
-      "phaseCapabilityResolution": "",
+      "preResolutionDecision": "resolved-not-applicable",
+      "phaseCapabilityResolution": "resolved-not-applicable",
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": "",
+      "notes": "Phase-02 source review confirms runtime permissions are not required by the startup/session/navigation batch. The accepted phase-02 test build report is PASS, so this row no longer relies on stale blocked-test notes.",
       "capabilityFacts": {
         "schemaVersion": 1,
-        "resolutionKind": "open",
+        "resolutionKind": "not-applicable",
         "activeFallback": {
           "used": false,
           "fallbackKind": "",
           "reason": "",
           "blocker": ""
         },
-        "apiEvidence": [],
+        "apiEvidence": [
+          {
+            "kind": "cangjie-sdk-declaration",
+            "detail": "`AtManager.requestPermissionsFromUser(...)` exists in `ohos.ability_access_ctrl.cj.d:163-164`, proving the platform capability exists in current Cangjie SDK even though this phase does not need it."
+          },
+          {
+            "kind": "cangjie-callable-api",
+            "detail": "AbilityKit Cangjie docs document `requestPermissionsFromUser` as the direct runtime authorization API."
+          },
+          {
+            "kind": "target-endpoint",
+            "detail": "entry/src/main/module.json5::requestPermissions",
+            "path": "entry/src/main/module.json5"
+          },
+          {
+            "kind": "build-gate-pass",
+            "detail": "Phase-02 test build report PASS: translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md",
+            "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"
+          }
+        ],
         "discoveryOnlyEvidence": [],
-        "compileProbeEvidence": [],
-        "targetEndpoints": [],
+        "compileProbeEvidence": [
+          {
+            "kind": "build-gate-pass",
+            "detail": "Phase-02 test build report PASS: translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md",
+            "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"
+          }
+        ],
+        "targetEndpoints": [
+          "entry/src/main/module.json5::requestPermissions"
+        ],
         "blocker": {
           "used": false,
           "kind": "",
           "detail": "",
           "futureCompletionPath": ""
         },
-        "factsSource": "template"
+        "factsSource": "agent"
       }
     },
     {
@@ -5952,61 +6094,146 @@
         "target background capability unavailable",
         "requires signed device or service configuration"
       ],
-      "status": "planned",
+      "status": "platform-replaced",
       "plannedPhase": "phase-02-startup-session-navigation",
-      "targetCapabilitySearch": [],
-      "targetApiOrLibrary": "",
-      "targetStrategy": "",
-      "targetEndpoints": [],
-      "tests": [],
-      "sdkDeclarationEvidence": [],
-      "cangjieCallableEvidence": [],
+      "targetCapabilitySearch": [
+        "Phase-02 source inspection confirmed real app-entry and lifecycle scope, but not Android background services/receivers/widgets: `FoodikeApp.kt` defines `class FoodikeApp : Application()`, `MainActivity.kt` defines a single `ComponentActivity` with `installSplashScreen().setKeepOnScreenCondition { splashViewModel.isLoading.value }`, and `SplashViewModel.kt` resolves onboarding vs home from persisted login state before normal UI rendering.",
+        "Current Cangjie SDK declares HarmonyOS app-entry and lifecycle APIs through `UIAbility`, `UIAbilityContext`, and ability startup methods such as `startAbility` / `startAbilityForResult`, which are the direct target replacement for the source `Application` + `Activity` startup surface.",
+        "HarmonyOS Cangjie navigation docs recommend ArkUI `Navigation`/`NavPathStack` or `Router` for in-app page routing, so the source single-activity navigation shell should be implemented as HarmonyOS app bootstrap plus ArkUI navigation rather than Android activity/navigation infrastructure."
+      ],
+      "targetApiOrLibrary": "HarmonyOS Cangjie AbilityKit app-entry APIs (`ohos.app.ability.ui_ability.UIAbility`, `UIAbilityContext`, `Want`) plus ArkUI `Navigation`/`NavPathStack` or `Router` for in-app startup and route flow",
+      "targetStrategy": "Resolve the source Android platform component surface as a HarmonyOS platform replacement: model app startup in the target `UIAbility`/descriptor entry, keep splash-like gating inside bootstrap state before rendering the main route, and implement onboarding/home navigation using the existing ArkUI route shell instead of Android `Application`, `ComponentActivity`, and `core-splashscreen` APIs.",
+      "targetEndpoints": [
+        "AppScope/app.json5",
+        "entry/src/main/module.json5",
+        "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_launch_service.cj::resolveLaunchRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj::resolveStartRoute"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase02_startup_navigation_test.cj::startupStorePublishesResolvedRouteAndClearsLoading",
+        "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)",
+        "build_hap_report.py --phase phase-02-startup-session-navigation"
+      ],
+      "sdkDeclarationEvidence": [
+        "Cangjie SDK declares `public open class UIAbility <: Ability` in `C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.app.ability.ui_ability.cj.d:228`.",
+        "Cangjie SDK declares `public open func onCreate(want: Want, launchParam: LaunchParam): Unit` for `UIAbility` in `C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.app.ability.ui_ability.cj.d:276`.",
+        "Cangjie SDK declares `public open class UIAbilityContext <: Context` plus `startAbility` / `startAbilityForResult` in `C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.app.ability.ui_ability.cj.d:366,416,507,552`."
+      ],
+      "cangjieCallableEvidence": [
+        "HarmonyOS Cangjie docs describe `UIAbilityContext` as the lifecycle and ability-interaction context, including `startAbility` and `startAbilityForResult` (`D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\harmonyos-6.1-8k\\API\\AbilityKit\\cj-apis-app-ability-ui_ability\\ohosappabilityui_ability\\class_UIAbilityContext\\.overview.md`).",
+        "HarmonyOS Cangjie docs describe ArkUI `Navigation` as the route-navigation root view container and recommend component navigation for page routing (`D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\harmonyos-6.1-8k\\API\\arkui-cj\\cj-navigation-switching-navigation\\Navigation\\.overview.md`; `D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\harmonyos-6.1-8k\\Guide\\arkui-cj\\cj-navigation-introduction\\cj-navigation-introduction.md`).",
+        "HarmonyOS Cangjie docs also expose `Router` for page jumps when a lighter route shell is preferred (`D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\harmonyos-6.1-8k\\API\\arkui-cj\\cj-apis-uicontext-router\\Router\\class_Router.md`)."
+      ],
       "discoveryOnlyEvidence": [],
       "compileProbeEvidence": [],
-      "preResolutionDecision": "",
-      "phaseCapabilityResolution": "",
+      "preResolutionDecision": "resolved-platform-replacement",
+      "phaseCapabilityResolution": "resolved-platform-replacement",
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": "",
+      "notes": "Phase-02 only needs app entry and startup lifecycle gating. The platform replacement is carried by precise entry/startup endpoints, and the accepted phase-02 test build report now backs the startup-store contract evidence.",
       "capabilityFacts": {
         "schemaVersion": 1,
-        "resolutionKind": "open",
+        "resolutionKind": "platform-replacement",
         "activeFallback": {
           "used": false,
           "fallbackKind": "",
           "reason": "",
           "blocker": ""
         },
-        "apiEvidence": [],
+        "apiEvidence": [
+          {
+            "kind": "cangjie-sdk-declaration",
+            "detail": "`UIAbility` exists in `ohos.app.ability.ui_ability.cj.d:228` with lifecycle `onCreate(want, launchParam)` at line 276."
+          },
+          {
+            "kind": "cangjie-sdk-declaration",
+            "detail": "`UIAbilityContext` plus `startAbility` and `startAbilityForResult` exist in `ohos.app.ability.ui_ability.cj.d:366,416,507,552`."
+          },
+          {
+            "kind": "cangjie-callable-api",
+            "detail": "HarmonyOS Cangjie docs document `UIAbilityContext` startup APIs for ability lifecycle and jumps."
+          },
+          {
+            "kind": "cangjie-callable-api",
+            "detail": "HarmonyOS Cangjie docs document ArkUI `Navigation` and `Router` as the supported in-app route path."
+          },
+          {
+            "kind": "target-endpoint",
+            "detail": "AppScope/app.json5",
+            "path": "AppScope/app.json5"
+          },
+          {
+            "kind": "target-endpoint",
+            "detail": "entry/src/main/module.json5",
+            "path": "entry/src/main/module.json5"
+          },
+          {
+            "kind": "target-endpoint",
+            "detail": "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+            "path": "entry/src/main/cangjie/app_ability.cj"
+          },
+          {
+            "kind": "target-endpoint",
+            "detail": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_launch_service.cj::resolveLaunchRoute",
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_launch_service.cj"
+          },
+          {
+            "kind": "target-endpoint",
+            "detail": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj::resolveStartRoute",
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj"
+          },
+          {
+            "kind": "build-gate-pass",
+            "detail": "Phase-02 test build report PASS: translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md",
+            "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"
+          }
+        ],
         "discoveryOnlyEvidence": [],
-        "compileProbeEvidence": [],
-        "targetEndpoints": [],
+        "compileProbeEvidence": [
+          {
+            "kind": "build-gate-pass",
+            "detail": "Phase-02 test build report PASS: translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md",
+            "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"
+          }
+        ],
+        "targetEndpoints": [
+          "AppScope/app.json5",
+          "entry/src/main/module.json5",
+          "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_launch_service.cj::resolveLaunchRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj::resolveStartRoute"
+        ],
         "blocker": {
           "used": false,
           "kind": "",
           "detail": "",
           "futureCompletionPath": ""
         },
-        "factsSource": "template"
+        "factsSource": "agent"
       }
     }
   ],
-  "lastPatchedAt": "2026-06-27T03:00:00+00:00",
+  "lastPatchedAt": "2026-06-28T10:33:28+00:00",
   "lastPatchSummary": {
     "kind": "platform",
-    "updatedEntries": 1,
+    "updatedEntries": 2,
     "addedEntries": 0,
     "updatedIds": [
-      "localization-resources"
+      "file-access-and-saf",
+      "image-viewer-gestures"
     ],
     "addedIds": [],
     "statusCountsBefore": {
-      "planned": 5,
+      "not-applicable": 2,
+      "planned": 2,
+      "platform-replaced": 1,
       "verified-direct": 1
     },
     "statusCountsAfter": {
-      "planned": 5,
+      "not-applicable": 4,
+      "platform-replaced": 1,
       "verified-direct": 1
     }
   }

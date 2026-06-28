@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Narrow lifecycle replacement endpoints for the phase-01 gradle-wrapper coverage row.",
+  "updates": [
+    {
+      "featureId": "gradle-wrapper-gradle-wrapper-properties-631c1456ba-001-android-platform-component-lifecycle-suc",
+      "set": {
+        "targetBehavior": "HarmonyOS replaces the Gradle wrapper with root and entry build profiles, the entry cjpm package pipeline, module descriptor ability registration, and the registered EntryAbility creator that packages the lifecycle entry surface.",
+        "verificationEvidence": [
+          "Manual source/target review confirmed the source Gradle wrapper packaging role is replaced by precise HarmonyOS build profile fields, the entry cjpm package target, module.json5 ability entry fields, and the registered EntryAbility creator wiring.",
+          "Phase 01 build gate passed after packaging the entry module through the HarmonyOS hvigor/cjpm pipeline."
+        ],
+        "targetEndpoints": [
+          "build-profile.json5::app products runtimeOS targetSdkVersion compatibleSdkVersion",
+          "build-profile.json5::modules name srcPath targets applyToProducts",
+          "entry/build-profile.json5::apiType buildOption cangjieOptions path",
+          "entry/cjpm.toml::package name src-dir output-type",
+          "entry/cjpm.toml::profile.build.combined ohos_app_cangjie_entry",
+          "entry/src/main/module.json5::module abilities EntryAbility srcEntry mainElement",
+          "entry/src/main/cangjie/ability_mainability_entry.cj::ENTRYABILITY_REGISTER_RESULT UIAbility registerCreator EntryAbility"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "platform-replaced",
+          "parityKind": "platform-replaced",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "build-profile.json5::app products runtimeOS targetSdkVersion compatibleSdkVersion",
+              "build-profile.json5::modules name srcPath targets applyToProducts",
+              "entry/build-profile.json5::apiType buildOption cangjieOptions path",
+              "entry/cjpm.toml::package name src-dir output-type",
+              "entry/cjpm.toml::profile.build.combined ohos_app_cangjie_entry",
+              "entry/src/main/module.json5::module abilities EntryAbility srcEntry mainElement",
+              "entry/src/main/cangjie/ability_mainability_entry.cj::ENTRYABILITY_REGISTER_RESULT UIAbility registerCreator EntryAbility"
+            ],
+            "testEvidence": [],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "Phase 01 build gate PASS: translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md",
+                "path": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "Manual source/target review confirmed the HarmonyOS build descriptors and registered EntryAbility creator now own the lifecycle packaging surface that the Android Gradle wrapper previously bootstrapped."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    }
+  ]
+}

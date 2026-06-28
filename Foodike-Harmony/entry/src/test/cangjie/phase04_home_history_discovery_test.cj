@@ -16,7 +16,25 @@ public class Phase04HomeHistoryDiscoveryTest {
         @Assert(state.advertisements.size, 4)
         @Assert(state.categories.size, 7)
         @Assert(state.favourites.size, 5)
-        @Assert(state.restaurants.size, 8)
+        @Assert(state.restaurants.size, 16)
+    }
+
+    @TestCase
+    public func homeStoreFiltersFavouritesAndRestaurantsFromSearchQuery(): Unit {
+        let store = HomeStore()
+        let state = store.buildVisibleState("George")
+        @Assert(state.favourites.size, 1)
+        @Assert(state.favourites[0].name, "George Street")
+        @Assert(state.restaurants.size, 1)
+        @Assert(state.restaurants[0].name, "George Street")
+    }
+
+    @TestCase
+    public func homeStoreSearchMatchesCaseInsensitiveSourceUiExpectation(): Unit {
+        let store = HomeStore()
+        let state = store.buildVisibleState("george")
+        @Assert(state.restaurants.size, 1)
+        @Assert(state.restaurants[0].name, "George Street")
     }
 
     @TestCase
@@ -38,6 +56,14 @@ public class Phase04HomeHistoryDiscoveryTest {
         @Assert(store.toggleFilter("", "Fast Delivery"), "Fast Delivery")
         @Assert(store.toggleFilter("Fast Delivery", "Fast Delivery"), "")
         @Assert(store.toggleFilter("Fast Delivery", "Non-Veg"), "Non-Veg")
+    }
+
+    @TestCase
+    public func homeStoreAppliesChipFilterToVisibleRestaurantLists(): Unit {
+        let store = HomeStore()
+        let state = store.buildFilteredState("", "Fast Delivery")
+        @Assert(state.restaurants.size > 0, true)
+        @Assert(store.matchesTag(state.restaurants[0], "Fast Delivery"), true)
     }
 
     @TestCase
@@ -71,7 +97,24 @@ public class Phase04HomeHistoryDiscoveryTest {
     @TestCase
     public func historyStoreExposesSourceTabOrdering(): Unit {
         let store = HistoryStore()
-        @Assert(store.tabLabel(0), "History")
-        @Assert(store.tabLabel(1), "Favourites")
+        @Assert(store.tabLabelText(0), "History")
+        @Assert(store.tabLabelText(1), "Favourites")
+    }
+
+    @TestCase
+    public func historyStoreFiltersFavouriteRestaurantsFromSearchQuery(): Unit {
+        let store = HistoryStore()
+        let state = store.buildVisibleState("Mission")
+        @Assert(state.favourites.size, 2)
+        @Assert(state.favourites[0].place, "Mission Charali")
+        @Assert(state.favourites[1].place, "Mission Charali")
+    }
+
+    @TestCase
+    public func historyStoreSearchIsCaseInsensitiveForLikedRestaurants(): Unit {
+        let store = HistoryStore()
+        let state = store.buildVisibleState("mission")
+        @Assert(state.favourites.size, 2)
+        @Assert(state.favourites[0].place, "Mission Charali")
     }
 }

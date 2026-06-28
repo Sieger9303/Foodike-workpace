@@ -1,0 +1,247 @@
+{
+  "updates": [
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-repository-lo-7dc1a245fb-003-observable-state-viewmodel-flow-livedata",
+      "set": {
+        "status": "implemented",
+        "targetBehavior": "`LoginPreferencesService` preserves the same persisted login-state contract, and phase-02 startup/login/profile consumers only need immediate reads or writes at route boundaries rather than a long-lived observer subscription.",
+        "parityLevel": "equivalent",
+        "notes": "The source `Flow<Boolean>` is consumed via `first()` for startup gating, while login/logout only mutate the same persisted flag; direct persisted reads and writes preserve the phase-02 user-visible behavior.",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::readLoginState",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_launch_service.cj::resolveLaunchRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj::login",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "Focused phase-02 startup tests cannot currently run because `cjpm test` is blocked by unresolved root-package kit/resource dependencies."
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md",
+                "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "Source startup reads login state with `repository.loginState.first()`, and the target preserves the same persisted-session decision surface with direct preference reads/writes."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      },
+      "append": {
+        "verificationEvidence": [
+          "Manual source review confirmed the only phase-02 consumer (`SplashViewModel`) reads `repository.loginState.first()` once for startup gating while login/logout only mutate the same stored flag.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-repository-us-8ccc510949-004-observable-state-viewmodel-flow-livedata",
+      "set": {
+        "status": "implemented",
+        "targetBehavior": "`sessionRepository` preserves the same shared selected-restaurant, menu, liked, and cart state contract, and phase-02 consumers read that shared state immediately after writes at route-entry boundaries.",
+        "parityLevel": "equivalent",
+        "notes": "The source repository exposes cold one-shot `Flow` wrappers over shared mutable state, and the target preserves the same immediate shared-state reads through the singleton session repository used by home, history, and detail stores.",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj::getSavedRestaurantName",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj::getMenuItems",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj::getLikedRestaurants",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj::getCartItems",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_store.cj::selectRestaurant",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/history/history_store.cj::selectRestaurant",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/detail/detail_store.cj::selectedRestaurant"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "Focused repository tests cannot currently run because `cjpm test` is blocked by unresolved root-package kit/resource dependencies."
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md",
+                "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "Source getters emit current shared repository state once, and the target singleton session repository preserves the same immediate read-after-write behavior for phase-02 route handoff and detail loading."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      },
+      "append": {
+        "verificationEvidence": [
+          "Manual source review confirmed `getSavedRestaurant()`, `getMenuItems()`, `getLikedRestaurants()`, `isRestaurantLiked()`, and `getCartItems()` are cold `flow { emit(...) }` wrappers over shared mutable state rather than long-lived mutation streams.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-foodikeapp-kt-694075bf4f-002-android-platform-component-lifecycle-suc",
+      "append": {
+        "verificationEvidence": [
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-foodikeapp-kt-864c7fbb30-001-runtime-permission-request-permission-re",
+      "append": {
+        "verificationEvidence": [
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-di-appmodule-kt-1305c7ec20-002-android-platform-component-lifecycle-suc",
+      "append": {
+        "verificationEvidence": [
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-di-appmodule-kt-767a0d2c9a-003-authentication-account-or-session-behavi",
+      "append": {
+        "verificationEvidence": [
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-di-appmodule-kt-30d21fc769-001-runtime-permission-request-permission-re",
+      "append": {
+        "verificationEvidence": [
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-repository-ho-76a8c28790-002-data-loading-query-search-filter-or-sort",
+      "append": {
+        "verificationEvidence": [
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-repository-ho-b8a31f9d55-005-data-loading-query-search-filter-or-sort",
+      "append": {
+        "verificationEvidence": [
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-repository-ho-edd4386452-003-data-loading-query-search-filter-or-sort",
+      "append": {
+        "verificationEvidence": [
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-repository-ho-f136ace752-004-data-loading-query-search-filter-or-sort",
+      "append": {
+        "verificationEvidence": [
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-data-source-f-f170137f2d-001-file-document-storage-saf-mediastore-or",
+      "append": {
+        "verificationEvidence": [
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-data-source-f-8d9b6c748e-002-image-viewing-bitmap-exif-handling-zoom",
+      "append": {
+        "verificationEvidence": [
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-data-source-f-5dbff38a8a-003-intent-uri-bundle-deeplink-or-cross-scre",
+      "append": {
+        "verificationEvidence": [
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-data-source-f-d03fbb20a2-004-navigation-surface-menu-drawer-toolbar-o",
+      "append": {
+        "verificationEvidence": [
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-data-source-f-552e89ac77-005-runtime-permission-request-permission-re",
+      "append": {
+        "verificationEvidence": [
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ]
+      }
+    }
+  ]
+}

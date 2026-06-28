@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-27T02:18:47+00:00",
+  "generatedAt": "2026-06-27T03:54:07+00:00",
   "phase": "phase-01-project-skeleton-resources",
   "purpose": "Phase-scoped platform capability pre-resolution checklist. This is generated from phase-task-checklist.json and platform-capability-check.json before phase implementation. All current-phase critical/high platform capabilities must be resolved before target code edits begin.",
   "allowedResolutionStatuses": [
@@ -70,7 +70,7 @@
         "HarmonyOS resource guidance confirms the standard HarmonyOS resource-category and access path should be used for multi-language and multi-device adaptation rather than custom fallback handling (`D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\harmonyos-6.1-8k\\Guide\\cj-start\\start\\cj-ide-resource-categories-and-access\\资源分类与访问\\.abstract.md:1`)."
       ],
       "targetApiOrLibrary": "HarmonyOS Cangjie LocalizationKit resource model (`ohos.base.ResourceStr`, `ohos.resource.AppResource`, `ohos.resource_manager.ResourceManager`) with standard HarmonyOS `string.json`/`color.json` resources",
-      "targetStrategy": "Phase 01 should migrate Android strings/colors/themes/media into HarmonyOS resource files and keep user-visible labels resource-backed. Use `ResourceStr`/`AppResource` directly in ArkUI component props where supported, and use `ResourceManager.getString(...)` / `getStringByName(...)` for formatted or named retrieval instead of hard-coded strings or local fallback tables.",
+      "targetStrategy": "Phase 01 migrates Android labels, start-window colors, and resource-backed UI text into HarmonyOS descriptor/resource files, with AppResource helpers for Cangjie access where needed.",
       "sdkDeclarationEvidence": [
         "`ohos.base.ResourceStr` is a direct SDK interface and `String` extends it (`C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.base.cj.d:618-626`).",
         "`ohos.resource.AppResource` directly implements `ResourceStr` and carries `params` for formatted resource usage (`C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.resource.cj.d:20-97`).",
@@ -82,16 +82,18 @@
         "The installed SDK declarations plus ArkUI `ResourceStr` component signatures provide a direct Cangjie-callable path for localized labels and formatted resources without introducing an ArkTS bridge."
       ],
       "discoveryOnlyEvidence": [],
-      "compileProbeEvidence": [],
+      "compileProbeEvidence": [
+        "Phase 01 build gate PASS: translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md"
+      ],
       "capabilityEvidenceProfile": {
         "effectiveStatus": "verified-direct",
         "targetSearchEvidenceFound": true,
         "sdkDeclarationEvidenceFound": true,
         "cangjieCallableEvidenceFound": true,
         "discoveryOnlyEvidenceFound": false,
-        "compileProbeEvidenceFound": false,
+        "compileProbeEvidenceFound": true,
         "compileProbeRecommended": false,
-        "compileProbeState": "not-needed",
+        "compileProbeState": "recorded",
         "preResolutionDecision": "resolved-real-api",
         "derivedPreResolutionDecision": "direct-api",
         "localFallbackDetected": false,
@@ -99,7 +101,8 @@
         "evidenceKinds": [
           "target-search",
           "sdk-declaration",
-          "cangjie-callable"
+          "cangjie-callable",
+          "compile-probe"
         ]
       },
       "sdkProbeCache": {
@@ -114,24 +117,24 @@
           "and",
           "formatted",
           "strings",
-          "convert",
+          "localizationkit",
+          "resource",
+          "model",
+          "base",
+          "resourcestr",
+          "appresource",
+          "resource_manager",
+          "resourcemanager",
+          "with",
+          "standard",
           "string",
+          "json",
+          "color",
+          "convert",
           "locale",
           "groups",
           "into",
-          "generated",
-          "resource",
-          "adapter",
-          "avoid",
-          "hard",
-          "coded",
-          "english",
-          "for",
-          "migrated",
-          "labels",
-          "detected",
-          "source",
-          "artifact"
+          "generated"
         ],
         "pureCangjieDeclarationCandidates": [
           {
@@ -139,7 +142,7 @@
             "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.AbilityKit.cj.d",
             "matchedTerms": [
               "and",
-              "for"
+              "with"
             ]
           },
           {
@@ -147,7 +150,7 @@
             "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkData.cj.d",
             "matchedTerms": [
               "and",
-              "for"
+              "with"
             ]
           },
           {
@@ -155,7 +158,8 @@
             "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkGraphics2D.cj.d",
             "matchedTerms": [
               "and",
-              "for"
+              "with",
+              "color"
             ]
           },
           {
@@ -163,7 +167,8 @@
             "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkUI.cj.d",
             "matchedTerms": [
               "and",
-              "for"
+              "base",
+              "with"
             ]
           },
           {
@@ -171,7 +176,7 @@
             "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkWeb.cj.d",
             "matchedTerms": [
               "and",
-              "for"
+              "with"
             ]
           },
           {
@@ -179,7 +184,7 @@
             "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.BasicServicesKit.cj.d",
             "matchedTerms": [
               "and",
-              "for"
+              "with"
             ]
           },
           {
@@ -187,7 +192,7 @@
             "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CameraKit.cj.d",
             "matchedTerms": [
               "and",
-              "for"
+              "with"
             ]
           },
           {
@@ -195,7 +200,7 @@
             "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CangjieKit.cj.d",
             "matchedTerms": [
               "and",
-              "for"
+              "with"
             ]
           },
           {
@@ -203,7 +208,8 @@
             "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ConnectivityKit.cj.d",
             "matchedTerms": [
               "and",
-              "for"
+              "base",
+              "with"
             ]
           },
           {
@@ -211,7 +217,7 @@
             "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CoreFileKit.cj.d",
             "matchedTerms": [
               "and",
-              "for"
+              "with"
             ]
           },
           {
@@ -219,7 +225,7 @@
             "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CryptoArchitectureKit.cj.d",
             "matchedTerms": [
               "and",
-              "for"
+              "with"
             ]
           },
           {
@@ -227,7 +233,7 @@
             "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ImageKit.cj.d",
             "matchedTerms": [
               "and",
-              "for"
+              "with"
             ]
           }
         ],
@@ -236,28 +242,16 @@
             "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\kit.LocalizationKit.cjo",
             "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/kit.LocalizationKit.cjo",
             "matchedTerms": [
-              "localization"
-            ]
-          },
-          {
-            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\kit.PerformanceAnalysisKit.cjo",
-            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/kit.PerformanceAnalysisKit.cjo",
-            "matchedTerms": [
-              "for"
+              "localization",
+              "localizationkit"
             ]
           },
           {
             "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\libkit.LocalizationKit.so",
             "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/libkit.LocalizationKit.so",
             "matchedTerms": [
-              "localization"
-            ]
-          },
-          {
-            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\libkit.PerformanceAnalysisKit.so",
-            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/libkit.PerformanceAnalysisKit.so",
-            "matchedTerms": [
-              "for"
+              "localization",
+              "localizationkit"
             ]
           },
           {
@@ -268,32 +262,38 @@
             ]
           },
           {
-            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.for_each.so",
-            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.for_each.so",
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.base.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.base.so",
             "matchedTerms": [
-              "for"
+              "base"
             ]
           },
           {
-            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.lazy_for_each.so",
-            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.lazy_for_each.so",
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.bluetooth.base_profile.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.bluetooth.base_profile.so",
             "matchedTerms": [
-              "for"
+              "base"
             ]
           },
           {
-            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.labels.so",
-            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.labels.so",
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.encoding.json.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.encoding.json.so",
             "matchedTerms": [
-              "labels"
+              "json"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.graphics.color_space_manager.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.graphics.color_space_manager.so",
+            "matchedTerms": [
+              "color"
             ]
           },
           {
             "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.resource.so",
             "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.resource.so",
             "matchedTerms": [
-              "resource",
-              "source"
+              "resource"
             ]
           },
           {
@@ -301,7 +301,7 @@
             "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.resource_manager.so",
             "matchedTerms": [
               "resource",
-              "source"
+              "resource_manager"
             ]
           },
           {
@@ -312,10 +312,17 @@
             ]
           },
           {
-            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\ohos.arkui.component.for_each.cjo",
-            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/ohos.arkui.component.for_each.cjo",
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\ohos.base.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/ohos.base.cjo",
             "matchedTerms": [
-              "for"
+              "base"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\ohos.bluetooth.base_profile.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/ohos.bluetooth.base_profile.cjo",
+            "matchedTerms": [
+              "base"
             ]
           }
         ],
@@ -327,7 +334,7 @@
       },
       "preResolutionDecision": "resolved-real-api",
       "compileProbeRecommended": false,
-      "compileProbeState": "not-needed",
+      "compileProbeState": "recorded",
       "sdkDeclarationEvidenceFound": true,
       "cangjieCallableEvidenceFound": true,
       "discoveryOnlyEvidenceFound": false,
@@ -344,17 +351,21 @@
         "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj",
         "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj",
         "entry/src/main/resources/base/element/string.json",
-        "entry/src/main/resources/base/element/color.json"
+        "entry/src/main/resources/base/element/color.json",
+        "AppScope/app.json5",
+        "entry/src/main/module.json5"
       ],
       "tests": [
         "string key coverage check",
         "placeholder preservation check",
-        "locale selection smoke test"
+        "locale selection smoke test",
+        "manual review of descriptor/resource mapping",
+        "build_hap_report.py --phase phase-01-project-skeleton-resources"
       ],
       "blocker": "",
       "targetFallback": "",
       "futureCompletionPath": "",
-      "notes": "Direct Cangjie resource APIs exist, so this capability must be implemented in phase 01 through real HarmonyOS resource files and resource-backed UI text. No package lookup or bridge is needed for this phase capability."
+      "notes": "Batch 1 confirmed the active entry/module descriptors and resource files compile together. Later phase batches still need to expand string/media coverage beyond the current baseline."
     }
   ],
   "unresolved": [],

@@ -1,0 +1,3278 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-28T10:29:01+00:00",
+  "phase": "phase-03-onboarding-login",
+  "purpose": "Current-phase task checklist generated from the agent-maintained source coverage matrix and platform capability check. Use it before editing and update the matrix/check after work.",
+  "summary": {
+    "phaseFeatureEntries": 27,
+    "phaseCriticalHighFeatureEntries": 22,
+    "mustCompleteFeatureEntries": 0,
+    "needsEvidenceFeatureEntries": 0,
+    "deferredOrFallbackFeatureEntries": 16,
+    "coveredFeatureEntries": 11,
+    "phaseSourceFiles": 11,
+    "phasePlatformCapabilityEntries": 0,
+    "phaseCriticalHighPlatformCapabilityEntries": 0,
+    "mustCompletePlatformCapabilityEntries": 0,
+    "needsEvidencePlatformCapabilityEntries": 0,
+    "implementationGroups": 4,
+    "planContractAvailable": true,
+    "planContractMatchedGroups": 2,
+    "planContractUnmatchedGroups": 0,
+    "implementationGroupSourceBehavior": 2,
+    "implementationGroupResourceMigration": 0,
+    "implementationGroupPlatformCapability": 0,
+    "implementationGroupVerification": 1,
+    "implementationGroupArchitectureRisk": 1,
+    "implementationGroupUiContracts": 0,
+    "behaviorAuditFeatureContracts": 22,
+    "behaviorAuditOpenFeatureContracts": 0,
+    "behaviorAuditPlatformContracts": 0,
+    "testHarnessReportAvailable": true,
+    "testHarnessAcceptedPass": true,
+    "unassignedCriticalHighFeatureEntries": 0,
+    "unassignedCriticalHighPlatformCapabilityEntries": 0,
+    "byStatus": {
+      "implemented": 11,
+      "not-applicable": 16
+    },
+    "platformByStatus": {}
+  },
+  "instructions": [
+    "Start with implementationGroups as the current phase implementation contract: implement each group, then use mustComplete entries as exact row-level checks.",
+    "Use planContract as upstream planning ownership evidence; resolve its alignmentFindings by updating plannedPhase/matrix/platform evidence or by documenting sourceOverride/analysisGap when source inspection disagrees.",
+    "Keep grouped business behavior discoverable through precise target endpoints; avoid closing unrelated features only through root/shell/whole-file endpoints.",
+    "Merge source files only when it improves target clarity and still preserves per-feature evidence, tests, and controllable file size.",
+    "Treat mustComplete entries as the current phase's executable row-level task list.",
+    "Use behaviorAudit as the current phase behavior audit; it checks closed critical/high rows for source behavior, target behavior, parity, and verification evidence.",
+    "Use uiContract entries as static-analysis planning aids, not complete UI specifications: preserve listed source-visible screen structure, route/back behavior, actions, state feedback, and visual evidence needs, then re-read source/resources/navigation for UI behavior the static analysis may have missed.",
+    "Do not close the phase while current-phase critical/high entries are open, weakly deferred, or missing evidence.",
+    "For every closed critical/high source feature, record sourceBehavior, targetBehavior, parityLevel, targetEndpoints, and verificationEvidence in source-coverage-matrix.json.",
+    "A build pass alone is not per-feature verification; cite tests, manual/emulator evidence, or explicit verificationEvidence for behavior closure.",
+    "Use implemented-simplified only with concrete simplification reason, preserved-behavior explanation, target endpoints or tests, and source/platform evidence.",
+    "If a suitable HarmonyOS/Cangjie API, Kit, example, or package exists for a platform capability, use it or record a platform replacement; do not close the item with local mock data, sample data, in-memory simulation, or another fallback.",
+    "Use deferred only for concrete blockers; otherwise implement faithfully or platform-replace with evidence.",
+    "Update source-coverage-matrix.json/md and platform-capability-check.json/md before phase completion.",
+    "If this checklist is empty but the phase has real scope in plan.md/plan.json, assign plannedPhase values first."
+  ],
+  "mustComplete": [],
+  "needsEvidence": [],
+  "deferredOrFallback": [
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-b030a7b1f9-001-image-viewing-bitmap-exif-handling-zoom",
+      "featureName": "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+      "importance": "critical",
+      "category": "kotlin-source",
+      "status": "not-applicable",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "image_viewer",
+        "navigation_resource",
+        "notification_widget",
+        "permissions",
+        "screen_lifecycle",
+        "settings",
+        "state_model"
+      ],
+      "keyClasses": [],
+      "keyMethods": [
+        "LoginScreen"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt; category=kotlin-source; importance=critical; keyMethods=LoginScreen; featurePoint=Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+      "sourceBehavior": "`LoginScreen.kt` only shows static Google and Facebook sign-in icons; it does not implement image preview, zoom, gallery, or bitmap/exif handling.",
+      "targetBehavior": "`login_page.cj` keeps the same static social sign-in icons as clickable placeholders without adding image viewer behavior.",
+      "verificationEvidence": [
+        "Manual source review confirmed `LoginScreen.kt` renders only `R.drawable.goog_icon` and `R.drawable.fb_icon` as placeholder social actions.",
+        "Manual target review confirmed `login_page.cj::buildSocialLoginSection` renders `mediaGoogIcon` and `mediaFbIcon` only as clickable placeholder icons.",
+        "Phase-03 test build report `translation-inputs/test-build-reports/phase-03-onboarding-login/test-build-report.md` records the current harness blocker before the phase-03 tests execute.",
+        "Bounded manual reproduction on 2026-06-28 of `cjpm test` from `entry/src/test/cangjie` failed before test execution because the root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`."
+      ],
+      "parityLevel": "not-applicable",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildSocialLoginSection"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
+        "blocked: cjpm test (entry/src/test/cangjie) missing `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` dependencies in `entry/cjpm.toml`"
+      ],
+      "notes": "Static analysis over-detected image-viewer behavior from icon resources.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": "",
+      "taskReason": "not applicable"
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-5777ecba15-003-notification-widget-remoteviews-or-home",
+      "featureName": "Notification, widget, RemoteViews, or home-screen integration behavior.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+      "importance": "critical",
+      "category": "kotlin-source",
+      "status": "not-applicable",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "image_viewer",
+        "navigation_resource",
+        "notification_widget",
+        "permissions",
+        "screen_lifecycle",
+        "settings",
+        "state_model"
+      ],
+      "keyClasses": [],
+      "keyMethods": [
+        "LoginScreen"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Notification, widget, RemoteViews, or home-screen integration behavior.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt; category=kotlin-source; importance=critical; keyMethods=LoginScreen; featurePoint=Notification, widget, RemoteViews, or home-screen integration behavior.",
+      "sourceBehavior": "`LoginScreen.kt` does not create notifications, widgets, RemoteViews, or home-screen integrations; it only shows text fields, buttons, icons, and placeholder toasts.",
+      "targetBehavior": "The Harmony login route keeps the same in-page login UI and does not add notification or widget behavior.",
+      "verificationEvidence": [
+        "Manual source review confirmed `LoginScreen.kt` contains no notification, widget, or RemoteViews APIs.",
+        "Manual target review confirmed the translated login surface is limited to `renderLoginRoute`, `buildSocialLoginSection`, and `buildPlaceholderActionText` UI builders with no platform-component integration.",
+        "Phase-03 test build report `translation-inputs/test-build-reports/phase-03-onboarding-login/test-build-report.md` records the current harness blocker before the phase-03 tests execute.",
+        "Bounded manual reproduction on 2026-06-28 of `cjpm test` from `entry/src/test/cangjie` failed before test execution because the root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`."
+      ],
+      "parityLevel": "not-applicable",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::renderLoginRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildSocialLoginSection",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildPlaceholderActionText"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
+        "blocked: cjpm test (entry/src/test/cangjie) missing `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` dependencies in `entry/cjpm.toml`"
+      ],
+      "notes": "Static analysis over-detected widget/notification behavior from generic screen heuristics.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": "",
+      "taskReason": "not applicable"
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-7ab3866541-004-runtime-permission-request-permission-re",
+      "featureName": "Runtime permission request, permission result handling, or protected API access.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+      "importance": "critical",
+      "category": "kotlin-source",
+      "status": "not-applicable",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "image_viewer",
+        "navigation_resource",
+        "notification_widget",
+        "permissions",
+        "screen_lifecycle",
+        "settings",
+        "state_model"
+      ],
+      "keyClasses": [],
+      "keyMethods": [
+        "LoginScreen"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Runtime permission request, permission result handling, or protected API access.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt; category=kotlin-source; importance=critical; keyMethods=LoginScreen; featurePoint=Runtime permission request, permission result handling, or protected API access.",
+      "sourceBehavior": "`LoginScreen.kt` requests no runtime permissions and accesses no protected APIs; it only reads local text field state and shows placeholder toasts/snackbar messages.",
+      "targetBehavior": "The Harmony login route preserves this no-permission flow and does not introduce permission prompts.",
+      "verificationEvidence": [
+        "Manual source review confirmed `LoginScreen.kt` contains no permission request path.",
+        "Manual target review confirmed `renderLoginRoute`, `buildSocialLoginSection`, and `buildPlaceholderActionText` keep the login route free of permission gates or protected API calls.",
+        "Phase-03 test build report `translation-inputs/test-build-reports/phase-03-onboarding-login/test-build-report.md` records the current harness blocker before the phase-03 tests execute.",
+        "Bounded manual reproduction on 2026-06-28 of `cjpm test` from `entry/src/test/cangjie` failed before test execution because the root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`."
+      ],
+      "parityLevel": "not-applicable",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildLoginRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::renderLoginRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildSocialLoginSection",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildPlaceholderActionText"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
+        "blocked: cjpm test (entry/src/test/cangjie) missing `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` dependencies in `entry/cjpm.toml`"
+      ],
+      "notes": "Static analysis over-detected permissions from generic mobile screen heuristics.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": "",
+      "taskReason": "not applicable"
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-34c5f4ba3a-006-settings-preferences-option-toggles-or-c",
+      "featureName": "Settings/preferences, option toggles, or configuration state behavior.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+      "importance": "critical",
+      "category": "kotlin-source",
+      "status": "not-applicable",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "image_viewer",
+        "navigation_resource",
+        "notification_widget",
+        "permissions",
+        "screen_lifecycle",
+        "settings",
+        "state_model"
+      ],
+      "keyClasses": [],
+      "keyMethods": [
+        "LoginScreen"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Settings/preferences, option toggles, or configuration state behavior.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt; category=kotlin-source; importance=critical; keyMethods=LoginScreen; featurePoint=Settings/preferences, option toggles, or configuration state behavior.",
+      "sourceBehavior": "`LoginScreen.kt` exposes no settings screen, toggles, or configurable preferences; it only shows login fields and placeholder ancillary actions.",
+      "targetBehavior": "The Harmony login route keeps this non-configurable login surface and does not invent settings toggles.",
+      "verificationEvidence": [
+        "Manual source review confirmed `LoginScreen.kt` contains no settings or toggle controls.",
+        "Manual target review confirmed `buildPlaceholderActionText` and `buildSocialLoginSection` keep the translated login surface to placeholders only and do not introduce settings/configuration controls.",
+        "Phase-03 test build report `translation-inputs/test-build-reports/phase-03-onboarding-login/test-build-report.md` records the current harness blocker before the phase-03 tests execute.",
+        "Bounded manual reproduction on 2026-06-28 of `cjpm test` from `entry/src/test/cangjie` failed before test execution because the root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`."
+      ],
+      "parityLevel": "not-applicable",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildPlaceholderActionText",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildSocialLoginSection"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStorePreservesSourceHintsAndPlaceholderMessages",
+        "blocked: cjpm test (entry/src/test/cangjie) missing `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` dependencies in `entry/cjpm.toml`"
+      ],
+      "notes": "Static analysis over-detected settings behavior from text-field configuration hints.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": "",
+      "taskReason": "not applicable"
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-94031fc378-001-runtime-permission-request-permission-re",
+      "featureName": "Runtime permission request, permission result handling, or protected API access.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+      "importance": "critical",
+      "category": "kotlin-source",
+      "status": "not-applicable",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "permissions",
+        "screen_lifecycle",
+        "state_model"
+      ],
+      "keyClasses": [
+        "LoginViewModel"
+      ],
+      "keyMethods": [
+        "onEvent"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Runtime permission request, permission result handling, or protected API access.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt; category=kotlin-source; importance=critical; classes=LoginViewModel; keyMethods=onEvent; featurePoint=Runtime permission request, permission result handling, or protected API access.",
+      "sourceBehavior": "`LoginViewModel.kt` validates credentials and emits snackbar messages only; it does not request permissions or call protected APIs.",
+      "targetBehavior": "`login_store.cj` and `bootstrap_page.cj::performLogin` keep the same pure validation/session-toggle path with no permission handling.",
+      "verificationEvidence": [
+        "Manual source review confirmed `LoginViewModel.kt` contains no permission request path.",
+        "Manual target review confirmed phase-03 login logic uses only credential checks plus persisted login state toggling.",
+        "Bounded manual reproduction `cjpm test` from `entry` is blocked by missing root-package dependencies in `entry/cjpm.toml`."
+      ],
+      "parityLevel": "not-applicable",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogin"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStoreAcceptsOnlySourceCredentials",
+        "blocked: cjpm test (entry/src/test/cangjie)"
+      ],
+      "notes": "Static analysis over-detected permissions from generic state/repository heuristics.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": "",
+      "taskReason": "not applicable"
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-b8f806f9cb-002-screen-lifecycle-entry-point-initializat",
+      "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+      "importance": "critical",
+      "category": "kotlin-source",
+      "status": "not-applicable",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "permissions",
+        "screen_lifecycle",
+        "state_model"
+      ],
+      "keyClasses": [
+        "LoginViewModel"
+      ],
+      "keyMethods": [
+        "onEvent"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt; category=kotlin-source; importance=critical; classes=LoginViewModel; keyMethods=onEvent; featurePoint=Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+      "sourceBehavior": "`LoginViewModel.kt` has no lifecycle callbacks or refresh/teardown logic beyond keeping UI state in memory while the screen is active.",
+      "targetBehavior": "The Harmony login logic keeps validation and error state in route-owned state without introducing extra lifecycle hooks.",
+      "verificationEvidence": [
+        "Manual source review confirmed `LoginViewModel.kt` has no lifecycle methods or refresh hooks.",
+        "Manual target review confirmed the translated login logic is route-local and lifecycle-neutral.",
+        "Bounded manual reproduction `cjpm test` from `entry` is blocked by missing root-package dependencies in `entry/cjpm.toml`."
+      ],
+      "parityLevel": "not-applicable",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
+        "blocked: cjpm test (entry/src/test/cangjie)"
+      ],
+      "notes": "Static analysis over-detected lifecycle behavior from screen state ownership.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": "",
+      "taskReason": "not applicable"
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-71420699c7-002-runtime-permission-request-permission-re",
+      "featureName": "Runtime permission request, permission result handling, or protected API access.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+      "importance": "critical",
+      "category": "kotlin-source",
+      "status": "not-applicable",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "image_viewer",
+        "permissions"
+      ],
+      "keyClasses": [],
+      "keyMethods": [
+        "OnboardingPage"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Runtime permission request, permission result handling, or protected API access.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt; category=kotlin-source; importance=critical; keyMethods=OnboardingPage; featurePoint=Runtime permission request, permission result handling, or protected API access.",
+      "sourceBehavior": "`OnboardingPage.kt` displays static onboarding content and does not request permissions or access protected APIs.",
+      "targetBehavior": "The Harmony onboarding page keeps the same static content flow with no permission prompts.",
+      "verificationEvidence": [
+        "Manual source review confirmed `OnboardingPage.kt` contains no permission request path.",
+        "Manual target review confirmed `buildOnboardingCard` only renders packaged onboarding media plus text and does not call protected APIs.",
+        "Phase-03 test build report `translation-inputs/test-build-reports/phase-03-onboarding-login/test-build-report.md` records the current harness blocker before the phase-03 tests execute.",
+        "Bounded manual reproduction on 2026-06-28 of `cjpm test` from `entry/src/test/cangjie` failed before test execution because the root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`."
+      ],
+      "parityLevel": "not-applicable",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::buildOnboardingCard"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+        "blocked: cjpm test (entry/src/test/cangjie) missing `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` dependencies in `entry/cjpm.toml`"
+      ],
+      "notes": "Static analysis over-detected permissions from image/resource usage.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": "",
+      "taskReason": "not applicable"
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-f9447173ee-002-runtime-permission-request-permission-re",
+      "featureName": "Runtime permission request, permission result handling, or protected API access.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+      "importance": "critical",
+      "category": "kotlin-source",
+      "status": "not-applicable",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "image_viewer",
+        "permissions"
+      ],
+      "keyClasses": [
+        "OnBoardingItem"
+      ],
+      "keyMethods": [
+        "get"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Runtime permission request, permission result handling, or protected API access.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt; category=kotlin-source; importance=critical; classes=OnBoardingItem; keyMethods=get; featurePoint=Runtime permission request, permission result handling, or protected API access.",
+      "sourceBehavior": "`OnBoardingItem.get()` constructs a static list of onboarding slides and does not request permissions or access protected APIs.",
+      "targetBehavior": "`OnboardingStore` keeps this seeded slide list as pure local data with no permission flow.",
+      "verificationEvidence": [
+        "Manual source review confirmed `OnBoardingItem.get()` contains no permission requests or protected API access.",
+        "Manual target review confirmed `OnboardingStore::slides` only builds seeded slide data and `slideAt` only reads it back.",
+        "Phase-03 test build report `translation-inputs/test-build-reports/phase-03-onboarding-login/test-build-report.md` records the current harness blocker before the phase-03 tests execute.",
+        "Bounded manual reproduction on 2026-06-28 of `cjpm test` from `entry/src/test/cangjie` failed before test execution because the root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`."
+      ],
+      "parityLevel": "not-applicable",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::slides",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::slideAt"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+        "blocked: cjpm test (entry/src/test/cangjie) missing `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` dependencies in `entry/cjpm.toml`"
+      ],
+      "notes": "Static analysis over-detected permissions from media/resource references.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": "",
+      "taskReason": "not applicable"
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-b9cad25def-001-runtime-permission-request-permission-re",
+      "featureName": "Runtime permission request, permission result handling, or protected API access.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt",
+      "importance": "high",
+      "category": "kotlin-source",
+      "status": "not-applicable",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "permissions",
+        "settings"
+      ],
+      "keyClasses": [],
+      "keyMethods": [
+        "FoodikeTextField"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Runtime permission request, permission result handling, or protected API access.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt; category=kotlin-source; importance=high; keyMethods=FoodikeTextField; featurePoint=Runtime permission request, permission result handling, or protected API access.",
+      "sourceBehavior": "`FoodikeTextField.kt` is a plain Material text field wrapper with placeholder text and keyboard options only; it does not request permissions or access protected APIs.",
+      "targetBehavior": "The translated login route uses plain `TextInput` controls and keeps this no-permission behavior.",
+      "verificationEvidence": [
+        "Manual source review confirmed `FoodikeTextField.kt` wraps only `TextField` placeholder and keyboard configuration.",
+        "Manual target review confirmed the translated login page uses plain `TextInput` fields only.",
+        "Bounded manual reproduction `cjpm test` from `entry` is blocked by missing root-package dependencies in `entry/cjpm.toml`."
+      ],
+      "parityLevel": "not-applicable",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStorePreservesSourceHintsAndPlaceholderMessages",
+        "blocked: cjpm test (entry/src/test/cangjie)"
+      ],
+      "notes": "Static analysis over-detected permission behavior from generic input-component heuristics.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": "",
+      "taskReason": "not applicable"
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-794ee8e84b-002-settings-preferences-option-toggles-or-c",
+      "featureName": "Settings/preferences, option toggles, or configuration state behavior.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt",
+      "importance": "high",
+      "category": "kotlin-source",
+      "status": "not-applicable",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "permissions",
+        "settings"
+      ],
+      "keyClasses": [],
+      "keyMethods": [
+        "FoodikeTextField"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Settings/preferences, option toggles, or configuration state behavior.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt; category=kotlin-source; importance=high; keyMethods=FoodikeTextField; featurePoint=Settings/preferences, option toggles, or configuration state behavior.",
+      "sourceBehavior": "`FoodikeTextField.kt` contains placeholder and keyboard configuration only; it is not a settings or options/toggles surface.",
+      "targetBehavior": "The translated login fields stay as plain text inputs with placeholder text only and do not introduce settings/configuration toggles.",
+      "verificationEvidence": [
+        "Manual source review confirmed `FoodikeTextField.kt` configures only placeholder text, keyboard options, and visual transformation.",
+        "Manual target review confirmed the Harmony login route uses plain `TextInput` fields and no option toggles.",
+        "Bounded manual reproduction `cjpm test` from `entry` is blocked by missing root-package dependencies in `entry/cjpm.toml`."
+      ],
+      "parityLevel": "not-applicable",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStorePreservesSourceHintsAndPlaceholderMessages",
+        "blocked: cjpm test (entry/src/test/cangjie)"
+      ],
+      "notes": "Static analysis over-detected settings/configuration behavior from field configuration code.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": "",
+      "taskReason": "not applicable"
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-70fddfcb28-002-runtime-permission-request-permission-re",
+      "featureName": "Runtime permission request, permission result handling, or protected API access.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+      "importance": "high",
+      "category": "kotlin-source",
+      "status": "not-applicable",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "navigation_resource",
+        "permissions",
+        "screen_lifecycle",
+        "state_model"
+      ],
+      "keyClasses": [],
+      "keyMethods": [
+        "OnBoarding"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Runtime permission request, permission result handling, or protected API access.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt; category=kotlin-source; importance=high; keyMethods=OnBoarding; featurePoint=Runtime permission request, permission result handling, or protected API access.",
+      "sourceBehavior": "`OnBoarding.kt` coordinates pager state and final-route navigation only; it does not request permissions or access protected APIs.",
+      "targetBehavior": "The Harmony onboarding route preserves the same pager/navigation flow without permission prompts.",
+      "verificationEvidence": [
+        "Manual source review confirmed `OnBoarding.kt` contains no runtime permission request or protected API access path.",
+        "Manual target review confirmed the translated onboarding route contains no permission handling.",
+        "Bounded manual reproduction `cjpm test` from `entry` is blocked by missing root-package dependencies in `entry/cjpm.toml`."
+      ],
+      "parityLevel": "not-applicable",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildOnboardingRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::renderOnboardingRoute"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+        "blocked: cjpm test (entry/src/test/cangjie)"
+      ],
+      "notes": "Static analysis over-detected permissions from generic mobile-screen heuristics.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": "",
+      "taskReason": "not applicable"
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-777321c5b9-001-runtime-permission-request-permission-re",
+      "featureName": "Runtime permission request, permission result handling, or protected API access.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/FoodikeTextFieldState.kt",
+      "importance": "medium",
+      "category": "kotlin-source",
+      "status": "not-applicable",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "permissions"
+      ],
+      "keyClasses": [
+        "FoodikeTextFieldState"
+      ],
+      "keyMethods": [],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Runtime permission request, permission result handling, or protected API access.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/login/FoodikeTextFieldState.kt; category=kotlin-source; importance=medium; classes=FoodikeTextFieldState; featurePoint=Runtime permission request, permission result handling, or protected API access.",
+      "sourceBehavior": "`FoodikeTextFieldState.kt` is a simple data holder for login text and hint values only; it does not request permissions, handle permission results, or access protected APIs.",
+      "targetBehavior": "The Harmony login route keeps equivalent plain string state for the login fields and does not introduce any permission handling for this state holder role.",
+      "verificationEvidence": [
+        "Manual source review confirmed `FoodikeTextFieldState.kt` contains only `text` and `hint` fields.",
+        "Manual target review confirmed the translated login route stores equivalent field values in `FoodikeBootstrap.loginEmail` and `FoodikeBootstrap.loginPassword` without permission APIs.",
+        "Workflow test gate remains blocked: `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` currently fails with `error: unable to infer generic argument of this function` in the existing test harness."
+      ],
+      "parityLevel": "not-applicable",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::renderLoginRoute"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStorePreservesSourceHintsAndPlaceholderMessages",
+        "blocked: cjpm test (entry/src/test/cangjie)"
+      ],
+      "notes": "Static analysis over-detected permission behavior from a generic state-holder template row.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": "",
+      "taskReason": "not applicable"
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-8269f59f74-001-runtime-permission-request-permission-re",
+      "featureName": "Runtime permission request, permission result handling, or protected API access.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginEvent.kt",
+      "importance": "medium",
+      "category": "kotlin-source",
+      "status": "not-applicable",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "permissions"
+      ],
+      "keyClasses": [
+        "LoginEvent",
+        "EnteredEmail",
+        "EnteredPassword",
+        "PerformLogin"
+      ],
+      "keyMethods": [],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Runtime permission request, permission result handling, or protected API access.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/login/LoginEvent.kt; category=kotlin-source; importance=medium; classes=LoginEvent, EnteredEmail, EnteredPassword, PerformLogin; featurePoint=Runtime permission request, permission result handling, or protected API access.",
+      "sourceBehavior": "`LoginEvent.kt` defines only entered-email, entered-password, and perform-login events; it does not model permission requests, permission results, or protected API access.",
+      "targetBehavior": "The Harmony login route uses equivalent direct input-change and submit callbacks, with no permission event channel added.",
+      "verificationEvidence": [
+        "Manual source review confirmed `LoginEvent.kt` only models text-entry and login-submit events.",
+        "Manual target review confirmed `buildLoginRoute` wires direct `onEmailChange`, `onPasswordChange`, and `onPerformLogin` callbacks only.",
+        "Workflow test gate remains blocked: `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` currently fails with `error: unable to infer generic argument of this function` in the existing test harness."
+      ],
+      "parityLevel": "not-applicable",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildLoginRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::renderLoginRoute"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStoreAcceptsOnlySourceCredentials",
+        "blocked: cjpm test (entry/src/test/cangjie)"
+      ],
+      "notes": "Static analysis over-detected permission behavior from a generic event-sealed-class template row.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": "",
+      "taskReason": "not applicable"
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-85d5d7f957-001-runtime-permission-request-permission-re",
+      "featureName": "Runtime permission request, permission result handling, or protected API access.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/UiEvent.kt",
+      "importance": "medium",
+      "category": "kotlin-source",
+      "status": "not-applicable",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "permissions"
+      ],
+      "keyClasses": [
+        "UiEvent",
+        "ShowSnackbar"
+      ],
+      "keyMethods": [],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Runtime permission request, permission result handling, or protected API access.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/login/UiEvent.kt; category=kotlin-source; importance=medium; classes=UiEvent, ShowSnackbar; featurePoint=Runtime permission request, permission result handling, or protected API access.",
+      "sourceBehavior": "`UiEvent.kt` defines only a snackbar-display event and does not model permission requests, permission results, or protected API access.",
+      "targetBehavior": "The Harmony login route uses route-local error text plus toast feedback for invalid login attempts and does not introduce any permission-result UI event channel.",
+      "verificationEvidence": [
+        "Manual source review confirmed `UiEvent.kt` contains only `ShowSnackbar(message: String)`.",
+        "Manual target review confirmed the translated login route uses `loginErrorMessage` and `showToast(...)` only for invalid-login feedback.",
+        "Workflow test gate remains blocked: `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` currently fails with `error: unable to infer generic argument of this function` in the existing test harness."
+      ],
+      "parityLevel": "not-applicable",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogin",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::renderLoginRoute"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStoreAcceptsOnlySourceCredentials",
+        "blocked: cjpm test (entry/src/test/cangjie)"
+      ],
+      "notes": "Static analysis over-detected permission behavior from a generic UI-event template row.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": "",
+      "taskReason": "not applicable"
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-4660285a0b-001-runtime-permission-request-permission-re",
+      "featureName": "Runtime permission request, permission result handling, or protected API access.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/components/BottomSection.kt",
+      "importance": "medium",
+      "category": "kotlin-source",
+      "status": "not-applicable",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "permissions"
+      ],
+      "keyClasses": [],
+      "keyMethods": [
+        "BottomSection"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Runtime permission request, permission result handling, or protected API access.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/onboarding/components/BottomSection.kt; category=kotlin-source; importance=medium; keyMethods=BottomSection; featurePoint=Runtime permission request, permission result handling, or protected API access.",
+      "sourceBehavior": "`BottomSection.kt` renders only the onboarding indicator row and next-arrow button; it does not request permissions or access protected APIs.",
+      "targetBehavior": "`renderOnboardingRoute` preserves the same bottom indicator-and-next-action surface without permission prompts or protected API access.",
+      "verificationEvidence": [
+        "Manual source review confirmed `BottomSection.kt` contains only indicator composition and a next-button callback with no runtime permission or protected API logic.",
+        "Manual target review confirmed the translated onboarding footer stays inside `renderOnboardingRoute` and only wires the next action.",
+        "Bounded manual reproduction `cjpm test` from `entry` is blocked by missing root-package dependencies in `entry/cjpm.toml`."
+      ],
+      "parityLevel": "not-applicable",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::renderOnboardingRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::buildOnboardingIndicator"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+        "blocked: cjpm test (entry/src/test/cangjie)"
+      ],
+      "notes": "Static analysis over-detected permissions from a generic onboarding subcomponent heuristic.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": "",
+      "taskReason": "not applicable"
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-74d6de5e11-001-runtime-permission-request-permission-re",
+      "featureName": "Runtime permission request, permission result handling, or protected API access.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/components/Indicators.kt",
+      "importance": "medium",
+      "category": "kotlin-source",
+      "status": "not-applicable",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "permissions"
+      ],
+      "keyClasses": [],
+      "keyMethods": [
+        "Indicator"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Runtime permission request, permission result handling, or protected API access.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/onboarding/components/Indicators.kt; category=kotlin-source; importance=medium; keyMethods=Indicator; featurePoint=Runtime permission request, permission result handling, or protected API access.",
+      "sourceBehavior": "`Indicators.kt` animates the selected onboarding dot width and colors only; it does not request permissions or access protected APIs.",
+      "targetBehavior": "`buildOnboardingIndicator` preserves the translated selected-dot width/color state without any permission prompt or protected API usage.",
+      "verificationEvidence": [
+        "Manual source review confirmed `Indicators.kt` contains only local animation and color styling for the onboarding indicators.",
+        "Manual target review confirmed `buildOnboardingIndicator` only renders selected-state width and color changes.",
+        "Bounded manual reproduction `cjpm test` from `entry` is blocked by missing root-package dependencies in `entry/cjpm.toml`."
+      ],
+      "parityLevel": "not-applicable",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::buildOnboardingIndicator"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+        "blocked: cjpm test (entry/src/test/cangjie)"
+      ],
+      "notes": "Static analysis over-detected permissions from a generic indicator/widget heuristic.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": "",
+      "taskReason": "not applicable"
+    }
+  ],
+  "covered": [
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-321f648503-008-authentication-account-or-session-behavi",
+      "featureName": "Authentication, account, or session behavior (LoginScreen)",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+      "importance": "critical",
+      "category": "kotlin-source",
+      "status": "implemented",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "image_viewer",
+        "navigation_resource",
+        "notification_widget",
+        "permissions",
+        "screen_lifecycle",
+        "settings",
+        "state_model"
+      ],
+      "keyClasses": [],
+      "keyMethods": [
+        "LoginScreen"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Authentication, account, or session behavior. Evidence method: `LoginScreen`.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt; category=kotlin-source; importance=critical; keyMethods=LoginScreen; featurePoint=Authentication, account, or session behavior. Evidence method: `LoginScreen`.",
+      "sourceBehavior": "`LoginScreen.kt` submits hard-coded credentials through `LoginViewModel`, shows an invalid-credentials snackbar when they do not match, and hands successful login off to the persisted session route transition.",
+      "targetBehavior": "`login_store.cj` preserves the same hard-coded credentials and `bootstrap_page.cj::performLogin` preserves the same success/failure split by toggling persisted login state on success and showing an immediate error message plus toast on failure.",
+      "verificationEvidence": [
+        "Manual source review confirmed `LoginScreen.kt` and `LoginViewModel.kt` use the credentials `abcxyz@gmail.com` / `abcdef`, navigate on success, and emit the message `Please enter correct email and password` on failure.",
+        "Manual target review confirmed `login_store.cj::isValidCredentials`, `login_store.cj::login`, and `bootstrap_page.cj::performLogin` preserve the same credential gate, persisted login write, and failure message flow.",
+        "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+        "Focused phase-03 tests cover credential acceptance, success route, and preserved hint/message literals, but the workflow test gate is blocked before they can run by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+      ],
+      "parityLevel": "equivalent",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj::isValidCredentials",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj::login",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogin",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStoreAcceptsOnlySourceCredentials",
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStorePreservesSourceHintsAndPlaceholderMessages",
+        "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+      ],
+      "notes": "",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": ""
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-1ed35246b3-002-navigation-surface-menu-drawer-toolbar-o",
+      "featureName": "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+      "importance": "critical",
+      "category": "kotlin-source",
+      "status": "implemented",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "image_viewer",
+        "navigation_resource",
+        "notification_widget",
+        "permissions",
+        "screen_lifecycle",
+        "settings",
+        "state_model"
+      ],
+      "keyClasses": [],
+      "keyMethods": [
+        "LoginScreen"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt; category=kotlin-source; importance=critical; keyMethods=LoginScreen; featurePoint=Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+      "sourceBehavior": "`LoginScreen.kt` navigates to the home route after successful hard-coded credential validation by invoking the `PerformLogin` callback from the login button.",
+      "targetBehavior": "`bootstrap_page.cj` wires `renderLoginRoute` so the login button and submit action call `performLogin()`, then navigate to `home_screen` on successful credential validation.",
+      "verificationEvidence": [
+        "Manual source review confirmed `LoginScreen.kt` performs navigation only after the `PerformLogin` success callback.",
+        "Manual target review confirmed `buildLoginRoute` passes `performLogin()` into `renderLoginRoute` and `performLogin()` navigates to `home_screen` only after `loginStore.login(...)` succeeds.",
+        "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+        "Focused target test coverage exists in `phase03_onboarding_login_profile_test.cj::loginStoreAcceptsOnlySourceCredentials`, but the workflow test gate is blocked before that test can run by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+      ],
+      "parityLevel": "equivalent",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildLoginRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::renderLoginRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj::successRoute"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStoreAcceptsOnlySourceCredentials",
+        "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+      ],
+      "notes": "This row covers route handoff from the login surface, not shell tabs or drawers.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": ""
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-78d5c742f4-007-observable-state-viewmodel-flow-livedata",
+      "featureName": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+      "importance": "critical",
+      "category": "kotlin-source",
+      "status": "implemented",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "image_viewer",
+        "navigation_resource",
+        "notification_widget",
+        "permissions",
+        "screen_lifecycle",
+        "settings",
+        "state_model"
+      ],
+      "keyClasses": [],
+      "keyMethods": [
+        "LoginScreen"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt; category=kotlin-source; importance=critical; keyMethods=LoginScreen; featurePoint=Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+      "sourceBehavior": "`LoginScreen.kt` reads observable email/password state from `LoginViewModel`, updates that state on each text change, and collects one-shot invalid-login UI events for snackbar feedback.",
+      "targetBehavior": "`FoodikeBootstrap` owns `loginEmail`, `loginPassword`, and `loginErrorMessage` state and passes change handlers into `renderLoginRoute`, so text input and error feedback update immediately while the route is active.",
+      "verificationEvidence": [
+        "Manual source review confirmed `LoginScreen.kt` observes `email`, `password`, and `eventFlow` from `LoginViewModel`.",
+        "Manual target review confirmed `FoodikeBootstrap` updates login input/error state through route callbacks and clears the error on field edits.",
+        "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+        "Phase-03 focused tests exist but the workflow test gate is blocked before they can run by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+      ],
+      "parityLevel": "equivalent",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildLoginRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::clearLoginError",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::renderLoginRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildLoginErrorBanner"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStorePreservesSourceHintsAndPlaceholderMessages",
+        "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+      ],
+      "notes": "",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": ""
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-2c65d08c3b-005-screen-lifecycle-entry-point-initializat",
+      "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+      "importance": "critical",
+      "category": "kotlin-source",
+      "status": "implemented",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "image_viewer",
+        "navigation_resource",
+        "notification_widget",
+        "permissions",
+        "screen_lifecycle",
+        "settings",
+        "state_model"
+      ],
+      "keyClasses": [],
+      "keyMethods": [
+        "LoginScreen"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt; category=kotlin-source; importance=critical; keyMethods=LoginScreen; featurePoint=Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+      "sourceBehavior": "`LoginScreen.kt` updates system bars when the screen composes and keeps login UI state alive while the route is active.",
+      "targetBehavior": "`FoodikeBootstrap` owns the login route state and keeps the login inputs/error message in route state while the login page is active; no extra resume/pause refresh path exists in the source flow.",
+      "verificationEvidence": [
+        "Manual source review confirmed `LoginScreen.kt` lifecycle work is limited to bar-color setup during composition.",
+        "Manual target review confirmed `FoodikeBootstrap` owns login route state for the active route and clears it explicitly on logout.",
+        "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+        "Workflow test gate remains blocked before phase-03 test execution by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+      ],
+      "parityLevel": "equivalent",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildLoginRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::clearLoginError",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::renderLoginRoute"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
+        "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+      ],
+      "notes": "The source login screen has no resume/pause data reload path beyond route-local UI state retention.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": ""
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-login-121975f8dc-003-observable-state-viewmodel-flow-livedata",
+      "featureName": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+      "importance": "critical",
+      "category": "kotlin-source",
+      "status": "implemented",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "permissions",
+        "screen_lifecycle",
+        "state_model"
+      ],
+      "keyClasses": [
+        "LoginViewModel"
+      ],
+      "keyMethods": [
+        "onEvent"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt; category=kotlin-source; importance=critical; classes=LoginViewModel; keyMethods=onEvent; featurePoint=Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+      "sourceBehavior": "`LoginViewModel.kt::onEvent` mutates observable email/password field state and emits a one-shot invalid-login UI event when credentials do not match.",
+      "targetBehavior": "`FoodikeBootstrap` change handlers mutate `loginEmail`, `loginPassword`, and `loginErrorMessage` directly, which preserves immediate UI feedback for login field edits and invalid login attempts.",
+      "verificationEvidence": [
+        "Manual source review confirmed `LoginViewModel.kt::onEvent` updates field state and emits the invalid-login message through `_eventFlow`.",
+        "Manual target review confirmed bootstrap change handlers mutate field state immediately and `performLogin()` plus `clearLoginError()` preserve the same success/failure feedback pattern.",
+        "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+        "Phase-03 focused tests exist but the workflow test gate is blocked before they can run by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+      ],
+      "parityLevel": "equivalent",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildLoginRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogin",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::clearLoginError",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildLoginErrorBanner"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStoreAcceptsOnlySourceCredentials",
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStorePreservesSourceHintsAndPlaceholderMessages",
+        "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+      ],
+      "notes": "",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": ""
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-06e1e43e4e-001-image-viewing-bitmap-exif-handling-zoom",
+      "featureName": "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+      "importance": "critical",
+      "category": "kotlin-source",
+      "status": "implemented",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "image_viewer",
+        "permissions"
+      ],
+      "keyClasses": [],
+      "keyMethods": [
+        "OnboardingPage"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt; category=kotlin-source; importance=critical; keyMethods=OnboardingPage; featurePoint=Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+      "sourceBehavior": "`OnboardingPage.kt` shows a static onboarding illustration for the current page together with title and description text; it does not implement zoom or gallery gestures.",
+      "targetBehavior": "`onboarding_page.cj::buildOnboardingCard` shows the current slide illustration, title, and description for each onboarding page using the translated media resources.",
+      "verificationEvidence": [
+        "Manual source review confirmed `OnboardingPage.kt` renders one static image resource per onboarding page without zoom or gesture handling.",
+        "Manual target review confirmed `buildOnboardingCard` renders one translated media resource plus title/description text for each slide.",
+        "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+        "Focused onboarding progression tests exist but the workflow test gate is blocked before they can run by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+      ],
+      "parityLevel": "equivalent",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::buildOnboardingCard",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::slideAt"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+        "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+      ],
+      "notes": "Equivalent static image parity; the source itself has no zoom/gallery behavior despite the analyzer label.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": ""
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-d591d5d894-003-data-loading-query-search-filter-or-sort",
+      "featureName": "Data loading, query, search, filter, or sort behavior (get)",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+      "importance": "critical",
+      "category": "kotlin-source",
+      "status": "implemented",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "image_viewer",
+        "permissions"
+      ],
+      "keyClasses": [
+        "OnBoardingItem"
+      ],
+      "keyMethods": [
+        "get"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Data loading, query, search, filter, or sort behavior. Evidence method: `get`.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt; category=kotlin-source; importance=critical; classes=OnBoardingItem; keyMethods=get; featurePoint=Data loading, query, search, filter, or sort behavior. Evidence method: `get`.",
+      "sourceBehavior": "`OnBoardingItem.get()` loads a fixed three-item onboarding data set in order for the pager flow.",
+      "targetBehavior": "`OnboardingStore` preserves the same fixed three-slide onboarding sequence and exposes indexed access plus page-count helpers for the pager route.",
+      "verificationEvidence": [
+        "Manual source review confirmed `OnBoardingItem.get()` always returns the same three-item onboarding list in source order.",
+        "Manual target review confirmed `OnboardingStore` preserves the same fixed three-slide sequence and exposes indexed access plus page-count helpers.",
+        "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+        "Focused onboarding progression tests exist but the workflow test gate is blocked before they can run by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+      ],
+      "parityLevel": "equivalent",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::pageCount",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::slideAt",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::nextIndex"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+        "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+      ],
+      "notes": "",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": ""
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-d0629b7f1c-001-image-viewing-bitmap-exif-handling-zoom",
+      "featureName": "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+      "importance": "critical",
+      "category": "kotlin-source",
+      "status": "implemented",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "image_viewer",
+        "permissions"
+      ],
+      "keyClasses": [
+        "OnBoardingItem"
+      ],
+      "keyMethods": [
+        "get"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt; category=kotlin-source; importance=critical; classes=OnBoardingItem; keyMethods=get; featurePoint=Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+      "sourceBehavior": "`OnBoardingItem.get()` provides the three static onboarding image resources used by the pager pages; it does not implement zoom, preview, or exif handling.",
+      "targetBehavior": "`OnboardingStore` preserves the same three slide media identifiers used by `buildOnboardingCard` to render the onboarding illustrations.",
+      "verificationEvidence": [
+        "Manual source review confirmed `OnBoardingItem.get()` returns three static drawable ids only.",
+        "Manual target review confirmed `OnboardingStore` preserves the source slide media sequence `chinese_bowl`, `rider`, `clock`.",
+        "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+        "Focused onboarding progression tests exist but the workflow test gate is blocked before they can run by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+      ],
+      "parityLevel": "equivalent",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::slides",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::slideAt"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+        "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+      ],
+      "notes": "Equivalent static image-seed behavior; no zoom/gallery handling exists in the source utility.",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": ""
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-eed8afd34d-001-navigation-surface-menu-drawer-toolbar-o",
+      "featureName": "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+      "importance": "high",
+      "category": "kotlin-source",
+      "status": "implemented",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "navigation_resource",
+        "permissions",
+        "screen_lifecycle",
+        "state_model"
+      ],
+      "keyClasses": [],
+      "keyMethods": [
+        "OnBoarding"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt; category=kotlin-source; importance=high; keyMethods=OnBoarding; featurePoint=Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+      "sourceBehavior": "`OnBoarding.kt` advances the pager on intermediate pages and navigates to the login route from the last page.",
+      "targetBehavior": "`FoodikeBootstrap::buildOnboardingRoute` advances the Harmony swiper with `showNext()` until the last page, then navigates to the login route.",
+      "verificationEvidence": [
+        "Manual source review confirmed `OnBoarding.kt` scrolls to the next page until the last page and only then navigates to login.",
+        "Manual target review confirmed `buildOnboardingRoute` advances the swiper with `showNext()` until the last page and only then navigates to `login_screen`.",
+        "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+        "Focused onboarding progression tests exist but the workflow test gate is blocked before they can run by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+      ],
+      "parityLevel": "equivalent",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildOnboardingRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::renderOnboardingRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::isLastPage"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+        "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+      ],
+      "notes": "",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": ""
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-579cddd1b6-004-observable-state-viewmodel-flow-livedata",
+      "featureName": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+      "importance": "high",
+      "category": "kotlin-source",
+      "status": "implemented",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "navigation_resource",
+        "permissions",
+        "screen_lifecycle",
+        "state_model"
+      ],
+      "keyClasses": [],
+      "keyMethods": [
+        "OnBoarding"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt; category=kotlin-source; importance=high; keyMethods=OnBoarding; featurePoint=Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+      "sourceBehavior": "`OnBoarding.kt` reacts to pager-state changes and reflects the current page in the indicator row and next-action behavior.",
+      "targetBehavior": "`renderOnboardingRoute` reacts to `pageIndex` changes from `FoodikeBootstrap`, updates the indicator row through `buildOnboardingIndicatorRow`, and switches the footer button action from `showNext()` to login navigation on the last page.",
+      "verificationEvidence": [
+        "Manual source review confirmed the pager `currentPage` drives indicators and next-button behavior in `OnBoarding.kt`.",
+        "Manual target review confirmed `renderOnboardingRoute`, `buildOnboardingIndicatorRow`, and `buildOnboardingFooter` react to `pageIndex` and change the button behavior on the final page.",
+        "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+        "Phase-03 test build report `translation-inputs/test-build-reports/phase-03-onboarding-login/test-build-report.md` records the current harness blocker before the phase-03 tests execute.",
+        "Bounded manual reproduction on 2026-06-28 of `cjpm test` from `entry/src/test/cangjie` failed before test execution because the root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`."
+      ],
+      "parityLevel": "equivalent",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildOnboardingRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::renderOnboardingRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::buildOnboardingIndicatorRow",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::buildOnboardingFooter"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+        "blocked: cjpm test (entry/src/test/cangjie) missing `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` dependencies in `entry/cjpm.toml`"
+      ],
+      "notes": "",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": ""
+    },
+    {
+      "kind": "source-feature",
+      "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-fcaf31ccc3-003-screen-lifecycle-entry-point-initializat",
+      "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+      "importance": "high",
+      "category": "kotlin-source",
+      "status": "implemented",
+      "plannedPhase": "phase-03-onboarding-login",
+      "riskTags": [
+        "navigation_resource",
+        "permissions",
+        "screen_lifecycle",
+        "state_model"
+      ],
+      "keyClasses": [],
+      "keyMethods": [
+        "OnBoarding"
+      ],
+      "androidIds": [],
+      "dependencies": [],
+      "featurePoint": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+      "sourceEvidence": "path=app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt; category=kotlin-source; importance=high; keyMethods=OnBoarding; featurePoint=Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+      "sourceBehavior": "`OnBoarding.kt` owns pager state for the active onboarding route and updates system bars while the onboarding screen is displayed.",
+      "targetBehavior": "`FoodikeBootstrap` owns `onboardingPageIndex` and the `SwiperController` while the onboarding route is active, preserving the route-local state model used by the source pager flow.",
+      "verificationEvidence": [
+        "Manual source review confirmed `OnBoarding.kt` owns `pagerState` and only route-local lifecycle concerns.",
+        "Manual target review confirmed `FoodikeBootstrap` owns `onboardingPageIndex` plus the `SwiperController` for the active onboarding route.",
+        "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+        "Workflow test gate remains blocked before phase-03 test execution by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+      ],
+      "parityLevel": "equivalent",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildOnboardingRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::renderOnboardingRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::buildOnboardingFooter"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+        "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+      ],
+      "notes": "",
+      "deferredReason": "",
+      "targetFallback": "",
+      "risk": "",
+      "futureCompletionPath": ""
+    }
+  ],
+  "platformMustComplete": [],
+  "platformNeedsEvidence": [],
+  "platformDeferredOrFallback": [],
+  "platformResolved": [],
+  "sourceFiles": [
+    {
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+      "importance": "critical",
+      "featureCount": 8,
+      "criticalHighFeatureCount": 8,
+      "openCriticalHighFeatureCount": 0,
+      "byStatus": {
+        "implemented": 4,
+        "not-applicable": 4
+      },
+      "features": [
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-login-321f648503-008-authentication-account-or-session-behavi",
+          "featureName": "Authentication, account, or session behavior (LoginScreen)",
+          "importance": "critical",
+          "status": "implemented",
+          "keyMethods": [
+            "LoginScreen"
+          ]
+        },
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-login-b030a7b1f9-001-image-viewing-bitmap-exif-handling-zoom",
+          "featureName": "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "importance": "critical",
+          "status": "not-applicable",
+          "keyMethods": [
+            "LoginScreen"
+          ]
+        },
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-login-1ed35246b3-002-navigation-surface-menu-drawer-toolbar-o",
+          "featureName": "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "importance": "critical",
+          "status": "implemented",
+          "keyMethods": [
+            "LoginScreen"
+          ]
+        },
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-login-5777ecba15-003-notification-widget-remoteviews-or-home",
+          "featureName": "Notification, widget, RemoteViews, or home-screen integration behavior.",
+          "importance": "critical",
+          "status": "not-applicable",
+          "keyMethods": [
+            "LoginScreen"
+          ]
+        },
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-login-78d5c742f4-007-observable-state-viewmodel-flow-livedata",
+          "featureName": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+          "importance": "critical",
+          "status": "implemented",
+          "keyMethods": [
+            "LoginScreen"
+          ]
+        },
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-login-7ab3866541-004-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "importance": "critical",
+          "status": "not-applicable",
+          "keyMethods": [
+            "LoginScreen"
+          ]
+        },
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-login-2c65d08c3b-005-screen-lifecycle-entry-point-initializat",
+          "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "importance": "critical",
+          "status": "implemented",
+          "keyMethods": [
+            "LoginScreen"
+          ]
+        },
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-login-34c5f4ba3a-006-settings-preferences-option-toggles-or-c",
+          "featureName": "Settings/preferences, option toggles, or configuration state behavior.",
+          "importance": "critical",
+          "status": "not-applicable",
+          "keyMethods": [
+            "LoginScreen"
+          ]
+        }
+      ]
+    },
+    {
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+      "importance": "critical",
+      "featureCount": 3,
+      "criticalHighFeatureCount": 3,
+      "openCriticalHighFeatureCount": 0,
+      "byStatus": {
+        "implemented": 1,
+        "not-applicable": 2
+      },
+      "features": [
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-login-121975f8dc-003-observable-state-viewmodel-flow-livedata",
+          "featureName": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+          "importance": "critical",
+          "status": "implemented",
+          "keyMethods": [
+            "onEvent"
+          ]
+        },
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-login-94031fc378-001-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "importance": "critical",
+          "status": "not-applicable",
+          "keyMethods": [
+            "onEvent"
+          ]
+        },
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-login-b8f806f9cb-002-screen-lifecycle-entry-point-initializat",
+          "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "importance": "critical",
+          "status": "not-applicable",
+          "keyMethods": [
+            "onEvent"
+          ]
+        }
+      ]
+    },
+    {
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+      "importance": "critical",
+      "featureCount": 2,
+      "criticalHighFeatureCount": 2,
+      "openCriticalHighFeatureCount": 0,
+      "byStatus": {
+        "implemented": 1,
+        "not-applicable": 1
+      },
+      "features": [
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-06e1e43e4e-001-image-viewing-bitmap-exif-handling-zoom",
+          "featureName": "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "importance": "critical",
+          "status": "implemented",
+          "keyMethods": [
+            "OnboardingPage"
+          ]
+        },
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-71420699c7-002-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "importance": "critical",
+          "status": "not-applicable",
+          "keyMethods": [
+            "OnboardingPage"
+          ]
+        }
+      ]
+    },
+    {
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+      "importance": "critical",
+      "featureCount": 3,
+      "criticalHighFeatureCount": 3,
+      "openCriticalHighFeatureCount": 0,
+      "byStatus": {
+        "implemented": 2,
+        "not-applicable": 1
+      },
+      "features": [
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-d591d5d894-003-data-loading-query-search-filter-or-sort",
+          "featureName": "Data loading, query, search, filter, or sort behavior (get)",
+          "importance": "critical",
+          "status": "implemented",
+          "keyMethods": [
+            "get"
+          ]
+        },
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-d0629b7f1c-001-image-viewing-bitmap-exif-handling-zoom",
+          "featureName": "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "importance": "critical",
+          "status": "implemented",
+          "keyMethods": [
+            "get"
+          ]
+        },
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-f9447173ee-002-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "importance": "critical",
+          "status": "not-applicable",
+          "keyMethods": [
+            "get"
+          ]
+        }
+      ]
+    },
+    {
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt",
+      "importance": "high",
+      "featureCount": 2,
+      "criticalHighFeatureCount": 2,
+      "openCriticalHighFeatureCount": 0,
+      "byStatus": {
+        "not-applicable": 2
+      },
+      "features": [
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-login-b9cad25def-001-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "importance": "high",
+          "status": "not-applicable",
+          "keyMethods": [
+            "FoodikeTextField"
+          ]
+        },
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-login-794ee8e84b-002-settings-preferences-option-toggles-or-c",
+          "featureName": "Settings/preferences, option toggles, or configuration state behavior.",
+          "importance": "high",
+          "status": "not-applicable",
+          "keyMethods": [
+            "FoodikeTextField"
+          ]
+        }
+      ]
+    },
+    {
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+      "importance": "high",
+      "featureCount": 4,
+      "criticalHighFeatureCount": 4,
+      "openCriticalHighFeatureCount": 0,
+      "byStatus": {
+        "implemented": 3,
+        "not-applicable": 1
+      },
+      "features": [
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-eed8afd34d-001-navigation-surface-menu-drawer-toolbar-o",
+          "featureName": "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "importance": "high",
+          "status": "implemented",
+          "keyMethods": [
+            "OnBoarding"
+          ]
+        },
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-579cddd1b6-004-observable-state-viewmodel-flow-livedata",
+          "featureName": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+          "importance": "high",
+          "status": "implemented",
+          "keyMethods": [
+            "OnBoarding"
+          ]
+        },
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-70fddfcb28-002-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "importance": "high",
+          "status": "not-applicable",
+          "keyMethods": [
+            "OnBoarding"
+          ]
+        },
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-fcaf31ccc3-003-screen-lifecycle-entry-point-initializat",
+          "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+          "importance": "high",
+          "status": "implemented",
+          "keyMethods": [
+            "OnBoarding"
+          ]
+        }
+      ]
+    },
+    {
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/FoodikeTextFieldState.kt",
+      "importance": "medium",
+      "featureCount": 1,
+      "criticalHighFeatureCount": 0,
+      "openCriticalHighFeatureCount": 0,
+      "byStatus": {
+        "not-applicable": 1
+      },
+      "features": [
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-login-777321c5b9-001-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "importance": "medium",
+          "status": "not-applicable",
+          "keyMethods": []
+        }
+      ]
+    },
+    {
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginEvent.kt",
+      "importance": "medium",
+      "featureCount": 1,
+      "criticalHighFeatureCount": 0,
+      "openCriticalHighFeatureCount": 0,
+      "byStatus": {
+        "not-applicable": 1
+      },
+      "features": [
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-login-8269f59f74-001-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "importance": "medium",
+          "status": "not-applicable",
+          "keyMethods": []
+        }
+      ]
+    },
+    {
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/UiEvent.kt",
+      "importance": "medium",
+      "featureCount": 1,
+      "criticalHighFeatureCount": 0,
+      "openCriticalHighFeatureCount": 0,
+      "byStatus": {
+        "not-applicable": 1
+      },
+      "features": [
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-login-85d5d7f957-001-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "importance": "medium",
+          "status": "not-applicable",
+          "keyMethods": []
+        }
+      ]
+    },
+    {
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/components/BottomSection.kt",
+      "importance": "medium",
+      "featureCount": 1,
+      "criticalHighFeatureCount": 0,
+      "openCriticalHighFeatureCount": 0,
+      "byStatus": {
+        "not-applicable": 1
+      },
+      "features": [
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-4660285a0b-001-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "importance": "medium",
+          "status": "not-applicable",
+          "keyMethods": [
+            "BottomSection"
+          ]
+        }
+      ]
+    },
+    {
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/components/Indicators.kt",
+      "importance": "medium",
+      "featureCount": 1,
+      "criticalHighFeatureCount": 0,
+      "openCriticalHighFeatureCount": 0,
+      "byStatus": {
+        "not-applicable": 1
+      },
+      "features": [
+        {
+          "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-74d6de5e11-001-runtime-permission-request-permission-re",
+          "featureName": "Runtime permission request, permission result handling, or protected API access.",
+          "importance": "medium",
+          "status": "not-applicable",
+          "keyMethods": [
+            "Indicator"
+          ]
+        }
+      ]
+    }
+  ],
+  "implementationGroups": [
+    {
+      "groupId": "phase-03-onboarding-login-source-behavior-presentation-login",
+      "title": "Source behavior: presentation/login",
+      "groupType": "source-behavior",
+      "priority": "critical",
+      "sourcePaths": [
+        "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/FoodikeTextFieldState.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/LoginEvent.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/UiEvent.kt"
+      ],
+      "featureIds": [
+        "app-src-main-java-com-example-foodike-presentation-login-321f648503-008-authentication-account-or-session-behavi",
+        "app-src-main-java-com-example-foodike-presentation-login-b030a7b1f9-001-image-viewing-bitmap-exif-handling-zoom",
+        "app-src-main-java-com-example-foodike-presentation-login-1ed35246b3-002-navigation-surface-menu-drawer-toolbar-o",
+        "app-src-main-java-com-example-foodike-presentation-login-5777ecba15-003-notification-widget-remoteviews-or-home",
+        "app-src-main-java-com-example-foodike-presentation-login-78d5c742f4-007-observable-state-viewmodel-flow-livedata",
+        "app-src-main-java-com-example-foodike-presentation-login-7ab3866541-004-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-login-2c65d08c3b-005-screen-lifecycle-entry-point-initializat",
+        "app-src-main-java-com-example-foodike-presentation-login-34c5f4ba3a-006-settings-preferences-option-toggles-or-c",
+        "app-src-main-java-com-example-foodike-presentation-login-121975f8dc-003-observable-state-viewmodel-flow-livedata",
+        "app-src-main-java-com-example-foodike-presentation-login-94031fc378-001-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-login-b8f806f9cb-002-screen-lifecycle-entry-point-initializat",
+        "app-src-main-java-com-example-foodike-presentation-login-b9cad25def-001-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-login-794ee8e84b-002-settings-preferences-option-toggles-or-c",
+        "app-src-main-java-com-example-foodike-presentation-login-777321c5b9-001-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-login-8269f59f74-001-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-login-85d5d7f957-001-runtime-permission-request-permission-re"
+      ],
+      "resourceInputs": [],
+      "platformCapabilityIds": [],
+      "expectedTargetDomains": [
+        "ohos_app_cangjie_entry/features/login/login_store.cj",
+        "ohos_app_cangjie_entry/app/bootstrap_page.cj",
+        "ohos_app_cangjie_entry/data/session/login_preferences_service.cj",
+        "ohos_app_cangjie_entry/features/login/login_page.cj"
+      ],
+      "requiredBehaviors": [
+        "`LoginScreen.kt` submits hard-coded credentials through `LoginViewModel`, shows an invalid-credentials snackbar when they do not match, and hands successful login off to the persisted session route transition.",
+        "`LoginScreen.kt` only shows static Google and Facebook sign-in icons; it does not implement image preview, zoom, gallery, or bitmap/exif handling.",
+        "`LoginScreen.kt` navigates to the home route after successful hard-coded credential validation by invoking the `PerformLogin` callback from the login button.",
+        "`LoginScreen.kt` does not create notifications, widgets, RemoteViews, or home-screen integrations; it only shows text fields, buttons, icons, and placeholder toasts.",
+        "`LoginScreen.kt` reads observable email/password state from `LoginViewModel`, updates that state on each text change, and collects one-shot invalid-login UI events for snackbar feedback.",
+        "`LoginScreen.kt` requests no runtime permissions and accesses no protected APIs; it only reads local text field state and shows placeholder toasts/snackbar messages.",
+        "`LoginScreen.kt` updates system bars when the screen composes and keeps login UI state alive while the route is active.",
+        "`LoginScreen.kt` exposes no settings screen, toggles, or configurable preferences; it only shows login fields and placeholder ancillary actions.",
+        "`LoginViewModel.kt::onEvent` mutates observable email/password field state and emits a one-shot invalid-login UI event when credentials do not match.",
+        "`LoginViewModel.kt` validates credentials and emits snackbar messages only; it does not request permissions or call protected APIs.",
+        "`LoginViewModel.kt` has no lifecycle callbacks or refresh/teardown logic beyond keeping UI state in memory while the screen is active.",
+        "`FoodikeTextField.kt` is a plain Material text field wrapper with placeholder text and keyboard options only; it does not request permissions or access protected APIs.",
+        "`FoodikeTextField.kt` contains placeholder and keyboard configuration only; it is not a settings or options/toggles surface.",
+        "`FoodikeTextFieldState.kt` is a simple data holder for login text and hint values only; it does not request permissions, handle permission results, or access protected APIs.",
+        "`LoginEvent.kt` defines only entered-email, entered-password, and perform-login events; it does not model permission requests, permission results, or protected API access.",
+        "`UiEvent.kt` defines only a snackbar-display event and does not model permission requests, permission results, or protected API access."
+      ],
+      "riskHints": [
+        "critical/high behavior cannot close on build pass alone",
+        "broad shell endpoint risk"
+      ],
+      "acceptanceEvidence": [
+        "Closed critical/high features must record sourceBehavior, targetBehavior, parityLevel, targetEndpoints, and verificationEvidence.",
+        "Build pass alone is not per-feature verification.",
+        "Referenced target tests need to be covered by the latest accepted test gate or explicit verificationEvidence.",
+        "Replace root/shell/whole-file endpoints with precise target functions, types, resource files, or tests before closure."
+      ],
+      "architectureHints": [
+        "Do not close this group only with a root view, whole-file, state bucket, or shell endpoint.",
+        "If several source files are merged, keep business behavior discoverable through precise target endpoints."
+      ],
+      "testHints": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStoreAcceptsOnlySourceCredentials",
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStorePreservesSourceHintsAndPlaceholderMessages",
+        "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)",
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
+        "blocked: cjpm test (entry/src/test/cangjie) missing `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` dependencies in `entry/cjpm.toml`",
+        "blocked: cjpm test (entry/src/test/cangjie)"
+      ],
+      "statusCounts": {
+        "implemented": 5,
+        "not-applicable": 11
+      },
+      "categories": [
+        "kotlin-source"
+      ],
+      "planContractRefs": [
+        {
+          "groupId": "phase-03-login-validation-and-session-handoff",
+          "title": "Login validation and session handoff",
+          "sourceMethods": [
+            "LoginScreen",
+            "LoginViewModel.onEvent",
+            "FoodikeTextField"
+          ],
+          "uiContracts": [
+            "two text fields plus login button and social placeholder actions"
+          ],
+          "dataContracts": [
+            "email state",
+            "password state",
+            "snackbar event flow",
+            "session toggle callback"
+          ]
+        }
+      ],
+      "planRiskHints": [
+        "Source uses hard-coded credentials and placeholder social actions; preserve current UX rather than inventing backend auth."
+      ],
+      "planAcceptanceEvidence": [
+        "focused login validation tests",
+        "build gate pass"
+      ],
+      "planRequiredBehaviors": [
+        "Accepted credentials are `abcxyz@gmail.com` and `abcdef`.",
+        "Rejected credentials emit a visible error message.",
+        "Successful login clears back stack semantics into home where practical."
+      ]
+    },
+    {
+      "groupId": "phase-03-onboarding-login-source-behavior-presentation-onboarding",
+      "title": "Source behavior: presentation/onboarding",
+      "groupType": "source-behavior",
+      "priority": "critical",
+      "sourcePaths": [
+        "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/components/BottomSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/components/Indicators.kt"
+      ],
+      "featureIds": [
+        "app-src-main-java-com-example-foodike-presentation-onboa-06e1e43e4e-001-image-viewing-bitmap-exif-handling-zoom",
+        "app-src-main-java-com-example-foodike-presentation-onboa-71420699c7-002-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-onboa-d591d5d894-003-data-loading-query-search-filter-or-sort",
+        "app-src-main-java-com-example-foodike-presentation-onboa-d0629b7f1c-001-image-viewing-bitmap-exif-handling-zoom",
+        "app-src-main-java-com-example-foodike-presentation-onboa-f9447173ee-002-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-onboa-eed8afd34d-001-navigation-surface-menu-drawer-toolbar-o",
+        "app-src-main-java-com-example-foodike-presentation-onboa-579cddd1b6-004-observable-state-viewmodel-flow-livedata",
+        "app-src-main-java-com-example-foodike-presentation-onboa-70fddfcb28-002-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-onboa-fcaf31ccc3-003-screen-lifecycle-entry-point-initializat",
+        "app-src-main-java-com-example-foodike-presentation-onboa-4660285a0b-001-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-onboa-74d6de5e11-001-runtime-permission-request-permission-re"
+      ],
+      "resourceInputs": [],
+      "platformCapabilityIds": [],
+      "expectedTargetDomains": [
+        "ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj",
+        "ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj",
+        "ohos_app_cangjie_entry/app/bootstrap_page.cj"
+      ],
+      "requiredBehaviors": [
+        "`OnboardingPage.kt` shows a static onboarding illustration for the current page together with title and description text; it does not implement zoom or gallery gestures.",
+        "`OnboardingPage.kt` displays static onboarding content and does not request permissions or access protected APIs.",
+        "`OnBoardingItem.get()` loads a fixed three-item onboarding data set in order for the pager flow.",
+        "`OnBoardingItem.get()` provides the three static onboarding image resources used by the pager pages; it does not implement zoom, preview, or exif handling.",
+        "`OnBoardingItem.get()` constructs a static list of onboarding slides and does not request permissions or access protected APIs.",
+        "`OnBoarding.kt` advances the pager on intermediate pages and navigates to the login route from the last page.",
+        "`OnBoarding.kt` reacts to pager-state changes and reflects the current page in the indicator row and next-action behavior.",
+        "`OnBoarding.kt` coordinates pager state and final-route navigation only; it does not request permissions or access protected APIs.",
+        "`OnBoarding.kt` owns pager state for the active onboarding route and updates system bars while the onboarding screen is displayed.",
+        "`BottomSection.kt` renders only the onboarding indicator row and next-arrow button; it does not request permissions or access protected APIs.",
+        "`Indicators.kt` animates the selected onboarding dot width and colors only; it does not request permissions or access protected APIs."
+      ],
+      "riskHints": [
+        "critical/high behavior cannot close on build pass alone"
+      ],
+      "acceptanceEvidence": [
+        "Closed critical/high features must record sourceBehavior, targetBehavior, parityLevel, targetEndpoints, and verificationEvidence.",
+        "Build pass alone is not per-feature verification.",
+        "Referenced target tests need to be covered by the latest accepted test gate or explicit verificationEvidence."
+      ],
+      "architectureHints": [
+        "If several source files are merged, keep business behavior discoverable through precise target endpoints."
+      ],
+      "testHints": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+        "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)",
+        "blocked: cjpm test (entry/src/test/cangjie) missing `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` dependencies in `entry/cjpm.toml`",
+        "blocked: cjpm test (entry/src/test/cangjie)"
+      ],
+      "statusCounts": {
+        "implemented": 6,
+        "not-applicable": 5
+      },
+      "categories": [
+        "kotlin-source"
+      ],
+      "planContractRefs": [
+        {
+          "groupId": "phase-03-onboarding-pager",
+          "title": "Onboarding pager and page content",
+          "sourceMethods": [
+            "OnBoarding",
+            "OnboardingPage",
+            "OnBoardingItem.get"
+          ],
+          "uiContracts": [
+            "multi-page onboarding with bottom action/indicator"
+          ],
+          "dataContracts": [
+            "static onboarding item list"
+          ]
+        }
+      ],
+      "planRiskHints": [
+        "Seed over-detects image-viewer behavior here; likely static onboarding media only."
+      ],
+      "planAcceptanceEvidence": [
+        "manual review of onboarding flow",
+        "build gate pass"
+      ],
+      "planRequiredBehaviors": [
+        "Sequential page progression.",
+        "Final action navigates to login."
+      ]
+    },
+    {
+      "groupId": "phase-03-onboarding-login-verification-phase-tests-and-evidence",
+      "title": "Verification and evidence policy",
+      "groupType": "verification",
+      "priority": "critical",
+      "sourcePaths": [
+        "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/components/Indicators.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/components/BottomSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/LoginEvent.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/FoodikeTextFieldState.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/UiEvent.kt"
+      ],
+      "featureIds": [
+        "app-src-main-java-com-example-foodike-presentation-login-b030a7b1f9-001-image-viewing-bitmap-exif-handling-zoom",
+        "app-src-main-java-com-example-foodike-presentation-login-1ed35246b3-002-navigation-surface-menu-drawer-toolbar-o",
+        "app-src-main-java-com-example-foodike-presentation-login-5777ecba15-003-notification-widget-remoteviews-or-home",
+        "app-src-main-java-com-example-foodike-presentation-login-7ab3866541-004-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-login-2c65d08c3b-005-screen-lifecycle-entry-point-initializat",
+        "app-src-main-java-com-example-foodike-presentation-login-34c5f4ba3a-006-settings-preferences-option-toggles-or-c",
+        "app-src-main-java-com-example-foodike-presentation-login-78d5c742f4-007-observable-state-viewmodel-flow-livedata",
+        "app-src-main-java-com-example-foodike-presentation-login-321f648503-008-authentication-account-or-session-behavi",
+        "app-src-main-java-com-example-foodike-presentation-login-94031fc378-001-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-login-b8f806f9cb-002-screen-lifecycle-entry-point-initializat",
+        "app-src-main-java-com-example-foodike-presentation-login-121975f8dc-003-observable-state-viewmodel-flow-livedata",
+        "app-src-main-java-com-example-foodike-presentation-onboa-06e1e43e4e-001-image-viewing-bitmap-exif-handling-zoom",
+        "app-src-main-java-com-example-foodike-presentation-onboa-71420699c7-002-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-onboa-d0629b7f1c-001-image-viewing-bitmap-exif-handling-zoom",
+        "app-src-main-java-com-example-foodike-presentation-onboa-f9447173ee-002-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-onboa-d591d5d894-003-data-loading-query-search-filter-or-sort",
+        "app-src-main-java-com-example-foodike-presentation-onboa-eed8afd34d-001-navigation-surface-menu-drawer-toolbar-o",
+        "app-src-main-java-com-example-foodike-presentation-onboa-70fddfcb28-002-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-onboa-fcaf31ccc3-003-screen-lifecycle-entry-point-initializat",
+        "app-src-main-java-com-example-foodike-presentation-onboa-579cddd1b6-004-observable-state-viewmodel-flow-livedata",
+        "app-src-main-java-com-example-foodike-presentation-login-b9cad25def-001-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-login-794ee8e84b-002-settings-preferences-option-toggles-or-c",
+        "app-src-main-java-com-example-foodike-presentation-onboa-74d6de5e11-001-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-onboa-4660285a0b-001-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-login-8269f59f74-001-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-login-777321c5b9-001-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-login-85d5d7f957-001-runtime-permission-request-permission-re"
+      ],
+      "resourceInputs": [],
+      "platformCapabilityIds": [],
+      "expectedTargetDomains": [],
+      "requiredBehaviors": [
+        "Verify the phase's implemented behavior with focused tests, manual/emulator evidence, or explicit verificationEvidence."
+      ],
+      "riskHints": [
+        "target tests only count as strong evidence when backed by latest test gate PASS or explicit harness blocker",
+        "build pass alone does not close per-feature behavior",
+        "manual review evidence must point to concrete target endpoints"
+      ],
+      "acceptanceEvidence": [
+        "Update source-coverage-matrix.json after implementation with targetEndpoints, tests, parityLevel, and verificationEvidence.",
+        "If tests cannot run, record the concrete harness blocker instead of claiming test PASS."
+      ],
+      "architectureHints": [],
+      "testHints": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
+        "blocked: cjpm test (entry/src/test/cangjie) missing `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` dependencies in `entry/cjpm.toml`",
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStoreAcceptsOnlySourceCredentials",
+        "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)",
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStorePreservesSourceHintsAndPlaceholderMessages",
+        "blocked: cjpm test (entry/src/test/cangjie)",
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression"
+      ],
+      "statusCounts": {},
+      "categories": [
+        "verification"
+      ],
+      "testHarnessStatus": {
+        "available": true,
+        "acceptedPass": true,
+        "latestPhase": "phase-02-startup-session-navigation",
+        "latestResult": "PASS",
+        "latestReport": "D:\\workspace\\Foodike\\translation-inputs\\test-build-reports\\phase-02-startup-session-navigation\\test-build-report.json",
+        "latestLog": "D:\\workspace\\Foodike\\translation-inputs\\test-build-reports\\phase-02-startup-session-navigation\\test-build.log",
+        "latestFirstBlocker": "",
+        "latestPhaseMatchesCurrent": false,
+        "acceptedPhase": "phase-02-startup-session-navigation",
+        "acceptedPhaseMatchesCurrent": false,
+        "referencedTestCount": 7,
+        "phaseHasFocusedTestHints": true,
+        "targetTestPackagePresent": true,
+        "targetTestFiles": 8,
+        "targetTestCodeFiles": 6,
+        "targetTestFileSamples": [
+          "entry/src/ohosTest/cangjie/cjpm.toml",
+          "entry/src/test/cangjie/cjpm.toml",
+          "entry/src/test/cangjie/phase01_resource_theme_contract_test.cj",
+          "entry/src/test/cangjie/phase02_repository_contract_test.cj",
+          "entry/src/test/cangjie/phase02_startup_navigation_test.cj",
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
+          "entry/src/test/cangjie/phase04_home_history_discovery_test.cj",
+          "entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj"
+        ],
+        "standaloneCjpmTestEvidence": "pass",
+        "sdkOrEnvironmentBlockerSuspected": false,
+        "environmentStatus": "pass",
+        "phaseShouldMaintainFocusedTests": true,
+        "notes": [
+          "The latest test build report is accepted as PASS evidence for matching referenced tests."
+        ]
+      },
+      "planContractRefs": [
+        {
+          "groupId": "phase-03-onboarding-pager",
+          "title": "Onboarding pager and page content",
+          "sourceMethods": [
+            "OnBoarding",
+            "OnboardingPage",
+            "OnBoardingItem.get"
+          ],
+          "uiContracts": [
+            "multi-page onboarding with bottom action/indicator"
+          ],
+          "dataContracts": [
+            "static onboarding item list"
+          ]
+        },
+        {
+          "groupId": "phase-03-login-validation-and-session-handoff",
+          "title": "Login validation and session handoff",
+          "sourceMethods": [
+            "LoginScreen",
+            "LoginViewModel.onEvent",
+            "FoodikeTextField"
+          ],
+          "uiContracts": [
+            "two text fields plus login button and social placeholder actions"
+          ],
+          "dataContracts": [
+            "email state",
+            "password state",
+            "snackbar event flow",
+            "session toggle callback"
+          ]
+        }
+      ],
+      "planRiskHints": [
+        "Seed over-detects image-viewer behavior here; likely static onboarding media only.",
+        "Source uses hard-coded credentials and placeholder social actions; preserve current UX rather than inventing backend auth."
+      ],
+      "planAcceptanceEvidence": [
+        "manual review of onboarding flow",
+        "build gate pass",
+        "focused login validation tests"
+      ],
+      "planRequiredBehaviors": [
+        "Sequential page progression.",
+        "Final action navigates to login.",
+        "Accepted credentials are `abcxyz@gmail.com` and `abcdef`.",
+        "Rejected credentials emit a visible error message.",
+        "Successful login clears back stack semantics into home where practical."
+      ]
+    },
+    {
+      "groupId": "phase-03-onboarding-login-architecture-risk-broad-target-endpoints",
+      "title": "Architecture risk: broad target endpoints",
+      "groupType": "architecture-risk",
+      "priority": "critical",
+      "sourcePaths": [
+        "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt"
+      ],
+      "featureIds": [
+        "app-src-main-java-com-example-foodike-presentation-login-321f648503-008-authentication-account-or-session-behavi",
+        "app-src-main-java-com-example-foodike-presentation-login-94031fc378-001-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-login-b8f806f9cb-002-screen-lifecycle-entry-point-initializat",
+        "app-src-main-java-com-example-foodike-presentation-login-b9cad25def-001-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-login-794ee8e84b-002-settings-preferences-option-toggles-or-c"
+      ],
+      "resourceInputs": [],
+      "platformCapabilityIds": [],
+      "expectedTargetDomains": [
+        "ohos_app_cangjie_entry/features/login/login_store.cj",
+        "ohos_app_cangjie_entry/app/bootstrap_page.cj",
+        "ohos_app_cangjie_entry/data/session/login_preferences_service.cj",
+        "ohos_app_cangjie_entry/features/login/login_page.cj"
+      ],
+      "requiredBehaviors": [
+        "`login_store.cj` preserves the same hard-coded credentials and `bootstrap_page.cj::performLogin` preserves the same success/failure split by toggling persisted login state on success and showing an immediate error message plus toast on failure.",
+        "`login_store.cj` and `bootstrap_page.cj::performLogin` keep the same pure validation/session-toggle path with no permission handling.",
+        "The Harmony login logic keeps validation and error state in route-owned state without introducing extra lifecycle hooks.",
+        "The translated login route uses plain `TextInput` controls and keeps this no-permission behavior.",
+        "The translated login fields stay as plain text inputs with placeholder text only and do not introduce settings/configuration toggles."
+      ],
+      "riskHints": [
+        "current evidence uses broad shell/root/whole-file endpoints"
+      ],
+      "acceptanceEvidence": [
+        "Replace broad endpoints with precise target functions, types, resources, or tests before closing the group."
+      ],
+      "architectureHints": [
+        "Shell files may compose features, but behavior evidence should point at domain-specific implementation endpoints."
+      ],
+      "testHints": [
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStoreAcceptsOnlySourceCredentials",
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStorePreservesSourceHintsAndPlaceholderMessages",
+        "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)",
+        "blocked: cjpm test (entry/src/test/cangjie)",
+        "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj"
+      ],
+      "statusCounts": {
+        "implemented": 1,
+        "not-applicable": 4
+      },
+      "categories": [
+        "architecture-risk"
+      ],
+      "planContractRefs": [
+        {
+          "groupId": "phase-03-login-validation-and-session-handoff",
+          "title": "Login validation and session handoff",
+          "sourceMethods": [
+            "LoginScreen",
+            "LoginViewModel.onEvent",
+            "FoodikeTextField"
+          ],
+          "uiContracts": [
+            "two text fields plus login button and social placeholder actions"
+          ],
+          "dataContracts": [
+            "email state",
+            "password state",
+            "snackbar event flow",
+            "session toggle callback"
+          ]
+        }
+      ],
+      "planRiskHints": [
+        "Source uses hard-coded credentials and placeholder social actions; preserve current UX rather than inventing backend auth."
+      ],
+      "planAcceptanceEvidence": [
+        "focused login validation tests",
+        "build gate pass"
+      ],
+      "planRequiredBehaviors": [
+        "Accepted credentials are `abcxyz@gmail.com` and `abcdef`.",
+        "Rejected credentials emit a visible error message.",
+        "Successful login clears back stack semantics into home where practical."
+      ]
+    }
+  ],
+  "planContract": {
+    "available": true,
+    "phase": "phase-03-onboarding-login",
+    "phaseId": "phase-03-onboarding-login",
+    "matchedGroups": [
+      {
+        "groupId": "phase-03-onboarding-pager",
+        "title": "Onboarding pager and page content",
+        "groupType": "source-behavior",
+        "priority": "high",
+        "sourcePaths": [
+          "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+          "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+          "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt"
+        ],
+        "sourceMethods": [
+          "OnBoarding",
+          "OnboardingPage",
+          "OnBoardingItem.get"
+        ],
+        "featureIds": [],
+        "resourceInputs": [
+          "onboardingHeading1",
+          "onboardingHeading2",
+          "onboardingHeading3",
+          "onboardingText1",
+          "onboardingText2",
+          "onboardingText3",
+          "onboarding media"
+        ],
+        "platformCapabilityIds": [],
+        "expectedTargetDomains": [
+          "features/onboarding",
+          "common"
+        ],
+        "requiredBehaviors": [
+          "Sequential page progression.",
+          "Final action navigates to login."
+        ],
+        "riskHints": [
+          "Seed over-detects image-viewer behavior here; likely static onboarding media only."
+        ],
+        "acceptanceEvidence": [
+          "manual review of onboarding flow",
+          "build gate pass"
+        ],
+        "uiContracts": [
+          "multi-page onboarding with bottom action/indicator"
+        ],
+        "dataContracts": [
+          "static onboarding item list"
+        ],
+        "matchedImplementationGroupIds": [
+          "phase-03-onboarding-login-source-behavior-presentation-onboarding",
+          "phase-03-onboarding-login-verification-phase-tests-and-evidence"
+        ]
+      },
+      {
+        "groupId": "phase-03-login-validation-and-session-handoff",
+        "title": "Login validation and session handoff",
+        "groupType": "source-behavior",
+        "priority": "critical",
+        "sourcePaths": [
+          "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+          "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+          "app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt"
+        ],
+        "sourceMethods": [
+          "LoginScreen",
+          "LoginViewModel.onEvent",
+          "FoodikeTextField"
+        ],
+        "featureIds": [],
+        "resourceInputs": [
+          "welcome_back",
+          "forgot_password",
+          "coming_soon",
+          "login",
+          "or_sign_in_with",
+          "login_with_google",
+          "login_with_facebook",
+          "new_to_foodike"
+        ],
+        "platformCapabilityIds": [],
+        "expectedTargetDomains": [
+          "features/login",
+          "data/session"
+        ],
+        "requiredBehaviors": [
+          "Accepted credentials are `abcxyz@gmail.com` and `abcdef`.",
+          "Rejected credentials emit a visible error message.",
+          "Successful login clears back stack semantics into home where practical."
+        ],
+        "riskHints": [
+          "Source uses hard-coded credentials and placeholder social actions; preserve current UX rather than inventing backend auth."
+        ],
+        "acceptanceEvidence": [
+          "focused login validation tests",
+          "build gate pass"
+        ],
+        "uiContracts": [
+          "two text fields plus login button and social placeholder actions"
+        ],
+        "dataContracts": [
+          "email state",
+          "password state",
+          "snackbar event flow",
+          "session toggle callback"
+        ],
+        "matchedImplementationGroupIds": [
+          "phase-03-onboarding-login-source-behavior-presentation-login",
+          "phase-03-onboarding-login-verification-phase-tests-and-evidence",
+          "phase-03-onboarding-login-architecture-risk-broad-target-endpoints"
+        ]
+      }
+    ],
+    "unmatchedGroups": [],
+    "alignmentFindings": [],
+    "summary": {
+      "planGroups": 2,
+      "matchedGroups": 2,
+      "unmatchedGroups": 0,
+      "generatedImplementationGroups": 4
+    }
+  },
+  "behaviorAudit": {
+    "schemaVersion": 1,
+    "generatedAt": "2026-06-28T10:29:01+00:00",
+    "phase": "phase-03-onboarding-login",
+    "purpose": "Current-phase behavior audit derived from source-coverage-matrix.json, platform-capability-check.json, and verification-results.json. It is embedded in phase-task-checklist.json for auditability; update the matrix and platform check, then rerun coverage to refresh this view.",
+    "summary": {
+      "featureContracts": 22,
+      "openFeatureContracts": 0,
+      "platformContracts": 0,
+      "byStatus": {
+        "implemented": 11,
+        "not-applicable": 11
+      },
+      "byParityLevel": {
+        "equivalent": 11,
+        "not-applicable": 11
+      }
+    },
+    "instructions": [
+      "For each closed critical/high feature, keep sourceBehavior, targetBehavior, targetEndpoints, parityLevel, and verificationEvidence specific to the feature.",
+      "Do not use this generated section as the source of truth. Update source-coverage-matrix.json/md and platform-capability-check.json/md.",
+      "A build pass alone is not per-feature verification; cite tests, manual/emulator evidence, or explicit verificationEvidence for behavior closure."
+    ],
+    "openFeatureContracts": [],
+    "featureContracts": [
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-login-b030a7b1f9-001-image-viewing-bitmap-exif-handling-zoom",
+        "featureName": "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "importance": "critical",
+        "status": "not-applicable",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "not-applicable",
+        "sourceBehavior": "`LoginScreen.kt` only shows static Google and Facebook sign-in icons; it does not implement image preview, zoom, gallery, or bitmap/exif handling.",
+        "targetRequiredBehavior": "`login_page.cj` keeps the same static social sign-in icons as clickable placeholders without adding image viewer behavior.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildSocialLoginSection"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
+          "blocked: cjpm test (entry/src/test/cangjie) missing `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` dependencies in `entry/cjpm.toml`"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `LoginScreen.kt` renders only `R.drawable.goog_icon` and `R.drawable.fb_icon` as placeholder social actions.",
+          "Manual target review confirmed `login_page.cj::buildSocialLoginSection` renders `mediaGoogIcon` and `mediaFbIcon` only as clickable placeholder icons.",
+          "Phase-03 test build report `translation-inputs/test-build-reports/phase-03-onboarding-login/test-build-report.md` records the current harness blocker before the phase-03 tests execute.",
+          "Bounded manual reproduction on 2026-06-28 of `cjpm test` from `entry/src/test/cangjie` failed before test execution because the root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "Static analysis over-detected image-viewer behavior from icon resources.",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-login-1ed35246b3-002-navigation-surface-menu-drawer-toolbar-o",
+        "featureName": "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "importance": "critical",
+        "status": "implemented",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "equivalent",
+        "sourceBehavior": "`LoginScreen.kt` navigates to the home route after successful hard-coded credential validation by invoking the `PerformLogin` callback from the login button.",
+        "targetRequiredBehavior": "`bootstrap_page.cj` wires `renderLoginRoute` so the login button and submit action call `performLogin()`, then navigate to `home_screen` on successful credential validation.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildLoginRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::renderLoginRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj::successRoute"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStoreAcceptsOnlySourceCredentials",
+          "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `LoginScreen.kt` performs navigation only after the `PerformLogin` success callback.",
+          "Manual target review confirmed `buildLoginRoute` passes `performLogin()` into `renderLoginRoute` and `performLogin()` navigates to `home_screen` only after `loginStore.login(...)` succeeds.",
+          "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+          "Focused target test coverage exists in `phase03_onboarding_login_profile_test.cj::loginStoreAcceptsOnlySourceCredentials`, but the workflow test gate is blocked before that test can run by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "This row covers route handoff from the login surface, not shell tabs or drawers.",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-login-5777ecba15-003-notification-widget-remoteviews-or-home",
+        "featureName": "Notification, widget, RemoteViews, or home-screen integration behavior.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "importance": "critical",
+        "status": "not-applicable",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "not-applicable",
+        "sourceBehavior": "`LoginScreen.kt` does not create notifications, widgets, RemoteViews, or home-screen integrations; it only shows text fields, buttons, icons, and placeholder toasts.",
+        "targetRequiredBehavior": "The Harmony login route keeps the same in-page login UI and does not add notification or widget behavior.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::renderLoginRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildSocialLoginSection",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildPlaceholderActionText"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
+          "blocked: cjpm test (entry/src/test/cangjie) missing `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` dependencies in `entry/cjpm.toml`"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `LoginScreen.kt` contains no notification, widget, or RemoteViews APIs.",
+          "Manual target review confirmed the translated login surface is limited to `renderLoginRoute`, `buildSocialLoginSection`, and `buildPlaceholderActionText` UI builders with no platform-component integration.",
+          "Phase-03 test build report `translation-inputs/test-build-reports/phase-03-onboarding-login/test-build-report.md` records the current harness blocker before the phase-03 tests execute.",
+          "Bounded manual reproduction on 2026-06-28 of `cjpm test` from `entry/src/test/cangjie` failed before test execution because the root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "Static analysis over-detected widget/notification behavior from generic screen heuristics.",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-login-7ab3866541-004-runtime-permission-request-permission-re",
+        "featureName": "Runtime permission request, permission result handling, or protected API access.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "importance": "critical",
+        "status": "not-applicable",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "not-applicable",
+        "sourceBehavior": "`LoginScreen.kt` requests no runtime permissions and accesses no protected APIs; it only reads local text field state and shows placeholder toasts/snackbar messages.",
+        "targetRequiredBehavior": "The Harmony login route preserves this no-permission flow and does not introduce permission prompts.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildLoginRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::renderLoginRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildSocialLoginSection",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildPlaceholderActionText"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
+          "blocked: cjpm test (entry/src/test/cangjie) missing `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` dependencies in `entry/cjpm.toml`"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `LoginScreen.kt` contains no permission request path.",
+          "Manual target review confirmed `renderLoginRoute`, `buildSocialLoginSection`, and `buildPlaceholderActionText` keep the login route free of permission gates or protected API calls.",
+          "Phase-03 test build report `translation-inputs/test-build-reports/phase-03-onboarding-login/test-build-report.md` records the current harness blocker before the phase-03 tests execute.",
+          "Bounded manual reproduction on 2026-06-28 of `cjpm test` from `entry/src/test/cangjie` failed before test execution because the root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "Static analysis over-detected permissions from generic mobile screen heuristics.",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-login-2c65d08c3b-005-screen-lifecycle-entry-point-initializat",
+        "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "importance": "critical",
+        "status": "implemented",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "equivalent",
+        "sourceBehavior": "`LoginScreen.kt` updates system bars when the screen composes and keeps login UI state alive while the route is active.",
+        "targetRequiredBehavior": "`FoodikeBootstrap` owns the login route state and keeps the login inputs/error message in route state while the login page is active; no extra resume/pause refresh path exists in the source flow.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildLoginRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::clearLoginError",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::renderLoginRoute"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
+          "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `LoginScreen.kt` lifecycle work is limited to bar-color setup during composition.",
+          "Manual target review confirmed `FoodikeBootstrap` owns login route state for the active route and clears it explicitly on logout.",
+          "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+          "Workflow test gate remains blocked before phase-03 test execution by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "The source login screen has no resume/pause data reload path beyond route-local UI state retention.",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-login-34c5f4ba3a-006-settings-preferences-option-toggles-or-c",
+        "featureName": "Settings/preferences, option toggles, or configuration state behavior.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "importance": "critical",
+        "status": "not-applicable",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "not-applicable",
+        "sourceBehavior": "`LoginScreen.kt` exposes no settings screen, toggles, or configurable preferences; it only shows login fields and placeholder ancillary actions.",
+        "targetRequiredBehavior": "The Harmony login route keeps this non-configurable login surface and does not invent settings toggles.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildPlaceholderActionText",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildSocialLoginSection"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStorePreservesSourceHintsAndPlaceholderMessages",
+          "blocked: cjpm test (entry/src/test/cangjie) missing `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` dependencies in `entry/cjpm.toml`"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `LoginScreen.kt` contains no settings or toggle controls.",
+          "Manual target review confirmed `buildPlaceholderActionText` and `buildSocialLoginSection` keep the translated login surface to placeholders only and do not introduce settings/configuration controls.",
+          "Phase-03 test build report `translation-inputs/test-build-reports/phase-03-onboarding-login/test-build-report.md` records the current harness blocker before the phase-03 tests execute.",
+          "Bounded manual reproduction on 2026-06-28 of `cjpm test` from `entry/src/test/cangjie` failed before test execution because the root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "Static analysis over-detected settings behavior from text-field configuration hints.",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-login-78d5c742f4-007-observable-state-viewmodel-flow-livedata",
+        "featureName": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "importance": "critical",
+        "status": "implemented",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "equivalent",
+        "sourceBehavior": "`LoginScreen.kt` reads observable email/password state from `LoginViewModel`, updates that state on each text change, and collects one-shot invalid-login UI events for snackbar feedback.",
+        "targetRequiredBehavior": "`FoodikeBootstrap` owns `loginEmail`, `loginPassword`, and `loginErrorMessage` state and passes change handlers into `renderLoginRoute`, so text input and error feedback update immediately while the route is active.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildLoginRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::clearLoginError",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::renderLoginRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildLoginErrorBanner"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStorePreservesSourceHintsAndPlaceholderMessages",
+          "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `LoginScreen.kt` observes `email`, `password`, and `eventFlow` from `LoginViewModel`.",
+          "Manual target review confirmed `FoodikeBootstrap` updates login input/error state through route callbacks and clears the error on field edits.",
+          "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+          "Phase-03 focused tests exist but the workflow test gate is blocked before they can run by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-login-321f648503-008-authentication-account-or-session-behavi",
+        "featureName": "Authentication, account, or session behavior (LoginScreen)",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "importance": "critical",
+        "status": "implemented",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "equivalent",
+        "sourceBehavior": "`LoginScreen.kt` submits hard-coded credentials through `LoginViewModel`, shows an invalid-credentials snackbar when they do not match, and hands successful login off to the persisted session route transition.",
+        "targetRequiredBehavior": "`login_store.cj` preserves the same hard-coded credentials and `bootstrap_page.cj::performLogin` preserves the same success/failure split by toggling persisted login state on success and showing an immediate error message plus toast on failure.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj::isValidCredentials",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj::login",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogin",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStoreAcceptsOnlySourceCredentials",
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStorePreservesSourceHintsAndPlaceholderMessages",
+          "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `LoginScreen.kt` and `LoginViewModel.kt` use the credentials `abcxyz@gmail.com` / `abcdef`, navigate on success, and emit the message `Please enter correct email and password` on failure.",
+          "Manual target review confirmed `login_store.cj::isValidCredentials`, `login_store.cj::login`, and `bootstrap_page.cj::performLogin` preserve the same credential gate, persisted login write, and failure message flow.",
+          "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+          "Focused phase-03 tests cover credential acceptance, success route, and preserved hint/message literals, but the workflow test gate is blocked before they can run by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-login-94031fc378-001-runtime-permission-request-permission-re",
+        "featureName": "Runtime permission request, permission result handling, or protected API access.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+        "importance": "critical",
+        "status": "not-applicable",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "not-applicable",
+        "sourceBehavior": "`LoginViewModel.kt` validates credentials and emits snackbar messages only; it does not request permissions or call protected APIs.",
+        "targetRequiredBehavior": "`login_store.cj` and `bootstrap_page.cj::performLogin` keep the same pure validation/session-toggle path with no permission handling.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogin"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStoreAcceptsOnlySourceCredentials",
+          "blocked: cjpm test (entry/src/test/cangjie)"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `LoginViewModel.kt` contains no permission request path.",
+          "Manual target review confirmed phase-03 login logic uses only credential checks plus persisted login state toggling.",
+          "Bounded manual reproduction `cjpm test` from `entry` is blocked by missing root-package dependencies in `entry/cjpm.toml`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "Static analysis over-detected permissions from generic state/repository heuristics.",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-login-b8f806f9cb-002-screen-lifecycle-entry-point-initializat",
+        "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+        "importance": "critical",
+        "status": "not-applicable",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "not-applicable",
+        "sourceBehavior": "`LoginViewModel.kt` has no lifecycle callbacks or refresh/teardown logic beyond keeping UI state in memory while the screen is active.",
+        "targetRequiredBehavior": "The Harmony login logic keeps validation and error state in route-owned state without introducing extra lifecycle hooks.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
+          "blocked: cjpm test (entry/src/test/cangjie)"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `LoginViewModel.kt` has no lifecycle methods or refresh hooks.",
+          "Manual target review confirmed the translated login logic is route-local and lifecycle-neutral.",
+          "Bounded manual reproduction `cjpm test` from `entry` is blocked by missing root-package dependencies in `entry/cjpm.toml`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "Static analysis over-detected lifecycle behavior from screen state ownership.",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-login-121975f8dc-003-observable-state-viewmodel-flow-livedata",
+        "featureName": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+        "importance": "critical",
+        "status": "implemented",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "equivalent",
+        "sourceBehavior": "`LoginViewModel.kt::onEvent` mutates observable email/password field state and emits a one-shot invalid-login UI event when credentials do not match.",
+        "targetRequiredBehavior": "`FoodikeBootstrap` change handlers mutate `loginEmail`, `loginPassword`, and `loginErrorMessage` directly, which preserves immediate UI feedback for login field edits and invalid login attempts.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildLoginRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogin",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::clearLoginError",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildLoginErrorBanner"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStoreAcceptsOnlySourceCredentials",
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStorePreservesSourceHintsAndPlaceholderMessages",
+          "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `LoginViewModel.kt::onEvent` updates field state and emits the invalid-login message through `_eventFlow`.",
+          "Manual target review confirmed bootstrap change handlers mutate field state immediately and `performLogin()` plus `clearLoginError()` preserve the same success/failure feedback pattern.",
+          "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+          "Phase-03 focused tests exist but the workflow test gate is blocked before they can run by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-06e1e43e4e-001-image-viewing-bitmap-exif-handling-zoom",
+        "featureName": "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+        "importance": "critical",
+        "status": "implemented",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "equivalent",
+        "sourceBehavior": "`OnboardingPage.kt` shows a static onboarding illustration for the current page together with title and description text; it does not implement zoom or gallery gestures.",
+        "targetRequiredBehavior": "`onboarding_page.cj::buildOnboardingCard` shows the current slide illustration, title, and description for each onboarding page using the translated media resources.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::buildOnboardingCard",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::slideAt"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+          "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `OnboardingPage.kt` renders one static image resource per onboarding page without zoom or gesture handling.",
+          "Manual target review confirmed `buildOnboardingCard` renders one translated media resource plus title/description text for each slide.",
+          "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+          "Focused onboarding progression tests exist but the workflow test gate is blocked before they can run by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "Equivalent static image parity; the source itself has no zoom/gallery behavior despite the analyzer label.",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-71420699c7-002-runtime-permission-request-permission-re",
+        "featureName": "Runtime permission request, permission result handling, or protected API access.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+        "importance": "critical",
+        "status": "not-applicable",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "not-applicable",
+        "sourceBehavior": "`OnboardingPage.kt` displays static onboarding content and does not request permissions or access protected APIs.",
+        "targetRequiredBehavior": "The Harmony onboarding page keeps the same static content flow with no permission prompts.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::buildOnboardingCard"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+          "blocked: cjpm test (entry/src/test/cangjie) missing `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` dependencies in `entry/cjpm.toml`"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `OnboardingPage.kt` contains no permission request path.",
+          "Manual target review confirmed `buildOnboardingCard` only renders packaged onboarding media plus text and does not call protected APIs.",
+          "Phase-03 test build report `translation-inputs/test-build-reports/phase-03-onboarding-login/test-build-report.md` records the current harness blocker before the phase-03 tests execute.",
+          "Bounded manual reproduction on 2026-06-28 of `cjpm test` from `entry/src/test/cangjie` failed before test execution because the root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "Static analysis over-detected permissions from image/resource usage.",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-d0629b7f1c-001-image-viewing-bitmap-exif-handling-zoom",
+        "featureName": "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+        "importance": "critical",
+        "status": "implemented",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "equivalent",
+        "sourceBehavior": "`OnBoardingItem.get()` provides the three static onboarding image resources used by the pager pages; it does not implement zoom, preview, or exif handling.",
+        "targetRequiredBehavior": "`OnboardingStore` preserves the same three slide media identifiers used by `buildOnboardingCard` to render the onboarding illustrations.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::slides",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::slideAt"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+          "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `OnBoardingItem.get()` returns three static drawable ids only.",
+          "Manual target review confirmed `OnboardingStore` preserves the source slide media sequence `chinese_bowl`, `rider`, `clock`.",
+          "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+          "Focused onboarding progression tests exist but the workflow test gate is blocked before they can run by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "Equivalent static image-seed behavior; no zoom/gallery handling exists in the source utility.",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-f9447173ee-002-runtime-permission-request-permission-re",
+        "featureName": "Runtime permission request, permission result handling, or protected API access.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+        "importance": "critical",
+        "status": "not-applicable",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "not-applicable",
+        "sourceBehavior": "`OnBoardingItem.get()` constructs a static list of onboarding slides and does not request permissions or access protected APIs.",
+        "targetRequiredBehavior": "`OnboardingStore` keeps this seeded slide list as pure local data with no permission flow.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::slides",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::slideAt"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+          "blocked: cjpm test (entry/src/test/cangjie) missing `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` dependencies in `entry/cjpm.toml`"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `OnBoardingItem.get()` contains no permission requests or protected API access.",
+          "Manual target review confirmed `OnboardingStore::slides` only builds seeded slide data and `slideAt` only reads it back.",
+          "Phase-03 test build report `translation-inputs/test-build-reports/phase-03-onboarding-login/test-build-report.md` records the current harness blocker before the phase-03 tests execute.",
+          "Bounded manual reproduction on 2026-06-28 of `cjpm test` from `entry/src/test/cangjie` failed before test execution because the root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "Static analysis over-detected permissions from media/resource references.",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-d591d5d894-003-data-loading-query-search-filter-or-sort",
+        "featureName": "Data loading, query, search, filter, or sort behavior (get)",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/util/OnBoardingItem.kt",
+        "importance": "critical",
+        "status": "implemented",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "equivalent",
+        "sourceBehavior": "`OnBoardingItem.get()` loads a fixed three-item onboarding data set in order for the pager flow.",
+        "targetRequiredBehavior": "`OnboardingStore` preserves the same fixed three-slide onboarding sequence and exposes indexed access plus page-count helpers for the pager route.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::pageCount",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::slideAt",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::nextIndex"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+          "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `OnBoardingItem.get()` always returns the same three-item onboarding list in source order.",
+          "Manual target review confirmed `OnboardingStore` preserves the same fixed three-slide sequence and exposes indexed access plus page-count helpers.",
+          "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+          "Focused onboarding progression tests exist but the workflow test gate is blocked before they can run by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-eed8afd34d-001-navigation-surface-menu-drawer-toolbar-o",
+        "featureName": "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+        "importance": "high",
+        "status": "implemented",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "equivalent",
+        "sourceBehavior": "`OnBoarding.kt` advances the pager on intermediate pages and navigates to the login route from the last page.",
+        "targetRequiredBehavior": "`FoodikeBootstrap::buildOnboardingRoute` advances the Harmony swiper with `showNext()` until the last page, then navigates to the login route.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildOnboardingRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::renderOnboardingRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::isLastPage"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+          "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `OnBoarding.kt` scrolls to the next page until the last page and only then navigates to login.",
+          "Manual target review confirmed `buildOnboardingRoute` advances the swiper with `showNext()` until the last page and only then navigates to `login_screen`.",
+          "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+          "Focused onboarding progression tests exist but the workflow test gate is blocked before they can run by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-70fddfcb28-002-runtime-permission-request-permission-re",
+        "featureName": "Runtime permission request, permission result handling, or protected API access.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+        "importance": "high",
+        "status": "not-applicable",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "not-applicable",
+        "sourceBehavior": "`OnBoarding.kt` coordinates pager state and final-route navigation only; it does not request permissions or access protected APIs.",
+        "targetRequiredBehavior": "The Harmony onboarding route preserves the same pager/navigation flow without permission prompts.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildOnboardingRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::renderOnboardingRoute"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+          "blocked: cjpm test (entry/src/test/cangjie)"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `OnBoarding.kt` contains no runtime permission request or protected API access path.",
+          "Manual target review confirmed the translated onboarding route contains no permission handling.",
+          "Bounded manual reproduction `cjpm test` from `entry` is blocked by missing root-package dependencies in `entry/cjpm.toml`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "Static analysis over-detected permissions from generic mobile-screen heuristics.",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-fcaf31ccc3-003-screen-lifecycle-entry-point-initializat",
+        "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+        "importance": "high",
+        "status": "implemented",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "equivalent",
+        "sourceBehavior": "`OnBoarding.kt` owns pager state for the active onboarding route and updates system bars while the onboarding screen is displayed.",
+        "targetRequiredBehavior": "`FoodikeBootstrap` owns `onboardingPageIndex` and the `SwiperController` while the onboarding route is active, preserving the route-local state model used by the source pager flow.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildOnboardingRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::renderOnboardingRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::buildOnboardingFooter"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+          "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `OnBoarding.kt` owns `pagerState` and only route-local lifecycle concerns.",
+          "Manual target review confirmed `FoodikeBootstrap` owns `onboardingPageIndex` plus the `SwiperController` for the active onboarding route.",
+          "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+          "Workflow test gate remains blocked before phase-03 test execution by `error: unable to infer generic argument of this function` in `phase01_resource_theme_contract_test.cj`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-onboa-579cddd1b6-004-observable-state-viewmodel-flow-livedata",
+        "featureName": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt",
+        "importance": "high",
+        "status": "implemented",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "equivalent",
+        "sourceBehavior": "`OnBoarding.kt` reacts to pager-state changes and reflects the current page in the indicator row and next-action behavior.",
+        "targetRequiredBehavior": "`renderOnboardingRoute` reacts to `pageIndex` changes from `FoodikeBootstrap`, updates the indicator row through `buildOnboardingIndicatorRow`, and switches the footer button action from `showNext()` to login navigation on the last page.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildOnboardingRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::renderOnboardingRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::buildOnboardingIndicatorRow",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::buildOnboardingFooter"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression",
+          "blocked: cjpm test (entry/src/test/cangjie) missing `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` dependencies in `entry/cjpm.toml`"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed the pager `currentPage` drives indicators and next-button behavior in `OnBoarding.kt`.",
+          "Manual target review confirmed `renderOnboardingRoute`, `buildOnboardingIndicatorRow`, and `buildOnboardingFooter` react to `pageIndex` and change the button behavior on the final page.",
+          "Phase 03 build gate PASS: `translation-inputs/build-reports/phase-03-onboarding-login/build-report.md`.",
+          "Phase-03 test build report `translation-inputs/test-build-reports/phase-03-onboarding-login/test-build-report.md` records the current harness blocker before the phase-03 tests execute.",
+          "Bounded manual reproduction on 2026-06-28 of `cjpm test` from `entry/src/test/cangjie` failed before test execution because the root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-login-b9cad25def-001-runtime-permission-request-permission-re",
+        "featureName": "Runtime permission request, permission result handling, or protected API access.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt",
+        "importance": "high",
+        "status": "not-applicable",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "not-applicable",
+        "sourceBehavior": "`FoodikeTextField.kt` is a plain Material text field wrapper with placeholder text and keyboard options only; it does not request permissions or access protected APIs.",
+        "targetRequiredBehavior": "The translated login route uses plain `TextInput` controls and keeps this no-permission behavior.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStorePreservesSourceHintsAndPlaceholderMessages",
+          "blocked: cjpm test (entry/src/test/cangjie)"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `FoodikeTextField.kt` wraps only `TextField` placeholder and keyboard configuration.",
+          "Manual target review confirmed the translated login page uses plain `TextInput` fields only.",
+          "Bounded manual reproduction `cjpm test` from `entry` is blocked by missing root-package dependencies in `entry/cjpm.toml`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "Static analysis over-detected permission behavior from generic input-component heuristics.",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      },
+      {
+        "kind": "source-feature",
+        "featureId": "app-src-main-java-com-example-foodike-presentation-login-794ee8e84b-002-settings-preferences-option-toggles-or-c",
+        "featureName": "Settings/preferences, option toggles, or configuration state behavior.",
+        "sourcePath": "app/src/main/java/com/example/foodike/presentation/login/components/FoodikeTextField.kt",
+        "importance": "high",
+        "status": "not-applicable",
+        "plannedPhase": "phase-03-onboarding-login",
+        "parityLevel": "not-applicable",
+        "sourceBehavior": "`FoodikeTextField.kt` contains placeholder and keyboard configuration only; it is not a settings or options/toggles surface.",
+        "targetRequiredBehavior": "The translated login fields stay as plain text inputs with placeholder text only and do not introduce settings/configuration toggles.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStorePreservesSourceHintsAndPlaceholderMessages",
+          "blocked: cjpm test (entry/src/test/cangjie)"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `FoodikeTextField.kt` configures only placeholder text, keyboard options, and visual transformation.",
+          "Manual target review confirmed the Harmony login route uses plain `TextInput` fields and no option toggles.",
+          "Bounded manual reproduction `cjpm test` from `entry` is blocked by missing root-package dependencies in `entry/cjpm.toml`."
+        ],
+        "matchingVerificationResults": [],
+        "checks": {
+          "hasSourceBehavior": true,
+          "hasTargetBehavior": true,
+          "hasVerificationEvidence": true,
+          "parityMatchesStatus": true
+        },
+        "openReasons": [],
+        "notes": "Static analysis over-detected settings/configuration behavior from field configuration code.",
+        "targetFallback": "",
+        "deferredReason": "",
+        "risk": "",
+        "futureCompletionPath": ""
+      }
+    ],
+    "platformContracts": [],
+    "structuralFindings": []
+  },
+  "targetHints": [
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildSocialLoginSection",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildLoginRoute",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::renderLoginRoute",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj::successRoute",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildPlaceholderActionText",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::clearLoginError",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj::buildLoginErrorBanner",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj::isValidCredentials",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj::login",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogin",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::buildOnboardingCard",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::slideAt",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::slides",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::pageCount",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::nextIndex",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildOnboardingRoute",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::renderOnboardingRoute",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj::isLastPage",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::buildOnboardingFooter",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::buildOnboardingIndicatorRow",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj",
+    "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj::buildOnboardingIndicator"
+  ],
+  "testHints": [
+    "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
+    "blocked: cjpm test (entry/src/test/cangjie) missing `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` dependencies in `entry/cjpm.toml`",
+    "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStoreAcceptsOnlySourceCredentials",
+    "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie)",
+    "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::loginStorePreservesSourceHintsAndPlaceholderMessages",
+    "blocked: cjpm test (entry/src/test/cangjie)",
+    "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj::onboardingStorePreservesThreePageProgression"
+  ],
+  "testHarnessStatus": {
+    "available": true,
+    "acceptedPass": true,
+    "latestPhase": "phase-02-startup-session-navigation",
+    "latestResult": "PASS",
+    "latestReport": "D:\\workspace\\Foodike\\translation-inputs\\test-build-reports\\phase-02-startup-session-navigation\\test-build-report.json",
+    "latestLog": "D:\\workspace\\Foodike\\translation-inputs\\test-build-reports\\phase-02-startup-session-navigation\\test-build.log",
+    "latestFirstBlocker": "",
+    "latestPhaseMatchesCurrent": false,
+    "acceptedPhase": "phase-02-startup-session-navigation",
+    "acceptedPhaseMatchesCurrent": false,
+    "referencedTestCount": 7,
+    "phaseHasFocusedTestHints": true,
+    "targetTestPackagePresent": true,
+    "targetTestFiles": 8,
+    "targetTestCodeFiles": 6,
+    "targetTestFileSamples": [
+      "entry/src/ohosTest/cangjie/cjpm.toml",
+      "entry/src/test/cangjie/cjpm.toml",
+      "entry/src/test/cangjie/phase01_resource_theme_contract_test.cj",
+      "entry/src/test/cangjie/phase02_repository_contract_test.cj",
+      "entry/src/test/cangjie/phase02_startup_navigation_test.cj",
+      "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
+      "entry/src/test/cangjie/phase04_home_history_discovery_test.cj",
+      "entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj"
+    ],
+    "standaloneCjpmTestEvidence": "pass",
+    "sdkOrEnvironmentBlockerSuspected": false,
+    "environmentStatus": "pass",
+    "phaseShouldMaintainFocusedTests": true,
+    "notes": [
+      "The latest test build report is accepted as PASS evidence for matching referenced tests."
+    ]
+  },
+  "unassignedCriticalHighSamples": [],
+  "unassignedCriticalHighPlatformSamples": [],
+  "structuralFindings": []
+}

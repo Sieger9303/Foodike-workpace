@@ -1,0 +1,752 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-28T10:01:01+00:00",
+  "phase": "phase-02-startup-session-navigation",
+  "purpose": "Phase-scoped platform capability pre-resolution checklist. This is generated from phase-task-checklist.json and platform-capability-check.json before phase implementation. All current-phase critical/high platform capabilities must be resolved before target code edits begin.",
+  "allowedResolutionStatuses": [
+    "resolved-deferred",
+    "resolved-not-applicable",
+    "resolved-platform-replacement",
+    "resolved-real-api"
+  ],
+  "summary": {
+    "phasePlatformCapabilities": 2,
+    "unresolvedPlatformCapabilities": 0,
+    "compileProbeRecommendedCapabilities": 0,
+    "discoveryOnlyCapabilities": 0,
+    "sdkProbeDeclarationCandidateCapabilities": 2,
+    "byResolutionStatus": {
+      "resolved-platform-replacement": 1,
+      "resolved-not-applicable": 1
+    }
+  },
+  "instructions": [
+    "If any entry is unresolved, run a capability resolution session before phase implementation.",
+    "Capability resolution may update only platform-capability-check.json/md.",
+    "A real HarmonyOS/Cangjie API, Kit, example, or package must be used when available; do not close with local mock, in-memory data, sample data, or generic fallback.",
+    "Use resolved-deferred only after checking CangjieSkills/HarmonyOS/Cangjie docs, HarmonyOS-Examples, SDK declarations, and package lookup when relevant.",
+    "Use capability-sdk-probe-cache.json as preparation evidence for SDK declaration/library candidates; it is not authority by itself.",
+    "Treat ArkTS/native/overview declarations as discovery-only until a Cangjie-callable API, wrapper, FFI, bridge, or compile probe is recorded.",
+    "When compileProbeRecommended is true, run a bounded target-context compile probe or record the concrete SDK/tooling blocker before phase implementation."
+  ],
+  "entries": [
+    {
+      "capabilityId": "background-and-platform-components",
+      "capabilityName": "Background work, services, receivers, widgets, and notifications",
+      "importance": "high",
+      "plannedPhase": "phase-02-startup-session-navigation",
+      "platformStatus": "platform-replaced",
+      "resolutionStatus": "resolved-platform-replacement",
+      "resolutionReason": "explicit platform replacement with target evidence",
+      "sourcePaths": [
+        "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "app/build.gradle.kts",
+        "README.md",
+        "app/src/main/java/com/example/foodike/di/AppModule.kt",
+        "app/src/main/AndroidManifest.xml",
+        "gradle/libs.versions.toml",
+        "build.gradle.kts",
+        "app/src/main/java/com/example/foodike/FoodikeApp.kt",
+        "gradle/wrapper/gradle-wrapper.properties",
+        "gradle.properties"
+      ],
+      "requiredTargetCapabilitySearch": [
+        "HarmonyOS Cangjie background task service",
+        "HarmonyOS notification Cangjie API",
+        "HarmonyOS widget Cangjie examples"
+      ],
+      "targetCapabilitySearch": [
+        "Phase-02 source inspection confirmed real app-entry and lifecycle scope, but not Android background services/receivers/widgets: `FoodikeApp.kt` defines `class FoodikeApp : Application()`, `MainActivity.kt` defines a single `ComponentActivity` with `installSplashScreen().setKeepOnScreenCondition { splashViewModel.isLoading.value }`, and `SplashViewModel.kt` resolves onboarding vs home from persisted login state before normal UI rendering.",
+        "Current Cangjie SDK declares HarmonyOS app-entry and lifecycle APIs through `UIAbility`, `UIAbilityContext`, and ability startup methods such as `startAbility` / `startAbilityForResult`, which are the direct target replacement for the source `Application` + `Activity` startup surface.",
+        "HarmonyOS Cangjie navigation docs recommend ArkUI `Navigation`/`NavPathStack` or `Router` for in-app page routing, so the source single-activity navigation shell should be implemented as HarmonyOS app bootstrap plus ArkUI navigation rather than Android activity/navigation infrastructure."
+      ],
+      "targetApiOrLibrary": "HarmonyOS Cangjie AbilityKit app-entry APIs (`ohos.app.ability.ui_ability.UIAbility`, `UIAbilityContext`, `Want`) plus ArkUI `Navigation`/`NavPathStack` or `Router` for in-app startup and route flow",
+      "targetStrategy": "Resolve the source Android platform component surface as a HarmonyOS platform replacement: model app startup in the target `UIAbility`/descriptor entry, keep splash-like gating inside bootstrap state before rendering the main route, and implement onboarding/home navigation using the existing ArkUI route shell instead of Android `Application`, `ComponentActivity`, and `core-splashscreen` APIs.",
+      "sdkDeclarationEvidence": [
+        "Cangjie SDK declares `public open class UIAbility <: Ability` in `C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.app.ability.ui_ability.cj.d:228`.",
+        "Cangjie SDK declares `public open func onCreate(want: Want, launchParam: LaunchParam): Unit` for `UIAbility` in `C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.app.ability.ui_ability.cj.d:276`.",
+        "Cangjie SDK declares `public open class UIAbilityContext <: Context` plus `startAbility` / `startAbilityForResult` in `C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.app.ability.ui_ability.cj.d:366,416,507,552`."
+      ],
+      "cangjieCallableEvidence": [
+        "HarmonyOS Cangjie docs describe `UIAbilityContext` as the lifecycle and ability-interaction context, including `startAbility` and `startAbilityForResult` (`D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\harmonyos-6.1-8k\\API\\AbilityKit\\cj-apis-app-ability-ui_ability\\ohosappabilityui_ability\\class_UIAbilityContext\\.overview.md`).",
+        "HarmonyOS Cangjie docs describe ArkUI `Navigation` as the route-navigation root view container and recommend component navigation for page routing (`D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\harmonyos-6.1-8k\\API\\arkui-cj\\cj-navigation-switching-navigation\\Navigation\\.overview.md`; `D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\harmonyos-6.1-8k\\Guide\\arkui-cj\\cj-navigation-introduction\\cj-navigation-introduction.md`).",
+        "HarmonyOS Cangjie docs also expose `Router` for page jumps when a lighter route shell is preferred (`D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\harmonyos-6.1-8k\\API\\arkui-cj\\cj-apis-uicontext-router\\Router\\class_Router.md`)."
+      ],
+      "discoveryOnlyEvidence": [],
+      "compileProbeEvidence": [],
+      "capabilityEvidenceProfile": {
+        "effectiveStatus": "platform-replaced",
+        "targetSearchEvidenceFound": true,
+        "sdkDeclarationEvidenceFound": true,
+        "cangjieCallableEvidenceFound": true,
+        "discoveryOnlyEvidenceFound": false,
+        "compileProbeEvidenceFound": false,
+        "compileProbeRecommended": false,
+        "compileProbeState": "not-needed",
+        "preResolutionDecision": "resolved-platform-replacement",
+        "derivedPreResolutionDecision": "platform-replaced",
+        "localFallbackDetected": false,
+        "unavailableBlockerFound": false,
+        "evidenceKinds": [
+          "target-search",
+          "sdk-declaration",
+          "cangjie-callable"
+        ]
+      },
+      "sdkProbeCache": {
+        "capabilityId": "background-and-platform-components",
+        "capabilityName": "Background work, services, receivers, widgets, and notifications",
+        "importance": "high",
+        "plannedPhase": "phase-02-startup-session-navigation",
+        "terms": [
+          "background",
+          "and",
+          "components",
+          "work",
+          "services",
+          "receivers",
+          "widgets",
+          "notifications",
+          "abilitykit",
+          "entry",
+          "apis",
+          "ability",
+          "ui_ability",
+          "uiability",
+          "uiabilitycontext",
+          "want",
+          "plus",
+          "arkui",
+          "navigation",
+          "navpathstack",
+          "router",
+          "for",
+          "startup",
+          "route"
+        ],
+        "pureCangjieDeclarationCandidates": [
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.AbilityKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.AbilityKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "abilitykit",
+              "ability",
+              "ui_ability",
+              "want",
+              "for"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkData.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkData.cj.d",
+            "matchedTerms": [
+              "and",
+              "for"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkGraphics2D.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkGraphics2D.cj.d",
+            "matchedTerms": [
+              "and",
+              "for"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkUI.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkUI.cj.d",
+            "matchedTerms": [
+              "and",
+              "arkui",
+              "router",
+              "for",
+              "route"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkWeb.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkWeb.cj.d",
+            "matchedTerms": [
+              "and",
+              "for"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.BasicServicesKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.BasicServicesKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "services",
+              "for"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CameraKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CameraKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "for"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CangjieKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CangjieKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "for"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ConnectivityKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ConnectivityKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "for"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CoreFileKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CoreFileKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "for"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CryptoArchitectureKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CryptoArchitectureKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "work",
+              "for"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ImageKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ImageKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "for"
+            ]
+          }
+        ],
+        "cangjieLibraryCandidates": [
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\kit.AbilityKit.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/kit.AbilityKit.cjo",
+            "matchedTerms": [
+              "abilitykit",
+              "ability"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkUI.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/kit.ArkUI.cjo",
+            "matchedTerms": [
+              "arkui"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\kit.BasicServicesKit.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/kit.BasicServicesKit.cjo",
+            "matchedTerms": [
+              "services"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\kit.NetworkKit.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/kit.NetworkKit.cjo",
+            "matchedTerms": [
+              "work"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\kit.PerformanceAnalysisKit.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/kit.PerformanceAnalysisKit.cjo",
+            "matchedTerms": [
+              "for"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\libkit.AbilityKit.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/libkit.AbilityKit.so",
+            "matchedTerms": [
+              "abilitykit",
+              "ability"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\libkit.ArkUI.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/libkit.ArkUI.so",
+            "matchedTerms": [
+              "arkui"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\libkit.BasicServicesKit.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/libkit.BasicServicesKit.so",
+            "matchedTerms": [
+              "services"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\libkit.NetworkKit.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/libkit.NetworkKit.so",
+            "matchedTerms": [
+              "work"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\libkit.PerformanceAnalysisKit.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/libkit.PerformanceAnalysisKit.so",
+            "matchedTerms": [
+              "for"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.ability.ability_result.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.ability.ability_result.so",
+            "matchedTerms": [
+              "ability"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.ability.connect_options.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.ability.connect_options.so",
+            "matchedTerms": [
+              "ability"
+            ]
+          }
+        ],
+        "candidateCounts": {
+          "pureCangjieDeclarations": 12,
+          "cangjieLibraries": 12
+        },
+        "probeInterpretation": "declaration-candidate"
+      },
+      "preResolutionDecision": "resolved-platform-replacement",
+      "compileProbeRecommended": false,
+      "compileProbeState": "not-needed",
+      "sdkDeclarationEvidenceFound": true,
+      "cangjieCallableEvidenceFound": true,
+      "discoveryOnlyEvidenceFound": false,
+      "implementationGroupIds": [
+        "phase-02-startup-session-navigation-source-behavior-com-example",
+        "phase-02-startup-session-navigation-source-behavior-di",
+        "phase-02-startup-session-navigation-platform-capability-background-and-platform-components",
+        "phase-02-startup-session-navigation-verification-phase-tests-and-evidence"
+      ],
+      "affectedPhases": [
+        "phase-02-startup-session-navigation"
+      ],
+      "targetEndpoints": [
+        "AppScope/app.json5",
+        "entry/src/main/module.json5",
+        "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_launch_service.cj::resolveLaunchRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj::resolveStartRoute"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase02_startup_navigation_test.cj::startupStorePublishesResolvedRouteAndClearsLoading",
+        "manual reproduction blocked: `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` now fails in `phase01_resource_theme_contract_test.cj` on `ResourceStr` `assertEqual` generic inference",
+        "build_hap_report.py --phase phase-02-startup-session-navigation"
+      ],
+      "blocker": "",
+      "targetFallback": "",
+      "futureCompletionPath": "",
+      "notes": "Phase-02 only needs app entry and startup lifecycle gating. The platform replacement is carried by precise entry/startup endpoints rather than broad shell files, and the bounded manual test reproduction is still blocked by unrelated phase-01 `ResourceStr` assertions."
+    },
+    {
+      "capabilityId": "runtime-permissions",
+      "capabilityName": "Runtime permissions and protected platform access",
+      "importance": "high",
+      "plannedPhase": "phase-02-startup-session-navigation",
+      "platformStatus": "not-applicable",
+      "resolutionStatus": "resolved-not-applicable",
+      "resolutionReason": "explicitly marked not-applicable with notes",
+      "sourcePaths": [
+        "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+        "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
+        "app/build.gradle.kts",
+        "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/DeliverySection.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/HomeViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/AdCard.kt",
+        "README.md"
+      ],
+      "requiredTargetCapabilitySearch": [
+        "HarmonyOS Cangjie request permission API",
+        "HarmonyOS permission authorization Cangjie",
+        "HarmonyOS Examples runtime permissions Cangjie"
+      ],
+      "targetCapabilitySearch": [
+        "Phase-02 source inspection found no Android runtime permission request or protected-API flow in the startup/session/navigation implementation scope: `presentation/MainActivity.kt`, `presentation/common/SplashViewModel.kt`, `presentation/util/Navigation.kt`, `domain/repository/HomeRepository.kt`, `domain/repository/LoginRepository.kt`, and `domain/repository/UserDataRepository.kt` contain startup routing, repository contracts, and shell behavior only.",
+        "Repository-wide source grep over `D:\\Kotlin2Cangjie\\Foodike\\app\\src\\main\\java` found DataStore and `Application` usage only for this phase surface; it did not find `requestPermissions`, `rememberLauncherForActivityResult`, `ActivityResultContracts.RequestPermission`, `READ_EXTERNAL_STORAGE`, `WRITE_EXTERNAL_STORAGE`, `POST_NOTIFICATIONS`, `Service`, `BroadcastReceiver`, `WorkManager`, or notification APIs in the inspected phase sources.",
+        "Current Cangjie SDK does provide a callable runtime-permission path through `AtManager.requestPermissionsFromUser(context: UIAbilityContext, permissionList: Array<Permissions>, requestCallback: AsyncCallback<PermissionRequestResult>)` and `PermissionRequestResult`, so this row is closed as phase-specific not-applicable rather than missing-platform-support."
+      ],
+      "targetApiOrLibrary": "HarmonyOS Cangjie AbilityKit permission APIs exist (`ohos.ability_access_ctrl.AtManager`, `ohos.security.permission_request_result.PermissionRequestResult`) but are not required by phase-02 startup/session/navigation source behavior.",
+      "targetStrategy": "Treat the phase-02 permission requirement as a source-analysis false positive. Do not add permission prompts or protected-access scaffolding during startup/session/navigation implementation unless later source-backed phases introduce real protected APIs.",
+      "sdkDeclarationEvidence": [
+        "Cangjie SDK declares `AtManager.requestPermissionsFromUser(context: UIAbilityContext, permissionList: Array<Permissions>, requestCallback: AsyncCallback<PermissionRequestResult>): Unit` in `C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.ability_access_ctrl.cj.d:163-164`.",
+        "Cangjie SDK declares `PermissionRequestResult` in `C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\ohos\\ohos.security.permission_request_result.cj.d:29-50`."
+      ],
+      "cangjieCallableEvidence": [
+        "HarmonyOS Cangjie docs index `requestPermissionsFromUser` under AbilityKit and document it as the direct user-authorization dialog API for Cangjie apps (`D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\harmonyos-6.1-8k\\API\\AbilityKit\\cj-apis-ability_access_ctrl\\ohosability_access_ctrl程序访问控制管理\\class_AtManager\\func_requestPermissionsFromUserUIAbilityC_82361e31.md`).",
+        "HarmonyOS security guide documents the runtime authorization flow for Cangjie apps (`D:\\workspace\\Foodike\\.agents\\skills\\cangjie-harmonyos-doc-search\\harmonyos-6.1-8k\\Guide\\security\\AccessToken\\cj-request-user-authorization\\向用户申请授权\\开发步骤\\开发步骤_1.md`)."
+      ],
+      "discoveryOnlyEvidence": [],
+      "compileProbeEvidence": [],
+      "capabilityEvidenceProfile": {
+        "effectiveStatus": "not-applicable",
+        "targetSearchEvidenceFound": true,
+        "sdkDeclarationEvidenceFound": true,
+        "cangjieCallableEvidenceFound": true,
+        "discoveryOnlyEvidenceFound": false,
+        "compileProbeEvidenceFound": false,
+        "compileProbeRecommended": false,
+        "compileProbeState": "not-needed",
+        "preResolutionDecision": "resolved-not-applicable",
+        "derivedPreResolutionDecision": "not-applicable",
+        "localFallbackDetected": false,
+        "unavailableBlockerFound": false,
+        "evidenceKinds": [
+          "target-search",
+          "sdk-declaration",
+          "cangjie-callable"
+        ]
+      },
+      "sdkProbeCache": {
+        "capabilityId": "runtime-permissions",
+        "capabilityName": "Runtime permissions and protected platform access",
+        "importance": "high",
+        "plannedPhase": "phase-02-startup-session-navigation",
+        "terms": [
+          "runtime",
+          "permissions",
+          "and",
+          "protected",
+          "access",
+          "abilitykit",
+          "permission",
+          "apis",
+          "exist",
+          "ability_access_ctrl",
+          "atmanager",
+          "security",
+          "permission_request_result",
+          "permissionrequestresult",
+          "but",
+          "are",
+          "not",
+          "required",
+          "phase",
+          "startup",
+          "session",
+          "navigation",
+          "source",
+          "behavior"
+        ],
+        "pureCangjieDeclarationCandidates": [
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.AbilityKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.AbilityKit.cj.d",
+            "matchedTerms": [
+              "permissions",
+              "and",
+              "access",
+              "abilitykit",
+              "permission",
+              "ability_access_ctrl",
+              "but",
+              "are"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkData.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkData.cj.d",
+            "matchedTerms": [
+              "permissions",
+              "and",
+              "permission",
+              "but",
+              "are",
+              "not",
+              "required"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkGraphics2D.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkGraphics2D.cj.d",
+            "matchedTerms": [
+              "permissions",
+              "and",
+              "permission",
+              "but",
+              "are",
+              "not",
+              "required"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkUI.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkUI.cj.d",
+            "matchedTerms": [
+              "permissions",
+              "and",
+              "permission",
+              "but",
+              "are",
+              "not",
+              "required"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkWeb.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkWeb.cj.d",
+            "matchedTerms": [
+              "permissions",
+              "and",
+              "permission",
+              "but",
+              "are",
+              "not",
+              "required"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.BasicServicesKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.BasicServicesKit.cj.d",
+            "matchedTerms": [
+              "permissions",
+              "and",
+              "permission",
+              "but",
+              "are",
+              "not",
+              "required"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CameraKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CameraKit.cj.d",
+            "matchedTerms": [
+              "permissions",
+              "and",
+              "permission",
+              "but",
+              "are",
+              "not",
+              "required"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CangjieKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CangjieKit.cj.d",
+            "matchedTerms": [
+              "permissions",
+              "and",
+              "permission",
+              "but",
+              "are",
+              "not",
+              "required"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ConnectivityKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ConnectivityKit.cj.d",
+            "matchedTerms": [
+              "permissions",
+              "and",
+              "permission",
+              "but",
+              "are",
+              "not",
+              "required"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CoreFileKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CoreFileKit.cj.d",
+            "matchedTerms": [
+              "permissions",
+              "and",
+              "permission",
+              "but",
+              "are",
+              "not",
+              "required"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CryptoArchitectureKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CryptoArchitectureKit.cj.d",
+            "matchedTerms": [
+              "permissions",
+              "and",
+              "permission",
+              "security",
+              "but",
+              "are",
+              "not",
+              "required"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ImageKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ImageKit.cj.d",
+            "matchedTerms": [
+              "permissions",
+              "and",
+              "permission",
+              "but",
+              "are",
+              "not",
+              "required"
+            ]
+          }
+        ],
+        "cangjieLibraryCandidates": [
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\kit.AbilityKit.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/kit.AbilityKit.cjo",
+            "matchedTerms": [
+              "abilitykit"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\libkit.AbilityKit.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/libkit.AbilityKit.so",
+            "matchedTerms": [
+              "abilitykit"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.ability_access_ctrl.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.ability_access_ctrl.so",
+            "matchedTerms": [
+              "access",
+              "ability_access_ctrl"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.app.ability.completion_handler.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.app.ability.completion_handler.so",
+            "matchedTerms": [
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.button.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.button.so",
+            "matchedTerms": [
+              "but"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.navigation.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.navigation.so",
+            "matchedTerms": [
+              "navigation"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.text_area.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.text_area.so",
+            "matchedTerms": [
+              "are"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.data.data_share_predicates.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.data.data_share_predicates.so",
+            "matchedTerms": [
+              "are"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.data.distributed_kv_store.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.data.distributed_kv_store.so",
+            "matchedTerms": [
+              "but"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.file.photo_access_helper.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.file.photo_access_helper.so",
+            "matchedTerms": [
+              "access"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.resource.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.resource.so",
+            "matchedTerms": [
+              "source"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.resource_manager.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.resource_manager.so",
+            "matchedTerms": [
+              "source"
+            ]
+          }
+        ],
+        "candidateCounts": {
+          "pureCangjieDeclarations": 12,
+          "cangjieLibraries": 12
+        },
+        "probeInterpretation": "declaration-candidate"
+      },
+      "preResolutionDecision": "resolved-not-applicable",
+      "compileProbeRecommended": false,
+      "compileProbeState": "not-needed",
+      "sdkDeclarationEvidenceFound": true,
+      "cangjieCallableEvidenceFound": true,
+      "discoveryOnlyEvidenceFound": false,
+      "implementationGroupIds": [
+        "phase-02-startup-session-navigation-source-behavior-com-example",
+        "phase-02-startup-session-navigation-source-behavior-data-data-source",
+        "phase-02-startup-session-navigation-source-behavior-data-repository",
+        "phase-02-startup-session-navigation-source-behavior-di",
+        "phase-02-startup-session-navigation-source-behavior-domain-repository",
+        "phase-02-startup-session-navigation-source-behavior-presentation",
+        "phase-02-startup-session-navigation-source-behavior-presentation-common",
+        "phase-02-startup-session-navigation-source-behavior-presentation-util",
+        "phase-02-startup-session-navigation-platform-capability-runtime-permissions",
+        "phase-02-startup-session-navigation-verification-phase-tests-and-evidence"
+      ],
+      "affectedPhases": [
+        "phase-02-startup-session-navigation"
+      ],
+      "targetEndpoints": [
+        "entry/src/main/module.json5::requestPermissions"
+      ],
+      "tests": [
+        "phase-02 source grep confirms no permission request path in startup/session/navigation sources",
+        "manual reproduction blocked: `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` now fails in `phase01_resource_theme_contract_test.cj` on `ResourceStr` `assertEqual` generic inference"
+      ],
+      "blocker": "",
+      "targetFallback": "",
+      "futureCompletionPath": "",
+      "notes": "Phase-02 source review still confirms runtime permissions are not required by the startup/session/navigation batch. The bounded manual test reproduction moved past the original phase-02 syntax blocker and now fails in unrelated phase-01 `ResourceStr` test assertions, so there is still no phase-wide PASS gate for target tests."
+    }
+  ],
+  "unresolved": [],
+  "compileProbeRecommended": [],
+  "discoveryOnly": []
+}

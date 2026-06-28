@@ -1,0 +1,767 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Bounded repair for phase-01-project-skeleton-resources-resource-migration-res-values",
+  "updates": [
+    {
+      "featureId": "app-src-main-res-values-strings-xml-b708bc8e6b-001-android-resource-configuration-must-be-m",
+      "set": {
+        "status": "implemented",
+        "sourceBehavior": "`strings.xml` centralizes the source app's user-visible labels and route-facing text so Compose screens and navigation surfaces read consistent resource-backed strings instead of hard-coded literals.",
+        "targetBehavior": "HarmonyOS maps that base string configuration into `string.json` resource entries plus `foodike_resources.cj` lookup handles, and the translated route registry resolves route labels from those resources for the phase-01 shell.",
+        "verificationEvidence": [
+          "Manual review confirmed every source `strings.xml` entry is present in `entry/src/main/resources/base/element/string.json` and exported through `entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj`.",
+          "Phase 01 build gate PASS: `translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md`.",
+          "Harness blocked: `cjpm test` in `entry/src/test/cangjie` failed before executing tests because root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`."
+        ],
+        "parityLevel": "equivalent",
+        "targetEndpoints": [
+          "entry/src/main/resources/base/element/string.json",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj::appResource",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::routeLabel",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::routeLabelByPath"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase01_resource_theme_contract_test.cj"
+        ],
+        "notes": "This row closes against concrete resource and route-label helpers instead of whole shell files.",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/resources/base/element/string.json",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj::appResource",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::routeLabel",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::routeLabelByPath"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "`cjpm test` in `entry/src/test/cangjie` stops before executing tests because root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`.",
+                "path": "entry/cjpm.toml"
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md",
+                "path": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "`strings.xml` entries are preserved in HarmonyOS resource files and consumed by the focused route-label helpers.",
+                "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj"
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-res-values-strings-xml-36dc10345e-002-intent-uri-bundle-deeplink-or-cross-scre",
+      "set": {
+        "status": "platform-replaced",
+        "sourceBehavior": "The source `strings.xml` provides user-visible labels for navigation destinations and primary actions that accompany the Android app's cross-screen route flow.",
+        "targetBehavior": "HarmonyOS replaces Android intent-style screen flow with explicit route ids, route paths, route labels, and primary-action label helpers that still read their user-facing text from migrated string resources.",
+        "verificationEvidence": [
+          "Manual review confirmed `route_registry.cj` maps `home`, `history`, `cart`, `profile`, and detail destinations to resource-backed labels from `foodike_resources.cj`.",
+          "Phase 01 build gate PASS: `translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md`.",
+          "Harness blocked: `cjpm test` in `entry/src/test/cangjie` failed before executing tests because root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`."
+        ],
+        "parityLevel": "platform-replaced",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::routePath",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::routeLabelByPath",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::primaryActionTarget",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::primaryActionLabel"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase01_resource_theme_contract_test.cj"
+        ],
+        "notes": "This row closes against focused route-registry functions instead of broad shell-page endpoints.",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "platform-replaced",
+          "parityKind": "platform-replaced",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::routePath",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::routeLabelByPath",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::primaryActionTarget",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::primaryActionLabel"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "`cjpm test` in `entry/src/test/cangjie` stops before executing tests because root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`.",
+                "path": "entry/cjpm.toml"
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md",
+                "path": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "Route labels and primary-action labels remain resource-backed while route flow moves from Android intents to explicit Harmony route helpers.",
+                "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj"
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-res-values-strings-xml-b2fc0b9ad5-004-runtime-permission-request-permission-re",
+      "set": {
+        "status": "not-applicable",
+        "sourceBehavior": "`strings.xml` contains no permission prompt, denial, rationale, or protected-capability labels; it only defines general app copy and navigation text.",
+        "targetBehavior": "No HarmonyOS permission text resource is needed in phase 01 because the translated shell introduces no runtime-permission flow and the source values file carries none.",
+        "verificationEvidence": [
+          "Manual source review confirmed `app/src/main/res/values/strings.xml` has onboarding, login, profile, detail, and cart copy only, with no permission-specific strings.",
+          "Manual target review confirmed `entry/src/main/module.json5` keeps `requestPermissions` empty in phase 01."
+        ],
+        "parityLevel": "not-applicable",
+        "targetEndpoints": [
+          "entry/src/main/module.json5",
+          "entry/src/main/resources/base/element/string.json"
+        ],
+        "notes": "Static-analysis false positive: the source values file contains no runtime-permission copy to migrate.",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/module.json5",
+              "entry/src/main/resources/base/element/string.json"
+            ],
+            "testEvidence": [],
+            "buildEvidence": [],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "The source strings inventory has no permission-related labels, and the HarmonyOS entry module keeps `requestPermissions` empty.",
+                "path": "entry/src/main/module.json5"
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-res-values-strings-xml-3b47f3dbef-005-android-android-values-file-should-be-ma",
+      "set": {
+        "status": "implemented",
+        "sourceBehavior": "The source Android `strings.xml` file is the canonical values-file container for app labels, onboarding copy, login/profile/cart/detail text, and navigation labels.",
+        "targetBehavior": "HarmonyOS preserves that values-file role with `string.json` as the concrete resource store and `foodike_resources.cj` as the typed lookup layer used by route and feature code.",
+        "verificationEvidence": [
+          "Manual review confirmed source string keys are migrated into `entry/src/main/resources/base/element/string.json` and exported through `entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj`.",
+          "Phase 01 build gate PASS: `translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md`."
+        ],
+        "parityLevel": "equivalent",
+        "targetEndpoints": [
+          "entry/src/main/resources/base/element/string.json",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj::appResource"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/resources/base/element/string.json",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj::appResource"
+            ],
+            "testEvidence": [],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md",
+                "path": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "The source Android values file has been migrated into HarmonyOS string resources with a focused typed lookup helper.",
+                "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj"
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m",
+      "set": {
+        "status": "platform-replaced",
+        "sourceBehavior": "`themes.xml` configures the Android light no-action-bar app theme and splash theme, including white splash background, launcher icon, and post-splash handoff back into the main Foodike theme.",
+        "targetBehavior": "HarmonyOS replaces those Android theme resources with descriptor-driven app and start-window configuration plus focused theme constants that preserve the light baseline, white startup background, launcher icon wiring, and app theme palette anchors.",
+        "verificationEvidence": [
+          "Manual review confirmed `entry/src/main/module.json5` maps the start window to `$color:start_window_background` and `$media:icon`, while `AppScope/app.json5` keeps the resource-backed app label and icon.",
+          "Manual review confirmed `foodike_theme.cj` preserves the source light palette and primary/secondary color anchors.",
+          "Phase 01 build gate PASS: `translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md`."
+        ],
+        "parityLevel": "platform-replaced",
+        "targetEndpoints": [
+          "entry/src/main/module.json5",
+          "AppScope/app.json5",
+          "entry/src/main/resources/base/element/color.json",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_theme.cj"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase01_resource_theme_contract_test.cj"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "platform-replaced",
+          "parityKind": "platform-replaced",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/module.json5",
+              "AppScope/app.json5",
+              "entry/src/main/resources/base/element/color.json",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_theme.cj"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "`cjpm test` in `entry/src/test/cangjie` stops before executing tests because root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`.",
+                "path": "entry/cjpm.toml"
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md",
+                "path": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "Descriptor start-window fields and theme constants together replace the Android splash and base theme configuration.",
+                "path": "entry/src/main/module.json5"
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re",
+      "set": {
+        "status": "not-applicable",
+        "sourceBehavior": "`themes.xml` contains only app-theme and splash-theme styling items and defines no runtime-permission theme overlay or protected-capability UI behavior.",
+        "targetBehavior": "No permission-specific HarmonyOS theme or permission flow is needed in phase 01 because the source theme file contains none and the entry module requests no permissions.",
+        "verificationEvidence": [
+          "Manual source review confirmed `app/src/main/res/values/themes.xml` contains only `Theme.Foodike` and `Theme.SplashScreenTheme` definitions.",
+          "Manual target review confirmed `entry/src/main/module.json5` keeps `requestPermissions` empty in phase 01."
+        ],
+        "parityLevel": "not-applicable",
+        "targetEndpoints": [
+          "entry/src/main/module.json5",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_theme.cj"
+        ],
+        "notes": "Static-analysis false positive: the source theme file contains no permission behavior to migrate.",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/module.json5",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_theme.cj"
+            ],
+            "testEvidence": [],
+            "buildEvidence": [],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "The source theme file contains no permission overlays or protected-capability theme content, and the HarmonyOS module keeps `requestPermissions` empty.",
+                "path": "entry/src/main/module.json5"
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma",
+      "set": {
+        "status": "platform-replaced",
+        "sourceBehavior": "The source Android `themes.xml` file defines the app's base theme and splash theme as values-file style resources.",
+        "targetBehavior": "HarmonyOS replaces that Android values-file theme role with `module.json5` start-window resource binding, `app.json5` app metadata binding, and focused theme constants in `foodike_theme.cj`.",
+        "verificationEvidence": [
+          "Manual review confirmed the translated theme and splash semantics are carried by `entry/src/main/module.json5`, `AppScope/app.json5`, `entry/src/main/resources/base/element/color.json`, and `entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_theme.cj`.",
+          "Phase 01 build gate PASS: `translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md`."
+        ],
+        "parityLevel": "platform-replaced",
+        "targetEndpoints": [
+          "entry/src/main/module.json5",
+          "AppScope/app.json5",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_theme.cj"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "platform-replaced",
+          "parityKind": "platform-replaced",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/module.json5",
+              "AppScope/app.json5",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_theme.cj"
+            ],
+            "testEvidence": [],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md",
+                "path": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "Android theme values are replaced by HarmonyOS descriptor resources and explicit theme constants.",
+                "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_theme.cj"
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m",
+      "set": {
+        "status": "implemented",
+        "sourceBehavior": "`colors.xml` defines the source palette entries that support the app theme, accent colors, and shared visual styling.",
+        "targetBehavior": "HarmonyOS maps those palette entries into `color.json` resources and reuses the same key colors in `foodike_theme.cj` for the translated theme baseline.",
+        "verificationEvidence": [
+          "Manual review confirmed all source color entries from `colors.xml` exist in `entry/src/main/resources/base/element/color.json`.",
+          "Manual review confirmed the translated theme constants preserve the source LightGreen/DarkGreen palette anchors in `entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_theme.cj`.",
+          "Phase 01 build gate PASS: `translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md`."
+        ],
+        "parityLevel": "equivalent",
+        "targetEndpoints": [
+          "entry/src/main/resources/base/element/color.json",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_theme.cj"
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase01_resource_theme_contract_test.cj"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/resources/base/element/color.json",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_theme.cj"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "`cjpm test` in `entry/src/test/cangjie` stops before executing tests because root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`.",
+                "path": "entry/cjpm.toml"
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md",
+                "path": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "The source palette colors are preserved in HarmonyOS color resources and mirrored by focused theme constants.",
+                "path": "entry/src/main/resources/base/element/color.json"
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma",
+      "set": {
+        "status": "implemented",
+        "sourceBehavior": "The source Android `colors.xml` file serves as the canonical values-file container for the Foodike palette.",
+        "targetBehavior": "HarmonyOS preserves that values-file role with `color.json` as the concrete palette store and `foodike_theme.cj` as the focused theme consumer for the translated app shell.",
+        "verificationEvidence": [
+          "Manual review confirmed all source color values from `colors.xml` are present in `entry/src/main/resources/base/element/color.json`.",
+          "Phase 01 build gate PASS: `translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md`."
+        ],
+        "parityLevel": "equivalent",
+        "targetEndpoints": [
+          "entry/src/main/resources/base/element/color.json",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_theme.cj"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/resources/base/element/color.json",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_theme.cj"
+            ],
+            "testEvidence": [],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md",
+                "path": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "The Android color values file is represented by HarmonyOS `color.json` plus focused theme constants.",
+                "path": "entry/src/main/resources/base/element/color.json"
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-res-values-ic-launcher-background-xml-a73289ef8d-001-android-resource-configuration-must-be-m",
+      "set": {
+        "status": "implemented",
+        "sourceBehavior": "`ic_launcher_background.xml` defines the launcher background color resource used by the Android adaptive launcher icon.",
+        "targetBehavior": "HarmonyOS maps that launcher background color into `color.json` as `ic_launcher_background`, keeping the same green accent available to launcher and splash-related resource wiring.",
+        "verificationEvidence": [
+          "Manual review confirmed `entry/src/main/resources/base/element/color.json` contains `ic_launcher_background` with the source color value.",
+          "Phase 01 build gate PASS: `translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md`."
+        ],
+        "parityLevel": "equivalent",
+        "targetEndpoints": [
+          "entry/src/main/resources/base/element/color.json",
+          "entry/src/main/module.json5"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/resources/base/element/color.json",
+              "entry/src/main/module.json5"
+            ],
+            "testEvidence": [],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md",
+                "path": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "The adaptive launcher background color from the source values file is preserved in HarmonyOS color resources.",
+                "path": "entry/src/main/resources/base/element/color.json"
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-res-values-ic-launcher-background-xml-76f22ce278-002-android-android-values-file-should-be-ma",
+      "set": {
+        "status": "implemented",
+        "sourceBehavior": "The source Android `ic_launcher_background.xml` values file holds the launcher background color resource for the app icon surface.",
+        "targetBehavior": "HarmonyOS preserves that values-file contribution by migrating the launcher background color into `color.json` alongside the rest of the app palette.",
+        "verificationEvidence": [
+          "Manual review confirmed `ic_launcher_background` is present in `entry/src/main/resources/base/element/color.json` with the source value.",
+          "Phase 01 build gate PASS: `translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md`."
+        ],
+        "parityLevel": "equivalent",
+        "targetEndpoints": [
+          "entry/src/main/resources/base/element/color.json"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/resources/base/element/color.json"
+            ],
+            "testEvidence": [],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md",
+                "path": "translation-inputs/build-reports/phase-01-project-skeleton-resources/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "The source launcher-background values file is represented directly by the migrated HarmonyOS color resource.",
+                "path": "entry/src/main/resources/base/element/color.json"
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-res-values-strings-xml-6fbcdd736d-003-localized-strings-or-locale-specific-res",
+      "set": {
+        "targetEndpoints": [
+          "entry/src/main/resources/base/element/string.json",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj::appResource",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::routeLabel",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::routeLabelByPath"
+        ],
+        "notes": "Tightened endpoints from broad shell files to focused resource and route-label functions for group-level closure.",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/resources/base/element/string.json",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj::appResource",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::routeLabel",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::routeLabelByPath"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "`cjpm test` in `entry/src/test/cangjie` stops before executing tests because root package `ohos_app_cangjie_entry` imports `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource` without matching dependencies in `entry/cjpm.toml`.",
+                "path": "entry/cjpm.toml"
+              }
+            ],
+            "buildEvidence": [],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "`string.json` and `foodike_resources.cj` cover the source labels, and the phase-01 route shell reads labels through focused route-registry helpers rather than broad shell literals.",
+                "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj"
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    }
+  ]
+}

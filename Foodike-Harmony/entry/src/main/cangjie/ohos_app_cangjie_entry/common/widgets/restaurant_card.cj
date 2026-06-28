@@ -4,7 +4,7 @@ import kit.ArkUI.*
 import ohos.arkui.state_macro_manage.Builder
 import ohos.resource.AppResource
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.domain.RestaurantData
-import ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.{mediaApplePie, mediaBiryani, mediaBurger, mediaChinese, mediaDosa, mediaParatha, mediaPizza, mediaStar}
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.{formatMinutesDuration, mediaApplePie, mediaBiryani, mediaBurger, mediaChinese, mediaDosa, mediaParatha, mediaPizza, mediaStar}
 
 public func restaurantMedia(name: String): AppResource {
     match (name) {
@@ -56,13 +56,12 @@ public func getCustomerInfo(ratingCount: Int64): String {
     }
 }
 
+public func usesBundledRestaurantMedia(restaurant: RestaurantData): Bool {
+    return restaurant.usesBundledMediaOnly()
+}
+
 public func formatEta(minutes: Int64): String {
-    let hours = minutes / 60
-    let remainder = minutes % 60
-    if (hours > 0) {
-        return "${hours} Hr ${remainder} Min"
-    }
-    return "${remainder} Min"
+    return formatMinutesDuration(minutes)
 }
 
 @Builder

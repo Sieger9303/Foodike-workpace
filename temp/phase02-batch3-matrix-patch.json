@@ -1,0 +1,624 @@
+{
+  "updates": [
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-data-source-f-f170137f2d-001-file-document-storage-saf-mediastore-or",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed `FakeData.kt` contains only hard-coded lists and drawable references.",
+          "Manual target review confirmed `home_content_repository.cj` and `session_repository.cj` only expose seeded arrays and menu mappings.",
+          "Phase-02 test build report PASS: `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)",
+          "entry/src/test/cangjie/phase02_repository_contract_test.cj"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/content/home_content_repository.cj",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj"
+            ],
+            "testEvidence": [
+              {
+                "kind": "test-compile-pass",
+                "detail": "Phase-02 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
+                "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md",
+                "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "`FakeData.kt` is a seeded data file only and contains no storage APIs."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-data-source-f-8d9b6c748e-002-image-viewing-bitmap-exif-handling-zoom",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed the file contains image ids but no viewer or bitmap APIs.",
+          "Manual target review confirmed `AdvertisementData` and `RestaurantData` carry media identifiers only.",
+          "Phase-02 test build report PASS: `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)",
+          "entry/src/test/cangjie/phase02_repository_contract_test.cj"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {"used": false, "reason": "", "preservedBehaviors": [], "omittedBehaviors": []},
+          "activeDeferred": {"used": false, "blockerKind": "", "blocker": "", "fallbackBehavior": "", "futureCompletionPath": ""},
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::AdvertisementData",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj::RestaurantData",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/content/home_content_repository.cj"
+            ],
+            "testEvidence": [{"kind": "test-compile-pass", "detail": "Phase-02 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}],
+            "buildEvidence": [{"kind": "build-pass", "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md", "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"}],
+            "runtimeEvidence": [],
+            "manualEvidence": [{"kind": "manual-review", "detail": "Source and target data layers contain only media references, not viewer logic."}]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-data-source-f-5dbff38a8a-003-intent-uri-bundle-deeplink-or-cross-scre",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed `FakeData.kt` contains no navigation argument or deeplink code.",
+          "Manual target review confirmed cross-screen selection state lives in `session_repository.cj`, not the seed catalogue file.",
+          "Phase-02 test build report PASS: `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)",
+          "entry/src/test/cangjie/phase02_repository_contract_test.cj::sessionRepositorySelectionPublishesSavedNameAndMenuSnapshot"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {"used": false, "reason": "", "preservedBehaviors": [], "omittedBehaviors": []},
+          "activeDeferred": {"used": false, "blockerKind": "", "blocker": "", "fallbackBehavior": "", "futureCompletionPath": ""},
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/content/home_content_repository.cj",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj::restaurantSelectionRouteToken"
+            ],
+            "testEvidence": [{"kind": "test-compile-pass", "detail": "Phase-02 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}],
+            "buildEvidence": [{"kind": "build-pass", "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md", "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"}],
+            "runtimeEvidence": [],
+            "manualEvidence": [{"kind": "manual-review", "detail": "The fake data source contains no intent or route-argument logic."}]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-data-source-f-d03fbb20a2-004-navigation-surface-menu-drawer-toolbar-o",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed no navigation-surface logic in `FakeData.kt`.",
+          "Manual target review confirmed route behavior lives outside the content repository.",
+          "Phase-02 test build report PASS: `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)",
+          "entry/src/test/cangjie/phase02_startup_navigation_test.cj::bottomShellOnlyShowsOnTopLevelHomeAndHistoryRoutes"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {"used": false, "reason": "", "preservedBehaviors": [], "omittedBehaviors": []},
+          "activeDeferred": {"used": false, "blockerKind": "", "blocker": "", "fallbackBehavior": "", "futureCompletionPath": ""},
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/content/home_content_repository.cj",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::resolveStartRoute"
+            ],
+            "testEvidence": [{"kind": "test-compile-pass", "detail": "Phase-02 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}],
+            "buildEvidence": [{"kind": "build-pass", "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md", "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"}],
+            "runtimeEvidence": [],
+            "manualEvidence": [{"kind": "manual-review", "detail": "The seeded data source contains no toolbar, drawer, tab, or route command logic."}]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-data-source-f-552e89ac77-005-runtime-permission-request-permission-re",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed the file contains only seeded lists and media identifiers.",
+          "Phase capability decision `runtime-permissions` is resolved `not-applicable` for phase-02 startup/session/navigation.",
+          "Phase-02 test build report PASS: `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "phase-02 source grep confirms no permission request path in startup/session/navigation sources",
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {"used": false, "reason": "", "preservedBehaviors": [], "omittedBehaviors": []},
+          "activeDeferred": {"used": false, "blockerKind": "", "blocker": "", "fallbackBehavior": "", "futureCompletionPath": ""},
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/module.json5::requestPermissions",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/content/home_content_repository.cj"
+            ],
+            "testEvidence": [{"kind": "test-compile-pass", "detail": "Phase-02 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}],
+            "buildEvidence": [{"kind": "build-pass", "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md", "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"}],
+            "runtimeEvidence": [],
+            "manualEvidence": [{"kind": "manual-review", "detail": "`FakeData.kt` contains no permission logic."}]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-util-db8f73d266-001-image-viewing-bitmap-exif-handling-zoom",
+      "set": {
+        "tests": [
+          "manual review of navigation shell",
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {"used": false, "reason": "", "preservedBehaviors": [], "omittedBehaviors": []},
+          "activeDeferred": {"used": false, "blockerKind": "", "blocker": "", "fallbackBehavior": "", "futureCompletionPath": ""},
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::build",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::routePath"
+            ],
+            "testEvidence": [{"kind": "test-compile-pass", "detail": "Phase-02 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}],
+            "buildEvidence": [{"kind": "build-pass", "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md", "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"}],
+            "runtimeEvidence": [],
+            "manualEvidence": [{"kind": "manual-review", "detail": "`Navigation.kt` and the HarmonyOS route shell contain no image viewer or zoom logic."}]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-util-dc524a2ddb-003-runtime-permission-request-permission-re",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed `Navigation.kt` contains no permission API usage.",
+          "Manual target review confirmed the route shell modules add no permission handling and `entry/src/main/module.json5::requestPermissions` remains empty.",
+          "Phase-02 test build report PASS: `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "phase-02 source grep confirms no permission request path in startup/session/navigation sources",
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {"used": false, "reason": "", "preservedBehaviors": [], "omittedBehaviors": []},
+          "activeDeferred": {"used": false, "blockerKind": "", "blocker": "", "fallbackBehavior": "", "futureCompletionPath": ""},
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/shell_route_state.cj::showsBottomShell",
+              "entry/src/main/module.json5::requestPermissions"
+            ],
+            "testEvidence": [{"kind": "test-compile-pass", "detail": "Phase-02 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}],
+            "buildEvidence": [{"kind": "build-pass", "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md", "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"}],
+            "runtimeEvidence": [],
+            "manualEvidence": [{"kind": "manual-review", "detail": "`Navigation.kt` and the target shell modules contain no permission request path, and `entry/src/main/module.json5::requestPermissions` remains empty."}]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-repository-us-7d28c63dc6-003-runtime-permission-request-permission-re",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed the user-data repository contains no permission APIs.",
+          "Phase capability decision `runtime-permissions` is resolved `not-applicable` for phase-02 startup/session/navigation.",
+          "Phase-02 test build report PASS: `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase02_repository_contract_test.cj",
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {"used": false, "reason": "", "preservedBehaviors": [], "omittedBehaviors": []},
+          "activeDeferred": {"used": false, "blockerKind": "", "blocker": "", "fallbackBehavior": "", "futureCompletionPath": ""},
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/module.json5::requestPermissions",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj"
+            ],
+            "testEvidence": [{"kind": "test-compile-pass", "detail": "Phase-02 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}],
+            "buildEvidence": [{"kind": "build-pass", "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md", "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"}],
+            "runtimeEvidence": [],
+            "manualEvidence": [{"kind": "manual-review", "detail": "The source and target user-data repositories contain no permission logic."}]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-repository-lo-7e56a71166-001-runtime-permission-request-permission-re",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed the repository only wraps `preferencesDataStore` boolean reads and writes.",
+          "Phase capability decision `runtime-permissions` is resolved `not-applicable` for phase-02 startup/session/navigation.",
+          "Phase-02 test build report PASS: `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase02_startup_navigation_test.cj::loginStateToggleRuleFlipsBothDirections",
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {"used": false, "reason": "", "preservedBehaviors": [], "omittedBehaviors": []},
+          "activeDeferred": {"used": false, "blockerKind": "", "blocker": "", "fallbackBehavior": "", "futureCompletionPath": ""},
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/module.json5::requestPermissions",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj"
+            ],
+            "testEvidence": [{"kind": "test-compile-pass", "detail": "Phase-02 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}],
+            "buildEvidence": [{"kind": "build-pass", "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md", "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"}],
+            "runtimeEvidence": [],
+            "manualEvidence": [{"kind": "manual-review", "detail": "The source and target login-state repositories contain no permission code."}]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-commo-dfe1d53519-001-runtime-permission-request-permission-re",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed `SplashViewModel.kt` only reads login state and updates loading/start destination values.",
+          "Manual target review confirmed the HarmonyOS startup store and service do not request permissions and `entry/src/main/module.json5::requestPermissions` remains empty.",
+          "Phase-02 test build report PASS: `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "phase-02 source grep confirms no permission request path in startup/session/navigation sources",
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {"used": false, "reason": "", "preservedBehaviors": [], "omittedBehaviors": []},
+          "activeDeferred": {"used": false, "blockerKind": "", "blocker": "", "fallbackBehavior": "", "futureCompletionPath": ""},
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj::resolveStartRoute",
+              "entry/src/main/module.json5::requestPermissions"
+            ],
+            "testEvidence": [{"kind": "test-compile-pass", "detail": "Phase-02 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}],
+            "buildEvidence": [{"kind": "build-pass", "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md", "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"}],
+            "runtimeEvidence": [],
+            "manualEvidence": [{"kind": "manual-review", "detail": "`SplashViewModel.kt` and the target startup pipeline contain no permission request path."}]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-di-appmodule-kt-30d21fc769-001-runtime-permission-request-permission-re",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed `AppModule.kt` only wires repositories.",
+          "Phase capability decision `runtime-permissions` is resolved `not-applicable` for phase-02 startup/session/navigation.",
+          "Phase-02 test build report PASS: `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase02_startup_navigation_test.cj",
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {"used": false, "reason": "", "preservedBehaviors": [], "omittedBehaviors": []},
+          "activeDeferred": {"used": false, "blockerKind": "", "blocker": "", "fallbackBehavior": "", "futureCompletionPath": ""},
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/module.json5::requestPermissions",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj"
+            ],
+            "testEvidence": [{"kind": "test-compile-pass", "detail": "Phase-02 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}],
+            "buildEvidence": [{"kind": "build-pass", "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md", "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"}],
+            "runtimeEvidence": [],
+            "manualEvidence": [{"kind": "manual-review", "detail": "The source and target service-wiring layers contain no permission logic."}]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-data-repository-ho-4b6d5fb3fe-001-runtime-permission-request-permission-re",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed `HomeRepositoryImpl.kt` only wraps seeded lists in success results.",
+          "Phase capability decision `runtime-permissions` is resolved `not-applicable` for phase-02 startup/session/navigation.",
+          "Phase-02 test build report PASS: `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase02_repository_contract_test.cj::contentRepositoryExposesFullRestaurantSeedSet",
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {"used": false, "reason": "", "preservedBehaviors": [], "omittedBehaviors": []},
+          "activeDeferred": {"used": false, "blockerKind": "", "blocker": "", "fallbackBehavior": "", "futureCompletionPath": ""},
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/module.json5::requestPermissions",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/content/home_content_repository.cj"
+            ],
+            "testEvidence": [{"kind": "test-compile-pass", "detail": "Phase-02 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}],
+            "buildEvidence": [{"kind": "build-pass", "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md", "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"}],
+            "runtimeEvidence": [],
+            "manualEvidence": [{"kind": "manual-review", "detail": "`HomeRepositoryImpl.kt` contains only in-memory fake catalogue accessors."}]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-domain-repository-583d53fd5f-002-runtime-permission-request-permission-re",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed `UserDataRepository.kt` contains only shared selection, menu, favourites, and cart contracts.",
+          "Manual target review confirmed `SessionRepository` stays permission-free and `entry/src/main/module.json5::requestPermissions` remains empty.",
+          "Phase-02 test build report PASS: `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "phase-02 source grep confirms no permission request path in startup/session/navigation sources",
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {"used": false, "reason": "", "preservedBehaviors": [], "omittedBehaviors": []},
+          "activeDeferred": {"used": false, "blockerKind": "", "blocker": "", "fallbackBehavior": "", "futureCompletionPath": ""},
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj",
+              "entry/src/main/module.json5::requestPermissions"
+            ],
+            "testEvidence": [{"kind": "test-compile-pass", "detail": "Phase-02 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}],
+            "buildEvidence": [{"kind": "build-pass", "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md", "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"}],
+            "runtimeEvidence": [],
+            "manualEvidence": [{"kind": "manual-review", "detail": "The shared session repository contract and implementation contain no permission request path."}]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-domain-repository-5a8b74e868-001-runtime-permission-request-permission-re",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed `HomeRepository.kt` only exposes restaurant, ad, food, and name-lookup methods.",
+          "Manual target review confirmed `HomeContentRepository` stays permission-free and `entry/src/main/module.json5::requestPermissions` is empty.",
+          "Phase-02 test build report PASS: `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "phase-02 source grep confirms no permission request path in startup/session/navigation sources",
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {"used": false, "reason": "", "preservedBehaviors": [], "omittedBehaviors": []},
+          "activeDeferred": {"used": false, "blockerKind": "", "blocker": "", "fallbackBehavior": "", "futureCompletionPath": ""},
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/content/home_content_repository.cj::getRestaurants",
+              "entry/src/main/module.json5::requestPermissions"
+            ],
+            "testEvidence": [{"kind": "test-compile-pass", "detail": "Phase-02 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}],
+            "buildEvidence": [{"kind": "build-pass", "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md", "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"}],
+            "runtimeEvidence": [],
+            "manualEvidence": [{"kind": "manual-review", "detail": "The home repository contract and implementation contain no permission request path."}]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-domain-repository-f168e0eabb-001-runtime-permission-request-permission-re",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed `LoginRepository.kt` only exposes persisted login-state reads and toggles.",
+          "Manual target review confirmed login persistence uses `Preferences` only and `entry/src/main/module.json5::requestPermissions` remains empty.",
+          "Phase-02 test build report PASS: `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "phase-02 source grep confirms no permission request path in startup/session/navigation sources",
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {"used": false, "reason": "", "preservedBehaviors": [], "omittedBehaviors": []},
+          "activeDeferred": {"used": false, "blockerKind": "", "blocker": "", "fallbackBehavior": "", "futureCompletionPath": ""},
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::readLoginState",
+              "entry/src/main/module.json5::requestPermissions"
+            ],
+            "testEvidence": [{"kind": "test-compile-pass", "detail": "Phase-02 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}],
+            "buildEvidence": [{"kind": "build-pass", "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md", "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"}],
+            "runtimeEvidence": [],
+            "manualEvidence": [{"kind": "manual-review", "detail": "The login repository contract and target preference service contain no permission request path."}]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-foodikeapp-kt-864c7fbb30-001-runtime-permission-request-permission-re",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed `FoodikeApp.kt` only declares `class FoodikeApp : Application()` with `@HiltAndroidApp` and no permission flow.",
+          "Phase capability decision `runtime-permissions` is resolved `not-applicable` for phase-02 startup/session/navigation.",
+          "Phase-02 test build report PASS: `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase02_startup_navigation_test.cj",
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {"used": false, "reason": "", "preservedBehaviors": [], "omittedBehaviors": []},
+          "activeDeferred": {"used": false, "blockerKind": "", "blocker": "", "fallbackBehavior": "", "futureCompletionPath": ""},
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/module.json5::requestPermissions",
+              "entry/src/main/cangjie/app_ability.cj::onCreate"
+            ],
+            "testEvidence": [{"kind": "test-compile-pass", "detail": "Phase-02 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}],
+            "buildEvidence": [{"kind": "build-pass", "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md", "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"}],
+            "runtimeEvidence": [],
+            "manualEvidence": [{"kind": "manual-review", "detail": "`FoodikeApp.kt` contains only `Application` bootstrap annotation code and no permission request behavior."}]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-foodikeapp-kt-694075bf4f-002-android-platform-component-lifecycle-suc",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed `FoodikeApp.kt` only establishes Android application-level startup wiring.",
+          "Manual target review confirmed phase-02 startup is driven by `app_ability.cj::onCreate`, `startup_launch_service.cj::resolveLaunchRoute`, `startup_launch_service.cj::startupLaunchService`, and `startup_store.cj::resolveStartRoute`.",
+          "Phase-02 test build report PASS: `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase02_startup_navigation_test.cj::startupStorePublishesResolvedRouteAndClearsLoading",
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "platform-replaced",
+          "parityKind": "platform-replaced",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {"used": false, "reason": "", "preservedBehaviors": [], "omittedBehaviors": []},
+          "activeDeferred": {"used": false, "blockerKind": "", "blocker": "", "fallbackBehavior": "", "futureCompletionPath": ""},
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/app_ability.cj::onCreate",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_launch_service.cj::startupLaunchService",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_launch_service.cj::resolveLaunchRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj::resolveStartRoute"
+            ],
+            "testEvidence": [{"kind": "test-compile-pass", "detail": "Phase-02 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}],
+            "buildEvidence": [{"kind": "build-pass", "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md", "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"}],
+            "runtimeEvidence": [],
+            "manualEvidence": [{"kind": "manual-review", "detail": "Target startup lifecycle uses HarmonyOS app entry and shared startup services instead of Android `Application` and Hilt bootstrap."}]
+          },
+          "factsSource": "agent"
+        }
+      }
+    }
+  ]
+}

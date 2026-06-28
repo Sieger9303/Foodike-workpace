@@ -15,12 +15,12 @@ Start here, then open only the referenced source paths, target endpoints, capabi
 
 | artifact | exists | generatedAt | phase | error |
 | --- | --- | --- | --- | --- |
-| phaseTaskChecklist | yes | 2026-06-27T02:15:11+00:00 | phase-01-project-skeleton-resources |  |
+| phaseTaskChecklist | yes | 2026-06-27T03:54:06+00:00 | phase-01-project-skeleton-resources |  |
 | phaseGroupVerdicts | no |  |  | missing |
-| phaseCapabilityChecklist | yes | 2026-06-27T02:18:47+00:00 | phase-01-project-skeleton-resources |  |
+| phaseCapabilityChecklist | yes | 2026-06-27T03:54:07+00:00 | phase-01-project-skeleton-resources |  |
 | translationQualitySummary | no |  |  | missing |
-| phaseCoverageGate | no |  |  | missing |
-| targetStructure | yes | 2026-06-27T02:15:11+00:00 |  |  |
+| phaseCoverageGate | yes | 2026-06-27T03:22:15+00:00 | phase-01-project-skeleton-resources |  |
+| targetStructure | yes | 2026-06-27T03:54:06+00:00 |  |  |
 | sourceCoverageMatrix | yes | 2026-06-27T01:35:38+00:00 |  |  |
 | platformCapabilityCheck | yes | 2026-06-27T01:35:38+00:00 |  |  |
 
@@ -48,7 +48,7 @@ Start here, then open only the referenced source paths, target endpoints, capabi
 | --- | --- | --- | --- | --- | --- |
 | phase-01-project-skeleton-resources-source-behavior-kotlin-source | critical | source-behavior | Source behavior: kotlin-source | build.gradle.kts, settings.gradle.kts |  |
 | phase-01-project-skeleton-resources-source-behavior-other | critical | source-behavior | Source behavior: other | README.md, CONTRIBUTING.md |  |
-| phase-01-project-skeleton-resources-resource-migration-res-values | high | resource-migration | Resource migration: res/values | app/src/main/res/values/colors.xml, app/src/main/res/values/ic_launcher_background.xml, app/src/main/res/values/strings.xml |  |
+| phase-01-project-skeleton-resources-resource-migration-res-values | high | resource-migration | Resource migration: res/values | app/src/main/res/values/colors.xml, app/src/main/res/values/ic_launcher_background.xml, app/src/main/res/values/strings.xml | ohos_app_cangjie_entry/app/app_router.cj, ohos_app_cangjie_entry/common/foodike_resources.cj, base/element/string.json |
 | phase-01-project-skeleton-resources-source-behavior-config | high | source-behavior | Source behavior: config | gradle.properties |  |
 
 ## Plan Contract Alignment
@@ -93,6 +93,7 @@ Plan contract entries are upstream planning evidence. Use them to preserve phase
 - feature ids: `app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma`; `app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m`; `app-src-main-res-values-ic-launcher-background-xml-76f22ce278-002-android-android-values-file-should-be-ma`; `app-src-main-res-values-ic-launcher-background-xml-a73289ef8d-001-android-resource-configuration-must-be-m`; `app-src-main-res-values-strings-xml-3b47f3dbef-005-android-android-values-file-should-be-ma`; `app-src-main-res-values-strings-xml-b708bc8e6b-001-android-resource-configuration-must-be-m`; `app-src-main-res-values-strings-xml-36dc10345e-002-intent-uri-bundle-deeplink-or-cross-scre`; `app-src-main-res-values-strings-xml-6fbcdd736d-003-localized-strings-or-locale-specific-res`; `app-src-main-res-values-strings-xml-b2fc0b9ad5-004-runtime-permission-request-permission-re`; `app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma`; `app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m`; `app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re`
 - resource inputs: `{'sourcePath': 'app/src/main/res/values/colors.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-colors-xml-8d1c4a6521-002-android-android-values-file-should-be-ma', 'migrationMode': 'user-visible-resource', 'semantics': 'Android `android-values` file should be mapped to target resources, components, or documented deferred scope.'}`; `{'sourcePath': 'app/src/main/res/values/colors.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-colors-xml-8e1c28dae7-001-android-resource-configuration-must-be-m', 'migrationMode': 'user-visible-resource', 'semantics': 'Android resource/configuration must be mapped or explicitly deferred.'}`; `{'sourcePath': 'app/src/main/res/values/ic_launcher_background.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-ic-launcher-background-xml-76f22ce278-002-android-android-values-file-should-be-ma', 'migrationMode': 'user-visible-resource', 'semantics': 'Android `android-values` file should be mapped to target resources, components, or documented deferred scope.'}`; `{'sourcePath': 'app/src/main/res/values/ic_launcher_background.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-ic-launcher-background-xml-a73289ef8d-001-android-resource-configuration-must-be-m', 'migrationMode': 'user-visible-resource', 'semantics': 'Android resource/configuration must be mapped or explicitly deferred.'}`; `{'sourcePath': 'app/src/main/res/values/strings.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-strings-xml-3b47f3dbef-005-android-android-values-file-should-be-ma', 'migrationMode': 'user-visible-resource', 'semantics': 'Android `android-values` file should be mapped to target resources, components, or documented deferred scope.'}`; `{'sourcePath': 'app/src/main/res/values/strings.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-strings-xml-b708bc8e6b-001-android-resource-configuration-must-be-m', 'migrationMode': 'user-visible-resource', 'semantics': 'Android resource/configuration must be mapped or explicitly deferred.'}`; `{'sourcePath': 'app/src/main/res/values/strings.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-strings-xml-36dc10345e-002-intent-uri-bundle-deeplink-or-cross-scre', 'migrationMode': 'user-visible-resource', 'semantics': 'Intent, URI, bundle, deeplink, or cross-screen parameter flow.'}`; `{'sourcePath': 'app/src/main/res/values/strings.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-strings-xml-6fbcdd736d-003-localized-strings-or-locale-specific-res', 'migrationMode': 'user-visible-resource', 'semantics': 'Localized strings or locale-specific resource behavior.'}`; `{'sourcePath': 'app/src/main/res/values/strings.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-strings-xml-b2fc0b9ad5-004-runtime-permission-request-permission-re', 'migrationMode': 'user-visible-resource', 'semantics': 'Runtime permission request, permission result handling, or protected API access.'}`; `{'sourcePath': 'app/src/main/res/values/themes.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-themes-xml-b98f18ad24-003-android-android-values-file-should-be-ma', 'migrationMode': 'user-visible-resource', 'semantics': 'Android `android-values` file should be mapped to target resources, components, or documented deferred scope.'}`; `{'sourcePath': 'app/src/main/res/values/themes.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-themes-xml-1c5ca98798-001-android-resource-configuration-must-be-m', 'migrationMode': 'user-visible-resource', 'semantics': 'Android resource/configuration must be mapped or explicitly deferred.'}`; `{'sourcePath': 'app/src/main/res/values/themes.xml', 'category': 'android-values', 'featureId': 'app-src-main-res-values-themes-xml-e49ca5e971-002-runtime-permission-request-permission-re', 'migrationMode': 'user-visible-resource', 'semantics': 'Runtime permission request, permission result handling, or protected API access.'}`
 - platform capabilities: `localization-resources`
+- expected target domains: `ohos_app_cangjie_entry/app/app_router.cj`; `ohos_app_cangjie_entry/common/foodike_resources.cj`; `base/element/string.json`; `base/element/color.json`; `AppScope/app.json5`; `entry/src/main/module.json5`
 - required behaviors: `Android `android-values` file should be mapped to target resources, components, or documented deferred scope.`; `Android resource/configuration must be mapped or explicitly deferred.`; `Intent, URI, bundle, deeplink, or cross-screen parameter flow.`; `Localized strings or locale-specific resource behavior.`; `Runtime permission request, permission result handling, or protected API access.`
 - risk hints: `current-phase source features are still open`; `critical/high behavior cannot close on build pass alone`; `resource semantics must be mapped to target resources, UI/components, or a specific replacement`; `missing target endpoint evidence`; `missing focused test or verification evidence`; `related platform capability must be resolved with Cangjie-callable API, replacement, fallback blocker, or deferred evidence`
 - acceptance evidence: `Closed critical/high features must record sourceBehavior, targetBehavior, parityLevel, targetEndpoints, and verificationEvidence.`; `Build pass alone is not per-feature verification.`; `Resource inputs must be implemented, mapped to equivalent target behavior, or closed with a specific deferred/replaced reason.`; `Related platform capabilities must cite targetCapabilitySearch and a Cangjie-callable API, verified replacement, fallback blocker, or deferred blocker.`
@@ -120,9 +121,11 @@ Other phase groups are listed only as an index. Do not expand them unless this g
 | phase-01-project-skeleton-resources-source-behavior-ui-theme | medium | source-behavior | Source behavior: ui/theme | 4 | 0 | 4 |
 | phase-01-project-skeleton-resources-platform-capability-localization-resources | high | platform-capability | Platform capability: Localized resources and formatted strings | 0 | 1 | 42 |
 | phase-01-project-skeleton-resources-verification-phase-tests-and-evidence | critical | verification | Verification and evidence policy | 49 | 1 | 19 |
+| phase-01-project-skeleton-resources-architecture-risk-broad-target-endpoints | critical | architecture-risk | Architecture risk: broad target endpoints | 16 | 0 | 5 |
 
 ## Shared Surface Digest
 
+- expected target domains: `ohos_app_cangjie_entry/app/app_router.cj`; `ohos_app_cangjie_entry/common/foodike_resources.cj`; `base/element/string.json`; `base/element/color.json`; `AppScope/app.json5`; `entry/src/main/module.json5`
 - Prefer extending existing route/navigation/state surfaces over creating parallel shells.
 - If a shared surface must change, keep the change minimal and update only evidence rows tied to this group.
 - UI groups should preserve route exclusivity, back behavior, visible action feedback, and page-specific builders.
@@ -150,7 +153,7 @@ _Repair child groups are not expanded in group-scoped briefs; use this group con
 
 ## Debt Summary
 
-- `blockingFunctionalDebt`: 0
+- `blockingFunctionalDebt`: 1
 - `repairableQualityDebt`: 0
 - `structureOnlyDebt`: 0
 - `carryForwardDebt`: 4

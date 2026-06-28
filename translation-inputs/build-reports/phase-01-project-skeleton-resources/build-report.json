@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-27T03:22:12+00:00",
+  "generated_at": "2026-06-27T05:44:36+00:00",
   "phase": "phase-01-project-skeleton-resources",
   "workspace_root": "D:\\workspace\\Foodike",
   "target_project": "D:\\workspace\\Foodike\\Foodike-Harmony",
@@ -9,17 +9,12 @@
   "json_path": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-01-project-skeleton-resources\\build-report.json",
   "log_path": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\phase-01-project-skeleton-resources\\build.log",
   "build_script": "D:\\workspace\\Foodike\\.agents\\skills\\harmonyos-build\\build.py",
-  "command": [
-    "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
-    "D:\\workspace\\Foodike\\.agents\\skills\\harmonyos-build\\build.py",
-    "--project-root",
-    "D:\\workspace\\Foodike\\Foodike-Harmony"
-  ],
-  "skipped": false,
+  "command": [],
+  "skipped": true,
   "result": "PASS",
   "returncode": 0,
   "timed_out": false,
-  "duration_seconds": 6.14,
+  "duration_seconds": 0.0,
   "failed_stage": null,
   "stages": [
     {
@@ -82,28 +77,26 @@
       "message": "> hvigor WARN: Will skip sign 'hos_hap'. No signingConfigs profile is configured in current project."
     }
   ],
-  "resolved_blockers": [
-    "> hvigor ERROR: Failed :entry:default@CompileCangjie..."
-  ],
+  "resolved_blockers": [],
   "hap_artifacts": [
     {
       "path": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap",
-      "size_bytes": 11729827,
-      "modified_epoch": 1782530503.0188265
+      "size_bytes": 11729843,
+      "modified_epoch": 1782535174.7081015
     }
   ],
   "handoff_prompt": "",
-  "reused_previous_pass": false,
-  "skip_reason": "",
+  "reused_previous_pass": true,
+  "skip_reason": "unchanged target/build-helper inputs",
   "input_fingerprint": {
-    "sha256": "812ead6d634e804df648abb71d1b4a225a59ff144e18a5c3d1b0637128737f85",
+    "sha256": "64794d8ec819cca14a5dc54818176a639bb87a2bbdc5de4fa851b59b7f1cb016",
     "parts": {
       "version": "build-hap-report-v2",
       "targetProject": {
         "path": "D:\\workspace\\Foodike\\Foodike-Harmony",
         "exists": true,
-        "fileCount": 79,
-        "sha256": "99df375df69b7968ebedff8a2f169859f54e0008712f473f7dc642c3e08da8fc",
+        "fileCount": 84,
+        "sha256": "03a85efe82802ae30998ab23d7d56f0fa94fb8471e8f940b45f4f7c2f1713178",
         "files": [
           {
             "path": ".mapcir.json",
@@ -172,8 +165,8 @@
           },
           {
             "path": "entry/src/main/cangjie/app_ability.cj",
-            "sizeBytes": 1750,
-            "sha256": "fa715604a030bc2dba9c1adeff18125c96cfab4f55d65c886b9be22787c4f3f3"
+            "sizeBytes": 1559,
+            "sha256": "6a60a376def95d6cf97a7debfb03fc9cf93931be7e975af7ea723a3adcf845f1"
           },
           {
             "path": "entry/src/main/cangjie/module_entry_entry.cj",
@@ -182,18 +175,33 @@
           },
           {
             "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj",
-            "sizeBytes": 2767,
-            "sha256": "ebe5209b6c8dc8a7c165863b33f5ce37b0849dc7704a558caa47168eed896087"
+            "sizeBytes": 230,
+            "sha256": "29516a0f955d4fe2f986d1b4e44197339e4da067cf0a72773e612ff431f4aac2"
           },
           {
             "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
-            "sizeBytes": 14544,
-            "sha256": "e98acd968bb10382fa36299f01f25896b34f94a7f7e482eed252bc80813db0cc"
+            "sizeBytes": 14333,
+            "sha256": "8dd0750e5396303569d7e743220167103607fd2eca6cd1a2f9a39641a566471a"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj",
+            "sizeBytes": 2693,
+            "sha256": "7f7b0eb8a6e197a741e6c44d0a0cc755dd53699d76f0761ceeb68c527b9cc467"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/shell_route_state.cj",
+            "sizeBytes": 1360,
+            "sha256": "8624e683ddf07c069edbbfc7393c887ab480e4501c0ad3ea23be5f546e2c9d57"
           },
           {
             "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj",
             "sizeBytes": 4255,
             "sha256": "33835633d854b70ed953f319c51daa1cbe0f8b3967453000b45074cbfc846ad5"
+          },
+          {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_theme.cj",
+            "sizeBytes": 497,
+            "sha256": "a457892d4e8c6e1bf20fd2e8a1ef68fcb5ea9e05747c7523ff91e6666b88863a"
           },
           {
             "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/restaurant_card.cj",
@@ -306,6 +314,11 @@
             "sha256": "a21d79f635c7043eef6fbbbd053f8603d572dfe9a753c435e5533dec37525149"
           },
           {
+            "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_launch_service.cj",
+            "sizeBytes": 660,
+            "sha256": "0792f5cb5374a834487024069ff736aae1aa274eee41a1a5661c87fff570663e"
+          },
+          {
             "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj",
             "sizeBytes": 511,
             "sha256": "16857e932692d86c8b957c35924260244a8eb7889e4da66d97e70e14c36342c3"
@@ -332,8 +345,8 @@
           },
           {
             "path": "entry/src/main/resources/base/element/string.json",
-            "sizeBytes": 4432,
-            "sha256": "2a00849e929b3797f4c08035c8669db19ce8ec3d5435160b10ecf15589e469e1"
+            "sizeBytes": 4429,
+            "sha256": "ff81077bbe5af47d80d23726da66cdf696fbbba44345a9977510288610fd1d9d"
           },
           {
             "path": "entry/src/main/resources/base/media/applepie.jpg",
@@ -466,6 +479,11 @@
             "sha256": "b12f5338a40be9b34400f9689f3faae1c74c4509cf079ea8de633aa55a6fa3c5"
           },
           {
+            "path": "entry/src/test/cangjie/phase01_resource_theme_contract_test.cj",
+            "sizeBytes": 2504,
+            "sha256": "d5b4d30a926c7b005f8bb8461e30de326605bedeb39d750a9b8bd25adbd90c3a"
+          },
+          {
             "path": "entry/src/test/cangjie/phase02_startup_navigation_test.cj",
             "sizeBytes": 3618,
             "sha256": "3bf4c40bd59186d1accbc190a4b95b6cde1cfa560a5df726576c933398135e8a"
@@ -535,8 +553,8 @@
         {
           "path": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap",
           "exists": true,
-          "sizeBytes": 11729827,
-          "sha256": "49dfe60c3060b71c81071bec97e8d33a4f0d51a8b2f5da9c6ace55ee9b05834b"
+          "sizeBytes": 11729843,
+          "sha256": "486b879657eac109953dbe40c9c0c8d922097965c4ccb6eed6998f91a9033ee1"
         }
       ]
     }

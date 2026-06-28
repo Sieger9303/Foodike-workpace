@@ -1,0 +1,722 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-28T10:34:02+00:00",
+  "phase": "phase-05-detail-cart",
+  "purpose": "Phase-scoped platform capability pre-resolution checklist. This is generated from phase-task-checklist.json and platform-capability-check.json before phase implementation. All current-phase critical/high platform capabilities must be resolved before target code edits begin.",
+  "allowedResolutionStatuses": [
+    "resolved-deferred",
+    "resolved-not-applicable",
+    "resolved-platform-replacement",
+    "resolved-real-api"
+  ],
+  "summary": {
+    "phasePlatformCapabilities": 2,
+    "unresolvedPlatformCapabilities": 0,
+    "compileProbeRecommendedCapabilities": 0,
+    "discoveryOnlyCapabilities": 0,
+    "sdkProbeDeclarationCandidateCapabilities": 2,
+    "byResolutionStatus": {
+      "resolved-not-applicable": 2
+    }
+  },
+  "instructions": [
+    "If any entry is unresolved, run a capability resolution session before phase implementation.",
+    "Capability resolution may update only platform-capability-check.json/md.",
+    "A real HarmonyOS/Cangjie API, Kit, example, or package must be used when available; do not close with local mock, in-memory data, sample data, or generic fallback.",
+    "Use resolved-deferred only after checking CangjieSkills/HarmonyOS/Cangjie docs, HarmonyOS-Examples, SDK declarations, and package lookup when relevant.",
+    "Use capability-sdk-probe-cache.json as preparation evidence for SDK declaration/library candidates; it is not authority by itself.",
+    "Treat ArkTS/native/overview declarations as discovery-only until a Cangjie-callable API, wrapper, FFI, bridge, or compile probe is recorded.",
+    "When compileProbeRecommended is true, run a bounded target-context compile probe or record the concrete SDK/tooling blocker before phase implementation."
+  ],
+  "entries": [
+    {
+      "capabilityId": "file-access-and-saf",
+      "capabilityName": "File access, document permissions, and share URIs",
+      "importance": "critical",
+      "plannedPhase": "phase-05-detail-cart",
+      "platformStatus": "not-applicable",
+      "resolutionStatus": "resolved-not-applicable",
+      "resolutionReason": "explicitly marked not-applicable with notes",
+      "sourcePaths": [
+        "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+        "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
+        "app/build.gradle.kts",
+        "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetailViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/DeliverySection.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/HomeViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/AdCard.kt",
+        "README.md"
+      ],
+      "requiredTargetCapabilitySearch": [
+        "HarmonyOS Cangjie file picker document access",
+        "HarmonyOS Cangjie file share URI permissions",
+        "HarmonyOS Examples file manager Cangjie"
+      ],
+      "targetCapabilitySearch": [
+        "Source inspection of phase-05 detail/cart files shows no file picker, document import/export, URI grant, or share intent implementation: RestaurantDetail.kt only renders a share icon with an empty onClick block; Cart.kt, CartItemCard.kt, MenuItemCard.kt, and RestaurantDetailCard.kt render packaged resources and local state only.",
+        "Current Cangjie SDK still exposes a real share/URI path through ohos.app.ability.want Want(uri, action, entities, dataType, parameters, fds) plus URI permission constants under ohos.app.ability.want_constant.Flags, so later source-backed cross-app share/file behavior should use Want-based HarmonyOS sharing rather than a local fallback.",
+        "Because the current phase source behavior has no actual file/document/share flow to preserve, treat this capability match as a phase-05 static-analysis false positive rather than implementation scope."
+      ],
+      "targetApiOrLibrary": "HarmonyOS Cangjie AbilityKit Want/URI APIs (`ohos.app.ability.want.Want`, `ohos.app.ability.want_constant.Flags`) exist for real cross-app URI/file sharing, but phase-05 detail/cart source behavior does not invoke them.",
+      "targetStrategy": "Treat the phase-05 file/document/share capability as not applicable for detail/cart. Keep the phase focused on detail/cart state and packaged-resource rendering; if a later source-backed share flow is implemented, route it through HarmonyOS Want-based sharing with explicit URI permission flags instead of introducing Android SAF assumptions.",
+      "sdkDeclarationEvidence": [
+        "Current Cangjie SDK declares Want constructors with uri/action/entities/dataType/parameters fields in C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\ohos.app.ability.want.cjo, including `Want(... uri=6String!3uri=6String!6action=5Array<6String>!8entities=6String!8dataType=7HashMap<6String13WantValueType>!10parameters=7HashMap<6Stringi>!3fds ...)` and related `Want3uri` symbols.",
+        "Current Cangjie SDK also exposes URI grant constants for real share/file flows in C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\ohos.app.ability.want_constant.cjo, including `FLAG_AUTH_READ_URI_PERMISSION`, `FLAG_AUTH_WRITE_URI_PERMISSION`, and `FLAG_AUTH_PERSISTABLE_URI_PERMISSION`."
+      ],
+      "cangjieCallableEvidence": [
+        "Current Cangjie SDK exposes Cangjie-callable AbilityKit sharing/URI surfaces through `ohos.app.ability.want.Want` and `ohos.app.ability.want_constant.Flags`, which are the target-platform replacement path if a later source-backed share flow is needed."
+      ],
+      "discoveryOnlyEvidence": [],
+      "compileProbeEvidence": [],
+      "capabilityEvidenceProfile": {
+        "effectiveStatus": "not-applicable",
+        "targetSearchEvidenceFound": true,
+        "sdkDeclarationEvidenceFound": true,
+        "cangjieCallableEvidenceFound": true,
+        "discoveryOnlyEvidenceFound": false,
+        "compileProbeEvidenceFound": false,
+        "compileProbeRecommended": false,
+        "compileProbeState": "not-needed",
+        "preResolutionDecision": "resolved-not-applicable",
+        "derivedPreResolutionDecision": "not-applicable",
+        "localFallbackDetected": false,
+        "unavailableBlockerFound": false,
+        "evidenceKinds": [
+          "target-search",
+          "sdk-declaration",
+          "cangjie-callable"
+        ]
+      },
+      "sdkProbeCache": {
+        "capabilityId": "file-access-and-saf",
+        "capabilityName": "File access, document permissions, and share URIs",
+        "importance": "critical",
+        "plannedPhase": "phase-05-detail-cart",
+        "terms": [
+          "file",
+          "access",
+          "and",
+          "saf",
+          "document",
+          "permissions",
+          "share",
+          "uris",
+          "replace",
+          "fileprovider",
+          "with",
+          "picker",
+          "sandbox",
+          "sharing",
+          "apis",
+          "behind",
+          "fileaccessservice",
+          "boundary",
+          "detected",
+          "source",
+          "artifact",
+          "terms",
+          "file_ops",
+          "intent_uri"
+        ],
+        "pureCangjieDeclarationCandidates": [
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.AbilityKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.AbilityKit.cj.d",
+            "matchedTerms": [
+              "file",
+              "access",
+              "and",
+              "permissions",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkData.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkData.cj.d",
+            "matchedTerms": [
+              "file",
+              "and",
+              "permissions",
+              "share",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkGraphics2D.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkGraphics2D.cj.d",
+            "matchedTerms": [
+              "file",
+              "and",
+              "permissions",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkUI.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkUI.cj.d",
+            "matchedTerms": [
+              "file",
+              "and",
+              "permissions",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkWeb.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkWeb.cj.d",
+            "matchedTerms": [
+              "file",
+              "and",
+              "permissions",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.BasicServicesKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.BasicServicesKit.cj.d",
+            "matchedTerms": [
+              "file",
+              "and",
+              "permissions",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CameraKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CameraKit.cj.d",
+            "matchedTerms": [
+              "file",
+              "and",
+              "permissions",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CangjieKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CangjieKit.cj.d",
+            "matchedTerms": [
+              "file",
+              "and",
+              "permissions",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ConnectivityKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ConnectivityKit.cj.d",
+            "matchedTerms": [
+              "file",
+              "and",
+              "permissions",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CoreFileKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CoreFileKit.cj.d",
+            "matchedTerms": [
+              "file",
+              "and",
+              "permissions",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CryptoArchitectureKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CryptoArchitectureKit.cj.d",
+            "matchedTerms": [
+              "file",
+              "and",
+              "permissions",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ImageKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ImageKit.cj.d",
+            "matchedTerms": [
+              "file",
+              "and",
+              "permissions",
+              "with"
+            ]
+          }
+        ],
+        "cangjieLibraryCandidates": [
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\kit.CoreFileKit.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/kit.CoreFileKit.cjo",
+            "matchedTerms": [
+              "file"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\libkit.CoreFileKit.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/libkit.CoreFileKit.so",
+            "matchedTerms": [
+              "file"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.ability_access_ctrl.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.ability_access_ctrl.so",
+            "matchedTerms": [
+              "access"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.app.ability.completion_handler.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.app.ability.completion_handler.so",
+            "matchedTerms": [
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.date_picker.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.date_picker.so",
+            "matchedTerms": [
+              "picker"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.text_picker.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.text_picker.so",
+            "matchedTerms": [
+              "picker"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.bluetooth.base_profile.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.bluetooth.base_profile.so",
+            "matchedTerms": [
+              "file"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.data.data_share_predicates.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.data.data_share_predicates.so",
+            "matchedTerms": [
+              "share"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.file.fileuri.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.file.fileuri.so",
+            "matchedTerms": [
+              "file"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.file.fs.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.file.fs.so",
+            "matchedTerms": [
+              "file"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.file.photo_access_helper.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.file.photo_access_helper.so",
+            "matchedTerms": [
+              "file",
+              "access"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.file.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.file.so",
+            "matchedTerms": [
+              "file"
+            ]
+          }
+        ],
+        "candidateCounts": {
+          "pureCangjieDeclarations": 12,
+          "cangjieLibraries": 12
+        },
+        "probeInterpretation": "declaration-candidate"
+      },
+      "preResolutionDecision": "resolved-not-applicable",
+      "compileProbeRecommended": false,
+      "compileProbeState": "not-needed",
+      "sdkDeclarationEvidenceFound": true,
+      "cangjieCallableEvidenceFound": true,
+      "discoveryOnlyEvidenceFound": false,
+      "implementationGroupIds": [
+        "phase-05-detail-cart-source-behavior-presentation-cart",
+        "phase-05-detail-cart-source-behavior-presentation-details",
+        "phase-05-detail-cart-source-behavior-domain-model",
+        "phase-05-detail-cart-platform-capability-file-access-and-saf",
+        "phase-05-detail-cart-verification-phase-tests-and-evidence"
+      ],
+      "affectedPhases": [
+        "phase-05-detail-cart"
+      ],
+      "targetEndpoints": [],
+      "tests": [
+        "phase-05 source grep found no ACTION_SEND, FileProvider, ContentResolver, MediaStore, file picker, or SAF calls in app/src/main/java",
+        "manual source inspection confirms RestaurantDetail.kt share IconButton has an empty onClick block and cart/detail components use only bundled resources and local UI state"
+      ],
+      "blocker": "",
+      "targetFallback": "",
+      "futureCompletionPath": "",
+      "notes": "Phase-05 detail/cart source behavior does not include any implemented file access, document picker, or URI sharing workflow. The share affordance is present only as an empty button handler, so closing this capability as not-applicable preserves actual source behavior instead of inventing SAF scope."
+    },
+    {
+      "capabilityId": "image-viewer-gestures",
+      "capabilityName": "Image viewer gestures and metadata",
+      "importance": "critical",
+      "plannedPhase": "phase-05-detail-cart",
+      "platformStatus": "not-applicable",
+      "resolutionStatus": "resolved-not-applicable",
+      "resolutionReason": "explicitly marked not-applicable with notes",
+      "sourcePaths": [
+        "app/src/main/java/com/example/foodike/data/data_source/FakeData.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt",
+        "app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt",
+        "app/src/main/java/com/example/foodike/presentation/util/Navigation.kt",
+        "app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt",
+        "app/src/main/java/com/example/foodike/presentation/details/components/RestaurantDetailCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/Cart.kt",
+        "app/src/main/java/com/example/foodike/presentation/cart/components/DeliverySection.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/AdCard.kt",
+        "README.md",
+        "app/src/main/java/com/example/foodike/presentation/home/components/TopSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt",
+        "app/src/main/java/com/example/foodike/presentation/home/components/ThankYouSection.kt",
+        "app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt"
+      ],
+      "requiredTargetCapabilitySearch": [
+        "HarmonyOS Cangjie image component gestures zoom pan",
+        "HarmonyOS ArkUI pinch gesture Cangjie image",
+        "HarmonyOS image EXIF metadata Cangjie"
+      ],
+      "targetCapabilitySearch": [
+        "Source inspection of phase-05 detail/cart files shows static image rendering only: RestaurantDetailCard.kt, MenuItemCard.kt, CartItemCard.kt, and Cart.kt use `painterResource`/drawable assets and local counters; no zoom state, gesture detectors, bitmap decode pipeline, metadata panel, or full-screen image viewer route exists.",
+        "HarmonyOS Cangjie docs and SDK provide direct image display and image-source APIs, including ArkUI Image and ImageKit createImageSource(String), but the current source phase does not require zoom, EXIF, or metadata behavior to preserve.",
+        "Because the source behavior is packaged-image display without viewer interactions, treat this capability as a phase-05 static-analysis false positive rather than adding a gesture viewer feature not present in the app."
+      ],
+      "targetApiOrLibrary": "HarmonyOS Cangjie ArkUI `Image` and ImageKit `ohos.multimedia.image.createImageSource(String)` exist for real image display/processing, but phase-05 detail/cart source behavior only needs static packaged-image rendering.",
+      "targetStrategy": "Resolve the capability as not applicable for phase-05. Implement the detail/cart visuals with normal HarmonyOS Image rendering from packaged media; do not add zoom, reset, metadata, or EXIF UI unless a later source-backed requirement proves a real image viewer flow.",
+      "sdkDeclarationEvidence": [
+        "HarmonyOS Cangjie docs index the direct ArkUI image component in harmonyos-6.1-8k/API/arkui-cj/cj-image-video-image/Image/.overview.md, confirming a callable Cangjie image-rendering surface for packaged or remote images.",
+        "HarmonyOS Cangjie docs also include ImageKit `createImageSource(String)` for URI/path-backed image decoding in harmonyos-6.1-8k/API/ImageKit/cj-apis-image/ohosmultimediaimage图片处理/func_createImageS_2more_375f064b.md, showing the current platform has a real image-source API if a later source-backed viewer feature appears."
+      ],
+      "cangjieCallableEvidence": [
+        "ArkUI Cangjie `Image` is the direct callable target API for the actual phase-05 behavior of rendering packaged images.",
+        "ImageKit `createImageSource(String)` is a callable Cangjie image-processing API available for future source-backed metadata/decoder work, but it is not required by this phase source behavior."
+      ],
+      "discoveryOnlyEvidence": [],
+      "compileProbeEvidence": [],
+      "capabilityEvidenceProfile": {
+        "effectiveStatus": "not-applicable",
+        "targetSearchEvidenceFound": true,
+        "sdkDeclarationEvidenceFound": true,
+        "cangjieCallableEvidenceFound": true,
+        "discoveryOnlyEvidenceFound": false,
+        "compileProbeEvidenceFound": false,
+        "compileProbeRecommended": false,
+        "compileProbeState": "not-needed",
+        "preResolutionDecision": "resolved-not-applicable",
+        "derivedPreResolutionDecision": "not-applicable",
+        "localFallbackDetected": false,
+        "unavailableBlockerFound": false,
+        "evidenceKinds": [
+          "target-search",
+          "sdk-declaration",
+          "cangjie-callable"
+        ]
+      },
+      "sdkProbeCache": {
+        "capabilityId": "image-viewer-gestures",
+        "capabilityName": "Image viewer gestures and metadata",
+        "importance": "critical",
+        "plannedPhase": "phase-05-detail-cart",
+        "terms": [
+          "image",
+          "viewer",
+          "gestures",
+          "and",
+          "metadata",
+          "not",
+          "port",
+          "vendored",
+          "photoview",
+          "line",
+          "implement",
+          "zoomableimage",
+          "mediaviewer",
+          "contract",
+          "with",
+          "gesture",
+          "fallback",
+          "controls",
+          "detected",
+          "source",
+          "artifact",
+          "terms",
+          "image_viewer",
+          "zoom"
+        ],
+        "pureCangjieDeclarationCandidates": [
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.AbilityKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.AbilityKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "not",
+              "port",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkData.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkData.cj.d",
+            "matchedTerms": [
+              "and",
+              "not",
+              "port",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkGraphics2D.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkGraphics2D.cj.d",
+            "matchedTerms": [
+              "and",
+              "not",
+              "port",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkUI.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkUI.cj.d",
+            "matchedTerms": [
+              "and",
+              "not",
+              "port",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ArkWeb.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ArkWeb.cj.d",
+            "matchedTerms": [
+              "and",
+              "not",
+              "port",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.BasicServicesKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.BasicServicesKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "not",
+              "port",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CameraKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CameraKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "not",
+              "port",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CangjieKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CangjieKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "not",
+              "port",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ConnectivityKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ConnectivityKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "not",
+              "port",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CoreFileKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CoreFileKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "not",
+              "port",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.CryptoArchitectureKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.CryptoArchitectureKit.cj.d",
+            "matchedTerms": [
+              "and",
+              "not",
+              "port",
+              "with"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\modules\\linux_ohos_aarch64_cjnative\\kit\\kit.ImageKit.cj.d",
+            "relativePath": "api/modules/linux_ohos_aarch64_cjnative/kit/kit.ImageKit.cj.d",
+            "matchedTerms": [
+              "image",
+              "and",
+              "not",
+              "port",
+              "with"
+            ]
+          }
+        ],
+        "cangjieLibraryCandidates": [
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\kit.ImageKit.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/kit.ImageKit.cjo",
+            "matchedTerms": [
+              "image"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit\\libkit.ImageKit.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/kit/libkit.ImageKit.so",
+            "matchedTerms": [
+              "image"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.app.ability.completion_handler.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.app.ability.completion_handler.so",
+            "matchedTerms": [
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.image.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.image.so",
+            "matchedTerms": [
+              "image"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.image_span.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.image_span.so",
+            "matchedTerms": [
+              "image"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.arkui.component.line.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.arkui.component.line.so",
+            "matchedTerms": [
+              "line"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.metadata.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.metadata.so",
+            "matchedTerms": [
+              "metadata"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.multimedia.image.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.multimedia.image.so",
+            "matchedTerms": [
+              "image"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.resource.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.resource.so",
+            "matchedTerms": [
+              "source"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\libohos.resource_manager.so",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/libohos.resource_manager.so",
+            "matchedTerms": [
+              "source"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\ohos.app.ability.completion_handler.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/ohos.app.ability.completion_handler.cjo",
+            "matchedTerms": [
+              "and"
+            ]
+          },
+          {
+            "path": "C:\\Users\\Sieger\\.cangjie-sdk\\6.1\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos\\ohos.arkui.component.image.cjo",
+            "relativePath": "api/lib/linux_ohos_aarch64_cjnative/ohos/ohos.arkui.component.image.cjo",
+            "matchedTerms": [
+              "image"
+            ]
+          }
+        ],
+        "candidateCounts": {
+          "pureCangjieDeclarations": 12,
+          "cangjieLibraries": 12
+        },
+        "probeInterpretation": "declaration-candidate"
+      },
+      "preResolutionDecision": "resolved-not-applicable",
+      "compileProbeRecommended": false,
+      "compileProbeState": "not-needed",
+      "sdkDeclarationEvidenceFound": true,
+      "cangjieCallableEvidenceFound": true,
+      "discoveryOnlyEvidenceFound": false,
+      "implementationGroupIds": [
+        "phase-05-detail-cart-source-behavior-presentation-cart",
+        "phase-05-detail-cart-source-behavior-presentation-details",
+        "phase-05-detail-cart-platform-capability-image-viewer-gestures",
+        "phase-05-detail-cart-verification-phase-tests-and-evidence"
+      ],
+      "affectedPhases": [
+        "phase-05-detail-cart"
+      ],
+      "targetEndpoints": [],
+      "tests": [
+        "phase-05 source grep found no zoom, EXIF, bitmap decode, gesture detector, gallery preview, or image metadata flow in app/src/main/java",
+        "manual source inspection confirms detail/cart image surfaces are static resource images with no viewer state machine or gesture callbacks"
+      ],
+      "blocker": "",
+      "targetFallback": "",
+      "futureCompletionPath": "",
+      "notes": "The current phase only shows packaged images inside detail and cart cards. There is no source-backed zoom, pan, reset, metadata, or EXIF flow to preserve, so adding a gesture viewer here would over-implement beyond the source app."
+    }
+  ],
+  "unresolved": [],
+  "compileProbeRecommended": [],
+  "discoveryOnly": []
+}

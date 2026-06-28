@@ -1,14 +1,14 @@
 package ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.login
 
 import kit.AbilityKit.UIAbilityContext
-import ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.LoginPreferencesService
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.loginPreferencesService
 
 public let loginStore = LoginStore()
 
 public class LoginStore {
     private let validEmail: String = "abcxyz@gmail.com"
     private let validPassword: String = "abcdef"
-    private let preferencesService: LoginPreferencesService = LoginPreferencesService()
+    private let preferencesService = loginPreferencesService
 
     public var emailHint: String = "Enter email or phone number"
     public var passwordHint: String = "Password"

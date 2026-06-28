@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-28T12:12:01+00:00",
+  "phase": "final-coverage",
+  "workspaceRoot": "D:\\workspace\\Foodike",
+  "targetProject": "D:\\workspace\\Foodike\\Foodike-Harmony",
+  "outputDir": "D:\\workspace\\Foodike\\translation-inputs",
+  "reportDir": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\final-coverage",
+  "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\final-coverage\\runtime-ui-report.md",
+  "jsonPath": "D:\\workspace\\Foodike\\translation-inputs\\runtime-ui-reports\\final-coverage\\runtime-ui-report.json",
+  "platform": {
+    "osName": "nt",
+    "sysPlatform": "win32"
+  },
+  "result": "BLOCKED",
+  "recommendedOwner": "workflow-or-user-environment",
+  "hap": {
+    "path": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap",
+    "exists": true,
+    "sha256": "17ee8eb0b895418411aed84f3b603f564eb5873e047c239152dfa02e2c1a4d4b"
+  },
+  "runtime": {
+    "hdc": "",
+    "requestedHdc": "hdc",
+    "requestedDevice": "",
+    "selectedDevice": "",
+    "targets": []
+  },
+  "application": {
+    "bundleName": "",
+    "abilityName": ""
+  },
+  "checks": [
+    {
+      "name": "hapHash",
+      "result": "PASS",
+      "message": "HAP exists and was fingerprinted.",
+      "details": {
+        "path": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap",
+        "sha256": "17ee8eb0b895418411aed84f3b603f564eb5873e047c239152dfa02e2c1a4d4b"
+      }
+    },
+    {
+      "name": "hdc",
+      "result": "BLOCKED",
+      "message": "hdc executable was not found.",
+      "details": {
+        "requested": "hdc"
+      }
+    },
+    {
+      "name": "startup",
+      "result": "SKIPPED",
+      "message": "Runtime launch was not requested. Pass --launch to run a startup smoke."
+    },
+    {
+      "name": "layoutDump",
+      "result": "NOT_APPLICABLE",
+      "message": "No layout dump command was provided."
+    }
+  ],
+  "firstBlocker": {
+    "kind": "hdc",
+    "message": "hdc executable was not found.",
+    "details": {
+      "requested": "hdc"
+    }
+  },
+  "commands": {},
+  "commandResults": {},
+  "artifacts": [],
+  "reusedPreviousPass": false,
+  "skipReason": "",
+  "inputFingerprint": {
+    "sha256": "4882ed6aeeebc65695fa190e10bbd3144c78e9e11d67115e4aa9ab3fcb7201a3",
+    "parts": {
+      "version": "runtime-ui-smoke-v2",
+      "workspaceRoot": "D:\\workspace\\Foodike",
+      "targetProject": "D:\\workspace\\Foodike\\Foodike-Harmony",
+      "hap": {
+        "path": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap",
+        "sha256": "17ee8eb0b895418411aed84f3b603f564eb5873e047c239152dfa02e2c1a4d4b"
+      },
+      "hdc": {
+        "requested": "hdc",
+        "resolved": "",
+        "file": {
+          "path": "hdc",
+          "exists": false
+        }
+      },
+      "device": "",
+      "application": {
+        "bundleName": "",
+        "abilityName": ""
+      },
+      "runtime": {
+        "launch": false,
+        "launchCommand": "",
+        "dumpLayoutCommand": "",
+        "timeout": 60,
+        "maxDeviceProbeSeconds": 3,
+        "maxOutputBytes": 120000
+      },
+      "platform": {
+        "osName": "nt",
+        "sysPlatform": "win32"
+      }
+    }
+  }
+}

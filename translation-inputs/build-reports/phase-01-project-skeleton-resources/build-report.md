@@ -1,6 +1,6 @@
 # HarmonyOS Cangjie Build Gate Report
 
-- Generated: `2026-06-27T03:22:12+00:00`
+- Generated: `2026-06-27T05:44:36+00:00`
 - Phase: `phase-01-project-skeleton-resources`
 - Workspace: `D:\workspace\Foodike`
 - Target project: `D:\workspace\Foodike\Foodike-Harmony`
@@ -8,16 +8,16 @@
 - Failed stage: `none`
 - Return code: `0`
 - Timed out: `False`
-- Duration seconds: `6.14`
-- Skipped: `False`
-- Reused previous PASS: `False`
-- Skip reason: `none`
+- Duration seconds: `0.0`
+- Skipped: `True`
+- Reused previous PASS: `True`
+- Skip reason: `unchanged target/build-helper inputs`
 - Build log: `D:\workspace\Foodike\translation-inputs\build-reports\phase-01-project-skeleton-resources\build.log`
 
 ## Command
 
 ```bash
-C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe D:\workspace\Foodike\.agents\skills\harmonyos-build\build.py --project-root D:\workspace\Foodike\Foodike-Harmony
+(skipped)
 ```
 
 ## Stage Evidence
@@ -43,8 +43,8 @@ C:\Users\Sieger\AppData\Local\Programs\Python\Python312\python.exe D:\workspace\
 
 ## Resolved Blockers
 
-- > hvigor ERROR: Failed :entry:default@CompileCangjie...
+- No explicit prior blockers were supplied; this run completed the full build gate.
 
 ## HAP Artifacts
 
-- `D:\workspace\Foodike\Foodike-Harmony\entry\build\default\outputs\default\entry-default-unsigned.hap` (11729827 bytes)
+- `D:\workspace\Foodike\Foodike-Harmony\entry\build\default\outputs\default\entry-default-unsigned.hap` (11729843 bytes)

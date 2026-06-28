@@ -1,0 +1,486 @@
+{
+  "updates": [
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-maina-f373ac820e-001-intent-uri-bundle-deeplink-or-cross-scre",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed `MainActivity` only forwards the splash-resolved route into `SetupNavigation(startDestination = screen)`.",
+          "Manual target review confirmed `StartupLaunchService` resolves the launch route before `FoodikeBootstrap` uses `bootstrapStartRoute` as its initial route.",
+          "A bounded `cjpm test --target aarch64-linux-ohos` reproduction from `entry/src/test/cangjie` currently fails before phase-02 cases run because the test package does not provide HarmonyOS kit dependencies required by production imports such as `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource`, and the generated dependency scan also emits an invalid `-B` invocation.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "platform-replaced",
+          "parityKind": "platform-replaced",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_launch_service.cj::resolveLaunchRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/runtime/app_runtime.cj::bootstrapStartRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.currentRoute"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "`cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` currently fails before phase-02 cases run because the test package does not provide HarmonyOS kit dependencies required by production imports such as `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource`, and the generated dependency scan also emits an invalid `-B` invocation."
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md",
+                "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "The target replaces the Android activity start-destination handoff by resolving the launch route before the bootstrap page reads `bootstrapStartRoute`."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-maina-90afaa2416-002-navigation-surface-menu-drawer-toolbar-o",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed `MainActivity` delegates route rendering and shell UI through `SetupNavigation`.",
+          "Manual target review confirmed the HarmonyOS root shell renders feature routes and applies the same home/history-only shell visibility rule.",
+          "A bounded `cjpm test --target aarch64-linux-ohos` reproduction from `entry/src/test/cangjie` currently fails before phase-02 cases run because the test package does not provide HarmonyOS kit dependencies required by production imports such as `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource`, and the generated dependency scan also emits an invalid `-B` invocation.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::build",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/shell_route_state.cj::showsBottomShell",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::routePath"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "`cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` currently fails before phase-02 cases run because the test package does not provide HarmonyOS kit dependencies required by production imports such as `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource`, and the generated dependency scan also emits an invalid `-B` invocation."
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md",
+                "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "The HarmonyOS root shell preserves the same route inventory and home/history-only bottom-shell visibility rule as the source navigation shell."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-maina-7ad2de0a80-005-observable-state-viewmodel-flow-livedata",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed route rendering depends on observed splash state.",
+          "Manual target review confirmed startup route resolution feeds ArkUI route state before root rendering and later route changes remain state-driven.",
+          "A bounded `cjpm test --target aarch64-linux-ohos` reproduction from `entry/src/test/cangjie` currently fails before phase-02 cases run because the test package does not provide HarmonyOS kit dependencies required by production imports such as `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource`, and the generated dependency scan also emits an invalid `-B` invocation.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj::resolveStartRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.currentRoute"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "`cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` currently fails before phase-02 cases run because the test package does not provide HarmonyOS kit dependencies required by production imports such as `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource`, and the generated dependency scan also emits an invalid `-B` invocation."
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md",
+                "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "Startup route resolution feeds ArkUI route state before the root shell renders, preserving the source's state-driven root-route handoff."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-commo-ede592af84-002-screen-lifecycle-entry-point-initializat",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed splash initialization is synchronous and finishes before route rendering.",
+          "Manual target review confirmed startup route resolution runs before the bootstrap page uses the resolved route and loading state is cleared in `StartupStore`.",
+          "A bounded `cjpm test --target aarch64-linux-ohos` reproduction from `entry/src/test/cangjie` currently fails before phase-02 cases run because the test package does not provide HarmonyOS kit dependencies required by production imports such as `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource`, and the generated dependency scan also emits an invalid `-B` invocation.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase02_startup_navigation_test.cj::startupStorePublishesResolvedRouteAndClearsLoading",
+          "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie) missing HarmonyOS kit dependencies and emits invalid `-B` dependency-scan invocation"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "platform-replaced",
+          "parityKind": "platform-replaced",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_launch_service.cj::resolveLaunchRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj::resolveStartRoute"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "`cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` currently fails before phase-02 cases run because the test package does not provide HarmonyOS kit dependencies required by production imports such as `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource`, and the generated dependency scan also emits an invalid `-B` invocation."
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md",
+                "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "The target resolves startup route and clears loading before the bootstrap page renders, replacing the source splash init path."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-commo-1f1edf8e3a-003-observable-state-viewmodel-flow-livedata",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed `SplashViewModel` exposes observable loading and start-destination state, but resolves both synchronously inside `init` before normal navigation rendering begins.",
+          "Manual target review confirmed `EntryAbility.onCreate()` calls `StartupLaunchService.resolveLaunchRoute(context)` before `FoodikeBootstrap` renders routes, while `StartupStore.resolveStartRoute()` keeps explicit loading and start-destination fields for the same startup handoff.",
+          "A bounded `cjpm test --target aarch64-linux-ohos` reproduction from `entry/src/test/cangjie` currently fails before phase-02 cases run because the test package does not provide HarmonyOS kit dependencies required by production imports such as `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource`, and the generated dependency scan also emits an invalid `-B` invocation.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase02_startup_navigation_test.cj::startupStorePublishesResolvedRouteAndClearsLoading",
+          "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie) missing HarmonyOS kit dependencies and emits invalid `-B` dependency-scan invocation"
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-domain-repository-451c06cddd-002-observable-state-viewmodel-flow-livedata",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed `LoginRepository` exposes login state as a `Flow<Boolean>`, and the only current-phase source consumer (`SplashViewModel`) immediately resolves it with `first()` during startup.",
+          "Manual target review confirmed `LoginPreferencesService.readLoginState(context)` is reused by `StartupLaunchService`, while login and logout mutate the same persisted flag through `loginStore.login()` and `profileStore.logout()`.",
+          "A bounded `cjpm test --target aarch64-linux-ohos` reproduction from `entry/src/test/cangjie` currently fails before phase-02 cases run because the test package does not provide HarmonyOS kit dependencies required by production imports such as `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource`, and the generated dependency scan also emits an invalid `-B` invocation.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase02_startup_navigation_test.cj::loginStateToggleRuleFlipsBothDirections",
+          "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie) missing HarmonyOS kit dependencies and emits invalid `-B` dependency-scan invocation"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::readLoginState",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::toggleLoginState",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_launch_service.cj::resolveLaunchRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj::login",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "`cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` currently fails before phase-02 cases run because the test package does not provide HarmonyOS kit dependencies required by production imports such as `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource`, and the generated dependency scan also emits an invalid `-B` invocation."
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md",
+                "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "The only current-phase source observer uses `loginState.first()`, so the target's synchronous persisted read plus shared login/logout mutations preserve the same user-visible behavior."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-domain-repository-937078fce8-003-data-loading-query-search-filter-or-sort",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed startup reads the persisted login flag before rendering navigation.",
+          "Manual target review confirmed `resolveLaunchRoute(context)` calls `readLoginState(context)` and forwards that result into startup route resolution.",
+          "A bounded `cjpm test --target aarch64-linux-ohos` reproduction from `entry/src/test/cangjie` currently fails before phase-02 cases run because the test package does not provide HarmonyOS kit dependencies required by production imports such as `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource`, and the generated dependency scan also emits an invalid `-B` invocation.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase02_startup_navigation_test.cj::startupStorePublishesResolvedRouteAndClearsLoading",
+          "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie) missing HarmonyOS kit dependencies and emits invalid `-B` dependency-scan invocation"
+        ]
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-util-417c58decd-002-navigation-surface-menu-drawer-toolbar-o",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed `Navigation.kt` owns the root route graph and bottom-shell visibility rules.",
+          "Manual target review confirmed the HarmonyOS route registry and shell state preserve the same route inventory and shell visibility contract.",
+          "A bounded `cjpm test --target aarch64-linux-ohos` reproduction from `entry/src/test/cangjie` currently fails before phase-02 cases run because the test package does not provide HarmonyOS kit dependencies required by production imports such as `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource`, and the generated dependency scan also emits an invalid `-B` invocation.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase02_startup_navigation_test.cj::bottomShellOnlyShowsOnTopLevelHomeAndHistoryRoutes",
+          "entry/src/test/cangjie/phase02_startup_navigation_test.cj::shellRouteStatePreservesTopFlagAcrossCommands",
+          "entry/src/test/cangjie/phase02_startup_navigation_test.cj::primaryActionTargetsMatchShellContract",
+          "entry/src/test/cangjie/phase02_startup_navigation_test.cj::shellRouteStatePrimaryActionUsesRouteContract",
+          "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie) missing HarmonyOS kit dependencies and emits invalid `-B` dependency-scan invocation"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::routePath",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/shell_route_state.cj::showsBottomShell",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::build"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "`cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` currently fails before phase-02 cases run because the test package does not provide HarmonyOS kit dependencies required by production imports such as `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource`, and the generated dependency scan also emits an invalid `-B` invocation."
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md",
+                "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "The HarmonyOS route registry and shell state preserve the same route inventory and bottom-shell visibility contract as the source navigation graph."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-util-cb2f6fdad2-004-observable-state-viewmodel-flow-livedata",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed the navigation shell reacts to current route and top-of-list state.",
+          "Manual target review confirmed ArkUI route state and `ShellRouteState` provide the same route-command and shell-visibility behavior.",
+          "A bounded `cjpm test --target aarch64-linux-ohos` reproduction from `entry/src/test/cangjie` currently fails before phase-02 cases run because the test package does not provide HarmonyOS kit dependencies required by production imports such as `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource`, and the generated dependency scan also emits an invalid `-B` invocation.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase02_startup_navigation_test.cj::shellRouteStatePreservesTopFlagAcrossCommands",
+          "entry/src/test/cangjie/phase02_startup_navigation_test.cj::shellRouteStatePrimaryActionUsesRouteContract",
+          "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie) missing HarmonyOS kit dependencies and emits invalid `-B` dependency-scan invocation"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.currentRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::FoodikeBootstrap.isShellAtTop",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/shell_route_state.cj::applyCommand"
+            ],
+            "testEvidence": [
+              {
+                "kind": "harness-blocked",
+                "detail": "`cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` currently fails before phase-02 cases run because the test package does not provide HarmonyOS kit dependencies required by production imports such as `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource`, and the generated dependency scan also emits an invalid `-B` invocation."
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "Phase 02 build gate PASS: translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md",
+                "path": "translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "ArkUI route state and `ShellRouteState` preserve the same route-command and shell-visibility behavior that the source navigation shell derives from current route and top-of-list state."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-util-dc524a2ddb-003-runtime-permission-request-permission-re",
+      "set": {
+        "verificationEvidence": [
+          "Manual source review confirmed `Navigation.kt` contains no permission API usage.",
+          "Manual target review confirmed the route shell modules add no permission handling and `entry/src/main/module.json5::requestPermissions` remains empty.",
+          "A bounded `cjpm test --target aarch64-linux-ohos` reproduction from `entry/src/test/cangjie` currently fails before phase-02 cases run because the test package does not provide HarmonyOS kit dependencies required by production imports such as `kit.AbilityKit`, `kit.ArkUI`, and `ohos.resource`, and the generated dependency scan also emits an invalid `-B` invocation.",
+          "Phase 02 build gate PASS: `translation-inputs/build-reports/phase-02-startup-session-navigation/build-report.md`."
+        ],
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/shell_route_state.cj::showsBottomShell",
+          "entry/src/main/module.json5::requestPermissions"
+        ],
+        "tests": [
+          "phase-02 source grep confirms no permission request path in startup/session/navigation sources",
+          "blocked: cjpm test --target aarch64-linux-ohos (entry/src/test/cangjie) missing HarmonyOS kit dependencies and emits invalid `-B` dependency-scan invocation"
+        ]
+      }
+    }
+  ]
+}

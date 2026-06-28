@@ -8,6 +8,13 @@ import std.unittest.testmacro.*
 
 @Test
 public class Phase05DetailCartStateMutationsTest {
+    private func restaurantOrFirst(repository: HomeContentRepository, name: String) {
+        match (repository.getRestaurantByName(name)) {
+            case Some(found) => found
+            case None => repository.getRestaurants()[0]
+        }
+    }
+
     @TestCase
     public func cartStoreFiltersZeroCountItemsAndPreservesSnapshotOrder(): Unit {
         let store = CartStore()
@@ -58,10 +65,7 @@ public class Phase05DetailCartStateMutationsTest {
     public func detailStoreLoadsSelectedRestaurantAndRecommendedMenuSlice(): Unit {
         let store = DetailStore()
         let contentRepository = HomeContentRepository()
-        let restaurant = match (contentRepository.getRestaurantByName("Relish")) {
-            case Some(found) => found
-            case None => contentRepository.getRestaurants()[0]
-        }
+        let restaurant = restaurantOrFirst(contentRepository, "Relish")
         store.session().setSelectedRestaurant(restaurant)
 
         let state = store.loadDetailState(true, true, true)
@@ -76,10 +80,7 @@ public class Phase05DetailCartStateMutationsTest {
     public func detailStorePreservesSectionFilteringAndCartVisibilityRules(): Unit {
         let store = DetailStore()
         let contentRepository = HomeContentRepository()
-        let restaurant = match (contentRepository.getRestaurantByName("George Street")) {
-            case Some(found) => found
-            case None => contentRepository.getRestaurants()[0]
-        }
+        let restaurant = restaurantOrFirst(contentRepository, "George Street")
         store.session().setSelectedRestaurant(restaurant)
 
         let state = store.loadDetailState(true, true, true)
@@ -97,13 +98,40 @@ public class Phase05DetailCartStateMutationsTest {
     }
 
     @TestCase
+    public func detailAndCartStoresShareQuantityMutationsThroughSessionState(): Unit {
+        let detail = DetailStore()
+        let cart = CartStore()
+        let contentRepository = HomeContentRepository()
+        let restaurant = restaurantOrFirst(contentRepository, "George Street")
+        detail.session().setSelectedRestaurant(restaurant)
+
+        let detailState = detail.loadDetailState(true, true, true)
+        let sourceItem = detailState.menuItems[0]
+        @Assert(sourceItem.menuItem.dish, "Fish and Chips")
+        @Assert(sourceItem.quantity, 0)
+
+        detail.incrementQuantity(sourceItem)
+        detail.incrementQuantity(sourceItem)
+        @Assert(sourceItem.quantity, 2)
+
+        let cartState = cart.loadCartState()
+        let visibleItems = cart.visibleItems(cartState.items)
+        @Assert(visibleItems[visibleItems.size - 1].menuItem.dish, "Fish and Chips")
+        @Assert(visibleItems[visibleItems.size - 1].quantity, 2)
+
+        cart.decrementQuantity(visibleItems[visibleItems.size - 1])
+        @Assert(sourceItem.quantity, 1)
+
+        detail.session().setSelectedRestaurant(restaurant)
+        let reloadedState = detail.loadDetailState(true, true, true)
+        @Assert(reloadedState.menuItems[0].quantity, 1)
+    }
+
+    @TestCase
     public func detailStoreTogglesLikedStateForSelectedRestaurant(): Unit {
         let store = DetailStore()
         let contentRepository = HomeContentRepository()
-        let restaurant = match (contentRepository.getRestaurantByName("Relish")) {
-            case Some(found) => found
-            case None => contentRepository.getRestaurants()[0]
-        }
+        let restaurant = restaurantOrFirst(contentRepository, "Relish")
 
         store.session().setRestaurantLiked(restaurant, false)
         let liked = store.toggleLiked(restaurant, false)

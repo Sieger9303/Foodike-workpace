@@ -1,3 +1,25 @@
+warning[0m: possibly confusing line terminator
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\history\history_store.cj:63:58:
+   | 
+63 |           return containsIgnoreCase(restaurant.name, query)
+   |                                                           ~^ 
+   |  _________________________________________________________|
+64 | |             || containsIgnoreCase(restaurant.variety, query)
+   | |_____________~ possibly confusing line terminator between ')' and '||'
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff parser`
+
+warning[0m: possibly confusing line terminator
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\history\history_store.cj:64:61:
+   | 
+64 |               || containsIgnoreCase(restaurant.variety, query)
+   |                                                              ~^ 
+   |  ____________________________________________________________|
+65 | |             || containsIgnoreCase(restaurant.place, query)
+   | |_____________~ possibly confusing line terminator between ')' and '||'
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff parser`
+
 warning[0m: unreachable pattern
     | 
     | /* 119.40 */                                    case _ => LegalCallCheck.check(renderRestaurantCard(thisView, ObservedProperty("", restaurant), ObservedProperty("", { =>
@@ -66,7 +88,7 @@ note[0m: the code after the macro is expanded as follows
     | | /* 119.57 */            
     | | /* 119.58 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
     | | /* 119.59 */                Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 119.60 */                    Text("Empty").fontSize(16)
+    | | /* 119.60 */                    Text(stringEmpty).fontSize(16)
     | | /* 119.61 */                })
     | | /* 119.62 */            }.width(100.percent).justifyContent(FlexAlign.Center)
     | | /* 119.63 */        })
@@ -1806,4 +1828,4 @@ note[0m: the warning occurs after the macro is expanded
     | |_^
     | 
 
-86 warnings generated, 86 warnings printed.
+88 warnings generated, 88 warnings printed.

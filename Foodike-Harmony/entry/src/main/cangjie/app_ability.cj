@@ -6,11 +6,12 @@ import kit.AbilityKit.UIAbility
 import kit.AbilityKit.Want
 import kit.ArkUI.WindowStage
 import kit.PerformanceAnalysisKit.Hilog
-import ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.LoginPreferencesService
-import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.startup.startupStore
-import ohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime.{Global, bootstrapStartRoute}
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.startup.startupLaunchService
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime.Global
 
 class EntryAbility <: UIAbility {
+    private let launchService = startupLaunchService
+
     public init() {
         super()
         registerSelf()
@@ -23,9 +24,7 @@ class EntryAbility <: UIAbility {
             case _ => ()
         }
 
-        let loginPreferencesService = LoginPreferencesService()
-        let isLoggedIn = loginPreferencesService.readLoginState(context)
-        bootstrapStartRoute = startupStore.resolveStartRoute(isLoggedIn)
+        let isLoggedIn = launchService.resolveLaunchRoute(context)
 
         if (isLoggedIn) {
             Hilog.info(0x0000, "Foodike", "Startup login state resolved to home")

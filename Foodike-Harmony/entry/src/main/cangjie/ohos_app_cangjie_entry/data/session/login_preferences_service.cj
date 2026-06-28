@@ -47,3 +47,5 @@ public class LoginPreferencesService {
         return writeLoginState(context, false)
     }
 }
+
+public let loginPreferencesService = LoginPreferencesService()

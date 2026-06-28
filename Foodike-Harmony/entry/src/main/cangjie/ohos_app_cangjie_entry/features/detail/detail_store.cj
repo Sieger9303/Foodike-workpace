@@ -1,6 +1,6 @@
 package ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.detail
 
-import ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.content.HomeContentRepository
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.content.homeContentRepository
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.{SessionRepository, sessionRepository}
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.domain.*
 import std.collection.ArrayList
@@ -9,7 +9,7 @@ import std.random.Random
 public let detailStore = DetailStore()
 
 public class DetailStore {
-    private let contentRepository = HomeContentRepository()
+    private let contentRepository = homeContentRepository
     private let sessionRepository = sessionRepository
 
     public init() {}
@@ -20,7 +20,7 @@ public class DetailStore {
         vegExpanded: Bool
     ): DetailPageState {
         let restaurant = selectedRestaurant()
-        let menuItems = sessionRepository.menuItemsForRestaurant(restaurant.name)
+        let menuItems = selectedMenuItems(restaurant)
         return DetailPageState(
             restaurant,
             recommendedExpanded,
@@ -41,6 +41,14 @@ public class DetailStore {
             }
         }
         return contentRepository.getRestaurants()[0]
+    }
+
+    private func selectedMenuItems(restaurant: RestaurantData): ArrayList<DetailMenuItemData> {
+        let menuItems = sessionRepository.getMenuItems()
+        if (menuItems.size > 0) {
+            return menuItems
+        }
+        return sessionRepository.menuItemsForRestaurant(restaurant.name)
     }
 
     public func recommendedItems(menuItems: ArrayList<DetailMenuItemData>): ArrayList<DetailMenuItemData> {
@@ -88,13 +96,11 @@ public class DetailStore {
     }
 
     public func incrementQuantity(item: DetailMenuItemData): Unit {
-        item.quantity += 1
+        sessionRepository.incrementMenuItemQuantity(item.menuItem.dish)
     }
 
     public func decrementQuantity(item: DetailMenuItemData): Unit {
-        if (item.quantity > 0) {
-            item.quantity -= 1
-        }
+        sessionRepository.decrementMenuItemQuantity(item.menuItem.dish)
     }
 
     public func totalSelectedItems(menuItems: ArrayList<DetailMenuItemData>): Int64 {

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-27T03:22:15+00:00",
+  "generatedAt": "2026-06-28T12:11:43+00:00",
   "sourceRoot": "D:\\Kotlin2Cangjie\\Foodike",
   "targetRoot": "D:\\workspace\\Foodike\\Foodike-Harmony",
   "locProviders": {
@@ -104,17 +104,17 @@
     "notes": "LOC gap findings use external tool code lines when available. Physical/nonblank/comment/blank ratios remain supporting evidence."
   },
   "ratios": {
-    "targetToSourceFiles": 0.5274,
-    "targetToSourceTextFiles": 0.5094,
-    "targetToSourceNonblankLines": 0.7908,
-    "targetToSourceProductionTextFiles": 0.4615,
-    "targetToSourceProductionNonblankLines": 0.7495,
-    "targetToSourceCodeFiles": 0.4471,
-    "targetToSourceCodeNonblankLines": 0.426,
-    "targetToSourceProductionCodeFiles": 0.4096,
-    "targetToSourceProductionCodeNonblankLines": 0.3873,
-    "targetToSourceProductionCodeLines": 0.5581,
-    "targetToSourceTestFiles": 3.0
+    "targetToSourceFiles": 0.589,
+    "targetToSourceTextFiles": 0.5943,
+    "targetToSourceNonblankLines": 0.8957,
+    "targetToSourceProductionTextFiles": 0.5192,
+    "targetToSourceProductionNonblankLines": 0.8219,
+    "targetToSourceCodeFiles": 0.5529,
+    "targetToSourceCodeNonblankLines": 0.5419,
+    "targetToSourceProductionCodeFiles": 0.4819,
+    "targetToSourceProductionCodeNonblankLines": 0.4674,
+    "targetToSourceProductionCodeLines": 0.6736,
+    "targetToSourceTestFiles": 4.5
   },
   "findings": [
     {
@@ -128,19 +128,14 @@
       "message": "Target code contains implementation-placeholder/stub/in-memory/deferred wording; verify each occurrence is intentional and documented."
     },
     {
-      "severity": "high",
-      "kind": "coverage-matrix-uncovered-entry",
-      "message": "208 critical/high source feature(s) remain planned, unreviewed, or not covered."
-    },
-    {
-      "severity": "high",
-      "kind": "platform-capability-unresolved",
-      "message": "5 critical/high platform capability check(s) remain planned, unreviewed, or not covered."
+      "severity": "medium",
+      "kind": "target-structure-endpoint-concentration",
+      "message": "1 target file(s) carry a concentrated share of matrix targetEndpoints. Check whether unrelated source clusters are being closed through a broad shell instead of precise domain functions."
     },
     {
       "severity": "medium",
-      "kind": "target-structure-endpoint-concentration",
-      "message": "2 target file(s) carry a concentrated share of matrix targetEndpoints. Check whether unrelated source clusters are being closed through a broad shell instead of precise domain functions."
+      "kind": "target-structure-broad-shell-endpoints",
+      "message": "2 broad shell-like target file(s) carry many coverage endpoints. Prefer targetEndpoints that name specific business functions or extracted modules."
     },
     {
       "severity": "medium",
@@ -150,7 +145,7 @@
     {
       "severity": "medium",
       "kind": "target-structure-ui-endpoint-concentration",
-      "message": "2 target file(s) concentrate UI-related matrix endpoints. Check that routes are mutually rendered, back behavior is explicit, and UI evidence points at screen/page-specific builders rather than one debug-style shell."
+      "message": "12 target file(s) concentrate UI-related matrix endpoints. Check that routes are mutually rendered, back behavior is explicit, and UI evidence points at screen/page-specific builders rather than one debug-style shell."
     }
   ],
   "coverageMatrix": {
@@ -160,7 +155,7 @@
       "actualEntries": 260,
       "staleEntries": 0,
       "missingCriticalHighEntries": 0,
-      "uncoveredCriticalHighEntries": 208,
+      "uncoveredCriticalHighEntries": 0,
       "deferredCriticalHighEntries": 0,
       "deferredCriticalHighRatio": 0.0,
       "simplifiedCriticalHighEntries": 0,
@@ -173,9 +168,9 @@
       "repeatedDeferredJustificationGroups": 0,
       "repeatedImplementedEvidenceGroups": 0,
       "repeatedImplementedEndpointGroups": 0,
-      "broadImplementedEndpointCriticalHighEntries": 1,
+      "broadImplementedEndpointCriticalHighEntries": 0,
       "unverifiedTestEvidenceCriticalHighEntries": 0,
-      "testEvidenceVerifiedByLatestTestGateEntries": 0,
+      "testEvidenceVerifiedByLatestTestGateEntries": 89,
       "weakEvidenceCriticalHighEntries": 0,
       "implementedWithoutEndpointOrTestCriticalHighEntries": 0,
       "missingSourceBehaviorCriticalHighEntries": 0,
@@ -183,10 +178,10 @@
       "missingVerificationEvidenceCriticalHighEntries": 0,
       "parityMismatchCriticalHighEntries": 0,
       "byStatus": {
-        "implemented": 1,
-        "not-applicable": 3,
-        "planned": 244,
-        "platform-replaced": 12
+        "implemented": 114,
+        "not-applicable": 114,
+        "planned": 2,
+        "platform-replaced": 30
       },
       "allowedParityLevels": [
         "",
@@ -215,7 +210,7 @@
       "expectedCriticalHighEntries": 6,
       "actualEntries": 6,
       "missingCriticalHighEntries": 0,
-      "unresolvedCriticalHighEntries": 5,
+      "unresolvedCriticalHighEntries": 0,
       "missingDocSearchCriticalHighEntries": 0,
       "implementedWeakTargetDecisionEntries": 0,
       "implementedWeakTestEntries": 0,
@@ -228,7 +223,8 @@
       "incompleteDeferredCriticalHighEntries": 0,
       "genericDeferredCriticalHighEntries": 0,
       "byStatus": {
-        "planned": 5,
+        "not-applicable": 4,
+        "platform-replaced": 1,
         "verified-direct": 1
       },
       "allowedStatuses": [
@@ -254,20 +250,20 @@
   },
   "targetStructure": {
     "summary": {
-      "productionCodeFiles": 34,
-      "productionCodeNonblankLines": 2646,
-      "largestProductionCodeFileNonblankLines": 374,
+      "productionCodeFiles": 40,
+      "productionCodeNonblankLines": 3193,
+      "largestProductionCodeFileNonblankLines": 399,
       "largeProductionCodeFiles": 0,
-      "endpointBearingFeatureRows": 13,
-      "endpointTargetFiles": 15,
-      "largestEndpointFileShare": 0.5385,
-      "concentratedEndpointFiles": 2,
-      "broadShellEndpointFiles": 0,
-      "uiSurfaceFiles": 18,
+      "endpointBearingFeatureRows": 144,
+      "endpointTargetFiles": 47,
+      "largestEndpointFileShare": 0.4167,
+      "concentratedEndpointFiles": 1,
+      "broadShellEndpointFiles": 2,
+      "uiSurfaceFiles": 23,
       "concentratedUiSurfaceFiles": 2,
-      "uiEndpointBearingFeatureRows": 12,
-      "uiEndpointTargetFiles": 15,
-      "concentratedUiEndpointFiles": 2,
+      "uiEndpointBearingFeatureRows": 135,
+      "uiEndpointTargetFiles": 46,
+      "concentratedUiEndpointFiles": 12,
       "entryModuleStatus": "PASS",
       "entryRootPackage": "ohos_app_cangjie_entry"
     },
@@ -277,7 +273,12 @@
       {
         "severity": "medium",
         "kind": "target-structure-endpoint-concentration",
-        "message": "2 target file(s) carry a concentrated share of matrix targetEndpoints. Check whether unrelated source clusters are being closed through a broad shell instead of precise domain functions."
+        "message": "1 target file(s) carry a concentrated share of matrix targetEndpoints. Check whether unrelated source clusters are being closed through a broad shell instead of precise domain functions."
+      },
+      {
+        "severity": "medium",
+        "kind": "target-structure-broad-shell-endpoints",
+        "message": "2 broad shell-like target file(s) carry many coverage endpoints. Prefer targetEndpoints that name specific business functions or extracted modules."
       },
       {
         "severity": "medium",
@@ -287,7 +288,7 @@
       {
         "severity": "medium",
         "kind": "target-structure-ui-endpoint-concentration",
-        "message": "2 target file(s) concentrate UI-related matrix endpoints. Check that routes are mutually rendered, back behavior is explicit, and UI evidence points at screen/page-specific builders rather than one debug-style shell."
+        "message": "12 target file(s) concentrate UI-related matrix endpoints. Check that routes are mutually rendered, back behavior is explicit, and UI evidence points at screen/page-specific builders rather than one debug-style shell."
       }
     ]
   },

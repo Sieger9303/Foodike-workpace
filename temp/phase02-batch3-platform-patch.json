@@ -1,0 +1,69 @@
+{
+  "updates": [
+    {
+      "capabilityId": "runtime-permissions",
+      "set": {
+        "tests": [
+          "phase-02 source grep confirms no permission request path in startup/session/navigation sources",
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+        ],
+        "notes": "Phase-02 source review confirms runtime permissions are not required by the startup/session/navigation batch. The accepted phase-02 test build report is PASS, so this row no longer relies on stale blocked-test notes.",
+        "capabilityFacts": {
+          "schemaVersion": 1,
+          "resolutionKind": "not-applicable",
+          "activeFallback": {"used": false, "fallbackKind": "", "reason": "", "blocker": ""},
+          "apiEvidence": [
+            {"kind": "cangjie-sdk-declaration", "detail": "`AtManager.requestPermissionsFromUser(...)` exists in `ohos.ability_access_ctrl.cj.d:163-164`, proving the platform capability exists in current Cangjie SDK even though this phase does not need it."},
+            {"kind": "cangjie-callable-api", "detail": "AbilityKit Cangjie docs document `requestPermissionsFromUser` as the direct runtime authorization API."},
+            {"kind": "target-endpoint", "detail": "entry/src/main/module.json5::requestPermissions", "path": "entry/src/main/module.json5"},
+            {"kind": "build-gate-pass", "detail": "Phase-02 test build report PASS: translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}
+          ],
+          "discoveryOnlyEvidence": [],
+          "compileProbeEvidence": [{"kind": "build-gate-pass", "detail": "Phase-02 test build report PASS: translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}],
+          "targetEndpoints": ["entry/src/main/module.json5::requestPermissions"],
+          "blocker": {"used": false, "kind": "", "detail": "", "futureCompletionPath": ""},
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "capabilityId": "background-and-platform-components",
+      "set": {
+        "tests": [
+          "entry/src/test/cangjie/phase02_startup_navigation_test.cj::startupStorePublishesResolvedRouteAndClearsLoading",
+          "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)",
+          "build_hap_report.py --phase phase-02-startup-session-navigation"
+        ],
+        "notes": "Phase-02 only needs app entry and startup lifecycle gating. The platform replacement is carried by precise entry/startup endpoints, and the accepted phase-02 test build report now backs the startup-store contract evidence.",
+        "capabilityFacts": {
+          "schemaVersion": 1,
+          "resolutionKind": "platform-replacement",
+          "activeFallback": {"used": false, "fallbackKind": "", "reason": "", "blocker": ""},
+          "apiEvidence": [
+            {"kind": "cangjie-sdk-declaration", "detail": "`UIAbility` exists in `ohos.app.ability.ui_ability.cj.d:228` with lifecycle `onCreate(want, launchParam)` at line 276."},
+            {"kind": "cangjie-sdk-declaration", "detail": "`UIAbilityContext` plus `startAbility` and `startAbilityForResult` exist in `ohos.app.ability.ui_ability.cj.d:366,416,507,552`."},
+            {"kind": "cangjie-callable-api", "detail": "HarmonyOS Cangjie docs document `UIAbilityContext` startup APIs for ability lifecycle and jumps."},
+            {"kind": "cangjie-callable-api", "detail": "HarmonyOS Cangjie docs document ArkUI `Navigation` and `Router` as the supported in-app route path."},
+            {"kind": "target-endpoint", "detail": "AppScope/app.json5", "path": "AppScope/app.json5"},
+            {"kind": "target-endpoint", "detail": "entry/src/main/module.json5", "path": "entry/src/main/module.json5"},
+            {"kind": "target-endpoint", "detail": "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate", "path": "entry/src/main/cangjie/app_ability.cj"},
+            {"kind": "target-endpoint", "detail": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_launch_service.cj::resolveLaunchRoute", "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_launch_service.cj"},
+            {"kind": "target-endpoint", "detail": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj::resolveStartRoute", "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj"},
+            {"kind": "build-gate-pass", "detail": "Phase-02 test build report PASS: translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}
+          ],
+          "discoveryOnlyEvidence": [],
+          "compileProbeEvidence": [{"kind": "build-gate-pass", "detail": "Phase-02 test build report PASS: translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md", "path": "translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md"}],
+          "targetEndpoints": [
+            "AppScope/app.json5",
+            "entry/src/main/module.json5",
+            "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_launch_service.cj::resolveLaunchRoute",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj::resolveStartRoute"
+          ],
+          "blocker": {"used": false, "kind": "", "detail": "", "futureCompletionPath": ""},
+          "factsSource": "agent"
+        }
+      }
+    }
+  ]
+}

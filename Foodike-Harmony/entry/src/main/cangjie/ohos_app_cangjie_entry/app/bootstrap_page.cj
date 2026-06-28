@@ -1,6 +1,7 @@
 package ohos_app_cangjie_entry.ohos_app_cangjie_entry.app
 
 import kit.ArkUI.*
+import ohos.base.ResourceStr
 import ohos.arkui.state_macro_manage.Builder
 import ohos.arkui.state_macro_manage.Component
 import ohos.arkui.state_macro_manage.Entry
@@ -13,8 +14,9 @@ import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.history.{historySt
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.home.{homeStore, renderHomeRoute}
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.login.{loginStore, renderLoginRoute}
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.onboarding.{onboardingStore, renderOnboardingRoute}
-import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.{profileStore, renderProfileRoute}
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.{profileRouteService, profileStore, renderProfileRoute}
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime.{Global, bootstrapStartRoute}
+import std.collection.ArrayList
 
 @Entry
 @Component
@@ -77,6 +79,7 @@ class FoodikeBootstrap {
     var detailMutationRevision: Int64 = 0
 
     private var onboardingController: SwiperController = SwiperController()
+    private var routeBackStack: ArrayList<String> = ArrayList<String>([])
 
     private func applyShellState(shellState: ShellRouteState): Unit {
         this.currentRoute = shellState.currentRoute
@@ -94,17 +97,35 @@ class FoodikeBootstrap {
     }
 
     private func navigateTo(route: String): Unit {
+        if (this.currentRoute != route) {
+            this.routeBackStack.add(this.currentRoute)
+        }
+        this.previousRoute = this.currentRoute
         let shellState = this.shellState()
-        this.previousRoute = shellState.currentRoute
         shellState.currentRoute = route
         shellState.isAtTop = true
         this.applyShellState(shellState)
     }
 
     private func navigateBack(): Unit {
-        let targetRoute = this.previousRoute
+        if (this.routeBackStack.size == 0) {
+            return
+        }
+        let targetIndex = this.routeBackStack.size - 1
+        let targetRoute = this.routeBackStack[targetIndex]
+        this.routeBackStack.remove(at: targetIndex)
         this.previousRoute = this.currentRoute
-        this.navigateTo(targetRoute)
+        let shellState = this.shellState()
+        shellState.currentRoute = targetRoute
+        shellState.isAtTop = true
+        this.applyShellState(shellState)
+    }
+
+    private func handleProfileBack(): Unit {
+        if (!profileRouteService.canNavigateBack(this.currentRoute, this.routeBackStack)) {
+            return
+        }
+        this.navigateBack()
     }
 
     private func showBottomShell(route: String): Bool {
@@ -113,17 +134,8 @@ class FoodikeBootstrap {
         return shellState.showBottomShell()
     }
 
-    private func routeTitle(route: String): String {
-        match (route) {
-            case "onboarding" => "Onboarding"
-            case "login_screen" => "Login"
-            case "home_screen" => "Home"
-            case "history" => "History"
-            case "cart" => "Cart"
-            case "profile" => "Profile"
-            case "restaurant_details" => "Restaurant Detail"
-            case _ => "Unknown Route"
-        }
+    private func routeTitle(route: String): ResourceStr {
+        routeLabelByPath(route)
     }
 
     private func showToast(message: String): Unit {
@@ -147,15 +159,30 @@ class FoodikeBootstrap {
 
     private func performLogout(): Unit {
         profileStore.logout(Global.abilityContext)
-        this.loginEmail = ""
-        this.loginPassword = ""
+        let transition = profileRouteService.buildLogoutTransition(profileStore.logoutRoute())
+        let resetState = transition.resetState
+        this.loginEmail = resetState.loginEmail
+        this.loginPassword = resetState.loginPassword
         this.clearLoginError()
-        this.onboardingPageIndex = 0
-        this.homeSearchQuery = ""
-        this.homeSelectedFilter = ""
-        this.historySearchQuery = ""
-        this.historyTabIndex = 0
-        this.navigateTo(profileStore.logoutRoute())
+        this.onboardingPageIndex = resetState.onboardingPageIndex
+        this.homeSearchQuery = resetState.homeSearchQuery
+        this.homeSelectedFilter = resetState.homeSelectedFilter
+        this.historySearchQuery = resetState.historySearchQuery
+        this.historyTabIndex = resetState.historyTabIndex
+        this.routeBackStack.clear()
+        this.navigateTo(transition.nextRoute)
+    }
+
+    private func handleProfileEdit(): Unit {
+        this.showToast(profileRouteService.placeholderActionMessage())
+    }
+
+    private func handleProfileSectionAction(): Unit {
+        this.showToast(profileRouteService.placeholderActionMessage())
+    }
+
+    private func handleProfileLogout(): Unit {
+        this.performLogout()
     }
 
     private func routeSummary(route: String): String {
@@ -251,17 +278,17 @@ class FoodikeBootstrap {
         renderProfileRoute(
             profileStore.userName,
             profileStore.userEmail,
-            { => this.navigateTo(profileStore.backRoute()) },
-            { => this.showToast(profileStore.placeholderActionMessage) },
-            { => this.showToast(profileStore.placeholderActionMessage) },
-            { => this.performLogout() }
+            { => this.handleProfileBack() },
+            { => this.handleProfileEdit() },
+            { => this.handleProfileSectionAction() },
+            { => this.handleProfileLogout() }
         )
     }
 
     @Builder
     private func buildHomeRoute() {
         renderHomeRoute(
-            homeStore.loadHomeState(),
+            homeStore.buildFilteredState(this.homeSearchQuery, this.homeSelectedFilter),
             this.homeHour(),
             this.homeSearchQuery,
             this.homeSelectedFilter,
@@ -281,7 +308,7 @@ class FoodikeBootstrap {
     @Builder
     private func buildHistoryRoute() {
         renderHistoryRoute(
-            historyStore.loadHistoryState(),
+            historyStore.buildVisibleState(this.historySearchQuery),
             this.historyTabIndex,
             this.historySearchQuery,
             { value: String =>
@@ -334,7 +361,7 @@ class FoodikeBootstrap {
                 this.detailLiked = detailStore.toggleLiked(restaurant, this.detailLiked)
             },
             { =>
-                this.showToast("Share coming soon")
+                this.showToast(loginStore.comingSoonMessage)
             },
             { =>
                 this.detailRecommendedExpanded = !this.detailRecommendedExpanded
@@ -381,18 +408,20 @@ class FoodikeBootstrap {
                     })
             }
 
-            Button("Primary Route Action")
+            Button(primaryActionLabel(this.currentRoute))
+                .backgroundColor(foodikeThemePrimaryColor)
+                .fontColor(Color.White)
                 .onClick({ _ =>
                     this.applyShellCommand(ShellCommand.PrimaryAction)
                 })
 
             if (this.showBottomShell(this.currentRoute)) {
                 Row(space: 12) {
-                    Button("Home Tab")
+                    Button(stringHome)
                         .onClick({ _ => this.applyShellCommand(ShellCommand.HomeTab) })
-                    Button("Cart")
+                    Button(stringCart)
                         .onClick({ _ => this.applyShellCommand(ShellCommand.CartAction) })
-                    Button("History Tab")
+                    Button(stringHistory)
                         .onClick({ _ => this.applyShellCommand(ShellCommand.HistoryTab) })
                 }
             }

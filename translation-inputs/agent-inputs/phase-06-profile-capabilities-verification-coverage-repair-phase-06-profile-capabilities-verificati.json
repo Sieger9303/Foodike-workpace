@@ -1,0 +1,823 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-28T11:42:01+00:00",
+  "phase": "phase-06-profile-capabilities-verification",
+  "sessionKind": "coverage-repair",
+  "focusMode": "implementation-group",
+  "clusterId": "",
+  "workspaceRoot": "D:\\workspace\\Foodike",
+  "outputDir": "D:\\workspace\\Foodike\\translation-inputs",
+  "archiveJsonPath": "D:\\workspace\\Foodike\\translation-inputs\\agent-inputs\\phase-06-profile-capabilities-verification-coverage-repair-phase-06-profile-capabilities-verificati.json",
+  "archiveMarkdownPath": "D:\\workspace\\Foodike\\translation-inputs\\agent-inputs\\phase-06-profile-capabilities-verification-coverage-repair-phase-06-profile-capabilities-verificati.md",
+  "currentJsonPath": "D:\\workspace\\Foodike\\translation-inputs\\agent-inputs\\current-agent-input.json",
+  "currentMarkdownPath": "D:\\workspace\\Foodike\\translation-inputs\\agent-inputs\\current-agent-input.md",
+  "boundaries": {
+    "sourceProject": "D:\\Kotlin2Cangjie\\Foodike",
+    "targetProject": "D:\\workspace\\Foodike\\Foodike-Harmony",
+    "agentReadableRoots": [
+      "D:\\Kotlin2Cangjie\\Foodike",
+      "D:\\workspace\\Foodike\\Foodike-Harmony",
+      "D:\\workspace\\Foodike\\translation-inputs"
+    ],
+    "agentWritableFiles": [
+      "D:\\workspace\\Foodike\\translation-inputs\\source-coverage-matrix.json",
+      "D:\\workspace\\Foodike\\translation-inputs\\source-coverage-matrix.md",
+      "D:\\workspace\\Foodike\\translation-inputs\\platform-capability-check.json",
+      "D:\\workspace\\Foodike\\translation-inputs\\platform-capability-check.md"
+    ],
+    "doNotReadSiblingTranslations": true,
+    "sharedSurfaces": [
+      "index.cj",
+      "route/navigation",
+      "shared state/store",
+      "ability context",
+      "cjpm.toml"
+    ]
+  },
+  "freshness": [
+    {
+      "name": "phaseTaskChecklist",
+      "path": "D:\\workspace\\Foodike\\translation-inputs\\phase-task-checklist.json",
+      "exists": true,
+      "error": "",
+      "generatedAt": "2026-06-28T11:42:00+00:00",
+      "phase": "phase-06-profile-capabilities-verification",
+      "kind": "",
+      "mtime": 1782646920.5232348,
+      "size": 101678
+    },
+    {
+      "name": "phaseGroupVerdicts",
+      "path": "D:\\workspace\\Foodike\\translation-inputs\\phase-group-verdicts.json",
+      "exists": true,
+      "error": "",
+      "generatedAt": "2026-06-28T11:42:01+00:00",
+      "phase": "phase-06-profile-capabilities-verification",
+      "kind": "",
+      "mtime": 1782646921.509284,
+      "size": 62857
+    },
+    {
+      "name": "phaseCapabilityChecklist",
+      "path": "D:\\workspace\\Foodike\\translation-inputs\\phase-capability-checklist.json",
+      "exists": true,
+      "error": "",
+      "generatedAt": "2026-06-28T11:34:10+00:00",
+      "phase": "phase-06-profile-capabilities-verification",
+      "kind": "",
+      "mtime": 1782646450.949497,
+      "size": 1939
+    },
+    {
+      "name": "translationQualitySummary",
+      "path": "D:\\workspace\\Foodike\\translation-inputs\\translation-quality-summary.json",
+      "exists": true,
+      "error": "",
+      "generatedAt": "2026-06-27T16:43:37+00:00",
+      "phase": "",
+      "kind": "",
+      "mtime": 1782578617.3105457,
+      "size": 340949
+    },
+    {
+      "name": "phaseCoverageGate",
+      "path": "D:\\workspace\\Foodike\\translation-inputs\\phase-coverage-gate-report.json",
+      "exists": true,
+      "error": "",
+      "generatedAt": "2026-06-28T11:34:02+00:00",
+      "phase": "phase-05-detail-cart",
+      "kind": "",
+      "mtime": 1782646443.014987,
+      "size": 4061
+    },
+    {
+      "name": "targetStructure",
+      "path": "D:\\workspace\\Foodike\\translation-inputs\\target-structure-report.json",
+      "exists": true,
+      "error": "",
+      "generatedAt": "2026-06-28T11:42:00+00:00",
+      "phase": "",
+      "kind": "",
+      "mtime": 1782646920.529238,
+      "size": 78982
+    },
+    {
+      "name": "sourceCoverageMatrix",
+      "path": "D:\\workspace\\Foodike\\translation-inputs\\source-coverage-matrix.json",
+      "exists": true,
+      "error": "",
+      "generatedAt": "2026-06-27T01:35:38+00:00",
+      "phase": "",
+      "kind": "",
+      "mtime": 1782646882.7635238,
+      "size": 1154080
+    },
+    {
+      "name": "platformCapabilityCheck",
+      "path": "D:\\workspace\\Foodike\\translation-inputs\\platform-capability-check.json",
+      "exists": true,
+      "error": "",
+      "generatedAt": "2026-06-27T01:35:38+00:00",
+      "phase": "",
+      "kind": "",
+      "mtime": 1782642808.817317,
+      "size": 222696
+    }
+  ],
+  "workingSet": {
+    "phase": "phase-06-profile-capabilities-verification",
+    "sessionKind": "coverage-repair",
+    "requestedClusterId": "",
+    "requestedImplementationGroupIds": [
+      "phase-06-profile-capabilities-verificati-verification-phase-tests-and-evidence"
+    ],
+    "clusterIds": [],
+    "repairGroupIds": [],
+    "implementationGroupIds": [
+      "phase-06-profile-capabilities-verificati-verification-phase-tests-and-evidence"
+    ],
+    "featureIds": [
+      "app-src-main-java-com-example-foodike-presentation-profi-a1f2ba5cd8-001-image-viewing-bitmap-exif-handling-zoom",
+      "app-src-main-java-com-example-foodike-presentation-profi-c34aae0a57-002-navigation-surface-menu-drawer-toolbar-o",
+      "app-src-main-java-com-example-foodike-presentation-profi-106c8cc862-003-runtime-permission-request-permission-re",
+      "app-src-main-java-com-example-foodike-presentation-profi-e492afed0c-004-observable-state-viewmodel-flow-livedata",
+      "app-src-main-java-com-example-foodike-presentation-profi-f941f1a12e-001-runtime-permission-request-permission-re",
+      "app-src-main-java-com-example-foodike-presentation-profi-9d1239d799-002-screen-lifecycle-entry-point-initializat",
+      "app-src-main-java-com-example-foodike-presentation-profi-1b04c65221-003-observable-state-viewmodel-flow-livedata",
+      "app-src-main-java-com-example-foodike-presentation-profi-c201c10d27-001-runtime-permission-request-permission-re",
+      "app-src-main-java-com-example-foodike-presentation-profi-3fdadde96c-001-runtime-permission-request-permission-re",
+      "app-src-androidtest-java-com-example-foodike-exampleinst-7ce120cd33-001-source-side-tests-or-verification-assets",
+      "app-src-test-java-com-example-foodike-exampleunittest-kt-7340d393c5-001-source-side-tests-or-verification-assets",
+      "app-src-test-java-com-example-foodike-exampleunittest-kt-504d70964f-002-crud-mutation-or-persistent-state-update"
+    ],
+    "capabilityIds": [],
+    "sourcePaths": [
+      "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+      "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt",
+      "app/src/main/java/com/example/foodike/presentation/profile/components/ProfileCard.kt",
+      "app/src/main/java/com/example/foodike/presentation/profile/ProfileEvent.kt",
+      "app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt",
+      "app/src/test/java/com/example/foodike/ExampleUnitTest.kt"
+    ],
+    "targetEndpoints": [
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildProfileRoute",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogout",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::buildProfileTopBar",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::renderProfileRoute",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::backRoute",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logoutRoute",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::actionFeedbackMessage",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::profileSectionCount",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::resolveStartRoute",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::buildProfileSection",
+      "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj"
+    ],
+    "acceptanceEvidence": [
+      "Update source-coverage-matrix.json after implementation with targetEndpoints, tests, parityLevel, and verificationEvidence.",
+      "If tests cannot run, record the concrete harness blocker instead of claiming test PASS."
+    ],
+    "testHints": [
+      "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesStaticIdentityAndPlaceholderActions",
+      "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)",
+      "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
+      "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState",
+      "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::sourceExampleUnitAssertionIntentIsCoveredByTargetHarness"
+    ],
+    "overflowRefs": [
+      "translation-quality-summary.json#repairQueue.groups for full child group items",
+      "phase-task-checklist.json#implementationGroups for full phase contracts",
+      "source-coverage-matrix.json for authoritative row updates",
+      "platform-capability-check.json for authoritative platform decisions"
+    ]
+  },
+  "implementationGroups": [
+    {
+      "groupId": "phase-06-profile-capabilities-verificati-verification-phase-tests-and-evidence",
+      "title": "Verification and evidence policy",
+      "groupType": "verification",
+      "priority": "critical",
+      "sourcePaths": [
+        "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/components/ProfileCard.kt",
+        "app/src/main/java/com/example/foodike/presentation/profile/ProfileEvent.kt",
+        "app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt",
+        "app/src/test/java/com/example/foodike/ExampleUnitTest.kt"
+      ],
+      "featureIds": [
+        "app-src-main-java-com-example-foodike-presentation-profi-a1f2ba5cd8-001-image-viewing-bitmap-exif-handling-zoom",
+        "app-src-main-java-com-example-foodike-presentation-profi-c34aae0a57-002-navigation-surface-menu-drawer-toolbar-o",
+        "app-src-main-java-com-example-foodike-presentation-profi-106c8cc862-003-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-profi-e492afed0c-004-observable-state-viewmodel-flow-livedata",
+        "app-src-main-java-com-example-foodike-presentation-profi-f941f1a12e-001-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-profi-9d1239d799-002-screen-lifecycle-entry-point-initializat",
+        "app-src-main-java-com-example-foodike-presentation-profi-1b04c65221-003-observable-state-viewmodel-flow-livedata",
+        "app-src-main-java-com-example-foodike-presentation-profi-c201c10d27-001-runtime-permission-request-permission-re",
+        "app-src-main-java-com-example-foodike-presentation-profi-3fdadde96c-001-runtime-permission-request-permission-re",
+        "app-src-androidtest-java-com-example-foodike-exampleinst-7ce120cd33-001-source-side-tests-or-verification-assets",
+        "app-src-test-java-com-example-foodike-exampleunittest-kt-7340d393c5-001-source-side-tests-or-verification-assets",
+        "app-src-test-java-com-example-foodike-exampleunittest-kt-504d70964f-002-crud-mutation-or-persistent-state-update"
+      ],
+      "resourceInputs": [],
+      "platformCapabilityIds": [],
+      "expectedTargetDomains": [],
+      "requiredBehaviors": [
+        "Verify the phase's implemented behavior with focused tests, manual/emulator evidence, or explicit verificationEvidence."
+      ],
+      "riskHints": [
+        "target tests only count as strong evidence when backed by latest test gate PASS or explicit harness blocker",
+        "build pass alone does not close per-feature behavior",
+        "manual review evidence must point to concrete target endpoints"
+      ],
+      "acceptanceEvidence": [
+        "Update source-coverage-matrix.json after implementation with targetEndpoints, tests, parityLevel, and verificationEvidence.",
+        "If tests cannot run, record the concrete harness blocker instead of claiming test PASS."
+      ],
+      "testHints": [
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesStaticIdentityAndPlaceholderActions",
+        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)",
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState",
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::sourceExampleUnitAssertionIntentIsCoveredByTargetHarness"
+      ],
+      "compileProbeRecommended": false,
+      "capabilityEvidenceProfile": {},
+      "uiContract": {}
+    }
+  ],
+  "planContract": {
+    "available": true,
+    "phase": "phase-06-profile-capabilities-verification",
+    "summary": {
+      "planGroups": 2,
+      "matchedGroups": 2,
+      "unmatchedGroups": 0,
+      "generatedImplementationGroups": 4
+    },
+    "alignmentFindings": [],
+    "matchedGroups": [
+      {
+        "groupId": "phase-06-profile-and-logout",
+        "title": "Profile page and logout flow",
+        "groupType": "source-behavior",
+        "priority": "high",
+        "sourcePaths": [
+          "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+          "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt",
+          "app/src/main/java/com/example/foodike/presentation/profile/components/ProfileCard.kt"
+        ],
+        "sourceMethods": [
+          "Profile",
+          "ProfileViewModel.onEvent"
+        ],
+        "featureIds": [
+          "app-src-main-java-com-example-foodike-presentation-profi-e492afed0c-004-observable-state-viewmodel-flow-livedata",
+          "app-src-main-java-com-example-foodike-presentation-profi-c34aae0a57-002-navigation-surface-menu-drawer-toolbar-o"
+        ],
+        "resourceInputs": [
+          "display_picture",
+          "edit",
+          "saved_addresses",
+          "payments_and_refunds",
+          "online_ordering_help",
+          "about",
+          "log_out"
+        ],
+        "platformCapabilityIds": [],
+        "expectedTargetDomains": [
+          "features/profile",
+          "data/session"
+        ],
+        "requiredBehaviors": [
+          "Logout navigates back to onboarding/root unauthenticated path.",
+          "Placeholder profile cards remain represented or explicitly documented as product placeholders."
+        ],
+        "riskHints": [
+          "Source profile data is mostly static; avoid inventing edit/profile backend behavior."
+        ],
+        "acceptanceEvidence": [
+          "build gate pass",
+          "manual review or runtime smoke if available"
+        ],
+        "uiContracts": [
+          "profile summary, profile cards, logout button"
+        ],
+        "dataContracts": [
+          "logout callback to session store"
+        ],
+        "matchedImplementationGroupIds": [
+          "phase-06-profile-capabilities-verificati-source-behavior-presentation-profile",
+          "phase-06-profile-capabilities-verificati-verification-phase-tests-and-evidence"
+        ]
+      },
+      {
+        "groupId": "phase-06-capability-and-test-hardening",
+        "title": "Capability resolution and focused verification",
+        "groupType": "platform-capability",
+        "priority": "high",
+        "sourcePaths": [
+          "translation-inputs/platform-capability-check.json",
+          "translation-inputs/source-coverage-matrix.json",
+          "app/src/test/java/com/example/foodike/ExampleUnitTest.kt",
+          "app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt"
+        ],
+        "sourceMethods": [],
+        "featureIds": [],
+        "resourceInputs": [],
+        "platformCapabilityIds": [],
+        "expectedTargetDomains": [
+          "tests",
+          "records follow-up"
+        ],
+        "requiredBehaviors": [
+          "Close capability rows with direct API, platform replacement, fallback, or deferred evidence as appropriate.",
+          "Replace template example tests with focused behavior coverage."
+        ],
+        "riskHints": [
+          "Several capability rows are probably static-analysis false positives and should be narrowed by source override rather than bulk deferred."
+        ],
+        "acceptanceEvidence": [
+          "cjpm test or compile evidence",
+          "build gate pass",
+          "documented capability evidence in implementation sessions"
+        ],
+        "uiContracts": [],
+        "dataContracts": [
+          "target-side test coverage for startup/session/repository/detail state behaviors"
+        ],
+        "matchedImplementationGroupIds": [
+          "phase-06-profile-capabilities-verificati-verification-com-example",
+          "phase-06-profile-capabilities-verificati-verification-phase-tests-and-evidence",
+          "phase-06-profile-capabilities-verificati-architecture-risk-broad-target-endpoints"
+        ]
+      }
+    ],
+    "unmatchedGroups": []
+  },
+  "phaseGroupIndex": [
+    {
+      "groupId": "phase-06-profile-capabilities-verificati-source-behavior-presentation-profile",
+      "title": "Source behavior: presentation/profile",
+      "groupType": "source-behavior",
+      "priority": "critical",
+      "sourcePathCount": 4,
+      "featureCount": 9,
+      "capabilityCount": 0
+    },
+    {
+      "groupId": "phase-06-profile-capabilities-verificati-verification-com-example",
+      "title": "Verification scope: com/example",
+      "groupType": "verification",
+      "priority": "low",
+      "sourcePathCount": 2,
+      "featureCount": 3,
+      "capabilityCount": 0
+    },
+    {
+      "groupId": "phase-06-profile-capabilities-verificati-architecture-risk-broad-target-endpoints",
+      "title": "Architecture risk: broad target endpoints",
+      "groupType": "architecture-risk",
+      "priority": "low",
+      "sourcePathCount": 2,
+      "featureCount": 3,
+      "capabilityCount": 0
+    }
+  ],
+  "sharedSurfaceDigest": {
+    "sharedSurfaceKeywords": [
+      "index.cj",
+      "main.cj",
+      "route",
+      "navigation",
+      "navigator",
+      "state",
+      "store",
+      "context",
+      "ability",
+      "cjpm.toml"
+    ],
+    "sharedTargetHints": [
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildProfileRoute",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::renderProfileRoute",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::backRoute",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logoutRoute",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::actionFeedbackMessage",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::profileSectionCount",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::resolveStartRoute",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj"
+    ],
+    "sharedSourceHints": [],
+    "expectedTargetDomains": [],
+    "uiGroupIds": [],
+    "coordinationNotes": [
+      "Prefer extending existing route/navigation/state surfaces over creating parallel shells.",
+      "If a shared surface must change, keep the change minimal and update only evidence rows tied to this group."
+    ]
+  },
+  "repairClusters": [],
+  "repairGroups": [],
+  "matrixRows": [
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-profi-c34aae0a57-002-navigation-surface-menu-drawer-toolbar-o",
+      "plannedPhase": "phase-06-profile-capabilities-verification",
+      "importance": "critical",
+      "status": "implemented",
+      "legacyStatus": "implemented",
+      "parityLevel": "equivalent",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+      "featureName": "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+      "featurePoint": "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildProfileRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogout",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::buildProfileTopBar",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::renderProfileRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::backRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logoutRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::actionFeedbackMessage"
+      ],
+      "verificationEvidence": [
+        "Manual source review confirmed `Profile.kt` owns the back icon, edit/action-card click surfaces, and logout navigation callback.",
+        "Manual target review confirmed `bootstrap_page.cj::buildProfileRoute`, `profile_page.cj::renderProfileRoute`, and `profile_store.cj` preserve the same command surface and explicit placeholder actions.",
+        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
+        "Phase-06 build gate PASS: `translation-inputs/build-reports/phase-06-profile-capabilities-verification/build-report.md`.",
+        "{'kind': 'focused-test-pass', 'detail': '`phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes` verifies the translated profile route preserves back and logout destinations.', 'path': 'entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj'}",
+        "{'kind': 'focused-test-pass', 'detail': '`phase06_profile_capabilities_verification_test.cj::profileStorePreservesStaticIdentityAndPlaceholderActions` verifies the translated profile actions remain explicit placeholders instead of disappearing.', 'path': 'entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj'}"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesStaticIdentityAndPlaceholderActions",
+        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+      ]
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-profi-e492afed0c-004-observable-state-viewmodel-flow-livedata",
+      "plannedPhase": "phase-06-profile-capabilities-verification",
+      "importance": "critical",
+      "status": "implemented",
+      "legacyStatus": "implemented",
+      "parityLevel": "equivalent",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+      "featureName": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+      "featurePoint": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildProfileRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::renderProfileRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::actionFeedbackMessage",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::profileSectionCount"
+      ],
+      "verificationEvidence": [
+        "Manual source review confirmed the profile screen is driven by callback wiring rather than editable form state or remote data streams.",
+        "Manual target review confirmed `buildProfileRoute` wires the translated profile callbacks through `renderProfileRoute` and `profile_store.cj`.",
+        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
+        "Phase-06 build gate PASS: `translation-inputs/build-reports/phase-06-profile-capabilities-verification/build-report.md`.",
+        "{'kind': 'focused-test-pass', 'detail': '`phase06_profile_capabilities_verification_test.cj::profileStorePreservesStaticIdentityAndPlaceholderActions` verifies the translated profile state surface keeps the static identity and explicit placeholder-action behavior.', 'path': 'entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj'}",
+        "{'kind': 'test-compile-pass', 'detail': 'Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.', 'path': 'translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md'}"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesStaticIdentityAndPlaceholderActions",
+        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+      ]
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-profi-1b04c65221-003-observable-state-viewmodel-flow-livedata",
+      "plannedPhase": "phase-06-profile-capabilities-verification",
+      "importance": "critical",
+      "status": "implemented",
+      "legacyStatus": "implemented",
+      "parityLevel": "equivalent",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt",
+      "featureName": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+      "featurePoint": "Observable state, ViewModel/Flow/LiveData/recomposition, or UI state propagation.",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogout",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::resolveStartRoute"
+      ],
+      "verificationEvidence": [
+        "Manual source review confirmed `ProfileViewModel.kt` performs a single logout state mutation followed by the supplied callback.",
+        "Manual target review confirmed `performLogout()` executes the translated logout mutation and immediate route transition without adding extra async state layers.",
+        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
+        "Phase-06 build gate PASS: `translation-inputs/build-reports/phase-06-profile-capabilities-verification/build-report.md`.",
+        "{'kind': 'focused-test-pass', 'detail': '`phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState` verifies the translated logout state propagates to the onboarding start route.', 'path': 'entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj'}",
+        "{'kind': 'test-compile-pass', 'detail': 'Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.', 'path': 'translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md'}"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState",
+        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+      ]
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-profi-9d1239d799-002-screen-lifecycle-entry-point-initializat",
+      "plannedPhase": "phase-06-profile-capabilities-verification",
+      "importance": "critical",
+      "status": "implemented",
+      "legacyStatus": "implemented",
+      "parityLevel": "equivalent",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt",
+      "featureName": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+      "featurePoint": "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogout",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::resolveStartRoute"
+      ],
+      "verificationEvidence": [
+        "Manual source review confirmed `ProfileViewModel.kt` contains no initialization or resume logic beyond logout handling.",
+        "Manual target review confirmed `performLogout()` clears translated route-local state and `resolveStartRoute(false)` returns the onboarding route.",
+        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
+        "Phase-06 build gate PASS: `translation-inputs/build-reports/phase-06-profile-capabilities-verification/build-report.md`.",
+        "{'kind': 'focused-test-pass', 'detail': '`phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState` verifies the translated post-logout entry route resolves to onboarding.', 'path': 'entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj'}",
+        "{'kind': 'test-compile-pass', 'detail': 'Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.', 'path': 'translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md'}"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState",
+        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+      ]
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-profi-106c8cc862-003-runtime-permission-request-permission-re",
+      "plannedPhase": "phase-06-profile-capabilities-verification",
+      "importance": "critical",
+      "status": "not-applicable",
+      "legacyStatus": "not-applicable",
+      "parityLevel": "not-applicable",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+      "featureName": "Runtime permission request, permission result handling, or protected API access.",
+      "featurePoint": "Runtime permission request, permission result handling, or protected API access.",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildProfileRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::renderProfileRoute"
+      ],
+      "verificationEvidence": [
+        "Manual source review confirmed `Profile.kt` contains no permission launcher, activity result, gallery picker, or protected API call.",
+        "Manual target review confirmed `buildProfileRoute` and `renderProfileRoute` only use route callbacks and placeholder toasts.",
+        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
+        "Phase-06 build gate PASS: `translation-inputs/build-reports/phase-06-profile-capabilities-verification/build-report.md`.",
+        "{'kind': 'test-compile-pass', 'detail': 'Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.', 'path': 'translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md'}",
+        "{'kind': 'manual-review', 'detail': 'The source and translated profile routes contain no permission request or protected API path.'}"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesStaticIdentityAndPlaceholderActions",
+        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+      ]
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-profi-a1f2ba5cd8-001-image-viewing-bitmap-exif-handling-zoom",
+      "plannedPhase": "phase-06-profile-capabilities-verification",
+      "importance": "critical",
+      "status": "not-applicable",
+      "legacyStatus": "not-applicable",
+      "parityLevel": "not-applicable",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+      "featureName": "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+      "featurePoint": "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::renderProfileRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildProfileRoute"
+      ],
+      "verificationEvidence": [
+        "Manual source review confirmed `Profile.kt` uses only `painterResource(R.drawable.ic_profile)` for a static profile image and has no image click/viewer path.",
+        "Manual target review confirmed `profile_page.cj::renderProfileRoute` renders `mediaProfile` as a static avatar only.",
+        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
+        "Phase-06 build gate PASS: `translation-inputs/build-reports/phase-06-profile-capabilities-verification/build-report.md`.",
+        "{'kind': 'focused-test-pass', 'detail': '`phase06_profile_capabilities_verification_test.cj::profileStorePreservesStaticIdentityAndPlaceholderActions` verifies the translated profile route keeps the static identity and placeholder action surface.', 'path': 'entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj'}",
+        "{'kind': 'test-compile-pass', 'detail': 'Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.', 'path': 'translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md'}"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesStaticIdentityAndPlaceholderActions",
+        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+      ]
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-profi-f941f1a12e-001-runtime-permission-request-permission-re",
+      "plannedPhase": "phase-06-profile-capabilities-verification",
+      "importance": "critical",
+      "status": "not-applicable",
+      "legacyStatus": "not-applicable",
+      "parityLevel": "not-applicable",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt",
+      "featureName": "Runtime permission request, permission result handling, or protected API access.",
+      "featurePoint": "Runtime permission request, permission result handling, or protected API access.",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogout"
+      ],
+      "verificationEvidence": [
+        "Manual source review confirmed `ProfileViewModel.kt` contains only `repository.toggleLoginState()` inside `PerformLogout` handling.",
+        "Manual target review confirmed `profile_store.cj::logout` performs only session logout through the preferences service.",
+        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
+        "{'kind': 'test-compile-pass', 'detail': 'Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.', 'path': 'translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md'}",
+        "{'kind': 'manual-review', 'detail': 'The source and translated logout handlers remain permission-free session mutations only.'}"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
+        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+      ]
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-profi-3fdadde96c-001-runtime-permission-request-permission-re",
+      "plannedPhase": "phase-06-profile-capabilities-verification",
+      "importance": "medium",
+      "status": "not-applicable",
+      "legacyStatus": "not-applicable",
+      "parityLevel": "not-applicable",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/profile/ProfileEvent.kt",
+      "featureName": "Runtime permission request, permission result handling, or protected API access.",
+      "featurePoint": "Runtime permission request, permission result handling, or protected API access.",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildProfileRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout"
+      ],
+      "verificationEvidence": [
+        "Manual source review confirmed `ProfileEvent.kt` contains only `PerformLogout(val onClick: () -> Unit)`.",
+        "Manual target review confirmed the translated profile route uses plain logout callbacks only.",
+        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
+        "{'kind': 'test-compile-pass', 'detail': 'Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.', 'path': 'translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md'}",
+        "{'kind': 'manual-review', 'detail': 'The source and translated profile event surfaces model logout only and no permission path.'}"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
+        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+      ]
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-profi-c201c10d27-001-runtime-permission-request-permission-re",
+      "plannedPhase": "phase-06-profile-capabilities-verification",
+      "importance": "medium",
+      "status": "not-applicable",
+      "legacyStatus": "not-applicable",
+      "parityLevel": "not-applicable",
+      "sourcePath": "app/src/main/java/com/example/foodike/presentation/profile/components/ProfileCard.kt",
+      "featureName": "Runtime permission request, permission result handling, or protected API access.",
+      "featurePoint": "Runtime permission request, permission result handling, or protected API access.",
+      "targetEndpoints": [
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::buildProfileSection"
+      ],
+      "verificationEvidence": [
+        "Manual source review confirmed `ProfileCard.kt` contains only text, divider, and click handling.",
+        "Manual target review confirmed `profile_page.cj::buildProfileSection` remains a pure row builder.",
+        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
+        "{'kind': 'test-compile-pass', 'detail': 'Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.', 'path': 'translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md'}",
+        "{'kind': 'manual-review', 'detail': 'The translated profile section builder remains a permission-free text row, matching the source card helper.'}"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesStaticIdentityAndPlaceholderActions",
+        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+      ]
+    },
+    {
+      "featureId": "app-src-androidtest-java-com-example-foodike-exampleinst-7ce120cd33-001-source-side-tests-or-verification-assets",
+      "plannedPhase": "phase-06-profile-capabilities-verification",
+      "importance": "low",
+      "status": "implemented",
+      "legacyStatus": "implemented",
+      "parityLevel": "equivalent",
+      "sourcePath": "app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt",
+      "featureName": "Source-side tests or verification assets should be migrated or replaced.",
+      "featurePoint": "Source-side tests or verification assets should be migrated or replaced.",
+      "targetEndpoints": [
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj"
+      ],
+      "verificationEvidence": [
+        "Manual source review confirmed `ExampleInstrumentedTest.kt` asserts only the package name `com.example.foodike`.",
+        "The target phase-06 test suite now covers profile back/logout routing and post-logout start-route resolution in `phase06_profile_capabilities_verification_test.cj`.",
+        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
+        "{'kind': 'focused-test-pass', 'detail': '`phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes` and `::startupResolverReturnsOnboardingAfterLogoutStyleState` replace the shallow source instrumentation smoke test with route-behavior verification.', 'path': 'entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj'}",
+        "{'kind': 'test-compile-pass', 'detail': 'Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.', 'path': 'translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md'}",
+        "{'kind': 'manual-review', 'detail': 'The source package-name assertion was replaced with focused target route/logout verification instead of a shallow package smoke check.'}"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState",
+        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+      ]
+    },
+    {
+      "featureId": "app-src-test-java-com-example-foodike-exampleunittest-kt-504d70964f-002-crud-mutation-or-persistent-state-update",
+      "plannedPhase": "phase-06-profile-capabilities-verification",
+      "importance": "low",
+      "status": "implemented",
+      "legacyStatus": "implemented",
+      "parityLevel": "equivalent",
+      "sourcePath": "app/src/test/java/com/example/foodike/ExampleUnitTest.kt",
+      "featureName": "CRUD mutation or persistent state update behavior (addition_isCorrect)",
+      "featurePoint": "CRUD mutation or persistent state update behavior. Evidence method: `addition_isCorrect`.",
+      "targetEndpoints": [
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::resolveStartRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout"
+      ],
+      "verificationEvidence": [
+        "Manual source review confirmed `addition_isCorrect` does not exercise any source CRUD or persistence path.",
+        "The target phase-06 tests verify logout/startup session consequences via `startupResolverReturnsOnboardingAfterLogoutStyleState` and keep a direct translated arithmetic check in `sourceExampleUnitAssertionIntentIsCoveredByTargetHarness`.",
+        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
+        "{'kind': 'focused-test-pass', 'detail': '`phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState` verifies the translated session/logout state updates the next app entry route.', 'path': 'entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj'}",
+        "{'kind': 'focused-test-pass', 'detail': '`phase06_profile_capabilities_verification_test.cj::sourceExampleUnitAssertionIntentIsCoveredByTargetHarness` preserves the shallow source unit-test intent while the same phase adds real app-state verification.', 'path': 'entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj'}",
+        "{'kind': 'test-compile-pass', 'detail': 'Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.', 'path': 'translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md'}"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::sourceExampleUnitAssertionIntentIsCoveredByTargetHarness",
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState",
+        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+      ]
+    },
+    {
+      "featureId": "app-src-test-java-com-example-foodike-exampleunittest-kt-7340d393c5-001-source-side-tests-or-verification-assets",
+      "plannedPhase": "phase-06-profile-capabilities-verification",
+      "importance": "low",
+      "status": "implemented",
+      "legacyStatus": "implemented",
+      "parityLevel": "equivalent",
+      "sourcePath": "app/src/test/java/com/example/foodike/ExampleUnitTest.kt",
+      "featureName": "Source-side tests or verification assets should be migrated or replaced.",
+      "featurePoint": "Source-side tests or verification assets should be migrated or replaced.",
+      "targetEndpoints": [
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj"
+      ],
+      "verificationEvidence": [
+        "Manual source review confirmed `ExampleUnitTest.kt` contains only `assertEquals(4, 2 + 2)`.",
+        "Manual target review confirmed `phase06_profile_capabilities_verification_test.cj` includes both focused app-behavior tests and a harness sanity assertion.",
+        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
+        "{'kind': 'focused-test-pass', 'detail': '`phase06_profile_capabilities_verification_test.cj::sourceExampleUnitAssertionIntentIsCoveredByTargetHarness` keeps the source placeholder arithmetic assertion intent while the same file adds real phase-06 app-behavior coverage.', 'path': 'entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj'}",
+        "{'kind': 'test-compile-pass', 'detail': 'Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.', 'path': 'translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md'}",
+        "{'kind': 'manual-review', 'detail': 'The source placeholder unit test was replaced with a target harness sanity assertion plus meaningful phase-06 behavior checks.'}"
+      ],
+      "tests": [
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::sourceExampleUnitAssertionIntentIsCoveredByTargetHarness",
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
+        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+      ]
+    }
+  ],
+  "capabilityRows": [],
+  "pathHints": {
+    "sourcePaths": [
+      "app/src/main/java/com/example/foodike/presentation/profile/Profile.kt",
+      "app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt",
+      "app/src/main/java/com/example/foodike/presentation/profile/components/ProfileCard.kt",
+      "app/src/main/java/com/example/foodike/presentation/profile/ProfileEvent.kt",
+      "app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt",
+      "app/src/test/java/com/example/foodike/ExampleUnitTest.kt"
+    ],
+    "targetEndpoints": [
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildProfileRoute",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogout",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::buildProfileTopBar",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::renderProfileRoute",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::backRoute",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logoutRoute",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::actionFeedbackMessage",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::profileSectionCount",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::resolveStartRoute",
+      "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::buildProfileSection",
+      "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj"
+    ],
+    "platformCapabilityIds": []
+  },
+  "debtSummary": {
+    "blockingFunctionalDebt": [],
+    "repairableQualityDebt": [],
+    "structureOnlyDebt": [],
+    "carryForwardDebt": [
+      {
+        "groupId": "phase-06-profile-capabilities-verificati-verification-phase-tests-and-evidence",
+        "riskHints": [
+          "target tests only count as strong evidence when backed by latest test gate PASS or explicit harness blocker",
+          "build pass alone does not close per-feature behavior",
+          "manual review evidence must point to concrete target endpoints"
+        ],
+        "acceptanceEvidence": [
+          "Update source-coverage-matrix.json after implementation with targetEndpoints, tests, parityLevel, and verificationEvidence.",
+          "If tests cannot run, record the concrete harness blocker instead of claiming test PASS."
+        ]
+      }
+    ],
+    "repairClusterKinds": {}
+  },
+  "reportPointers": {
+    "phaseTaskChecklist": "D:\\workspace\\Foodike\\translation-inputs\\phase-task-checklist.md",
+    "planSeed": "D:\\workspace\\Foodike\\translation-inputs\\plan-seed.md",
+    "planValidationReport": "D:\\workspace\\Foodike\\translation-inputs\\plan-validation-report.md",
+    "phaseGroupVerdicts": "D:\\workspace\\Foodike\\translation-inputs\\phase-group-verdicts.md",
+    "phaseCoverageGate": "D:\\workspace\\Foodike\\translation-inputs\\phase-coverage-gate-report.md",
+    "translationQualitySummary": "D:\\workspace\\Foodike\\translation-inputs\\translation-quality-summary.md",
+    "sourceCoverageMatrix": "D:\\workspace\\Foodike\\translation-inputs\\source-coverage-matrix.json",
+    "platformCapabilityCheck": "D:\\workspace\\Foodike\\translation-inputs\\platform-capability-check.json",
+    "targetStructureReport": "D:\\workspace\\Foodike\\translation-inputs\\target-structure-report.md"
+  },
+  "summary": {
+    "implementationGroups": 1,
+    "repairClusters": 0,
+    "repairGroups": 0,
+    "matrixRows": 12,
+    "capabilityRows": 0,
+    "sourcePaths": 6,
+    "targetEndpoints": 12,
+    "platformCapabilityIds": 0
+  }
+}

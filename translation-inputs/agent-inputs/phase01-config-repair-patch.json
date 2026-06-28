@@ -1,0 +1,182 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Narrow phase-01 repair for gradle.properties config over-detections.",
+  "updates": [
+    {
+      "featureId": "gradle-properties-4e2ecb7555-001-background-work-scheduled-tasks-alarms-w",
+      "set": {
+        "status": "not-applicable",
+        "sourceBehavior": "`gradle.properties` only defines Gradle/Kotlin daemon JVM args, AndroidX enablement, KAPT worker disabling, and Android resource/build flags; it does not declare any WorkManager, alarm, job, worker, or background scheduling behavior.",
+        "targetBehavior": "HarmonyOS phase-01 keeps build-time configuration separate from runtime behavior, so no background task or scheduler endpoint is introduced from this config file.",
+        "verificationEvidence": [
+          "manual-review: source `gradle.properties` contains only daemon memory/JDK-open flags, AndroidX, KAPT, and resource/build toggles.",
+          "manual-review: target runtime entry remains limited to `EntryAbility.onCreate` startup resolution and does not add scheduler surfaces for this source config."
+        ],
+        "parityLevel": "not-applicable",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate"
+        ],
+        "notes": "Static analysis over-detected background-work risk on a build tuning file. The source config does not express runtime scheduling behavior, so this row closes as not-applicable rather than deferred.",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/app_ability.cj::EntryAbility.onCreate"
+            ],
+            "testEvidence": [],
+            "buildEvidence": [],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "evidence": "Source `gradle.properties` review confirms the file contains only daemon memory/JDK-open flags, AndroidX enablement, KAPT worker disabling, and Android resource/build toggles, with no scheduler declarations."
+              },
+              {
+                "kind": "manual-review",
+                "evidence": "Target `EntryAbility.onCreate` review confirms phase-01 startup only resolves login state and loads bootstrap content, without any background-task replacement originating from this config file."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "gradle-properties-76940e282a-002-intent-uri-bundle-deeplink-or-cross-scre",
+      "set": {
+        "status": "not-applicable",
+        "sourceBehavior": "`gradle.properties` contains only build and daemon tuning flags and does not define intents, URI handlers, deeplinks, bundles, or cross-screen parameter wiring.",
+        "targetBehavior": "HarmonyOS keeps phase-01 route flow in explicit route helpers rather than deriving any cross-screen parameter behavior from build config, so this source config row is not applicable.",
+        "verificationEvidence": [
+          "manual-review: source `gradle.properties` has no URI scheme, navigation, or intent-related keys.",
+          "manual-review: target route registry and start-route helpers carry the phase-01 shell flow, independent of build config."
+        ],
+        "parityLevel": "not-applicable",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::routePath",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::resolveStartRoute"
+        ],
+        "notes": "This row was opened by config-file risk tagging, but the source file itself contains no deeplink or cross-screen argument contract.",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj::routePath",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::resolveStartRoute"
+            ],
+            "testEvidence": [],
+            "buildEvidence": [],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "evidence": "Source `gradle.properties` review confirms there are no intent, URI scheme, bundle, or deeplink declarations in the file."
+              },
+              {
+                "kind": "manual-review",
+                "evidence": "Target route review confirms phase-01 screen flow is defined in `route_registry.cj` and `app_router.cj`, not in build config."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "gradle-properties-7106f28f85-003-settings-preferences-option-toggles-or-c",
+      "set": {
+        "status": "not-applicable",
+        "sourceBehavior": "`gradle.properties` only contains build-system toggles such as `android.useAndroidX`, `kotlin.code.style`, and resource/build flags; it does not persist user preferences or define runtime option-toggle behavior.",
+        "targetBehavior": "HarmonyOS keeps user session preferences in `LoginPreferencesService` and startup consumption in `StartupLaunchService`, while no runtime preference behavior is sourced from this Gradle config file.",
+        "verificationEvidence": [
+          "manual-review: source `gradle.properties` contains developer/build toggles only, not user-facing preference state.",
+          "manual-review: target persisted preference behavior is implemented in `LoginPreferencesService` and consumed by `StartupLaunchService`, not in build config.",
+          "focused-test-pass: `phase02_startup_navigation_test.cj` covers `LoginPreferencesService.nextLoginState` and startup route resolution helpers."
+        ],
+        "parityLevel": "not-applicable",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::LoginPreferencesService",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_launch_service.cj::StartupLaunchService.resolveLaunchRoute",
+          "entry/src/test/cangjie/phase02_startup_navigation_test.cj::Phase02StartupNavigationTest.loginStateToggleRuleFlipsBothDirections"
+        ],
+        "notes": "The source file has config toggles for the build toolchain, but not source-app preference behavior. Actual persisted login preference behavior is already tracked by the build.gradle/settings rows and target session services.",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "not-applicable",
+          "parityKind": "not-applicable",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": false,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj::LoginPreferencesService",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_launch_service.cj::StartupLaunchService.resolveLaunchRoute",
+              "entry/src/test/cangjie/phase02_startup_navigation_test.cj::Phase02StartupNavigationTest.loginStateToggleRuleFlipsBothDirections"
+            ],
+            "testEvidence": [
+              {
+                "kind": "manual-review",
+                "evidence": "`entry/src/test/cangjie/phase02_startup_navigation_test.cj` covers the login-state toggle helper and startup route resolution helpers, but no accepted test-build report exists yet for strong harness evidence."
+              }
+            ],
+            "buildEvidence": [],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "evidence": "Source `gradle.properties` review confirms the file contains developer/build toggles only and no user-facing preference persistence contract."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    }
+  ]
+}

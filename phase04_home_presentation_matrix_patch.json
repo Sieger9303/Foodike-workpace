@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Repair phase-04 home presentation coverage rows with precise media and state aggregation evidence.",
+  "updates": [
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-home-085460c333-001-image-viewing-bitmap-exif-handling-zoom",
+      "set": {
+        "status": "implemented",
+        "sourceBehavior": "`HomeScreen.kt` composes bundled ad, category, favourite, and restaurant-card imagery into the discovery feed without any gallery picker, EXIF processing, or zoom interaction.",
+        "targetBehavior": "`renderHomeRoute` preserves the same bundled-media feed composition by routing home sections through `buildHomeAdCards`, `buildRecommendedCategories`, `buildFavouriteStrip`, and `buildRestaurantList`, each rendering packaged app media only.",
+        "parityLevel": "equivalent",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj::renderHomeRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj::buildHomeAdCards",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj::buildRecommendedCategories",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj::buildFavouriteStrip",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj::buildRestaurantList"
+        ],
+        "verificationEvidence": [
+          "Manual source review confirmed `HomeScreen.kt` itself only composes image-backed sections and does not implement gallery, EXIF, or zoom behavior.",
+          "Manual target review confirmed `renderHomeRoute` preserves the same packaged-media home sections through `buildHomeAdCards`, `buildRecommendedCategories`, `buildFavouriteStrip`, and `buildRestaurantList`.",
+          "Phase-04 Harmony build gate PASS: `translation-inputs/build-reports/phase-04-home-history/build-report.md`.",
+          "Focused target test PASS on 2026-06-28: `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` passed `phase04_home_history_discovery_test.cj::homeStoreLoadsFixtureBackedSections`, confirming the home feed still loads the repository-backed sections that own the bundled media surfaces."
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase04_home_history_discovery_test.cj::homeStoreLoadsFixtureBackedSections (PASS 2026-06-28)"
+        ],
+        "notes": "The source feature label over-detects viewer/EXIF/zoom semantics here; the real phase-04 home behavior is packaged feed imagery rendered inside home sections.",
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj::renderHomeRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj::buildHomeAdCards",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj::buildRecommendedCategories",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj::buildFavouriteStrip",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj::buildRestaurantList"
+            ],
+            "testEvidence": [
+              {
+                "kind": "focused-test-pass",
+                "detail": "`cjpm test --target aarch64-linux-ohos` passed `phase04_home_history_discovery_test.cj::homeStoreLoadsFixtureBackedSections`, covering the repository-backed home sections that surface the packaged images."
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "Phase-04 Harmony build gate PASS: `translation-inputs/build-reports/phase-04-home-history/build-report.md`.",
+                "path": "translation-inputs/build-reports/phase-04-home-history/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "The translated home route preserves static packaged imagery for ads, categories, favourites, and restaurant cards without widening the phase into media-library or image-viewer behavior."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-home-ec64cedf3e-003-observable-state-viewmodel-flow-livedata",
+      "set": {
+        "targetBehavior": "`HomeStore.loadHomeState()`, `buildVisibleState(...)`, and `buildFilteredState(...)` own the translated home-state aggregation and derived visible state, preserving the source view-model responsibility for repository-backed ads, categories, restaurants, and liked restaurants.",
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_store.cj::loadHomeState",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_store.cj::buildVisibleState",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_store.cj::buildFilteredState"
+        ],
+        "verificationEvidence": [
+          "Manual source and target review confirmed the home state owner still aggregates the same repository-backed lists and derives visible home results from current query and filter state.",
+          "Phase-04 Harmony build gate PASS: `translation-inputs/build-reports/phase-04-home-history/build-report.md`.",
+          "Focused target test PASS on 2026-06-28: `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` passed `homeStoreLoadsFixtureBackedSections`, `homeStoreFiltersFavouritesAndRestaurantsFromSearchQuery`, `homeStoreSearchMatchesCaseInsensitiveSourceUiExpectation`, and `homeStoreAppliesChipFilterToVisibleRestaurantLists`, confirming the translated home-store aggregation plus visible-state recomputation semantics."
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_store.cj::loadHomeState",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_store.cj::buildVisibleState",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_store.cj::buildFilteredState"
+            ],
+            "testEvidence": [
+              {
+                "kind": "focused-test-pass",
+                "detail": "`cjpm test --target aarch64-linux-ohos` passed the phase-04 home store aggregation, search, and chip-filter tests on 2026-06-28."
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "Phase-04 Harmony build gate PASS: `translation-inputs/build-reports/phase-04-home-history/build-report.md`.",
+                "path": "translation-inputs/build-reports/phase-04-home-history/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "Home store aggregation still mirrors the source `HomeViewModel` responsibilities, while `buildVisibleState(...)` and `buildFilteredState(...)` make the derived visible feed update immediately from query and chip state."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-27T03:22:15+00:00",
+  "generatedAt": "2026-06-28T12:11:43+00:00",
   "sourceKind": "kotlin",
   "purpose": "Reduce functional gaps and unexplained code-scale gaps during project translation. This file-level survey is a planning baseline, not a replacement for source inspection.",
   "source": {
@@ -5570,54 +5570,54 @@
         "status": "PASS",
         "returncode": 0,
         "timedOut": false,
-        "fileMetrics": 47,
+        "fileMetrics": 56,
         "message": ""
       }
     ],
     "totals": {
-      "files": 77,
-      "textFiles": 54,
+      "files": 86,
+      "textFiles": 63,
       "assetFiles": 23,
-      "physicalLines": 6361,
-      "nonblankLines": 5999,
-      "locCodeLines": 5998,
+      "physicalLines": 7280,
+      "nonblankLines": 6795,
+      "locCodeLines": 6794,
       "locCommentLines": 1,
-      "locBlankLines": 362,
-      "productionTextFiles": 48,
-      "productionPhysicalLines": 5975,
-      "productionNonblankLines": 5660,
-      "productionLocCodeLines": 5659,
+      "locBlankLines": 485,
+      "productionTextFiles": 54,
+      "productionPhysicalLines": 6607,
+      "productionNonblankLines": 6207,
+      "productionLocCodeLines": 6206,
       "productionLocCommentLines": 1,
-      "productionLocBlankLines": 315,
-      "codeFiles": 38,
-      "codePhysicalLines": 3275,
-      "codeNonblankLines": 2925,
-      "codeLocCodeLines": 2924,
+      "productionLocBlankLines": 400,
+      "codeFiles": 47,
+      "codePhysicalLines": 4194,
+      "codeNonblankLines": 3721,
+      "codeLocCodeLines": 3720,
       "codeLocCommentLines": 1,
-      "codeLocBlankLines": 350,
-      "productionCodeFiles": 34,
-      "productionCodePhysicalLines": 2956,
-      "productionCodeNonblankLines": 2646,
-      "productionCodeLocCodeLines": 2645,
+      "codeLocBlankLines": 473,
+      "productionCodeFiles": 40,
+      "productionCodePhysicalLines": 3588,
+      "productionCodeNonblankLines": 3193,
+      "productionCodeLocCodeLines": 3192,
       "productionCodeLocCommentLines": 1,
-      "productionCodeLocBlankLines": 310,
-      "testFiles": 6,
-      "testNonblankLines": 339,
-      "testCodeFiles": 4,
-      "testCodeNonblankLines": 279,
-      "testCodeLocCodeLines": 279,
+      "productionCodeLocBlankLines": 395,
+      "testFiles": 9,
+      "testNonblankLines": 588,
+      "testCodeFiles": 7,
+      "testCodeNonblankLines": 528,
+      "testCodeLocCodeLines": 528,
       "testCodeLocCommentLines": 0,
-      "testCodeLocBlankLines": 40
+      "testCodeLocBlankLines": 78
     },
     "byCategory": {
-      "cangjie-source": 32,
+      "cangjie-source": 38,
       "config": 9,
       "harmony-resource": 28,
       "script-source": 2,
-      "test": 6
+      "test": 9
     },
     "byExtension": {
-      ".cj": 36,
+      ".cj": 45,
       ".jpg": 7,
       ".json": 6,
       ".json5": 7,
@@ -5627,24 +5627,24 @@
       ".ts": 2
     },
     "byImportance": {
-      "critical": 19,
+      "critical": 24,
       "high": 11,
       "low": 3,
-      "medium": 44
+      "medium": 48
     },
     "byRiskTag": {
       "file_ops": 2,
       "image_viewer": 9,
-      "intent_uri": 12,
+      "intent_uri": 17,
       "localization": 1,
       "media_discovery": 1,
-      "navigation_resource": 11,
+      "navigation_resource": 14,
       "notification_widget": 6,
       "permissions": 2,
-      "platform_component": 8,
+      "platform_component": 12,
       "screen_lifecycle": 3,
-      "settings": 15,
-      "source_test": 6
+      "settings": 16,
+      "source_test": 9
     },
     "files": [
       {
@@ -6044,23 +6044,22 @@
         "path": "entry/src/main/cangjie/app_ability.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 43,
-        "nonblankLines": 37,
+        "physicalLines": 42,
+        "nonblankLines": 35,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 43,
-          "nonblankLines": 37,
-          "codeLines": 37,
+          "physicalLines": 42,
+          "nonblankLines": 35,
+          "codeLines": 35,
           "commentLines": 0,
-          "blankLines": 6
+          "blankLines": 7
         },
         "importance": "critical",
         "riskTags": [
           "platform_component",
-          "screen_lifecycle",
-          "settings"
+          "screen_lifecycle"
         ],
         "symbols": {
           "classes": [
@@ -6080,7 +6079,6 @@
         "featurePoints": [
           "Android platform component lifecycle such as service, receiver, provider, or application.",
           "Screen lifecycle, entry point initialization, resume/pause refresh, or teardown behavior.",
-          "Settings/preferences, option toggles, or configuration state behavior.",
           "Lifecycle callback affecting screen initialization, refresh, or cleanup. Evidence method: `onCreate`.",
           "CRUD mutation or persistent state update behavior. Evidence method: `onWindowStageCreate`."
         ],
@@ -6120,52 +6118,34 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 92,
-        "nonblankLines": 79,
+        "physicalLines": 19,
+        "nonblankLines": 15,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 92,
-          "nonblankLines": 79,
-          "codeLines": 79,
+          "physicalLines": 19,
+          "nonblankLines": 15,
+          "codeLines": 15,
           "commentLines": 0,
-          "blankLines": 13
+          "blankLines": 4
         },
         "importance": "medium",
         "riskTags": [],
         "symbols": {
-          "classes": [
-            "RouteId",
-            "ShellCommand",
-            "ShellRouteState"
-          ],
+          "classes": [],
           "methods": [
-            "routePath",
             "resolveStartRoute",
-            "showsBottomShell",
-            "primaryActionTarget",
-            "navigateWithoutDuplicate",
-            "applyCommand",
-            "setTopState",
-            "showBottomShell"
+            "resolveProfileBackRoute"
           ],
           "androidIds": [],
           "dependencies": []
         },
         "keyMethods": [
-          "resolveStartRoute",
-          "showsBottomShell",
-          "primaryActionTarget",
-          "navigateWithoutDuplicate",
-          "showBottomShell"
+          "resolveStartRoute"
         ],
         "featurePoints": [
-          "Navigation, dialog, visibility, or screen transition behavior. Evidence method: `resolveStartRoute`.",
-          "Navigation, dialog, visibility, or screen transition behavior. Evidence method: `showsBottomShell`.",
-          "Data loading, query, search, filter, or sort behavior. Evidence method: `primaryActionTarget`.",
-          "Navigation, dialog, visibility, or screen transition behavior. Evidence method: `navigateWithoutDuplicate`.",
-          "Navigation, dialog, visibility, or screen transition behavior. Evidence method: `showBottomShell`."
+          "Navigation, dialog, visibility, or screen transition behavior. Evidence method: `resolveStartRoute`."
         ],
         "textScanned": true
       },
@@ -6173,22 +6153,23 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 426,
-        "nonblankLines": 374,
+        "physicalLines": 455,
+        "nonblankLines": 399,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 426,
-          "nonblankLines": 374,
-          "codeLines": 374,
+          "physicalLines": 455,
+          "nonblankLines": 399,
+          "codeLines": 399,
           "commentLines": 0,
-          "blankLines": 52
+          "blankLines": 56
         },
-        "importance": "high",
+        "importance": "critical",
         "riskTags": [
           "intent_uri",
           "navigation_resource",
+          "platform_component",
           "settings"
         ],
         "symbols": {
@@ -6201,12 +6182,16 @@
             "applyShellCommand",
             "navigateTo",
             "navigateBack",
+            "handleProfileBack",
             "showBottomShell",
             "routeTitle",
             "showToast",
             "clearLoginError",
             "performLogin",
             "performLogout",
+            "handleProfileEdit",
+            "handleProfileSectionAction",
+            "handleProfileLogout",
             "routeSummary",
             "homeHour",
             "goToProfile",
@@ -6235,11 +6220,14 @@
           "clearLoginError",
           "performLogin",
           "performLogout",
+          "handleProfileEdit",
+          "handleProfileLogout",
           "buildLoginRoute"
         ],
         "featurePoints": [
           "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
           "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Android platform component lifecycle such as service, receiver, provider, or application.",
           "Settings/preferences, option toggles, or configuration state behavior.",
           "Navigation, dialog, visibility, or screen transition behavior. Evidence method: `navigateTo`.",
           "Navigation, dialog, visibility, or screen transition behavior. Evidence method: `navigateBack`.",
@@ -6248,7 +6236,98 @@
           "CRUD mutation or persistent state update behavior. Evidence method: `clearLoginError`.",
           "Authentication, account, or session behavior. Evidence method: `performLogin`.",
           "Authentication, account, or session behavior. Evidence method: `performLogout`.",
+          "CRUD mutation or persistent state update behavior. Evidence method: `handleProfileEdit`.",
+          "Authentication, account, or session behavior. Evidence method: `handleProfileLogout`.",
           "Authentication, account, or session behavior. Evidence method: `buildLoginRoute`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/route_registry.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 113,
+        "nonblankLines": 101,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 113,
+          "nonblankLines": 101,
+          "codeLines": 101,
+          "commentLines": 0,
+          "blankLines": 12
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [
+            "RouteId",
+            "ShellCommand"
+          ],
+          "methods": [
+            "routePath",
+            "routeLabel",
+            "routeLabelText",
+            "routeLabelByPath",
+            "routeLabelTextByPath",
+            "routeWithArgs",
+            "primaryActionTarget",
+            "primaryActionLabel",
+            "primaryActionLabelText"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "primaryActionTarget"
+        ],
+        "featurePoints": [
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `primaryActionTarget`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/app/shell_route_state.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 42,
+        "nonblankLines": 34,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 42,
+          "nonblankLines": 34,
+          "codeLines": 34,
+          "commentLines": 0,
+          "blankLines": 8
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [
+            "ShellRouteState"
+          ],
+          "methods": [
+            "showsBottomShell",
+            "navigateWithoutDuplicate",
+            "applyCommand",
+            "setTopState",
+            "showBottomShell"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "showsBottomShell",
+          "navigateWithoutDuplicate",
+          "showBottomShell"
+        ],
+        "featurePoints": [
+          "Navigation, dialog, visibility, or screen transition behavior. Evidence method: `showsBottomShell`.",
+          "Navigation, dialog, visibility, or screen transition behavior. Evidence method: `navigateWithoutDuplicate`.",
+          "Navigation, dialog, visibility, or screen transition behavior. Evidence method: `showBottomShell`."
         ],
         "textScanned": true
       },
@@ -6289,24 +6368,91 @@
         "textScanned": true
       },
       {
-        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/restaurant_card.cj",
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_theme.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 106,
-        "nonblankLines": 101,
+        "physicalLines": 10,
+        "nonblankLines": 9,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 106,
-          "nonblankLines": 101,
-          "codeLines": 101,
+          "physicalLines": 10,
+          "nonblankLines": 9,
+          "codeLines": 9,
           "commentLines": 0,
-          "blankLines": 5
+          "blankLines": 1
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [],
+        "featurePoints": [
+          "File-level artifact `entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_theme.cj` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/format_extensions.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 31,
+        "nonblankLines": 27,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 31,
+          "nonblankLines": 27,
+          "codeLines": 27,
+          "commentLines": 0,
+          "blankLines": 4
+        },
+        "importance": "medium",
+        "riskTags": [],
+        "symbols": {
+          "classes": [],
+          "methods": [
+            "roundToDecimals",
+            "formatMinutesDuration"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "roundToDecimals",
+          "formatMinutesDuration"
+        ],
+        "featurePoints": [
+          "File-level artifact `entry/src/main/cangjie/ohos_app_cangjie_entry/common/format_extensions.cj` should be mapped, copied, or explicitly ignored with reason."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/restaurant_card.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 105,
+        "nonblankLines": 99,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 105,
+          "nonblankLines": 99,
+          "codeLines": 99,
+          "commentLines": 0,
+          "blankLines": 6
         },
         "importance": "critical",
         "riskTags": [
           "image_viewer",
+          "intent_uri",
           "notification_widget"
         ],
         "symbols": {
@@ -6314,6 +6460,7 @@
           "methods": [
             "restaurantMedia",
             "getCustomerInfo",
+            "usesBundledRestaurantMedia",
             "formatEta",
             "renderRestaurantCard"
           ],
@@ -6322,13 +6469,16 @@
         },
         "keyMethods": [
           "restaurantMedia",
-          "getCustomerInfo"
+          "getCustomerInfo",
+          "usesBundledRestaurantMedia"
         ],
         "featurePoints": [
           "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
           "Notification, widget, RemoteViews, or home-screen integration behavior.",
           "Media/gallery/image handling behavior. Evidence method: `restaurantMedia`.",
-          "Data loading, query, search, filter, or sort behavior. Evidence method: `getCustomerInfo`."
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getCustomerInfo`.",
+          "Media/gallery/image handling behavior. Evidence method: `usesBundledRestaurantMedia`."
         ],
         "textScanned": true
       },
@@ -6336,17 +6486,17 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/search_bar.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 18,
-        "nonblankLines": 16,
+        "physicalLines": 22,
+        "nonblankLines": 19,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 18,
-          "nonblankLines": 16,
-          "codeLines": 16,
+          "physicalLines": 22,
+          "nonblankLines": 19,
+          "codeLines": 19,
           "commentLines": 0,
-          "blankLines": 2
+          "blankLines": 3
         },
         "importance": "medium",
         "riskTags": [
@@ -6355,17 +6505,20 @@
         "symbols": {
           "classes": [],
           "methods": [
-            "renderSearchBar"
+            "renderSearchBar",
+            "usesLocalSearchState"
           ],
           "androidIds": [],
           "dependencies": []
         },
         "keyMethods": [
-          "renderSearchBar"
+          "renderSearchBar",
+          "usesLocalSearchState"
         ],
         "featurePoints": [
           "Notification, widget, RemoteViews, or home-screen integration behavior.",
-          "Data loading, query, search, filter, or sort behavior. Evidence method: `renderSearchBar`."
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `renderSearchBar`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `usesLocalSearchState`."
         ],
         "textScanned": true
       },
@@ -6373,17 +6526,17 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/content/home_content_repository.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 57,
-        "nonblankLines": 48,
+        "physicalLines": 71,
+        "nonblankLines": 60,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 57,
-          "nonblankLines": 48,
-          "codeLines": 48,
+          "physicalLines": 71,
+          "nonblankLines": 60,
+          "codeLines": 60,
           "commentLines": 0,
-          "blankLines": 9
+          "blankLines": 11
         },
         "importance": "critical",
         "riskTags": [
@@ -6399,6 +6552,7 @@
             "getAds",
             "getFoodItems",
             "getRestaurants",
+            "getRestaurantFromName",
             "getRestaurantByName"
           ],
           "androidIds": [],
@@ -6408,6 +6562,7 @@
           "getAds",
           "getFoodItems",
           "getRestaurants",
+          "getRestaurantFromName",
           "getRestaurantByName"
         ],
         "featurePoints": [
@@ -6417,6 +6572,7 @@
           "Data loading, query, search, filter, or sort behavior. Evidence method: `getAds`.",
           "Data loading, query, search, filter, or sort behavior. Evidence method: `getFoodItems`.",
           "Data loading, query, search, filter, or sort behavior. Evidence method: `getRestaurants`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getRestaurantFromName`.",
           "Data loading, query, search, filter, or sort behavior. Evidence method: `getRestaurantByName`."
         ],
         "textScanned": true
@@ -6455,17 +6611,17 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/login_preferences_service.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 49,
-        "nonblankLines": 39,
+        "physicalLines": 51,
+        "nonblankLines": 40,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 49,
-          "nonblankLines": 39,
-          "codeLines": 39,
+          "physicalLines": 51,
+          "nonblankLines": 40,
+          "codeLines": 40,
           "commentLines": 0,
-          "blankLines": 10
+          "blankLines": 11
         },
         "importance": "critical",
         "riskTags": [
@@ -6513,22 +6669,23 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/data/session/session_repository.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 104,
-        "nonblankLines": 92,
+        "physicalLines": 254,
+        "nonblankLines": 229,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 104,
-          "nonblankLines": 92,
-          "codeLines": 92,
+          "physicalLines": 254,
+          "nonblankLines": 229,
+          "codeLines": 229,
           "commentLines": 0,
-          "blankLines": 12
+          "blankLines": 25
         },
         "importance": "critical",
         "riskTags": [
           "file_ops",
-          "navigation_resource"
+          "navigation_resource",
+          "settings"
         ],
         "symbols": {
           "classes": [
@@ -6536,28 +6693,51 @@
           ],
           "methods": [
             "setSelectedRestaurant",
+            "setRestaurant",
             "getSelectedRestaurantName",
+            "getSavedRestaurantName",
             "getLikedRestaurants",
             "getCartItems",
+            "incrementMenuItemQuantity",
+            "decrementMenuItemQuantity",
             "menuItemsForRestaurant",
+            "getMenuItems",
             "isRestaurantLiked",
             "setRestaurantLiked",
-            "containsLikedRestaurant"
+            "restaurantSelectionRouteToken",
+            "replaceSelectedMenu",
+            "updateSelectedMenuQuantity",
+            "syncCartItemQuantity",
+            "cartQuantityForDish",
+            "menuItemForDish",
+            "containsLikedRestaurant",
+            "removeLikedRestaurant"
           ],
           "androidIds": [],
           "dependencies": []
         },
         "keyMethods": [
           "getSelectedRestaurantName",
+          "getSavedRestaurantName",
           "getLikedRestaurants",
-          "getCartItems"
+          "getCartItems",
+          "getMenuItems",
+          "updateSelectedMenuQuantity",
+          "syncCartItemQuantity",
+          "removeLikedRestaurant"
         ],
         "featurePoints": [
           "File, document, storage, SAF, MediaStore, or import/export behavior.",
           "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Settings/preferences, option toggles, or configuration state behavior.",
           "Data loading, query, search, filter, or sort behavior. Evidence method: `getSelectedRestaurantName`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getSavedRestaurantName`.",
           "Data loading, query, search, filter, or sort behavior. Evidence method: `getLikedRestaurants`.",
-          "Data loading, query, search, filter, or sort behavior. Evidence method: `getCartItems`."
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getCartItems`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `getMenuItems`.",
+          "CRUD mutation or persistent state update behavior. Evidence method: `updateSelectedMenuQuantity`.",
+          "Network/backend synchronization or async callback behavior. Evidence method: `syncCartItemQuantity`.",
+          "CRUD mutation or persistent state update behavior. Evidence method: `removeLikedRestaurant`."
         ],
         "textScanned": true
       },
@@ -6565,17 +6745,17 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 196,
-        "nonblankLines": 173,
+        "physicalLines": 208,
+        "nonblankLines": 182,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 196,
-          "nonblankLines": 173,
-          "codeLines": 173,
+          "physicalLines": 208,
+          "nonblankLines": 182,
+          "codeLines": 182,
           "commentLines": 0,
-          "blankLines": 23
+          "blankLines": 26
         },
         "importance": "high",
         "riskTags": [
@@ -6596,14 +6776,19 @@
             "CartSnapshotItemData",
             "CartPageState"
           ],
-          "methods": [],
+          "methods": [
+            "usesBundledMediaOnly"
+          ],
           "androidIds": [],
           "dependencies": []
         },
-        "keyMethods": [],
+        "keyMethods": [
+          "usesBundledMediaOnly"
+        ],
         "featurePoints": [
           "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
-          "Navigation surface, menu, drawer, toolbar, or tab command behavior."
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Media/gallery/image handling behavior. Evidence method: `usesBundledMediaOnly`."
         ],
         "textScanned": true
       },
@@ -6663,15 +6848,15 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/cart/cart_store.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 83,
-        "nonblankLines": 69,
+        "physicalLines": 77,
+        "nonblankLines": 63,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 83,
-          "nonblankLines": 69,
-          "codeLines": 69,
+          "physicalLines": 77,
+          "nonblankLines": 63,
+          "codeLines": 63,
           "commentLines": 0,
           "blankLines": 14
         },
@@ -6761,17 +6946,17 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/detail/detail_store.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 143,
-        "nonblankLines": 123,
+        "physicalLines": 149,
+        "nonblankLines": 128,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 143,
-          "nonblankLines": 123,
-          "codeLines": 123,
+          "physicalLines": 149,
+          "nonblankLines": 128,
+          "codeLines": 128,
           "commentLines": 0,
-          "blankLines": 20
+          "blankLines": 21
         },
         "importance": "high",
         "riskTags": [
@@ -6784,6 +6969,7 @@
           "methods": [
             "loadDetailState",
             "selectedRestaurant",
+            "selectedMenuItems",
             "recommendedItems",
             "nonVegItems",
             "vegItems",
@@ -6870,17 +7056,17 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/history/history_store.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 39,
-        "nonblankLines": 31,
+        "physicalLines": 92,
+        "nonblankLines": 79,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 39,
-          "nonblankLines": 31,
-          "codeLines": 31,
+          "physicalLines": 92,
+          "nonblankLines": 79,
+          "codeLines": 79,
           "commentLines": 0,
-          "blankLines": 8
+          "blankLines": 13
         },
         "importance": "medium",
         "riskTags": [
@@ -6892,19 +7078,28 @@
           ],
           "methods": [
             "loadHistoryState",
+            "buildVisibleState",
             "tabLabel",
+            "tabLabelText",
             "selectRestaurant",
+            "filterFavourites",
+            "matchesQuery",
+            "containsIgnoreCase",
             "session"
           ],
           "androidIds": [],
           "dependencies": []
         },
         "keyMethods": [
-          "loadHistoryState"
+          "loadHistoryState",
+          "filterFavourites",
+          "matchesQuery"
         ],
         "featurePoints": [
           "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
-          "Data loading, query, search, filter, or sort behavior. Evidence method: `loadHistoryState`."
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `loadHistoryState`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `filterFavourites`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `matchesQuery`."
         ],
         "textScanned": true
       },
@@ -6965,44 +7160,74 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_store.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 60,
-        "nonblankLines": 50,
+        "physicalLines": 160,
+        "nonblankLines": 139,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 60,
-          "nonblankLines": 50,
-          "codeLines": 50,
+          "physicalLines": 160,
+          "nonblankLines": 139,
+          "codeLines": 139,
           "commentLines": 0,
-          "blankLines": 10
+          "blankLines": 21
         },
         "importance": "medium",
-        "riskTags": [],
+        "riskTags": [
+          "intent_uri"
+        ],
         "symbols": {
           "classes": [
             "HomeStore"
           ],
           "methods": [
+            "loadAdvertisements",
+            "loadRecommendedCategories",
+            "loadFavouriteRestaurants",
+            "loadRestaurantCatalog",
             "loadHomeState",
+            "buildVisibleState",
+            "buildFilteredState",
             "filtersList",
             "toggleFilter",
             "greetingForHour",
             "selectRestaurant",
+            "filterRestaurants",
+            "filterByTag",
+            "matchesQuery",
+            "matchesTag",
+            "containsIgnoreCase",
             "session"
           ],
           "androidIds": [],
           "dependencies": []
         },
         "keyMethods": [
+          "loadAdvertisements",
+          "loadRecommendedCategories",
+          "loadFavouriteRestaurants",
+          "loadRestaurantCatalog",
           "loadHomeState",
+          "buildFilteredState",
           "filtersList",
-          "toggleFilter"
+          "toggleFilter",
+          "filterRestaurants",
+          "filterByTag",
+          "matchesQuery"
         ],
         "featurePoints": [
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `loadAdvertisements`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `loadRecommendedCategories`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `loadFavouriteRestaurants`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `loadRestaurantCatalog`.",
           "Data loading, query, search, filter, or sort behavior. Evidence method: `loadHomeState`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `buildFilteredState`.",
           "Data loading, query, search, filter, or sort behavior. Evidence method: `filtersList`.",
-          "Data loading, query, search, filter, or sort behavior. Evidence method: `toggleFilter`."
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `toggleFilter`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `filterRestaurants`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `filterByTag`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `matchesQuery`."
         ],
         "textScanned": true
       },
@@ -7010,17 +7235,17 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 124,
-        "nonblankLines": 113,
+        "physicalLines": 134,
+        "nonblankLines": 121,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 124,
-          "nonblankLines": 113,
-          "codeLines": 113,
+          "physicalLines": 134,
+          "nonblankLines": 121,
+          "codeLines": 121,
           "commentLines": 0,
-          "blankLines": 11
+          "blankLines": 13
         },
         "importance": "critical",
         "riskTags": [
@@ -7030,6 +7255,8 @@
           "classes": [],
           "methods": [
             "buildLoginErrorBanner",
+            "buildPlaceholderActionText",
+            "buildSocialLoginSection",
             "renderLoginRoute"
           ],
           "androidIds": [],
@@ -7037,11 +7264,13 @@
         },
         "keyMethods": [
           "buildLoginErrorBanner",
+          "buildSocialLoginSection",
           "renderLoginRoute"
         ],
         "featurePoints": [
           "Image viewing, bitmap/exif handling, zoom, preview, or gallery display behavior.",
           "Authentication, account, or session behavior. Evidence method: `buildLoginErrorBanner`.",
+          "Authentication, account, or session behavior. Evidence method: `buildSocialLoginSection`.",
           "Authentication, account, or session behavior. Evidence method: `renderLoginRoute`."
         ],
         "textScanned": true
@@ -7093,17 +7322,17 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 98,
-        "nonblankLines": 93,
+        "physicalLines": 108,
+        "nonblankLines": 101,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 98,
-          "nonblankLines": 93,
-          "codeLines": 93,
+          "physicalLines": 108,
+          "nonblankLines": 101,
+          "codeLines": 101,
           "commentLines": 0,
-          "blankLines": 5
+          "blankLines": 7
         },
         "importance": "critical",
         "riskTags": [
@@ -7114,6 +7343,8 @@
           "methods": [
             "buildOnboardingCard",
             "buildOnboardingIndicator",
+            "buildOnboardingIndicatorRow",
+            "buildOnboardingFooter",
             "renderOnboardingRoute"
           ],
           "androidIds": [],
@@ -7122,6 +7353,8 @@
         "keyMethods": [
           "buildOnboardingCard",
           "buildOnboardingIndicator",
+          "buildOnboardingIndicatorRow",
+          "buildOnboardingFooter",
           "renderOnboardingRoute"
         ],
         "featurePoints": [
@@ -7133,20 +7366,22 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_store.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 65,
-        "nonblankLines": 53,
+        "physicalLines": 83,
+        "nonblankLines": 69,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 65,
-          "nonblankLines": 53,
-          "codeLines": 53,
+          "physicalLines": 83,
+          "nonblankLines": 69,
+          "codeLines": 69,
           "commentLines": 0,
-          "blankLines": 12
+          "blankLines": 14
         },
         "importance": "medium",
-        "riskTags": [],
+        "riskTags": [
+          "intent_uri"
+        ],
         "symbols": {
           "classes": [
             "OnboardingSlide",
@@ -7156,6 +7391,8 @@
             "slides",
             "pageCount",
             "slideAt",
+            "slideTitleText",
+            "slideDescriptionText",
             "isLastPage",
             "nextIndex"
           ],
@@ -7166,6 +7403,7 @@
           "nextIndex"
         ],
         "featurePoints": [
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
           "Media playback control or queue state behavior. Evidence method: `nextIndex`."
         ],
         "textScanned": true
@@ -7241,20 +7479,69 @@
         "textScanned": true
       },
       {
-        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj",
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 29,
-        "nonblankLines": 21,
+        "physicalLines": 79,
+        "nonblankLines": 66,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 29,
-          "nonblankLines": 21,
-          "codeLines": 21,
+          "physicalLines": 79,
+          "nonblankLines": 66,
+          "codeLines": 66,
           "commentLines": 0,
-          "blankLines": 8
+          "blankLines": 13
+        },
+        "importance": "critical",
+        "riskTags": [
+          "platform_component"
+        ],
+        "symbols": {
+          "classes": [
+            "ProfileRouteState",
+            "ProfileLogoutTransition",
+            "ProfileRouteService"
+          ],
+          "methods": [
+            "resolveBackRoute",
+            "canNavigateBack",
+            "resetAfterLogout",
+            "buildLogoutTransition",
+            "placeholderActionMessage"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "canNavigateBack",
+          "resetAfterLogout",
+          "buildLogoutTransition"
+        ],
+        "featurePoints": [
+          "Android platform component lifecycle such as service, receiver, provider, or application.",
+          "Navigation, dialog, visibility, or screen transition behavior. Evidence method: `canNavigateBack`.",
+          "Authentication, account, or session behavior. Evidence method: `resetAfterLogout`.",
+          "Authentication, account, or session behavior. Evidence method: `buildLogoutTransition`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 34,
+        "nonblankLines": 25,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 34,
+          "nonblankLines": 25,
+          "codeLines": 25,
+          "commentLines": 0,
+          "blankLines": 9
         },
         "importance": "critical",
         "riskTags": [
@@ -7266,8 +7553,9 @@
             "ProfileStore"
           ],
           "methods": [
+            "actionFeedbackMessage",
+            "profileSectionCount",
             "logout",
-            "backRoute",
             "logoutRoute"
           ],
           "androidIds": [],
@@ -7286,20 +7574,61 @@
         "textScanned": true
       },
       {
-        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj",
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_launch_service.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 17,
-        "nonblankLines": 13,
+        "physicalLines": 19,
+        "nonblankLines": 14,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 17,
-          "nonblankLines": 13,
-          "codeLines": 13,
+          "physicalLines": 19,
+          "nonblankLines": 14,
+          "codeLines": 14,
           "commentLines": 0,
-          "blankLines": 4
+          "blankLines": 5
+        },
+        "importance": "critical",
+        "riskTags": [
+          "platform_component",
+          "settings"
+        ],
+        "symbols": {
+          "classes": [
+            "StartupLaunchService"
+          ],
+          "methods": [
+            "resolveLaunchRoute"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "resolveLaunchRoute"
+        ],
+        "featurePoints": [
+          "Android platform component lifecycle such as service, receiver, provider, or application.",
+          "Settings/preferences, option toggles, or configuration state behavior.",
+          "Navigation, dialog, visibility, or screen transition behavior. Evidence method: `resolveLaunchRoute`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj",
+        "extension": ".cj",
+        "category": "cangjie-source",
+        "physicalLines": 23,
+        "nonblankLines": 18,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 23,
+          "nonblankLines": 18,
+          "codeLines": 18,
+          "commentLines": 0,
+          "blankLines": 5
         },
         "importance": "medium",
         "riskTags": [],
@@ -8242,6 +8571,105 @@
         "textScanned": true
       },
       {
+        "path": "entry/src/test/cangjie/phase01_resource_theme_contract_test.cj",
+        "extension": ".cj",
+        "category": "test",
+        "physicalLines": 51,
+        "nonblankLines": 46,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 51,
+          "nonblankLines": 46,
+          "codeLines": 46,
+          "commentLines": 0,
+          "blankLines": 5
+        },
+        "importance": "high",
+        "riskTags": [
+          "navigation_resource",
+          "source_test"
+        ],
+        "symbols": {
+          "classes": [
+            "Phase01ResourceThemeContractTest"
+          ],
+          "methods": [
+            "routeLabelsStayAlignedWithSourceRouteInventory",
+            "routeWithArgsAppendsSegmentsInSourceOrder",
+            "primaryActionLabelTracksThePrimaryNavigationTarget",
+            "foodikeThemeConstantsPreserveSourcePaletteShapeAndTypeChoices"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "primaryActionLabelTracksThePrimaryNavigationTarget"
+        ],
+        "featurePoints": [
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Source-side tests or verification assets should be migrated or replaced.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `primaryActionLabelTracksThePrimaryNavigationTarget`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/test/cangjie/phase02_repository_contract_test.cj",
+        "extension": ".cj",
+        "category": "test",
+        "physicalLines": 85,
+        "nonblankLines": 72,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 85,
+          "nonblankLines": 72,
+          "codeLines": 72,
+          "commentLines": 0,
+          "blankLines": 13
+        },
+        "importance": "critical",
+        "riskTags": [
+          "intent_uri",
+          "navigation_resource",
+          "source_test"
+        ],
+        "symbols": {
+          "classes": [
+            "Phase02RepositoryContractTest"
+          ],
+          "methods": [
+            "restaurantOrFirst",
+            "contentRepositoryExposesFullRestaurantSeedSet",
+            "contentRepositoryFindsRestaurantByExactName",
+            "sessionRepositorySelectionPublishesSavedNameAndMenuSnapshot",
+            "sessionRepositorySelectionPreservesExactSeededMenuPerRestaurant",
+            "sessionRepositoryLikeToggleMutatesSharedFavouriteState",
+            "sessionRepositoryRetainsCartSeedItems"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "contentRepositoryFindsRestaurantByExactName",
+          "sessionRepositorySelectionPublishesSavedNameAndMenuSnapshot",
+          "sessionRepositoryLikeToggleMutatesSharedFavouriteState",
+          "sessionRepositoryRetainsCartSeedItems"
+        ],
+        "featurePoints": [
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Source-side tests or verification assets should be migrated or replaced.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `contentRepositoryFindsRestaurantByExactName`.",
+          "CRUD mutation or persistent state update behavior. Evidence method: `sessionRepositorySelectionPublishesSavedNameAndMenuSnapshot`.",
+          "Sharing, import/export, file organization, or document operation behavior. Evidence method: `sessionRepositoryLikeToggleMutatesSharedFavouriteState`.",
+          "CRUD mutation or persistent state update behavior. Evidence method: `sessionRepositoryRetainsCartSeedItems`."
+        ],
+        "textScanned": true
+      },
+      {
         "path": "entry/src/test/cangjie/phase02_startup_navigation_test.cj",
         "extension": ".cj",
         "category": "test",
@@ -8305,17 +8733,17 @@
         "path": "entry/src/test/cangjie/phase03_onboarding_login_profile_test.cj",
         "extension": ".cj",
         "category": "test",
-        "physicalLines": 40,
-        "nonblankLines": 36,
+        "physicalLines": 55,
+        "nonblankLines": 50,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 40,
-          "nonblankLines": 36,
-          "codeLines": 36,
+          "physicalLines": 55,
+          "nonblankLines": 50,
+          "codeLines": 50,
           "commentLines": 0,
-          "blankLines": 4
+          "blankLines": 5
         },
         "importance": "low",
         "riskTags": [
@@ -8329,20 +8757,23 @@
           "methods": [
             "onboardingStorePreservesThreePageProgression",
             "loginStoreAcceptsOnlySourceCredentials",
-            "profileStoreRoutesBackAndLogoutToSourceDestinations"
+            "loginStorePreservesSourceHintsAndPlaceholderMessages",
+            "profileStorePreservesLogoutDestinationAndIdentity"
           ],
           "androidIds": [],
           "dependencies": []
         },
         "keyMethods": [
           "loginStoreAcceptsOnlySourceCredentials",
-          "profileStoreRoutesBackAndLogoutToSourceDestinations"
+          "loginStorePreservesSourceHintsAndPlaceholderMessages",
+          "profileStorePreservesLogoutDestinationAndIdentity"
         ],
         "featurePoints": [
           "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
           "Source-side tests or verification assets should be migrated or replaced.",
           "Authentication, account, or session behavior. Evidence method: `loginStoreAcceptsOnlySourceCredentials`.",
-          "Authentication, account, or session behavior. Evidence method: `profileStoreRoutesBackAndLogoutToSourceDestinations`."
+          "Authentication, account, or session behavior. Evidence method: `loginStorePreservesSourceHintsAndPlaceholderMessages`.",
+          "Authentication, account, or session behavior. Evidence method: `profileStorePreservesLogoutDestinationAndIdentity`."
         ],
         "textScanned": true
       },
@@ -8350,17 +8781,17 @@
         "path": "entry/src/test/cangjie/phase04_home_history_discovery_test.cj",
         "extension": ".cj",
         "category": "test",
-        "physicalLines": 77,
-        "nonblankLines": 69,
+        "physicalLines": 120,
+        "nonblankLines": 107,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 77,
-          "nonblankLines": 69,
-          "codeLines": 69,
+          "physicalLines": 120,
+          "nonblankLines": 107,
+          "codeLines": 107,
           "commentLines": 0,
-          "blankLines": 8
+          "blankLines": 13
         },
         "importance": "critical",
         "riskTags": [
@@ -8376,21 +8807,31 @@
           ],
           "methods": [
             "homeStoreLoadsFixtureBackedSections",
+            "homeStoreFiltersFavouritesAndRestaurantsFromSearchQuery",
+            "homeStoreSearchMatchesCaseInsensitiveSourceUiExpectation",
             "homeStoreSelectionSavesRestaurantBeforeNavigation",
             "homeStoreKeepsSourceLocalFilterToggleSemantics",
+            "homeStoreAppliesChipFilterToVisibleRestaurantLists",
             "homeStorePreservesGreetingBuckets",
             "restaurantCardCustomerInfoMatchesSourceThresholdOrdering",
             "historyStoreSelectionSavesRestaurantBeforeNavigation",
-            "historyStoreExposesSourceTabOrdering"
+            "historyStoreExposesSourceTabOrdering",
+            "historyStoreFiltersFavouriteRestaurantsFromSearchQuery",
+            "historyStoreSearchIsCaseInsensitiveForLikedRestaurants"
           ],
           "androidIds": [],
           "dependencies": []
         },
         "keyMethods": [
           "homeStoreLoadsFixtureBackedSections",
+          "homeStoreFiltersFavouritesAndRestaurantsFromSearchQuery",
+          "homeStoreSearchMatchesCaseInsensitiveSourceUiExpectation",
           "homeStoreSelectionSavesRestaurantBeforeNavigation",
           "homeStoreKeepsSourceLocalFilterToggleSemantics",
-          "historyStoreSelectionSavesRestaurantBeforeNavigation"
+          "homeStoreAppliesChipFilterToVisibleRestaurantLists",
+          "historyStoreSelectionSavesRestaurantBeforeNavigation",
+          "historyStoreFiltersFavouriteRestaurantsFromSearchQuery",
+          "historyStoreSearchIsCaseInsensitiveForLikedRestaurants"
         ],
         "featurePoints": [
           "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
@@ -8399,9 +8840,14 @@
           "Notification, widget, RemoteViews, or home-screen integration behavior.",
           "Source-side tests or verification assets should be migrated or replaced.",
           "Data loading, query, search, filter, or sort behavior. Evidence method: `homeStoreLoadsFixtureBackedSections`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `homeStoreFiltersFavouritesAndRestaurantsFromSearchQuery`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `homeStoreSearchMatchesCaseInsensitiveSourceUiExpectation`.",
           "CRUD mutation or persistent state update behavior. Evidence method: `homeStoreSelectionSavesRestaurantBeforeNavigation`.",
           "Data loading, query, search, filter, or sort behavior. Evidence method: `homeStoreKeepsSourceLocalFilterToggleSemantics`.",
-          "CRUD mutation or persistent state update behavior. Evidence method: `historyStoreSelectionSavesRestaurantBeforeNavigation`."
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `homeStoreAppliesChipFilterToVisibleRestaurantLists`.",
+          "CRUD mutation or persistent state update behavior. Evidence method: `historyStoreSelectionSavesRestaurantBeforeNavigation`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `historyStoreFiltersFavouriteRestaurantsFromSearchQuery`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `historyStoreSearchIsCaseInsensitiveForLikedRestaurants`."
         ],
         "textScanned": true
       },
@@ -8409,17 +8855,17 @@
         "path": "entry/src/test/cangjie/phase05_detail_cart_state_mutations_test.cj",
         "extension": ".cj",
         "category": "test",
-        "physicalLines": 115,
-        "nonblankLines": 102,
+        "physicalLines": 143,
+        "nonblankLines": 123,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 115,
-          "nonblankLines": 102,
-          "codeLines": 102,
+          "physicalLines": 143,
+          "nonblankLines": 123,
+          "codeLines": 123,
           "commentLines": 0,
-          "blankLines": 13
+          "blankLines": 20
         },
         "importance": "high",
         "riskTags": [
@@ -8431,12 +8877,14 @@
             "Phase05DetailCartStateMutationsTest"
           ],
           "methods": [
+            "restaurantOrFirst",
             "cartStoreFiltersZeroCountItemsAndPreservesSnapshotOrder",
             "cartStoreCalculatesTotalsFromSnapshotQuantities",
             "cartStoreMutatesLocalQuantitiesImmediately",
             "cartStoreKeepsSourceDeliveryPlaceholders",
             "detailStoreLoadsSelectedRestaurantAndRecommendedMenuSlice",
             "detailStorePreservesSectionFilteringAndCartVisibilityRules",
+            "detailAndCartStoresShareQuantityMutationsThroughSessionState",
             "detailStoreTogglesLikedStateForSelectedRestaurant"
           ],
           "androidIds": [],
@@ -8446,7 +8894,8 @@
           "cartStoreFiltersZeroCountItemsAndPreservesSnapshotOrder",
           "cartStoreMutatesLocalQuantitiesImmediately",
           "detailStoreLoadsSelectedRestaurantAndRecommendedMenuSlice",
-          "detailStorePreservesSectionFilteringAndCartVisibilityRules"
+          "detailStorePreservesSectionFilteringAndCartVisibilityRules",
+          "detailAndCartStoresShareQuantityMutationsThroughSessionState"
         ],
         "featurePoints": [
           "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
@@ -8454,7 +8903,64 @@
           "Data loading, query, search, filter, or sort behavior. Evidence method: `cartStoreFiltersZeroCountItemsAndPreservesSnapshotOrder`.",
           "Media/gallery/image handling behavior. Evidence method: `cartStoreMutatesLocalQuantitiesImmediately`.",
           "Data loading, query, search, filter, or sort behavior. Evidence method: `detailStoreLoadsSelectedRestaurantAndRecommendedMenuSlice`.",
-          "Data loading, query, search, filter, or sort behavior. Evidence method: `detailStorePreservesSectionFilteringAndCartVisibilityRules`."
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `detailStorePreservesSectionFilteringAndCartVisibilityRules`.",
+          "Sharing, import/export, file organization, or document operation behavior. Evidence method: `detailAndCartStoresShareQuantityMutationsThroughSessionState`."
+        ],
+        "textScanned": true
+      },
+      {
+        "path": "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj",
+        "extension": ".cj",
+        "category": "test",
+        "physicalLines": 65,
+        "nonblankLines": 58,
+        "locMetrics": {
+          "source": "external-tool",
+          "tool": "tokei",
+          "language": "Cangjie",
+          "physicalLines": 65,
+          "nonblankLines": 58,
+          "codeLines": 58,
+          "commentLines": 0,
+          "blankLines": 7
+        },
+        "importance": "critical",
+        "riskTags": [
+          "intent_uri",
+          "navigation_resource",
+          "platform_component",
+          "source_test"
+        ],
+        "symbols": {
+          "classes": [
+            "Phase06ProfileCapabilitiesVerificationTest"
+          ],
+          "methods": [
+            "profileStorePreservesStaticIdentityAndPlaceholderActions",
+            "profileStorePreservesLogoutRoute",
+            "profileLogoutTransitionResetsRouteStateAndReturnsOnboarding",
+            "profileBackRouteUsesTheNavigationStackWhenPresent",
+            "startupResolverReturnsOnboardingAfterLogoutStyleState",
+            "sourceExampleUnitAssertionIntentIsCoveredByTargetHarness"
+          ],
+          "androidIds": [],
+          "dependencies": []
+        },
+        "keyMethods": [
+          "profileStorePreservesLogoutRoute",
+          "profileLogoutTransitionResetsRouteStateAndReturnsOnboarding",
+          "startupResolverReturnsOnboardingAfterLogoutStyleState",
+          "sourceExampleUnitAssertionIntentIsCoveredByTargetHarness"
+        ],
+        "featurePoints": [
+          "Intent, URI, bundle, deeplink, or cross-screen parameter flow.",
+          "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
+          "Android platform component lifecycle such as service, receiver, provider, or application.",
+          "Source-side tests or verification assets should be migrated or replaced.",
+          "Authentication, account, or session behavior. Evidence method: `profileStorePreservesLogoutRoute`.",
+          "Authentication, account, or session behavior. Evidence method: `profileLogoutTransitionResetsRouteStateAndReturnsOnboarding`.",
+          "Authentication, account, or session behavior. Evidence method: `startupResolverReturnsOnboardingAfterLogoutStyleState`.",
+          "Data loading, query, search, filter, or sort behavior. Evidence method: `sourceExampleUnitAssertionIntentIsCoveredByTargetHarness`."
         ],
         "textScanned": true
       },

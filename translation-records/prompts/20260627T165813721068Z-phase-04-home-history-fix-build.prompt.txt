@@ -1,0 +1,79 @@
+Orchestrator note: this build-blocker prompt was generated from a template for traceability only. Do not run workflow scripts from this note unless the user explicitly asks you to. Template file: D:\workspace\Foodike\translation-records\prompt-templates\build-blocker-session-template.md
+Read and follow the agent protocol: D:\X2Cangjie\X2Cangjie\Kotlin2Cangjie\docs\android-kotlin-to-cangjie-agent-protocol.md
+Read the generated build blocker prompt: D:\workspace\Foodike\translation-inputs\build-reports\phase-04-home-history\opencode-build-blocker-prompt.txt
+Read the build report before editing: D:\workspace\Foodike\translation-inputs\build-reports\phase-04-home-history\build-report.md
+
+## Static Analysis Limits
+
+Generated static analysis inputs are aids, not complete truth. They may miss dynamic dispatch, reflection, generated code, callback wiring, resource indirection, build-variant behavior, or platform-specific side effects. Do not rely only on static analysis when source behavior is unclear or when coverage reports indicate possible omissions. Inspect the minimal relevant source files and resources before deciding to simplify, replace, or defer behavior. For Kotlin projects, pay particular attention to Compose state, remembered state, ViewModel/repository flow, coroutine side effects, navigation arguments, and resource bindings that may be missing or only partially summarized.
+
+## Target Architecture Organization
+
+Use the source project structure as a responsibility guide while fixing build
+blockers, then adapt it to idiomatic HarmonyOS Cangjie modules. Do not
+mechanically mirror Android Activity, Fragment, Adapter, BroadcastReceiver,
+ContentProvider, or XML layout boundaries, but do not solve compiler errors by
+moving unrelated behavior into a root view, `index.cj`, `app_state.cj`, or
+one all-purpose state module. If a build fix touches production behavior, keep
+single-file LOC and responsibility scope controlled, keep or create clear
+domain/service/state boundaries, and update coverage targetEndpoints to the
+precise modules or functions involved.
+
+Fix only the current phase's build blocker or the smallest coherent blocker class. Do not perform unrelated refactors, do not advance to a new phase, and do not modify source project files, translation-records, generated reports, or workflow scripts except source-coverage-matrix.json/md and platform-capability-check.json/md when the build fix changes feature or platform capability coverage status. Do not delete, disable, or weaken migrated/generated tests merely to make the build pass; fix the implementation or record a deferred test limitation.
+
+## Coverage And Capability Review
+
+Use `source-coverage-matrix.json/md` as the feature coverage record and `platform-capability-check.json/md` as the platform capability record. During planning and phase work, update them when target behavior is planned, implemented, tested, replaced, or explicitly deferred. Keep structured `coverageFacts` and `capabilityFacts` aligned with any legacy status/evidence fields you touch. The workflow uses these facts for phase gates, group verdicts, repair queues, and authority validation; explanatory prose is auxiliary and should not be the only place where a required fact appears. For every closed critical/high source feature, record sourceBehavior, targetBehavior, parityLevel, targetEndpoints, and verificationEvidence; use `verification-results.json/md` as supporting evidence, but do not treat a build pass alone as per-feature behavior verification. Avoid marking large groups of behavior deferred or implemented-simplified without concrete source evidence, preserved-behavior explanation, blocker reason, fallback behavior, risk, and future completion path. For critical/high platform capabilities, query CangjieSkills/HarmonyOS/Cangjie API docs and HarmonyOS-Examples before choosing a direct API, platform replacement, fallback, or deferred status. When a third-party package may be needed, also query the Cangjie package index (`https://pkg.cangjie-lang.cn`) or cjpm package lookup. When checking current SDK availability, prefer pure Cangjie `.cj.d`/`.cjo` declarations under `$HOME/.cangjie-sdk/**/cangjie/api/modules` and `$HOME/.cangjie-sdk/**/cangjie/api/lib` before DevEco ETS/JS/native declarations. If a suitable HarmonyOS/Cangjie API, Kit, example, or package exists, implement it or mark it platform-replaced with evidence; do not close the capability with local mock data, in-memory simulation, sample data, or another fallback. Direct target API evidence must be callable from the HarmonyOS Cangjie target. Treat ArkTS `.d.ts` declarations, JS APIs, native C headers/libraries, and generic HarmonyOS capability docs as discovery evidence only. A Cangjie wrapper, FFI, or bridge counts as direct evidence only when it is already part of the target architecture or explicitly planned, and is verified with target endpoints plus build evidence. Do not introduce the first ArkTS/JS/native bridge merely to close coverage or capability rows during repair; if no Cangjie-callable binding is available, record the blocker, fallback behavior, risk, and future completion path. When older docs or examples show a Cangjie API but the current SDK/package index is uncertain, perform at most one bounded compile/import probe in the same target build/package context when available before deciding whether the API is usable; a bare compiler probe that lacks HarmonyOS kit import paths is not conclusive by itself. If the active-context probe fails, keep the capability fallback/deferred instead of switching to a cross-language bridge. Do not cite target test files as strong feature evidence unless `verificationEvidence` or notes record a successful target test compile/run command such as `cjpm test` or a compile-only test pass. If the target test harness is blocked, record the exact blocker and rely on direct Cangjie code endpoints for implemented rows rather than leaving unverified test files as the only evidence.
+
+## Latest Test Build Gate
+
+- Report: `D:\workspace\Foodike\translation-inputs\test-build-reports\phase-02-startup-session-navigation\test-build-report.md`
+- JSON: `D:\workspace\Foodike\translation-inputs\test-build-reports\phase-02-startup-session-navigation\test-build-report.json`
+- Log: `D:\workspace\Foodike\translation-inputs\test-build-reports\phase-02-startup-session-navigation\test-build.log`
+- Preferred script: `D:\X2Cangjie\X2Cangjie\scripts\shared\reports\test_build_report.py`
+- Phase: `phase-02-startup-session-navigation`
+- Result: `PASS`
+- Recommended owner: `none`
+
+Guidance:
+- Prefer the workflow test gate script/report over a bare `cjpm test`. If you need to reproduce a failure, read the report's Command, Environment, SDK, and opencode-cj Handoff Prompt sections and reuse that command with the recorded env overlay/target/package root.
+- The target Cangjie test harness has compiled/run successfully in the latest test gate. You may cite this report as harness-level evidence when matrix rows reference target tests, but still keep per-feature target endpoints and behavior evidence specific.
+
+## Grouped Repair Queue Sweep
+
+Read the full repair queue in `D:\workspace\Foodike\translation-inputs\translation-quality-summary.json`. It is generated for the translation agent and clusters known repair candidates for phase `phase-04-home-history`; clusters are prompt-facing parent work items, while child groups remain the fine-grained evidence index. The queue is not final business truth. Verify each cluster/group by reading source and target code before changing implementation or matrix/capability records.
+Queue summary: clusters=11, groups=29, items=30, byClusterKind={'prep-contract': 3, 'report-finding': 3, 'target-structure': 3, 'platform-capability': 1, 'evidence-fix': 1}, byRepairMode={'structure-fix': 14, 'implement-or-evidence': 6, 'platform-probe': 4, 'evidence-fix': 3, 'implement-or-structure': 2}.
+
+Sweep rules:
+- Process every listed cluster in order; within each cluster, sweep the referenced child groups instead of stopping after the first successful fix.
+- For `implement-or-evidence`, inspect source behavior and target code; implement missing behavior or tighten endpoints/evidence/parity when target behavior already exists.
+- For `structure-fix`, reduce broad shell evidence by extracting/naming coherent domain/service/state functions when useful, or by pointing matrix evidence at precise existing functions.
+- For UI `structure-fix`, also read phase-task-checklist uiContract entries as static-analysis planning evidence, not a complete UI specification; re-read source files, layouts, menus, preferences, adapters, navigation/back-stack code, and resources, then preserve route exclusivity, back behavior, visible action feedback, and page-specific builders instead of a long debug dashboard.
+- For `platform-probe`, search pure Cangjie declarations first and run only bounded target-context probes; if unavailable, record an exact blocker/fallback instead of forcing an implementation.
+- For `blocker-record`, keep the blocker concrete and continue to the next group; do not hard-close platform or product blockers with mock behavior.
+
+Repair clusters:
+- `cluster-platform-capability-whole-project-platform-probe` Platform capability probes/blockers
+  - modes=`platform-probe` severity=`high` kind=`platform-capability` phase=`phase-04-home-history, phase-05-detail-cart` groups=3 items=3 reports=platform-capability-check
+  - source paths: app/src/main/java/com/example/foodike/data/data_source/FakeData.kt; app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt; app/src/main/java/com/example/foodike/presentation/cart/components/ItemSection.kt; app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt
+  - child groups: platform-planned-phase-04-home-history-media-library-access, platform-planned-phase-05-detail-cart-file-access-and-saf, platform-planned-phase-05-detail-cart-image-viewer-gestures
+  - handling: Treat this as the prompt-facing parent cluster. Sweep every child group listed in groupIds; use the child group items in translation-quality-summary.json for exact feature, capability, source path, endpoint, and evidence details.
+  - blocker policy: If a child group is blocked by platform/product/tooling limits, record that blocker precisely and continue to the next child group instead of stopping the whole cluster.
+- Fine-grained evidence index: 1 child group(s) match this scope; read their full `items` in `translation-quality-summary.json` before editing records.
+
+## Strict Build-Fix Coverage
+
+Do not resolve build failures by deleting behavior, disabling tests, or replacing implementation with placeholders. Do not delete Compose state, ViewModel/repository flow, coroutine behavior, persistence paths, resources, navigation, settings, or state refresh logic unless a concrete deferred blocker with fallback behavior is recorded.
+
+After fixing, report changed files, commands run, blocker addressed, remaining blockers, deferred issues, and next recommended action. The build gate must be rerun after this session.
+
+
+Build blocker prompt content:
+```text
+Read the generated build report before editing.
+Report: D:\workspace\Foodike\translation-inputs\build-reports\phase-04-home-history\build-report.md
+Phase: phase-04-home-history
+Failed stage: CompileCangjie
+First visible blocker: > hvigor ERROR: Failed :entry:default@CompileCangjie...
+Fix only the current phase's build blockers in the target project, then rerun the same build gate.
+```

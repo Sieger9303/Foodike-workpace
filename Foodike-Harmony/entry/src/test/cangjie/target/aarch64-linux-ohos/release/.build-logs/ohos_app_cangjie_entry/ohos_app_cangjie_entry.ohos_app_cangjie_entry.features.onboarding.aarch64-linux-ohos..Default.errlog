@@ -1,451 +1,489 @@
 warning[0m: unused variable:'elmtId'
    | 
-   | /* 7.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 8.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                      ^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the code after the macro is expanded as follows
    | 
-   |   /* 7.1 */func buildOnboardingCard(thisView: CustomView, title: ObservedProperty < String >, description: ObservedProperty < String >, mediaName: ObservedProperty < String >): ViewBuilder {
+   |   /* 8.1 */func buildOnboardingCard(thisView: CustomView, title: ObservedProperty < ResourceStr >, description: ObservedProperty < ResourceStr >, mediaName: ObservedProperty < String >): ViewBuilder {
    |  _^
-   | | /* 7.2 */    
-   | | /* 7.3 */    
-   | | /* 7.4 */    func buildOnboardingCard__inner__(thisView: CustomView, title: String, description: String, mediaName: String): Unit {
-   | | /* 7.5 */        
-   | | /* 7.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
-   | | /* 7.7 */            Column(space: 18) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
-   | | /* 7.8 */                Image(match(mediaName) {
-   | | /* 7.9 */                    case "chinese_bowl" => mediaChineseBowl
-   | | /* 7.10 */                    case "rider" => mediaRider
-   | | /* 7.11 */                    case _ => mediaClock
-   | | /* 7.12 */                }).width(72.percent).height(280)
-   | | /* 7.13 */            })
-   | | /* 7.14 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
-   | | /* 7.15 */                Text(title).fontSize(30).fontColor(Color.White).fontWeight(FontWeight.Bold).textAlign(TextAlign.Center)
-   | | /* 7.16 */            })
-   | | /* 7.17 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
-   | | /* 7.18 */                Text(description).fontSize(17).fontColor(Color.White).textAlign(TextAlign.Center).width(86.percent)
-   | | /* 7.19 */            })
-   | | /* 7.20 */        }.width(100.percent).height(100.percent).justifyContent(FlexAlign.Center).alignItems(HorizontalAlign.Center)
-   | | /* 7.21 */    })
-   | | /* 7.22 */    
-   | | /* 7.23 */}
-   | | /* 7.24 */
-   | | /* 7.25 */
-   | | /* 7.26 */ViewBuilder { buildOnboardingCard__inner__(thisView, title.get(), description.get(), mediaName.get()) }
-   | | /* 7.27 */
-   | | /* 7.28 */}
-   | | /* 7.29 */
+   | | /* 8.2 */    
+   | | /* 8.3 */    
+   | | /* 8.4 */    func buildOnboardingCard__inner__(thisView: CustomView, title: ResourceStr, description: ResourceStr, mediaName: String): Unit {
+   | | /* 8.5 */        
+   | | /* 8.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 8.7 */            Column(space: 18) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 8.8 */                Image(match(mediaName) {
+   | | /* 8.9 */                    case "chinese_bowl" => mediaChineseBowl
+   | | /* 8.10 */                    case "rider" => mediaRider
+   | | /* 8.11 */                    case _ => mediaClock
+   | | /* 8.12 */                }).width(72.percent).height(280)
+   | | /* 8.13 */            })
+   | | /* 8.14 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 8.15 */                Text(title).fontSize(30).fontColor(Color.White).fontWeight(FontWeight.Bold).textAlign(TextAlign.Center)
+   | | /* 8.16 */            })
+   | | /* 8.17 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 8.18 */                Text(description).fontSize(17).fontColor(Color.White).textAlign(TextAlign.Center).width(86.percent)
+   | | /* 8.19 */            })
+   | | /* 8.20 */        }.width(100.percent).height(100.percent).justifyContent(FlexAlign.Center).alignItems(HorizontalAlign.Center)
+   | | /* 8.21 */    })
+   | | /* 8.22 */    
+   | | /* 8.23 */}
+   | | /* 8.24 */
+   | | /* 8.25 */
+   | | /* 8.26 */ViewBuilder { buildOnboardingCard__inner__(thisView, title.get(), description.get(), mediaName.get()) }
+   | | /* 8.27 */
+   | | /* 8.28 */}
+   | | /* 8.29 */
    | |__________^
    | 
 note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:7:1:
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:8:1:
    | 
-7  |   @Builder
+8  |   @Builder
    |  _^
-8  | | func buildOnboardingCard(title: String, description: String, mediaName: String) {
+9  | | func buildOnboardingCard(title: ResourceStr, description: ResourceStr, mediaName: String) {
    | | ...
-34 | | }
+35 | | }
    | |_^
    | 
 
 warning[0m: unused variable:'isInitialRender'
    | 
-   | /* 7.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 8.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                              ^^^^^^^^^^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:7:1:
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:8:1:
    | 
-7  |   @Builder
+8  |   @Builder
    |  _^
-8  | | func buildOnboardingCard(title: String, description: String, mediaName: String) {
+9  | | func buildOnboardingCard(title: ResourceStr, description: ResourceStr, mediaName: String) {
    | | ...
-34 | | }
+35 | | }
    | |_^
    | 
 
 warning[0m: unused variable:'elmtId'
    | 
-   | /* 7.7 */            Column(space: 18) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 8.7 */            Column(space: 18) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                              ^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:7:1:
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:8:1:
    | 
-7  |   @Builder
+8  |   @Builder
    |  _^
-8  | | func buildOnboardingCard(title: String, description: String, mediaName: String) {
+9  | | func buildOnboardingCard(title: ResourceStr, description: ResourceStr, mediaName: String) {
    | | ...
-34 | | }
+35 | | }
    | |_^
    | 
 
 warning[0m: unused variable:'isInitialRender'
    | 
-   | /* 7.7 */            Column(space: 18) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 8.7 */            Column(space: 18) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                                      ^^^^^^^^^^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:7:1:
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:8:1:
    | 
-7  |   @Builder
+8  |   @Builder
    |  _^
-8  | | func buildOnboardingCard(title: String, description: String, mediaName: String) {
+9  | | func buildOnboardingCard(title: ResourceStr, description: ResourceStr, mediaName: String) {
    | | ...
-34 | | }
+35 | | }
    | |_^
    | 
 
 warning[0m: unused variable:'elmtId'
    | 
-   | /* 7.14 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 8.14 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                           ^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:7:1:
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:8:1:
    | 
-7  |   @Builder
+8  |   @Builder
    |  _^
-8  | | func buildOnboardingCard(title: String, description: String, mediaName: String) {
+9  | | func buildOnboardingCard(title: ResourceStr, description: ResourceStr, mediaName: String) {
    | | ...
-34 | | }
+35 | | }
    | |_^
    | 
 
 warning[0m: unused variable:'isInitialRender'
    | 
-   | /* 7.14 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 8.14 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                   ^^^^^^^^^^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:7:1:
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:8:1:
    | 
-7  |   @Builder
+8  |   @Builder
    |  _^
-8  | | func buildOnboardingCard(title: String, description: String, mediaName: String) {
+9  | | func buildOnboardingCard(title: ResourceStr, description: ResourceStr, mediaName: String) {
    | | ...
-34 | | }
+35 | | }
    | |_^
    | 
 
 warning[0m: unused variable:'elmtId'
    | 
-   | /* 7.17 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 8.17 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                           ^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:7:1:
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:8:1:
    | 
-7  |   @Builder
+8  |   @Builder
    |  _^
-8  | | func buildOnboardingCard(title: String, description: String, mediaName: String) {
+9  | | func buildOnboardingCard(title: ResourceStr, description: ResourceStr, mediaName: String) {
    | | ...
-34 | | }
+35 | | }
    | |_^
    | 
 
 warning[0m: unused variable:'isInitialRender'
    | 
-   | /* 7.17 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 8.17 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                                   ^^^^^^^^^^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:7:1:
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:8:1:
    | 
-7  |   @Builder
+8  |   @Builder
    |  _^
-8  | | func buildOnboardingCard(title: String, description: String, mediaName: String) {
+9  | | func buildOnboardingCard(title: ResourceStr, description: ResourceStr, mediaName: String) {
    | | ...
-34 | | }
+35 | | }
    | |_^
    | 
 
 warning[0m: unused variable:'elmtId'
    | 
-   | /* 36.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 37.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                       ^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the code after the macro is expanded as follows
    | 
-   |   /* 36.1 */func buildOnboardingIndicator(thisView: CustomView, isSelected: ObservedProperty < Bool >): ViewBuilder {
+   |   /* 37.1 */func buildOnboardingIndicator(thisView: CustomView, isSelected: ObservedProperty < Bool >): ViewBuilder {
    |  _^
-   | | /* 36.2 */    
-   | | /* 36.3 */    
-   | | /* 36.4 */    func buildOnboardingIndicator__inner__(thisView: CustomView, isSelected: Bool): Unit {
-   | | /* 36.5 */        
-   | | /* 36.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
-   | | /* 36.7 */            Text(" ").width(if(isSelected) {
-   | | /* 36.8 */                24
-   | | /* 36.9 */            }
-   | | /* 36.10 */            else {
-   | | /* 36.11 */                10
-   | | /* 36.12 */            }
-   | | /* 36.13 */            ).height(10).backgroundColor(if(isSelected) {
-   | | /* 36.14 */                colorDarkGreen
-   | | /* 36.15 */            }
-   | | /* 36.16 */            else {
-   | | /* 36.17 */                Color.White
-   | | /* 36.18 */            }
-   | | /* 36.19 */            )
-   | | /* 36.20 */        })
-   | | /* 36.21 */        
-   | | /* 36.22 */    }
-   | | /* 36.23 */    
-   | | /* 36.24 */    
-   | | /* 36.25 */    ViewBuilder { buildOnboardingIndicator__inner__(thisView, isSelected.get()) }
-   | | /* 36.26 */    
-   | | /* 36.27 */}
-   | | /* 36.28 */
+   | | /* 37.2 */    
+   | | /* 37.3 */    
+   | | /* 37.4 */    func buildOnboardingIndicator__inner__(thisView: CustomView, isSelected: Bool): Unit {
+   | | /* 37.5 */        
+   | | /* 37.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 37.7 */            Text(" ").width(if(isSelected) {
+   | | /* 37.8 */                24
+   | | /* 37.9 */            }
+   | | /* 37.10 */            else {
+   | | /* 37.11 */                10
+   | | /* 37.12 */            }
+   | | /* 37.13 */            ).height(10).backgroundColor(if(isSelected) {
+   | | /* 37.14 */                colorDarkGreen
+   | | /* 37.15 */            }
+   | | /* 37.16 */            else {
+   | | /* 37.17 */                Color.White
+   | | /* 37.18 */            }
+   | | /* 37.19 */            )
+   | | /* 37.20 */        })
+   | | /* 37.21 */        
+   | | /* 37.22 */    }
+   | | /* 37.23 */    
+   | | /* 37.24 */    
+   | | /* 37.25 */    ViewBuilder { buildOnboardingIndicator__inner__(thisView, isSelected.get()) }
+   | | /* 37.26 */    
+   | | /* 37.27 */}
+   | | /* 37.28 */
    | |___________^
    | 
 note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:36:1:
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:37:1:
    | 
-36 |   @Builder
+37 |   @Builder
    |  _^
-37 | | func buildOnboardingIndicator(isSelected: Bool) {
+38 | | func buildOnboardingIndicator(isSelected: Bool) {
    | | ...
-42 | | }
+43 | | }
    | |_^
    | 
 
 warning[0m: unused variable:'isInitialRender'
    | 
-   | /* 36.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 37.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                               ^^^^^^^^^^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:36:1:
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:37:1:
    | 
-36 |   @Builder
+37 |   @Builder
    |  _^
-37 | | func buildOnboardingIndicator(isSelected: Bool) {
+38 | | func buildOnboardingIndicator(isSelected: Bool) {
    | | ...
-42 | | }
+43 | | }
    | |_^
    | 
 
 warning[0m: unused variable:'elmtId'
    | 
-   | /* 44.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 45.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                       ^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the code after the macro is expanded as follows
+   | 
+   |   /* 45.1 */func buildOnboardingIndicatorRow(thisView: CustomView, pageIndex: ObservedProperty < Int64 >): ViewBuilder {
+   |  _^
+   | | /* 45.2 */    
+   | | /* 45.3 */    
+   | | /* 45.4 */    func buildOnboardingIndicatorRow__inner__(thisView: CustomView, pageIndex: Int64): Unit {
+   | | /* 45.5 */        
+   | | /* 45.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | | /* 45.7 */            Row(space: 12) { buildOnboardingIndicator(thisView, ObservedProperty("", pageIndex == 0)).build()
+   | | /* 45.8 */                buildOnboardingIndicator(thisView, ObservedProperty("", pageIndex == 1)).build()
+   | | /* 45.9 */                buildOnboardingIndicator(thisView, ObservedProperty("", pageIndex == 2)).build()
+   | | /* 45.10 */            }
+   | | /* 45.11 */        })
+   | | /* 45.12 */        
+   | | /* 45.13 */    }
+   | | /* 45.14 */    
+   | | /* 45.15 */    
+   | | /* 45.16 */    ViewBuilder { buildOnboardingIndicatorRow__inner__(thisView, pageIndex.get()) }
+   | | /* 45.17 */    
+   | | /* 45.18 */}
+   | | /* 45.19 */
+   | |___________^
+   | 
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:45:1:
+   | 
+45 |   @Builder
+   |  _^
+46 | | func buildOnboardingIndicatorRow(pageIndex: Int64) {
+   | | ...
+52 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'isInitialRender'
+   | 
+   | /* 45.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                               ^^^^^^^^^^^^^^^ unused variable
+   | 
+   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the warning occurs after the macro is expanded
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:45:1:
+   | 
+45 |   @Builder
+   |  _^
+46 | | func buildOnboardingIndicatorRow(pageIndex: Int64) {
+   | | ...
+52 | | }
+   | |_^
+   | 
+
+warning[0m: unused variable:'elmtId'
+   | 
+   | /* 54.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                       ^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the code after the macro is expanded as follows
     | 
-    |   /* 44.1 */public func renderOnboardingRoute(thisView: CustomView, pageIndex: ObservedProperty < Int64 >, controller: ObservedProperty < SwiperController >, onIndexChanged: ObservedProperty <(Int32) -> Unit >, onNext: ObservedProperty <() -> Unit >): ViewBuilder {
+    |   /* 54.1 */func buildOnboardingFooter(thisView: CustomView, pageIndex: ObservedProperty < Int64 >, onNext: ObservedProperty <() -> Unit >): ViewBuilder {
     |  _^
-    | | /* 44.2 */    
-    | | /* 44.3 */    
-    | | /* 44.4 */    func renderOnboardingRoute__inner__(thisView: CustomView, pageIndex: Int64, controller: SwiperController, onIndexChanged:(Int32) -> Unit, onNext:() -> Unit): Unit {
-    | | /* 44.5 */        
-    | | /* 44.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 44.7 */            Column(space: 24) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 44.8 */                Swiper(controller: controller) { buildOnboardingCard(thisView, ObservedProperty("", onboardingStore.slideAt(0).title), ObservedProperty("", onboardingStore.slideAt(0).description), ObservedProperty("", onboardingStore.slideAt(0).mediaName)).build()
-    | | /* 44.9 */                    buildOnboardingCard(thisView, ObservedProperty("", onboardingStore.slideAt(1).title), ObservedProperty("", onboardingStore.slideAt(1).description), ObservedProperty("", onboardingStore.slideAt(1).mediaName)).build()
-    | | /* 44.10 */                    buildOnboardingCard(thisView, ObservedProperty("", onboardingStore.slideAt(2).title), ObservedProperty("", onboardingStore.slideAt(2).description), ObservedProperty("", onboardingStore.slideAt(2).mediaName)).build()
-    | | /* 44.11 */                }.indicator(false).onChange({ index: Int32 =>
-    | | /* 44.12 */                    onIndexChanged(index)
-    | | /* 44.13 */                }).width(100.percent).height(78.percent)
-    | | /* 44.14 */            })
-    | | /* 44.15 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 44.16 */                Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 44.17 */                    Row(space: 12) { buildOnboardingIndicator(thisView, ObservedProperty("", pageIndex == 0)).build()
-    | | /* 44.18 */                        buildOnboardingIndicator(thisView, ObservedProperty("", pageIndex == 1)).build()
-    | | /* 44.19 */                        buildOnboardingIndicator(thisView, ObservedProperty("", pageIndex == 2)).build()
-    | | /* 44.20 */                    }
-    | | /* 44.21 */                })
-    | | /* 44.22 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
-    | | /* 44.23 */                    Button(">").onClick({ _ =>
-    | | /* 44.24 */                        onNext()
-    | | /* 44.25 */                    })
-    | | /* 44.26 */                })
-    | | /* 44.27 */            }.width(90.percent).justifyContent(FlexAlign.SpaceBetween).alignItems(VerticalAlign.Center).margin(bottom: 12)
-    | | /* 44.28 */        })
-    | | /* 44.29 */    }.width(100.percent).height(100.percent).backgroundColor(colorDarkGreen).alignItems(HorizontalAlign.Center).justifyContent(FlexAlign.SpaceBetween)
-    | | /* 44.30 */})
-    | | /* 44.31 */
-    | | /* 44.32 */}
-    | | /* 44.33 */
-    | | /* 44.34 */
-    | | /* 44.35 */ViewBuilder { renderOnboardingRoute__inner__(thisView, pageIndex.get(), controller.get(), onIndexChanged.get(), onNext.get()) }
-    | | /* 44.36 */
-    | | /* 44.37 */}
-    | | /* 44.38 */
+    | | /* 54.2 */    
+    | | /* 54.3 */    
+    | | /* 54.4 */    func buildOnboardingFooter__inner__(thisView: CustomView, pageIndex: Int64, onNext:() -> Unit): Unit {
+    | | /* 54.5 */        
+    | | /* 54.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 54.7 */            Row { buildOnboardingIndicatorRow(thisView, ObservedProperty("", pageIndex)).build()
+    | | /* 54.8 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 54.9 */                    Button(">").onClick({ _ =>
+    | | /* 54.10 */                        onNext()
+    | | /* 54.11 */                    })
+    | | /* 54.12 */                })
+    | | /* 54.13 */            }.width(90.percent).justifyContent(FlexAlign.SpaceBetween).alignItems(VerticalAlign.Center).margin(bottom: 12)
+    | | /* 54.14 */        })
+    | | /* 54.15 */        
+    | | /* 54.16 */    }
+    | | /* 54.17 */    
+    | | /* 54.18 */    
+    | | /* 54.19 */    ViewBuilder { buildOnboardingFooter__inner__(thisView, pageIndex.get(), onNext.get()) }
+    | | /* 54.20 */    
+    | | /* 54.21 */}
+    | | /* 54.22 */
     | |___________^
     | 
 note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:44:1:
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:54:1:
    | 
-44 |   @Builder
+54 |   @Builder
    |  _^
-45 | | public func renderOnboardingRoute(
+55 | | func buildOnboardingFooter(pageIndex: Int64, onNext: () -> Unit) {
    | | ...
-97 | | }
+67 | | }
    | |_^
    | 
 
 warning[0m: unused variable:'isInitialRender'
    | 
-   | /* 44.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   | /* 54.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
    |                                                               ^^^^^^^^^^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:44:1:
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:54:1:
    | 
-44 |   @Builder
+54 |   @Builder
    |  _^
-45 | | public func renderOnboardingRoute(
+55 | | func buildOnboardingFooter(pageIndex: Int64, onNext: () -> Unit) {
    | | ...
-97 | | }
+67 | | }
    | |_^
    | 
 
 warning[0m: unused variable:'elmtId'
    | 
-   | /* 44.7 */            Column(space: 24) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
-   |                                                                               ^^^^^^ unused variable
+   | /* 54.8 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                               ^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:44:1:
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:54:1:
    | 
-44 |   @Builder
+54 |   @Builder
    |  _^
-45 | | public func renderOnboardingRoute(
+55 | | func buildOnboardingFooter(pageIndex: Int64, onNext: () -> Unit) {
    | | ...
-97 | | }
+67 | | }
    | |_^
    | 
 
 warning[0m: unused variable:'isInitialRender'
    | 
-   | /* 44.7 */            Column(space: 24) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
-   |                                                                                       ^^^^^^^^^^^^^^^ unused variable
+   | /* 54.8 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
+   |                                                                       ^^^^^^^^^^^^^^^ unused variable
    | 
    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:44:1:
+  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:54:1:
    | 
-44 |   @Builder
+54 |   @Builder
    |  _^
-45 | | public func renderOnboardingRoute(
+55 | | func buildOnboardingFooter(pageIndex: Int64, onNext: () -> Unit) {
    | | ...
-97 | | }
+67 | | }
    | |_^
    | 
 
 warning[0m: unused variable:'elmtId'
-   | 
-   | /* 44.15 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
-   |                                                            ^^^^^^ unused variable
-   | 
-   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+    | 
+    | /* 69.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                       ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+note[0m: the code after the macro is expanded as follows
+    | 
+    |   /* 69.1 */public func renderOnboardingRoute(thisView: CustomView, pageIndex: ObservedProperty < Int64 >, controller: ObservedProperty < SwiperController >, onIndexChanged: ObservedProperty <(Int32) -> Unit >, onNext: ObservedProperty <() -> Unit >): ViewBuilder {
+    |  _^
+    | | /* 69.2 */    
+    | | /* 69.3 */    
+    | | /* 69.4 */    func renderOnboardingRoute__inner__(thisView: CustomView, pageIndex: Int64, controller: SwiperController, onIndexChanged:(Int32) -> Unit, onNext:() -> Unit): Unit {
+    | | /* 69.5 */        
+    | | /* 69.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 69.7 */            Column(space: 24) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    | | /* 69.8 */                Swiper(controller: controller) { buildOnboardingCard(thisView, ObservedProperty("", onboardingStore.slideAt(0).title), ObservedProperty("", onboardingStore.slideAt(0).description), ObservedProperty("", onboardingStore.slideAt(0).mediaName)).build()
+    | | /* 69.9 */                    buildOnboardingCard(thisView, ObservedProperty("", onboardingStore.slideAt(1).title), ObservedProperty("", onboardingStore.slideAt(1).description), ObservedProperty("", onboardingStore.slideAt(1).mediaName)).build()
+    | | /* 69.10 */                    buildOnboardingCard(thisView, ObservedProperty("", onboardingStore.slideAt(2).title), ObservedProperty("", onboardingStore.slideAt(2).description), ObservedProperty("", onboardingStore.slideAt(2).mediaName)).build()
+    | | /* 69.11 */                }.indicator(false).onChange({ index: Int32 =>
+    | | /* 69.12 */                    onIndexChanged(index)
+    | | /* 69.13 */                }).width(100.percent).height(78.percent)
+    | | /* 69.14 */            })
+    | | /* 69.15 */            buildOnboardingFooter(thisView, ObservedProperty("", pageIndex), ObservedProperty("", onNext)).build()
+    | | /* 69.16 */        }.width(100.percent).height(100.percent).backgroundColor(colorDarkGreen).alignItems(HorizontalAlign.Center).justifyContent(FlexAlign.SpaceBetween)
+    | | /* 69.17 */    })
+    | | /* 69.18 */    
+    | | /* 69.19 */}
+    | | /* 69.20 */
+    | | /* 69.21 */
+    | | /* 69.22 */ViewBuilder { renderOnboardingRoute__inner__(thisView, pageIndex.get(), controller.get(), onIndexChanged.get(), onNext.get()) }
+    | | /* 69.23 */
+    | | /* 69.24 */}
+    | | /* 69.25 */
+    | |___________^
+    | 
 note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:44:1:
-   | 
-44 |   @Builder
-   |  _^
-45 | | public func renderOnboardingRoute(
-   | | ...
-97 | | }
-   | |_^
-   | 
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:69:1:
+    | 
+69  |   @Builder
+    |  _^
+70  | | public func renderOnboardingRoute(
+    | | ...
+108 | | }
+    | |_^
+    | 
 
 warning[0m: unused variable:'isInitialRender'
-   | 
-   | /* 44.15 */            thisView.observeComponentCreation({ elmtId, isInitialRender =>
-   |                                                                    ^^^^^^^^^^^^^^^ unused variable
-   | 
-   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+    | 
+    | /* 69.6 */        thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                               ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:44:1:
-   | 
-44 |   @Builder
-   |  _^
-45 | | public func renderOnboardingRoute(
-   | | ...
-97 | | }
-   | |_^
-   | 
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:69:1:
+    | 
+69  |   @Builder
+    |  _^
+70  | | public func renderOnboardingRoute(
+    | | ...
+108 | | }
+    | |_^
+    | 
 
 warning[0m: unused variable:'elmtId'
-   | 
-   | /* 44.16 */                Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
-   |                                                                      ^^^^^^ unused variable
-   | 
-   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+    | 
+    | /* 69.7 */            Column(space: 24) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                               ^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:44:1:
-   | 
-44 |   @Builder
-   |  _^
-45 | | public func renderOnboardingRoute(
-   | | ...
-97 | | }
-   | |_^
-   | 
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:69:1:
+    | 
+69  |   @Builder
+    |  _^
+70  | | public func renderOnboardingRoute(
+    | | ...
+108 | | }
+    | |_^
+    | 
 
 warning[0m: unused variable:'isInitialRender'
-   | 
-   | /* 44.16 */                Row { thisView.observeComponentCreation({ elmtId, isInitialRender =>
-   |                                                                              ^^^^^^^^^^^^^^^ unused variable
-   | 
-   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
+    | 
+    | /* 69.7 */            Column(space: 24) { thisView.observeComponentCreation({ elmtId, isInitialRender =>
+    |                                                                                       ^^^^^^^^^^^^^^^ unused variable
+    | 
+    # note: this warning can be suppressed by setting the compiler option `-Woff unused`
 note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:44:1:
-   | 
-44 |   @Builder
-   |  _^
-45 | | public func renderOnboardingRoute(
-   | | ...
-97 | | }
-   | |_^
-   | 
-
-warning[0m: unused variable:'elmtId'
-   | 
-   | /* 44.22 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
-   |                                                                ^^^^^^ unused variable
-   | 
-   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:44:1:
-   | 
-44 |   @Builder
-   |  _^
-45 | | public func renderOnboardingRoute(
-   | | ...
-97 | | }
-   | |_^
-   | 
-
-warning[0m: unused variable:'isInitialRender'
-   | 
-   | /* 44.22 */                thisView.observeComponentCreation({ elmtId, isInitialRender =>
-   |                                                                        ^^^^^^^^^^^^^^^ unused variable
-   | 
-   # note: this warning can be suppressed by setting the compiler option `-Woff unused`
-note[0m: the warning occurs after the macro is expanded
-  ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:44:1:
-   | 
-44 |   @Builder
-   |  _^
-45 | | public func renderOnboardingRoute(
-   | | ...
-97 | | }
-   | |_^
-   | 
+   ==> D:\workspace\Foodike\Foodike-Harmony\entry\src\main\cangjie\ohos_app_cangjie_entry\features\onboarding\onboarding_page.cj:69:1:
+    | 
+69  |   @Builder
+    |  _^
+70  | | public func renderOnboardingRoute(
+    | | ...
+108 | | }
+    | |_^
+    | 
 
 20 warnings generated, 20 warnings printed.

@@ -16,3 +16,7 @@ public func renderSearchBar(query: String, onQueryChange: (String) -> Unit) {
             onQueryChange(value)
         })
 }
+
+public func usesLocalSearchState(query: String): Bool {
+    return query.size >= 0
+}

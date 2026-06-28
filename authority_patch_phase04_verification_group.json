@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Tighten phase-04 verification evidence for existing home/history rows using accepted target test PASS evidence.",
+  "updates": [
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-compo-4599e7aba9-003-data-loading-query-search-filter-or-sort",
+      "set": {
+        "tests": [
+          "entry/src/test/cangjie/phase04_home_history_discovery_test.cj::restaurantCardCustomerInfoMatchesSourceThresholdOrdering",
+          "entry/src/test/cangjie/phase04_home_history_discovery_test.cj::restaurantCardCustomerInfoMatchesSourceThresholdOrdering (PASS 2026-06-28)"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/restaurant_card.cj::getCustomerInfo"
+            ],
+            "testEvidence": [
+              {
+                "kind": "focused-test-pass",
+                "detail": "`cjpm test --target aarch64-linux-ohos` passed `phase04_home_history_discovery_test.cj::restaurantCardCustomerInfoMatchesSourceThresholdOrdering` on 2026-06-28, confirming the translated `getCustomerInfo` preserves the source threshold ordering. Harness PASS is backed by `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md`."
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "Phase-04 Harmony build rerun on 2026-06-28 completed successfully."
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "The target preserves the source threshold ordering for card rating-count labels."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-home-75e43540b7-002-intent-uri-bundle-deeplink-or-cross-scre",
+      "set": {
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::selectHomeRestaurant",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_store.cj::selectRestaurant"
+            ],
+            "testEvidence": [
+              {
+                "kind": "focused-test-pass",
+                "detail": "`cjpm test --target aarch64-linux-ohos` passed `phase04_home_history_discovery_test.cj::homeStoreSelectionSavesRestaurantBeforeNavigation` on 2026-06-28, confirming selected-restaurant state is written before detail navigation. Harness PASS is backed by `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md`."
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "Phase-04 Harmony build rerun on 2026-06-28 completed successfully."
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "Home selections still travel across screens via repository-backed selected-restaurant state."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-home-ef2f599530-003-navigation-surface-menu-drawer-toolbar-o",
+      "set": {
+        "verificationEvidence": [
+          "Manual source and target review confirmed the home route still participates in the shared shell/navigation surface.",
+          "Phase-04 Harmony build rerun on 2026-06-28 succeeded.",
+          "Focused target test PASS on 2026-06-28: `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` passed `phase04_home_history_discovery_test.cj::homeStoreSelectionSavesRestaurantBeforeNavigation`, confirming the home route's restaurant-card and favourite-strip navigation path still writes shared selection before detail routing. Harness PASS is backed by `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md`."
+        ],
+        "tests": [
+          "entry/src/test/cangjie/phase04_home_history_discovery_test.cj::homeStoreSelectionSavesRestaurantBeforeNavigation (PASS 2026-06-28)"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj::renderHomeRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildHomeRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/app/shell_route_state.cj::showsBottomShell"
+            ],
+            "testEvidence": [
+              {
+                "kind": "focused-test-pass",
+                "detail": "`cjpm test --target aarch64-linux-ohos` passed `phase04_home_history_discovery_test.cj::homeStoreSelectionSavesRestaurantBeforeNavigation` on 2026-06-28, covering the home route's selection-driven navigation path through `buildHomeRoute` and `selectHomeRestaurant`. Harness PASS is backed by `translation-inputs/test-build-reports/phase-02-startup-session-navigation/test-build-report.md`."
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "Phase-04 Harmony build gate PASS: `translation-inputs/build-reports/phase-04-home-history/build-report.md`.",
+                "path": "translation-inputs/build-reports/phase-04-home-history/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "Home keeps its route-level navigation composition and shared shell visibility semantics."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    }
+  ]
+}

@@ -32112,7 +32112,7 @@
       "package": "ohos_app_cangjie_entry",
       "isMacro": false,
       "accessLevel": "public",
-      "timeStamp": 1782388526,
+      "timeStamp": 1782573402,
       "dependencies": [
         {
           "orPackage": "kit.AbilityKit.AbilityStage",
@@ -32134,9 +32134,6 @@
           "imports": [
             {
               "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\app_ability.cj"
-            },
-            {
-              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\main_activity_ability.cj"
             }
           ]
         },
@@ -32147,9 +32144,6 @@
           "imports": [
             {
               "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\app_ability.cj"
-            },
-            {
-              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\main_activity_ability.cj"
             }
           ]
         },
@@ -32163,9 +32157,6 @@
             },
             {
               "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\app_ability.cj"
-            },
-            {
-              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\main_activity_ability.cj"
             }
           ]
         },
@@ -32176,9 +32167,6 @@
           "imports": [
             {
               "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\app_ability.cj"
-            },
-            {
-              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\main_activity_ability.cj"
             }
           ]
         },
@@ -32189,9 +32177,6 @@
           "imports": [
             {
               "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\app_ability.cj"
-            },
-            {
-              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\main_activity_ability.cj"
             }
           ]
         },
@@ -32205,24 +32190,11 @@
             },
             {
               "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\app_ability.cj"
-            },
-            {
-              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\main_activity_ability.cj"
             }
           ]
         },
         {
-          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.LoginPreferencesService",
-          "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session",
-          "isStd": false,
-          "imports": [
-            {
-              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\app_ability.cj"
-            }
-          ]
-        },
-        {
-          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.startup.startupStore",
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.startup.startupLaunchService",
           "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.startup",
           "isStd": false,
           "imports": [
@@ -32233,16 +32205,6 @@
         },
         {
           "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime.Global",
-          "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime",
-          "isStd": false,
-          "imports": [
-            {
-              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\app_ability.cj"
-            }
-          ]
-        },
-        {
-          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime.bootstrapStartRoute",
           "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime",
           "isStd": false,
           "imports": [
@@ -32298,7 +32260,7 @@
       "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.app",
       "isMacro": false,
       "accessLevel": "public",
-      "timeStamp": 1782443464,
+      "timeStamp": 1782648174,
       "dependencies": [
         {
           "orPackage": "",
@@ -32351,12 +32313,95 @@
           ]
         },
         {
+          "orPackage": "ohos.base.ResourceStr",
+          "package": "ohos.base",
+          "isStd": false,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\app\\bootstrap_page.cj"
+            },
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\app\\route_registry.cj"
+            }
+          ]
+        },
+        {
           "orPackage": "",
           "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common",
           "isStd": false,
           "imports": [
             {
               "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\app\\bootstrap_page.cj"
+            }
+          ]
+        },
+        {
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.stringAppName",
+          "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common",
+          "isStd": false,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\app\\route_registry.cj"
+            }
+          ]
+        },
+        {
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.stringCart",
+          "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common",
+          "isStd": false,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\app\\route_registry.cj"
+            }
+          ]
+        },
+        {
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.stringHistory",
+          "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common",
+          "isStd": false,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\app\\route_registry.cj"
+            }
+          ]
+        },
+        {
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.stringHome",
+          "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common",
+          "isStd": false,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\app\\route_registry.cj"
+            }
+          ]
+        },
+        {
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.stringLogin",
+          "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common",
+          "isStd": false,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\app\\route_registry.cj"
+            }
+          ]
+        },
+        {
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.stringProfileTitle",
+          "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common",
+          "isStd": false,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\app\\route_registry.cj"
+            }
+          ]
+        },
+        {
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.stringRestaurant",
+          "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common",
+          "isStd": false,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\app\\route_registry.cj"
             }
           ]
         },
@@ -32521,6 +32566,16 @@
           ]
         },
         {
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.profileRouteService",
+          "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile",
+          "isStd": false,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\app\\bootstrap_page.cj"
+            }
+          ]
+        },
+        {
           "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.profileStore",
           "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile",
           "isStd": false,
@@ -32559,11 +32614,38 @@
               "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\app\\bootstrap_page.cj"
             }
           ]
+        },
+        {
+          "orPackage": "",
+          "package": "std.collection",
+          "isStd": true,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\app\\app_router.cj"
+            },
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\app\\bootstrap_page.cj"
+            },
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\app\\route_registry.cj"
+            }
+          ]
         }
       ],
       "std-dependencies": [
         {
+          "std.collection": [
+            "std.core",
+            "std.math"
+          ]
+        },
+        {
           "std.core": []
+        },
+        {
+          "std.math": [
+            "std.core"
+          ]
         }
       ],
       "features": [],
@@ -32575,8 +32657,59 @@
       "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.startup",
       "isMacro": false,
       "accessLevel": "public",
-      "timeStamp": 1782372709,
-      "dependencies": [],
+      "timeStamp": 1782573402,
+      "dependencies": [
+        {
+          "orPackage": "kit.AbilityKit.UIAbilityContext",
+          "package": "kit.AbilityKit",
+          "isStd": false,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\features\\startup\\startup_launch_service.cj"
+            }
+          ]
+        },
+        {
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.app.RouteId",
+          "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.app",
+          "isStd": false,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\features\\startup\\startup_store.cj"
+            }
+          ]
+        },
+        {
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.app.routePath",
+          "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.app",
+          "isStd": false,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\features\\startup\\startup_store.cj"
+            }
+          ]
+        },
+        {
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.loginPreferencesService",
+          "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session",
+          "isStd": false,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\features\\startup\\startup_launch_service.cj"
+            }
+          ]
+        },
+        {
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime.bootstrapStartRoute",
+          "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime",
+          "isStd": false,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\features\\startup\\startup_launch_service.cj"
+            }
+          ]
+        }
+      ],
       "std-dependencies": [
         {
           "std.core": []
@@ -32607,7 +32740,7 @@
       "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session",
       "isMacro": false,
       "accessLevel": "public",
-      "timeStamp": 1782441803,
+      "timeStamp": 1782643127,
       "dependencies": [
         {
           "orPackage": "kit.AbilityKit.UIAbilityContext",
@@ -32715,7 +32848,7 @@
       "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.onboarding",
       "isMacro": false,
       "accessLevel": "public",
-      "timeStamp": 1782530480,
+      "timeStamp": 1782642265,
       "dependencies": [
         {
           "orPackage": "",
@@ -32799,7 +32932,7 @@
       "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile",
       "isMacro": false,
       "accessLevel": "public",
-      "timeStamp": 1782388731,
+      "timeStamp": 1782648240,
       "dependencies": [
         {
           "orPackage": "kit.AbilityKit.UIAbilityContext",
@@ -32842,7 +32975,7 @@
           ]
         },
         {
-          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.LoginPreferencesService",
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.loginPreferencesService",
           "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session",
           "isStd": false,
           "imports": [
@@ -32850,11 +32983,32 @@
               "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\features\\profile\\profile_store.cj"
             }
           ]
+        },
+        {
+          "orPackage": "",
+          "package": "std.collection",
+          "isStd": true,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\features\\profile\\profile_route_service.cj"
+            }
+          ]
         }
       ],
       "std-dependencies": [
         {
+          "std.collection": [
+            "std.core",
+            "std.math"
+          ]
+        },
+        {
           "std.core": []
+        },
+        {
+          "std.math": [
+            "std.core"
+          ]
         }
       ],
       "features": [],
@@ -32866,7 +33020,7 @@
       "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.login",
       "isMacro": false,
       "accessLevel": "public",
-      "timeStamp": 1782380484,
+      "timeStamp": 1782642265,
       "dependencies": [
         {
           "orPackage": "kit.AbilityKit.UIAbilityContext",
@@ -32909,7 +33063,7 @@
           ]
         },
         {
-          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.LoginPreferencesService",
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.loginPreferencesService",
           "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session",
           "isStd": false,
           "imports": [
@@ -32970,7 +33124,7 @@
       "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common",
       "isMacro": false,
       "accessLevel": "public",
-      "timeStamp": 1782530427,
+      "timeStamp": 1782641410,
       "dependencies": [
         {
           "orPackage": "ohos.resource.AppResource",
@@ -32997,7 +33151,7 @@
       "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.widgets",
       "isMacro": false,
       "accessLevel": "public",
-      "timeStamp": 1782401586,
+      "timeStamp": 1782641410,
       "dependencies": [
         {
           "orPackage": "",
@@ -33028,6 +33182,16 @@
         {
           "orPackage": "ohos.resource.AppResource",
           "package": "ohos.resource",
+          "isStd": false,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\common\\widgets\\restaurant_card.cj"
+            }
+          ]
+        },
+        {
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.formatMinutesDuration",
+          "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common",
           "isStd": false,
           "imports": [
             {
@@ -33140,7 +33304,7 @@
       "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.home",
       "isMacro": false,
       "accessLevel": "public",
-      "timeStamp": 1782530480,
+      "timeStamp": 1782640005,
       "dependencies": [
         {
           "orPackage": "",
@@ -33343,7 +33507,7 @@
           ]
         },
         {
-          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.content.HomeContentRepository",
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.content.homeContentRepository",
           "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.content",
           "isStd": false,
           "imports": [
@@ -33397,6 +33561,16 @@
               "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\features\\home\\home_store.cj"
             }
           ]
+        },
+        {
+          "orPackage": "",
+          "package": "std.unicode",
+          "isStd": true,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\features\\home\\home_store.cj"
+            }
+          ]
         }
       ],
       "std-dependencies": [
@@ -33413,6 +33587,12 @@
           "std.math": [
             "std.core"
           ]
+        },
+        {
+          "std.unicode": [
+            "std.collection",
+            "std.core"
+          ]
         }
       ],
       "features": [],
@@ -33424,7 +33604,7 @@
       "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.history",
       "isMacro": false,
       "accessLevel": "public",
-      "timeStamp": 1782530480,
+      "timeStamp": 1782638137,
       "dependencies": [
         {
           "orPackage": "",
@@ -33571,6 +33751,16 @@
               "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\features\\history\\history_store.cj"
             }
           ]
+        },
+        {
+          "orPackage": "",
+          "package": "std.unicode",
+          "isStd": true,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\features\\history\\history_store.cj"
+            }
+          ]
         }
       ],
       "std-dependencies": [
@@ -33587,6 +33777,12 @@
           "std.math": [
             "std.core"
           ]
+        },
+        {
+          "std.unicode": [
+            "std.collection",
+            "std.core"
+          ]
         }
       ],
       "features": [],
@@ -33598,7 +33794,7 @@
       "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.domain",
       "isMacro": false,
       "accessLevel": "public",
-      "timeStamp": 1782441787,
+      "timeStamp": 1782637834,
       "dependencies": [
         {
           "orPackage": "",
@@ -33636,7 +33832,7 @@
       "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.content",
       "isMacro": false,
       "accessLevel": "public",
-      "timeStamp": 1782394857,
+      "timeStamp": 1782573402,
       "dependencies": [
         {
           "orPackage": "",
@@ -33684,7 +33880,7 @@
       "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.cart",
       "isMacro": false,
       "accessLevel": "public",
-      "timeStamp": 1782443397,
+      "timeStamp": 1782643078,
       "dependencies": [
         {
           "orPackage": "",
@@ -33717,6 +33913,16 @@
           ]
         },
         {
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.formatMinutesDuration",
+          "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common",
+          "isStd": false,
+          "imports": [
+            {
+              "file": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie\\ohos_app_cangjie_entry\\features\\cart\\cart_store.cj"
+            }
+          ]
+        },
+        {
           "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common.mediaIcNonVeg",
           "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.common",
           "isStd": false,
@@ -33737,7 +33943,7 @@
           ]
         },
         {
-          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.content.HomeContentRepository",
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.content.homeContentRepository",
           "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.content",
           "isStd": false,
           "imports": [
@@ -33818,7 +34024,7 @@
       "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.detail",
       "isMacro": false,
       "accessLevel": "public",
-      "timeStamp": 1782530480,
+      "timeStamp": 1782643078,
       "dependencies": [
         {
           "orPackage": "",
@@ -33871,7 +34077,7 @@
           ]
         },
         {
-          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.content.HomeContentRepository",
+          "orPackage": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.content.homeContentRepository",
           "package": "ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.content",
           "isStd": false,
           "imports": [

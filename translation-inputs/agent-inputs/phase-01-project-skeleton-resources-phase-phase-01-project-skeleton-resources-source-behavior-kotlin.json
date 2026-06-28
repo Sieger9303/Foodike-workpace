@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-27T03:06:29+00:00",
+  "generatedAt": "2026-06-27T03:58:17+00:00",
   "phase": "phase-01-project-skeleton-resources",
   "sessionKind": "phase",
   "focusMode": "implementation-group",
@@ -40,11 +40,11 @@
       "path": "D:\\workspace\\Foodike\\translation-inputs\\phase-task-checklist.json",
       "exists": true,
       "error": "",
-      "generatedAt": "2026-06-27T02:15:11+00:00",
+      "generatedAt": "2026-06-27T03:54:06+00:00",
       "phase": "phase-01-project-skeleton-resources",
       "kind": "",
-      "mtime": 1782526511.2282636,
-      "size": 203427
+      "mtime": 1782532446.758711,
+      "size": 244562
     },
     {
       "name": "phaseGroupVerdicts",
@@ -60,11 +60,11 @@
       "path": "D:\\workspace\\Foodike\\translation-inputs\\phase-capability-checklist.json",
       "exists": true,
       "error": "",
-      "generatedAt": "2026-06-27T02:18:47+00:00",
+      "generatedAt": "2026-06-27T03:54:07+00:00",
       "phase": "phase-01-project-skeleton-resources",
       "kind": "",
-      "mtime": 1782526727.2906272,
-      "size": 19360
+      "mtime": 1782532447.7175598,
+      "size": 19600
     },
     {
       "name": "translationQualitySummary",
@@ -78,22 +78,24 @@
     {
       "name": "phaseCoverageGate",
       "path": "D:\\workspace\\Foodike\\translation-inputs\\phase-coverage-gate-report.json",
-      "exists": false,
-      "error": "missing",
-      "generatedAt": "",
-      "phase": "",
-      "kind": ""
+      "exists": true,
+      "error": "",
+      "generatedAt": "2026-06-27T03:22:15+00:00",
+      "phase": "phase-01-project-skeleton-resources",
+      "kind": "",
+      "mtime": 1782530535.67954,
+      "size": 13170
     },
     {
       "name": "targetStructure",
       "path": "D:\\workspace\\Foodike\\translation-inputs\\target-structure-report.json",
       "exists": true,
       "error": "",
-      "generatedAt": "2026-06-27T02:15:11+00:00",
+      "generatedAt": "2026-06-27T03:54:06+00:00",
       "phase": "",
       "kind": "",
-      "mtime": 1782526511.2367828,
-      "size": 3617
+      "mtime": 1782532446.7657106,
+      "size": 19530
     },
     {
       "name": "sourceCoverageMatrix",
@@ -103,8 +105,8 @@
       "generatedAt": "2026-06-27T01:35:38+00:00",
       "phase": "",
       "kind": "",
-      "mtime": 1782529053.019083,
-      "size": 638318
+      "mtime": 1782532645.0637982,
+      "size": 637528
     },
     {
       "name": "platformCapabilityCheck",
@@ -344,7 +346,14 @@
       "platformCapabilityIds": [
         "localization-resources"
       ],
-      "expectedTargetDomains": [],
+      "expectedTargetDomains": [
+        "ohos_app_cangjie_entry/app/app_router.cj",
+        "ohos_app_cangjie_entry/common/foodike_resources.cj",
+        "base/element/string.json",
+        "base/element/color.json",
+        "AppScope/app.json5",
+        "entry/src/main/module.json5"
+      ],
       "requiredBehaviors": [
         "Android `android-values` file should be mapped to target resources, components, or documented deferred scope.",
         "Android resource/configuration must be mapped or explicitly deferred.",
@@ -415,7 +424,7 @@
       "planGroups": 1,
       "matchedGroups": 1,
       "unmatchedGroups": 0,
-      "generatedImplementationGroups": 12
+      "generatedImplementationGroups": 13
     },
     "alignmentFindings": [],
     "matchedGroups": [
@@ -471,7 +480,8 @@
           "phase-01-project-skeleton-resources-resource-migration-res-values",
           "phase-01-project-skeleton-resources-source-behavior-presentation-util",
           "phase-01-project-skeleton-resources-platform-capability-localization-resources",
-          "phase-01-project-skeleton-resources-verification-phase-tests-and-evidence"
+          "phase-01-project-skeleton-resources-verification-phase-tests-and-evidence",
+          "phase-01-project-skeleton-resources-architecture-risk-broad-target-endpoints"
         ]
       }
     ],
@@ -549,6 +559,15 @@
       "sourcePathCount": 19,
       "featureCount": 49,
       "capabilityCount": 1
+    },
+    {
+      "groupId": "phase-01-project-skeleton-resources-architecture-risk-broad-target-endpoints",
+      "title": "Architecture risk: broad target endpoints",
+      "groupType": "architecture-risk",
+      "priority": "critical",
+      "sourcePathCount": 5,
+      "featureCount": 16,
+      "capabilityCount": 0
     }
   ],
   "sharedSurfaceDigest": {
@@ -566,7 +585,14 @@
     ],
     "sharedTargetHints": [],
     "sharedSourceHints": [],
-    "expectedTargetDomains": [],
+    "expectedTargetDomains": [
+      "ohos_app_cangjie_entry/app/app_router.cj",
+      "ohos_app_cangjie_entry/common/foodike_resources.cj",
+      "base/element/string.json",
+      "base/element/color.json",
+      "AppScope/app.json5",
+      "entry/src/main/module.json5"
+    ],
     "uiGroupIds": [
       "phase-01-project-skeleton-resources-source-behavior-kotlin-source"
     ],
@@ -1036,7 +1062,13 @@
     ]
   },
   "debtSummary": {
-    "blockingFunctionalDebt": [],
+    "blockingFunctionalDebt": [
+      {
+        "severity": "high",
+        "kind": "phase-gate-open-entry",
+        "message": "28 current-phase critical/high feature(s) remain planned, unreviewed, or not covered. The phase cannot close until each is implemented, replaced, not-applicable, or explicitly deferred with complete evidence."
+      }
+    ],
     "repairableQualityDebt": [],
     "structureOnlyDebt": [],
     "carryForwardDebt": [
