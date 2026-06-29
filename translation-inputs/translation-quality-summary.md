@@ -1,6 +1,6 @@
 # Translation Quality Summary
 
-- Generated: `2026-06-28T12:12:04+00:00`
+- Generated: `2026-06-29T05:55:38+00:00`
 - Workspace: `D:\workspace\Foodike`
 - Status: `repairable-medium`
 - Recommendation: No critical/high findings are open, but repairable medium findings remain; handle them through the existing repair or revisit paths.
@@ -55,9 +55,9 @@ _None._
 | metric | value |
 | --- | --- |
 | reports | 7 |
-| byResult | {"BLOCKED": 7} |
+| byResult | {"BLOCKED": 6, "PASS": 1} |
 | latestPhase | final-coverage |
-| latestResult | BLOCKED |
+| latestResult | PASS |
 
 ### Runtime UI Smoke Reports
 
@@ -69,7 +69,7 @@ _None._
 | phase-03-onboarding-login | BLOCKED | workflow-or-user-environment | hdc executable was not found. | D:\workspace\Foodike\translation-inputs\runtime-ui-reports\phase-03-onboarding-login\runtime-ui-report.md |
 | phase-05-detail-cart | BLOCKED | workflow-or-user-environment | hdc executable was not found. | D:\workspace\Foodike\translation-inputs\runtime-ui-reports\phase-05-detail-cart\runtime-ui-report.md |
 | phase-06-profile-capabilities-verification | BLOCKED | workflow-or-user-environment | hdc executable was not found. | D:\workspace\Foodike\translation-inputs\runtime-ui-reports\phase-06-profile-capabilities-verification\runtime-ui-report.md |
-| final-coverage | BLOCKED | workflow-or-user-environment | hdc executable was not found. | D:\workspace\Foodike\translation-inputs\runtime-ui-reports\final-coverage\runtime-ui-report.md |
+| final-coverage | PASS | runtime-ui-environment |  | D:\workspace\Foodike\translation-inputs\runtime-ui-reports\final-coverage\runtime-ui-report.md |
 
 ## Prep Contract
 
@@ -216,12 +216,12 @@ Sweep guidance:
 | metric | value |
 | --- | --- |
 | productionCodeFiles | 40 |
-| productionCodeNonblankLines | 3193 |
+| productionCodeNonblankLines | 3223 |
 | largestProductionCodeFileNonblankLines | 399 |
 | largeProductionCodeFiles | 0 |
 | endpointBearingFeatureRows | 144 |
 | endpointTargetFiles | 47 |
-| largestEndpointFileShare | 0.4167 |
+| largestEndpointFileShare | 0.3889 |
 | concentratedEndpointFiles | 1 |
 | broadShellEndpointFiles | 2 |
 | uiSurfaceFiles | 23 |
@@ -236,7 +236,7 @@ Sweep guidance:
 
 | metric | value |
 | --- | --- |
-| totalResults | 6 |
-| byType | {"build": 6} |
-| byResult | {"passed": 6} |
-| passedBuildPhases | ["phase-01-project-skeleton-resources", "phase-02-startup-session-navigation", "phase-03-onboarding-login", "phase-04-home-history", "phase-05-detail-cart", ... |
+| totalResults | 7 |
+| byType | {"build": 7} |
+| byResult | {"passed": 7} |
+| passedBuildPhases | ["final-coverage", "phase-01-project-skeleton-resources", "phase-02-startup-session-navigation", "phase-03-onboarding-login", "phase-04-home-history", "phase... |

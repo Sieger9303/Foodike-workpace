@@ -52,10 +52,10 @@ Validate that critical/high source features have an explicit migration status. I
 | metric | value |
 | --- | --- |
 | acceptedPass | True |
-| acceptedReport | D:\workspace\Foodike\translation-inputs\test-build-reports\phase-06-profile-capabilities-verification\test-build-report.md |
-| acceptedPhase | phase-06-profile-capabilities-verification |
+| acceptedReport | D:\workspace\Foodike\translation-inputs\test-build-reports\final-coverage\test-build-report.md |
+| acceptedPhase | final-coverage |
 | latestResult | PASS |
-| latestReport | D:\workspace\Foodike\translation-inputs\test-build-reports\phase-06-profile-capabilities-verification\test-build-report.md |
+| latestReport | D:\workspace\Foodike\translation-inputs\test-build-reports\final-coverage\test-build-report.md |
 
 ## Template Sync
 

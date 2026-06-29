@@ -2324,7 +2324,7 @@
       "verificationEvidence": [
         "Manual source review confirmed `Profile.kt` uses only `painterResource(R.drawable.ic_profile)` for a static profile image and has no image click/viewer path.",
         "Manual target review confirmed `profile_page.cj::renderProfileRoute` renders `mediaProfile` as a static avatar only.",
-        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
+        "Final-coverage test build report PASS: `translation-inputs/test-build-reports/final-coverage/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
         "Phase-06 build gate PASS: `translation-inputs/build-reports/phase-06-profile-capabilities-verification/build-report.md`."
       ],
       "parityLevel": "not-applicable",
@@ -2334,7 +2334,7 @@
       ],
       "tests": [
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesStaticIdentityAndPlaceholderActions",
-        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+        "translation-inputs/test-build-reports/final-coverage/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
       ],
       "notes": "Static analysis over-detected viewer/bitmap behavior from a packaged profile image.",
       "deferredReason": "",
@@ -2363,7 +2363,7 @@
         "verification": {
           "targetEndpoints": [
             "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::renderProfileRoute",
-            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildProfileRoute"
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::buildProfileTopBar"
           ],
           "testEvidence": [
             {
@@ -2373,8 +2373,8 @@
             },
             {
               "kind": "test-compile-pass",
-              "detail": "Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
-              "path": "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md"
+              "detail": "Final-coverage test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
+              "path": "translation-inputs/test-build-reports/final-coverage/test-build-report.md"
             }
           ],
           "buildEvidence": [
@@ -2418,12 +2418,12 @@
       "status": "implemented",
       "plannedPhase": "phase-06-profile-capabilities-verification",
       "sourceBehavior": "`Profile.kt` renders a back command, static profile action cards, and a logout button. The back arrow calls `navController.navigateUp()`, the action cards keep placeholder click handlers, and logout clears the start destination stack before routing to onboarding.",
-      "targetBehavior": "`profile_route_service.cj` now centralizes the profile-specific back-route decision, placeholder action message, and logout transition state, while `renderProfileRoute` preserves the visible back affordance, static action cards, and logout button. `bootstrap_page.cj` delegates the profile logout flow to the focused profile transition endpoint before routing to onboarding after session logout.",
+      "targetBehavior": "`profile_route_service.cj` now centralizes the profile-specific back-route decision, explicit edit/section placeholder action messages, and logout transition state, while `renderProfileRoute` preserves the visible back affordance, static action cards, and logout button. `bootstrap_page.cj` delegates the profile logout flow and typed profile action callbacks to the focused profile transition/service endpoints before routing to onboarding after session logout.",
       "verificationEvidence": [
         "Manual source review confirmed `Profile.kt` owns the back icon, edit/action-card click surfaces, and logout navigation callback.",
-        "Manual target review confirmed `profile_route_service.cj::resolveBackRoute`, `::canNavigateBack`, `::buildLogoutTransition`, and `::placeholderActionMessage` now carry the profile-specific command wiring instead of closing the row through only the broad bootstrap shell.",
-        "`profile_page.cj::buildProfileTopBar` and `::renderProfileRoute` preserve the visible back/logout/action-card surface while `profile_store.cj::logoutRoute` and `::actionFeedbackMessage` keep the route/message state explicit.",
-        "Phase-06 manual test reproduction PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie` with the recorded env overlay on 2026-06-28.",
+        "Manual target review confirmed `profile_route_service.cj::resolveBackRoute`, `::canNavigateBack`, `::buildLogoutTransition`, `::editActionMessage`, and `::sectionActionMessage` now carry the profile-specific command wiring instead of closing the row through only the broad bootstrap shell.",
+        "`profile_page.cj::buildProfileTopBar`, `::buildProfileSection`, and `::renderProfileRoute` preserve the visible back/logout/action-card surface while `profile_store.cj::logoutRoute`, `::actionFeedbackMessage`, and `::sectionFeedbackMessage` keep the route/message state explicit.",
+        "Final-coverage test build report PASS: `translation-inputs/test-build-reports/final-coverage/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
         "Phase-06 build gate PASS: `translation-inputs/build-reports/phase-06-profile-capabilities-verification/build-report.md`."
       ],
       "parityLevel": "equivalent",
@@ -2431,19 +2431,22 @@
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::resolveBackRoute",
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::canNavigateBack",
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::buildLogoutTransition",
-        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::placeholderActionMessage",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::editActionMessage",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::sectionActionMessage",
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::buildProfileTopBar",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::buildProfileSection",
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::renderProfileRoute",
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logoutRoute",
-        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::actionFeedbackMessage"
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::actionFeedbackMessage",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::sectionFeedbackMessage"
       ],
       "tests": [
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileBackRouteUsesTheNavigationStackWhenPresent",
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileLogoutTransitionResetsRouteStateAndReturnsOnboarding",
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesLogoutRoute",
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesStaticIdentityAndPlaceholderActions",
-        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)",
-        "Manual 2026-06-28 reproduction: `cjpm test --target aarch64-linux-ohos` with the phase-06 env overlay"
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileRouteServiceUsesExplicitEditAndSectionActionMessages",
+        "translation-inputs/test-build-reports/final-coverage/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
       ],
       "notes": "",
       "deferredReason": "",
@@ -2471,30 +2474,28 @@
         },
         "verification": {
           "targetEndpoints": [
-            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildProfileRoute",
-            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::navigateBack",
-            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogout",
-            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::resolveProfileBackRoute",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::resolveBackRoute",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::canNavigateBack",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::buildLogoutTransition",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::editActionMessage",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::sectionActionMessage",
             "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::buildProfileTopBar",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::buildProfileSection",
             "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::renderProfileRoute",
             "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logoutRoute",
-            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::actionFeedbackMessage"
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::actionFeedbackMessage",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::sectionFeedbackMessage"
           ],
           "testEvidence": [
             {
               "kind": "focused-test-pass",
-              "detail": "`phase06_profile_capabilities_verification_test.cj::profileBackRouteUsesTheNavigationStackWhenPresent` verifies the translated profile back command follows the route stack instead of a hardcoded history route.",
-              "path": "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj"
-            },
-            {
-              "kind": "focused-test-pass",
-              "detail": "`phase06_profile_capabilities_verification_test.cj::profileStorePreservesLogoutRoute` and `::profileStorePreservesStaticIdentityAndPlaceholderActions` verify logout routing and the explicit placeholder action surface.",
+              "detail": "`phase06_profile_capabilities_verification_test.cj::profileBackRouteUsesTheNavigationStackWhenPresent`, `::profileLogoutTransitionResetsRouteStateAndReturnsOnboarding`, `::profileStorePreservesLogoutRoute`, `::profileStorePreservesStaticIdentityAndPlaceholderActions`, and `::profileRouteServiceUsesExplicitEditAndSectionActionMessages` verify the translated profile back/logout/action-card surface through focused profile endpoints.",
               "path": "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj"
             },
             {
               "kind": "test-compile-pass",
-              "detail": "Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
-              "path": "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md"
+              "detail": "Final-coverage test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
+              "path": "translation-inputs/test-build-reports/final-coverage/test-build-report.md"
             }
           ],
           "buildEvidence": [
@@ -2508,7 +2509,7 @@
           "manualEvidence": [
             {
               "kind": "manual-review",
-              "detail": "The translated profile route now preserves back navigation, visible placeholder cards, and logout routing without collapsing the command surface into a fixed route constant."
+              "detail": "The translated profile route now preserves back navigation, visible placeholder cards, and logout routing through focused profile service/store endpoints instead of a generic shell placeholder path."
             }
           ]
         },
@@ -2541,8 +2542,8 @@
       "targetBehavior": "The translated profile route remains permission-free and introduces no HarmonyOS permission prompt for the avatar, profile cards, edit label, or logout button.",
       "verificationEvidence": [
         "Manual source review confirmed `Profile.kt` contains no permission launcher, activity result, gallery picker, or protected API call.",
-        "Manual target review confirmed `profile_route_service.cj::placeholderActionMessage`, `profile_page.cj::buildProfileTopBar`, and `profile_page.cj::renderProfileRoute` only use route callbacks and placeholder toasts.",
-        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
+        "Manual target review confirmed `profile_route_service.cj::placeholderActionMessage`, `profile_page.cj::buildProfileTopBar`, and `profile_page.cj::renderProfileRoute` only use route callbacks and source-matching placeholder feedback.",
+        "Final-coverage test build report PASS: `translation-inputs/test-build-reports/final-coverage/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
         "Phase-06 build gate PASS: `translation-inputs/build-reports/phase-06-profile-capabilities-verification/build-report.md`."
       ],
       "parityLevel": "not-applicable",
@@ -2553,7 +2554,7 @@
       ],
       "tests": [
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesStaticIdentityAndPlaceholderActions",
-        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+        "translation-inputs/test-build-reports/final-coverage/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
       ],
       "notes": "Static analysis over-detected permission behavior from generic image and navigation usage.",
       "deferredReason": "",
@@ -2581,14 +2582,15 @@
         },
         "verification": {
           "targetEndpoints": [
-            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildProfileRoute",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::placeholderActionMessage",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::buildProfileTopBar",
             "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::renderProfileRoute"
           ],
           "testEvidence": [
             {
               "kind": "test-compile-pass",
-              "detail": "Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
-              "path": "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md"
+              "detail": "Final-coverage test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
+              "path": "translation-inputs/test-build-reports/final-coverage/test-build-report.md"
             }
           ],
           "buildEvidence": [
@@ -2632,27 +2634,30 @@
       "status": "implemented",
       "plannedPhase": "phase-06-profile-capabilities-verification",
       "sourceBehavior": "`Profile.kt` composes against `ProfileViewModel` callbacks and navigates immediately from user actions, while keeping the visible profile identity and placeholder cards static until logout is requested.",
-      "targetBehavior": "`profile_route_service.cj` now owns the profile-specific callback decisions for back eligibility, placeholder action feedback, and logout transition state, while `profile_store.cj` centralizes the static identity and placeholder-action message. `renderProfileRoute` remains a thin UI surface over those focused state endpoints without inventing editable or remote profile data.",
+      "targetBehavior": "`profile_route_service.cj` now owns the profile-specific callback decisions for back eligibility, explicit edit/section placeholder action feedback, and logout transition state, while `profile_store.cj` centralizes the static identity and per-surface placeholder messages. `renderProfileRoute` remains a thin UI surface over those focused state endpoints without inventing editable or remote profile data.",
       "verificationEvidence": [
         "Manual source review confirmed the profile screen is driven by callback wiring rather than editable form state or remote data streams.",
         "Manual target review confirmed `profile_route_service.cj`, `profile_store.cj`, and `profile_page.cj::renderProfileRoute` now carry the translated profile callback/state surface more precisely than the root bootstrap shell alone.",
-        "Phase-06 manual test reproduction PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie` with the recorded env overlay on 2026-06-28.",
+        "Final-coverage test build report PASS: `translation-inputs/test-build-reports/final-coverage/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
         "Phase-06 build gate PASS: `translation-inputs/build-reports/phase-06-profile-capabilities-verification/build-report.md`."
       ],
       "parityLevel": "equivalent",
       "targetEndpoints": [
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::resolveBackRoute",
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::canNavigateBack",
-        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::placeholderActionMessage",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::editActionMessage",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::sectionActionMessage",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::buildProfileSection",
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::renderProfileRoute",
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::actionFeedbackMessage",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::sectionFeedbackMessage",
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::profileSectionCount"
       ],
       "tests": [
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileBackRouteUsesTheNavigationStackWhenPresent",
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesStaticIdentityAndPlaceholderActions",
-        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)",
-        "Manual 2026-06-28 reproduction: `cjpm test --target aarch64-linux-ohos` with the phase-06 env overlay"
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileRouteServiceUsesExplicitEditAndSectionActionMessages",
+        "translation-inputs/test-build-reports/final-coverage/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
       ],
       "notes": "",
       "deferredReason": "",
@@ -2680,28 +2685,26 @@
         },
         "verification": {
           "targetEndpoints": [
-            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildProfileRoute",
-            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::navigateBack",
-            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::resolveProfileBackRoute",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::resolveBackRoute",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::canNavigateBack",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::editActionMessage",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::sectionActionMessage",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::buildProfileSection",
             "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj::renderProfileRoute",
             "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::actionFeedbackMessage",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::sectionFeedbackMessage",
             "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::profileSectionCount"
           ],
           "testEvidence": [
             {
               "kind": "focused-test-pass",
-              "detail": "`phase06_profile_capabilities_verification_test.cj::profileBackRouteUsesTheNavigationStackWhenPresent` verifies the translated profile callback wiring preserves stack-based back behavior.",
-              "path": "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj"
-            },
-            {
-              "kind": "focused-test-pass",
-              "detail": "`phase06_profile_capabilities_verification_test.cj::profileStorePreservesStaticIdentityAndPlaceholderActions` verifies the translated profile state surface keeps the static identity and explicit placeholder-action behavior.",
+              "detail": "`phase06_profile_capabilities_verification_test.cj::profileBackRouteUsesTheNavigationStackWhenPresent`, `::profileStorePreservesStaticIdentityAndPlaceholderActions`, and `::profileRouteServiceUsesExplicitEditAndSectionActionMessages` verify the translated profile callback wiring, static identity surface, and explicit placeholder-action behavior.",
               "path": "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj"
             },
             {
               "kind": "test-compile-pass",
-              "detail": "Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
-              "path": "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md"
+              "detail": "Final-coverage test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
+              "path": "translation-inputs/test-build-reports/final-coverage/test-build-report.md"
             }
           ],
           "buildEvidence": [
@@ -2715,7 +2718,7 @@
           "manualEvidence": [
             {
               "kind": "manual-review",
-              "detail": "The translated profile route preserves the source's callback-driven static state model without inventing editable or remote profile flows."
+              "detail": "The translated profile route preserves the source's callback-driven static state model without inventing editable or remote profile flows, and keeps placeholder cards explicit through named profile endpoints."
             }
           ]
         },
@@ -11599,8 +11602,8 @@
       "targetBehavior": "`profile_store.cj::logout` only delegates to the login preferences service and remains permission-free in the HarmonyOS target.",
       "verificationEvidence": [
         "Manual source review confirmed `ProfileViewModel.kt` contains only `repository.toggleLoginState()` inside `PerformLogout` handling.",
-        "Manual target review confirmed `profile_store.cj::logout` performs only session logout through the preferences service.",
-        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully."
+        "Manual target review confirmed `profile_store.cj::logout` performs only session logout through the preferences service and `profile_route_service.cj::resetAfterLogout` resets local route state without any permission flow.",
+        "Final-coverage test build report PASS: `translation-inputs/test-build-reports/final-coverage/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully."
       ],
       "parityLevel": "not-applicable",
       "targetEndpoints": [
@@ -11608,8 +11611,8 @@
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::resetAfterLogout"
       ],
       "tests": [
-        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesLogoutRoute",
-        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileLogoutTransitionResetsRouteStateAndReturnsOnboarding",
+        "translation-inputs/test-build-reports/final-coverage/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
       ],
       "notes": "Static analysis over-detected permissions on a logout-only ViewModel event handler.",
       "deferredReason": "",
@@ -11638,13 +11641,13 @@
         "verification": {
           "targetEndpoints": [
             "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout",
-            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogout"
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::resetAfterLogout"
           ],
           "testEvidence": [
             {
               "kind": "test-compile-pass",
-              "detail": "Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
-              "path": "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md"
+              "detail": "Final-coverage test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
+              "path": "translation-inputs/test-build-reports/final-coverage/test-build-report.md"
             }
           ],
           "buildEvidence": [],
@@ -11687,7 +11690,7 @@
       "verificationEvidence": [
         "Manual source review confirmed `ProfileViewModel.kt` contains no initialization or resume logic beyond logout handling.",
         "Manual target review confirmed `profile_route_service.cj::buildLogoutTransition` captures the translated route teardown state and `resolveStartRoute(false)` returns the onboarding route.",
-        "Phase-06 manual test reproduction PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie` with the recorded env overlay on 2026-06-28.",
+        "Final-coverage test build report PASS: `translation-inputs/test-build-reports/final-coverage/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
         "Phase-06 build gate PASS: `translation-inputs/build-reports/phase-06-profile-capabilities-verification/build-report.md`."
       ],
       "parityLevel": "equivalent",
@@ -11696,10 +11699,10 @@
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::buildLogoutTransition"
       ],
       "tests": [
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileLogoutTransitionResetsRouteStateAndReturnsOnboarding",
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState",
-        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)",
-        "Manual 2026-06-28 reproduction: `cjpm test --target aarch64-linux-ohos` with the phase-06 env overlay"
+        "translation-inputs/test-build-reports/final-coverage/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
       ],
       "notes": "",
       "deferredReason": "",
@@ -11727,19 +11730,19 @@
         },
         "verification": {
           "targetEndpoints": [
-            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogout",
-            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::resolveStartRoute"
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::resolveStartRoute",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::buildLogoutTransition"
           ],
           "testEvidence": [
             {
               "kind": "focused-test-pass",
-              "detail": "`phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState` verifies the translated post-logout entry route resolves to onboarding.",
+              "detail": "`phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes`, `::profileLogoutTransitionResetsRouteStateAndReturnsOnboarding`, and `::startupResolverReturnsOnboardingAfterLogoutStyleState` verify the translated logout teardown and post-logout entry routing.",
               "path": "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj"
             },
             {
               "kind": "test-compile-pass",
-              "detail": "Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
-              "path": "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md"
+              "detail": "Final-coverage test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
+              "path": "translation-inputs/test-build-reports/final-coverage/test-build-report.md"
             }
           ],
           "buildEvidence": [
@@ -11753,7 +11756,7 @@
           "manualEvidence": [
             {
               "kind": "manual-review",
-              "detail": "The translated logout teardown clears route-local state and returns the app to the onboarding entry path, matching the source logout lifecycle effect."
+              "detail": "The translated logout teardown clears route-local state through the focused profile route service and returns the app to the onboarding entry path."
             }
           ]
         },
@@ -11788,7 +11791,7 @@
       "verificationEvidence": [
         "Manual source review confirmed `ProfileViewModel.kt` performs a single logout state mutation followed by the supplied callback.",
         "Manual target review confirmed `profile_store.cj::logout`, `profile_route_service.cj::buildLogoutTransition`, and `app_router.cj::resolveStartRoute` now separate the translated mutation, local reset, and startup-resolution responsibilities.",
-        "Phase-06 manual test reproduction PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie` with the recorded env overlay on 2026-06-28.",
+        "Final-coverage test build report PASS: `translation-inputs/test-build-reports/final-coverage/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
         "Phase-06 build gate PASS: `translation-inputs/build-reports/phase-06-profile-capabilities-verification/build-report.md`."
       ],
       "parityLevel": "equivalent",
@@ -11798,11 +11801,10 @@
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout"
       ],
       "tests": [
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileLogoutTransitionResetsRouteStateAndReturnsOnboarding",
-        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesLogoutRoute",
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState",
-        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)",
-        "Manual 2026-06-28 reproduction: `cjpm test --target aarch64-linux-ohos` with the phase-06 env overlay"
+        "translation-inputs/test-build-reports/final-coverage/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
       ],
       "notes": "",
       "deferredReason": "",
@@ -11830,20 +11832,20 @@
         },
         "verification": {
           "targetEndpoints": [
-            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::performLogout",
-            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout",
-            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::resolveStartRoute"
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::resolveStartRoute",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::buildLogoutTransition",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout"
           ],
           "testEvidence": [
             {
               "kind": "focused-test-pass",
-              "detail": "`phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState` verifies the translated logout state propagates to the onboarding start route.",
+              "detail": "`phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes`, `::profileLogoutTransitionResetsRouteStateAndReturnsOnboarding`, and `::startupResolverReturnsOnboardingAfterLogoutStyleState` verify the translated logout mutation propagates immediately to local route reset and the next startup route.",
               "path": "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj"
             },
             {
               "kind": "test-compile-pass",
-              "detail": "Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
-              "path": "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md"
+              "detail": "Final-coverage test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
+              "path": "translation-inputs/test-build-reports/final-coverage/test-build-report.md"
             }
           ],
           "buildEvidence": [
@@ -11857,7 +11859,7 @@
           "manualEvidence": [
             {
               "kind": "manual-review",
-              "detail": "The translated logout flow keeps the same immediate state propagation pattern as the source profile ViewModel callback path."
+              "detail": "The translated logout flow keeps the same immediate state propagation pattern as the source profile ViewModel callback path through focused profile endpoints instead of a broad shell handler."
             }
           ]
         },
@@ -22024,17 +22026,17 @@
       "targetBehavior": "The translated profile store and route wiring keep logout as a plain callback-driven event with no permission-bearing event model.",
       "verificationEvidence": [
         "Manual source review confirmed `ProfileEvent.kt` contains only `PerformLogout(val onClick: () -> Unit)`.",
-        "Manual target review confirmed the translated profile route uses plain logout callbacks only.",
-        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully."
+        "Manual target review confirmed the translated profile route uses a focused logout transition plus store logout callback surface only.",
+        "Final-coverage test build report PASS: `translation-inputs/test-build-reports/final-coverage/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully."
       ],
       "parityLevel": "not-applicable",
       "targetEndpoints": [
-        "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildProfileRoute",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::buildLogoutTransition",
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout"
       ],
       "tests": [
-        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
-        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileLogoutTransitionResetsRouteStateAndReturnsOnboarding",
+        "translation-inputs/test-build-reports/final-coverage/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
       ],
       "notes": "Static analysis over-detected permission behavior on a sealed logout event model.",
       "deferredReason": "",
@@ -22062,14 +22064,14 @@
         },
         "verification": {
           "targetEndpoints": [
-            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj::buildProfileRoute",
+            "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::buildLogoutTransition",
             "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout"
           ],
           "testEvidence": [
             {
               "kind": "test-compile-pass",
-              "detail": "Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
-              "path": "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md"
+              "detail": "Final-coverage test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
+              "path": "translation-inputs/test-build-reports/final-coverage/test-build-report.md"
             }
           ],
           "buildEvidence": [],
@@ -22189,12 +22191,11 @@
       "status": "implemented",
       "plannedPhase": "phase-06-profile-capabilities-verification",
       "sourceBehavior": "`ExampleInstrumentedTest.kt` is only a package-name smoke test and does not verify business behavior.",
-      "targetBehavior": "The target replaces this shallow source-side smoke test with focused Cangjie verification for profile back/logout routing and startup-route resolution in `phase06_profile_capabilities_verification_test.cj`, backed by a passing phase-06 test gate and the precise profile route service/router/store endpoints.",
+      "targetBehavior": "The target replaces this shallow source-side smoke test with focused Cangjie verification for profile back/logout routing, explicit profile action-section messaging, and startup-route resolution in `phase06_profile_capabilities_verification_test.cj`, backed by a passing final-coverage test gate and precise profile route service/router endpoints.",
       "verificationEvidence": [
         "Manual source review confirmed `ExampleInstrumentedTest.kt` asserts only the package name `com.example.foodike`.",
-        "The target phase-06 test suite now covers profile back/logout routing and post-logout start-route resolution in `phase06_profile_capabilities_verification_test.cj`.",
-        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
-        "Manual 2026-06-28 test reproduction confirmed the updated target tests pass after moving profile route logic behind the focused profile transition and route-service endpoints."
+        "The target phase-06 test suite now covers profile back/logout routing, explicit profile action/section messaging, and post-logout start-route resolution in `phase06_profile_capabilities_verification_test.cj`.",
+        "Final-coverage test build report PASS: `translation-inputs/test-build-reports/final-coverage/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully."
       ],
       "parityLevel": "equivalent",
       "targetEndpoints": [
@@ -22202,16 +22203,19 @@
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::resolveBackRoute",
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::canNavigateBack",
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::buildLogoutTransition",
-        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileBackRouteUsesTheNavigationStackWhenPresent",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::editActionMessage",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::sectionActionMessage",
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileLogoutTransitionResetsRouteStateAndReturnsOnboarding",
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileRouteServiceUsesExplicitEditAndSectionActionMessages",
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState"
       ],
       "tests": [
-        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileBackRouteUsesTheNavigationStackWhenPresent",
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileLogoutTransitionResetsRouteStateAndReturnsOnboarding",
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileRouteServiceUsesExplicitEditAndSectionActionMessages",
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState",
-        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)",
-        "Manual 2026-06-28 reproduction: `cjpm test --target aarch64-linux-ohos` with the phase-06 env overlay"
+        "translation-inputs/test-build-reports/final-coverage/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
       ],
       "notes": "The source Android instrumentation test is intentionally replaced with meaningful target-side route and logout verification.",
       "deferredReason": "",
@@ -22239,20 +22243,21 @@
         },
         "verification": {
           "targetEndpoints": [
-            "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileBackRouteUsesTheNavigationStackWhenPresent",
-            "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesLogoutRoute",
+            "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
+            "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileLogoutTransitionResetsRouteStateAndReturnsOnboarding",
+            "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileRouteServiceUsesExplicitEditAndSectionActionMessages",
             "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState"
           ],
           "testEvidence": [
             {
               "kind": "focused-test-pass",
-              "detail": "`phase06_profile_capabilities_verification_test.cj::profileBackRouteUsesTheNavigationStackWhenPresent`, `::profileStorePreservesLogoutRoute`, and `::startupResolverReturnsOnboardingAfterLogoutStyleState` replace the shallow source instrumentation smoke test with route-behavior verification.",
+              "detail": "`phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes`, `::profileLogoutTransitionResetsRouteStateAndReturnsOnboarding`, `::profileRouteServiceUsesExplicitEditAndSectionActionMessages`, and `::startupResolverReturnsOnboardingAfterLogoutStyleState` replace the shallow source instrumentation smoke test with focused route-behavior verification.",
               "path": "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj"
             },
             {
               "kind": "test-compile-pass",
-              "detail": "Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
-              "path": "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md"
+              "detail": "Final-coverage test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
+              "path": "translation-inputs/test-build-reports/final-coverage/test-build-report.md"
             }
           ],
           "buildEvidence": [],
@@ -22260,7 +22265,7 @@
           "manualEvidence": [
             {
               "kind": "manual-review",
-              "detail": "The source package-name assertion was replaced with focused target route/logout verification instead of a shallow package smoke check."
+              "detail": "The source package-name assertion was replaced with focused target route/logout/action-surface verification instead of a shallow package smoke check."
             }
           ]
         },
@@ -22289,25 +22294,27 @@
       "status": "implemented",
       "plannedPhase": "phase-06-profile-capabilities-verification",
       "sourceBehavior": "`ExampleUnitTest.kt` is only a placeholder arithmetic test and does not verify app behavior.",
-      "targetBehavior": "The target replaces the placeholder source unit test with focused phase-06 profile/startup tests and a translated harness sanity assertion in `phase06_profile_capabilities_verification_test.cj`.",
+      "targetBehavior": "The target replaces the placeholder source unit test with focused phase-06 profile/startup tests and a translated harness sanity assertion in `phase06_profile_capabilities_verification_test.cj`, including explicit profile action/section message coverage.",
       "verificationEvidence": [
         "Manual source review confirmed `ExampleUnitTest.kt` contains only `assertEquals(4, 2 + 2)`.",
         "Manual target review confirmed `phase06_profile_capabilities_verification_test.cj` includes both focused app-behavior tests and a harness sanity assertion.",
-        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
-        "Manual 2026-06-28 test reproduction confirmed the updated target tests pass after moving profile route logic behind focused profile endpoints."
+        "Final-coverage test build report PASS: `translation-inputs/test-build-reports/final-coverage/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully."
       ],
       "parityLevel": "equivalent",
       "targetEndpoints": [
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::resolveBackRoute",
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::canNavigateBack",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::editActionMessage",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::sectionActionMessage",
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::sourceExampleUnitAssertionIntentIsCoveredByTargetHarness",
-        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileBackRouteUsesTheNavigationStackWhenPresent"
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileBackRouteUsesTheNavigationStackWhenPresent",
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileRouteServiceUsesExplicitEditAndSectionActionMessages"
       ],
       "tests": [
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::sourceExampleUnitAssertionIntentIsCoveredByTargetHarness",
-        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileBackRouteUsesTheNavigationStackWhenPresent",
-        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)",
-        "Manual 2026-06-28 reproduction: `cjpm test --target aarch64-linux-ohos` with the phase-06 env overlay"
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileRouteServiceUsesExplicitEditAndSectionActionMessages",
+        "translation-inputs/test-build-reports/final-coverage/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
       ],
       "notes": "",
       "deferredReason": "",
@@ -22336,18 +22343,19 @@
         "verification": {
           "targetEndpoints": [
             "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::sourceExampleUnitAssertionIntentIsCoveredByTargetHarness",
-            "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileBackRouteUsesTheNavigationStackWhenPresent"
+            "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
+            "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileRouteServiceUsesExplicitEditAndSectionActionMessages"
           ],
           "testEvidence": [
             {
               "kind": "focused-test-pass",
-              "detail": "`phase06_profile_capabilities_verification_test.cj::sourceExampleUnitAssertionIntentIsCoveredByTargetHarness` keeps the source placeholder arithmetic assertion intent while the same file adds real phase-06 app-behavior coverage, including stack-based profile back verification.",
+              "detail": "`phase06_profile_capabilities_verification_test.cj::sourceExampleUnitAssertionIntentIsCoveredByTargetHarness` keeps the source placeholder arithmetic assertion intent while the same file adds real phase-06 app-behavior coverage, including focused profile back/logout verification and explicit profile action/section message checks.",
               "path": "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj"
             },
             {
               "kind": "test-compile-pass",
-              "detail": "Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
-              "path": "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md"
+              "detail": "Final-coverage test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
+              "path": "translation-inputs/test-build-reports/final-coverage/test-build-report.md"
             }
           ],
           "buildEvidence": [],
@@ -22384,12 +22392,11 @@
       "status": "implemented",
       "plannedPhase": "phase-06-profile-capabilities-verification",
       "sourceBehavior": "`addition_isCorrect` is only a placeholder local test and does not represent real CRUD or persistence behavior in the source app.",
-      "targetBehavior": "The target replaces this shallow row with actual persistent/session-oriented verification through startup-route resolution and logout/session coverage, while still keeping a translated arithmetic harness check in `phase06_profile_capabilities_verification_test.cj`.",
+      "targetBehavior": "The target replaces this shallow row with actual persistent/session-oriented verification through startup-route resolution and logout/session coverage, while still keeping a translated arithmetic harness check and explicit profile action/section message verification in `phase06_profile_capabilities_verification_test.cj`.",
       "verificationEvidence": [
         "Manual source review confirmed `addition_isCorrect` does not exercise any source CRUD or persistence path.",
-        "The target phase-06 tests verify logout/startup session consequences via `startupResolverReturnsOnboardingAfterLogoutStyleState`, verify stack-based profile back routing via `profileBackRouteUsesTheNavigationStackWhenPresent`, verify focused logout transition reset state via `profileLogoutTransitionResetsRouteStateAndReturnsOnboarding`, and keep a direct translated arithmetic check in `sourceExampleUnitAssertionIntentIsCoveredByTargetHarness`.",
-        "Phase-06 test build report PASS: `translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully.",
-        "Manual 2026-06-28 test reproduction confirmed the updated target tests pass after moving profile route logic behind focused profile endpoints."
+        "The target phase-06 tests verify logout/startup session consequences via `startupResolverReturnsOnboardingAfterLogoutStyleState`, verify focused logout teardown via `profileLogoutTransitionResetsRouteStateAndReturnsOnboarding`, verify combined profile back/logout routing via `profileStorePreservesBackAndLogoutRoutes`, verify explicit profile action/section messaging via `profileRouteServiceUsesExplicitEditAndSectionActionMessages`, and keep a direct translated arithmetic check in `sourceExampleUnitAssertionIntentIsCoveredByTargetHarness`.",
+        "Final-coverage test build report PASS: `translation-inputs/test-build-reports/final-coverage/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` successfully."
       ],
       "parityLevel": "equivalent",
       "targetEndpoints": [
@@ -22397,19 +22404,22 @@
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::resolveBackRoute",
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::canNavigateBack",
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::buildLogoutTransition",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::editActionMessage",
+        "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::sectionActionMessage",
         "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout",
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState",
-        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileBackRouteUsesTheNavigationStackWhenPresent",
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileLogoutTransitionResetsRouteStateAndReturnsOnboarding",
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileRouteServiceUsesExplicitEditAndSectionActionMessages",
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::sourceExampleUnitAssertionIntentIsCoveredByTargetHarness"
       ],
       "tests": [
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::sourceExampleUnitAssertionIntentIsCoveredByTargetHarness",
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState",
-        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileBackRouteUsesTheNavigationStackWhenPresent",
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
         "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileLogoutTransitionResetsRouteStateAndReturnsOnboarding",
-        "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)",
-        "Manual 2026-06-28 reproduction: `cjpm test --target aarch64-linux-ohos` with the phase-06 env overlay"
+        "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileRouteServiceUsesExplicitEditAndSectionActionMessages",
+        "translation-inputs/test-build-reports/final-coverage/test-build-report.md: PASS `cjpm test --target aarch64-linux-ohos` (entry/src/test/cangjie)"
       ],
       "notes": "The source row is a static-analysis mismatch; the real useful replacement in phase-06 is target-side session and route verification, not arithmetic alone.",
       "deferredReason": "",
@@ -22438,16 +22448,16 @@
         "verification": {
           "targetEndpoints": [
             "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState",
-            "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileBackRouteUsesTheNavigationStackWhenPresent",
+            "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes",
+            "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::profileRouteServiceUsesExplicitEditAndSectionActionMessages",
             "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj::sourceExampleUnitAssertionIntentIsCoveredByTargetHarness",
             "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::resolveStartRoute",
-            "entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj::resolveProfileBackRoute",
             "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout"
           ],
           "testEvidence": [
             {
               "kind": "focused-test-pass",
-              "detail": "`phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState` verifies the translated session/logout state updates the next app entry route, and `::profileBackRouteUsesTheNavigationStackWhenPresent` covers the repaired profile navigation path.",
+              "detail": "`phase06_profile_capabilities_verification_test.cj::startupResolverReturnsOnboardingAfterLogoutStyleState` verifies the translated session/logout state updates the next app entry route, `::profileStorePreservesBackAndLogoutRoutes` covers the repaired profile navigation path, and `::profileRouteServiceUsesExplicitEditAndSectionActionMessages` verifies the explicit profile placeholder-action endpoints.",
               "path": "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj"
             },
             {
@@ -22457,8 +22467,8 @@
             },
             {
               "kind": "test-compile-pass",
-              "detail": "Phase-06 test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
-              "path": "translation-inputs/test-build-reports/phase-06-profile-capabilities-verification/test-build-report.md"
+              "detail": "Final-coverage test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
+              "path": "translation-inputs/test-build-reports/final-coverage/test-build-report.md"
             }
           ],
           "buildEvidence": [],
@@ -22490,19 +22500,16 @@
     "preservedAgentCurated": 0,
     "staleEntries": 0
   },
-  "lastPatchedAt": "2026-06-28T12:11:06+00:00",
+  "lastPatchedAt": "2026-06-28T17:28:28+00:00",
   "lastPatchSummary": {
     "kind": "matrix",
-    "updatedEntries": 7,
+    "updatedEntries": 4,
     "addedEntries": 0,
     "updatedIds": [
-      "app-src-main-java-com-example-foodike-presentation-profi-c34aae0a57-002-navigation-surface-menu-drawer-toolbar-o",
-      "app-src-main-java-com-example-foodike-presentation-profi-e492afed0c-004-observable-state-viewmodel-flow-livedata",
-      "app-src-main-java-com-example-foodike-presentation-profi-9d1239d799-002-screen-lifecycle-entry-point-initializat",
-      "app-src-main-java-com-example-foodike-presentation-profi-1b04c65221-003-observable-state-viewmodel-flow-livedata",
-      "app-src-androidtest-java-com-example-foodike-exampleinst-7ce120cd33-001-source-side-tests-or-verification-assets",
-      "app-src-test-java-com-example-foodike-exampleunittest-kt-7340d393c5-001-source-side-tests-or-verification-assets",
-      "app-src-test-java-com-example-foodike-exampleunittest-kt-504d70964f-002-crud-mutation-or-persistent-state-update"
+      "app-src-main-java-com-example-foodike-presentation-profi-a1f2ba5cd8-001-image-viewing-bitmap-exif-handling-zoom",
+      "app-src-main-java-com-example-foodike-presentation-profi-106c8cc862-003-runtime-permission-request-permission-re",
+      "app-src-main-java-com-example-foodike-presentation-profi-f941f1a12e-001-runtime-permission-request-permission-re",
+      "app-src-main-java-com-example-foodike-presentation-profi-3fdadde96c-001-runtime-permission-request-permission-re"
     ],
     "addedIds": [],
     "statusCountsBefore": {

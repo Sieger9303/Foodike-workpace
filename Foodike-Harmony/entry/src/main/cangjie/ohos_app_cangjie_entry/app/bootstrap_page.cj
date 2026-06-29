@@ -14,7 +14,7 @@ import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.history.{historySt
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.home.{homeStore, renderHomeRoute}
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.login.{loginStore, renderLoginRoute}
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.onboarding.{onboardingStore, renderOnboardingRoute}
-import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.{profileRouteService, profileStore, renderProfileRoute}
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.{ProfileSection, profileRouteService, profileStore, renderProfileRoute}
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime.{Global, bootstrapStartRoute}
 import std.collection.ArrayList
 
@@ -174,11 +174,11 @@ class FoodikeBootstrap {
     }
 
     private func handleProfileEdit(): Unit {
-        this.showToast(profileRouteService.placeholderActionMessage())
+        this.showToast(profileRouteService.editActionMessage())
     }
 
-    private func handleProfileSectionAction(): Unit {
-        this.showToast(profileRouteService.placeholderActionMessage())
+    private func handleProfileSectionAction(section: ProfileSection): Unit {
+        this.showToast(profileRouteService.sectionActionMessage(section))
     }
 
     private func handleProfileLogout(): Unit {
@@ -280,7 +280,7 @@ class FoodikeBootstrap {
             profileStore.userEmail,
             { => this.handleProfileBack() },
             { => this.handleProfileEdit() },
-            { => this.handleProfileSectionAction() },
+            { section: ProfileSection => this.handleProfileSectionAction(section) },
             { => this.handleProfileLogout() }
         )
     }

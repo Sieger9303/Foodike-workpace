@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-28T12:11:43+00:00",
+  "generatedAt": "2026-06-28T17:29:39+00:00",
   "sourceKind": "kotlin",
   "purpose": "Reduce functional gaps and unexplained code-scale gaps during project translation. This file-level survey is a planning baseline, not a replacement for source inspection.",
   "source": {
@@ -5578,36 +5578,36 @@
       "files": 86,
       "textFiles": 63,
       "assetFiles": 23,
-      "physicalLines": 7280,
-      "nonblankLines": 6795,
-      "locCodeLines": 6794,
+      "physicalLines": 7341,
+      "nonblankLines": 6848,
+      "locCodeLines": 6847,
       "locCommentLines": 1,
-      "locBlankLines": 485,
+      "locBlankLines": 493,
       "productionTextFiles": 54,
-      "productionPhysicalLines": 6607,
-      "productionNonblankLines": 6207,
-      "productionLocCodeLines": 6206,
+      "productionPhysicalLines": 6643,
+      "productionNonblankLines": 6237,
+      "productionLocCodeLines": 6236,
       "productionLocCommentLines": 1,
-      "productionLocBlankLines": 400,
+      "productionLocBlankLines": 406,
       "codeFiles": 47,
-      "codePhysicalLines": 4194,
-      "codeNonblankLines": 3721,
-      "codeLocCodeLines": 3720,
+      "codePhysicalLines": 4255,
+      "codeNonblankLines": 3774,
+      "codeLocCodeLines": 3773,
       "codeLocCommentLines": 1,
-      "codeLocBlankLines": 473,
+      "codeLocBlankLines": 481,
       "productionCodeFiles": 40,
-      "productionCodePhysicalLines": 3588,
-      "productionCodeNonblankLines": 3193,
-      "productionCodeLocCodeLines": 3192,
+      "productionCodePhysicalLines": 3624,
+      "productionCodeNonblankLines": 3223,
+      "productionCodeLocCodeLines": 3222,
       "productionCodeLocCommentLines": 1,
-      "productionCodeLocBlankLines": 395,
+      "productionCodeLocBlankLines": 401,
       "testFiles": 9,
-      "testNonblankLines": 588,
+      "testNonblankLines": 611,
       "testCodeFiles": 7,
-      "testCodeNonblankLines": 528,
-      "testCodeLocCodeLines": 528,
+      "testCodeNonblankLines": 551,
+      "testCodeLocCodeLines": 551,
       "testCodeLocCommentLines": 0,
-      "testCodeLocBlankLines": 78
+      "testCodeLocBlankLines": 80
     },
     "byCategory": {
       "cangjie-source": 38,
@@ -7442,15 +7442,15 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 110,
-        "nonblankLines": 100,
+        "physicalLines": 116,
+        "nonblankLines": 106,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 110,
-          "nonblankLines": 100,
-          "codeLines": 100,
+          "physicalLines": 116,
+          "nonblankLines": 106,
+          "codeLines": 106,
           "commentLines": 0,
           "blankLines": 10
         },
@@ -7482,17 +7482,17 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 79,
-        "nonblankLines": 66,
+        "physicalLines": 89,
+        "nonblankLines": 73,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 79,
-          "nonblankLines": 66,
-          "codeLines": 66,
+          "physicalLines": 89,
+          "nonblankLines": 73,
+          "codeLines": 73,
           "commentLines": 0,
-          "blankLines": 13
+          "blankLines": 16
         },
         "importance": "critical",
         "riskTags": [
@@ -7505,11 +7505,13 @@
             "ProfileRouteService"
           ],
           "methods": [
+            "placeholderActionMessage",
             "resolveBackRoute",
             "canNavigateBack",
             "resetAfterLogout",
             "buildLogoutTransition",
-            "placeholderActionMessage"
+            "editActionMessage",
+            "sectionActionMessage"
           ],
           "androidIds": [],
           "dependencies": []
@@ -7517,13 +7519,15 @@
         "keyMethods": [
           "canNavigateBack",
           "resetAfterLogout",
-          "buildLogoutTransition"
+          "buildLogoutTransition",
+          "editActionMessage"
         ],
         "featurePoints": [
           "Android platform component lifecycle such as service, receiver, provider, or application.",
           "Navigation, dialog, visibility, or screen transition behavior. Evidence method: `canNavigateBack`.",
           "Authentication, account, or session behavior. Evidence method: `resetAfterLogout`.",
-          "Authentication, account, or session behavior. Evidence method: `buildLogoutTransition`."
+          "Authentication, account, or session behavior. Evidence method: `buildLogoutTransition`.",
+          "CRUD mutation or persistent state update behavior. Evidence method: `editActionMessage`."
         ],
         "textScanned": true
       },
@@ -7531,17 +7535,17 @@
         "path": "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj",
         "extension": ".cj",
         "category": "cangjie-source",
-        "physicalLines": 34,
-        "nonblankLines": 25,
+        "physicalLines": 54,
+        "nonblankLines": 42,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 34,
-          "nonblankLines": 25,
-          "codeLines": 25,
+          "physicalLines": 54,
+          "nonblankLines": 42,
+          "codeLines": 42,
           "commentLines": 0,
-          "blankLines": 9
+          "blankLines": 12
         },
         "importance": "critical",
         "riskTags": [
@@ -7550,10 +7554,13 @@
         ],
         "symbols": {
           "classes": [
+            "ProfileAction",
+            "ProfileSection",
             "ProfileStore"
           ],
           "methods": [
             "actionFeedbackMessage",
+            "sectionFeedbackMessage",
             "profileSectionCount",
             "logout",
             "logoutRoute"
@@ -8912,17 +8919,17 @@
         "path": "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj",
         "extension": ".cj",
         "category": "test",
-        "physicalLines": 65,
-        "nonblankLines": 58,
+        "physicalLines": 90,
+        "nonblankLines": 81,
         "locMetrics": {
           "source": "external-tool",
           "tool": "tokei",
           "language": "Cangjie",
-          "physicalLines": 65,
-          "nonblankLines": 58,
-          "codeLines": 58,
+          "physicalLines": 90,
+          "nonblankLines": 81,
+          "codeLines": 81,
           "commentLines": 0,
-          "blankLines": 7
+          "blankLines": 9
         },
         "importance": "critical",
         "riskTags": [
@@ -8937,7 +8944,9 @@
           ],
           "methods": [
             "profileStorePreservesStaticIdentityAndPlaceholderActions",
+            "profileRouteServiceUsesExplicitEditAndSectionActionMessages",
             "profileStorePreservesLogoutRoute",
+            "profileStorePreservesBackAndLogoutRoutes",
             "profileLogoutTransitionResetsRouteStateAndReturnsOnboarding",
             "profileBackRouteUsesTheNavigationStackWhenPresent",
             "startupResolverReturnsOnboardingAfterLogoutStyleState",
@@ -8947,7 +8956,9 @@
           "dependencies": []
         },
         "keyMethods": [
+          "profileRouteServiceUsesExplicitEditAndSectionActionMessages",
           "profileStorePreservesLogoutRoute",
+          "profileStorePreservesBackAndLogoutRoutes",
           "profileLogoutTransitionResetsRouteStateAndReturnsOnboarding",
           "startupResolverReturnsOnboardingAfterLogoutStyleState",
           "sourceExampleUnitAssertionIntentIsCoveredByTargetHarness"
@@ -8957,7 +8968,9 @@
           "Navigation surface, menu, drawer, toolbar, or tab command behavior.",
           "Android platform component lifecycle such as service, receiver, provider, or application.",
           "Source-side tests or verification assets should be migrated or replaced.",
+          "CRUD mutation or persistent state update behavior. Evidence method: `profileRouteServiceUsesExplicitEditAndSectionActionMessages`.",
           "Authentication, account, or session behavior. Evidence method: `profileStorePreservesLogoutRoute`.",
+          "Authentication, account, or session behavior. Evidence method: `profileStorePreservesBackAndLogoutRoutes`.",
           "Authentication, account, or session behavior. Evidence method: `profileLogoutTransitionResetsRouteStateAndReturnsOnboarding`.",
           "Authentication, account, or session behavior. Evidence method: `startupResolverReturnsOnboardingAfterLogoutStyleState`.",
           "Data loading, query, search, filter, or sort behavior. Evidence method: `sourceExampleUnitAssertionIntentIsCoveredByTargetHarness`."

@@ -8,25 +8,26 @@ Structured verification evidence collected from build/test/manual reports. Build
 
 | metric | value |
 | --- | --- |
-| totalResults | 6 |
-| passedBuildPhases | ['phase-01-project-skeleton-resources', 'phase-02-startup-session-navigation', 'phase-03-onboarding-login', 'phase-04-home-history', 'phase-05-detail-cart', 'phase-06-profile-capabilities-verification'] |
+| totalResults | 7 |
+| passedBuildPhases | ['final-coverage', 'phase-01-project-skeleton-resources', 'phase-02-startup-session-navigation', 'phase-03-onboarding-login', 'phase-04-home-history', 'phase-05-detail-cart', 'phase-06-profile-capabilities-verification'] |
 
 ## Result Types
 
 | type | count |
 | --- | --- |
-| build | 6 |
+| build | 7 |
 
 ## Result Status
 
 | result | count |
 | --- | --- |
-| passed | 6 |
+| passed | 7 |
 
 ## Results
 
 | id | type | phase | result | evidence path | notes |
 | --- | --- | --- | --- | --- | --- |
+| build:final-coverage | build | final-coverage | passed | D:\workspace\Foodike\translation-inputs\build-reports\final-coverage\build-report.json | Build gate result for phase final-coverage. |
 | build:phase-01-project-skeleton-resources | build | phase-01-project-skeleton-resources | passed | D:\workspace\Foodike\translation-inputs\build-reports\phase-01-project-skeleton-resources\build-report.json | Build gate result for phase phase-01-project-skeleton-resources. |
 | build:phase-02-startup-session-navigation | build | phase-02-startup-session-navigation | passed | D:\workspace\Foodike\translation-inputs\build-reports\phase-02-startup-session-navigation\build-report.json | Build gate result for phase phase-02-startup-session-navigation. |
 | build:phase-03-onboarding-login | build | phase-03-onboarding-login | passed | D:\workspace\Foodike\translation-inputs\build-reports\phase-03-onboarding-login\build-report.json | Build gate result for phase phase-03-onboarding-login. |

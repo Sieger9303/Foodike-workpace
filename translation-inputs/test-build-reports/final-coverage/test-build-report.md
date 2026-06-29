@@ -1,6 +1,6 @@
 # HarmonyOS Cangjie Test Build Report
 
-- Generated: `2026-06-28T12:12:04+00:00`
+- Generated: `2026-06-28T17:30:02+00:00`
 - Phase: `final-coverage`
 - Workspace: `D:\workspace\Foodike`
 - Target project: `D:\workspace\Foodike\Foodike-Harmony`
@@ -9,7 +9,7 @@
 - Recommended owner: `none`
 - Return code: `0`
 - Timed out: `False`
-- Duration seconds: `2.562`
+- Duration seconds: `2.61`
 - Reused previous PASS: `False`
 - Skip reason: `none`
 - Test root: `D:\workspace\Foodike\Foodike-Harmony\entry\src\test\cangjie`

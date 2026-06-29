@@ -7079,3 +7079,696 @@ Error: cjpm build failed
 [2026-06-28T20:12:01.139] [DEBUG] debug-file - worker[0] exits with exit code 1.
 [2026-06-28T20:12:01.139] [DEBUG] debug-file - worker[1] exits with exit code 1.
 [2026-06-28T20:12:01.142] [DEBUG] debug-file - worker[22] exits with exit code 1.
+[2026-06-29T01:29:42.287] [DEBUG] debug-file - env: nodejsVersion=v18.20.1
+[2026-06-29T01:29:42.605] [WARN] debug-file - Build analysis mode 'default' is deprecated, please use 'normal' instead.
+[2026-06-29T01:29:42.610] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: false,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined,
+  customizedParam: undefined
+}
+[2026-06-29T01:29:43.849] [DEBUG] debug-file - hvigorfile, require result:  { default: { system: [Function: appTasks], plugins: [] } }
+[2026-06-29T01:29:43.984] [DEBUG] debug-file - App plugin register hook start...
+[2026-06-29T01:29:43.985] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2026-06-29T01:29:43.988] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2026-06-29T01:29:43.850] [DEBUG] debug-file - Starting plugin build process
+[2026-06-29T01:29:44.027] [DEBUG] debug-file - Project task initialization takes 7 ms 
+[2026-06-29T01:29:43.993] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2026-06-29T01:29:44.265] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2026-06-29T01:29:44.273] [DEBUG] debug-file - project has submodules:entry
+[2026-06-29T01:29:44.278] [DEBUG] debug-file - Start to initialize dependency information.
+[2026-06-29T01:29:44.291] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2026-06-29T01:29:44.315] [DEBUG] debug-file - Executing task :entry:default@GenerateCangjieResource
+[2026-06-29T01:29:44.319] [DEBUG] debug-file - Executing task :entry:default@GenerateTomlDependencies
+[2026-06-29T01:29:42.287] [DEBUG] debug-file - env: hvigor-config.json5 content = {
+  modelVersion: '6.0.2',
+  dependencies: {},
+  execution: {
+    analyze: 'default',
+    daemon: true,
+    incremental: true,
+    parallel: true
+  },
+  logging: { level: 'info' }
+}
+[2026-06-29T01:29:42.613] [DEBUG] debug-file - Cache service initialization finished in 3 ms 
+[2026-06-29T01:29:44.367] [DEBUG] debug-file - Create  resident worker with id: 0.
+[2026-06-29T01:29:43.849] [DEBUG] debug-file - hvigorfile, binding system plugins [Function: appTasks]
+[2026-06-29T01:29:43.984] [DEBUG] debug-file - App plugin register hook end...
+[2026-06-29T01:29:43.989] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2026-06-29T01:29:43.985] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2026-06-29T01:29:43.850] [DEBUG] debug-file - App plugin prepare start...
+[2026-06-29T01:29:44.027] [DEBUG] debug-file - hvigorfile, begin to bind custom plugins...
+[2026-06-29T01:29:44.019] [DEBUG] debug-file - Sdk init in 31 ms 
+[2026-06-29T01:29:44.265] [DEBUG] debug-file - Target 'default' config initialized
+[2026-06-29T01:29:44.281] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2026-06-29T01:29:44.293] [DEBUG] debug-file - load to the disk finished
+[2026-06-29T01:29:44.317] [DEBUG] debug-file - Incremental task entry:default@GenerateCangjieResource pre-execution cost: 1 ms .
+[2026-06-29T01:29:44.324] [DEBUG] debug-file - entry : default@GenerateTomlDependencies cost memory 0.6791000366210938
+[2026-06-29T01:29:42.289] [DEBUG] debug-file - env: daemon=false
+[2026-06-29T01:29:42.614] [DEBUG] debug-file - hvigorfile, resolving D:\workspace\Foodike\Foodike-Harmony\hvigorfile.ts
+[2026-06-29T01:29:44.369] [DEBUG] debug-file - Create  resident worker with id: 1.
+[2026-06-29T01:29:43.984] [DEBUG] debug-file - Plugin build process completed
+[2026-06-29T01:29:43.990] [DEBUG] debug-file - Local scan or download HarmonyOS sdk components toolchains,ets,js,native,previewer
+[2026-06-29T01:29:43.986] [DEBUG] debug-file - Product 'default' build option initialized
+[2026-06-29T01:29:43.850] [DEBUG] debug-file - App plugin prepare end...
+[2026-06-29T01:29:44.027] [DEBUG] debug-file - hvigorfile, no custom plugins were found in D:\workspace\Foodike\Foodike-Harmony\hvigorfile.ts
+[2026-06-29T01:29:44.266] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2026-06-29T01:29:44.281] [DEBUG] debug-file - Module entry's total dependency: 0
+[2026-06-29T01:29:44.293] [DEBUG] debug-file - Start to initialize dependency information.
+[2026-06-29T01:29:44.318] [DEBUG] debug-file - entry : default@GenerateCangjieResource cost memory -14.427543640136719
+[2026-06-29T01:29:44.324] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 720 ms 
+[2026-06-29T01:29:42.289] [DEBUG] debug-file - no-daemon, use the parent process.execArgv --max-old-space-size=8192,--max-semi-space-size=16,--expose-gc
+[2026-06-29T01:29:44.371] [DEBUG] debug-file - Current worker pool is stopped or closed.
+[2026-06-29T01:29:43.991] [DEBUG] debug-file - Local scan or download hmscore sdk components toolchains,ets,native
+[2026-06-29T01:29:43.986] [DEBUG] debug-file - Picking option from product 'release' with build mode 'debug'.
+[2026-06-29T01:29:44.027] [DEBUG] debug-file - hvigorfile, resolve finished D:\workspace\Foodike\Foodike-Harmony\hvigorfile.ts
+[2026-06-29T01:29:44.266] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2026-06-29T01:29:43.850] [DEBUG] debug-file - App plugin creating...
+[2026-06-29T01:29:44.318] [INFO] debug-file - UP-TO-DATE :entry:default@GenerateCangjieResource...  
+[2026-06-29T01:29:44.325] [INFO] debug-file - Finished :entry:default@GenerateTomlDependencies... after 6 ms 
+[2026-06-29T01:29:44.294] [DEBUG] debug-file - Module Foodike-Harmony Collected Dependency: 
+[2026-06-29T01:29:44.371] [DEBUG] debug-file - Clear worker 0.
+[2026-06-29T01:29:43.986] [DEBUG] debug-file - Product 'release' build option initialized
+[2026-06-29T01:29:44.028] [DEBUG] debug-file - hvigorfile, resolving D:\workspace\Foodike\Foodike-Harmony\entry\hvigorfile.ts
+[2026-06-29T01:29:44.266] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2026-06-29T01:29:44.325] [DEBUG] debug-file - Executing task :entry:SyncCangjieResource
+[2026-06-29T01:29:44.294] [DEBUG] debug-file - Module Foodike-Harmony's total dependency: 0
+[2026-06-29T01:29:43.986] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2026-06-29T01:29:44.371] [DEBUG] debug-file - Worker 0 has been cleared.
+[2026-06-29T01:29:44.033] [DEBUG] debug-file - hvigorfile, require result:  { default: { system: [Function: hapTasks], plugins: [] } }
+[2026-06-29T01:29:44.266] [DEBUG] debug-file - Target 'default' config initialized
+[2026-06-29T01:29:44.295] [DEBUG] debug-file - Start to initialize dependency information.
+[2026-06-29T01:29:44.325] [DEBUG] debug-file - entry : SyncCangjieResource cost memory 0.01031494140625
+[2026-06-29T01:29:44.371] [DEBUG] debug-file - Current idle worker size: 1.
+[2026-06-29T01:29:44.033] [DEBUG] debug-file - hvigorfile, binding system plugins [Function: hapTasks]
+[2026-06-29T01:29:44.267] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2026-06-29T01:29:44.295] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2026-06-29T01:29:44.325] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 721 ms 
+[2026-06-29T01:29:44.371] [DEBUG] debug-file - Current busy worker size: 0.
+[2026-06-29T01:29:44.033] [DEBUG] debug-file - Starting plugin build process
+[2026-06-29T01:29:44.267] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2026-06-29T01:29:44.295] [DEBUG] debug-file - Module entry's total dependency: 0
+[2026-06-29T01:29:44.325] [INFO] debug-file - Finished :entry:SyncCangjieResource... after 1 ms 
+[2026-06-29T01:29:44.371] [DEBUG] debug-file - Clear worker 1.
+[2026-06-29T01:29:44.033] [DEBUG] debug-file - Hap plugin creating...
+[2026-06-29T01:29:44.267] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2026-06-29T01:29:44.298] [DEBUG] debug-file - Configuration phase cost:1 s 685 ms 
+[2026-06-29T01:29:44.339] [INFO] debug-file - BUILD SUCCESSFUL in 1 s 735 ms 
+[2026-06-29T01:29:44.371] [DEBUG] debug-file - Worker 1 has been cleared.
+[2026-06-29T01:29:44.267] [DEBUG] debug-file - Target 'default' config initialized
+[2026-06-29T01:29:44.300] [DEBUG] debug-file - Configuration task cost before running: 1 s 695 ms 
+[2026-06-29T01:29:44.371] [DEBUG] debug-file - Current idle worker size: 0.
+[2026-06-29T01:29:44.340] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@CangjiePreBuild is up-to-date.
+[2026-06-29T01:29:44.304] [DEBUG] debug-file - Executing task :entry:default@CangjiePreBuild
+[2026-06-29T01:29:44.267] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2026-06-29T01:29:44.371] [DEBUG] debug-file - Current busy worker size: 0.
+[2026-06-29T01:29:44.340] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@GenerateCangjieResource is up-to-date.
+[2026-06-29T01:29:44.306] [DEBUG] debug-file - Task 'entry:default@CangjiePreBuild' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:44.267] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2026-06-29T01:29:44.372] [DEBUG] debug-file - hvigor build process will be closed.
+[2026-06-29T01:29:44.365] [DEBUG] debug-file - Since there is no instance or instance is terminated, create a new worker pool.
+[2026-06-29T01:29:44.312] [DEBUG] debug-file - Incremental task entry:default@CangjiePreBuild pre-execution cost: 4 ms .
+[2026-06-29T01:29:44.267] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2026-06-29T01:29:44.375] [DEBUG] debug-file - worker[0] exits with exit code 0.
+[2026-06-29T01:29:44.365] [DEBUG] debug-file - Worker pool is initialized with config:  {
+  minPoolNum: 2,
+  maxPoolNum: undefined,
+  maxCoreSize: undefined,
+  cacheCapacity: undefined,
+  cacheTtl: undefined
+}
+[2026-06-29T01:29:44.312] [DEBUG] debug-file - entry : default@CangjiePreBuild cost memory 0.32709503173828125
+[2026-06-29T01:29:44.267] [DEBUG] debug-file - Target 'default' config initialized
+[2026-06-29T01:29:44.377] [DEBUG] debug-file - worker[1] exits with exit code 0.
+[2026-06-29T01:29:44.267] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2026-06-29T01:29:44.313] [INFO] debug-file - UP-TO-DATE :entry:default@CangjiePreBuild...  
+[2026-06-29T01:29:44.378] [DEBUG] debug-file - Current worker pool is terminated.
+[2026-06-29T01:29:44.313] [INFO] debug-file - Disabled :entry:default@PreBuild... 
+[2026-06-29T01:29:44.267] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2026-06-29T01:29:44.267] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2026-06-29T01:29:44.267] [DEBUG] debug-file - Target 'default' config initialized
+[2026-06-29T01:29:44.267] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2026-06-29T01:29:44.267] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2026-06-29T01:29:44.268] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2026-06-29T01:29:44.271] [DEBUG] debug-file - Module entry task initialization takes 3 ms 
+[2026-06-29T01:29:44.272] [DEBUG] debug-file - Hap plugin register hook start...
+[2026-06-29T01:29:44.272] [DEBUG] debug-file - Hap plugin register hook end...
+[2026-06-29T01:29:44.272] [DEBUG] debug-file - Plugin build process completed
+[2026-06-29T01:29:44.272] [DEBUG] debug-file - hvigorfile, begin to bind custom plugins...
+[2026-06-29T01:29:44.272] [DEBUG] debug-file - hvigorfile, no custom plugins were found in D:\workspace\Foodike\Foodike-Harmony\entry\hvigorfile.ts
+[2026-06-29T01:29:44.272] [DEBUG] debug-file - hvigorfile, resolve finished D:\workspace\Foodike\Foodike-Harmony\entry\hvigorfile.ts
+[2026-06-29T01:29:44.974] [DEBUG] debug-file - env: nodejsVersion=v18.20.1
+[2026-06-29T01:29:45.259] [WARN] debug-file - Build analysis mode 'default' is deprecated, please use 'normal' instead.
+[2026-06-29T01:29:45.264] [DEBUG] debug-file - Hvigor init with startParameters:{
+  hvigorfileTypeCheck: false,
+  parallelExecution: true,
+  incrementalExecution: true,
+  printStackTrace: false,
+  daemon: false,
+  analyze: 0,
+  logLevel: Level { level: 20000, levelStr: 'INFO', colour: 'green' },
+  optimizationStrategy: 'memory',
+  hotCompile: undefined,
+  hotReloadBuild: undefined,
+  customizedParam: undefined
+}
+[2026-06-29T01:29:46.484] [DEBUG] debug-file - hvigorfile, require result:  { default: { system: [Function: appTasks], plugins: [] } }
+[2026-06-29T01:29:46.486] [DEBUG] debug-file - Starting plugin build process
+[2026-06-29T01:29:46.641] [DEBUG] debug-file - App plugin register hook start...
+[2026-06-29T01:29:46.644] [DEBUG] debug-file - Start initialize project's product build option map with build mode debug.
+[2026-06-29T01:29:46.647] [DEBUG] debug-file - Obtain build option for product 'default'in this build.
+[2026-06-29T01:29:46.656] [DEBUG] debug-file - Start recording SDK configuration permission data.
+[2026-06-29T01:29:46.695] [DEBUG] debug-file - Project task initialization takes 9 ms 
+[2026-06-29T01:29:46.946] [DEBUG] debug-file - project has submodules:entry
+[2026-06-29T01:29:46.937] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2026-06-29T01:29:46.950] [DEBUG] debug-file - Start to initialize dependency information.
+[2026-06-29T01:29:46.965] [DEBUG] debug-file - start to load updatedOhPackageInfo to the disk
+[2026-06-29T01:29:46.979] [DEBUG] debug-file - Configuration task cost before running: 1 s 720 ms 
+[2026-06-29T01:29:46.996] [DEBUG] debug-file - Executing task :entry:default@CreateBuildProfile
+[2026-06-29T01:29:46.999] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgContextInfo
+[2026-06-29T01:29:46.998] [DEBUG] debug-file - Executing task :entry:default@PreCheckSyscap
+[2026-06-29T01:29:46.992] [DEBUG] debug-file - Executing task :entry:default@GenerateMetadata
+[2026-06-29T01:29:47.008] [DEBUG] debug-file - Executing task :entry:default@ProcessIntegratedHsp
+[2026-06-29T01:29:47.017] [DEBUG] debug-file - Executing task :entry:default@SyscapTransform
+[2026-06-29T01:29:47.010] [DEBUG] debug-file - Executing task :entry:default@GenerateCangjieResource
+[2026-06-29T01:29:47.031] [DEBUG] debug-file - Executing task :entry:default@ProcessProfile
+[2026-06-29T01:29:47.013] [DEBUG] debug-file - Executing task :entry:default@BuildNativeWithCmake
+[2026-06-29T01:29:47.014] [DEBUG] debug-file - Executing task :entry:default@MakePackInfo
+[2026-06-29T01:29:47.039] [DEBUG] debug-file - Executing task :entry:default@ProcessShareConfig
+[2026-06-29T01:29:47.042] [DEBUG] debug-file - Executing task :entry:default@ProcessStartupConfig
+[2026-06-29T01:29:47.048] [DEBUG] debug-file - Executing task :entry:default@ProcessResource
+[2026-06-29T01:29:47.044] [DEBUG] debug-file - Executing task :entry:default@BuildNativeWithNinja
+[2026-06-29T01:29:47.068] [DEBUG] debug-file - Executing task :entry:default@CompileArkTS
+[2026-06-29T01:29:47.036] [DEBUG] debug-file - Executing task :entry:default@ProcessRouterMap
+[2026-06-29T01:29:47.051] [DEBUG] debug-file - Executing task :entry:default@GenerateLoaderJson
+[2026-06-29T01:29:47.060] [DEBUG] debug-file - Executing task :entry:default@CompileResource
+[2026-06-29T01:29:47.075] [DEBUG] debug-file - Executing task :entry:default@CompileCangjie
+[2026-06-29T01:29:47.073] [DEBUG] debug-file - Executing task :entry:default@BuildJS
+[2026-06-29T01:29:47.150] [DEBUG] debug-file - Use tool [NodeEnv]
+ {
+  Path: 'C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\build-tools\\runtime\\lib\\windows_x86_64_cjnative;C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\build-tools\\bin;C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\build-tools\\tools\\bin;C:\\Windows;C:\\Windows\\system32;D:\\git\\software\\Git\\cmd',
+  bundleName: 'com.example.foodike',
+  moduleName: 'entry',
+  moduleType: 'hap',
+  idDefined: 'D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\intermediates\\res\\default\\ids_map\\id_defined.json',
+  ohosSysIdDefined: 'D:\\Deveco\\Software\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\id_defined.json',
+  hosSysIdDefined: 'D:\\Deveco\\Software\\DevEco Studio\\sdk\\default\\hms\\toolchains\\id_defined.json',
+  rawfileRes: 'D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\intermediates\\res\\default\\resources\\rawfile',
+  DEVECO_OH_NATIVE_HOME: 'D:\\Deveco\\Software\\DevEco Studio\\sdk\\default\\openharmony\\native',
+  CJ_BUILD_INTEROP_PATH: 'D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie/',
+  CJ_LSP_INTEROP_PATH: 'D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\src\\main\\cangjie',
+  CURRENT_PACKAGE_NAME: 'ohos_app_cangjie_entry',
+  COMPILE_CONDITION_ENTRY: 'APILevel_level=22,product=default,APILevel_syscap=D:\\workspace\\Foodike\\Foodike-Harmony\\.idea\\.deveco\\cangjie\\syscap_api_config.json,target=default',
+  COMPILE_CONDITION: 'APILevel_level=22,product=default,APILevel_syscap=D:\\workspace\\Foodike\\Foodike-Harmony\\.idea\\.deveco\\cangjie\\syscap_api_config.json,target=default',
+  CANGJIE_HOME: 'C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\build-tools',
+  LD_LIBRARY_PATH: 'C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\build-tools\\runtime\\lib\\windows_x86_64_cjnative',
+  DEVECO_CANGJIE_HOME: 'C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie',
+  AARCH64_LIBS: 'C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\ohos',
+  AARCH64_MACRO_LIBS: 'C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\macro\\ohos',
+  AARCH64_KIT_LIBS: 'C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\lib\\linux_ohos_aarch64_cjnative\\kit',
+  X86_64_OHOS_LIBS: 'C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\lib\\linux_ohos_x86_64_cjnative\\ohos',
+  X86_64_OHOS_MACRO_LIBS: 'C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\macro\\ohos',
+  X86_64_OHOS_KIT_LIBS: 'C:\\Users\\Sieger\\.cangjie-sdk\\6.0\\cangjie\\api\\lib\\linux_ohos_x86_64_cjnative\\kit',
+  AARCH64_TPC_LIBS: '',
+  X86_TPC_LIBS: '',
+  X86_64_WIN_TPC_MACRO_LIBS: '',
+  AARCH64_DARWIN_TPC_MACRO_LIBS: '',
+  X86_64_DARWIN_TPC_MACRO_LIBS: '',
+  AARCH64_SYSTEM_LIBS: '',
+  X86_64_LINUX_TPC_MACRO_LIBS: '',
+  ABI: 'arm64-v8a'
+}
+[2026-06-29T01:29:44.975] [DEBUG] debug-file - env: hvigor-config.json5 content = {
+  modelVersion: '6.0.2',
+  dependencies: {},
+  execution: {
+    analyze: 'default',
+    daemon: true,
+    incremental: true,
+    parallel: true
+  },
+  logging: { level: 'info' }
+}
+[2026-06-29T01:29:45.267] [DEBUG] debug-file - Cache service initialization finished in 3 ms 
+[2026-06-29T01:29:46.485] [DEBUG] debug-file - hvigorfile, binding system plugins [Function: appTasks]
+[2026-06-29T01:29:46.486] [DEBUG] debug-file - App plugin prepare start...
+[2026-06-29T01:29:46.641] [DEBUG] debug-file - App plugin register hook end...
+[2026-06-29T01:29:46.644] [DEBUG] debug-file - Picking option from product 'default' with build mode 'debug'.
+[2026-06-29T01:29:46.649] [DEBUG] debug-file - No signingConfig found, initRemoteHspCache failed.
+[2026-06-29T01:29:46.684] [DEBUG] debug-file - Sdk init in 35 ms 
+[2026-06-29T01:29:46.695] [DEBUG] debug-file - hvigorfile, begin to bind custom plugins...
+[2026-06-29T01:29:46.937] [DEBUG] debug-file - Target 'default' config initialized
+[2026-06-29T01:29:46.953] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2026-06-29T01:29:46.966] [DEBUG] debug-file - load to the disk finished
+[2026-06-29T01:29:46.983] [DEBUG] debug-file - Executing task :entry:default@CangjiePreBuild
+[2026-06-29T01:29:46.996] [DEBUG] debug-file - Task 'entry:default@CreateBuildProfile' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:47.003] [DEBUG] debug-file - Task 'entry:default@GeneratePkgContextInfo' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:46.998] [DEBUG] debug-file - entry : default@PreCheckSyscap cost memory 0.01343536376953125
+[2026-06-29T01:29:46.992] [DEBUG] debug-file - Task 'entry:default@GenerateMetadata' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:47.008] [DEBUG] debug-file - entry:default@ProcessIntegratedHsp is not up-to-date, since the output file 'D:\workspace\Foodike\Foodike-Harmony\build\cache\default\integrated_hsp\integratedHspCache.json' does not exist.
+[2026-06-29T01:29:47.018] [DEBUG] debug-file - File: 'D:\workspace\Foodike\Foodike-Harmony\entry\src\main\syscap.json' from 'sysCapJsonPath' is not exists, just ignore.
+[2026-06-29T01:29:47.032] [DEBUG] debug-file - Task 'entry:default@ProcessProfile' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:47.013] [DEBUG] debug-file - entry : default@BuildNativeWithCmake cost memory 0.013336181640625
+[2026-06-29T01:29:47.016] [DEBUG] debug-file - Incremental task entry:default@MakePackInfo pre-execution cost: 1 ms .
+[2026-06-29T01:29:47.040] [DEBUG] debug-file - Incremental task entry:default@ProcessShareConfig pre-execution cost: 1 ms .
+[2026-06-29T01:29:47.048] [DEBUG] debug-file - Task 'entry:default@ProcessResource' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:47.042] [DEBUG] debug-file - Task 'entry:default@ProcessStartupConfig' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:47.044] [DEBUG] debug-file - entry : default@BuildNativeWithNinja cost memory 0.019561767578125
+[2026-06-29T01:29:47.069] [DEBUG] debug-file - obfuscationOptions: undefined
+[2026-06-29T01:29:47.037] [DEBUG] debug-file - Incremental task entry:default@ProcessRouterMap pre-execution cost: 1 ms .
+[2026-06-29T01:29:47.052] [DEBUG] debug-file - Task 'entry:default@GenerateLoaderJson' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:47.066] [DEBUG] debug-file - Incremental task entry:default@CompileResource pre-execution cost: 6 ms .
+[2026-06-29T01:29:47.076] [DEBUG] debug-file - modulePkgJsonPath: D:\workspace\Foodike\Foodike-Harmony\entry\oh-package.json5
+[2026-06-29T01:29:47.073] [DEBUG] debug-file - Task 'entry:default@BuildJS' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:47.011] [DEBUG] debug-file - Incremental task entry:default@GenerateCangjieResource pre-execution cost: 1 ms .
+[2026-06-29T01:29:47.150] [DEBUG] debug-file - Cangjie build command: C:\Users\Sieger\.cangjie-sdk\6.0\cangjie\build-tools\tools\bin\cjpm.exe build --target=aarch64-linux-ohos -j22 --target-dir=build\default\intermediates\cj\build\default --debug
+[2026-06-29T01:29:44.976] [DEBUG] debug-file - env: daemon=false
+[2026-06-29T01:29:45.268] [DEBUG] debug-file - hvigorfile, resolving D:\workspace\Foodike\Foodike-Harmony\hvigorfile.ts
+[2026-06-29T01:29:46.486] [DEBUG] debug-file - App plugin prepare end...
+[2026-06-29T01:29:46.642] [DEBUG] debug-file - Plugin build process completed
+[2026-06-29T01:29:46.644] [DEBUG] debug-file - Product 'default' build option initialized
+[2026-06-29T01:29:46.651] [DEBUG] debug-file - Local scan or download HarmonyOS sdk components toolchains,ets,js,native,previewer
+[2026-06-29T01:29:46.695] [DEBUG] debug-file - hvigorfile, no custom plugins were found in D:\workspace\Foodike\Foodike-Harmony\hvigorfile.ts
+[2026-06-29T01:29:46.938] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2026-06-29T01:29:46.953] [DEBUG] debug-file - Module entry's total dependency: 0
+[2026-06-29T01:29:46.967] [DEBUG] debug-file - Start to initialize dependency information.
+[2026-06-29T01:29:46.984] [DEBUG] debug-file - Task 'entry:default@CangjiePreBuild' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:46.997] [DEBUG] debug-file - Incremental task entry:default@CreateBuildProfile pre-execution cost: 1 ms .
+[2026-06-29T01:29:47.004] [DEBUG] debug-file - entry : default@GeneratePkgContextInfo cost memory 0.47540283203125
+[2026-06-29T01:29:46.998] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 739 ms 
+[2026-06-29T01:29:46.992] [DEBUG] debug-file - Incremental task entry:default@GenerateMetadata pre-execution cost: 1 ms .
+[2026-06-29T01:29:47.008] [DEBUG] debug-file - Incremental task entry:default@ProcessIntegratedHsp pre-execution cost: 1 ms .
+[2026-06-29T01:29:47.018] [DEBUG] debug-file - Task 'entry:default@SyscapTransform' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:47.033] [DEBUG] debug-file - Incremental task entry:default@ProcessProfile pre-execution cost: 1 ms .
+[2026-06-29T01:29:47.013] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 754 ms 
+[2026-06-29T01:29:47.016] [DEBUG] debug-file - entry : default@MakePackInfo cost memory 0.1024322509765625
+[2026-06-29T01:29:47.042] [DEBUG] debug-file - entry:default@ProcessStartupConfig is not up-to-date, since the output file 'D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\startup\default\startup_config.json' does not exist.
+[2026-06-29T01:29:47.048] [DEBUG] debug-file - Incremental task entry:default@ProcessResource pre-execution cost: 1 ms .
+[2026-06-29T01:29:47.040] [DEBUG] debug-file - entry : default@ProcessShareConfig cost memory 0.10416412353515625
+[2026-06-29T01:29:47.044] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 785 ms 
+[2026-06-29T01:29:47.069] [DEBUG] debug-file - Task 'entry:default@CompileArkTS' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:47.037] [DEBUG] debug-file - entry : default@ProcessRouterMap cost memory 0.12836456298828125
+[2026-06-29T01:29:47.056] [DEBUG] debug-file - Incremental task entry:default@GenerateLoaderJson pre-execution cost: 2 ms .
+[2026-06-29T01:29:47.140] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2026-06-29T01:29:47.067] [DEBUG] debug-file - entry : default@CompileResource cost memory 0.9084396362304688
+[2026-06-29T01:29:47.074] [DEBUG] debug-file - entry : default@BuildJS cost memory 0.14984130859375
+[2026-06-29T01:29:44.976] [DEBUG] debug-file - no-daemon, use the parent process.execArgv --max-old-space-size=8192,--max-semi-space-size=16,--expose-gc
+[2026-06-29T01:29:47.011] [DEBUG] debug-file - entry : default@GenerateCangjieResource cost memory 0.07057952880859375
+[2026-06-29T01:29:46.487] [DEBUG] debug-file - App plugin creating...
+[2026-06-29T01:29:46.644] [DEBUG] debug-file - Picking option from product 'release' with build mode 'debug'.
+[2026-06-29T01:29:46.653] [DEBUG] debug-file - Local scan or download hmscore sdk components toolchains,ets,native
+[2026-06-29T01:29:46.695] [DEBUG] debug-file - hvigorfile, resolve finished D:\workspace\Foodike\Foodike-Harmony\hvigorfile.ts
+[2026-06-29T01:29:46.938] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2026-06-29T01:29:46.967] [DEBUG] debug-file - Module Foodike-Harmony Collected Dependency: 
+[2026-06-29T01:29:46.988] [DEBUG] debug-file - Incremental task entry:default@CangjiePreBuild pre-execution cost: 3 ms .
+[2026-06-29T01:29:46.997] [DEBUG] debug-file - entry : default@CreateBuildProfile cost memory 0.0990142822265625
+[2026-06-29T01:29:46.998] [INFO] debug-file - Finished :entry:default@PreCheckSyscap... after 1 ms 
+[2026-06-29T01:29:47.004] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 745 ms 
+[2026-06-29T01:29:47.008] [DEBUG] debug-file - entry : default@ProcessIntegratedHsp cost memory 0.04740142822265625
+[2026-06-29T01:29:47.027] [DEBUG] debug-file - entry:default@SyscapTransform is not up-to-date, since the output file 'D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\syscap\default\rpcid.sc' does not exist.
+[2026-06-29T01:29:46.992] [DEBUG] debug-file - entry : default@GenerateMetadata cost memory 0.08084869384765625
+[2026-06-29T01:29:47.033] [DEBUG] debug-file - entry : default@ProcessProfile cost memory 0.12944793701171875
+[2026-06-29T01:29:47.013] [INFO] debug-file - Finished :entry:default@BuildNativeWithCmake... after 1 ms 
+[2026-06-29T01:29:47.016] [INFO] debug-file - UP-TO-DATE :entry:default@MakePackInfo...  
+[2026-06-29T01:29:47.042] [DEBUG] debug-file - Incremental task entry:default@ProcessStartupConfig pre-execution cost: 1 ms .
+[2026-06-29T01:29:47.048] [DEBUG] debug-file - entry : default@ProcessResource cost memory 0.3819427490234375
+[2026-06-29T01:29:47.040] [INFO] debug-file - UP-TO-DATE :entry:default@ProcessShareConfig...  
+[2026-06-29T01:29:47.044] [INFO] debug-file - Finished :entry:default@BuildNativeWithNinja... after 1 ms 
+[2026-06-29T01:29:47.071] [DEBUG] debug-file - entry : default@CompileArkTS cost memory 0.22600555419921875
+[2026-06-29T01:29:47.037] [INFO] debug-file - UP-TO-DATE :entry:default@ProcessRouterMap...  
+[2026-06-29T01:29:47.056] [DEBUG] debug-file - entry : default@GenerateLoaderJson cost memory 0.320526123046875
+[2026-06-29T01:29:47.074] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 815 ms 
+[2026-06-29T01:29:47.011] [INFO] debug-file - UP-TO-DATE :entry:default@GenerateCangjieResource...  
+[2026-06-29T01:29:47.067] [INFO] debug-file - UP-TO-DATE :entry:default@CompileResource...  
+[2026-06-29T01:29:46.644] [DEBUG] debug-file - Product 'release' build option initialized
+[2026-06-29T01:29:46.696] [DEBUG] debug-file - hvigorfile, resolving D:\workspace\Foodike\Foodike-Harmony\entry\hvigorfile.ts
+[2026-06-29T01:29:46.938] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2026-06-29T01:29:46.988] [DEBUG] debug-file - entry : default@CangjiePreBuild cost memory 0.5413360595703125
+[2026-06-29T01:29:46.997] [INFO] debug-file - UP-TO-DATE :entry:default@CreateBuildProfile...  
+[2026-06-29T01:29:46.967] [DEBUG] debug-file - Module Foodike-Harmony's total dependency: 0
+[2026-06-29T01:29:47.004] [INFO] debug-file - Finished :entry:default@GeneratePkgContextInfo... after 5 ms 
+[2026-06-29T01:29:47.008] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 749 ms 
+[2026-06-29T01:29:47.027] [DEBUG] debug-file - Incremental task entry:default@SyscapTransform pre-execution cost: 9 ms .
+[2026-06-29T01:29:46.993] [INFO] debug-file - UP-TO-DATE :entry:default@GenerateMetadata...  
+[2026-06-29T01:29:47.034] [INFO] debug-file - UP-TO-DATE :entry:default@ProcessProfile...  
+[2026-06-29T01:29:47.042] [DEBUG] debug-file - entry : default@ProcessStartupConfig cost memory 0.08080291748046875
+[2026-06-29T01:29:47.049] [INFO] debug-file - UP-TO-DATE :entry:default@ProcessResource...  
+[2026-06-29T01:29:47.045] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@ProcessResource
+[2026-06-29T01:29:47.072] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 813 ms 
+[2026-06-29T01:29:47.058] [INFO] debug-file - UP-TO-DATE :entry:default@GenerateLoaderJson...  
+[2026-06-29T01:29:47.074] [INFO] debug-file - Finished :entry:default@BuildJS... after 2 ms 
+[2026-06-29T01:29:46.644] [DEBUG] debug-file - End initialize project's product build option map with build mode 'debug'.
+[2026-06-29T01:29:46.703] [DEBUG] debug-file - hvigorfile, require result:  { default: { system: [Function: hapTasks], plugins: [] } }
+[2026-06-29T01:29:46.938] [DEBUG] debug-file - Target 'default' config initialized
+[2026-06-29T01:29:46.989] [INFO] debug-file - UP-TO-DATE :entry:default@CangjiePreBuild...  
+[2026-06-29T01:29:46.968] [DEBUG] debug-file - Start to initialize dependency information.
+[2026-06-29T01:29:47.004] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgSdkInfo
+[2026-06-29T01:29:47.008] [INFO] debug-file - Finished :entry:default@ProcessIntegratedHsp... after 1 ms 
+[2026-06-29T01:29:47.027] [DEBUG] debug-file - entry : default@SyscapTransform cost memory 0.1304779052734375
+[2026-06-29T01:29:46.993] [DEBUG] debug-file - Executing task :entry:default@ConfigureCmake
+[2026-06-29T01:29:47.072] [INFO] debug-file - Finished :entry:default@CompileArkTS... after 4 ms 
+[2026-06-29T01:29:47.043] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 784 ms 
+[2026-06-29T01:29:47.059] [DEBUG] debug-file - restool module names: entry; moduleName=entry, taskName=default@CompileResource
+[2026-06-29T01:29:46.703] [DEBUG] debug-file - hvigorfile, binding system plugins [Function: hapTasks]
+[2026-06-29T01:29:46.939] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2026-06-29T01:29:46.990] [INFO] debug-file - Disabled :entry:default@PreBuild... 
+[2026-06-29T01:29:46.969] [DEBUG] debug-file - Module entry Collected Dependency: 
+[2026-06-29T01:29:47.005] [DEBUG] debug-file - Task 'entry:default@GeneratePkgSdkInfo' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:47.028] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 769 ms 
+[2026-06-29T01:29:46.993] [DEBUG] debug-file - entry : default@ConfigureCmake cost memory 0.0120391845703125
+[2026-06-29T01:29:47.043] [INFO] debug-file - Finished :entry:default@ProcessStartupConfig... after 1 ms 
+[2026-06-29T01:29:46.703] [DEBUG] debug-file - Starting plugin build process
+[2026-06-29T01:29:46.939] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2026-06-29T01:29:46.990] [DEBUG] debug-file - Executing task :entry:default@CreateModuleInfo
+[2026-06-29T01:29:47.006] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgSdkInfo pre-execution cost: 1 ms .
+[2026-06-29T01:29:46.969] [DEBUG] debug-file - Module entry's total dependency: 0
+[2026-06-29T01:29:47.028] [INFO] debug-file - Finished :entry:default@SyscapTransform... after 11 ms 
+[2026-06-29T01:29:46.993] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 734 ms 
+[2026-06-29T01:29:46.703] [DEBUG] debug-file - Hap plugin creating...
+[2026-06-29T01:29:46.939] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2026-06-29T01:29:46.990] [DEBUG] debug-file - Task 'entry:default@CreateModuleInfo' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:47.006] [DEBUG] debug-file - entry : default@GeneratePkgSdkInfo cost memory 0.119415283203125
+[2026-06-29T01:29:46.972] [DEBUG] debug-file - Configuration phase cost:1 s 705 ms 
+[2026-06-29T01:29:46.993] [INFO] debug-file - Finished :entry:default@ConfigureCmake... after 1 ms 
+[2026-06-29T01:29:46.939] [DEBUG] debug-file - Target 'default' config initialized
+[2026-06-29T01:29:46.991] [DEBUG] debug-file - entry : default@CreateModuleInfo cost memory 0.03752899169921875
+[2026-06-29T01:29:47.006] [INFO] debug-file - UP-TO-DATE :entry:default@GeneratePkgSdkInfo...  
+[2026-06-29T01:29:46.994] [DEBUG] debug-file - Executing task :entry:default@MergeProfile
+[2026-06-29T01:29:46.939] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2026-06-29T01:29:46.991] [DEBUG] debug-file - runTaskFromQueue task cost before running: 1 s 732 ms 
+[2026-06-29T01:29:46.994] [DEBUG] debug-file - Task 'entry:default@MergeProfile' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:46.939] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2026-06-29T01:29:46.991] [INFO] debug-file - Finished :entry:default@CreateModuleInfo... after 1 ms 
+[2026-06-29T01:29:46.995] [DEBUG] debug-file - Incremental task entry:default@MergeProfile pre-execution cost: 1 ms .
+[2026-06-29T01:29:46.939] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=release
+[2026-06-29T01:29:46.995] [DEBUG] debug-file - entry : default@MergeProfile cost memory 0.11899566650390625
+[2026-06-29T01:29:46.939] [DEBUG] debug-file - Target 'default' config initialized
+[2026-06-29T01:29:46.995] [INFO] debug-file - UP-TO-DATE :entry:default@MergeProfile...  
+[2026-06-29T01:29:46.939] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2026-06-29T01:29:46.939] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2026-06-29T01:29:46.939] [DEBUG] debug-file - Start initialize module-target build option map, moduleName=entry, buildMode=debug
+[2026-06-29T01:29:46.939] [DEBUG] debug-file - Target 'default' config initialized
+[2026-06-29T01:29:46.939] [DEBUG] debug-file - Module 'entry' target 'default' build option initialized
+[2026-06-29T01:29:46.939] [DEBUG] debug-file - End initialize module-target build option map, moduleName=entry
+[2026-06-29T01:29:46.940] [DEBUG] debug-file - Obtain build option for module 'entry' target 'default'in this build.
+[2026-06-29T01:29:46.944] [DEBUG] debug-file - Module entry task initialization takes 4 ms 
+[2026-06-29T01:29:46.944] [DEBUG] debug-file - Hap plugin register hook start...
+[2026-06-29T01:29:46.944] [DEBUG] debug-file - Hap plugin register hook end...
+[2026-06-29T01:29:46.944] [DEBUG] debug-file - Plugin build process completed
+[2026-06-29T01:29:46.944] [DEBUG] debug-file - hvigorfile, begin to bind custom plugins...
+[2026-06-29T01:29:46.944] [DEBUG] debug-file - hvigorfile, no custom plugins were found in D:\workspace\Foodike\Foodike-Harmony\entry\hvigorfile.ts
+[2026-06-29T01:29:46.944] [DEBUG] debug-file - hvigorfile, resolve finished D:\workspace\Foodike\Foodike-Harmony\entry\hvigorfile.ts
+[2026-06-29T01:29:58.179] [DEBUG] debug-file - cjpm build success
+
+[2026-06-29T01:29:58.183] [DEBUG] debug-file - cjpm build after: 11 s 31 ms 
+[2026-06-29T01:29:58.183] [WARN] debug-file - Warning: field 'profile.build.combined' in '.\cjpm.toml' is experimental, it is unstable and has some limitations, please refer to related documentation for more details
+[2026-06-29T01:29:58.188] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\build\default\aarch64-linux-ohos\release\ohos_app_cangjie_entry\libohos_app_cangjie_entry.ohos_app_cangjie_entry.app.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.app.so successfully.
+[2026-06-29T01:29:58.189] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\build\default\aarch64-linux-ohos\release\ohos_app_cangjie_entry\libohos_app_cangjie_entry.ohos_app_cangjie_entry.common.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.common.so successfully.
+[2026-06-29T01:29:58.190] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\build\default\aarch64-linux-ohos\release\ohos_app_cangjie_entry\libohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.so successfully.
+[2026-06-29T01:29:58.191] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\build\default\aarch64-linux-ohos\release\ohos_app_cangjie_entry\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.login.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.login.so successfully.
+[2026-06-29T01:29:58.192] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\build\default\aarch64-linux-ohos\release\ohos_app_cangjie_entry\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.onboarding.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.onboarding.so successfully.
+[2026-06-29T01:29:58.193] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\build\default\aarch64-linux-ohos\release\ohos_app_cangjie_entry\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.so successfully.
+[2026-06-29T01:29:58.194] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\build\default\aarch64-linux-ohos\release\ohos_app_cangjie_entry\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.startup.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.startup.so successfully.
+[2026-06-29T01:29:58.195] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\build\default\aarch64-linux-ohos\release\ohos_app_cangjie_entry\libohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime.so successfully.
+[2026-06-29T01:29:58.197] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\build\default\aarch64-linux-ohos\release\ohos_app_cangjie_entry\libohos_app_cangjie_entry.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.so successfully.
+[2026-06-29T01:29:58.198] [DEBUG] debug-file - Succeeded in copying cangjie libs to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins.
+[2026-06-29T01:29:58.202] [DEBUG] debug-file - entry : default@CompileCangjie cost memory -4.302955627441406
+[2026-06-29T01:29:58.202] [DEBUG] debug-file - runTaskFromQueue task cost before running: 12 s 944 ms 
+[2026-06-29T01:29:58.203] [INFO] debug-file - Finished :entry:default@CompileCangjie... after 11 s 128 ms 
+[2026-06-29T01:29:58.203] [DEBUG] debug-file - Executing task :entry:default@ProcessLibs
+[2026-06-29T01:29:58.205] [DEBUG] debug-file - entry:default@ProcessLibs is not up-to-date, since the input file 'D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default' has been changed.
+[2026-06-29T01:29:58.205] [DEBUG] debug-file - Incremental task entry:default@ProcessLibs pre-execution cost: 2 ms .
+[2026-06-29T01:29:58.209] [DEBUG] debug-file - Worker dispatch failed, running processLibs on main thread.
+[2026-06-29T01:29:58.211] [DEBUG] debug-file - The filter condition pickFirsts or enableOverride matched D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.so.
+[2026-06-29T01:29:58.211] [DEBUG] debug-file - The filter condition pickFirsts or enableOverride matched D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime.so.
+[2026-06-29T01:29:58.211] [DEBUG] debug-file - The filter condition pickFirsts or enableOverride matched D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.startup.so.
+[2026-06-29T01:29:58.211] [DEBUG] debug-file - The filter condition pickFirsts or enableOverride matched D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.so.
+[2026-06-29T01:29:58.211] [DEBUG] debug-file - The filter condition pickFirsts or enableOverride matched D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.onboarding.so.
+[2026-06-29T01:29:58.211] [DEBUG] debug-file - The filter condition pickFirsts or enableOverride matched D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.login.so.
+[2026-06-29T01:29:58.211] [DEBUG] debug-file - The filter condition pickFirsts or enableOverride matched D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.so.
+[2026-06-29T01:29:58.211] [DEBUG] debug-file - The filter condition pickFirsts or enableOverride matched D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.common.so.
+[2026-06-29T01:29:58.211] [DEBUG] debug-file - The filter condition pickFirsts or enableOverride matched D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.app.so.
+[2026-06-29T01:29:58.212] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.so successfully.
+[2026-06-29T01:29:58.214] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime.so successfully.
+[2026-06-29T01:29:58.215] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.startup.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.startup.so successfully.
+[2026-06-29T01:29:58.215] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.so successfully.
+[2026-06-29T01:29:58.216] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.onboarding.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.onboarding.so successfully.
+[2026-06-29T01:29:58.217] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.login.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.login.so successfully.
+[2026-06-29T01:29:58.218] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.so successfully.
+[2026-06-29T01:29:58.218] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.common.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.common.so successfully.
+[2026-06-29T01:29:58.219] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.app.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.app.so successfully.
+[2026-06-29T01:29:58.219] [DEBUG] debug-file - entry : default@ProcessLibs cost memory 1.2476425170898438
+[2026-06-29T01:29:58.219] [DEBUG] debug-file - runTaskFromQueue task cost before running: 12 s 960 ms 
+[2026-06-29T01:29:58.221] [DEBUG] debug-file - Executing task :entry:default@MoveCangjieLibs
+[2026-06-29T01:29:58.220] [INFO] debug-file - Finished :entry:default@ProcessLibs... after 17 ms 
+[2026-06-29T01:29:58.222] [DEBUG] debug-file - entry:default@MoveCangjieLibs is not up-to-date, since the output file 'D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default' has been changed.
+[2026-06-29T01:29:58.222] [DEBUG] debug-file - Incremental task entry:default@MoveCangjieLibs pre-execution cost: 1 ms .
+[2026-06-29T01:29:58.223] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.app.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\libohos_app_cangjie_entry.ohos_app_cangjie_entry.app.so successfully.
+[2026-06-29T01:29:58.224] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.common.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\libohos_app_cangjie_entry.ohos_app_cangjie_entry.common.so successfully.
+[2026-06-29T01:29:58.225] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\libohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.so successfully.
+[2026-06-29T01:29:58.227] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.login.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.login.so successfully.
+[2026-06-29T01:29:58.228] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.onboarding.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.onboarding.so successfully.
+[2026-06-29T01:29:58.229] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.so successfully.
+[2026-06-29T01:29:58.230] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.startup.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\libohos_app_cangjie_entry.ohos_app_cangjie_entry.features.startup.so successfully.
+[2026-06-29T01:29:58.231] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\libohos_app_cangjie_entry.ohos_app_cangjie_entry.runtime.so successfully.
+[2026-06-29T01:29:58.231] [DEBUG] debug-file - Link D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\cjbins\libohos_app_cangjie_entry.so to D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default\arm64-v8a\libohos_app_cangjie_entry.so successfully.
+[2026-06-29T01:29:58.233] [DEBUG] debug-file - entry : default@MoveCangjieLibs cost memory 0.8837051391601562
+[2026-06-29T01:29:58.235] [DEBUG] debug-file - Executing task :entry:default@ProcessCangjieLibs
+[2026-06-29T01:29:58.233] [DEBUG] debug-file - runTaskFromQueue task cost before running: 12 s 974 ms 
+[2026-06-29T01:29:58.236] [DEBUG] debug-file - entry : default@ProcessCangjieLibs cost memory 0.37191009521484375
+[2026-06-29T01:29:58.233] [INFO] debug-file - Finished :entry:default@MoveCangjieLibs... after 12 ms 
+[2026-06-29T01:29:58.236] [DEBUG] debug-file - runTaskFromQueue task cost before running: 12 s 977 ms 
+[2026-06-29T01:29:58.236] [INFO] debug-file - Finished :entry:default@ProcessCangjieLibs... after 2 ms 
+[2026-06-29T01:29:58.241] [DEBUG] debug-file - Create  resident worker with id: 0.
+[2026-06-29T01:29:58.236] [DEBUG] debug-file - Executing task :entry:default@DoNativeStrip
+[2026-06-29T01:29:58.242] [DEBUG] debug-file - Create  resident worker with id: 1.
+[2026-06-29T01:29:58.236] [DEBUG] debug-file - File: 'D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\binxo\default' from 'doBinxoNativeLibs' is not exists, just ignore.
+[2026-06-29T01:29:58.244] [DEBUG] debug-file - default@DoNativeStrip work[0] is submitted.
+[2026-06-29T01:29:58.236] [DEBUG] debug-file - Task 'entry:default@DoNativeStrip' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:58.244] [DEBUG] debug-file - default@DoNativeStrip work[0] is pushed to ready queue.
+[2026-06-29T01:29:58.237] [DEBUG] debug-file - entry:default@DoNativeStrip is not up-to-date, since the input file 'D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default' has been changed.
+[2026-06-29T01:29:58.244] [DEBUG] debug-file - A work dispatched to worker[23] failed because unable to get work from ready queue.
+[2026-06-29T01:29:58.237] [DEBUG] debug-file - Incremental task entry:default@DoNativeStrip pre-execution cost: 1 ms .
+[2026-06-29T01:29:58.244] [DEBUG] debug-file - Create  resident worker with id: 22.
+[2026-06-29T01:29:58.240] [DEBUG] debug-file - Since there is no instance or instance is terminated, create a new worker pool.
+[2026-06-29T01:29:58.245] [DEBUG] debug-file - default@DoNativeStrip work[0] has been dispatched to worker[22].
+[2026-06-29T01:29:58.240] [DEBUG] debug-file - Worker pool is initialized with config:  {
+  minPoolNum: 2,
+  maxPoolNum: undefined,
+  maxCoreSize: undefined,
+  cacheCapacity: undefined,
+  cacheTtl: undefined
+}
+[2026-06-29T01:29:58.245] [DEBUG] debug-file - default@DoNativeStrip work[0] is dispatched.
+[2026-06-29T01:29:58.245] [DEBUG] debug-file - entry : default@DoNativeStrip cost memory 1.140167236328125
+[2026-06-29T01:29:59.010] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 357724160,
+  heapTotal: 82083840,
+  heapUsed: 61686664,
+  external: 2711184,
+  arrayBuffers: 466476
+} os memoryUsage :38.59979248046875
+[2026-06-29T01:29:59.069] [DEBUG] debug-file - worker[22] has one work done.
+[2026-06-29T01:29:59.069] [DEBUG] debug-file - default@DoNativeStrip work[0] done.
+[2026-06-29T01:29:59.072] [DEBUG] debug-file - Executing task :entry:default@AfterCompileCangjie
+[2026-06-29T01:29:59.070] [DEBUG] debug-file - A work dispatched to worker[22] failed because unable to get work from ready queue.
+[2026-06-29T01:29:59.074] [DEBUG] debug-file - entry:default@AfterCompileCangjie is not up-to-date, since the input file 'D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\build\default\aarch64-linux-ohos\release\.build-logs' has been changed.
+[2026-06-29T01:29:59.070] [INFO] debug-file - Finished :entry:default@DoNativeStrip... after 88 ms 
+[2026-06-29T01:29:59.074] [DEBUG] debug-file - Incremental task entry:default@AfterCompileCangjie pre-execution cost: 3 ms .
+[2026-06-29T01:29:59.075] [DEBUG] debug-file - entry : default@AfterCompileCangjie cost memory 0.750091552734375
+[2026-06-29T01:29:59.075] [DEBUG] debug-file - runTaskFromQueue task cost before running: 13 s 816 ms 
+[2026-06-29T01:29:59.075] [INFO] debug-file - Finished :entry:default@AfterCompileCangjie... after 4 ms 
+[2026-06-29T01:29:59.075] [DEBUG] debug-file - Executing task :entry:default@CacheNativeLibs
+[2026-06-29T01:29:59.075] [DEBUG] debug-file - File: 'D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\binxo\default' from 'cacheBinxoNativeLibs' is not exists, just ignore.
+[2026-06-29T01:29:59.075] [DEBUG] debug-file - Task 'entry:default@CacheNativeLibs' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:59.076] [DEBUG] debug-file - entry:default@CacheNativeLibs is not up-to-date, since the input file 'D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\stripped_native_libs\default' has been changed.
+[2026-06-29T01:29:59.076] [DEBUG] debug-file - Incremental task entry:default@CacheNativeLibs pre-execution cost: 1 ms .
+[2026-06-29T01:29:59.077] [DEBUG] debug-file - default@CacheNativeLibs work[1] is submitted.
+[2026-06-29T01:29:59.077] [DEBUG] debug-file - default@CacheNativeLibs work[1] is pushed to ready queue.
+[2026-06-29T01:29:59.077] [DEBUG] debug-file - A work dispatched to worker[23] failed because unable to get work from ready queue.
+[2026-06-29T01:29:59.077] [DEBUG] debug-file - default@CacheNativeLibs work[1] has been dispatched to worker[22].
+[2026-06-29T01:29:59.077] [DEBUG] debug-file - default@CacheNativeLibs work[1] is dispatched.
+[2026-06-29T01:29:59.077] [DEBUG] debug-file - entry : default@CacheNativeLibs cost memory 0.21611785888671875
+[2026-06-29T01:29:59.080] [DEBUG] debug-file - worker[22] has one work done.
+[2026-06-29T01:29:59.080] [DEBUG] debug-file - default@CacheNativeLibs work[1] done.
+[2026-06-29T01:29:59.080] [DEBUG] debug-file - A work dispatched to worker[22] failed because unable to get work from ready queue.
+[2026-06-29T01:29:59.084] [DEBUG] debug-file - Executing task :entry:default@PackageHap
+[2026-06-29T01:29:59.088] [DEBUG] debug-file - default@PackageHap work[2] is submitted.
+[2026-06-29T01:29:59.080] [INFO] debug-file - Finished :entry:default@CacheNativeLibs... after 4 ms 
+[2026-06-29T01:29:59.086] [DEBUG] debug-file - entry:default@PackageHap is not up-to-date, since the input file 'D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\stripped_native_libs\default' has been changed.
+[2026-06-29T01:29:59.088] [DEBUG] debug-file - default@PackageHap work[2] is pushed to ready queue.
+[2026-06-29T01:29:59.081] [DEBUG] debug-file - Executing task :entry:default@GeneratePkgModuleJson
+[2026-06-29T01:29:59.088] [DEBUG] debug-file - A work dispatched to worker[23] failed because unable to get work from ready queue.
+[2026-06-29T01:29:59.081] [DEBUG] debug-file - File: 'D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\preload\default\preload.json' from 'preloadSoJsonPath' is not exists, just ignore.
+[2026-06-29T01:29:59.086] [DEBUG] debug-file - Incremental task entry:default@PackageHap pre-execution cost: 2 ms .
+[2026-06-29T01:29:59.088] [DEBUG] debug-file - default@PackageHap work[2] has been dispatched to worker[22].
+[2026-06-29T01:29:59.081] [DEBUG] debug-file - Error occurs while handling @Input 'shouldDeduplicateHar': The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined
+[2026-06-29T01:29:59.087] [DEBUG] debug-file - Use tool [D:\Deveco\Software\DevEco Studio\sdk\default\openharmony\toolchains\lib\app_packing_tool.jar]
+ [
+  'java',
+  '-Dfile.encoding=GBK',
+  '-jar',
+  'D:\\Deveco\\Software\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\lib\\app_packing_tool.jar',
+  '--mode',
+  'hap',
+  '--force',
+  'true',
+  '--lib-path',
+  'D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\intermediates\\stripped_native_libs\\default',
+  '--json-path',
+  'D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\intermediates\\package\\default\\module.json',
+  '--resources-path',
+  'D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\intermediates\\res\\default\\resources',
+  '--index-path',
+  'D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\intermediates\\res\\default\\resources.index',
+  '--pack-info-path',
+  'D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\outputs\\default\\pack.info',
+  '--out-path',
+  'D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap',
+  '--pkg-sdk-info-path',
+  'D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\intermediates\\loader\\default\\pkgSdkInfo.json'
+]
+[2026-06-29T01:29:59.088] [DEBUG] debug-file - default@PackageHap work[2] is dispatched.
+[2026-06-29T01:29:59.081] [DEBUG] debug-file - Task 'entry:default@GeneratePkgModuleJson' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:59.089] [DEBUG] debug-file - entry : default@PackageHap cost memory 0.7521514892578125
+[2026-06-29T01:29:59.082] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgModuleJson pre-execution cost: 1 ms .
+[2026-06-29T01:29:59.082] [DEBUG] debug-file - entry : default@GeneratePkgModuleJson cost memory 0.08670806884765625
+[2026-06-29T01:29:59.082] [INFO] debug-file - UP-TO-DATE :entry:default@GeneratePkgModuleJson...  
+[2026-06-29T01:29:59.082] [DEBUG] debug-file - Executing task :entry:default@ProcessCompiledResources
+[2026-06-29T01:29:59.082] [DEBUG] debug-file - File: 'D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\preload\default\preload.json' from 'preloadSoJsonPath' is not exists, just ignore.
+[2026-06-29T01:29:59.082] [DEBUG] debug-file - Task 'entry:default@ProcessCompiledResources' cost while wrapping incremental declarations: 1 ms 
+[2026-06-29T01:29:59.082] [DEBUG] debug-file - entry : default@ProcessCompiledResources cost memory 0.04724884033203125
+[2026-06-29T01:29:59.082] [DEBUG] debug-file - runTaskFromQueue task cost before running: 13 s 823 ms 
+[2026-06-29T01:29:59.082] [INFO] debug-file - Finished :entry:default@ProcessCompiledResources... after 1 ms 
+[2026-06-29T01:29:59.089] [DEBUG] debug-file - current process  memoryUsage: {
+  rss: 361078784,
+  heapTotal: 84443136,
+  heapUsed: 51705112,
+  external: 2301597,
+  arrayBuffers: 54801
+} os memoryUsage :37.88595199584961
+[2026-06-29T01:29:59.414] [DEBUG] debug-file - worker[22] has one work done.
+[2026-06-29T01:29:59.415] [DEBUG] debug-file - default@PackageHap work[2] done.
+[2026-06-29T01:29:59.421] [DEBUG] debug-file - Executing task :entry:default@SignHap
+[2026-06-29T01:29:59.417] [DEBUG] debug-file - Executing task :entry:default@PackingCheck
+[2026-06-29T01:29:59.423] [DEBUG] debug-file - Executing task :entry:default@CollectDebugSymbol
+[2026-06-29T01:29:59.415] [DEBUG] debug-file - A work dispatched to worker[22] failed because unable to get work from ready queue.
+[2026-06-29T01:29:59.422] [WARN] debug-file - Will skip sign 'hos_hap'. No signingConfigs profile is configured in current project.
+             If needed, configure the signingConfigs in D:\workspace\Foodike\Foodike-Harmony\build-profile.json5.
+[2026-06-29T01:29:59.420] [DEBUG] debug-file - entry : default@PackingCheck cost memory 0.3420562744140625
+[2026-06-29T01:29:59.424] [DEBUG] debug-file - entry : default@CollectDebugSymbol cost memory 0.07733917236328125
+[2026-06-29T01:29:59.416] [INFO] debug-file - Finished :entry:default@PackageHap... after 331 ms 
+[2026-06-29T01:29:59.422] [DEBUG] debug-file - entry:default@SignHap is not up-to-date, since the input file 'D:\workspace\Foodike\Foodike-Harmony\entry\build\default\outputs\default\entry-default-unsigned.hap' has been changed.
+[2026-06-29T01:29:59.420] [DEBUG] debug-file - runTaskFromQueue task cost before running: 14 s 161 ms 
+[2026-06-29T01:29:59.424] [DEBUG] debug-file - runTaskFromQueue task cost before running: 14 s 165 ms 
+[2026-06-29T01:29:59.422] [DEBUG] debug-file - Incremental task entry:default@SignHap pre-execution cost: 1 ms .
+[2026-06-29T01:29:59.420] [INFO] debug-file - Finished :entry:default@PackingCheck... after 3 ms 
+[2026-06-29T01:29:59.424] [INFO] debug-file - Finished :entry:default@CollectDebugSymbol... after 1 ms 
+[2026-06-29T01:29:59.422] [DEBUG] debug-file - entry : default@SignHap cost memory 0.075103759765625
+[2026-06-29T01:29:59.424] [DEBUG] debug-file - Executing task :entry:assembleHap
+[2026-06-29T01:29:59.422] [DEBUG] debug-file - runTaskFromQueue task cost before running: 14 s 164 ms 
+[2026-06-29T01:29:59.424] [DEBUG] debug-file - entry : assembleHap cost memory 0.01032257080078125
+[2026-06-29T01:29:59.423] [INFO] debug-file - Finished :entry:default@SignHap... after 2 ms 
+[2026-06-29T01:29:59.424] [DEBUG] debug-file - runTaskFromQueue task cost before running: 14 s 165 ms 
+[2026-06-29T01:29:59.424] [INFO] debug-file - Finished :entry:assembleHap... after 1 ms 
+[2026-06-29T01:29:59.442] [INFO] debug-file - BUILD SUCCESSFUL in 14 s 183 ms 
+[2026-06-29T01:29:59.442] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@CangjiePreBuild is up-to-date.
+[2026-06-29T01:29:59.442] [DEBUG] debug-file - Update task entry:default@CreateModuleInfo output file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\generated\profile\default\ModuleInfo.ts cache.
+[2026-06-29T01:29:59.443] [DEBUG] debug-file - Incremental task entry:default@CreateModuleInfo post-execution cost:1 ms .
+[2026-06-29T01:29:59.443] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@GenerateMetadata is up-to-date.
+[2026-06-29T01:29:59.443] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@MergeProfile is up-to-date.
+[2026-06-29T01:29:59.443] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@CreateBuildProfile is up-to-date.
+[2026-06-29T01:29:59.443] [DEBUG] debug-file - Update task entry:default@GeneratePkgContextInfo output file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\loader\default\pkgContextInfo.json cache.
+[2026-06-29T01:29:59.443] [DEBUG] debug-file - Incremental task entry:default@GeneratePkgContextInfo post-execution cost:1 ms .
+[2026-06-29T01:29:59.443] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@GeneratePkgSdkInfo is up-to-date.
+[2026-06-29T01:29:59.443] [DEBUG] debug-file - Update task entry:default@ProcessIntegratedHsp output file:D:\workspace\Foodike\Foodike-Harmony\build\cache\default\integrated_hsp\integratedHspCache.json cache.
+[2026-06-29T01:29:59.443] [DEBUG] debug-file - Incremental task entry:default@ProcessIntegratedHsp post-execution cost:1 ms .
+[2026-06-29T01:29:59.443] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@GenerateCangjieResource is up-to-date.
+[2026-06-29T01:29:59.443] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@MakePackInfo is up-to-date.
+[2026-06-29T01:29:59.443] [DEBUG] debug-file - Update task entry:default@SyscapTransform input file:D:\Deveco\Software\DevEco Studio\sdk\default\openharmony\toolchains\syscap_tool.exe cache by regenerate.
+[2026-06-29T01:29:59.443] [DEBUG] debug-file - Update task entry:default@SyscapTransform input file:D:\Deveco\Software\DevEco Studio\sdk\default\openharmony\ets\api\device-define cache by regenerate.
+[2026-06-29T01:29:59.443] [DEBUG] debug-file - Update task entry:default@SyscapTransform output file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\syscap\default\rpcid.sc cache.
+[2026-06-29T01:29:59.444] [DEBUG] debug-file - Incremental task entry:default@SyscapTransform post-execution cost:1 ms .
+[2026-06-29T01:29:59.444] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@ProcessProfile is up-to-date.
+[2026-06-29T01:29:59.444] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@ProcessRouterMap is up-to-date.
+[2026-06-29T01:29:59.444] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@ProcessShareConfig is up-to-date.
+[2026-06-29T01:29:59.444] [DEBUG] debug-file - Update task entry:default@ProcessStartupConfig output file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\startup\default\startup_config.json cache.
+[2026-06-29T01:29:59.444] [DEBUG] debug-file - Incremental task entry:default@ProcessStartupConfig post-execution cost:1 ms .
+[2026-06-29T01:29:59.444] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@ProcessResource is up-to-date.
+[2026-06-29T01:29:59.444] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@GenerateLoaderJson is up-to-date.
+[2026-06-29T01:29:59.444] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@CompileResource is up-to-date.
+[2026-06-29T01:29:59.444] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\loader\default cache by regenerate.
+[2026-06-29T01:29:59.444] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\res\default\ResourceTable.txt cache by regenerate.
+[2026-06-29T01:29:59.444] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\res\default\ark_module.json cache by regenerate.
+[2026-06-29T01:29:59.444] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\res\default\resources\base\profile cache by regenerate.
+[2026-06-29T01:29:59.445] [DEBUG] debug-file - Update task entry:default@CompileArkTS input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\generated\profile\default\BuildProfile.ets cache by regenerate.
+[2026-06-29T01:29:59.445] [DEBUG] debug-file - Update task entry:default@CompileArkTS output file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\loader_out\default\ets cache.
+[2026-06-29T01:29:59.445] [DEBUG] debug-file - Incremental task entry:default@CompileArkTS post-execution cost:1 ms .
+[2026-06-29T01:29:59.445] [DEBUG] debug-file - Update task entry:default@BuildJS input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\loader\default cache by regenerate.
+[2026-06-29T01:29:59.445] [DEBUG] debug-file - Update task entry:default@BuildJS input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\res\default\ResourceTable.txt cache by regenerate.
+[2026-06-29T01:29:59.445] [DEBUG] debug-file - Update task entry:default@BuildJS input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\res\default\ark_module.json cache by regenerate.
+[2026-06-29T01:29:59.445] [DEBUG] debug-file - Update task entry:default@BuildJS input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\res\default\resources\base\profile cache by regenerate.
+[2026-06-29T01:29:59.445] [DEBUG] debug-file - Update task entry:default@BuildJS output file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\loader_out\default\js cache.
+[2026-06-29T01:29:59.445] [DEBUG] debug-file - Incremental task entry:default@BuildJS post-execution cost:1 ms .
+[2026-06-29T01:29:59.446] [DEBUG] debug-file - Update task entry:default@ProcessLibs input file:D:\workspace\Foodike\Foodike-Harmony\build-profile.json5 cache by regenerate.
+[2026-06-29T01:29:59.446] [DEBUG] debug-file - Update task entry:default@ProcessLibs input file:D:\workspace\Foodike\Foodike-Harmony\entry\build-profile.json5 cache by regenerate.
+[2026-06-29T01:29:59.446] [DEBUG] debug-file - Update task entry:default@ProcessLibs input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\extend_libs\default cache from map.
+[2026-06-29T01:29:59.446] [DEBUG] debug-file - Update task entry:default@ProcessLibs output file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default cache.
+[2026-06-29T01:29:59.446] [DEBUG] debug-file - Incremental task entry:default@ProcessLibs post-execution cost:1 ms .
+[2026-06-29T01:29:59.446] [DEBUG] debug-file - Update task entry:default@MoveCangjieLibs output file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default cache.
+[2026-06-29T01:29:59.447] [DEBUG] debug-file - Incremental task entry:default@MoveCangjieLibs post-execution cost:1 ms .
+[2026-06-29T01:29:59.447] [DEBUG] debug-file - Update task entry:default@DoNativeStrip input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default cache from map.
+[2026-06-29T01:29:59.447] [DEBUG] debug-file - Update task entry:default@DoNativeStrip output file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\stripped_native_libs\default cache.
+[2026-06-29T01:29:59.448] [DEBUG] debug-file - Incremental task entry:default@DoNativeStrip post-execution cost:1 ms .
+[2026-06-29T01:29:59.448] [DEBUG] debug-file - Update task entry:default@AfterCompileCangjie input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\cj\build\default\aarch64-linux-ohos\release\.build-logs cache from map.
+[2026-06-29T01:29:59.448] [DEBUG] debug-file - Incremental task entry:default@AfterCompileCangjie post-execution cost:1 ms .
+[2026-06-29T01:29:59.448] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\stripped_native_libs\default cache from map.
+[2026-06-29T01:29:59.448] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default cache by regenerate.
+[2026-06-29T01:29:59.448] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs output file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\patch\default\base_native_libs.json cache.
+[2026-06-29T01:29:59.448] [DEBUG] debug-file - Update task entry:default@CacheNativeLibs output file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\patch\default\binxo_native_libs.json cache.
+[2026-06-29T01:29:59.448] [DEBUG] debug-file - Incremental task entry:default@CacheNativeLibs post-execution cost:1 ms .
+[2026-06-29T01:29:59.448] [DEBUG] debug-file - There is no need to refresh cache, since the incremental task entry:default@GeneratePkgModuleJson is up-to-date.
+[2026-06-29T01:29:59.449] [DEBUG] debug-file - Incremental task entry:default@ProcessCompiledResources post-execution cost:1 ms .
+[2026-06-29T01:29:59.449] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\stripped_native_libs\default cache from map.
+[2026-06-29T01:29:59.449] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\res\default\module.json cache by regenerate.
+[2026-06-29T01:29:59.449] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\res\default\resources cache by regenerate.
+[2026-06-29T01:29:59.450] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\res\default\resources.index cache by regenerate.
+[2026-06-29T01:29:59.450] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\outputs\default\pack.info cache by regenerate.
+[2026-06-29T01:29:59.450] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\loader\default\pkgSdkInfo.json cache by regenerate.
+[2026-06-29T01:29:59.450] [DEBUG] debug-file - Update task entry:default@PackageHap input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\generated\profile\default\BuildProfile.ets cache by regenerate.
+[2026-06-29T01:29:59.450] [DEBUG] debug-file - Update task entry:default@PackageHap output file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\outputs\default\entry-default-unsigned.hap cache.
+[2026-06-29T01:29:59.450] [DEBUG] debug-file - Update task entry:default@PackageHap output file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\source_map\default\sourceMaps.map cache.
+[2026-06-29T01:29:59.450] [DEBUG] debug-file - Update task entry:default@PackageHap output file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\outputs\default\mapping\sourceMaps.map cache.
+[2026-06-29T01:29:59.450] [DEBUG] debug-file - Incremental task entry:default@PackageHap post-execution cost:2 ms .
+[2026-06-29T01:29:59.450] [DEBUG] debug-file - Update task entry:default@SignHap input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\outputs\default\entry-default-unsigned.hap cache from map.
+[2026-06-29T01:29:59.450] [DEBUG] debug-file - Update task entry:default@SignHap output file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\outputs\default\entry-default-signed.hap cache.
+[2026-06-29T01:29:59.450] [DEBUG] debug-file - Incremental task entry:default@SignHap post-execution cost:1 ms .
+[2026-06-29T01:29:59.451] [DEBUG] debug-file - Update task entry:default@CollectDebugSymbol input file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\intermediates\libs\default cache by regenerate.
+[2026-06-29T01:29:59.451] [DEBUG] debug-file - Update task entry:default@CollectDebugSymbol output file:D:\workspace\Foodike\Foodike-Harmony\entry\build\default\outputs\default\symbol cache.
+[2026-06-29T01:29:59.451] [DEBUG] debug-file - Incremental task entry:default@CollectDebugSymbol post-execution cost:1 ms .
+[2026-06-29T01:29:59.479] [DEBUG] debug-file - Current worker pool is stopped or closed.
+[2026-06-29T01:29:59.479] [DEBUG] debug-file - Clear worker 0.
+[2026-06-29T01:29:59.479] [DEBUG] debug-file - Worker 0 has been cleared.
+[2026-06-29T01:29:59.479] [DEBUG] debug-file - Current idle worker size: 2.
+[2026-06-29T01:29:59.479] [DEBUG] debug-file - Current busy worker size: 0.
+[2026-06-29T01:29:59.479] [DEBUG] debug-file - Clear worker 1.
+[2026-06-29T01:29:59.479] [DEBUG] debug-file - Worker 1 has been cleared.
+[2026-06-29T01:29:59.479] [DEBUG] debug-file - Current idle worker size: 1.
+[2026-06-29T01:29:59.479] [DEBUG] debug-file - Current busy worker size: 0.
+[2026-06-29T01:29:59.479] [DEBUG] debug-file - Clear worker 22.
+[2026-06-29T01:29:59.479] [DEBUG] debug-file - Worker 22 has been cleared.
+[2026-06-29T01:29:59.479] [DEBUG] debug-file - Current idle worker size: 0.
+[2026-06-29T01:29:59.479] [DEBUG] debug-file - Current busy worker size: 0.
+[2026-06-29T01:29:59.480] [DEBUG] debug-file - hvigor build process will be closed.
+[2026-06-29T01:29:59.487] [DEBUG] debug-file - Current worker pool is terminated.
+[2026-06-29T01:29:59.493] [DEBUG] debug-file - worker[1] exits with exit code 1.
+[2026-06-29T01:29:59.494] [DEBUG] debug-file - worker[0] exits with exit code 1.
+[2026-06-29T01:29:59.496] [DEBUG] debug-file - worker[22] exits with exit code 1.

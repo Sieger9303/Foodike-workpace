@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-28T12:12:01+00:00",
+  "generatedAt": "2026-06-29T05:54:06+00:00",
   "phase": "final-coverage",
   "workspaceRoot": "D:\\workspace\\Foodike",
   "targetProject": "D:\\workspace\\Foodike\\Foodike-Harmony",
@@ -12,23 +12,25 @@
     "osName": "nt",
     "sysPlatform": "win32"
   },
-  "result": "BLOCKED",
-  "recommendedOwner": "workflow-or-user-environment",
+  "result": "PASS",
+  "recommendedOwner": "runtime-ui-environment",
   "hap": {
     "path": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap",
     "exists": true,
-    "sha256": "17ee8eb0b895418411aed84f3b603f564eb5873e047c239152dfa02e2c1a4d4b"
+    "sha256": "8a51cc69dbdeb6b418301a4ab10c70c234e4a2cc6a33e4a6d9c563fbd27b3ce2"
   },
   "runtime": {
-    "hdc": "",
+    "hdc": "D:\\DevEco\\Software\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\hdc.EXE",
     "requestedHdc": "hdc",
     "requestedDevice": "",
-    "selectedDevice": "",
-    "targets": []
+    "selectedDevice": "127.0.0.1:5555",
+    "targets": [
+      "127.0.0.1:5555"
+    ]
   },
   "application": {
-    "bundleName": "",
-    "abilityName": ""
+    "bundleName": "com.example.foodike",
+    "abilityName": "EntryAbility"
   },
   "checks": [
     {
@@ -37,21 +39,24 @@
       "message": "HAP exists and was fingerprinted.",
       "details": {
         "path": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap",
-        "sha256": "17ee8eb0b895418411aed84f3b603f564eb5873e047c239152dfa02e2c1a4d4b"
+        "sha256": "8a51cc69dbdeb6b418301a4ab10c70c234e4a2cc6a33e4a6d9c563fbd27b3ce2"
       }
     },
     {
-      "name": "hdc",
-      "result": "BLOCKED",
-      "message": "hdc executable was not found.",
+      "name": "device",
+      "result": "PASS",
+      "message": "Found a usable hdc target.",
       "details": {
-        "requested": "hdc"
+        "selectedDevice": "127.0.0.1:5555",
+        "targets": [
+          "127.0.0.1:5555"
+        ]
       }
     },
     {
       "name": "startup",
-      "result": "SKIPPED",
-      "message": "Runtime launch was not requested. Pass --launch to run a startup smoke."
+      "result": "PASS",
+      "message": "App launch command completed successfully."
     },
     {
       "name": "layoutDump",
@@ -59,47 +64,110 @@
       "message": "No layout dump command was provided."
     }
   ],
-  "firstBlocker": {
-    "kind": "hdc",
-    "message": "hdc executable was not found.",
-    "details": {
-      "requested": "hdc"
+  "firstBlocker": null,
+  "commands": {
+    "listTargets": [
+      "D:\\DevEco\\Software\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\hdc.EXE",
+      "list",
+      "targets"
+    ],
+    "launch": [
+      "D:\\DevEco\\Software\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\hdc.EXE",
+      "-t",
+      "127.0.0.1:5555",
+      "shell",
+      "aa",
+      "start",
+      "-b",
+      "com.example.foodike",
+      "-a",
+      "EntryAbility"
+    ]
+  },
+  "commandResults": {
+    "listTargets": {
+      "command": [
+        "D:\\DevEco\\Software\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\hdc.EXE",
+        "list",
+        "targets"
+      ],
+      "actualCommand": [
+        "D:\\DevEco\\Software\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\hdc.EXE",
+        "list",
+        "targets"
+      ],
+      "returncode": 0,
+      "stdout": "127.0.0.1:5555\r\n",
+      "stderr": "",
+      "timedOut": false,
+      "durationSeconds": 0.063
+    },
+    "launch": {
+      "command": [
+        "D:\\DevEco\\Software\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\hdc.EXE",
+        "-t",
+        "127.0.0.1:5555",
+        "shell",
+        "aa",
+        "start",
+        "-b",
+        "com.example.foodike",
+        "-a",
+        "EntryAbility"
+      ],
+      "actualCommand": [
+        "D:\\DevEco\\Software\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\hdc.EXE",
+        "-t",
+        "127.0.0.1:5555",
+        "shell",
+        "aa",
+        "start",
+        "-b",
+        "com.example.foodike",
+        "-a",
+        "EntryAbility"
+      ],
+      "returncode": 0,
+      "stdout": "start ability successfully.\r\n",
+      "stderr": "",
+      "timedOut": false,
+      "durationSeconds": 0.172
     }
   },
-  "commands": {},
-  "commandResults": {},
   "artifacts": [],
   "reusedPreviousPass": false,
   "skipReason": "",
   "inputFingerprint": {
-    "sha256": "4882ed6aeeebc65695fa190e10bbd3144c78e9e11d67115e4aa9ab3fcb7201a3",
+    "sha256": "aaad84bd43db33bd3aa2c0c1e837bfbefd6566a082215e41da4134bc75ac5caa",
     "parts": {
       "version": "runtime-ui-smoke-v2",
       "workspaceRoot": "D:\\workspace\\Foodike",
       "targetProject": "D:\\workspace\\Foodike\\Foodike-Harmony",
       "hap": {
         "path": "D:\\workspace\\Foodike\\Foodike-Harmony\\entry\\build\\default\\outputs\\default\\entry-default-unsigned.hap",
-        "sha256": "17ee8eb0b895418411aed84f3b603f564eb5873e047c239152dfa02e2c1a4d4b"
+        "sha256": "8a51cc69dbdeb6b418301a4ab10c70c234e4a2cc6a33e4a6d9c563fbd27b3ce2"
       },
       "hdc": {
         "requested": "hdc",
-        "resolved": "",
+        "resolved": "D:\\DevEco\\Software\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\hdc.EXE",
         "file": {
-          "path": "hdc",
-          "exists": false
+          "path": "D:\\DevEco\\Software\\DevEco Studio\\sdk\\default\\openharmony\\toolchains\\hdc.EXE",
+          "exists": true,
+          "sizeBytes": 5533128,
+          "sha256": "ebc15568fd7fc1c92e904ab09927ea810b1a569cf87dc8eb18551a4207d44418"
         }
       },
       "device": "",
       "application": {
-        "bundleName": "",
-        "abilityName": ""
+        "bundleName": "com.example.foodike",
+        "abilityName": "EntryAbility"
       },
       "runtime": {
-        "launch": false,
+        "launch": true,
         "launchCommand": "",
         "dumpLayoutCommand": "",
-        "timeout": 60,
-        "maxDeviceProbeSeconds": 3,
+        "timeout": 120,
+        "maxDeviceProbeSeconds": 10,
         "maxOutputBytes": 120000
       },
       "platform": {

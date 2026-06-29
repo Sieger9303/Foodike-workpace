@@ -22,7 +22,13 @@ func buildProfileTopBar(onBack: () -> Unit) {
 }
 
 @Builder
-func buildProfileSection(title: ResourceStr, subtitle: ResourceStr, showDivider: Bool, onClick: () -> Unit) {
+func buildProfileSection(
+    section: ProfileSection,
+    title: ResourceStr,
+    subtitle: ResourceStr,
+    showDivider: Bool,
+    onClick: (ProfileSection) -> Unit
+) {
     Column(space: 8) {
         Text(title)
             .fontSize(21)
@@ -37,7 +43,7 @@ func buildProfileSection(title: ResourceStr, subtitle: ResourceStr, showDivider:
     .width(100.percent)
     .padding(top: 10, bottom: 10)
     .onClick({ _ =>
-        onClick()
+        onClick(section)
     })
 }
 
@@ -47,7 +53,7 @@ public func renderProfileRoute(
     userEmail: String,
     onBack: () -> Unit,
     onEdit: () -> Unit,
-    onSectionClick: () -> Unit,
+    onSectionClick: (ProfileSection) -> Unit,
     onLogout: () -> Unit
 ) {
     Column(space: 18) {
@@ -86,10 +92,10 @@ public func renderProfileRoute(
             .width(100.percent)
 
         Column {
-            buildProfileSection(stringSavedAddresses, stringAddEditSavedAddresses, true, onSectionClick)
-            buildProfileSection(stringPaymentsAndRefunds, stringRefundsInformation, true, onSectionClick)
-            buildProfileSection(stringOnlineOrderingHelp, stringOrderingInformation, true, onSectionClick)
-            buildProfileSection(stringAbout, stringAboutTheApp, false, onSectionClick)
+            buildProfileSection(ProfileSection.SavedAddresses, stringSavedAddresses, stringAddEditSavedAddresses, true, onSectionClick)
+            buildProfileSection(ProfileSection.PaymentsAndRefunds, stringPaymentsAndRefunds, stringRefundsInformation, true, onSectionClick)
+            buildProfileSection(ProfileSection.OnlineOrderingHelp, stringOnlineOrderingHelp, stringOrderingInformation, true, onSectionClick)
+            buildProfileSection(ProfileSection.About, stringAbout, stringAboutTheApp, false, onSectionClick)
         }
         .width(100.percent)
 

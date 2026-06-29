@@ -1,23 +1,24 @@
 # Runtime UI Smoke Report - final-coverage
 
-- Result: `BLOCKED`
-- Generated at: `2026-06-28T12:12:01+00:00`
+- Result: `PASS`
+- Generated at: `2026-06-29T05:54:06+00:00`
 - Workspace: `D:\workspace\Foodike`
 - Target project: `D:\workspace\Foodike\Foodike-Harmony`
 - HAP: `D:\workspace\Foodike\Foodike-Harmony\entry\build\default\outputs\default\entry-default-unsigned.hap`
-- HAP sha256: `17ee8eb0b895418411aed84f3b603f564eb5873e047c239152dfa02e2c1a4d4b`
-- hdc: `(not found)`
-- Device: `(none)`
+- HAP sha256: `8a51cc69dbdeb6b418301a4ab10c70c234e4a2cc6a33e4a6d9c563fbd27b3ce2`
+- hdc: `D:\DevEco\Software\DevEco Studio\sdk\default\openharmony\toolchains\hdc.EXE`
+- Device: `127.0.0.1:5555`
 
 ## Checks
 
 | Check | Result | Message |
 | --- | --- | --- |
 | `hapHash` | `PASS` | HAP exists and was fingerprinted. |
-| `hdc` | `BLOCKED` | hdc executable was not found. |
-| `startup` | `SKIPPED` | Runtime launch was not requested. Pass --launch to run a startup smoke. |
+| `device` | `PASS` | Found a usable hdc target. |
+| `startup` | `PASS` | App launch command completed successfully. |
 | `layoutDump` | `NOT_APPLICABLE` | No layout dump command was provided. |
 
-## First Blocker
+## Commands
 
-- `hdc`: hdc executable was not found.
+- `listTargets`: `D:\DevEco\Software\DevEco Studio\sdk\default\openharmony\toolchains\hdc.EXE list targets`
+- `launch`: `D:\DevEco\Software\DevEco Studio\sdk\default\openharmony\toolchains\hdc.EXE -t 127.0.0.1:5555 shell aa start -b com.example.foodike -a EntryAbility`

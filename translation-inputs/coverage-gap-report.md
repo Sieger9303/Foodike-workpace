@@ -17,14 +17,14 @@ Reduce functional coverage gaps first, and use code-scale gaps as a warning sign
 | --- | --- |
 | targetToSourceFiles | 58.9% |
 | targetToSourceTextFiles | 59.4% |
-| targetToSourceNonblankLines | 89.6% |
+| targetToSourceNonblankLines | 90.3% |
 | targetToSourceProductionTextFiles | 51.9% |
-| targetToSourceProductionNonblankLines | 82.2% |
+| targetToSourceProductionNonblankLines | 82.6% |
 | targetToSourceCodeFiles | 55.3% |
-| targetToSourceCodeNonblankLines | 54.2% |
+| targetToSourceCodeNonblankLines | 55.0% |
 | targetToSourceProductionCodeFiles | 48.2% |
-| targetToSourceProductionCodeNonblankLines | 46.7% |
-| targetToSourceProductionCodeLines | 67.4% |
+| targetToSourceProductionCodeNonblankLines | 47.2% |
+| targetToSourceProductionCodeLines | 68.0% |
 | targetToSourceTestFiles | 450.0% |
 
 ## Findings
@@ -117,12 +117,12 @@ Reduce functional coverage gaps first, and use code-scale gaps as a warning sign
 | metric | value |
 | --- | --- |
 | productionCodeFiles | 40 |
-| productionCodeNonblankLines | 3193 |
+| productionCodeNonblankLines | 3223 |
 | largestProductionCodeFileNonblankLines | 399 |
 | largeProductionCodeFiles | 0 |
 | endpointBearingFeatureRows | 144 |
 | endpointTargetFiles | 47 |
-| largestEndpointFileShare | 41.7% |
+| largestEndpointFileShare | 38.9% |
 | concentratedEndpointFiles | 1 |
 | broadShellEndpointFiles | 2 |
 | uiSurfaceFiles | 23 |

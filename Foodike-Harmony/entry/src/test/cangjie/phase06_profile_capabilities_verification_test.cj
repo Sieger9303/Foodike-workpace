@@ -1,7 +1,7 @@
 package ohos_app_cangjie_entry_test
 
 import ohos_app_cangjie_entry.ohos_app_cangjie_entry.app.{RouteId, resolveStartRoute, routePath}
-import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.{ProfileRouteService, ProfileStore}
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.{ProfileAction, ProfileRouteService, ProfileSection, ProfileStore}
 import std.collection.ArrayList
 import std.unittest.*
 import std.unittest.testmacro.*
@@ -14,14 +14,39 @@ public class Phase06ProfileCapabilitiesVerificationTest {
         @Assert(store.userName, "Andrew Howard")
         @Assert(store.userEmail, "andrewhoward@gmail.com")
         @Assert(store.profileSectionCount(), 4)
-        @Assert(store.actionFeedbackMessage(), "Coming soon!")
-        @Assert(store.placeholderActionMessage, store.actionFeedbackMessage())
+        @Assert(store.actionFeedbackMessage(ProfileAction.Edit), "Coming soon!")
+        @Assert(store.sectionFeedbackMessage(ProfileSection.SavedAddresses), "Coming soon!")
+        @Assert(store.sectionFeedbackMessage(ProfileSection.PaymentsAndRefunds), "Coming soon!")
+        @Assert(store.sectionFeedbackMessage(ProfileSection.OnlineOrderingHelp), "Coming soon!")
+        @Assert(store.sectionFeedbackMessage(ProfileSection.About), "Coming soon!")
+    }
+
+    @TestCase
+    public func profileRouteServiceUsesExplicitEditAndSectionActionMessages(): Unit {
+        let routeService = ProfileRouteService()
+        @Assert(routeService.placeholderActionMessage(), "Coming soon!")
+        @Assert(routeService.editActionMessage(), "Coming soon!")
+        @Assert(routeService.sectionActionMessage(ProfileSection.SavedAddresses), "Coming soon!")
+        @Assert(routeService.sectionActionMessage(ProfileSection.PaymentsAndRefunds), "Coming soon!")
+        @Assert(routeService.sectionActionMessage(ProfileSection.OnlineOrderingHelp), "Coming soon!")
+        @Assert(routeService.sectionActionMessage(ProfileSection.About), "Coming soon!")
     }
 
     @TestCase
     public func profileStorePreservesLogoutRoute(): Unit {
         let store = ProfileStore()
         @Assert(store.logoutRoute(), routePath(RouteId.Onboarding))
+    }
+
+    @TestCase
+    public func profileStorePreservesBackAndLogoutRoutes(): Unit {
+        let store = ProfileStore()
+        let routeService = ProfileRouteService()
+        let backStack = ArrayList<String>([])
+        backStack.add(routePath(RouteId.Home))
+        @Assert(store.logoutRoute(), routePath(RouteId.Onboarding))
+        @Assert(routeService.resolveBackRoute(routePath(RouteId.Profile), backStack), routePath(RouteId.Home))
+        @Assert(routeService.canNavigateBack(routePath(RouteId.Profile), backStack), true)
     }
 
     @TestCase

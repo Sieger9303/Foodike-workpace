@@ -261,10 +261,10 @@ note[0m: the code after the macro is expanded as follows
      | | /* 21.252 */        this.navigateTo(transition.nextRoute)
      | | /* 21.253 */    }
      | | /* 21.254 */    private func handleProfileEdit(): Unit {
-     | | /* 21.255 */        this.showToast(profileRouteService.placeholderActionMessage())
+     | | /* 21.255 */        this.showToast(profileRouteService.editActionMessage())
      | | /* 21.256 */    }
-     | | /* 21.257 */    private func handleProfileSectionAction(): Unit {
-     | | /* 21.258 */        this.showToast(profileRouteService.placeholderActionMessage())
+     | | /* 21.257 */    private func handleProfileSectionAction(section: ProfileSection): Unit {
+     | | /* 21.258 */        this.showToast(profileRouteService.sectionActionMessage(section))
      | | /* 21.259 */    }
      | | /* 21.260 */    private func handleProfileLogout(): Unit {
      | | /* 21.261 */        this.performLogout()
@@ -450,8 +450,8 @@ note[0m: the code after the macro is expanded as follows
      | | /* 21.441 */        this.handleProfileBack()
      | | /* 21.442 */    }), ObservedProperty("", { =>
      | | /* 21.443 */        this.handleProfileEdit()
-     | | /* 21.444 */    }), ObservedProperty("", { =>
-     | | /* 21.445 */        this.handleProfileSectionAction()
+     | | /* 21.444 */    }), ObservedProperty("", { section: ProfileSection =>
+     | | /* 21.445 */        this.handleProfileSectionAction(section)
      | | /* 21.446 */    }), ObservedProperty("", { =>
      | | /* 21.447 */        this.handleProfileLogout()
      | | /* 21.448 */    }))) {
@@ -460,8 +460,8 @@ note[0m: the code after the macro is expanded as follows
      | | /* 21.451 */                this.handleProfileBack()
      | | /* 21.452 */            }),("", { =>
      | | /* 21.453 */                this.handleProfileEdit()
-     | | /* 21.454 */            }),("", { =>
-     | | /* 21.455 */                this.handleProfileSectionAction()
+     | | /* 21.454 */            }),("", { section: ProfileSection =>
+     | | /* 21.455 */                this.handleProfileSectionAction(section)
      | | /* 21.456 */            }),("", { =>
      | | /* 21.457 */                this.handleProfileLogout()
      | | /* 21.458 */            })])
@@ -487,8 +487,8 @@ note[0m: the code after the macro is expanded as follows
      | | /* 21.478 */        this.handleProfileBack()
      | | /* 21.479 */    }), ObservedProperty("", { =>
      | | /* 21.480 */        this.handleProfileEdit()
-     | | /* 21.481 */    }), ObservedProperty("", { =>
-     | | /* 21.482 */        this.handleProfileSectionAction()
+     | | /* 21.481 */    }), ObservedProperty("", { section: ProfileSection =>
+     | | /* 21.482 */        this.handleProfileSectionAction(section)
      | | /* 21.483 */    }), ObservedProperty("", { =>
      | | /* 21.484 */        this.handleProfileLogout()
      | | /* 21.485 */    })))

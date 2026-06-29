@@ -1,16 +1,17 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-06-28T12:11:43+00:00",
+  "generatedAt": "2026-06-28T17:29:39+00:00",
   "purpose": "Structured verification evidence collected from build/test/manual reports. Build results are discovered automatically; test or manual validation results may be added as non build-report-scan entries and will be preserved across refreshes.",
   "summary": {
-    "totalResults": 6,
+    "totalResults": 7,
     "byType": {
-      "build": 6
+      "build": 7
     },
     "byResult": {
-      "passed": 6
+      "passed": 7
     },
     "passedBuildPhases": [
+      "final-coverage",
       "phase-01-project-skeleton-resources",
       "phase-02-startup-session-navigation",
       "phase-03-onboarding-login",
@@ -20,6 +21,24 @@
     ]
   },
   "results": [
+    {
+      "id": "build:final-coverage",
+      "source": "build-report-scan",
+      "type": "build",
+      "phase": "final-coverage",
+      "result": "passed",
+      "command": [
+        "C:\\Users\\Sieger\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "D:\\workspace\\Foodike\\.agents\\skills\\harmonyos-build\\build.py",
+        "--project-root",
+        "D:\\workspace\\Foodike\\Foodike-Harmony"
+      ],
+      "returncode": 0,
+      "evidencePath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\final-coverage\\build-report.json",
+      "markdownPath": "D:\\workspace\\Foodike\\translation-inputs\\build-reports\\final-coverage\\build-report.md",
+      "generatedAt": "2026-06-28T12:12:01+00:00",
+      "notes": "Build gate result for phase final-coverage."
+    },
     {
       "id": "build:phase-01-project-skeleton-resources",
       "source": "build-report-scan",
