@@ -17,14 +17,14 @@ Reduce functional coverage gaps first, and use code-scale gaps as a warning sign
 | --- | --- |
 | targetToSourceFiles | 58.9% |
 | targetToSourceTextFiles | 59.4% |
-| targetToSourceNonblankLines | 90.3% |
+| targetToSourceNonblankLines | 90.1% |
 | targetToSourceProductionTextFiles | 51.9% |
-| targetToSourceProductionNonblankLines | 82.6% |
+| targetToSourceProductionNonblankLines | 82.3% |
 | targetToSourceCodeFiles | 55.3% |
-| targetToSourceCodeNonblankLines | 55.0% |
+| targetToSourceCodeNonblankLines | 54.8% |
 | targetToSourceProductionCodeFiles | 48.2% |
-| targetToSourceProductionCodeNonblankLines | 47.2% |
-| targetToSourceProductionCodeLines | 68.0% |
+| targetToSourceProductionCodeNonblankLines | 46.9% |
+| targetToSourceProductionCodeLines | 67.5% |
 | targetToSourceTestFiles | 450.0% |
 
 ## Findings
@@ -117,7 +117,7 @@ Reduce functional coverage gaps first, and use code-scale gaps as a warning sign
 | metric | value |
 | --- | --- |
 | productionCodeFiles | 40 |
-| productionCodeNonblankLines | 3223 |
+| productionCodeNonblankLines | 3201 |
 | largestProductionCodeFileNonblankLines | 399 |
 | largeProductionCodeFiles | 0 |
 | endpointBearingFeatureRows | 144 |

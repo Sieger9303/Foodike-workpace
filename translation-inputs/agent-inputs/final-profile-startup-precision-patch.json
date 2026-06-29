@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Final whole-project profile coverage repair tightens startup routing evidence to the focused startup store endpoint.",
+  "updates": [
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-profi-9d1239d799-002-screen-lifecycle-entry-point-initializat",
+      "set": {
+        "targetBehavior": "`profile_route_service.cj::buildLogoutTransition` now owns the translated profile-route teardown state, while `startup_store.cj::resolveStartRoute(false)` preserves the post-logout entry behavior that returns the app to onboarding.",
+        "verificationEvidence": [
+          "Manual source review confirmed `ProfileViewModel.kt` contains no initialization or resume logic beyond logout handling.",
+          "Manual target review confirmed `profile_route_service.cj::buildLogoutTransition` captures the translated route teardown state and `startup_store.cj::resolveStartRoute(false)` returns the onboarding route.",
+          "Final-coverage test build report PASS: `translation-inputs/test-build-reports/final-coverage/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
+          "Phase-06 build gate PASS: `translation-inputs/build-reports/phase-06-profile-capabilities-verification/build-report.md`."
+        ],
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj::resolveStartRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::buildLogoutTransition"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj::resolveStartRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::buildLogoutTransition"
+            ],
+            "testEvidence": [
+              {
+                "kind": "focused-test-pass",
+                "detail": "`phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes`, `::profileLogoutTransitionResetsRouteStateAndReturnsOnboarding`, and `::startupResolverReturnsOnboardingAfterLogoutStyleState` verify the translated logout teardown and post-logout entry routing.",
+                "path": "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj"
+              },
+              {
+                "kind": "test-compile-pass",
+                "detail": "Final-coverage test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
+                "path": "translation-inputs/test-build-reports/final-coverage/test-build-report.md"
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "Phase 06 build gate PASS: translation-inputs/build-reports/phase-06-profile-capabilities-verification/build-report.md",
+                "path": "translation-inputs/build-reports/phase-06-profile-capabilities-verification/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "The translated logout teardown clears route-local state through the focused profile route service and returns the app to the onboarding entry path."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-main-java-com-example-foodike-presentation-profi-1b04c65221-003-observable-state-viewmodel-flow-livedata",
+      "set": {
+        "targetBehavior": "`profile_store.cj::logout` preserves the translated persisted-session mutation, `profile_route_service.cj::buildLogoutTransition` captures the immediate local route-state reset, and `startup_store.cj::resolveStartRoute(false)` preserves the resulting onboarding entry state after logout.",
+        "verificationEvidence": [
+          "Manual source review confirmed `ProfileViewModel.kt` performs a single logout state mutation followed by the supplied callback.",
+          "Manual target review confirmed `profile_store.cj::logout`, `profile_route_service.cj::buildLogoutTransition`, and `startup_store.cj::resolveStartRoute` now separate the translated mutation, local reset, and startup-resolution responsibilities.",
+          "Final-coverage test build report PASS: `translation-inputs/test-build-reports/final-coverage/test-build-report.md` ran `cjpm test --target aarch64-linux-ohos` from `entry/src/test/cangjie` successfully.",
+          "Phase-06 build gate PASS: `translation-inputs/build-reports/phase-06-profile-capabilities-verification/build-report.md`."
+        ],
+        "targetEndpoints": [
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj::resolveStartRoute",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::buildLogoutTransition",
+          "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout"
+        ],
+        "coverageFacts": {
+          "schemaVersion": 1,
+          "closureKind": "implemented",
+          "parityKind": "equivalent",
+          "sourceBehaviorMapped": true,
+          "targetBehaviorImplemented": true,
+          "activeSimplification": {
+            "used": false,
+            "reason": "",
+            "preservedBehaviors": [],
+            "omittedBehaviors": []
+          },
+          "activeDeferred": {
+            "used": false,
+            "blockerKind": "",
+            "blocker": "",
+            "fallbackBehavior": "",
+            "futureCompletionPath": ""
+          },
+          "verification": {
+            "targetEndpoints": [
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj::resolveStartRoute",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj::buildLogoutTransition",
+              "entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj::logout"
+            ],
+            "testEvidence": [
+              {
+                "kind": "focused-test-pass",
+                "detail": "`phase06_profile_capabilities_verification_test.cj::profileStorePreservesBackAndLogoutRoutes`, `::profileLogoutTransitionResetsRouteStateAndReturnsOnboarding`, and `::startupResolverReturnsOnboardingAfterLogoutStyleState` verify the translated logout mutation propagates immediately to local route reset and the next startup route.",
+                "path": "entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj"
+              },
+              {
+                "kind": "test-compile-pass",
+                "detail": "Final-coverage test build report PASS: `cjpm test --target aarch64-linux-ohos` succeeded from `entry/src/test/cangjie`.",
+                "path": "translation-inputs/test-build-reports/final-coverage/test-build-report.md"
+              }
+            ],
+            "buildEvidence": [
+              {
+                "kind": "build-pass",
+                "detail": "Phase 06 build gate PASS: translation-inputs/build-reports/phase-06-profile-capabilities-verification/build-report.md",
+                "path": "translation-inputs/build-reports/phase-06-profile-capabilities-verification/build-report.md"
+              }
+            ],
+            "runtimeEvidence": [],
+            "manualEvidence": [
+              {
+                "kind": "manual-review",
+                "detail": "The translated logout flow keeps the same immediate state propagation pattern as the source profile ViewModel callback path through focused profile endpoints instead of a broad shell handler."
+              }
+            ]
+          },
+          "factsSource": "agent"
+        }
+      }
+    },
+    {
+      "featureId": "app-src-androidtest-java-com-example-foodike-exampleinst-7ce120cd33-001-source-side-tests-or-verification-assets",
+      "set": {
+        "targetBehavior": "The target replaces this shallow source-side smoke test with focused Cangjie verification for profile back/logout routing, explicit profile action-section messaging, and startup-route resolution in `phase06_profile_capabilities_verification_test.cj`, backed by a passing final-coverage test gate and precise profile route service/startup store endpoints."
+      }
+    }
+  ]
+}

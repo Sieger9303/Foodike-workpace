@@ -1,6 +1,6 @@
 # HarmonyOS Cangjie Build Gate Report
 
-- Generated: `2026-06-28T17:29:59+00:00`
+- Generated: `2026-06-29T06:42:13+00:00`
 - Phase: `final-coverage`
 - Workspace: `D:\workspace\Foodike`
 - Target project: `D:\workspace\Foodike\Foodike-Harmony`
@@ -8,7 +8,7 @@
 - Failed stage: `none`
 - Return code: `0`
 - Timed out: `False`
-- Duration seconds: `18.844`
+- Duration seconds: `41.594`
 - Skipped: `False`
 - Reused previous PASS: `False`
 - Skip reason: `none`

@@ -4,16 +4,16 @@ Cangjie: C:\Users\Sieger\.cangjie-sdk\6.0\cangjie
 Java: D:\Deveco\Software\DevEco Studio\jbr
 Installing dependencies...
 >>> D:\Deveco\Software\DevEco Studio\tools\ohpm\bin\ohpm.bat install --all --registry https://ohpm.openharmony.cn/ohpm/ --strict_ssl true
-install completed in 0s 29ms
+install completed in 0s 28ms
 Syncing resources...
 >>> D:\Deveco\Software\DevEco Studio\tools\node\node.exe D:\Deveco\Software\DevEco Studio\tools\hvigor\bin\hvigorw.js --mode module -p module=entry@default SyncCangjieResource --analyze=normal --parallel --incremental --no-daemon
 > hvigor WARN: Build analysis mode 'default' is deprecated, please use 'normal' instead.
 > hvigor UP-TO-DATE :entry:default@CangjiePreBuild...  
 > hvigor Disabled :entry:default@PreBuild... 
 > hvigor UP-TO-DATE :entry:default@GenerateCangjieResource...  
-> hvigor Finished :entry:default@GenerateTomlDependencies... after 6 ms 
+> hvigor Finished :entry:default@GenerateTomlDependencies... after 5 ms 
 > hvigor Finished :entry:SyncCangjieResource... after 1 ms 
-> hvigor BUILD SUCCESSFUL in 1 s 735 ms 
+> hvigor BUILD SUCCESSFUL in 15 s 617 ms 
 Building hap...
 >>> D:\Deveco\Software\DevEco Studio\tools\node\node.exe D:\Deveco\Software\DevEco Studio\tools\hvigor\bin\hvigorw.js --mode module -p product=default assembleHap --analyze=normal --parallel --incremental --no-daemon
 > hvigor WARN: Build analysis mode 'default' is deprecated, please use 'normal' instead.
@@ -31,7 +31,7 @@ Building hap...
 > hvigor UP-TO-DATE :entry:default@GenerateCangjieResource...  
 > hvigor Finished :entry:default@BuildNativeWithCmake... after 1 ms 
 > hvigor UP-TO-DATE :entry:default@MakePackInfo...  
-> hvigor Finished :entry:default@SyscapTransform... after 11 ms 
+> hvigor Finished :entry:default@SyscapTransform... after 9 ms 
 > hvigor UP-TO-DATE :entry:default@ProcessProfile...  
 > hvigor UP-TO-DATE :entry:default@ProcessRouterMap...  
 > hvigor UP-TO-DATE :entry:default@ProcessShareConfig...  
@@ -40,24 +40,24 @@ Building hap...
 > hvigor UP-TO-DATE :entry:default@ProcessResource...  
 > hvigor UP-TO-DATE :entry:default@GenerateLoaderJson...  
 > hvigor UP-TO-DATE :entry:default@CompileResource...  
-> hvigor Finished :entry:default@CompileArkTS... after 4 ms 
-> hvigor Finished :entry:default@BuildJS... after 2 ms 
+> hvigor Finished :entry:default@CompileArkTS... after 3 ms 
+> hvigor Finished :entry:default@BuildJS... after 1 ms 
 > hvigor WARN: Warning: field 'profile.build.combined' in '.\cjpm.toml' is experimental, it is unstable and has some limitations, please refer to related documentation for more details
-> hvigor Finished :entry:default@CompileCangjie... after 11 s 128 ms 
-> hvigor Finished :entry:default@ProcessLibs... after 17 ms 
-> hvigor Finished :entry:default@MoveCangjieLibs... after 12 ms 
+> hvigor Finished :entry:default@CompileCangjie... after 12 s 630 ms 
+> hvigor Finished :entry:default@ProcessLibs... after 15 ms 
+> hvigor Finished :entry:default@MoveCangjieLibs... after 11 ms 
 > hvigor Finished :entry:default@ProcessCangjieLibs... after 2 ms 
-> hvigor Finished :entry:default@DoNativeStrip... after 88 ms 
-> hvigor Finished :entry:default@AfterCompileCangjie... after 4 ms 
-> hvigor Finished :entry:default@CacheNativeLibs... after 4 ms 
+> hvigor Finished :entry:default@DoNativeStrip... after 261 ms 
+> hvigor Finished :entry:default@AfterCompileCangjie... after 5 ms 
+> hvigor Finished :entry:default@CacheNativeLibs... after 5 ms 
 > hvigor UP-TO-DATE :entry:default@GeneratePkgModuleJson...  
 > hvigor Finished :entry:default@ProcessCompiledResources... after 1 ms 
-> hvigor Finished :entry:default@PackageHap... after 331 ms 
+> hvigor Finished :entry:default@PackageHap... after 305 ms 
 > hvigor Finished :entry:default@PackingCheck... after 3 ms 
 > hvigor WARN: Will skip sign 'hos_hap'. No signingConfigs profile is configured in current project.
              If needed, configure the signingConfigs in D:\workspace\Foodike\Foodike-Harmony\build-profile.json5.
-> hvigor Finished :entry:default@SignHap... after 2 ms 
+> hvigor Finished :entry:default@SignHap... after 1 ms 
 > hvigor Finished :entry:default@CollectDebugSymbol... after 1 ms 
 > hvigor Finished :entry:assembleHap... after 1 ms 
-> hvigor BUILD SUCCESSFUL in 14 s 183 ms 
+> hvigor BUILD SUCCESSFUL in 15 s 836 ms 
 Build finished

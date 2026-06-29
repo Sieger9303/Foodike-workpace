@@ -5,10 +5,6 @@ import ohos_app_cangjie_entry.ohos_app_cangjie_entry.data.session.loginPreferenc
 
 public let profileStore = ProfileStore()
 
-public enum ProfileAction {
-    | Edit
-}
-
 public enum ProfileSection {
     | SavedAddresses
     | PaymentsAndRefunds
@@ -24,23 +20,21 @@ public class ProfileStore {
 
     public init() {}
 
-    public func actionFeedbackMessage(action: ProfileAction): String {
-        match (action) {
-            case ProfileAction.Edit => profilePlaceholderActionFeedback
-        }
-    }
-
-    public func sectionFeedbackMessage(section: ProfileSection): String {
-        match (section) {
-            case ProfileSection.SavedAddresses => profilePlaceholderActionFeedback
-            case ProfileSection.PaymentsAndRefunds => profilePlaceholderActionFeedback
-            case ProfileSection.OnlineOrderingHelp => profilePlaceholderActionFeedback
-            case ProfileSection.About => profilePlaceholderActionFeedback
-        }
-    }
-
     public func profileSectionCount(): Int64 {
         return 4
+    }
+
+    public func acknowledgeEditTap(): Bool {
+        return false
+    }
+
+    public func acknowledgeSectionTap(section: ProfileSection): Bool {
+        match (section) {
+            case ProfileSection.SavedAddresses => false
+            case ProfileSection.PaymentsAndRefunds => false
+            case ProfileSection.OnlineOrderingHelp => false
+            case ProfileSection.About => false
+        }
     }
 
     public func logout(context: UIAbilityContext): Bool {

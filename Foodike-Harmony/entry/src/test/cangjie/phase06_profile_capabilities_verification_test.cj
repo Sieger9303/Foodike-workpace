@@ -1,7 +1,8 @@
 package ohos_app_cangjie_entry_test
 
-import ohos_app_cangjie_entry.ohos_app_cangjie_entry.app.{RouteId, resolveStartRoute, routePath}
-import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.{ProfileAction, ProfileRouteService, ProfileSection, ProfileStore}
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.app.{RouteId, routePath}
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile.{ProfileRouteService, ProfileSection, ProfileStore}
+import ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.startup.startupStore
 import std.collection.ArrayList
 import std.unittest.*
 import std.unittest.testmacro.*
@@ -9,27 +10,34 @@ import std.unittest.testmacro.*
 @Test
 public class Phase06ProfileCapabilitiesVerificationTest {
     @TestCase
-    public func profileStorePreservesStaticIdentityAndPlaceholderActions(): Unit {
+    public func profileStorePreservesStaticIdentity(): Unit {
         let store = ProfileStore()
         @Assert(store.userName, "Andrew Howard")
         @Assert(store.userEmail, "andrewhoward@gmail.com")
         @Assert(store.profileSectionCount(), 4)
-        @Assert(store.actionFeedbackMessage(ProfileAction.Edit), "Coming soon!")
-        @Assert(store.sectionFeedbackMessage(ProfileSection.SavedAddresses), "Coming soon!")
-        @Assert(store.sectionFeedbackMessage(ProfileSection.PaymentsAndRefunds), "Coming soon!")
-        @Assert(store.sectionFeedbackMessage(ProfileSection.OnlineOrderingHelp), "Coming soon!")
-        @Assert(store.sectionFeedbackMessage(ProfileSection.About), "Coming soon!")
     }
 
     @TestCase
-    public func profileRouteServiceUsesExplicitEditAndSectionActionMessages(): Unit {
-        let routeService = ProfileRouteService()
-        @Assert(routeService.placeholderActionMessage(), "Coming soon!")
-        @Assert(routeService.editActionMessage(), "Coming soon!")
-        @Assert(routeService.sectionActionMessage(ProfileSection.SavedAddresses), "Coming soon!")
-        @Assert(routeService.sectionActionMessage(ProfileSection.PaymentsAndRefunds), "Coming soon!")
-        @Assert(routeService.sectionActionMessage(ProfileSection.OnlineOrderingHelp), "Coming soon!")
-        @Assert(routeService.sectionActionMessage(ProfileSection.About), "Coming soon!")
+    public func profileStorePreservesStaticIdentityAndInertActions(): Unit {
+        let store = ProfileStore()
+        @Assert(store.userName, "Andrew Howard")
+        @Assert(store.userEmail, "andrewhoward@gmail.com")
+        @Assert(store.profileSectionCount(), 4)
+        @Assert(store.acknowledgeEditTap(), false)
+        @Assert(store.acknowledgeSectionTap(ProfileSection.SavedAddresses), false)
+        @Assert(store.acknowledgeSectionTap(ProfileSection.PaymentsAndRefunds), false)
+        @Assert(store.acknowledgeSectionTap(ProfileSection.OnlineOrderingHelp), false)
+        @Assert(store.acknowledgeSectionTap(ProfileSection.About), false)
+    }
+
+    @TestCase
+    public func profileStoreKeepsEditAndSectionActionsInert(): Unit {
+        let store = ProfileStore()
+        @Assert(store.acknowledgeEditTap(), false)
+        @Assert(store.acknowledgeSectionTap(ProfileSection.SavedAddresses), false)
+        @Assert(store.acknowledgeSectionTap(ProfileSection.PaymentsAndRefunds), false)
+        @Assert(store.acknowledgeSectionTap(ProfileSection.OnlineOrderingHelp), false)
+        @Assert(store.acknowledgeSectionTap(ProfileSection.About), false)
     }
 
     @TestCase
@@ -79,8 +87,8 @@ public class Phase06ProfileCapabilitiesVerificationTest {
 
     @TestCase
     public func startupResolverReturnsOnboardingAfterLogoutStyleState(): Unit {
-        @Assert(resolveStartRoute(false), routePath(RouteId.Onboarding))
-        @Assert(resolveStartRoute(true), routePath(RouteId.Home))
+        @Assert(startupStore.resolveStartRoute(false), routePath(RouteId.Onboarding))
+        @Assert(startupStore.resolveStartRoute(true), routePath(RouteId.Home))
     }
 
     @TestCase

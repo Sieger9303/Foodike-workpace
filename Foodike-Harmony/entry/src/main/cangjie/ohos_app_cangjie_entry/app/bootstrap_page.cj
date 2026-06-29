@@ -174,11 +174,11 @@ class FoodikeBootstrap {
     }
 
     private func handleProfileEdit(): Unit {
-        this.showToast(profileRouteService.editActionMessage())
+        profileStore.acknowledgeEditTap()
     }
 
     private func handleProfileSectionAction(section: ProfileSection): Unit {
-        this.showToast(profileRouteService.sectionActionMessage(section))
+        profileStore.acknowledgeSectionTap(section)
     }
 
     private func handleProfileLogout(): Unit {
@@ -387,7 +387,7 @@ class FoodikeBootstrap {
     }
 
     @Builder
-    private func buildPlaceholderRoute() {
+    private func buildFallbackRoute() {
         Column(space: 18) {
             Text("Foodike")
                 .fontSize(42)
@@ -449,7 +449,7 @@ class FoodikeBootstrap {
         } else if (this.currentRoute == routePath(RouteId.Profile)) {
             this.buildProfileRoute()
         } else {
-            this.buildPlaceholderRoute()
+            this.buildFallbackRoute()
         }
     }
 }

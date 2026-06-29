@@ -1,11 +1,11 @@
 # Runtime UI Smoke Report - final-coverage
 
 - Result: `PASS`
-- Generated at: `2026-06-29T05:54:06+00:00`
+- Generated at: `2026-06-29T06:57:19+00:00`
 - Workspace: `D:\workspace\Foodike`
 - Target project: `D:\workspace\Foodike\Foodike-Harmony`
 - HAP: `D:\workspace\Foodike\Foodike-Harmony\entry\build\default\outputs\default\entry-default-unsigned.hap`
-- HAP sha256: `8a51cc69dbdeb6b418301a4ab10c70c234e4a2cc6a33e4a6d9c563fbd27b3ce2`
+- HAP sha256: `994214576ce5b89b1a56fc6c44ed173da5244ac47315e45484eb14cd9419421b`
 - hdc: `D:\DevEco\Software\DevEco Studio\sdk\default\openharmony\toolchains\hdc.EXE`
 - Device: `127.0.0.1:5555`
 

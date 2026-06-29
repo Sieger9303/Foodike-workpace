@@ -2,8 +2,6 @@ package ohos_app_cangjie_entry.ohos_app_cangjie_entry.features.profile
 
 import std.collection.ArrayList
 
-public let profilePlaceholderActionFeedback: String = "Coming soon!"
-
 public class ProfileRouteState {
     public var loginEmail: String
     public var loginPassword: String
@@ -45,10 +43,6 @@ public class ProfileLogoutTransition {
 public class ProfileRouteService {
     public init() {}
 
-    public func placeholderActionMessage(): String {
-        return profilePlaceholderActionFeedback
-    }
-
     public func resolveBackRoute(currentRoute: String, routeBackStack: ArrayList<String>): String {
         if (routeBackStack.size == 0) {
             return currentRoute
@@ -75,14 +69,6 @@ public class ProfileRouteService {
 
     public func buildLogoutTransition(logoutRoute: String): ProfileLogoutTransition {
         return ProfileLogoutTransition(logoutRoute, resetAfterLogout())
-    }
-
-    public func editActionMessage(): String {
-        return placeholderActionMessage()
-    }
-
-    public func sectionActionMessage(section: ProfileSection): String {
-        return placeholderActionMessage()
     }
 }
 

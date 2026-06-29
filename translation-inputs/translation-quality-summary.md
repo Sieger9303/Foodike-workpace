@@ -1,6 +1,6 @@
 # Translation Quality Summary
 
-- Generated: `2026-06-29T05:55:38+00:00`
+- Generated: `2026-06-29T06:57:27+00:00`
 - Workspace: `D:\workspace\Foodike`
 - Status: `repairable-medium`
 - Recommendation: No critical/high findings are open, but repairable medium findings remain; handle them through the existing repair or revisit paths.
@@ -216,7 +216,7 @@ Sweep guidance:
 | metric | value |
 | --- | --- |
 | productionCodeFiles | 40 |
-| productionCodeNonblankLines | 3223 |
+| productionCodeNonblankLines | 3201 |
 | largestProductionCodeFileNonblankLines | 399 |
 | largeProductionCodeFiles | 0 |
 | endpointBearingFeatureRows | 144 |

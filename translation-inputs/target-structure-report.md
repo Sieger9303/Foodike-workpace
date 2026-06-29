@@ -9,7 +9,7 @@ Flag target code structures that make later semantic repair harder: overgrown pr
 | metric | value |
 | --- | --- |
 | productionCodeFiles | 40 |
-| productionCodeNonblankLines | 3223 |
+| productionCodeNonblankLines | 3201 |
 | largestProductionCodeFileNonblankLines | 399 |
 | largeProductionCodeFiles | 0 |
 | endpointBearingFeatureRows | 144 |
@@ -78,8 +78,8 @@ _No large or dominant target production code files detected._
 
 | path | LoC | share | broad shell | UI symbols | sample symbols |
 | --- | --- | --- | --- | --- | --- |
-| entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj | 399 | 12.4% | yes | 12 | buildCartRoute, buildDetailRoute, buildHistoryRoute, buildHomeRoute, buildLoginRoute, buildOnboardingRoute, buildPlaceholderRoute, buildProfileRoute |
-| entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj | 227 | 7.0% | yes | 8 | buildHomeAdCards, buildHomeFooter, buildHomeGreeting, buildHomeSectionTitle, buildHomeTopSection, buildRestaurantList, homeMedia, renderHomeRoute |
+| entry/src/main/cangjie/ohos_app_cangjie_entry/app/bootstrap_page.cj | 399 | 12.5% | yes | 12 | buildCartRoute, buildDetailRoute, buildFallbackRoute, buildHistoryRoute, buildHomeRoute, buildLoginRoute, buildOnboardingRoute, buildProfileRoute |
+| entry/src/main/cangjie/ohos_app_cangjie_entry/features/home/home_page.cj | 227 | 7.1% | yes | 8 | buildHomeAdCards, buildHomeFooter, buildHomeGreeting, buildHomeSectionTitle, buildHomeTopSection, buildRestaurantList, homeMedia, renderHomeRoute |
 
 ## UI Endpoint Concentration
 
@@ -114,18 +114,17 @@ _No large or dominant target production code files detected._
 | entry/src/main/cangjie/app_ability.cj | 11 | 14 | 7.6% | no | app/src/main/java/com/example/foodike/presentation/MainActivity.kt (2); README.md (2); app/src/main/AndroidManifest.xml (2) |
 | entry/src/main/cangjie/ohos_app_cangjie_entry/app/shell_route_state.cj | 11 | 12 | 7.6% | yes | app/src/main/java/com/example/foodike/presentation/util/Navigation.kt (2); README.md (2); app/src/main/java/com/example/foodike/presentation/home/HomeScreen.kt (1) |
 | entry/src/main/cangjie/ohos_app_cangjie_entry/features/history/history_store.cj | 10 | 11 | 6.9% | no | app/src/main/java/com/example/foodike/data/repository/UserDataRepositoryImpl.kt (3); app/src/main/java/com/example/foodike/presentation/history/HistoryViewModel.kt (2); app/src/main/java/com/example/foodike/domain/repository/UserDataRepository.kt (2) |
-| entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj | 9 | 13 | 6.2% | no | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt (2); app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt (2); app/src/main/java/com/example/foodike/domain/repository/LoginRepository.kt (2) |
 | entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_store.cj | 9 | 10 | 6.2% | no | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt (2); app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt (2); app/src/main/java/com/example/foodike/domain/repository/LoginRepository.kt (2) |
+| entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj | 9 | 9 | 6.2% | no | app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt (2); app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt (2); app/build.gradle.kts (1) |
 | entry/src/main/cangjie/ohos_app_cangjie_entry/data/content/home_content_repository.cj | 9 | 9 | 6.2% | no | app/src/main/java/com/example/foodike/data/repository/HomeRepositoryImpl.kt (4); app/src/main/java/com/example/foodike/domain/repository/HomeRepository.kt (4); app/src/main/java/com/example/foodike/di/AppModule.kt (1) |
 | entry/src/main/resources/base/element/color.js | 8 | 20 | 5.6% | no | app/src/main/res/values/themes.xml (2); app/src/main/res/values/colors.xml (2); app/src/main/res/values/ic_launcher_background.xml (2) |
 | entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_theme.cj | 8 | 14 | 5.6% | no | app/src/main/res/values/themes.xml (2); app/src/main/res/values/colors.xml (2); app/src/main/java/com/example/foodike/ui/theme/Theme.kt (1) |
+| entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_store.cj | 8 | 12 | 5.6% | no | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt (2); app/src/main/java/com/example/foodike/data/repository/LoginRepositoryImpl.kt (2); app/src/main/java/com/example/foodike/domain/repository/LoginRepository.kt (2) |
 | entry/src/main/resources/base/profile/main_pages.js | 8 | 8 | 5.6% | no | README.md (2); app/src/main/AndroidManifest.xml (2); app/build.gradle.kts (1) |
-| entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj | 7 | 25 | 4.9% | no | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt (2); app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt (2); app/src/test/java/com/example/foodike/ExampleUnitTest.kt (2) |
 | entry/src/main/cangjie/ohos_app_cangjie_entry/features/history/history_page.cj | 7 | 11 | 4.9% | yes | app/src/main/java/com/example/foodike/presentation/history/components/Tabs.kt (2); app/src/main/java/com/example/foodike/presentation/history/History.kt (2); app/src/main/java/com/example/foodike/presentation/history/components/HistorySection.kt (1) |
 | entry/src/main/cangjie/ohos_app_cangjie_entry/features/cart/cart_page.cj | 7 | 9 | 4.9% | yes | app/src/main/java/com/example/foodike/presentation/cart/Cart.kt (3); app/src/main/java/com/example/foodike/presentation/cart/components/CouponBar.kt (2); app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt (1) |
-| entry/src/main/cangjie/ohos_app_cangjie_entry/features/startup/startup_store.cj | 7 | 7 | 4.9% | no | app/src/main/java/com/example/foodike/presentation/common/SplashViewModel.kt (2); app/build.gradle.kts (1); app/src/main/java/com/example/foodike/presentation/MainActivity.kt (1) |
 | entry/src/main/cangjie/ohos_app_cangjie_entry/features/cart/cart_store.cj | 6 | 9 | 4.2% | no | app/src/main/java/com/example/foodike/presentation/cart/Cart.kt (2); app/src/main/java/com/example/foodike/presentation/cart/CartViewModel.kt (2); app/src/main/java/com/example/foodike/presentation/cart/components/CartItemCard.kt (1) |
-| entry/src/main/cangjie/ohos_app_cangjie_entry/app/app_router.cj | 5 | 5 | 3.5% | yes | app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt (2); app/src/main/AndroidManifest.xml (1); app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt (1) |
+| entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_route_service.cj | 4 | 7 | 2.8% | no | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt (2); app/src/main/java/com/example/foodike/presentation/profile/ProfileViewModel.kt (2) |
 | AppScope/app.js | 4 | 7 | 2.8% | yes | app/src/main/res/values/themes.xml (2); app/build.gradle.kts (1); app/src/main/AndroidManifest.xml (1) |
 | entry/cjpm.toml | 4 | 7 | 2.8% | no | app/build.gradle.kts (1); build.gradle.kts (1); gradle/libs.versions.toml (1) |
 | entry/src/main/cangjie/ohos_app_cangjie_entry/features/onboarding/onboarding_page.cj | 4 | 7 | 2.8% | yes | app/src/main/java/com/example/foodike/presentation/onboarding/OnBoarding.kt (3); app/src/main/java/com/example/foodike/presentation/onboarding/components/OnboardingPage.kt (1) |
@@ -133,7 +132,7 @@ _No large or dominant target production code files detected._
 | entry/src/main/cangjie/ohos_app_cangjie_entry/features/login/login_page.cj | 4 | 5 | 2.8% | yes | app/src/main/java/com/example/foodike/presentation/login/LoginScreen.kt (3); app/src/main/java/com/example/foodike/presentation/login/LoginViewModel.kt (1) |
 | entry/src/main/cangjie/ability_mainability_entry.cj | 4 | 4 | 2.8% | yes | README.md (1); app/src/main/AndroidManifest.xml (1); gradle/libs.versions.toml (1) |
 | entry/src/main/resources/base/element/string.js | 4 | 4 | 2.8% | no | app/src/main/res/values/strings.xml (3); app/src/main/AndroidManifest.xml (1) |
-| entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj | 3 | 13 | 2.1% | no | app/src/test/java/com/example/foodike/ExampleUnitTest.kt (2); app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt (1) |
+| entry/src/test/cangjie/phase06_profile_capabilities_verification_test.cj | 3 | 12 | 2.1% | no | app/src/test/java/com/example/foodike/ExampleUnitTest.kt (2); app/src/androidTest/java/com/example/foodike/ExampleInstrumentedTest.kt (1) |
 | entry/src/main/cangjie/ohos_app_cangjie_entry/features/detail/detail_page.cj | 3 | 6 | 2.1% | yes | app/src/main/java/com/example/foodike/presentation/details/RestaurantDetail.kt (2); app/src/main/java/com/example/foodike/presentation/details/components/MenuItemCard.kt (1) |
 | entry/src/main/cangjie/ohos_app_cangjie_entry/domain/discovery_models.cj | 3 | 6 | 2.1% | no | app/src/main/java/com/example/foodike/domain/model/Restaurant.kt (1); app/src/main/java/com/example/foodike/domain/model/Advertisement.kt (1); app/src/main/java/com/example/foodike/domain/model/FoodItem.kt (1) |
 | entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/restaurant_card.cj | 3 | 5 | 2.1% | no | app/src/main/java/com/example/foodike/presentation/components/RestaurantCard.kt (2); app/src/main/java/com/example/foodike/domain/model/Restaurant.kt (1) |
@@ -142,6 +141,7 @@ _No large or dominant target production code files detected._
 | entry/src/main/cangjie/ohos_app_cangjie_entry/common/foodike_resources.cj | 3 | 3 | 2.1% | no | app/src/main/res/values/strings.xml (3) |
 | AppScope/resources/base/element/color.js | 2 | 9 | 1.4% | no | app/src/main/res/values/colors.xml (2) |
 | entry/src/main/cangjie/ohos_app_cangjie_entry/features/profile/profile_page.cj | 2 | 5 | 1.4% | yes | app/src/main/java/com/example/foodike/presentation/profile/Profile.kt (2) |
+| entry/src/main/cangjie/ohos_app_cangjie_entry/common/widgets/search_bar.cj | 2 | 2 | 1.4% | no | app/src/main/java/com/example/foodike/presentation/components/SearchBar.kt (2) |
 
 ## Recommended Repair Instruction
 
